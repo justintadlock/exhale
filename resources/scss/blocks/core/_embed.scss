@@ -1,0 +1,31 @@
+////
+/// Embed block.
+///
+/// @group  Blocks
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.wp-block-embed {
+
+	// Image embeds.
+	&.is-type-image {}
+
+	// Audio embeds.
+	&.is-type-audio {}
+
+	// Rich text embeds (text, Twitter, etc.)
+	&.is-type-rich {}
+
+	// Video embeds.
+	&.is-type-video {}
+
+	// Directly target iframes.
+	iframe {}
+
+	// Caption below embedded content.
+	figcaption {
+		margin-top: 0.5em;
+		text-align: center;
+	}
+}

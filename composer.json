@@ -1,0 +1,28 @@
+{
+	"name"        : "justintadlock/exhale",
+	"type"        : "wordpress-theme",
+	"description" : "Exhale is a clean and modern theme.",
+	"keywords"    : ["wordpress"],
+	"homepage"    : "https://themehybrid.com/themes/exhale",
+	"license"     : "GPL-2.0-or-later",
+	"authors"     : [
+		{
+			"name"    : "Justin Tadlock",
+			"email"   : "justintadlock@gmail.com",
+			"homepage": "https://themehybrid.com"
+		}
+	],
+	"autoload"    : {
+		"psr-4" : {
+			"Exhale\\" : "app/"
+		}
+	},
+        "require": {
+                "php" : ">=5.6",
+                "composer/installers" : "~1.0",
+                "justintadlock/hybrid-core" : "^5.0.0"
+        },
+	"require-dev": {
+		"samikeijonen/phpcs-composer": "dev-master"
+	}
+}

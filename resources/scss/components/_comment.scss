@@ -1,0 +1,44 @@
+////
+/// Comment component.
+///
+/// This is the component for handling individual comments in a comments list.
+///
+/// @group  Components
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.comment {
+
+	// Type of comment.
+	&--type-comment {}
+
+	&--type-ping {}
+
+	// Comment status.
+	&--status-unapproved {}
+
+	// Full comment text/content.
+	&__content {}
+
+	// Comment under moderation message.
+	&__moderation {}
+
+	// Metadata wrapper.
+	&__meta {}
+
+	// Individual metadata items.
+	&__avatar {}
+
+	&__author {}
+
+	&__permalink {}
+
+	&__date {}
+
+	&__time {}
+
+	&__edit {}
+
+	&__reply {}
+}

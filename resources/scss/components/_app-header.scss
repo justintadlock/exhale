@@ -1,0 +1,28 @@
+////
+/// App header component.
+///
+/// @group  Components
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.app-header {
+
+	// Wrapper around the title and description.
+	&__branding {}
+
+	// Output from the `custom-logo` feature.
+	&__logo {}
+
+	// Logo link.
+	&__logo-link {}
+
+	// The site title.
+	&__title {}
+
+	// Site title link.
+	&__title-link {}
+
+	// The site description.
+	&__description {}
+}

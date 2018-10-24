@@ -1,0 +1,64 @@
+////
+/// Set up and define fonts.
+///
+/// @group  Settings
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+/// Returns a map of font families in name-value format.
+///
+/// @since  1.0.0
+/// @access public
+/// @return {map}  Map of defined font families.
+
+@function font-families() {
+
+	@return (
+		primary   : system-ui,
+		secondary : system-ui,
+		code      : #{'Source Code Pro', Monaco, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace}
+	);
+}
+
+/// Returns a single color value by name.
+///
+/// @since  1.0.0
+/// @access public
+/// @param  {string}  $name  Font familiy name.
+/// @return {string}         Font family value.
+
+@function font-family( $name ) {
+
+	@return map-get( font-families(), $name );
+}
+
+/// Returns a map of editor font sizes in name-value format. These are the sizes
+/// defined via the `editor-font-sizes` setting in `app/functions-setup.php`
+/// for the WordPress editor.
+///
+/// @since  1.0.0
+/// @access public
+/// @return {map}  Map of defined font sizes.
+
+@function editor-font-sizes() {
+
+	@return (
+		small   : 12px,
+		regular : 16px,
+		large   : 36px,
+		larger  : 48px
+	);
+}
+
+/// Returns a single editor font size value by name.
+///
+/// @since  1.0.0
+/// @access public
+/// @param  {string}  $name  Font size name.
+/// @return {string}         Font size value.
+
+@function editor-font-size( $name ) {
+
+	@return map-get( editor-font-sizes(), $name );
+}

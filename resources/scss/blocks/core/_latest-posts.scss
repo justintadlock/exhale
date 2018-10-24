@@ -1,0 +1,36 @@
+////
+/// Latest posts block.
+///
+/// @group  Blocks
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.wp-block-latest-posts {
+
+	&.is-grid {
+		display:    flex;
+		flex-wrap:  wrap;
+		padding:    0;
+		list-style: none;
+
+		li {
+			margin: 0 16px 16px 0;
+			width:  100%;
+		}
+	}
+
+	@media ( min-width: break( small ) ) {
+
+		@for $i from 2 through 6 {
+
+			&.columns-#{ $i } li {
+				width: calc( ( 100% / #{ $i } ) - 16px );
+			}
+		}
+	}
+
+	&__post-date {
+		display: block;
+	}
+}
