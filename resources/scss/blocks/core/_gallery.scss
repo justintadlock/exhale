@@ -12,12 +12,23 @@
 	flex-wrap:       wrap;
 	list-style-type: none;
 	padding:         0;
-	margin:          0 -8px 0 -8px;
+	margin:          0 -0.5em 1em;
+
+	&.alignfull {
+		padding: 0 1em;
+	}
+
+	@media ( max-width: $content-width ) {
+		&.alignwide,
+		&.alignfull {
+			padding: 0 1.5em;
+		}
+	}
 }
 
 // The wrapper for individual gallery images/figures.
 .blocks-gallery-item {
-	margin:          8px;
+	margin:          0.5em;
 	display:         flex;
 	flex-grow:       1;
 	flex-direction:  column;
@@ -52,23 +63,36 @@
 	}
 
 	figcaption {
+		box-sizing: border-box;
 		position:   absolute;
 		bottom:     0;
 		width:      100%;
 		max-height: 100%;
-		padding:    40px 10px 5px;
+		padding:    40px 1em 0.5em;
 		text-align: center;
-		color:      color( white );
+		color:      color-rgb( white );
 		background: linear-gradient(
 			0deg,
-			rgba( color( black ), 0.7 ) 0,
-			rgba( color( black ), 0.3 ) 60%,
+			color-rgba( mine-shaft, 0.7 ) 0,
+			color-rgba( mine-shaft, 0.3 ) 60%,
 			transparent
 		);
 
-		img {
-			display: inline;
+		a {
+			color: inherit;
 		}
+
+		a:hover,
+		a:focus,
+		a:active {
+			color:      color-rgb( white );
+			background: color-rgba( white, 0.2 );
+		}
+	}
+
+	a + figcaption {
+		width: calc( 100% - 20px );
+		margin: 0 10px 10px;
 	}
 }
 
@@ -90,12 +114,12 @@
 
 // Fallback to 2 columns.
 .blocks-gallery-item {
-	width: calc( 100% / 2 - 16px );
+	width: calc( 100% / 2 - 1em );
 }
 
 // 1 column.
 .columns-1 .blocks-gallery-item {
-	width: calc( 100% / 1 - 16px );
+	width: calc( 100% / 1 - 1em );
 }
 
 // 3-8 columns on larger screens.
@@ -104,7 +128,7 @@
 	@for $i from 3 through 8 {
 
 		.columns-#{ $i } .blocks-gallery-item {
-			width: calc( 100% / #{ $i } - 16px );
+			width: calc( 100% / #{ $i } - 1em );
 		}
 	}
 }

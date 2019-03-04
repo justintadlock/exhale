@@ -31,6 +31,8 @@ $exhale = new \Hybrid\Core\Application();
 # bootstrapping process.
 
 $exhale->provider( \Exhale\Providers\AppServiceProvider::class );
+$exhale->provider( \Exhale\Colors\ColorsServiceProvider::class );
+$exhale->provider( \Exhale\Query\QueryServiceProvider::class   );
 
 # ------------------------------------------------------------------------------
 # Perform bootstrap actions.

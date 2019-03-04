@@ -7,15 +7,29 @@
 ////
 
 .wp-block-columns {
-	display: flex;
+	display: block;
 
-	// Add styles based on the number of columns. Supports 2-6 columns.
-	&.has-2-columns {}
+	@media ( min-width: break( small ) ) {
+		display: flex;
+	}
+
+	&.alignwide,
+	&.alignfull {
+		margin-bottom: 0;
+	}
 }
 
 // Individual columns.
 .wp-block-column {
 	flex: 1;
+
+	@media ( min-width: break( small ) ) {
+		margin-left: 2em;
+	}
+
+	&:first-of-type {
+		margin-left: 0;
+	}
 }
 
 // Editor specific styling. Make sure columns span correctly.

@@ -1,0 +1,70 @@
+
+
+label {
+	@include meta;
+}
+
+input {
+	display: block;
+
+	&[type="checkbox"],
+	&[type="radio"] {
+		display: inline-block;
+	}
+}
+
+select,
+textarea {
+	display: block;
+}
+
+input,
+select,
+textarea {
+	box-sizing:  border-box;
+	padding:     0 0.5em;
+	line-height: 2em;
+	font-family: font-family( primary );
+	font-size:   1em;
+	color:       inherit;
+	border:      1px solid color-rgb( mercury );
+}
+
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea,
+select {
+	width: 100%;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+	cursor:          pointer;
+	color:           color-rgb( white );
+	background:      color-rgb( charcoal );
+	border-radius:   3px;
+	display:         inline-block;
+	margin:          0;
+	padding:         0.25em 2em;
+	text-decoration: none;
+	white-space:     normal;
+	word-break:      break-all;
+	transition:      all 0.5s ease-in-out;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}

@@ -8,7 +8,14 @@
 
 .wp-block-quote {
 
+	&.is-style-large {
+		font-size: 1.25em;
+	}
+
 	p {}
 
-	cite {}
+	cite {
+		display:  block;
+		margin-bottom: 2em;
+	}
 }

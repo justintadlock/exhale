@@ -6,20 +6,179 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+body.menu-open {
+	overflow-y: scroll;
+	width:      100%;
+}
+
+.below-app-header {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	overflow-y: hidden;
+	// Note: transition jumps when coming back in due to the position.
+	transition: normal;
+
+	.menu-open & {
+		position: fixed;
+		z-index:  90;
+		height:   100%;
+		left:     0;
+		right:    0;
+
+		@media screen and ( max-width: 480px ) {
+			margin-left: -100%;
+			transition:  all .4s ease-in-out 0s;
+		}
+	}
+}
+
+.overlay {
+	.menu-open & {
+		width:    100%;
+		height:   100%;
+		z-index:  90;
+		position: absolute;
+		background: rgba( 255, 255, 255, 0.5 );
+	}
+}
+
 .menu {
 
-	// Specific nav menus.
-	&--primary {}
+	&--primary {
+		float: right;
+		margin: 0;
+		font-family: 'Roboto', sans-serif;
+		font-size: 15px;
 
-	// Menu title.
-	&__title {}
+		.menu__title {
+			margin: -0.75rem 0 0 0;
+			font-size: 0;
+		}
 
-	// Menu items list.
-	&__items {}
+		.menu__toggle {
+			display:    inline-block;
+			width:  78px;
+			height: 58px;
+			margin:     0;
+			padding-left:  1.5rem;
+			padding-right: 1.5rem;
+			color: color-rgb( silver-chalice );
+			background: transparent;
+			border-radius: 0;
+			border: none;
+			outline: none;
 
-	// Individual items.
-	&__item {}
+			&:hover,
+			&:focus,
+			&.is-active {
+				color: color-rgb( white );
+				background: color-rgb( mine-shaft );
+			}
 
-	// Item link.
-	&__link {}
+			& svg {
+				width:       28px;
+				height:      28px;
+				line-height: 1em;
+				background:  transparent;
+				border:      none;
+				transition:  none;
+			}
+		}
+
+		.menu__items {
+			float:      right;
+			display:    block;
+			visibility: hidden;
+			position:   fixed;
+			top:         57px;
+			bottom:      0;
+			right:       -400px;
+			z-index:     999999;
+			overflow-y:  auto;
+			width:       400px;
+			margin:     0;
+			padding:    0;
+			transition: all .4s ease-in-out 0s;
+			box-sizing: border-box;
+			list-style: none;
+			text-align: left;
+			background: color-rgb( mine-shaft );
+
+			.admin-bar & {
+				top: 89px;
+
+				@media screen and ( max-width: 782px ) {
+					top: 103px;
+				}
+			}
+
+			@media only screen and ( min-width: 769px ) and ( max-width: 998px ) {
+				width: 500px;
+				right: -500px;
+			}
+
+			@media only screen and ( max-width: 768px ) {
+				width: 100%;
+				right: -100%;
+			}
+		}
+
+		&.is-open .menu__items {
+			visibility: visible;
+			right:      0;
+		}
+
+		.menu__item {
+			display: block;
+			margin: 0;
+			padding: 0;
+			font-size:   15px;
+		}
+
+		.menu__link {
+			display:       block;
+			line-height:   1.5;
+			padding:       1.125rem 1.5rem;
+			color:         color-rgb( white );
+			text-decoration: none;
+			border-bottom: 1px dashed color-rgba( charcoal, 0.4 );
+
+			&:hover,
+			&:focus {
+				background: color-rgba( black, 0.2 );
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&--social {
+
+		.menu__items {
+			list-style: none;
+			text-align: center;
+			margin: 0 0 1.5rem;
+			padding: 0;
+		}
+
+		.menu__item {
+			display: inline-block;
+		}
+
+		.menu__link {
+			display: inline-block;
+			margin:   0.5rem;
+			color:    color-rgb( silver-chalice );
+
+			&:hover,
+			&:focus {
+				color: color-rgb( coral-red );
+			}
+
+			svg {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
 }

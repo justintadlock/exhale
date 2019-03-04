@@ -7,25 +7,53 @@
 ////
 
 .pagination {
+	clear       : both;
+	overflow    : hidden;
+	padding     : 1.5rem 0 0;
+	text-align  : center;
+	font-family : sans-serif;
+	font-size   : 15px;
+}
 
-	// Header/Title element.
-	&__title {}
+.pagination__items {
+	list-style  : none;
+	display    : inline-block;
+	margin  : 0;
+	/* Get rid of whitespace between inline-block elements. */
+	font-size   : 0px;
+}
 
-	// The list of items.
-	&__items {}
+.pagination__item {
+	display     : inline-block;
+	margin      : 0 -1px 0 0;
+	font-size   : 15px;
+	font-weight: 600;
+}
 
-	// Individual items.
-	&__item {
-		&--prev {}
-		&--next {}
-		&--current {}
-		&--dots {}
+.pagination__anchor {
+	display : block;
+	padding: 0.375rem 1.125rem;
+	border: 1px solid color-rgb( mercury );
+	text-decoration: none;
+}
+
+	.pagination__anchor--current {
+		color: color-rgb( mine-shaft );
 	}
 
-	// The link or span element.
-	&__anchor {
-		&--link {}
-		&--current {}
-		&--dots {}
+	.pagination__anchor--link:hover,
+	.pagination__anchor--link:focus {
+		color        : color-rgb( white );
+		background   : color-rgb( charcoal );
+		border-color : color-rgb( charcoal );
+		text-decoration: underline;
 	}
+
+@media only screen and ( max-width: 650px ) {
+
+	.pagination__item { display: none; }
+
+	.pagination__item--current,
+	.pagination__item--prev,
+	.pagination__item--next { display: inline-block; }
 }

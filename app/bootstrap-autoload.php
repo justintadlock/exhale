@@ -38,6 +38,7 @@ array_map( function( $file ) {
 	require_once( get_parent_theme_file_path( "app/{$file}.php" ) );
 }, [
 	'functions-assets',
+	'functions-filters',
 	'functions-setup',
 	'functions-template'
 ] );

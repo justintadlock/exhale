@@ -15,14 +15,36 @@
 	&__title {}
 
 	// List of meta.
-	&__items {}
+	&__items {
+		padding:    0;
+		list-style: none;
+		font-size:  0.875em;
+	}
 
 	// Individual meta items.
-	&__item {}
+	&__item {
+		padding:       0.5em;
+		border-bottom: 1px solid color-rgb( white-smoke );
+
+		@media ( min-width: $content-width ) {
+			display: flex;
+		}
+	}
+
+	&__item:last-of-type {
+		border: none;
+	}
 
 	// Textual label.
-	&__label {}
+	&__label {
+		flex: 1;
+		font-weight: bold;
+	}
 
 	// Output of the data.
-	&__data {}
+	&__data {
+		flex: 2;
+		text-align: right;
+		color: color-rgb( dusty-gray );
+	}
 }

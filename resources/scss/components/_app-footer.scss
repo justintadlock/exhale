@@ -7,6 +7,12 @@
 ////
 
 .app-footer {
+	padding-bottom: 1.5rem;
 
-	&__credit {}
+	&__credit {
+		@include meta;
+		margin-bottom: 0.5rem;
+		font-style: italic;
+		text-align: center;
+	}
 }

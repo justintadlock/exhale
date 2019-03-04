@@ -34,7 +34,7 @@ add_action( 'after_setup_theme', function() {
 
 	// Sets the theme content width. This variable is also set in the
 	// `resources/scss/settings/_dimensions.scss` file.
-	$GLOBALS['content_width'] = 750;
+	$GLOBALS['content_width'] = 650;
 
 	// Load theme translations.
 	load_theme_textdomain( 'exhale', get_parent_theme_file_path( 'resources/lang' ) );
@@ -65,6 +65,7 @@ add_action( 'after_setup_theme', function() {
 	] );
 
 	// Add custom logo support.
+	/**
 	add_theme_support( 'custom-logo', [
 		'width'       => null,
 		'height'      => null,
@@ -72,57 +73,29 @@ add_action( 'after_setup_theme', function() {
 		'flex-height' => false,
 		'header-text' => ''
 	] );
-
-	// Editor color palette. These colors are also defined in the
-	// `resources/scss/settings/_colors.scss` file.
-	add_theme_support( 'editor-color-palette', [
-		[
-			'name'  => __( 'Charcoal' ),
-			'slug'  => 'charcoal',
-			'color' => '#282c34'
-		],
-		[
-			'name'  => __( 'Regent' ),
-			'slug'  => 'regent',
-			'color' => '#8c97a7',
-		],
-		[
-			'name'  => __( 'Husk' ),
-			'slug'  => 'husk',
-			'color' => '#B9A364',
-		],
-		[
-			'name'  => __( 'Red Stage' ),
-			'slug'  => 'red-stage',
-			'color' => '#b15330',
-		]
-	] );
+	**/
 
 	// Editor block font sizes. These font sizes are also defined in the
 	// `resources/scss/settings/_fonts.scss` file.
 	add_theme_support( 'editor-font-sizes', [
 		[
 			'name'      => __( 'Small' ),
-			'shortName' => __( 'S' ),
-			'size'      => 12,
+			'size'      => 16,
 			'slug'      => 'small'
 		],
 		[
 			'name'      => __( 'Regular' ),
-			'shortName' => __( 'M' ),
-			'size'      => 16,
+			'size'      => 19,
 			'slug'      => 'regular'
 		],
 		[
 			'name'      => __( 'Large' ),
-			'shortName' => __( 'L' ),
-			'size'      => 36,
+			'size'      => 22,
 			'slug'      => 'large'
 		],
 		[
 			'name'      => __( 'Larger' ),
-			'shortName' => __( 'XL' ),
-			'size'      => 48,
+			'size'      => 25,
 			'slug'      => 'larger'
 		]
 	] );
@@ -140,6 +113,7 @@ add_action( 'after_setup_theme', function() {
  * @access public
  * @return void
  */
+/**
 add_action( 'after_setup_theme', function() {
 
 	add_theme_support( 'custom-background', [
@@ -157,6 +131,7 @@ add_action( 'after_setup_theme', function() {
 	] );
 
 }, 15 );
+**/
 
 /**
  * Adds support for the custom header feature. This is in its own function
@@ -169,6 +144,7 @@ add_action( 'after_setup_theme', function() {
  * @access public
  * @return void
  */
+/**
 add_action( 'after_setup_theme', function() {
 
 	add_theme_support( 'custom-header', [
@@ -189,6 +165,7 @@ add_action( 'after_setup_theme', function() {
 	] );
 
 }, 15 );
+**/
 
 /**
  * Register menus.
@@ -201,7 +178,8 @@ add_action( 'after_setup_theme', function() {
 add_action( 'init', function() {
 
 	register_nav_menus( [
-		'primary' => esc_html_x( 'Primary', 'nav menu location' )
+		'primary' => esc_html_x( 'Primary', 'nav menu location' ),
+		'social'  => esc_html_x( 'Social',  'nav menu location' )
 	] );
 
 }, 5 );
@@ -224,7 +202,7 @@ add_action( 'init', function() {
 	set_post_thumbnail_size( 178, 100, true );
 
 	// Register custom image sizes.
-	add_image_size( 'exhale-medium', 750, 422, true );
+	add_image_size( 'exhale-medium', 650, 366, true );
 
 }, 5 );
 
@@ -237,6 +215,7 @@ add_action( 'init', function() {
  * @access public
  * @return void
  */
+/**
 add_action( 'widgets_init', function() {
 
 	$args = [
@@ -252,3 +231,33 @@ add_action( 'widgets_init', function() {
 	] + $args );
 
 }, 5 );
+**/
+
+/**
+ * Changes the theme template path to the `public/views` folder.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return string
+ */
+add_filter( 'hybrid/template/path', function() {
+	return 'public/views';
+} );
+
+/**
+ * Registers custom templates with WordPress.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  object  $templates
+ * @return void
+ */
+add_action( 'hybrid/templates/register', function( $templates ) {
+
+	$templates->add( 'landing.php', [
+		'label'      => __( 'Landing' ),
+		'post_types' => [
+			'page'
+		]
+	] );
+} );

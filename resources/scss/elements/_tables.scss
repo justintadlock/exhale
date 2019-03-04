@@ -1,0 +1,34 @@
+// Tables.
+
+table {
+	width           : 100%;
+	border-collapse : collapse;
+	border-spacing  : 0;
+	margin-bottom   : 2em;
+}
+
+caption {
+	margin       : 0 0 5px;
+	font-variant : small-caps;
+}
+
+th,
+td {
+	padding        : 10px;
+	box-sizing     : border-box;
+	vertical-align : top;
+	text-align     : left;
+
+	&:empty,
+ 	&.pad { opacity : 0; }
+}
+
+th {
+	font-size   : 16px;
+	font-weight : 700;
+	text-align  : left;
+}
+
+td {
+	border : 1px solid color-rgb( mercury );
+}

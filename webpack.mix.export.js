@@ -13,7 +13,7 @@
  */
 
 // Import required packages.
-const { mix } = require( 'laravel-mix' );
+const mix     = require( 'laravel-mix' );
 const rimraf  = require( 'rimraf' );
 const fs      = require( 'fs' );
 
@@ -34,11 +34,10 @@ let files = [
 // Folders to include.
 let folders = [
 	'app',
-	'dist',
+	'public',
 	'resources/lang',
 //	'resources/js',      // Required for WordPress.org theme review.
 //	'resources/scss',    // Required for WordPress.org theme review.
-	'resources/views',
 	'vendor'
 ];
 

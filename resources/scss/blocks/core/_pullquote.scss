@@ -7,11 +7,69 @@
 ////
 
 .wp-block-pullquote {
-	padding:    3em 0;
 	text-align: center;
+
+	// We must define a default border color here so that `blockquote::before`
+	// can eventually inherit this color. The border color can be overwritten
+	// via the editor ("main" color).
+	border-color: color-rgb( white-smoke );
+
+	@media only screen and ( max-width: 900px ) {
+		&.alignwide,
+		&.alignfull {
+			padding: 0 1.5em;
+		}
+	}
+
+	&.alignwide,
+	&.alignfull {
+		margin-bottom: 0;
+	}
+
+	&.is-style-solid-color {
+		margin-bottom: 2em;
+		padding: 2em 2em 0;
+	}
+
+	// Inherits from blockquote and its pullquote <figure> wrapper.
+	&::before {
+		content: " ";
+		display: block;
+		width: 25%;
+		margin: 0 auto;
+		padding: 0 0 2em;
+		border-top: 2px solid;
+		border-color: inherit;
+	}
+
+	&.is-style-solid-color::before {
+		content: none;
+	}
+
+	blockquote {
+		overflow:     hidden;
+		padding:      0;
+		font-size:    1.25em;
+		font-style:   italic;
+	}
+
+	&.alignfull blockquote {
+		width:        100%;
+		max-width:    900px;
+		margin-left:  auto;
+		margin-right: auto;
+	}
 
 	cite,
 	footer {
+		display:  block;
 		position: relative;
+		margin-bottom: 2em;
 	}
+}
+
+// We need to have this sit alone so that it doesn't override background colors
+// with too high of a specificity.
+.is-style-solid-color {
+	background: color-rgb( white-smoke );
 }

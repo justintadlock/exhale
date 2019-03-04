@@ -8,5 +8,7 @@
 
 .wp-block-table {
 
-	&.has-fixed-layout {}
+	&.has-fixed-layout {
+		table-layout: fixed;
+	}
 }

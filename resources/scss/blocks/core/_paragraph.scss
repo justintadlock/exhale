@@ -1,0 +1,25 @@
+
+
+.has-drop-cap::first-letter {
+	float: left;
+	line-height: 1em;
+	font-size: 4em;
+	font-weight: 600;
+	margin-right: 0.125em;
+	text-transform: uppercase;
+}
+
+p.has-background {
+	box-sizing:    border-box;
+	width:         calc( 100% + 4em );
+	margin-left:   -2em;
+	padding:       2em;
+
+/*
+	@media( min-width: break( 'content' ) ) {
+		width:       calc( 100% + 4em );
+		margin-left: -2em;
+		padding:     2em;
+	}
+	*/
+}

@@ -6,21 +6,12 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-/// Returns a map of colors in name-value format. This function also merges
-/// with the `block-colors()` map to create a map of all colors.
-///
-/// @since  1.0.0
-/// @access public
-/// @return {map}  Map of defined colors.
+@function color-rgb( $name ) {
+	@return unquote( "rgb( var( --color-#{ $name } ) )" );
+}
 
-@function colors() {
-
-	$colors : (
-		white : #fff,
-		black : #000
-	);
-
-	@return map-merge( $colors, block-colors() );
+@function color-rgba( $name, $alpha : 1 ) {
+	@return unquote( "rgba( var( --color-#{ $name } ), #{$alpha} )" );
 }
 
 /// Returns a map of block colors in name-value format. These are the colors
@@ -34,33 +25,27 @@
 @function block-colors() {
 
 	@return (
-		charcoal  : #282c34,
-		regent    : #8c97a7,
-		husk      : #b9a364,
-		red-stage : #b15330
+		black          : color-rgb( black ),
+		mine-shaft     : color-rgb( mine-shaft ),
+		charcoal       : color-rgb( charcoal ),
+		bayou          : color-rgb( bayou ),
+		dusty-gray     : color-rgb( dusty-grey ),
+		persimmon      : color-rgb( persimmon ),
+		coral-red      : color-rgb( coral-red ),
+		mercury        : color-rgb( mercury ),
+		eastern-blue   : color-rgb( eastern-blue ),
+		malachite      : color-rgb( malachite ),
+		silver-chalice : color-rgb( silver-chalice ),
+		white-smoke    : color-rgb( white-smoke ),
+		wild-sand      : color-rgb( wild-sand ),
+		white          : color-rgb( white )
 	);
 }
 
-/// Returns a single color value by name.
-///
-/// @since  1.0.0
-/// @access public
-/// @param  {string}  $name  Color name.
-/// @return {string}         Color value.
 
-@function color( $name ) {
+@function color-text-map() {
 
-	@return map-get( colors(), $name );
-}
-
-/// Returns a single block color value by name.
-///
-/// @since  1.0.0
-/// @access public
-/// @param  {string}  $name  Color name.
-/// @return {string}         Color value.
-
-@function block-color( $name ) {
-
-	@return map-get( block-colors(), $name );
+	@return (
+		charcoal       : #f1f1f1
+	);
 }

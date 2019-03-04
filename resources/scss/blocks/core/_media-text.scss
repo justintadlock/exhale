@@ -1,0 +1,70 @@
+////
+/// Media text block.
+///
+/// @group  Blocks
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
+
+.wp-block-media-text {
+	display:               grid;
+	grid-template-rows:    auto;
+	align-items:           center;
+	grid-gap:              0 2em;
+	grid-template-areas:
+		"media-text-media media-text-content"
+		"resizer resizer";
+	grid-template-columns: 50% auto;
+
+	&.alignfull {
+		padding: 0 2em;
+	}
+
+	&.alignwide,
+	&.alignfull {
+		margin-bottom: 0;
+	}
+
+	&[class*=background-color],
+	&[style*=background-color] {
+		margin-bottom: 2em;
+		padding: 2em 2em 0;
+	}
+
+	&.has-media-on-the-right {
+		grid-template-areas:
+			"media-text-content media-text-media"
+			"resizer resizer";
+		grid-template-columns: auto 50%;
+	}
+
+	&__media {
+		grid-area: media-text-media;
+	}
+
+	&__content {
+		word-break: break-word;
+		grid-area:  media-text-content;
+	}
+
+	> figure > img,
+	> figure > video {
+		max-width:      unset;
+		width:          100%;
+		vertical-align: middle;
+	}
+}
+
+.has-media-on-the-right .wp-block-media-text__content {
+	padding: 0 2em 0 0;
+}
+
+@media ( max-width: break( 'small' ) ) {
+
+	.wp-block-media-text.is-stacked-on-mobile {
+		grid-template-columns: 100% !important; // Overwrite core's inline style.
+		grid-template-areas:
+			"media-text-media"
+			"media-text-content";
+	}
+}

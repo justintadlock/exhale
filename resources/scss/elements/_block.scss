@@ -1,0 +1,28 @@
+
+// Paragraphs.
+p {
+	//font-size     : 1em;
+ 	//line-height   : 1.45;
+	//margin-bottom : 1.3em;
+	//line-height: 2;
+	margin: 0 0 2rem;
+
+	&:empty {
+		margin      : 0;
+		padding     : 0;
+		line-height : 0;
+	}
+}
+
+// Horizontal rules.
+hr {
+	height:        2px;
+	margin-bottom: 2em;
+	background:    color-rgb( white-smoke );
+	border:        none;
+}
+
+// Address.
+address {
+	margin-bottom: 2em;
+}

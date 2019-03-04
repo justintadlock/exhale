@@ -1,0 +1,27 @@
+// Quotes.
+
+blockquote {
+	margin:     0;
+	padding:    0 2em;
+	font-style: italic;
+	color:      color-rgb( bayou );
+
+	i,
+	em,
+	cite { font-style : normal; }
+
+	.has-cite {
+		margin-top: -1rem;
+		text-align: center;
+	}
+}
+
+// Cite.
+cite {
+	font-size:    0.875em;
+	font-style:   normal;
+	font-variant: small-caps;
+}
+
+// Inline quotes.
+q { quotes : '\201C' '\201D' '\2018' '\2019'; }

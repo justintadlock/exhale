@@ -7,7 +7,7 @@
 ////
 
 .wp-block-file {
-	margin-bottom: 1.5em;
+	margin-bottom: 2em;
 
 	&.aligncenter {
 		text-align: center;
@@ -18,18 +18,19 @@
 	}
 
 	&__button {
-		background:      color( black );
-		color:           color( white );
-		padding:         0.5em 1em;
+		color:           color-rgb( white );
+		background:      color-rgb( charcoal );
+		border-radius:   3px;
+		display:         inline-block;
+		margin:          0;
+		padding:         0.5em 3em;
 		text-decoration: none;
+		white-space:     normal;
+		word-break:      break-all;
 
 		&:hover,
-		&:visited,
-		&:focus,
-		&:active {
-			color:           color( white );
-			opacity:         0.85;
-			text-decoration: none;
+		&:focus {
+			text-decoration: underline;
 		}
 	}
 }

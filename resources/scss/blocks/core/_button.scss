@@ -7,22 +7,40 @@
 ////
 
 .wp-block-button {
+	margin-bottom: 2em;
 
-	margin-bottom: 1.5em;
+	&__link:not( .has-text-color ) {
+		color: color-rgb( white );
+	}
 
-	&__link {
-		border:          none;
-		border-radius:   0;
-		box-shadow:      none;
-		cursor:          pointer;
+	&__link:not( .has-background ) {
+		background: color-rgb( charcoal );
+	}
+
+	&__link,
+	&__link:hover,
+	&__link:focus {
+		border-radius:   3px;
 		display:         inline-block;
-		font-size:       18px;
-		line-height:     24px;
 		margin:          0;
-		padding:         11px 24px;
-		text-align:      center;
+		padding:         0.5em 3em;
 		text-decoration: none;
 		white-space:     normal;
 		word-break:      break-all;
+	}
+
+	&__link:hover,
+	&__link:focus {
+		text-decoration: underline;
+	}
+
+	&.is-style-squared .wp-block-button__link {
+		border-radius: 0;
+	}
+
+	&.is-style-outline .wp-block-button__link {
+		color: inherit;
+		background: transparent;
+		border: 1px solid color-rgb( charcoal );
 	}
 }

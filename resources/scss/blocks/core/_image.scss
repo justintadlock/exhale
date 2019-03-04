@@ -7,7 +7,7 @@
 ////
 
 .wp-block-image {
-	width:     fit-content;
+//	width:     fit-content;
 	max-width: 100%;
 
 	img {
@@ -30,5 +30,8 @@
 		}
 	}
 
-	figcaption {}
+	figcaption {
+		@include meta;
+		text-align: center;
+	}
 }

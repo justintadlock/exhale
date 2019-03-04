@@ -11,20 +11,32 @@
 
 // Left alignment.
 .alignleft {
-	@media( min-width: content-width() / 2 ) {
+	@media( min-width: break( 'mobile' ) ) {
 		float:     left;
-		margin:    0 1.5rem 1.5rem 0;
+		margin:    0 1.5em 1.5em 0;
 		max-width: 50%;
 	}
 }
 
+.alignleft.is-small {
+	float:     left;
+	margin:    0 1.5em 1.5em 0;
+	max-width: 50%;
+}
+
 // Right alignment.
 .alignright {
-	@media( min-width: content-width() / 2 ) {
-		float:     left;
-		margin:    0 0 1.5rem 1.5rem;
+	@media( min-width: break( 'mobile' ) ) {
+		float:     right;
+		margin:    0 0 1.5em 1.5em;
 		max-width: 50%;
 	}
+}
+
+.alignright.is-small {
+	float:     right;
+	margin:    0 0 1.5em 1.5em;
+	max-width: 50%;
 }
 
 // Center alignment.
@@ -37,19 +49,32 @@
 }
 
 // Align full and wide classes.
+.alignwide,
 .alignfull,
-.alignwide {
-	margin-left  : calc( -100vw / 2 + 100% / 2 );
-        margin-right : calc( -100vw / 2 + 100% / 2 );
-	width:        auto;
+.aligncenter {
+	margin-bottom: 2em;
+}
+
+p .alignwide,
+p .alignfull,
+p .aligncenter {
+	margin-bottom: 0;
+}
+
+.alignwide,
+.alignfull {
+	box-sizing:   border-box;
+	margin-left:  calc( -100vw / 2 + 100% / 2 );
+	margin-right: calc( -100vw / 2 + 100% / 2 );
 	max-width:    100vw;
 }
 
-@media( min-width: content-width() ) {
 
-	.alignwide {
-		margin-left  : -25%;
-		margin-right : -25%;
-		max-width    : calc( #{ content-width() } + 50% );
-        }
+@media only screen and ( min-width: 900px ) {
+
+    .alignwide {
+        margin-left  : -125px;
+        margin-right : -125px;
+        max-width    : 900px;
+    }
 }

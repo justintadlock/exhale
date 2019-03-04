@@ -14,14 +14,25 @@
 	&__title {}
 
 	// Comments list wrapper.
-	&__list {
+	//
+	// Children lists (note that WP doesn't have a filter -- the
+	// only way to change this class is with a custom Walker).
+	// @link https://core.trac.wordpress.org/ticket/44923
 
-		// Children lists (note that WP doesn't have a filter -- the
-		// only way to change this class is with a custom Walker).
-		// @link https://core.trac.wordpress.org/ticket/44923
-		.children {}
+	&__list,
+	&__list .children {
+		list-style: none;
+		margin:     0;
+		padding:    0;
 	}
 
 	// Comments closed message.
-	&__closed {}
+	&__closed {
+		@include meta;
+		text-align: center;
+	}
+}
+
+.comment--depth-1 > .children {
+	padding-left: 2em;
 }

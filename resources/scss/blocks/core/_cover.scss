@@ -1,0 +1,83 @@
+////
+/// Cover (media) block.
+///
+/// @group  Blocks
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
+
+// The cover media `<div>` element. The media is added as a background.
+.wp-block-cover {
+	position:            relative;
+	background-size:     cover;
+	background-position: 50%;
+	min-height:          430px;
+	margin:              0 0 2em;
+	padding:             0 2em;
+	display:             flex;
+	justify-content:     center;
+	align-items:         center;
+	box-shadow: 0 1px 3px rgba( 0, 0, 0, 0.12 ),
+	            0 1px 2px rgba( 0, 0, 0, 0.24 );
+	border-radius: 3px;
+	box-sizing: border-box;
+
+	// Parallax images should have a fixed background so that the image
+	// stays in place while everything else scrolls.
+	&.has-parallax {
+		background-attachment: fixed;
+	}
+
+	// Left/Right text content.
+	&.has-left-content {
+		justify-content: flex-start;
+	}
+
+	&.has-right-content {
+		justify-content: flex-end;
+	}
+
+	&__video-background {
+		position:   absolute;
+		width:      100%;
+		height:     100%;
+		top:        50%;
+		left:       50%;
+		object-fit: fill;
+		transform:  translateX(-50%) translateY(-50%);
+		z-index:    1;
+	}
+}
+
+// Paragraph of text shown within the cover image element.
+.wp-block-cover-text {
+	color:         color-rgb( white );
+	font-size:     2.5em;
+	z-index:       1;
+	margin-bottom: 0;
+	max-width:     content-width();
+	padding:       2em 0;
+	text-align:    center;
+	text-shadow:   1px 1px 2px color-rgba( charcoal, 0.5 );
+
+	a {
+		color: inherit;
+	}
+
+	a:hover,
+	a:focus,
+	a:active {
+		color:      color-rgb( white );
+		background: color-rgba( white, 0.2 );
+	}
+}
+
+// Left-aligned text.
+.has-left-content .wp-block-cover-text {
+	text-align: left;
+}
+
+// Right-aligned text.
+.has-right-content .wp-block-cover-text {
+	text-align: right;
+}

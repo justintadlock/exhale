@@ -9,5 +9,14 @@
 ////
 
 .app-content {
+	overflow: hidden;
+	position:  relative;
+	max-width: 100%;
+	margin:    0 auto;
+	padding:   0 1.5em;
+	word-wrap  : break-word;
+	word-break : normal;
+	box-sizing: border-box;
 
+	@include typography;
 }

@@ -22,7 +22,92 @@
 	// to import everything, such as styles that don't have an effect on
 	// block output.
 
-	@import 'elements/_index';
+	//@import 'elements/_index';
+	@import 'elements/defaults';
+	@import 'elements/block';
+	@import 'elements/code';
+	//@import 'elements/forms';
+	@import 'elements/headings';
+	@import 'elements/inline';
+	@import 'elements/links';
+	@import 'elements/lists';
+	@import 'elements/media.scss';
+	@import 'elements/quotes.scss';
+	@import 'elements/tables.scss';
+
 	@import 'blocks/_index';
 	@import 'utilities/_index';
+}
+
+.edit-post-visual-editor.editor-styles-wrapper {
+	font-family: font-family( primary );
+	font-size:   16px;
+	color:       #687d81;
+}
+
+.editor-writing-flow {
+	@include typography;
+}
+
+// Fix for paragraphs.
+//.editor-styles-wrapper .wp-block-paragraph {
+//	font-size: 1.1875em;
+//	line-height: 2;
+//}
+
+// The editor should conform to the content width.  We also need to add 30px b/c
+// of the padding and margin in the editor.
+.wp-block {
+	max-width: $content-width + 30px;
+	//@include typography;
+}
+
+// Editor post title.
+.editor-post-title__block .editor-post-title__input {
+	font-family: font-family( 'secondary' );
+	color: #222;
+
+	font-size: 2.25rem;
+	letter-spacing: 1px;
+	text-align: center;
+	font-weight: 900;
+	line-height: 1.5;
+
+	@media only screen and ( min-width: 950px ) {
+		font-size: 2.75rem;
+		max-width    : 950px;
+	}
+}
+
+// Code block fixes. The code block in the editor is a `<textarea>`.
+.wp-block-code .editor-plain-text,
+.wp-block-code .editor-plain-text:focus {
+	@include code-block;
+}
+
+// Class is used in the editor but not the front end.
+// Copied from `/elements/_quotes.scsss` and `/blocks/core/_pullquote.scss`.
+.wp-block-pullquote__citation,
+.wp-block-quote__citation {
+	font-size: 0.875em;
+	font-style: normal;
+	font-variant: small-caps;
+}
+
+.wp-block-pullquote__citation {
+	margin-bottom: 2em;
+}
+
+// Fix for wide/full align in editor.
+.edit-post-visual-editor.editor-styles-wrapper .alignwide,
+.edit-post-visual-editor.editor-styles-wrapper .alignfull {
+	box-sizing: border-box;
+	margin-left: 0;
+	margin-right: 0;
+	max-width: 100%;
+}
+
+// Media text fixes.
+.wp-block-media-text .editor-inner-blocks {
+	padding: 0;
 }

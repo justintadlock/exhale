@@ -10,6 +10,17 @@
 
 .comment {
 
+	&--depth-1 {
+		margin: 0 -2em 2em;
+		padding: 2em 2em 0;
+		border:  1px solid color-rgb( mercury );
+
+		@media only screen and ( max-width: $content-width ) {
+			border-left-width: 0;
+			border-right-width: 0;
+		}
+	}
+
 	// Type of comment.
 	&--type-comment {}
 
@@ -25,10 +36,36 @@
 	&__moderation {}
 
 	// Metadata wrapper.
-	&__meta {}
+	&__meta {
+		@include meta;
+		padding:       0 0 1em;
+		margin:        0 0 1em;
+		border-bottom: 1px solid color-rgb( mercury );
+	}
 
 	// Individual metadata items.
-	&__avatar {}
+	&__avatar {
+		float:         left;
+		margin-right:  1em;
+		border-radius: 50%;
+	}
+
+	&__parent {
+		font-size: 0.9125em;
+
+		svg {
+			height: 1em;
+			vertical-align: text-bottom;
+			padding: 0 0.25em 0.1em;
+		}
+	}
+
+	&__parent-link {
+		font-size: 0.9125em;
+		display: inline-block;
+		margin-bottom: 0.5em;
+		color: color-rgb( silver-chalice );
+	}
 
 	&__author {}
 

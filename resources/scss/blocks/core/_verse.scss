@@ -7,5 +7,11 @@
 ////
 
 .wp-block-verse {
-
+	padding:     0;
+	line-height: inherit;
+	font-family: font-family( 'primary' );
+	font-size:   inherit;
+	background:  inherit;
+	color:       inherit;
+	box-shadow:  none;
 }

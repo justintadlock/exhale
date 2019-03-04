@@ -1,0 +1,33 @@
+
+// Headings.
+h1, h2, h3, h4, h5, h6 {
+	margin:      1.414em 0 0.5em;
+	line-height: 1.58;
+	font-family: font-family( 'secondary' );
+	font-weight: 700;
+	color:       color-rgb( mine-shaft );
+}
+
+h1 {
+	font-size: 2.05em;
+}
+
+h2 {
+	font-size: 1.68em;
+}
+
+h3 {
+	font-size: 1.26em;
+}
+
+h4 {
+	font-size: 1em;
+}
+
+h5 {
+	font-size: 0.9em;
+}
+
+h6 {
+	font-size: 0.84em;
+}

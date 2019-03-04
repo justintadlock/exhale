@@ -1,0 +1,33 @@
+// Lists.
+ul,
+ol {
+	padding-left: 2em;
+	margin: 0 0 2em;
+
+	@media ( max-width: break( 'mobile' ) ) {
+		padding-left: 1em;
+	}
+
+	&.aligncenter,
+	&.aligncenter ul {
+		list-style: none;
+	}
+}
+
+// Remove bottom margin from lists that are direct children of a list item.
+li > ul,
+li > ol { margin-bottom : 0; }
+
+dt {
+	font-weight: 700;
+	font-family: font-family( 'secondary' );
+}
+
+dd {
+	display:       list-item;
+	margin:        0 0 0.5em 2em;
+
+	+ dd {
+		margin-top: -0.5em;
+	}
+}

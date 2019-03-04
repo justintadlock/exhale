@@ -15,7 +15,7 @@
  */
 
 // Import required packages.
-const { mix }           = require( 'laravel-mix' );
+const mix               = require( 'laravel-mix' );
 const ImageminPlugin    = require( 'imagemin-webpack-plugin' ).default;
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const imageminMozjpeg   = require( 'imagemin-mozjpeg' );
@@ -52,10 +52,10 @@ if ( process.env.export ) {
 const devPath  = 'resources';
 
 /*
- * Sets the path to the generated assets. By default, this is the `/dist` folder
+ * Sets the path to the generated assets. By default, this is the `/public` folder
  * in the theme. If doing something custom, make sure to change this everywhere.
  */
-mix.setPublicPath( 'dist' );
+mix.setPublicPath( 'public' );
 
 /*
  * Set Laravel Mix options.
@@ -119,7 +119,7 @@ mix.sass( `${devPath}/scss/screen.scss`,             'css', sassConfig )
  *
  * Laravel Mix doesn't currently minimize images while using its `.copy()`
  * function, so we're using the `CopyWebpackPlugin` for processing and copying
- * images into the distribution folder.
+ * images into the publicribution folder.
  *
  * @link https://laravel.com/docs/5.6/mix#custom-webpack-configuration
  * @link https://webpack.js.org/configuration/
@@ -139,9 +139,9 @@ mix.webpackConfig( {
 	plugins     : [
 		// @link https://github.com/webpack-contrib/copy-webpack-plugin
 		new CopyWebpackPlugin( [
-			{ from : `${devPath}/img`,   to : 'img'   },
-			{ from : `${devPath}/svg`,   to : 'svg'   },
-			{ from : `${devPath}/fonts`, to : 'fonts' }
+		//	{ from : `${devPath}/img`,   to : 'img'   },
+			{ from : `${devPath}/svg`,   to : 'svg'   }
+		//	{ from : `${devPath}/fonts`, to : 'fonts' }
 		] ),
 		// @link https://github.com/Klathmon/imagemin-webpack-plugin
 		new ImageminPlugin( {
@@ -178,7 +178,7 @@ if ( process.env.sync ) {
 	mix.browserSync( {
 		proxy : 'localhost',
 		files : [
-			'dist/**/*',
+			'public/**/*.css',
 			`${devPath}/views/**/*.php`,
 			'app/**/*.php',
 			'functions.php'

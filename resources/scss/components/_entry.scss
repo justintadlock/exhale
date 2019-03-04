@@ -17,13 +17,17 @@
 	&.sticky {}
 
 	// Featured image.
-	&__image {}
+	&__image {
+		margin: 1.414em 0 0.5em;
+	}
 
 	// Header wrapper.
 	&__header {}
 
 	// Entry title.
-	&__title {}
+	&__title {
+		font-size: 1.5rem;
+	}
 
 	// Full entry content.
 	&__content {}
@@ -32,16 +36,39 @@
 	&__summary {}
 
 	// Meta wrappers.
-	&__byline {}
+	&__byline,
+	&__footer {
+		@include meta;
+	}
 
-	&__footer {}
+	&__byline {
+		margin: 1em 0 0.5em 0;
+	}
 
-	// Individual metadata items.
-	&__author {}
+	&__footer {
+		margin: 1em 0 2em;
+		text-align: center;
+	}
 
-	&__published {}
+	&__topics {
+		a {
+			margin: 0 0.25rem;
+		}
+	}
+}
 
-	&__comments {}
+.single .entry {
 
-	&__terms {}
+	&__header {
+		margin-bottom: 3rem;
+		text-align: center;
+	}
+
+	&__title {
+		@include heading-primary;
+	}
+
+	&__byline {
+		margin: 0;
+	}
 }

@@ -1,0 +1,16 @@
+////
+/// CSS variables.
+///
+/// If you prefer to work with CSS variables, use this file to define them. By
+/// default, we're outputting variables set up in `/settings`.
+///
+/// @group  Generic
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/mythic
+////
+
+:root {
+	@each $color-name, $color-value in block-colors() {
+		--color-#{ $color-name }: #{ $color-value };
+	}
+}

@@ -1,0 +1,7 @@
+.wp-caption {
+	max-width: 100%;
+
+	&-text {
+		@include meta;
+	}
+}

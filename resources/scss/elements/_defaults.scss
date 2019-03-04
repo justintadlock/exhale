@@ -6,8 +6,26 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+html {
+	font-size:   16px;
+	font-family: font-family( 'primary' );
+	line-height: 1.667;
+	color:       color-rgb( bayou );
+
+	@media ( max-width: break( 'mobile' ) ) {
+		font-size: 15px;
+	}
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
 // Body styles. Note that we're hiding horizontal overflow so that wide images
 // don't overflow.
 body {
 	overflow-x: hidden;
+	background: color-rgb( white );
 }
