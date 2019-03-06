@@ -44,7 +44,7 @@
 .alignfull.wp-block-cover + .alignfull.wp-block-cover,
 .alignfull.wp-block-cover + .alignfull[style*=background-cover],
 .alignfull.wp-block-cover + .alignfull[class*=background-cover] {
-	margin-top: -2em;
+	margin-top: -#{ $spacing-global };
 }
 
 /// We don't really know what color combos we have here, so we're going to make

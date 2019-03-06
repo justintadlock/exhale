@@ -1,0 +1,13 @@
+////
+/// Spacing settings.
+///
+/// @group  Settings
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+$spacing-global   : 2.125rem;
+$spacing-fourth   : $spacing-global * 0.25; // 0.5
+$spacing-half     : $spacing-global * 0.5; // 1
+$spacing-one-five : $spacing-global * 1.5;
+$spacing-2x       : $spacing-global * 2;

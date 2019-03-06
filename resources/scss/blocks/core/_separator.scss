@@ -8,4 +8,11 @@
 
 .wp-block-separator {
 
+	&.is-style-wide {
+		border-top-width: 4px;
+	}
+
+	&.is-style-dots {
+		border-top: 4px dotted color-rgb( mercury );
+	}
 }

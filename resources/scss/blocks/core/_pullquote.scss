@@ -27,8 +27,8 @@
 	}
 
 	&.is-style-solid-color {
-		margin-bottom: 2em;
-		padding: 2em 2em 0;
+		margin-bottom: $spacing-global;
+		padding: $spacing-global $spacing-global 0;
 	}
 
 	// Inherits from blockquote and its pullquote <figure> wrapper.
@@ -37,7 +37,7 @@
 		display: block;
 		width: 25%;
 		margin: 0 auto;
-		padding: 0 0 2em;
+		padding: 0 0 $spacing-global;
 		border-top: 2px solid;
 		border-color: inherit;
 	}
@@ -64,7 +64,7 @@
 	footer {
 		display:  block;
 		position: relative;
-		margin-bottom: 2em;
+		margin-bottom: $spacing-global;
 	}
 }
 

@@ -8,24 +8,32 @@
 
 .wp-block-embed {
 
-	// Image embeds.
-	&.is-type-image {}
-
-	// Audio embeds.
-	&.is-type-audio {}
-
-	// Rich text embeds (text, Twitter, etc.)
-	&.is-type-rich {}
-
-	// Video embeds.
-	&.is-type-video {}
-
-	// Directly target iframes.
-	iframe {}
-
 	// Caption below embedded content.
 	figcaption {
 		margin-top: 0.5em;
 		text-align: center;
+	}
+}
+
+.is-type-video {
+
+	.wp-block-embed__wrapper {
+		position:       relative;
+		margin-bottom:  1.5rem;
+		padding-bottom: 56.25%;
+		padding-top:    30px;
+		height:         0;
+		overflow:       hidden;
+
+		iframe,
+		object,
+		embed {
+			position:  absolute;
+			top:       0;
+			left:      0;
+			width:     100%;
+			max-width: 100%;
+			height:    100%;
+		}
 	}
 }

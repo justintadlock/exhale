@@ -16,6 +16,7 @@ namespace Exhale;
 
 use Hybrid\App;
 use Exhale\Colors\Colors;
+use Exhale\Fonts\Manager as FontManager;
 
 /**
  * Enqueue scripts/styles for the front end.
@@ -43,6 +44,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_style( 'exhale-screen', asset( 'css/screen.css' ), null, null );
 
 	wp_add_inline_style( 'exhale-screen', App::resolve( Colors::class )->inlineStyle() );
+	wp_add_inline_style( 'exhale-screen', App::resolve( FontManager::class )->familyInlineStyle() );
 
 } );
 
@@ -59,6 +61,7 @@ add_action( 'enqueue_block_editor_assets', function() {
 	wp_enqueue_style( 'exhale-editor', asset( 'css/editor.css' ), null, null );
 
 	wp_add_inline_style( 'exhale-editor', App::resolve( Colors::class )->inlineStyle() );
+	wp_add_inline_style( 'exhale-editor', App::resolve( FontManager::class )->familyInlineStyle() );
 
 	// Unregister core block and theme styles.
 	wp_deregister_style( 'wp-block-library' );

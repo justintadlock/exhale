@@ -26,7 +26,7 @@
 
 	// Entry title.
 	&__title {
-		font-size: 1.5rem;
+	//	font-size: 1.5rem;
 	}
 
 	// Full entry content.
@@ -42,11 +42,11 @@
 	}
 
 	&__byline {
-		margin: 1em 0 0.5em 0;
+		margin: $spacing-half 0 $spacing-fourth 0;
 	}
 
 	&__footer {
-		margin: 1em 0 2em;
+		margin: $spacing-half 0 $spacing-global;
 		text-align: center;
 	}
 

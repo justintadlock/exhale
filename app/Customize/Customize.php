@@ -16,7 +16,9 @@
 namespace Exhale\Customize;
 
 use WP_Customize_Manager;
+use Hybrid\App;
 use Hybrid\Contracts\Bootable;
+use Exhale\Fonts\Families;
 use function Exhale\asset;
 
 /**
@@ -58,7 +60,12 @@ class Customize implements Bootable {
 	 * @param  WP_Customize_Manager  $manager  Instance of the customize manager.
 	 * @return void
 	 */
-	public function registerPanels( WP_Customize_Manager $manager ) {}
+	public function registerPanels( WP_Customize_Manager $manager ) {
+
+		$manager->add_panel( 'theme_options', [
+			'title' => __( 'Theme Options' )
+		] );
+	}
 
 	/**
 	 * Callback for registering sections.
@@ -69,7 +76,13 @@ class Customize implements Bootable {
 	 * @param  WP_Customize_Manager  $manager  Instance of the customize manager.
 	 * @return void
 	 */
-	public function registerSections( WP_Customize_Manager $manager ) {}
+	public function registerSections( WP_Customize_Manager $manager ) {
+
+		$manager->add_section( 'fonts', [
+			'panel' => 'theme_options',
+			'title' => __( 'Fonts' )
+		] );
+	}
 
 	/**
 	 * Callback for registering settings.
@@ -83,7 +96,7 @@ class Customize implements Bootable {
 	public function registerSettings( WP_Customize_Manager $manager ) {
 
 		// Update the `transform` property of core WP settings.
-		$settings = [
+	/*	$settings = [
 			$manager->get_setting( 'blogname' ),
 			$manager->get_setting( 'blogdescription' ),
 			$manager->get_setting( 'header_textcolor' ),
@@ -94,6 +107,20 @@ class Customize implements Bootable {
 		array_walk( $settings, function( &$setting ) {
 			$setting->transport = 'postMessage';
 		} );
+		*/
+
+		$fonts = [
+			'primary'   => 'georgia',
+			'secondary' => 'georgia',
+			'headings'  => 'system-ui'
+		];
+
+		array_map( function( $name, $default ) use ( $manager ) {
+			$manager->add_setting( "font_family_{$name}", [
+				'sanitize_callback' => 'sanitize_key',
+				'default'           => $default
+			] );
+		}, array_keys( $fonts ), $fonts );
 	}
 
 	/**
@@ -105,7 +132,44 @@ class Customize implements Bootable {
 	 * @param  WP_Customize_Manager  $manager  Instance of the customize manager.
 	 * @return void
 	 */
-	public function registerControls( WP_Customize_Manager $manager ) {}
+	public function registerControls( WP_Customize_Manager $manager ) {
+
+		$font_families = [
+			'primary'   => [
+				'label'   => _x( 'Primary',   'font family setting' ),
+				'default' => 'georgia'
+			],
+			'secondary' => [
+				'label'   => _x( 'Secondary', 'font family setting' ),
+				'default' => 'georgia'
+			],
+			'headings'  => [
+				'label'   => _x( 'Headings',  'font family setting' ),
+				'default' => 'system-ui'
+			]
+		];
+
+		$choices = [];
+
+		foreach ( App::resolve( Families::class )->all() as $font ) {
+			$choices[ $font->name() ] = $font->label();
+		}
+
+		array_map( function( $name, $font ) use ( $manager, $choices ) {
+
+			// @todo - Use Hybrid Customize select group to separate
+			// web safe and Google fonts.
+			$manager->add_control( "font_family_{$name}", [
+				'label' => esc_html( $font['label'] ),
+				'section' => 'fonts',
+				'type'    => 'select',
+				'choices' => $choices,
+				'default' => $font['default']
+			] );
+
+		}, array_keys( $font_families ), $font_families );
+
+	}
 
 	/**
 	 * Callback for registering partials.
@@ -123,6 +187,7 @@ class Customize implements Bootable {
 			return;
 		}
 
+		/*
 		// Selectively refreshes the title in the header when the core
 		// WP `blogname` setting changes.
 		$manager->selective_refresh->add_partial( 'blogname', [
@@ -152,6 +217,7 @@ class Customize implements Bootable {
 				'container_inclusive' => true,
 			] );
 		}
+		*/
 	}
 
 	/**

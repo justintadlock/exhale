@@ -1,11 +1,11 @@
 // Lists.
 ul,
 ol {
-	padding-left: 2em;
-	margin: 0 0 2em;
+	padding-left: $spacing-global;
+	margin: 0 0 $spacing-global;
 
 	@media ( max-width: break( 'mobile' ) ) {
-		padding-left: 1em;
+		padding-left: $spacing-half;
 	}
 
 	&.aligncenter,
@@ -20,12 +20,12 @@ li > ol { margin-bottom : 0; }
 
 dt {
 	font-weight: 700;
-	font-family: font-family( 'secondary' );
+	font-family: font-family( 'headings' );
 }
 
 dd {
 	display:       list-item;
-	margin:        0 0 0.5em 2em;
+	margin:        0 0 0.5em $spacing-global;
 
 	+ dd {
 		margin-top: -0.5em;

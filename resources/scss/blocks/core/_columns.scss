@@ -24,7 +24,7 @@
 	flex: 1;
 
 	@media ( min-width: break( small ) ) {
-		margin-left: 2em;
+		margin-left: $spacing-global;
 	}
 
 	&:first-of-type {

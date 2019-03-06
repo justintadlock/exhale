@@ -20,11 +20,10 @@ pre {
 	@include code-block;
 	overflow      : auto;
 	word-wrap     : normal;
-	margin:         0 0 2em;
 
 	code {
 		padding    : 0;
-		font-size  : inherit;
+		font-size  : 15px;
 		background : transparent;
 	}
 }

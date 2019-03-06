@@ -10,14 +10,14 @@
 	display:               grid;
 	grid-template-rows:    auto;
 	align-items:           center;
-	grid-gap:              0 2em;
+	grid-gap:              0 $spacing-global;
 	grid-template-areas:
 		"media-text-media media-text-content"
 		"resizer resizer";
 	grid-template-columns: 50% auto;
 
 	&.alignfull {
-		padding: 0 2em;
+		padding: 0 $spacing-global;
 	}
 
 	&.alignwide,
@@ -27,8 +27,8 @@
 
 	&[class*=background-color],
 	&[style*=background-color] {
-		margin-bottom: 2em;
-		padding: 2em 2em 0;
+		margin-bottom: $spacing-global;
+		padding: $spacing-global $spacing-global 0;
 	}
 
 	&.has-media-on-the-right {
@@ -56,7 +56,7 @@
 }
 
 .has-media-on-the-right .wp-block-media-text__content {
-	padding: 0 2em 0 0;
+	padding: 0 $spacing-global 0 0;
 }
 
 @media ( max-width: break( 'small' ) ) {

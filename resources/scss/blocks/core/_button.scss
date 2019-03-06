@@ -7,7 +7,7 @@
 ////
 
 .wp-block-button {
-	margin-bottom: 2em;
+	margin-bottom: $spacing-global;
 
 	&__link:not( .has-text-color ) {
 		color: color-rgb( white );

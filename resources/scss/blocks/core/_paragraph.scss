@@ -3,7 +3,7 @@
 .has-drop-cap::first-letter {
 	float: left;
 	line-height: 1em;
-	font-size: 4em;
+	font-size: calc( 1em * 2 * 1.79 );
 	font-weight: 600;
 	margin-right: 0.125em;
 	text-transform: uppercase;
@@ -11,15 +11,7 @@
 
 p.has-background {
 	box-sizing:    border-box;
-	width:         calc( 100% + 4em );
-	margin-left:   -2em;
-	padding:       2em;
-
-/*
-	@media( min-width: break( 'content' ) ) {
-		width:       calc( 100% + 4em );
-		margin-left: -2em;
-		padding:     2em;
-	}
-	*/
+	width:         calc( 100% + #{ $spacing-2x } );
+	margin-left:   -#{ $spacing-global };
+	padding:       $spacing-global;
 }

@@ -15,8 +15,9 @@
 @function font-families() {
 
 	@return (
-		primary   : #{Georgia,serif},
-		secondary : system-ui,
+		primary   : var( --font-family-primary ),
+		secondary : var( --font-family-secondary ),
+		headings  : var( --font-family-headings ),
 		code      : #{'Source Code Pro', Monaco, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace}
 	);
 }

@@ -12,23 +12,23 @@
 	flex-wrap:       wrap;
 	list-style-type: none;
 	padding:         0;
-	margin:          0 -0.5em 1em;
+	margin:          0 -#{ $spacing-fourth } $spacing-half;
 
 	&.alignfull {
-		padding: 0 1em;
+		padding: 0 $spacing-one-five;
 	}
 
 	@media ( max-width: $content-width ) {
 		&.alignwide,
 		&.alignfull {
-			padding: 0 1.5em;
+			padding: 0 $spacing-one-five;
 		}
 	}
 }
 
 // The wrapper for individual gallery images/figures.
 .blocks-gallery-item {
-	margin:          0.5em;
+	margin:          $spacing-fourth;
 	display:         flex;
 	flex-grow:       1;
 	flex-direction:  column;
@@ -68,7 +68,7 @@
 		bottom:     0;
 		width:      100%;
 		max-height: 100%;
-		padding:    40px 1em 0.5em;
+		padding:    40px $spacing-half $spacing-fourth;
 		text-align: center;
 		color:      color-rgb( white );
 		background: linear-gradient(
@@ -114,12 +114,12 @@
 
 // Fallback to 2 columns.
 .blocks-gallery-item {
-	width: calc( 100% / 2 - 1em );
+	width: calc( 100% / 2 - #{ $spacing-half } );
 }
 
 // 1 column.
 .columns-1 .blocks-gallery-item {
-	width: calc( 100% / 1 - 1em );
+	width: calc( 100% / 1 - #{ $spacing-half } );
 }
 
 // 3-8 columns on larger screens.
@@ -128,7 +128,7 @@
 	@for $i from 3 through 8 {
 
 		.columns-#{ $i } .blocks-gallery-item {
-			width: calc( 100% / #{ $i } - 1em );
+			width: calc( 100% / #{ $i } - #{ $spacing-half } );
 		}
 	}
 }

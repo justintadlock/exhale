@@ -1,11 +1,7 @@
 
 // Paragraphs.
 p {
-	//font-size     : 1em;
- 	//line-height   : 1.45;
-	//margin-bottom : 1.3em;
-	//line-height: 2;
-	margin: 0 0 2rem;
+	margin: 0 0 $spacing-global;
 
 	&:empty {
 		margin      : 0;
@@ -16,13 +12,13 @@ p {
 
 // Horizontal rules.
 hr {
-	height:        2px;
-	margin-bottom: 2em;
-	background:    color-rgb( white-smoke );
+	height:        0;
+	margin-bottom: $spacing-global;
 	border:        none;
+	border-top: 2px solid color-rgb( mercury );
 }
 
 // Address.
 address {
-	margin-bottom: 2em;
+	margin-bottom: $spacing-global;
 }

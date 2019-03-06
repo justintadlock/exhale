@@ -7,9 +7,10 @@
 ////
 
 .wp-block-verse {
+	margin:      0 0 $spacing-global;
 	padding:     0;
 	line-height: inherit;
-	font-family: font-family( 'primary' );
+	font-family: inherit;
 	font-size:   inherit;
 	background:  inherit;
 	color:       inherit;

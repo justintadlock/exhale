@@ -1,6 +1,6 @@
 // Figures.
 figure {
-	margin-bottom : 2em;
+	margin-bottom : $spacing-global;
 }
 
 figcaption {
@@ -29,9 +29,8 @@ a img {
 	}
 }
 
-// Audio/Video
+// Embeds.
 
-audio,
-video {
-	max-width: 100%;
+audio, video, object, embed, iframe {
+	width: 100%;
 }

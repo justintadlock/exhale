@@ -23,7 +23,7 @@ select,
 textarea {
 	box-sizing:  border-box;
 	padding:     0 0.5em;
-	line-height: 2em;
+	line-height: inherit;
 	font-family: font-family( primary );
 	font-size:   1em;
 	color:       inherit;
@@ -57,7 +57,7 @@ button {
 	border-radius:   3px;
 	display:         inline-block;
 	margin:          0;
-	padding:         0.25em 2em;
+	padding:         0.25em $spacing-global;
 	text-decoration: none;
 	white-space:     normal;
 	word-break:      break-all;

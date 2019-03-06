@@ -64,10 +64,11 @@
 
 // Editor post title.
 .editor-post-title__block .editor-post-title__input {
-	font-family: font-family( 'secondary' );
+	font-family: font-family( 'headings' );
 	color: #222;
 
-	font-size: 2.25rem;
+
+	font-size: 3rem;
 	letter-spacing: 1px;
 	text-align: center;
 	font-weight: 900;
@@ -80,9 +81,16 @@
 }
 
 // Code block fixes. The code block in the editor is a `<textarea>`.
+.wp-block-code {
+	@include code-block;
+	width: calc( 100% + #{ $spacing-2x } );
+}
+
 .wp-block-code .editor-plain-text,
 .wp-block-code .editor-plain-text:focus {
-	@include code-block;
+	font-size: inherit;
+	background: inherit;
+	color: inherit;
 }
 
 // Class is used in the editor but not the front end.
@@ -95,7 +103,7 @@
 }
 
 .wp-block-pullquote__citation {
-	margin-bottom: 2em;
+	margin-bottom: $spacing-global;
 }
 
 // Fix for wide/full align in editor.

@@ -37,7 +37,7 @@ class AppServiceProvider extends ServiceProvider {
 	public function register() {
 
 		// Bind a single instance of our customizer class.
-	//	$this->app->singleton( Customize::class );
+		$this->app->singleton( Customize::class );
 
 		// Bind the Laravel Mix manifest for cache-busting.
 		$this->app->singleton( 'exhale/mix', function() {
@@ -60,6 +60,6 @@ class AppServiceProvider extends ServiceProvider {
 	public function boot() {
 
 		// Boot the customizer class instance.
-	//	$this->app->resolve( Customize::class )->boot();
+		$this->app->resolve( Customize::class )->boot();
 	}
 }
