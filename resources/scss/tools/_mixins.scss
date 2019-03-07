@@ -34,6 +34,17 @@
 	color: color-rgb( silver-chalice );
 }
 
+@mixin meta-links {
+	a {
+		color: inherit;
+	}
+
+	a:hover,
+	a:focus {
+		color: color-rgb( mine-shaft );
+	}
+}
+
 @mixin code-block {
 	tab-size      : 4;
 	margin        : 0 -#{ $spacing-global } $spacing-global;

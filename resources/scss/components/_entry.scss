@@ -17,16 +17,26 @@
 	&.sticky {}
 
 	// Featured image.
-	&__image {
-		margin: 1.414em 0 0.5em;
-	}
+	&__image {}
 
 	// Header wrapper.
-	&__header {}
+	&.has-post-thumbnail .entry__header {
+		text-align: center;
+	}
 
 	// Entry title.
 	&__title {
-	//	font-size: 1.5rem;
+		margin-bottom: $spacing-fourth;
+
+		a {
+			color: color-rgb( mine-shaft );
+			text-decoration: none;
+		}
+
+		a:hover,
+		a:focus {
+			text-decoration: underline;
+		}
 	}
 
 	// Full entry content.
@@ -35,14 +45,24 @@
 	// Summary/Excerpt.
 	&__summary {}
 
+	// More link.
+	&__more-link {
+		font-style: italic;
+	}
+
 	// Meta wrappers.
 	&__byline,
 	&__footer {
 		@include meta;
+		@include meta-links;
 	}
 
 	&__byline {
-		margin: $spacing-half 0 $spacing-fourth 0;
+		margin: 0 0 $spacing-fourth;
+	}
+
+	&.has-post-thumbnail .entry__byline {
+		margin-bottom: $spacing-global;
 	}
 
 	&__footer {

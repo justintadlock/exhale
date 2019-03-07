@@ -17,6 +17,23 @@ use Exhale\Tools\Svg;
 
 add_filter( 'walker_nav_menu_start_el', __NAMESPACE__ . '\nav_menu_social_icons', 10, 4 );
 
+add_filter( 'excerpt_length', function() {
+	return 20;
+} );
+
+add_filter( 'excerpt_more', function() {
+
+	return sprintf(
+		'&hellip;<a href="%s" class="entry__more-link">%s</a>',
+		esc_url( get_permalink() ),
+		sprintf(
+			// Translators: %s is the post title for screen readers.
+			__( 'Continue reading %s &rarr;' ),
+			the_title( '<span class="screen-reader-text">', '</span>', false )
+		)
+	);
+} );
+
 /**
  * Adds social icon SVGs to the social menu.
  *

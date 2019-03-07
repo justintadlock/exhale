@@ -203,6 +203,8 @@ add_action( 'init', function() {
 
 	// Register custom image sizes.
 	add_image_size( 'exhale-medium', 650, 366, true );
+	add_image_size( 'exhale-wide',   900, 506, true );
+	add_image_size( 'exhale-square', 218, 218, true );
 
 }, 5 );
 

@@ -4,7 +4,7 @@
 
 		<h3 class="menu__title">
 			<button class="menu__toggle">
-				<?= Exhale\Tools\Svg::display( 'bars-solid' ) ?>
+				<?php Exhale\Tools\Svg::display( 'bars-solid' ) ?>
 				<span class="screen-reader-text"><?php Hybrid\Menu\display_name( $data->location ) ?></span>
 			</button>
 		</h3>

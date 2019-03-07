@@ -1,7 +1,5 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
-	<?php the_post_thumbnail( 'exhale-medium', [ 'class' => 'entry__image' ] ) ?>
-
 	<header class="entry__header">
 		<?php Hybrid\Post\display_title() ?>
 
@@ -11,6 +9,10 @@
 			<?php Hybrid\Post\display_comments_link( [ 'before' => Exhale\sep() ] ) ?>
 		</div>
 	</header>
+
+	<?php the_post_thumbnail( 'exhale-wide', [ 'class' => 'entry__image alignwide' ] ) ?>
+
+
 
 	<div class="entry__summary">
 		<?php the_excerpt() ?>

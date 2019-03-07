@@ -44,7 +44,7 @@ class Manager implements Bootable {
 
 		$fonts = [
 			'primary'   => get_theme_mod( 'font_family_primary',   'georgia'   ),
-			'secondary' => get_theme_mod( 'font_family_secondary', 'georgia'   ),
+			'secondary' => get_theme_mod( 'font_family_secondary', 'system-ui' ),
 			'headings'  => get_theme_mod( 'font_family_headings',  'system-ui' )
 		];
 

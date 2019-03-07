@@ -23,7 +23,10 @@
 		border-radius:   3px;
 		display:         inline-block;
 		margin:          0;
-		padding:         0.5em 3em;
+		padding:         $spacing-half $spacing-global;
+		font-family:     font-family( secondary );
+		font-size:       1.125rem;
+		line-height:     1em;
 		text-decoration: none;
 		white-space:     normal;
 		word-break:      break-all;

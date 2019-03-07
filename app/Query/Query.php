@@ -34,7 +34,14 @@ class Query implements Bootable {
 
 			$query->set(
 				'posts_per_page',
-				apply_filters( 'exhale/query/posts/number', 100, $query )
+				apply_filters( 'exhale/query/posts/archive/number', 100, $query )
+			);
+
+		} elseif ( $query->is_main_query() && $query->is_home() ) {
+
+			$query->set(
+				'posts_per_page',
+				apply_filters( 'exhale/query/posts/home/number', 3, $query )
 			);
 		}
 	}

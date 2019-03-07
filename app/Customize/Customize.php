@@ -111,7 +111,7 @@ class Customize implements Bootable {
 
 		$fonts = [
 			'primary'   => 'georgia',
-			'secondary' => 'georgia',
+			'secondary' => 'system-ui',
 			'headings'  => 'system-ui'
 		];
 
