@@ -118,7 +118,8 @@ class Customize implements Bootable {
 		array_map( function( $name, $default ) use ( $manager ) {
 			$manager->add_setting( "font_family_{$name}", [
 				'sanitize_callback' => 'sanitize_key',
-				'default'           => $default
+				'default'           => $default,
+				'transport'         => 'postMessage'
 			] );
 		}, array_keys( $fonts ), $fonts );
 	}
@@ -261,6 +262,18 @@ class Customize implements Bootable {
 			[ 'customize-preview' ],
 			null,
 			true
+		);
+
+		$definitions = [];
+
+		foreach ( App::resolve( Families::class )->all() as $font ) {
+			$definitions[ $font->name() ] = $font->stack();
+		}
+
+		wp_localize_script(
+			'exhale-customize-preview',
+			'exhaleFontDefinitions',
+			$definitions
 		);
 	}
 }

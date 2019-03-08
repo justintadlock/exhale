@@ -27,15 +27,12 @@ class Manager implements Bootable {
 
 	public function registerDefaultFonts( $families ) {
 
-		$this->families->add( 'georgia', [
-			'label' => _x( 'Georgia', 'font family label' ),
-			'stack' => 'Georgia, serif'
-		] );
+		$fonts = include( 'font-definitions.php' );
 
-		$this->families->add( 'system-ui', [
-			'label' => _x( 'System UI', 'font family label' ),
-			'stack' => 'system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif'
-		] );
+		foreach ( $fonts as $name => $args ) {
+			$this->families->add( $name, $args );
+		}
+
 	}
 
 	public function familyInlineStyle() {

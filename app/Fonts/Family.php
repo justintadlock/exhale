@@ -26,10 +26,18 @@ class Family {
 	}
 
 	public function label() {
-		return $this->label ?: $this->name();
+
+		return apply_filters(
+			"exhale/font/family/{$this->name}/label",
+			$this->label ?: $this->name()
+		);
 	}
 
 	public function stack() {
-		return $this->stack;
+
+		return apply_filters(
+			"exhale/font/family/{$this->name}/stack",
+			$this->stack
+		);
 	}
 }

@@ -10,6 +10,13 @@
 //	width:     fit-content;
 	max-width: 100%;
 
+	&.alignfull img,
+	&.alignwide img {
+		margin-left:  auto;
+		margin-right: auto;
+		display:      block;
+	}
+
 	img {
 		max-width: 100%;
 	}

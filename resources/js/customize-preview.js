@@ -13,3 +13,4 @@
  */
 
 import { customHeader } from './customize-preview/custom-header';
+import { fonts }        from './customize-preview/fonts';

@@ -109,10 +109,18 @@
 // Fix for wide/full align in editor.
 .edit-post-visual-editor.editor-styles-wrapper .alignwide,
 .edit-post-visual-editor.editor-styles-wrapper .alignfull {
-	box-sizing: border-box;
-	margin-left: 0;
-	margin-right: 0;
-	max-width: 100%;
+	//box-sizing: border-box;
+	//margin-left: 0;
+	//margin-right: 0;
+	//max-width: 100%;
+}
+
+.editor-block-list {
+	&__layout &__block[data-align=full] > &__block-edit figure {
+		width: auto;
+		margin-left: 0;
+		margin-right: 0;
+	}
 }
 
 // Media text fixes.
