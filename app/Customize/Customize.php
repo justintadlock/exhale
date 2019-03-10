@@ -78,6 +78,8 @@ class Customize implements Bootable {
 	 */
 	public function registerSections( WP_Customize_Manager $manager ) {
 
+		$manager->get_section( 'colors' )->panel = 'theme_options';
+
 		$manager->add_section( 'fonts', [
 			'panel' => 'theme_options',
 			'title' => __( 'Fonts' )
@@ -109,6 +111,29 @@ class Customize implements Bootable {
 		} );
 		*/
 
+		$colors = App::resolve( \Exhale\Colors\Colors::class )->customizerColors();
+
+		/*$colors = [
+			'foreground' => '687d81',
+			'background' => 'ffffff',
+			'black'      => '000000',
+			'white'      => 'f6f6f6',
+			'red'        => 'ff3b3d',
+			'green'      => '06b236',
+			'blue'       => '207bb2'
+		];*/
+
+		//foreach ( $colors as $name => $hex ) {
+		foreach ( $colors as $color ) {
+
+			$manager->add_setting( $color->modName(), [
+				'default'              => $color->color(),
+				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
+				'sanitize_js_callback' => 'maybe_hash_hex_color',
+				'transport'            => 'postMessage'
+			] );
+		}
+
 		$fonts = [
 			'primary'   => 'georgia',
 			'secondary' => 'system-ui',
@@ -134,6 +159,32 @@ class Customize implements Bootable {
 	 * @return void
 	 */
 	public function registerControls( WP_Customize_Manager $manager ) {
+
+
+		/*$colors = [
+			'foreground' => __( 'Theme: Foreground' ),
+			'background' => __( 'Theme: Background' ),
+			'black'      => __( 'Theme: Black' ),
+			'white'      => __( 'Theme: White' ),
+			'red'        => __( 'Theme: Red' ),
+			'green'      => __( 'Theme: Green' ),
+			'blue'       => __( 'Theme: Blue' )
+		];*/
+
+
+		$colors = App::resolve( \Exhale\Colors\Colors::class )->customizerColors();
+
+		//foreach ( $colors as $name => $label ) {
+		foreach ( $colors as $color ) {
+
+			$manager->add_control(
+				new \WP_Customize_Color_Control( $manager, $color->modName(), [
+					'label'    => esc_html( $color->label() ),
+					'section'  => 'colors',
+					'description' => esc_html( $color->description() )
+				] )
+			);
+		}
 
 		$font_families = [
 			'primary'   => [
@@ -262,6 +313,12 @@ class Customize implements Bootable {
 			[ 'customize-preview' ],
 			null,
 			true
+		);
+
+		wp_localize_script(
+			'exhale-customize-preview',
+			'exhaleColorDefinitions',
+			App::resolve( \Exhale\Colors\Colors::class )->customizeToJson()
 		);
 
 		$definitions = [];

@@ -12,7 +12,7 @@
 	// We must define a default border color here so that `blockquote::before`
 	// can eventually inherit this color. The border color can be overwritten
 	// via the editor ("main" color).
-	border-color: color-rgb( white-smoke );
+	border-color: color-rgba( border, 0.5 );
 
 	@media only screen and ( max-width: 900px ) {
 		&.alignwide,
@@ -71,5 +71,5 @@
 // We need to have this sit alone so that it doesn't override background colors
 // with too high of a specificity.
 .is-style-solid-color {
-	background: color-rgb( white-smoke );
+	background: color-rgba( border, 0.5 );
 }

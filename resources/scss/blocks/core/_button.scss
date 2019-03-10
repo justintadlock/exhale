@@ -10,11 +10,11 @@
 	margin-bottom: $spacing-global;
 
 	&__link:not( .has-text-color ) {
-		color: color-rgb( white );
+		color: color-rgb( theme-background );
 	}
 
 	&__link:not( .has-background ) {
-		background: color-rgb( charcoal );
+		background: color-rgb( theme-primary );
 	}
 
 	&__link,
@@ -44,6 +44,6 @@
 	&.is-style-outline .wp-block-button__link {
 		color: inherit;
 		background: transparent;
-		border: 1px solid color-rgb( charcoal );
+		border: 1px solid color-rgb( theme-primary );
 	}
 }

@@ -24,7 +24,7 @@
 	// Individual meta items.
 	&__item {
 		padding:       0.5em;
-		border-bottom: 1px solid color-rgb( white-smoke );
+		border-bottom: 1px solid color-rgba( border, 0.5 );
 
 		@media ( min-width: $content-width ) {
 			display: flex;
@@ -45,6 +45,7 @@
 	&__data {
 		flex: 2;
 		text-align: right;
-		color: color-rgb( dusty-gray );
+		// @todo - should be lightened version of primary color
+		color: color-rgb( theme-gray );
 	}
 }

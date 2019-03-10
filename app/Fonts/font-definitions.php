@@ -25,6 +25,14 @@ return [
 		'label' => _x( 'Baskerville', 'font family label' ),
 		'stack' => 'Baskerville, "Times New Roman", Times, serif'
 	],
+	'brush-script-mt' => [
+		'label' => _x( 'Brush Script MT', 'font family label' ),
+		'stack' => '"Brush Script MT", cursive'
+	],
+	'comic-sans' => [
+		'label' => _x( 'Comic Sans', 'font family label' ),
+		'stack' => '"Comic Sans MS", "Comic Sans", "Chalkboard SE", "Comic Neue", cursive'
+	],
 	'courier-new' => [
 		'label' => _x( 'Courier New', 'font family label' ),
 		'stack' => '"Courier New", Courier, Verdana, sans-serif'
@@ -44,6 +52,10 @@ return [
 	'hoefler-text' => [
 		'label' => _x( 'Hoefler Text', 'font family label' ),
 		'stack' => '"Hoefler Text", Garamond, "Times New Roman", Times, sans-serif'
+	],
+	'impact' => [
+		'label' => _x( 'Impact', 'font family label' ),
+		'stack' => 'Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif'
 	],
 	'lucida-grande' => [
 		'label' => _x( 'Lucida Grande', 'font family label' ),

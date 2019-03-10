@@ -10,7 +10,7 @@ html {
 	font-size:   16px;
 	font-family: font-family( 'primary' );
 	line-height: 1.667;
-	color:       color-rgb( bayou );
+	color:       color-rgb( 'theme-primary' );
 
 	@media ( max-width: break( 'mobile' ) ) {
 		font-size: 15px;

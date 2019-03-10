@@ -31,17 +31,17 @@
 @mixin meta {
 	font-family: font-family( secondary );
 	font-size: 1rem;
-	color: color-rgb( silver-chalice );
+	color: color-rgb( theme-secondary );
 }
 
 @mixin meta-links {
 	a {
-		color: inherit;
+		color: color-rgb( secondary-link );
 	}
 
 	a:hover,
 	a:focus {
-		color: color-rgb( mine-shaft );
+		color: color-rgb( secondary-link-alt );
 	}
 }
 
@@ -52,8 +52,9 @@
 	font-family   : font-family( 'code' );
 	font-size     : inherit;
 	line-height   : inherit;
-	color         : color-rgb( silver-chalice );
-	background    : color-rgb( charcoal );
+	// @todo - fix colors
+	color         : #a9a9a9; //color-rgb( silver-chalice );
+	background    : #222; // color-rgb( custom-charcoal );
 	border-radius : 3px;
 	box-shadow    : 0 1px 3px rgba( 0, 0, 0, 0.12 ), 0 1px 2px rgba( 0, 0, 0, 0.24 );
 	box-sizing    : border-box;

@@ -13,7 +13,7 @@
 	&--depth-1 {
 		margin: 0 -#{ $spacing-global } $spacing-global;
 		padding: $spacing-global $spacing-global 0;
-		border:  1px solid color-rgb( mercury );
+		border:  1px solid color-rgb( border );
 
 		@media only screen and ( max-width: $content-width ) {
 			border-width: 0 0 1px;
@@ -42,9 +42,10 @@
 	// Metadata wrapper.
 	&__meta {
 		@include meta;
+		@include meta-links;
 		padding:       0 0 $spacing-half;
 		margin:        0 0 $spacing-half;
-		border-bottom: 1px solid color-rgb( mercury );
+		border-bottom: 1px solid color-rgb( border );
 	}
 
 	// Individual metadata items.
@@ -68,7 +69,7 @@
 		font-size: 0.9125em;
 		display: inline-block;
 		margin-bottom: $spacing-fourth;
-		color: color-rgb( silver-chalice );
+		color: color-rgb( secondary-link-alt );
 	}
 
 	&__author {}

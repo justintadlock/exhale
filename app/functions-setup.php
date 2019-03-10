@@ -185,30 +185,6 @@ add_action( 'init', function() {
 }, 5 );
 
 /**
- * Register image sizes. Even if adding no custom image sizes or not adding
- * "thumbnails," it's still important to call `set_post_thumbnail_size()` so
- * that plugins that utilize the `post-thumbnail` size will have a properly-sized
- * thumbnail that matches the theme design.
- *
- * @link   https://developer.wordpress.org/reference/functions/set_post_thumbnail_size/
- * @link   https://developer.wordpress.org/reference/functions/add_image_size/
- * @since  1.0.0
- * @access public
- * @return void
- */
-add_action( 'init', function() {
-
-	// Set the `post-thumbnail` size.
-	set_post_thumbnail_size( 178, 100, true );
-
-	// Register custom image sizes.
-	add_image_size( 'exhale-medium', 650, 366, true );
-	add_image_size( 'exhale-wide',   900, 506, true );
-	add_image_size( 'exhale-square', 218, 218, true );
-
-}, 5 );
-
-/**
  * Register sidebars.
  *
  * @link   https://developer.wordpress.org/reference/functions/register_sidebar/

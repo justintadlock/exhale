@@ -1,6 +1,6 @@
 // Links.
 a {
-	color: color-rgb( coral-red );
+	color: color-rgb( primary-link );
 	text-decoration: underline;
 	-webkit-transition  : all 0.5s ease-in-out;
 	   -moz-transition  : all 0.5s ease-in-out;
@@ -9,6 +9,6 @@ a {
 
 	&:hover,
 	&:focus {
-		color: color-rgb( mine-shaft );
+		color: color-rgb( primary-link-alt );
 	}
 }

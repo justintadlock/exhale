@@ -12,7 +12,7 @@
 	height: 58px;
 	box-sizing: border-box;
 	padding: 0.75em 0 0.75em 1.5em;
-	border-bottom: 1px solid color-rgb( white-smoke );
+	border-bottom: 1px solid color-rgba( border, 0.5 );
 
 	// Wrapper around the title and description.
 	&__branding {}
@@ -32,11 +32,12 @@
 
 	// Site title link.
 	&__title-link {
-		color: color-rgb( silver-chalice );
+		color: color-rgb( secondary-link );
 		text-decoration: none;
 
 		&:hover,
 		&:focus {
+			color: color-rgb( secondary-link-alt );
 			text-decoration: underline;
 		}
 	}

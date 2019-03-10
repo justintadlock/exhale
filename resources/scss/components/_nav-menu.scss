@@ -48,7 +48,7 @@ body.menu-open {
 	&--primary {
 		float: right;
 		margin: 0;
-		font-family: font-family( 'headings' );
+		font-family: font-family( 'secondary' );
 		font-size: 15px;
 
 		.menu__title {
@@ -63,7 +63,7 @@ body.menu-open {
 			margin:     0;
 			padding-left:  1.5rem;
 			padding-right: 1.5rem;
-			color: color-rgb( silver-chalice );
+			color: color-rgb( secondary-link );
 			background: transparent;
 			border-radius: 0;
 			border: none;
@@ -73,7 +73,7 @@ body.menu-open {
 			&:focus,
 			&.is-active {
 				color: color-rgb( white );
-				background: color-rgb( mine-shaft );
+				background: color-rgb( theme-black );
 			}
 
 			& svg {
@@ -103,7 +103,7 @@ body.menu-open {
 			box-sizing: border-box;
 			list-style: none;
 			text-align: left;
-			background: color-rgb( mine-shaft );
+			background: color-rgb( theme-black );
 
 			.admin-bar & {
 				top: 89px;
@@ -142,11 +142,12 @@ body.menu-open {
 			padding:       1.125rem 1.5rem;
 			color:         color-rgb( white );
 			text-decoration: none;
-			border-bottom: 1px dashed color-rgba( charcoal, 0.4 );
+			border-bottom: 1px dashed color-rgba( custom-charcoal, 0.4 );
 
 			&:hover,
 			&:focus {
-				background: color-rgba( black, 0.2 );
+				// @todo - fix color
+				background: rgba( 0, 0, 0, 0.2 );
 				text-decoration: underline;
 			}
 		}
@@ -168,11 +169,11 @@ body.menu-open {
 		.menu__link {
 			display: inline-block;
 			margin:   0.5rem;
-			color:    color-rgb( silver-chalice );
+			color:    color-rgb( secondary-link );
 
 			&:hover,
 			&:focus {
-				color: color-rgb( coral-red );
+				color: color-rgb( secondary-link-alt );
 			}
 
 			svg {

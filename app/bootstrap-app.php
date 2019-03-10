@@ -33,6 +33,7 @@ $exhale = new \Hybrid\Core\Application();
 $exhale->provider( \Exhale\Providers\AppServiceProvider::class );
 $exhale->provider( \Exhale\Colors\ColorsServiceProvider::class );
 $exhale->provider( \Exhale\Fonts\FontsServiceProvider::class );
+$exhale->provider( \Exhale\Media\MediaServiceProvider::class );
 $exhale->provider( \Exhale\Query\QueryServiceProvider::class   );
 
 # ------------------------------------------------------------------------------

@@ -29,7 +29,10 @@ acronym[title],
 time[title] { cursor : help; }
 
 abbr,
-acronym { border-bottom : 1px dotted color-rgb( dusty-gray ); }
+acronym {
+	// @todo - Should be lightened version of primary color.
+	border-bottom : 1px dotted color-rgb( theme-gray );
+}
 
 acronym { text-transform: uppercase; }
 
@@ -60,12 +63,12 @@ del,
 s,
 strike {
 	text-decoration:       line-through;
-	text-decoration-color: color-rgb( coral-red );
+	text-decoration-color: color-rgb( primary-link );
 }
 
 // Inserts.
 ins {
-	border-bottom:   1px dashed color-rgba( malachite, 0.5 );
+	border-bottom:   1px dashed color-rgba( 'theme-green', 0.5 );
 	text-decoration: none;
 }
 

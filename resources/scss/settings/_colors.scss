@@ -25,20 +25,20 @@
 @function block-colors() {
 
 	@return (
-		black          : color-rgb( black ),
-		mine-shaft     : color-rgb( mine-shaft ),
-		charcoal       : color-rgb( charcoal ),
-		bayou          : color-rgb( bayou ),
-		dusty-gray     : color-rgb( dusty-grey ),
-		persimmon      : color-rgb( persimmon ),
-		coral-red      : color-rgb( coral-red ),
-		mercury        : color-rgb( mercury ),
-		eastern-blue   : color-rgb( eastern-blue ),
-		malachite      : color-rgb( malachite ),
-		silver-chalice : color-rgb( silver-chalice ),
-		white-smoke    : color-rgb( white-smoke ),
-		wild-sand      : color-rgb( wild-sand ),
-		white          : color-rgb( white )
+		'theme-background' : color-rgb( 'theme-background' ),
+		'theme-primary'    : color-rgb( 'theme-primary' ),
+		'theme-secondary'  : color-rgb( 'theme-secondary' ),
+		'theme-black'      : color-rgb( 'theme-black' ),
+		'theme-white'      : color-rgb( 'theme-white' ),
+		'theme-red'        : color-rgb( 'theme-red' ),
+		'theme-green'      : color-rgb( 'theme-green' ),
+		'theme-blue'       : color-rgb( 'theme-blue' ),
+		'theme-gray'       : color-rgb( 'theme-gray' ),
+		'theme-yellow'     : color-rgb( 'theme-yellow' ),
+		'custom-charcoal'  : color-rgb( 'custom-charcoal' ),
+		'custom-persimmon' : color-rgb( 'custom-persimmon' ),
+		'black'            : color-rgb( 'black' ),
+		'white'            : color-rgb( 'white' )
 	);
 }
 

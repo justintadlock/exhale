@@ -27,7 +27,8 @@ textarea {
 	font-family: font-family( primary );
 	font-size:   1em;
 	color:       inherit;
-	border:      1px solid color-rgb( mercury );
+	background:  transparent;
+	border:      1px solid color-rgb( border );
 }
 
 input[type="date"],
@@ -52,8 +53,8 @@ input[type="reset"],
 input[type="button"],
 button {
 	cursor:          pointer;
-	color:           color-rgb( white );
-	background:      color-rgb( charcoal );
+	color:           color-rgb( theme-background );
+	background:      color-rgb( theme-primary );
 	border-radius:   3px;
 	display:         inline-block;
 	margin:          0;

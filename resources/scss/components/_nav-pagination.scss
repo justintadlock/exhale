@@ -34,19 +34,15 @@
 .pagination__anchor {
 	display : block;
 	padding: 0.375rem 1.125rem;
-	border: 1px solid color-rgb( mercury );
+	border: 1px solid color-rgb( border );
 	text-decoration: none;
 }
 
-	.pagination__anchor--current {
-		color: color-rgb( mine-shaft );
-	}
-
 	.pagination__anchor--link:hover,
 	.pagination__anchor--link:focus {
-		color        : color-rgb( white );
-		background   : color-rgb( charcoal );
-		border-color : color-rgb( charcoal );
+		color        : color-rgb( theme-background );
+		background   : color-rgb( theme-primary );
+		border-color : color-rgb( theme-primary );
 		text-decoration: underline;
 	}
 

@@ -26,11 +26,11 @@ class Manager implements Bootable {
 
 		$palette = [];
 
-		foreach ( $this->colors->all() as $color ) {
+		foreach ( $this->colors->editorColors() as $color ) {
 			$palette[] = [
 				'name'  => $color->label(),
 				'slug'  => $color->name(),
-				'color' => $color->color()
+				'color' => $color->hex()
 			];
 		}
 
@@ -40,64 +40,7 @@ class Manager implements Bootable {
 
 	public function registerDefaultColors( $colors ) {
 
-		$_colors = [
-			'black'      => [
-				'color' => '#000000',
-				'label' => __( 'Black' )
-			],
-			'mine-shaft' => [
-				'color' => '#222222',
-				'label' => __( 'Mine Shaft' )
-			],
-			'charcoal' => [
-				'color' => '#454545',
-				'label' => __( 'Charcoal' )
-			],
-			'bayou' => [
-				'color' => '#687d81',
-				'label' => __( 'Bayou' )
-			],
-			'dusty-gray' => [
-				'color' => '#959595',
-				'label' => __( 'Dusty Gray' )
-			],
-			'mercury' => [
-				'color' => '#e1e1e1',
-				'label' => __( 'Mercury' )
-			],
-			'eastern-blue' => [
-				'color' => '#207bb2',
-				'label' => __( 'Eastern Blue' )
-			],
-			'malachite' => [
-				'color' => '#06b236',
-				'label' => __( 'Malachite' )
-			],
-			'persimmon' => [
-				'color' => '#ff5456',
-				'label' => __( 'Persimmon' )
-			],
-			'coral-red' => [
-				'color' => '#ff3b3d',
-				'label' => __( 'Coral Red' )
-			],
-			'silver-chalice' => [
-				'color' => '#a9a9a9',
-				'label' => __( 'Silver Chalice' )
-			],
-			'white-smoke' => [
-				'color' => '#f1f1f1',
-				'label' => __( 'White Smoke' ),
-			],
-			'wild-sand' => [
-				'color' => '#f6f6f6',
-				'label' => __( 'Wild Sand' )
-			],
-			'white' => [
-				'color' => '#ffffff',
-				'label' => __( 'White' )
-			]
-		];
+		$_colors = include( 'color-definitions.php' );
 
 		foreach ( $_colors as $name => $options ) {
 			$colors->add( $name, $options );
