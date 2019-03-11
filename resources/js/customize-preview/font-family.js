@@ -11,8 +11,8 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-let settings = exhaleCustomizePreview.FontFamilySettings;
-let choices  = exhaleCustomizePreview.FontFamilyChoices;
+let settings = exhaleCustomizePreview.fontFamilySettings;
+let choices  = exhaleCustomizePreview.fontFamilyChoices;
 
 settings.forEach( setting => {
 

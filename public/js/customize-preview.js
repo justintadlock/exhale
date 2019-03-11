@@ -221,8 +221,8 @@ wp.customize('header_textcolor', function (value) {
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/exhale
  */
-var settings = exhaleCustomizePreview.FontFamilySettings;
-var choices = exhaleCustomizePreview.FontFamilyChoices;
+var settings = exhaleCustomizePreview.fontFamilySettings;
+var choices = exhaleCustomizePreview.fontFamilyChoices;
 settings.forEach(function (setting) {
   wp.customize(setting.modName, function (value) {
     value.bind(function (to) {
