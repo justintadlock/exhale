@@ -34,6 +34,7 @@ let files = [
 // Folders to include.
 let folders = [
 	'app',
+	'config',
 	'public',
 	'resources/lang',
 //	'resources/js',      // Required for WordPress.org theme review.
