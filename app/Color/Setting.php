@@ -1,17 +1,17 @@
 <?php
 
-namespace Exhale\Colors;
+namespace Exhale\Color;
 
 use function Hybrid\hex_to_rgb;
 
-class Color {
+class Setting {
 
 	protected $name;
 
 	protected $label;
 	protected $description = '';
 
-	protected $color = '#000000';
+	protected $default = '#000000';
 
 	protected $is_editor_color = true;
 	protected $is_customizer_color = true;
@@ -39,8 +39,8 @@ class Color {
 		return $this->description;
 	}
 
-	public function color() {
-		return $this->color;
+	public function default() {
+		return $this->default;
 	}
 
 	public function hex() {
@@ -66,7 +66,7 @@ class Color {
 	public function mod() {
 
 		return $this->isCustomizerColor()
-		       ? get_theme_mod( $this->modName(), $this->color() )
-		       : $this->color();
+		       ? get_theme_mod( $this->modName(), $this->default() )
+		       : $this->default();
 	}
 }

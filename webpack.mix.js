@@ -112,6 +112,7 @@ var sassConfig = {
 // Compile SASS/CSS.
 mix.sass( `${devPath}/scss/screen.scss`,             'css', sassConfig )
    .sass( `${devPath}/scss/editor.scss`,             'css', sassConfig )
+   .sass( `${devPath}/scss/classic.scss`,            'css', sassConfig )
    .sass( `${devPath}/scss/customize-controls.scss`, 'css', sassConfig );
 
 /*

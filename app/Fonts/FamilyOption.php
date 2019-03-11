@@ -2,13 +2,15 @@
 
 namespace Exhale\Fonts;
 
-class Family {
+class FamilyOption {
 
 	protected $name;
 
 	protected $label;
 
-	protected $stack = 'system-ui';
+	protected $description = '';
+
+	protected $default = 'system-ui';
 
 	public function __construct( $name, array $options ) {
 
@@ -26,18 +28,18 @@ class Family {
 	}
 
 	public function label() {
-
-		return apply_filters(
-			"exhale/font/family/{$this->name}/label",
-			$this->label ?: $this->name()
-		);
+		return $this->label ?: $this->name();
 	}
 
-	public function stack() {
+	public function description() {
+		return $this->description;
+	}
 
-		return apply_filters(
-			"exhale/font/family/{$this->name}/stack",
-			$this->stack
-		);
+	public function modName() {
+		return str_replace( '-', '_', $this->name() );
+	}
+
+	public function mod() {
+		return get_theme_mod( $this->modName(), $this->default );
 	}
 }

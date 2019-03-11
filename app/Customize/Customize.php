@@ -16,9 +16,15 @@
 namespace Exhale\Customize;
 
 use WP_Customize_Manager;
+use WP_Customize_Color_Control;
+
 use Hybrid\App;
 use Hybrid\Contracts\Bootable;
-use Exhale\Fonts\Families;
+
+use Exhale\Color\Settings       as ColorSettings;
+use Exhale\Font\Family\Choices  as FontFamilyChoices;
+use Exhale\Font\Family\Settings as FontFamilySettings;
+
 use function Exhale\asset;
 
 /**
@@ -111,42 +117,26 @@ class Customize implements Bootable {
 		} );
 		*/
 
-		$colors = App::resolve( \Exhale\Colors\Colors::class )->customizerColors();
+		array_map( function( $setting ) use ( $manager ) {
 
-		/*$colors = [
-			'foreground' => '687d81',
-			'background' => 'ffffff',
-			'black'      => '000000',
-			'white'      => 'f6f6f6',
-			'red'        => 'ff3b3d',
-			'green'      => '06b236',
-			'blue'       => '207bb2'
-		];*/
-
-		//foreach ( $colors as $name => $hex ) {
-		foreach ( $colors as $color ) {
-
-			$manager->add_setting( $color->modName(), [
-				'default'              => $color->color(),
+			$manager->add_setting( $setting->modName(), [
+				'default'              => $setting->default(),
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
 				'transport'            => 'postMessage'
 			] );
-		}
 
-		$fonts = [
-			'primary'   => 'georgia',
-			'secondary' => 'system-ui',
-			'headings'  => 'system-ui'
-		];
+		}, App::resolve( ColorSettings::class )->customizeColors() );
 
-		array_map( function( $name, $default ) use ( $manager ) {
-			$manager->add_setting( "font_family_{$name}", [
+		array_map( function( $setting ) use ( $manager ) {
+
+			$manager->add_setting( $setting->modName(), [
+				'default'           => $setting->default(),
 				'sanitize_callback' => 'sanitize_key',
-				'default'           => $default,
 				'transport'         => 'postMessage'
 			] );
-		}, array_keys( $fonts ), $fonts );
+
+		}, App::resolve( FontFamilySettings::class )->all() );
 	}
 
 	/**
@@ -160,67 +150,32 @@ class Customize implements Bootable {
 	 */
 	public function registerControls( WP_Customize_Manager $manager ) {
 
-
-		/*$colors = [
-			'foreground' => __( 'Theme: Foreground' ),
-			'background' => __( 'Theme: Background' ),
-			'black'      => __( 'Theme: Black' ),
-			'white'      => __( 'Theme: White' ),
-			'red'        => __( 'Theme: Red' ),
-			'green'      => __( 'Theme: Green' ),
-			'blue'       => __( 'Theme: Blue' )
-		];*/
-
-
-		$colors = App::resolve( \Exhale\Colors\Colors::class )->customizerColors();
-
-		//foreach ( $colors as $name => $label ) {
-		foreach ( $colors as $color ) {
+		array_map( function( $setting ) use ( $manager ) {
 
 			$manager->add_control(
-				new \WP_Customize_Color_Control( $manager, $color->modName(), [
-					'label'    => esc_html( $color->label() ),
-					'section'  => 'colors',
-					'description' => esc_html( $color->description() )
+				new WP_Customize_Color_Control( $manager, $setting->modName(), [
+					'section'     => 'colors',
+					'label'       => esc_html( $setting->label() ),
+					'description' => esc_html( $setting->description() )
 				] )
 			);
-		}
 
-		$font_families = [
-			'primary'   => [
-				'label'   => _x( 'Primary',   'font family setting' ),
-				'default' => 'georgia'
-			],
-			'secondary' => [
-				'label'   => _x( 'Secondary', 'font family setting' ),
-				'default' => 'georgia'
-			],
-			'headings'  => [
-				'label'   => _x( 'Headings',  'font family setting' ),
-				'default' => 'system-ui'
-			]
-		];
+		}, App::resolve( ColorSettings::class )->customizeColors() );
 
-		$choices = [];
-
-		foreach ( App::resolve( Families::class )->all() as $font ) {
-			$choices[ $font->name() ] = $font->label();
-		}
-
-		array_map( function( $name, $font ) use ( $manager, $choices ) {
+		array_map( function( $setting ) use ( $manager ) {
 
 			// @todo - Use Hybrid Customize select group to separate
 			// web safe and Google fonts.
-			$manager->add_control( "font_family_{$name}", [
-				'label' => esc_html( $font['label'] ),
-				'section' => 'fonts',
-				'type'    => 'select',
-				'choices' => $choices,
-				'default' => $font['default']
+			$manager->add_control( $setting->modName(), [
+				'section'     => 'fonts',
+				'type'        => 'select',
+				'label'       => esc_html( $setting->label() ),
+				'description' => $setting->description(),
+				'choices'     => App::resolve( FontFamilyChoices::class )->customizeChoices(),
+				'default'     => maybe_hash_hex_color( $setting->default() )
 			] );
 
-		}, array_keys( $font_families ), $font_families );
-
+		}, App::resolve( FontFamilySettings::class )->all() );
 	}
 
 	/**
@@ -315,22 +270,10 @@ class Customize implements Bootable {
 			true
 		);
 
-		wp_localize_script(
-			'exhale-customize-preview',
-			'exhaleColorDefinitions',
-			App::resolve( \Exhale\Colors\Colors::class )->customizeToJson()
-		);
-
-		$definitions = [];
-
-		foreach ( App::resolve( Families::class )->all() as $font ) {
-			$definitions[ $font->name() ] = $font->stack();
-		}
-
-		wp_localize_script(
-			'exhale-customize-preview',
-			'exhaleFontDefinitions',
-			$definitions
-		);
+		wp_localize_script( 'exhale-customize-preview', 'exhaleCustomizePreview', [
+			'colorSettings'      => App::resolve( ColorSettings::class      )->customizeToJson(),
+			'fontFamilySettings' => App::resolve( FontFamilySettings::class )->customizeToJson(),
+			'fontFamilyChoices'  => App::resolve( FontFamilyChoices::class  )->customizeToJson()
+		] );
 	}
 }

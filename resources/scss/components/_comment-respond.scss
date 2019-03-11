@@ -12,10 +12,14 @@
 	border:  1px solid color-rgb( border );
 
 	@media only screen and ( max-width: $content-width ) {
-		border-width: 0 0 1px;
+
+		.comments__list + & {
+			border-width: 0 0 1px;
+		}
 
 		+ .comment--depth-1 {
 			margin-top: -#{ $spacing-global };
+			border-width: 0 0 1px;
 		}
 	}
 

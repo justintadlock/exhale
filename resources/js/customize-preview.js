@@ -12,6 +12,6 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-import { colors }       from './customize-preview/colors';
+import { color }        from './customize-preview/color';
 import { customHeader } from './customize-preview/custom-header';
-import { fonts }        from './customize-preview/fonts';
+import { font }         from './customize-preview/font-family';

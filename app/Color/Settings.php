@@ -1,16 +1,16 @@
 <?php
 
-namespace Exhale\Colors;
+namespace Exhale\Color;
 
 use Hybrid\Tools\Collection;
 
 use function Hybrid\hex_to_rgb;
 
-class Colors extends Collection {
+class Settings extends Collection {
 
 	public function add( $name, $value ) {
 
-		parent::add( $name, new Color( $name, $value ) );
+		parent::add( $name, new Setting( $name, $value ) );
 	}
 
 	public function customizeToJson() {
@@ -32,6 +32,21 @@ class Colors extends Collection {
 		return $colors;
 	}
 
+	public function editorPalette() {
+
+		$palette = [];
+
+		foreach ( $this->editorColors() as $setting ) {
+			$palette[] = [
+				'name'  => $setting->label(),
+				'slug'  => $setting->name(),
+				'color' => $setting->hex()
+			];
+		}
+
+		return $palette;
+	}
+
 	public function editorColors() {
 
 		$colors = [];
@@ -45,7 +60,7 @@ class Colors extends Collection {
 		return $this->sort( $colors );
 	}
 
-	public function customizerColors() {
+	public function customizeColors() {
 
 		$colors = [];
 
@@ -74,23 +89,5 @@ class Colors extends Collection {
 		} );
 
 		return $colors;
-	}
-
-	public function inlineStyle() {
-
-		$css = '';
-
-		foreach ( $this->all() as $color ) {
-
-			$value = $color->rgb();
-
-			$css .= sprintf(
-				'--color-%s: %s;',
-				esc_html( $color->name() ),
-				esc_html( "{$value['r']},{$value['g']},{$value['b']}" )
-			);
-		}
-
-		return ":root { {$css} }";
 	}
 }

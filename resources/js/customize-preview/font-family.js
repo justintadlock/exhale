@@ -11,16 +11,18 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-let options = [
-	'primary',
-	'secondary',
-	'headings'
-];
+let settings = exhaleCustomizePreview.FontFamilySettings;
+let choices  = exhaleCustomizePreview.FontFamilyChoices;
 
-options.forEach( option => {
-	wp.customize( 'font_family_' + option, value => {
+settings.forEach( setting => {
+
+	wp.customize( setting.modName, value => {
 		value.bind( to => {
-			document.documentElement.style.setProperty( '--font-family-' + option, exhaleFontDefinitions[ to ] );
+			document.documentElement.style.setProperty(
+				setting.property,
+				choices[ to ].stack
+			);
 		} );
 	} );
+
 } );

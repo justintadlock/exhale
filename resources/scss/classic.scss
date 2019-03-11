@@ -1,0 +1,22 @@
+////
+/// Classic screen stylesheet.
+///
+/// This is the primary stylesheet for users who choose to not use Gutenberg and
+/// run classic WordPress.  It's the same stylesheet but without the styles for
+/// Gutenberg blocks, which significantly reduces the size.
+///
+/// @group  Styles
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+// Imports all of the files needed for front-end output. Note that the order is
+// very specific and should typically not be changed.
+
+@import 'settings/_index';
+@import 'tools/_index';
+@import 'generic/_index';
+@import 'elements/_index';
+@import 'components/_index';
+@import 'vendor/_index';
+@import 'utilities/_index';
