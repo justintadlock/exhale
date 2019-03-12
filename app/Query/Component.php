@@ -5,7 +5,7 @@ namespace Exhale\Query;
 use WP_Query;
 use Hybrid\Contracts\Bootable;
 
-class Query implements Bootable {
+class Component implements Bootable {
 
 	/**
 	 * Bootstraps the class' actions/filters.

@@ -82,7 +82,7 @@
 
 @each $color-name, $color-value in block-colors() {
 
-	.has-#{ $color-name }-background-color {
+	:root .has-#{ $color-name }-background-color {
 		background-color: color-rgb( $color-name );
 	}
 
@@ -90,15 +90,14 @@
 	// various link states keep the same color. This is generally used with
 	// things like buttons.
 
-	.has-#{ $color-name }-color,
-	.has-#{ $color-name }-color.wp-block-button__link {
+	:root .has-#{ $color-name }-color {
 		color: color-rgb( $color-name );
 	}
 
 	// Because the user-selected color may clash, let's give links a matching
 	// color to the text and make them behave a little differently.
 
-	.has-#{ $color-name }-color {
+	:root .has-#{ $color-name }-color {
 
 		a:not( .wp-block-button__link ):hover,
 		a:not( .wp-block-button__link ):focus {

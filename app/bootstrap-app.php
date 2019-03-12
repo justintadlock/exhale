@@ -31,10 +31,12 @@ $exhale = new \Hybrid\Core\Application();
 # bootstrapping process.
 
 $exhale->provider( \Exhale\Providers\AppServiceProvider::class );
-$exhale->provider( \Exhale\Color\Provider::class );
+
+$exhale->provider( \Exhale\Color\Provider::class       );
+$exhale->provider( \Exhale\Customize\Provider::class   );
 $exhale->provider( \Exhale\Font\Family\Provider::class );
-$exhale->provider( \Exhale\Media\MediaServiceProvider::class );
-$exhale->provider( \Exhale\Query\QueryServiceProvider::class   );
+$exhale->provider( \Exhale\Image\Size\Provider::class  );
+$exhale->provider( \Exhale\Query\Provider::class       );
 
 # ------------------------------------------------------------------------------
 # Perform bootstrap actions.

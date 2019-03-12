@@ -34,7 +34,7 @@ use function Exhale\asset;
  * @since  1.0.0
  * @access public
  */
-class Customize implements Bootable {
+class Component implements Bootable {
 
 	/**
 	 * Adds actions on the appropriate customize action hooks.
@@ -46,15 +46,19 @@ class Customize implements Bootable {
 	public function boot() {
 
 		// Register panels, sections, settings, controls, and partials.
-		add_action( 'customize_register', [ $this, 'registerPanels'   ] );
-		add_action( 'customize_register', [ $this, 'registerSections' ] );
-		add_action( 'customize_register', [ $this, 'registerSettings' ] );
-		add_action( 'customize_register', [ $this, 'registerControls' ] );
-		add_action( 'customize_register', [ $this, 'registerPartials' ] );
+		array_map( function( $callback ) {
+			add_action( 'customize_register', [ $this, $callback ] );
+		}, [
+			'registerPanels',
+			'registerSections',
+			'registerSettings',
+			'registerControls',
+			'registerPartials'
+		] );
 
 		// Enqueue scripts and styles.
 		add_action( 'customize_controls_enqueue_scripts', [ $this, 'controlsEnqueue'] );
-		add_action( 'customize_preview_init', [ $this, 'previewEnqueue' ] );
+		add_action( 'customize_preview_init',             [ $this, 'previewEnqueue' ] );
 	}
 
 	/**
@@ -104,19 +108,19 @@ class Customize implements Bootable {
 	public function registerSettings( WP_Customize_Manager $manager ) {
 
 		// Update the `transform` property of core WP settings.
-	/*	$settings = [
+		$settings = [
 			$manager->get_setting( 'blogname' ),
-			$manager->get_setting( 'blogdescription' ),
-			$manager->get_setting( 'header_textcolor' ),
-			$manager->get_setting( 'header_image' ),
-			$manager->get_setting( 'header_image_data' )
+	//		$manager->get_setting( 'blogdescription' ),
+	//		$manager->get_setting( 'header_textcolor' ),
+	//		$manager->get_setting( 'header_image' ),
+	//		$manager->get_setting( 'header_image_data' )
 		];
 
 		array_walk( $settings, function( &$setting ) {
 			$setting->transport = 'postMessage';
 		} );
-		*/
 
+		// Registers the color settings.
 		array_map( function( $setting ) use ( $manager ) {
 
 			$manager->add_setting( $setting->modName(), [
@@ -128,6 +132,7 @@ class Customize implements Bootable {
 
 		}, App::resolve( ColorSettings::class )->customizeColors() );
 
+		// Registers the font family settings.
 		array_map( function( $setting ) use ( $manager ) {
 
 			$manager->add_setting( $setting->modName(), [
@@ -150,6 +155,7 @@ class Customize implements Bootable {
 	 */
 	public function registerControls( WP_Customize_Manager $manager ) {
 
+		// Registers the color controls.
 		array_map( function( $setting ) use ( $manager ) {
 
 			$manager->add_control(
@@ -162,6 +168,7 @@ class Customize implements Bootable {
 
 		}, App::resolve( ColorSettings::class )->customizeColors() );
 
+		// Registers the font family controls.
 		array_map( function( $setting ) use ( $manager ) {
 
 			// @todo - Use Hybrid Customize select group to separate
@@ -194,7 +201,6 @@ class Customize implements Bootable {
 			return;
 		}
 
-		/*
 		// Selectively refreshes the title in the header when the core
 		// WP `blogname` setting changes.
 		$manager->selective_refresh->add_partial( 'blogname', [
@@ -203,16 +209,18 @@ class Customize implements Bootable {
 				return get_bloginfo( 'name', 'display' );
 			}
 		] );
-
+/*
 		// Selectively refreshes the description in the header when the
 		// core WP `blogdescription` setting changes.
 		$manager->selective_refresh->add_partial( 'blogdescription', [
-			'selector'        => '.app-header__description',
+			'selector'        => 'title',
 			'render_callback' => function() {
-				return get_bloginfo( 'description', 'display' );
+				return is_front_page() ? wp_get_document_title() : null;
 			}
 		] );
+		*/
 
+/*
 		// Selectively refreshes the custom header if it doesn't support
 		// videos. Core WP won't properly refresh output from its own
 		// `the_custom_header_markup()` function unless video is supported.

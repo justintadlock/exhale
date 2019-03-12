@@ -15,12 +15,12 @@ class Component implements Bootable {
 
 	public function boot() {
 
-		add_action( 'after_setup_theme', [ $this, 'addThemeSupport' ] );
+		add_action( 'after_setup_theme', [ $this, 'register' ] );
 
 		add_action( 'extant/color/settings/register', [ $this, 'registerDefaultSettings'] );
 	}
 
-	public function addThemeSupport() {
+	public function register() {
 
 		do_action( 'extant/color/settings/register', $this->settings );
 

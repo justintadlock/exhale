@@ -6,16 +6,14 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+// Using `:root` here to overwrite general link rules.
+:root .wp-block-button__link {
+	color:      color-rgb( theme-background );
+	background: color-rgb( theme-primary );
+}
+
 .wp-block-button {
 	margin-bottom: $spacing-global;
-
-	&__link:not( .has-text-color ) {
-		color: color-rgb( theme-background );
-	}
-
-	&__link:not( .has-background ) {
-		background: color-rgb( theme-primary );
-	}
 
 	&__link,
 	&__link:hover,

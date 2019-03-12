@@ -1,1 +1,224 @@
-!function(e){var t={};function n(o){if(t[o])return t[o].exports;var r=t[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,n),r.l=!0,r.exports}n.m=e,n.c=t,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)n.d(o,r,function(t){return e[t]}.bind(null,r));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="/",n(n.s=0)}({"//zx":function(e,t){},0:function(e,t,n){n("bUC5"),n("ipo3"),n("iY67"),n("sKXD"),e.exports=n("//zx")},bUC5:function(e,t){var n,o,r;n=document.body,o=document.querySelector(".menu--primary"),(r=document.querySelector(".menu--primary .menu__toggle")).onclick=function(){n.classList.toggle("menu-open"),o.classList.toggle("is-open"),r.classList.toggle("is-active")},document.onclick=function(){n.classList.remove("menu-open"),o.classList.remove("is-open"),r.classList.remove("is-active")},o.onclick=function(e){e.stopPropagation()},document.querySelectorAll("blockquote > p > cite").forEach(function(e){e.parentNode.classList.add("has-cite")}),document.querySelectorAll("img").forEach(function(e){var t=e.classList;e.onload=function(){(t.contains("alignleft")||t.contains("alignright"))&&300>=e.naturalWidth&&t.add("is-small")}}),document.querySelectorAll("p").forEach(function(e){0===e.clientHeight&&e.classList.add("is-collapsed")})},iY67:function(e,t){},ipo3:function(e,t){},sKXD:function(e,t){}});
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./resources/js/app.js":
+/*!*****************************!*\
+  !*** ./resources/js/app.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Primary front-end script.
+ *
+ * Primary JavaScript file. Any includes or anything imported should
+ * be filtered through this file and eventually saved back into the
+ * `/dist/js/app.js` file.
+ *
+ * @package   Exhale
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright 2018 Justin Tadlock
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://themehybrid.com/themes/exhale
+ */
+
+/**
+ * A simple immediately-invoked function expression to kick-start
+ * things and encapsulate our code.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+(function () {
+  var body = document.body;
+  var menu = document.querySelector('.menu--primary');
+  var menuButton = document.querySelector('.menu--primary .menu__toggle');
+
+  menuButton.onclick = function menuToggle() {
+    body.classList.toggle('menu-open');
+    menu.classList.toggle('is-open');
+    menuButton.classList.toggle('is-active');
+  };
+
+  document.onclick = function closeMenuOutsideClick() {
+    body.classList.remove('menu-open');
+    menu.classList.remove('is-open');
+    menuButton.classList.remove('is-active');
+  };
+
+  menu.onclick = function clickInsideMenu(e) {
+    e.stopPropagation();
+  };
+
+  var blockquoteCite = document.querySelectorAll('blockquote > p > cite');
+  blockquoteCite.forEach(function (cite) {
+    cite.parentNode.classList.add('has-cite');
+  });
+  var images = document.querySelectorAll('img');
+  images.forEach(function (image) {
+    var classes = image.classList;
+
+    image.onload = function () {
+      if ((classes.contains('alignleft') || classes.contains('alignright')) && 300 >= image.naturalWidth) {
+        classes.add('is-small');
+      }
+    };
+  });
+  var paras = document.querySelectorAll('p');
+  paras.forEach(function (p) {
+    if (0 === p.clientHeight) {
+      p.classList.add('is-collapsed');
+    }
+  });
+})();
+
+/***/ }),
+
+/***/ "./resources/scss/classic.scss":
+/*!*************************************!*\
+  !*** ./resources/scss/classic.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/scss/customize-controls.scss":
+/*!************************************************!*\
+  !*** ./resources/scss/customize-controls.scss ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/scss/editor.scss":
+/*!************************************!*\
+  !*** ./resources/scss/editor.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/scss/screen.scss":
+/*!************************************!*\
+  !*** ./resources/scss/screen.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 0:
+/*!********************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/scss/screen.scss ./resources/scss/editor.scss ./resources/scss/classic.scss ./resources/scss/customize-controls.scss ***!
+  \********************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! c:\xampp\htdocs\wp-content\themes\exhale\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! c:\xampp\htdocs\wp-content\themes\exhale\resources\scss\screen.scss */"./resources/scss/screen.scss");
+__webpack_require__(/*! c:\xampp\htdocs\wp-content\themes\exhale\resources\scss\editor.scss */"./resources/scss/editor.scss");
+__webpack_require__(/*! c:\xampp\htdocs\wp-content\themes\exhale\resources\scss\classic.scss */"./resources/scss/classic.scss");
+module.exports = __webpack_require__(/*! c:\xampp\htdocs\wp-content\themes\exhale\resources\scss\customize-controls.scss */"./resources/scss/customize-controls.scss");
+
+
+/***/ })
+
+/******/ });
+//# sourceMappingURL=app.js.map

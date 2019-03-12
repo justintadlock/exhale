@@ -1,16 +1,16 @@
 <?php
 
-namespace Exhale\Fonts;
+namespace Exhale\Image\Size;
 
-class FamilyOption {
+class Size {
 
 	protected $name;
 
 	protected $label;
 
-	protected $description = '';
-
-	protected $default = 'system-ui';
+	protected $width = 150;
+	protected $height = 150;
+	protected $crop = true;
 
 	public function __construct( $name, array $options ) {
 
@@ -31,15 +31,15 @@ class FamilyOption {
 		return $this->label ?: $this->name();
 	}
 
-	public function description() {
-		return $this->description;
+	public function width() {
+		return $this->width;
 	}
 
-	public function modName() {
-		return str_replace( '-', '_', $this->name() );
+	public function height() {
+		return $this->height;
 	}
 
-	public function mod() {
-		return get_theme_mod( $this->modName(), $this->default );
+	public function crop() {
+		return $this->crop;
 	}
 }

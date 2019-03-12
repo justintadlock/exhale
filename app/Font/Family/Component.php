@@ -19,13 +19,13 @@ class Component implements Bootable {
 
 	public function boot() {
 
-		add_action( 'init', [ $this, 'addThemeSupport' ] );
+		add_action( 'init', [ $this, 'register' ] );
 
 		add_action( 'extant/font/family/settings/register', [ $this, 'registerDefaultSettings'] );
 		add_action( 'extant/font/family/choices/register',  [ $this, 'registerDefaultChoices']  );
 	}
 
-	public function addThemeSupport() {
+	public function register() {
 
 		do_action( 'extant/font/family/settings/register', $this->settings );
 		do_action( 'extant/font/family/choices/register', $this->choices   );
@@ -54,7 +54,7 @@ class Component implements Bootable {
 			$css .= sprintf(
 				'--font-family-%s: %s;',
 				esc_html( $setting->name() ),
-				esc_html( $this->choices->get( $setting->mod() )->stack() )
+				$this->choices->get( $setting->mod() )->stack()
 			);
 		}
 

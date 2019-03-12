@@ -1,11 +1,8 @@
 // Links.
 a {
-	color: color-rgb( primary-link );
+	color:           color-rgb( primary-link );
 	text-decoration: underline;
-	-webkit-transition  : all 0.5s ease-in-out;
-	   -moz-transition  : all 0.5s ease-in-out;
-	      -o-transition : all 0.5s ease-in-out;
-		transition  : all 0.5s ease-in-out;
+	transition:      color 0.5s ease-in-out;
 
 	&:hover,
 	&:focus {

@@ -18,12 +18,14 @@ wp.customize( 'blogname', value => {
 	} );
 } );
 
+/*
 // Site description.
 wp.customize( 'blogdescription', value => {
 	value.bind( to => {
 		document.querySelector( '.app-header__description' ).textContent = to;
 	} );
 } );
+
 
 // Header text color.
 wp.customize( 'header_textcolor', value => {
@@ -45,3 +47,4 @@ wp.customize( 'header_textcolor', value => {
 		} );
 	} );
 } );
+*/
