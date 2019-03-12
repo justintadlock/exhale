@@ -2,9 +2,10 @@
 
 namespace Exhale\Color;
 
+use JsonSerializable;
 use function Hybrid\hex_to_rgb;
 
-class Setting {
+class Setting implements JsonSerializable {
 
 	protected $name;
 
@@ -25,6 +26,14 @@ class Setting {
 		}
 
 		$this->name = $name;
+	}
+
+	public function jsonSerialize() {
+
+		return [
+			'modName'  => $this->modName(),
+			'property' => $this->property()
+		];
 	}
 
 	public function name() {
@@ -49,6 +58,10 @@ class Setting {
 
 	public function rgb() {
 		return hex_to_rgb( $this->mod() );
+	}
+
+	public function property() {
+		return sprintf( '--color-%s', $this->name() );
 	}
 
 	public function isEditorColor() {

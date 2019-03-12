@@ -2,13 +2,27 @@
 
 namespace Exhale\Font\Family;
 
+use JsonSerializable;
 use Hybrid\Tools\Collection;
 
-class Choices extends Collection {
+class Choices extends Collection implements JsonSerializable {
 
 	public function add( $name, $value ) {
 
 		parent::add( $name, new Choice( $name, $value ) );
+	}
+
+	public function jsonSerialize() {
+
+		return array_map( function( $value ) {
+
+			if ( $value instanceof JsonSerializable ) {
+				return $value->jsonSerialize();
+			}
+
+			return $value;
+
+		}, $this->all() );
 	}
 
 	public function customizeChoices() {

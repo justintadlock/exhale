@@ -13,12 +13,14 @@
 
 import { hexToRgb } from '../tools/hex-to-rgb';
 
-exhaleCustomizePreview.colorSettings.forEach( color => {
+let settings = exhaleCustomizePreview.colorSettings;
 
-	wp.customize( color.modName, value => {
+Object.keys( settings ).forEach( setting => {
+
+	wp.customize( settings[ setting ].modName, value => {
 		value.bind( to => {
 			document.documentElement.style.setProperty(
-				color.property,
+				settings[ setting ].property,
 				hexToRgb( to )
 			);
 		} );

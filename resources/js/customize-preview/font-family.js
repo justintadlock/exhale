@@ -14,12 +14,12 @@
 let settings = exhaleCustomizePreview.fontFamilySettings;
 let choices  = exhaleCustomizePreview.fontFamilyChoices;
 
-settings.forEach( setting => {
+Object.keys( settings ).forEach( setting => {
 
-	wp.customize( setting.modName, value => {
+	wp.customize( settings[ setting ].modName, value => {
 		value.bind( to => {
 			document.documentElement.style.setProperty(
-				setting.property,
+				settings[ setting ].property,
 				choices[ to ].stack
 			);
 		} );

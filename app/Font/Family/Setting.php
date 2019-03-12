@@ -2,7 +2,9 @@
 
 namespace Exhale\Font\Family;
 
-class Setting {
+use JsonSerializable;
+
+class Setting implements JsonSerializable {
 
 	protected $name;
 
@@ -21,6 +23,13 @@ class Setting {
 		}
 
 		$this->name = $name;
+	}
+
+	public function jsonSerialize() {
+		return [
+			'modName' => $this->modName(),
+			'property' => $this->property()
+		];
 	}
 
 	public function name() {
@@ -45,5 +54,9 @@ class Setting {
 
 	public function default() {
 		return $this->default;
+	}
+
+	public function property() {
+		return sprintf( '--font-family-%s', $this->name() );
 	}
 }

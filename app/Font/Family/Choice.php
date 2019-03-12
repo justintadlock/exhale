@@ -2,7 +2,9 @@
 
 namespace Exhale\Font\Family;
 
-class Choice {
+use JsonSerializable;
+
+class Choice implements JsonSerializable {
 
 	protected $name;
 
@@ -19,6 +21,13 @@ class Choice {
 		}
 
 		$this->name = $name;
+	}
+
+	public function jsonSerialize() {
+
+		return [
+			'stack' => $this->stack()
+		];
 	}
 
 	public function name() {

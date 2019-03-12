@@ -279,9 +279,9 @@ class Component implements Bootable {
 		);
 
 		wp_localize_script( 'exhale-customize-preview', 'exhaleCustomizePreview', [
-			'colorSettings'      => App::resolve( ColorSettings::class      )->customizeToJson(),
-			'fontFamilySettings' => App::resolve( FontFamilySettings::class )->customizeToJson(),
-			'fontFamilyChoices'  => App::resolve( FontFamilyChoices::class  )->customizeToJson()
+			'colorSettings'      => App::resolve( ColorSettings::class      ),
+			'fontFamilySettings' => App::resolve( FontFamilySettings::class ),
+			'fontFamilyChoices'  => App::resolve( FontFamilyChoices::class  )
 		] );
 	}
 }

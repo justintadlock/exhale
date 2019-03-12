@@ -142,10 +142,11 @@ __webpack_require__.r(__webpack_exports__);
  * @link      https://themehybrid.com/themes/exhale
  */
 
-exhaleCustomizePreview.colorSettings.forEach(function (color) {
-  wp.customize(color.modName, function (value) {
+var settings = exhaleCustomizePreview.colorSettings;
+Object.keys(settings).forEach(function (setting) {
+  wp.customize(settings[setting].modName, function (value) {
     value.bind(function (to) {
-      document.documentElement.style.setProperty(color.property, Object(_tools_hex_to_rgb__WEBPACK_IMPORTED_MODULE_0__["hexToRgb"])(to));
+      document.documentElement.style.setProperty(settings[setting].property, Object(_tools_hex_to_rgb__WEBPACK_IMPORTED_MODULE_0__["hexToRgb"])(to));
     });
   });
 });
@@ -231,10 +232,10 @@ wp.customize( 'header_textcolor', value => {
  */
 var settings = exhaleCustomizePreview.fontFamilySettings;
 var choices = exhaleCustomizePreview.fontFamilyChoices;
-settings.forEach(function (setting) {
-  wp.customize(setting.modName, function (value) {
+Object.keys(settings).forEach(function (setting) {
+  wp.customize(settings[setting].modName, function (value) {
     value.bind(function (to) {
-      document.documentElement.style.setProperty(setting.property, choices[to].stack);
+      document.documentElement.style.setProperty(settings[setting].property, choices[to].stack);
     });
   });
 });

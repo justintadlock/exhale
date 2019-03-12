@@ -2,15 +2,29 @@
 
 namespace Exhale\Color;
 
+use JsonSerializable;
 use Hybrid\Tools\Collection;
 
 use function Hybrid\hex_to_rgb;
 
-class Settings extends Collection {
+class Settings extends Collection implements JsonSerializable {
 
 	public function add( $name, $value ) {
 
 		parent::add( $name, new Setting( $name, $value ) );
+	}
+
+	public function jsonSerialize() {
+
+		return array_map( function( $value ) {
+
+			if ( $value instanceof JsonSerializable ) {
+				return $value->jsonSerialize();
+			}
+
+			return $value;
+
+		}, $this->all() );
 	}
 
 	public function customizeToJson() {
