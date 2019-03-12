@@ -1,10 +1,8 @@
 <?php
 /**
- * Customize class.
+ * Customize component.
  *
- * This file shows some basics on how to set up and work with the WordPress
- * Customization API. This is the place to set up all of your theme options for
- * the customizer.
+ * Integrates the theme's settings into the customizer.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -88,8 +86,10 @@ class Component implements Bootable {
 	 */
 	public function registerSections( WP_Customize_Manager $manager ) {
 
+		// Move the color section to our theme options panel.
 		$manager->get_section( 'colors' )->panel = 'theme_options';
 
+		// Create a fonts section.
 		$manager->add_section( 'fonts', [
 			'panel' => 'theme_options',
 			'title' => __( 'Fonts' )
