@@ -39,7 +39,7 @@ body.menu-open {
 		height:   100%;
 		z-index:  90;
 		position: absolute;
-		background: rgba( 255, 255, 255, 0.5 );
+		background: color-rgba( theme-background, 0.5 );
 	}
 }
 

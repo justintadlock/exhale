@@ -506,6 +506,7 @@ td {
 	letter-spacing: 1px;
 	text-align: center;
 	font-weight: 900;
+	margin-bottom: 0.53125rem;
 }
 @media only screen and (min-width: 950px) {
 	.archive-header__title {
@@ -843,7 +844,7 @@ body.menu-open {
 	height: 100%;
 	z-index: 90;
 	position: absolute;
-	background: rgba(255, 255, 255, 0.5);
+	background: rgba( var( --color-theme-background ), 0.5 );
 }
 
 .menu--primary {
