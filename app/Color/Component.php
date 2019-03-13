@@ -87,7 +87,7 @@ class Component implements Bootable {
 	 */
 	public function registerDefaultSettings( Settings $settings ) {
 
-		foreach ( Config::get( 'color-settings.php' ) as $name => $options ) {
+		foreach ( Config::get( 'color-settings' ) as $name => $options ) {
 			$settings->add( $name, $options );
 		}
 	}

@@ -31,9 +31,9 @@ class Svg {
 	 */
 	public static function render( $name ) {
 
-		$svg = file_get_contents( static::path( $name ) );
+		$svg = file_get_contents( static::path( "{$name}.svg" ) );
 
-		return $svg ?: '';
+		return apply_filters( "exhale/svg/{$name}", $svg ?: '' );
 	}
 
 	/**
@@ -55,10 +55,10 @@ class Svg {
 	 * @access public
 	 * @return string
 	 */
-	public static function path( $name = '' ) {
+	public static function path( $file = '' ) {
 
-		$name = trim( $name, '/' );
+		$file = trim( $file, '/' );
 
-		return get_theme_file_path( $name ? "public/svg/{$name}.svg" : 'public/svg' );
+		return get_theme_file_path( $file ? "public/svg/{$file}" : 'public/svg' );
 	}
 }

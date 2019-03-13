@@ -22,16 +22,20 @@ namespace Exhale\Tools;
 class Config {
 
 	/**
-	 * Includes and returns a given config file.
+	 * Includes and returns a given PHP config file. The file must return
+	 * an array.
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string  $file
-	 * @return mixed
+	 * @param  string  $name
+	 * @return array
 	 */
-	public static function get( $file ) {
+	public static function get( $name ) {
 
-		return include( static::path( $file ) );
+		return (array) apply_filters(
+			"exhale/config/{$name}/",
+			include( static::path( "{$name}.php" ) )
+		);
 	}
 
 	/**

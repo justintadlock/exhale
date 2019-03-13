@@ -97,7 +97,7 @@ class Component implements Bootable {
 	 */
 	public function registerDefaultSettings( Settings $settings ) {
 
-		foreach ( Config::get( 'font-family-settings.php' ) as $name => $options ) {
+		foreach ( Config::get( 'font-family-settings' ) as $name => $options ) {
 			$settings->add( $name, $options );
 		}
 	}
@@ -112,7 +112,7 @@ class Component implements Bootable {
 	 */
 	public function registerDefaultChoices( $choices ) {
 
-		foreach ( Config::get( 'font-family-choices.php' ) as $name => $options ) {
+		foreach ( Config::get( 'font-family-choices' ) as $name => $options ) {
 			$choices->add( $name, $options );
 		}
 	}

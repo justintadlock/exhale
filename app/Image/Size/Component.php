@@ -119,7 +119,7 @@ class Component implements Bootable {
 	 */
 	public function registerDefaultSizes( Sizes $sizes ) {
 
-		foreach ( Config::get( 'image-sizes.php' ) as $name => $options ) {
+		foreach ( Config::get( 'image-sizes' ) as $name => $options ) {
 			$sizes->add( $name, $options );
 		}
 	}
