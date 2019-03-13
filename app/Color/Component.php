@@ -54,9 +54,11 @@ class Component implements Bootable {
 	 */
 	public function boot() {
 
+		// Run registration on `after_setup_theme`.
 		add_action( 'after_setup_theme', [ $this, 'register' ] );
 
-		add_action( 'extant/color/settings/register', [ $this, 'registerDefaultSettings'] );
+		// Register default settings.
+		add_action( 'extant/color/settings/register', [ $this, 'registerDefaultSettings' ] );
 	}
 
 	/**
@@ -76,7 +78,7 @@ class Component implements Bootable {
 	}
 
 	/**
-	 * Registers default color settings.
+	 * Registers default settings.
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -102,17 +104,11 @@ class Component implements Bootable {
 		$css = '';
 
 		foreach ( $this->settings as $setting ) {
-			$color = $setting->rgb();
 
 			$css .= sprintf(
-				'--color-%s: %s;',
-				esc_html( $setting->name() ),
-				esc_html( sprintf(
-					'%s,%s,%s',
-					$color['r'],
-					$color['g'],
-					$color['b']
-				) )
+				'%s: %s;',
+				esc_html( $setting->property() ),
+				join( ',', array_map( 'absint', $setting->rgb() ) )
 			);
 		}
 

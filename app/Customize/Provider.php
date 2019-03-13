@@ -31,21 +31,17 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
-
-		// Bind a single instance of our customize class.
 		$this->app->singleton( Component::class );
 	}
 
 	/**
-	 * Bootstrap customize component.
+	 * Bootstrap the customize component.
 	 *
 	 * @since  1.0.0
 	 * @access public
 	 * @return void
 	 */
 	public function boot() {
-
-		// Boot the customize class instance.
 		$this->app->resolve( Component::class )->boot();
 	}
 }

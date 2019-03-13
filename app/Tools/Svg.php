@@ -31,7 +31,7 @@ class Svg {
 	 */
 	public static function render( $name ) {
 
-		$svg = file_get_contents( get_theme_file_path( static::path() . "/{$name}.svg" ) );
+		$svg = file_get_contents( static::path( $name ) );
 
 		return $svg ?: '';
 	}
@@ -49,13 +49,16 @@ class Svg {
 	}
 
 	/**
-	 * Returns the path to the SVG folder.
+	 * Returns the path to the SVG folder or file if set.
 	 *
 	 * @since  1.0.0
 	 * @access public
 	 * @return string
 	 */
-	protected static function path() {
-		return 'public/svg';
+	public static function path( $name = '' ) {
+
+		$name = trim( $name, '/' );
+
+		return get_theme_file_path( $name ? "public/svg/{$name}.svg" : 'public/svg' );
 	}
 }

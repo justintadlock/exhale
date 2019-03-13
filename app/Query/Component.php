@@ -1,10 +1,27 @@
 <?php
+/**
+ * Query component.
+ *
+ * Handles filters on the posts query.
+ *
+ * @package   Exhale
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright 2018 Justin Tadlock
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://themehybrid.com/themes/exhale
+ */
 
 namespace Exhale\Query;
 
 use WP_Query;
 use Hybrid\Contracts\Bootable;
 
+/**
+ * Query component class.
+ *
+ * @since  1.0.0
+ * @access public
+ */
 class Component implements Bootable {
 
 	/**

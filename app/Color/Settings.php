@@ -1,51 +1,49 @@
 <?php
+/**
+ * Color Settings Collection.
+ *
+ * Houses the collection of color settings in a single array-object.
+ *
+ * @package   Exhale
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright 2018 Justin Tadlock
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://themehybrid.com/themes/exhale
+ */
 
 namespace Exhale\Color;
 
-use JsonSerializable;
-use Hybrid\Tools\Collection;
+use Exhale\Tools\Collection;
 
-use function Hybrid\hex_to_rgb;
+/**
+ * Color settings class.
+ *
+ * @since  1.0.0
+ * @access public
+ */
+class Settings extends Collection {
 
-class Settings extends Collection implements JsonSerializable {
-
+	/**
+	 * Adds a new color setting to the collection.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string  $name
+	 * @param  array   $value
+	 * @return void
+	 */
 	public function add( $name, $value ) {
-
 		parent::add( $name, new Setting( $name, $value ) );
 	}
 
-	public function jsonSerialize() {
-
-		return array_map( function( $value ) {
-
-			if ( $value instanceof JsonSerializable ) {
-				return $value->jsonSerialize();
-			}
-
-			return $value;
-
-		}, $this->all() );
-	}
-
-	public function customizeToJson() {
-
-		$colors = [];
-
-		foreach ( $this->all() as $color ) {
-
-			if ( ! $color->isCustomizerColor() ) {
-				continue;
-			}
-
-			$colors[] = [
-				'modName' => $color->modName(),
-				'property' => sprintf( '--color-%s', $color->name() )
-			];
-		}
-
-		return $colors;
-	}
-
+	/**
+	 * Returns an array of editor color settings ready for the editor color
+	 * palette `add_theme_support()` call.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return array
+	 */
 	public function editorPalette() {
 
 		$palette = [];
@@ -61,6 +59,13 @@ class Settings extends Collection implements JsonSerializable {
 		return $palette;
 	}
 
+	/**
+	 * Returns an array of editor color settings.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return array
+	 */
 	public function editorColors() {
 
 		$colors = [];
@@ -74,6 +79,13 @@ class Settings extends Collection implements JsonSerializable {
 		return $this->sort( $colors );
 	}
 
+	/**
+	 * Returns an array of customize color settings.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return array
+	 */
 	public function customizeColors() {
 
 		$colors = [];
@@ -87,15 +99,23 @@ class Settings extends Collection implements JsonSerializable {
 		return $colors;
 	}
 
+	/**
+	 * Sorts the colors from darkest to lightest.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  array  $colors
+	 * @return array
+	 */
 	public function sort( array $colors = [] ) {
 
 		$colors = $colors ?: $this->all();
 
 		usort( $colors, function( $a, $b ) {
-			$a_rgb = $a->rgb();
-			$b_rgb = $b->rgb();
+			$_a = $a->rgb();
+			$_b = $b->rgb();
 
-			if ( ( $a_rgb['r'] + $a_rgb['g'] + $a_rgb['b'] ) > ( $b_rgb['r'] + $b_rgb['g'] + $b_rgb['b'] ) ) {
+			if ( ( $_a['r'] + $_a['g'] + $_a['b'] ) > ( $_b['r'] + $_b['g'] + $_b['b'] ) ) {
 				return 1;
 			}
 
