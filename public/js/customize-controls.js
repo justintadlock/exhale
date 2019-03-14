@@ -90,9 +90,13 @@
 /*!********************************************!*\
   !*** ./resources/js/customize-controls.js ***!
   \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _customize_controls_footer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./customize-controls/footer */ "./resources/js/customize-controls/footer.js");
+/* harmony import */ var _customize_controls_footer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_customize_controls_footer__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * Customize controls script.
  *
@@ -106,7 +110,7 @@
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/exhale
  */
-// Hybrid Customize controls.
+ // Hybrid Customize controls.
 //
 // Uncomment any of the below to import scripts for specific controls if using
 // the `hybrid-customize` add-on.
@@ -115,6 +119,22 @@
 // import radioImage       from 'hybrid-customize/js/controls/radio-image.js';
 // import selectGroup      from 'hybrid-customize/js/controls/select-group.js';
 // import selectMultiple   from 'hybrid-customize/js/controls/select-multiple.js';
+
+/***/ }),
+
+/***/ "./resources/js/customize-controls/footer.js":
+/*!***************************************************!*\
+  !*** ./resources/js/customize-controls/footer.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+wp.customize.control('powered_by', function (control) {
+  control.setting.bind(function (value) {
+    var footerCredit = wp.customize.control('footer_credit');
+    value ? footerCredit.deactivate() : footerCredit.activate();
+  });
+});
 
 /***/ }),
 

@@ -94,6 +94,12 @@ class Component implements Bootable {
 			'panel' => 'theme_options',
 			'title' => __( 'Fonts' )
 		] );
+
+		// Create a footer section.
+		$manager->add_section( 'footer', [
+			'panel' => 'theme_options',
+			'title' => __( 'Footer' )
+		] );
 	}
 
 	/**
@@ -124,7 +130,7 @@ class Component implements Bootable {
 		array_map( function( $setting ) use ( $manager ) {
 
 			$manager->add_setting( $setting->modName(), [
-				'default'              => $setting->default(),
+				'default'              => maybe_hash_hex_color( $setting->default() ),
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
 				'transport'            => 'postMessage'
@@ -142,6 +148,29 @@ class Component implements Bootable {
 			] );
 
 		}, App::resolve( FontFamilySettings::class )->all() );
+
+		// Register footer settings.
+		$manager->add_setting( 'powered_by', [
+			'default'           => true,
+			'sanitize_callback' => 'wp_validate_boolean',
+			'transport'         => 'postMessage'
+		] );
+
+		$manager->add_setting( 'footer_credit', [
+			'default'           => sprintf( __( 'Powered by %s.' ), \Hybrid\Theme\render_link() ),
+			'sanitize_callback' => function( $value ) {
+				return wp_kses( $value, [
+					'a'       => [ 'href' => true, 'title' => true, 'class' => true ],
+					'abbr'    => [ 'title' => true ],
+					'acronym' => [ 'title' => true ],
+					'code'    => true,
+					'em'      => true,
+					'span'    => [ 'class' => true ],
+					'strong'  => true
+				] );
+			},
+			'transport'         => 'postMessage'
+		] );
 	}
 
 	/**
@@ -178,11 +207,26 @@ class Component implements Bootable {
 				'type'        => 'select',
 				'label'       => esc_html( $setting->label() ),
 				'description' => $setting->description(),
-				'choices'     => App::resolve( FontFamilyChoices::class )->customizeChoices(),
-				'default'     => maybe_hash_hex_color( $setting->default() )
+				'choices'     => App::resolve( FontFamilyChoices::class )->customizeChoices()
 			] );
 
 		}, App::resolve( FontFamilySettings::class )->all() );
+
+		// Register the footer controls.
+		$manager->add_control( 'powered_by', [
+			'section'  => 'footer',
+			'type'     => 'checkbox',
+			'label'    => __( 'Show random "powered by" credit text.' )
+		] );
+
+		$manager->add_control( 'footer_credit', [
+			'section' => 'footer',
+			'type'    => 'textarea',
+			'label'   => __( 'Custom Footer Text' ),
+			'active_callback' => function( $control ) {
+				return ! $control->manager->get_setting( 'powered_by' )->value();
+			}
+		] );
 	}
 
 	/**
@@ -209,6 +253,18 @@ class Component implements Bootable {
 				return get_bloginfo( 'name', 'display' );
 			}
 		] );
+
+		$manager->selective_refresh->add_partial( 'powered_by', [
+			'selector'        => '.app-footer__credit',
+			'settings'        => [
+				'powered_by',
+				'footer_credit'
+			],
+			'render_callback' => function() {
+				return \Exhale\Tools\PoweredBy::render();
+			}
+		] );
+
 /*
 		// Selectively refreshes the description in the header when the
 		// core WP `blogdescription` setting changes.

@@ -12,6 +12,8 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
+import footer from './customize-controls/footer';
+
 // Hybrid Customize controls.
 //
 // Uncomment any of the below to import scripts for specific controls if using
