@@ -8,5 +8,3 @@
 <body <?php Hybrid\Attr\display( 'body' ) ?>>
 
 <div class="app">
-
-	<div class="below-app-header">

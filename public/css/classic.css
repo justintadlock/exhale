@@ -443,18 +443,19 @@ td {
 }
 
 .app-header {
-	overflow: hidden;
-	width: 100%;
-	height: 58px;
+	display: flex;
 	box-sizing: border-box;
-	padding: 0.75em 0 0.75em 1.5em;
+	background: #fcfcfc;
 	border-bottom: 1px solid rgba( var( --color-border ), 0.5 );
+}
+.app-header__branding {
+	flex-grow: 1;
+	white-space: nowrap;
 }
 .app-header__title {
 	float: left;
-	max-width: 200px;
-	text-align: left;
-	margin: 7px 0 0 0;
+	margin: 0;
+	padding: 19px 1.5rem;
 	font-size: 20px;
 	font-family: var(--font-family-headings);
 	font-weight: bold;
@@ -468,6 +469,37 @@ td {
 .app-header__title-link:hover, .app-header__title-link:focus {
 	color: rgb( var( --color-secondary-link-alt ) );
 	text-decoration: underline;
+}
+.menu--primary {
+	position: relative;
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scroll-behavior: smooth;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.menu--primary::-webkit-scrollbar {
+	display: none;
+}
+.menu--primary.menu--scroll {
+	padding-left: 2rem;
+	border-top: 1px solid rgba( var( --color-border ), 0.5 );
+}
+.menu--primary.menu--scroll::before {
+	content: "\27F7";
+	position: absolute;
+	line-height: 58px;
+	left: 1.25rem;
+}
+
+@media (max-width: 650px) {
+	.app-header {
+		display: block;
+	}
+	.app-header__title {
+		float: none;
+		text-align: center;
+	}
 }
 .app-content {
 	overflow: hidden;
@@ -814,135 +846,27 @@ td {
 	margin-bottom: 2.125rem;
 }
 
-body.menu-open {
-	overflow-y: scroll;
-	width: 100%;
-}
-
-.below-app-header {
-	position: relative;
-	width: 100%;
-	margin: 0 auto;
-	overflow-y: hidden;
-	transition: normal;
-}
-.menu-open .below-app-header {
-	position: fixed;
-	z-index: 90;
-	height: 100%;
-	left: 0;
-	right: 0;
-}
-@media screen and (max-width: 480px) {
-	.menu-open .below-app-header {
-		margin-left: -100%;
-		transition: all 0.4s ease-in-out 0s;
-	}
-}
-
-.menu-open .overlay {
-	width: 100%;
-	height: 100%;
-	z-index: 90;
-	position: absolute;
-	background: rgba( var( --color-theme-background ), 0.5 );
-}
-
 .menu--primary {
-	float: right;
-	margin: 0;
 	font-family: var(--font-family-secondary);
-	font-size: 15px;
-}
-.menu--primary .menu__title {
-	margin: -0.75rem 0 0 0;
-	font-size: 0;
-}
-.menu--primary .menu__toggle {
-	display: inline-block;
-	width: 78px;
-	height: 58px;
-	margin: 0;
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
-	color: rgb( var( --color-secondary-link ) );
-	background: transparent;
-	border-radius: 0;
-	border: none;
-	outline: none;
-}
-.menu--primary .menu__toggle:hover, .menu--primary .menu__toggle:focus, .menu--primary .menu__toggle.is-active {
-	color: rgb( var( --color-white ) );
-	background: rgb( var( --color-theme-black ) );
-}
-.menu--primary .menu__toggle svg {
-	width: 28px;
-	height: 28px;
-	line-height: 1em;
-	background: transparent;
-	border: none;
-	transition: none;
+	font-size: 16px;
 }
 .menu--primary .menu__items {
-	float: right;
-	display: block;
-	visibility: hidden;
-	position: fixed;
-	top: 57px;
-	bottom: 0;
-	right: -400px;
-	z-index: 999999;
-	overflow-y: auto;
-	width: 400px;
 	margin: 0;
 	padding: 0;
-	transition: all 0.4s ease-in-out 0s;
-	box-sizing: border-box;
-	list-style: none;
-	text-align: left;
-	background: rgb( var( --color-theme-black ) );
-}
-.admin-bar .menu--primary .menu__items {
-	top: 89px;
-}
-@media screen and (max-width: 782px) {
-	.admin-bar .menu--primary .menu__items {
-		top: 103px;
-	}
-}
-@media only screen and (min-width: 769px) and (max-width: 998px) {
-	.menu--primary .menu__items {
-		width: 500px;
-		right: -500px;
-	}
-}
-@media only screen and (max-width: 768px) {
-	.menu--primary .menu__items {
-		width: 100%;
-		right: -100%;
-	}
-}
-.menu--primary.is-open .menu__items {
-	visibility: visible;
-	right: 0;
 }
 .menu--primary .menu__item {
-	display: block;
-	margin: 0;
-	padding: 0;
-	font-size: 15px;
+	display: inline;
 }
 .menu--primary .menu__link {
-	display: block;
-	line-height: 1.5;
-	padding: 1.125rem 1.5rem;
-	color: rgb( var( --color-white ) );
+	display: inline-block;
+	padding: 21px 1.5rem;
+	line-height: 16px;
 	text-decoration: none;
-	border-bottom: 1px dashed rgba( var( --color-custom-charcoal ), 0.4 );
+	color: rgb( var( --color-secondary-link ) );
 }
 .menu--primary .menu__link:hover, .menu--primary .menu__link:focus {
-	background: rgba(0, 0, 0, 0.2);
 	text-decoration: underline;
+	color: rgb( var( --color-secondary-link-alt ) );
 }
 .menu--social .menu__items {
 	list-style: none;

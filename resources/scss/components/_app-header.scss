@@ -7,22 +7,22 @@
 ////
 
 .app-header {
-	overflow: hidden;
-	width: 100%;
-	height: 58px;
+	display: flex;
 	box-sizing: border-box;
-	padding: 0.75em 0 0.75em 1.5em;
+	background: #fcfcfc;
 	border-bottom: 1px solid color-rgba( border, 0.5 );
 
 	// Wrapper around the title and description.
-	&__branding {}
+	&__branding {
+		flex-grow: 1;
+		white-space: nowrap;
+	}
 
 	// The site title.
 	&__title {
 		float: left;
-		max-width: 200px;
-		text-align: left;
-		margin: 7px 0 0 0;
+		margin: 0;
+		padding: 19px 1.5rem;
 		font-size: 20px;
 		font-family: font-family( 'headings' );
 		font-weight: bold;
@@ -44,4 +44,41 @@
 
 	// The site description.
 	&__description {}
+}
+
+// See `nav-menu.scss` for menu styling. This part just deals with the header
+// layout styling.
+.menu--primary {
+	position: relative;
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scroll-behavior: smooth;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	&.menu--scroll {
+		padding-left: 2rem;
+		border-top: 1px solid color-rgba( border, 0.5 );
+	}
+
+	&.menu--scroll::before {
+		content: "\027f7";
+		position: absolute;
+		line-height: 58px;
+		left: 1.25rem;
+	}
+}
+
+@media ( max-width: $content-width ) {
+	.app-header {
+		display: block;
+		&__title {
+			float: none;
+			text-align: center;
+		}
+	}
 }

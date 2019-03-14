@@ -6,149 +6,32 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-body.menu-open {
-	overflow-y: scroll;
-	width:      100%;
-}
-
-.below-app-header {
-	position: relative;
-	width: 100%;
-	margin: 0 auto;
-	overflow-y: hidden;
-	// Note: transition jumps when coming back in due to the position.
-	transition: normal;
-
-	.menu-open & {
-		position: fixed;
-		z-index:  90;
-		height:   100%;
-		left:     0;
-		right:    0;
-
-		@media screen and ( max-width: 480px ) {
-			margin-left: -100%;
-			transition:  all .4s ease-in-out 0s;
-		}
-	}
-}
-
-.overlay {
-	.menu-open & {
-		width:    100%;
-		height:   100%;
-		z-index:  90;
-		position: absolute;
-		background: color-rgba( theme-background, 0.5 );
-	}
-}
-
 .menu {
 
 	&--primary {
-		float: right;
-		margin: 0;
 		font-family: font-family( 'secondary' );
-		font-size: 15px;
-
-		.menu__title {
-			margin: -0.75rem 0 0 0;
-			font-size: 0;
-		}
-
-		.menu__toggle {
-			display:    inline-block;
-			width:  78px;
-			height: 58px;
-			margin:     0;
-			padding-left:  1.5rem;
-			padding-right: 1.5rem;
-			color: color-rgb( secondary-link );
-			background: transparent;
-			border-radius: 0;
-			border: none;
-			outline: none;
-
-			&:hover,
-			&:focus,
-			&.is-active {
-				color: color-rgb( white );
-				background: color-rgb( theme-black );
-			}
-
-			& svg {
-				width:       28px;
-				height:      28px;
-				line-height: 1em;
-				background:  transparent;
-				border:      none;
-				transition:  none;
-			}
-		}
+		font-size:   16px;
 
 		.menu__items {
-			float:      right;
-			display:    block;
-			visibility: hidden;
-			position:   fixed;
-			top:         57px;
-			bottom:      0;
-			right:       -400px;
-			z-index:     999999;
-			overflow-y:  auto;
-			width:       400px;
-			margin:     0;
-			padding:    0;
-			transition: all .4s ease-in-out 0s;
-			box-sizing: border-box;
-			list-style: none;
-			text-align: left;
-			background: color-rgb( theme-black );
-
-			.admin-bar & {
-				top: 89px;
-
-				@media screen and ( max-width: 782px ) {
-					top: 103px;
-				}
-			}
-
-			@media only screen and ( min-width: 769px ) and ( max-width: 998px ) {
-				width: 500px;
-				right: -500px;
-			}
-
-			@media only screen and ( max-width: 768px ) {
-				width: 100%;
-				right: -100%;
-			}
-		}
-
-		&.is-open .menu__items {
-			visibility: visible;
-			right:      0;
+			margin: 0;
+			padding: 0;
 		}
 
 		.menu__item {
-			display: block;
-			margin: 0;
-			padding: 0;
-			font-size:   15px;
+			display: inline;
 		}
 
 		.menu__link {
-			display:       block;
-			line-height:   1.5;
-			padding:       1.125rem 1.5rem;
-			color:         color-rgb( white );
+			display: inline-block;
+			padding:  21px 1.5rem;
+			line-height: 16px;
 			text-decoration: none;
-			border-bottom: 1px dashed color-rgba( custom-charcoal, 0.4 );
+			color:    color-rgb( secondary-link );
 
 			&:hover,
 			&:focus {
-				// @todo - fix color
-				background: rgba( 0, 0, 0, 0.2 );
 				text-decoration: underline;
+				color: color-rgb( secondary-link-alt );
 			}
 		}
 	}

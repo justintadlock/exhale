@@ -38,6 +38,8 @@ $exhale->provider( \Exhale\Font\Family\Provider::class );
 $exhale->provider( \Exhale\Image\Size\Provider::class  );
 $exhale->provider( \Exhale\Query\Provider::class       );
 
+//$exhale->provider( \Exhale\Admin\Settings\Provider::class );
+
 # ------------------------------------------------------------------------------
 # Perform bootstrap actions.
 # ------------------------------------------------------------------------------

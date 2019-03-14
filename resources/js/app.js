@@ -22,24 +22,16 @@
  */
 (function() {
 
-	let body       = document.body;
-	let menu       = document.querySelector( '.menu--primary' );
-	let menuButton = document.querySelector( '.menu--primary .menu__toggle' );
+	let menu = document.querySelector( '.menu--primary' );
 
-	menuButton.onclick = function menuToggle() {
-		body.classList.toggle( 'menu-open' );
-		menu.classList.toggle( 'is-open' );
-		menuButton.classList.toggle( 'is-active' );
-	};
+	if ( menu.scrollWidth > menu.clientWidth ) {
+		menu.classList.add( 'menu--scroll' );
+	}
 
-	document.onclick = function closeMenuOutsideClick() {
-		body.classList.remove( 'menu-open' );
-		menu.classList.remove( 'is-open' );
-		menuButton.classList.remove( 'is-active' );
-	};
-
-	menu.onclick = function clickInsideMenu( e ) {
-		e.stopPropagation();
+	window.onresize = function() {
+		menu.scrollWidth > menu.clientWidth
+		    ? menu.classList.add( 'menu--scroll' )
+		    : menu.classList.remove( 'menu--scroll' );
 	};
 
 	let blockquoteCite = document.querySelectorAll( 'blockquote > p > cite' );

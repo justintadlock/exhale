@@ -24,7 +24,3 @@
 		<?php Hybrid\View\display( 'nav/menu', 'primary', [ 'location' => 'primary' ] ) ?>
 
 	</header>
-
-	<div class="below-app-header">
-
-		<div class="overlay"></div>

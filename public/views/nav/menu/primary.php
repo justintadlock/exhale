@@ -2,15 +2,13 @@
 
 	<nav <?php Hybrid\Attr\display( 'menu', $data->location ) ?>>
 
-		<h3 class="menu__title">
-			<button class="menu__toggle">
-				<?php Exhale\Tools\Svg::display( 'bars-solid' ) ?>
-				<span class="screen-reader-text"><?php Hybrid\Menu\display_name( $data->location ) ?></span>
-			</button>
+		<h3 class="menu__title screen-reader-text">
+			<?php Hybrid\Menu\display_name( $data->location ) ?>
 		</h3>
 
 		<?php wp_nav_menu( [
 			'theme_location' => $data->location,
+			'depth'          => 1,
 			'container'      => '',
 			'menu_id'        => '',
 			'menu_class'     => 'menu__items',
