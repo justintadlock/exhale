@@ -477,13 +477,13 @@ td {
 	overflow-y: hidden;
 	scroll-behavior: smooth;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
+	border-top: 1px solid rgba( var( --color-border ), 0.5 );
 }
 .menu--primary::-webkit-scrollbar {
 	display: none;
 }
 .menu--primary.menu--scroll {
 	padding-left: 2rem;
-	border-top: 1px solid rgba( var( --color-border ), 0.5 );
 }
 .menu--primary.menu--scroll::before {
 	content: "\27F7";

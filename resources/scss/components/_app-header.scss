@@ -55,6 +55,7 @@
 	overflow-y: hidden;
 	scroll-behavior: smooth;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
+	border-top: 1px solid color-rgba( border, 0.5 );
 
 	&::-webkit-scrollbar {
 		display: none;
@@ -62,7 +63,6 @@
 
 	&.menu--scroll {
 		padding-left: 2rem;
-		border-top: 1px solid color-rgba( border, 0.5 );
 	}
 
 	&.menu--scroll::before {
