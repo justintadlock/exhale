@@ -46,6 +46,42 @@ return [
 		'is_editor_color' => false,
 		'description'     => __( 'Color used when hovering or focusing on a link.' )
 	],
+	'header-background' => [
+		'default'         => 'fcfcfc',
+		'label'           => __( 'Header Background' ),
+		'is_editor_color' => false,
+		'description'     => __( 'Background color for the entire header block.' ),
+	],
+	'branding-background' => [
+		'default'         => 'fcfcfc',
+		'label'           => __( 'Header Branding Background' ),
+		'is_editor_color' => false,
+		'description'     => __( 'Background color for the branding text.' ),
+	],
+	'branding' => [
+		'default'         => 'a9a9a9',
+		'label'           => __( 'Header Branding' ),
+		'is_editor_color' => false,
+		'description'     => __( 'Color for the branding text.' ),
+	],
+	'branding-alt' => [
+		'default'         => '222222',
+		'label'           => __( 'Header Branding Alt' ),
+		'is_editor_color' => false,
+		'description'     => __( 'Color used when hovering or focusing on a link.' )
+	],
+	'menu-primary' => [
+		'default'         => 'a9a9a9',
+		'label'           => __( 'Primary Menu' ),
+		'is_editor_color' => false,
+		'description'     => __( 'Color for the primary menu links.' ),
+	],
+	'menu-primary-alt' => [
+		'default'         => '222222',
+		'label'           => __( 'Primary Menu Alt' ),
+		'is_editor_color' => false,
+		'description'     => __( 'Color used when hovering or focusing on a link.' )
+	],
 	'border' => [
 		'default'         => 'e1e1e1', // mercury
 		'label'           => __( 'Border' ),

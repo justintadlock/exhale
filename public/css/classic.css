@@ -446,7 +446,7 @@ td {
 .app-header {
 	display: flex;
 	box-sizing: border-box;
-	background: #fcfcfc;
+	background: rgb( var( --color-header-background ) );
 	border-bottom: 1px solid rgba( var( --color-border ), 0.5 );
 }
 .app-header__branding {
@@ -456,19 +456,20 @@ td {
 .app-header__title {
 	float: left;
 	margin: 0;
-	padding: 19px 1.5rem;
+	padding: 19px 1.5rem 20px;
 	font-size: 20px;
 	font-family: var(--font-family-headings);
 	font-weight: bold;
 	line-height: 20px;
 	text-align: center;
+	background: rgb( var( --color-branding-background ) );
 }
 .app-header__title-link {
-	color: rgb( var( --color-secondary-link ) );
+	color: rgb( var( --color-branding ) );
 	text-decoration: none;
 }
 .app-header__title-link:hover, .app-header__title-link:focus {
-	color: rgb( var( --color-secondary-link-alt ) );
+	color: rgb( var( --color-branding-alt ) );
 	text-decoration: underline;
 }
 .menu--primary {
@@ -478,13 +479,15 @@ td {
 	overflow-y: hidden;
 	scroll-behavior: smooth;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
-	border-top: 1px solid rgba( var( --color-border ), 0.5 );
 }
 .menu--primary::-webkit-scrollbar {
 	display: none;
 }
 .menu--primary.menu--scroll {
 	padding-left: 2rem;
+}
+.menu--primary.menu--scroll .menu__items {
+	text-align: left;
 }
 .menu--primary.menu--scroll::before {
 	content: "\27F7";
@@ -500,6 +503,16 @@ td {
 	.app-header__title {
 		float: none;
 		text-align: center;
+	}
+
+	.menu--primary {
+		border-top: 1px solid rgba( var( --color-border ), 0.5 );
+	}
+	.menu--primary .menu__items {
+		text-align: center;
+	}
+	.menu--primary.menu--scroll .menu__items {
+		text-align: left;
 	}
 }
 .app-content {
@@ -850,6 +863,8 @@ td {
 .menu--primary {
 	font-family: var(--font-family-secondary);
 	font-size: 16px;
+	line-height: 16px;
+	color: rgb( var( --color-menu-primary ) );
 }
 .menu--primary .menu__items {
 	margin: 0;
@@ -861,13 +876,12 @@ td {
 .menu--primary .menu__link {
 	display: inline-block;
 	padding: 21px 1.5rem;
-	line-height: 16px;
 	text-decoration: none;
-	color: rgb( var( --color-secondary-link ) );
+	color: rgb( var( --color-menu-primary ) );
 }
 .menu--primary .menu__link:hover, .menu--primary .menu__link:focus {
 	text-decoration: underline;
-	color: rgb( var( --color-secondary-link-alt ) );
+	color: rgb( var( --color-menu-primary-alt ) );
 }
 .menu--social .menu__items {
 	list-style: none;

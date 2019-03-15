@@ -11,6 +11,8 @@
 	&--primary {
 		font-family: font-family( 'secondary' );
 		font-size:   16px;
+		line-height: 16px;
+		color: color-rgb( menu-primary );
 
 		.menu__items {
 			margin: 0;
@@ -24,14 +26,13 @@
 		.menu__link {
 			display: inline-block;
 			padding:  21px 1.5rem;
-			line-height: 16px;
 			text-decoration: none;
-			color:    color-rgb( secondary-link );
+			color:    color-rgb( menu-primary );
 
 			&:hover,
 			&:focus {
 				text-decoration: underline;
-				color: color-rgb( secondary-link-alt );
+				color: color-rgb( menu-primary-alt );
 			}
 		}
 	}

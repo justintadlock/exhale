@@ -7,9 +7,9 @@
 ////
 
 .app-header {
-	display: flex;
-	box-sizing: border-box;
-	background: #fcfcfc;
+	display:       flex;
+	box-sizing:    border-box;
+	background:    color-rgb( header-background );
 	border-bottom: 1px solid color-rgba( border, 0.5 );
 
 	// Wrapper around the title and description.
@@ -22,22 +22,23 @@
 	&__title {
 		float: left;
 		margin: 0;
-		padding: 19px 1.5rem;
+		padding: 19px 1.5rem 20px;
 		font-size: 20px;
 		font-family: font-family( 'headings' );
 		font-weight: bold;
 		line-height: 20px;
 		text-align: center;
+		background: color-rgb( branding-background );
 	}
 
 	// Site title link.
 	&__title-link {
-		color: color-rgb( secondary-link );
+		color: color-rgb( branding );
 		text-decoration: none;
 
 		&:hover,
 		&:focus {
-			color: color-rgb( secondary-link-alt );
+			color: color-rgb( branding-alt );
 			text-decoration: underline;
 		}
 	}
@@ -55,7 +56,6 @@
 	overflow-y: hidden;
 	scroll-behavior: smooth;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
-	border-top: 1px solid color-rgba( border, 0.5 );
 
 	&::-webkit-scrollbar {
 		display: none;
@@ -63,6 +63,10 @@
 
 	&.menu--scroll {
 		padding-left: 2rem;
+
+		.menu__items {
+			text-align: left;
+		}
 	}
 
 	&.menu--scroll::before {
@@ -79,6 +83,17 @@
 		&__title {
 			float: none;
 			text-align: center;
+		}
+	}
+	.menu--primary {
+		border-top: 1px solid color-rgba( border, 0.5 );
+
+		.menu__items {
+			text-align: center;
+		}
+
+		&.menu--scroll .menu__items {
+			text-align: left;
 		}
 	}
 }
