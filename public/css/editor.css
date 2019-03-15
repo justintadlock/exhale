@@ -327,6 +327,19 @@
 	background: transparent;
 	border: 1px solid rgb( var( --color-theme-primary ) );
 }
+.edit-post-visual-editor .wp-block-calendar th,
+.edit-post-visual-editor .wp-block-calendar td {
+	text-align: center;
+}
+.edit-post-visual-editor .wp-block-calendar tfoot td {
+	border: none;
+}
+.edit-post-visual-editor .wp-block-calendar #prev {
+	text-align: left;
+}
+.edit-post-visual-editor .wp-block-calendar #next {
+	text-align: right;
+}
 .edit-post-visual-editor .wp-block-categories {
 	margin-bottom: 2.125rem;
 }
@@ -601,6 +614,44 @@
 	color: rgb( var( --color-theme-secondary ) );
 	text-align: center;
 }
+.edit-post-visual-editor .wp-block-latest-comments {
+	list-style: none;
+	padding: 0;
+}
+.edit-post-visual-editor .wp-block-latest-comments__comment {
+	clear: both;
+	margin-bottom: 2.125rem;
+}
+.edit-post-visual-editor .wp-block-latest-comments .wp-block-latest-comments__comment-avatar {
+	float: left;
+	margin-right: 1.0625rem;
+	margin-bottom: 1.0625rem;
+	border-radius: 50%;
+}
+.edit-post-visual-editor .wp-block-latest-comments__comment-meta {
+	font-family: var(--font-family-secondary);
+	font-size: 1rem;
+	color: rgb( var( --color-theme-secondary ) );
+	padding-top: 0.75rem;
+}
+.edit-post-visual-editor .wp-block-latest-comments__comment-date {
+	display: block;
+}
+.edit-post-visual-editor .wp-block-latest-comments__comment-excerpt {
+	clear: both;
+	margin-top: 1.0625rem;
+	padding-top: 1.0625rem;
+	border-top: 1px solid rgb( var( --color-border ) );
+}
+.edit-post-visual-editor .has-excerpts .wp-block-latest-comments__comment {
+	margin-bottom: 0;
+}
+.edit-post-visual-editor .has-dates .wp-block-latest-comments__comment-avatar {
+	margin-top: 2px;
+}
+.edit-post-visual-editor .has-dates .wp-block-latest-comments__comment-meta {
+	padding-top: 0;
+}
 .edit-post-visual-editor .wp-block-latest-posts.is-grid {
 	display: flex;
 	flex-wrap: wrap;
@@ -743,6 +794,17 @@
 }
 .edit-post-visual-editor .wp-block-quote cite {
 	display: block;
+	margin-bottom: 2.125rem;
+}
+.edit-post-visual-editor .wp-block-rss__item-publish-date, .edit-post-visual-editor .wp-block-rss__item-author {
+	font-family: var(--font-family-secondary);
+	font-size: 1rem;
+	color: rgb( var( --color-theme-secondary ) );
+}
+.edit-post-visual-editor .wp-block-rss__item-excerpt {
+	margin: 0 0 2.125rem;
+}
+.edit-post-visual-editor .wp-block-search__input {
 	margin-bottom: 2.125rem;
 }
 .edit-post-visual-editor .wp-block-separator.is-style-wide {

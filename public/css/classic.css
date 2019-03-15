@@ -154,6 +154,7 @@ button {
 	cursor: pointer;
 	color: rgb( var( --color-theme-background ) );
 	background: rgb( var( --color-theme-primary ) );
+	border: none;
 	border-radius: 3px;
 	display: inline-block;
 	margin: 0;

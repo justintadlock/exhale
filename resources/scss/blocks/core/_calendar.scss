@@ -1,0 +1,27 @@
+////
+/// Calendar block.
+///
+/// @group  Blocks
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.wp-block-calendar {
+
+	th,
+	td {
+		text-align: center;
+	}
+
+	tfoot td {
+		border: none;
+	}
+
+	#prev {
+		text-align: left;
+	}
+
+	#next {
+		text-align: right;
+	}
+}
