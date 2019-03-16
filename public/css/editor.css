@@ -1178,7 +1178,7 @@
 .edit-post-visual-editor.editor-styles-wrapper {
 	font-family: var(--font-family-primary);
 	font-size: 16px;
-	color: #687d81;
+	color: rgb( var( --color-theme-primary ) );
 }
 
 .editor-writing-flow {
@@ -1191,17 +1191,15 @@
 }
 
 .editor-post-title__block .editor-post-title__input {
+	line-height: 1.58;
 	font-family: var(--font-family-headings);
-	color: #222;
-	font-size: 3rem;
+	font-weight: 700;
+	color: rgb( var( --color-headings ) );
 	letter-spacing: 1px;
 	text-align: center;
-	font-weight: 900;
-	line-height: 1.5;
 }
 @media only screen and (min-width: 950px) {
 	.editor-post-title__block .editor-post-title__input {
-		font-size: 2.75rem;
 		max-width: 950px;
 	}
 }

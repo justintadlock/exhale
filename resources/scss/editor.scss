@@ -42,7 +42,7 @@
 .edit-post-visual-editor.editor-styles-wrapper {
 	font-family: font-family( primary );
 	font-size:   16px;
-	color:       #687d81;
+	color:       color-rgb( theme-primary );
 }
 
 .editor-writing-flow {
@@ -64,18 +64,16 @@
 
 // Editor post title.
 .editor-post-title__block .editor-post-title__input {
+	line-height: 1.58;
 	font-family: font-family( 'headings' );
-	color: #222;
+	font-weight: 700;
+	color:       color-rgb( headings );
 
-
-	font-size: 3rem;
 	letter-spacing: 1px;
 	text-align: center;
-	font-weight: 900;
-	line-height: 1.5;
 
 	@media only screen and ( min-width: 950px ) {
-		font-size: 2.75rem;
+	//	font-size: 2.75rem;
 		max-width    : 950px;
 	}
 }

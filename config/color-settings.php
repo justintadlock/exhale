@@ -59,7 +59,7 @@ return [
 		'description'     => __( 'Background color for the branding text.' ),
 	],
 	'branding' => [
-		'default'         => 'a9a9a9',
+		'default'         => '757575',
 		'label'           => __( 'Header Branding' ),
 		'is_editor_color' => false,
 		'description'     => __( 'Color for the branding text.' ),
@@ -71,7 +71,7 @@ return [
 		'description'     => __( 'Color used when hovering or focusing on a link.' )
 	],
 	'menu-primary' => [
-		'default'         => 'a9a9a9',
+		'default'         => '858585',
 		'label'           => __( 'Primary Menu' ),
 		'is_editor_color' => false,
 		'description'     => __( 'Color for the primary menu links.' ),

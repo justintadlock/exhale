@@ -17,6 +17,7 @@ namespace Exhale;
 use Hybrid\App;
 use Exhale\Color\Component as Color;
 use Exhale\Font\Family\Component as FontFamily;
+use Exhale\Settings\Options;
 
 /**
  * Enqueue scripts/styles for the front end.
@@ -41,7 +42,12 @@ add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_script( 'exhale-app', asset( 'js/app.js' ), null, null, true );
 
 	// Enqueue theme styles.
-	wp_enqueue_style( 'exhale-screen', asset( 'css/screen.css' ), null, null );
+	wp_enqueue_style(
+		'exhale-screen',
+		asset( Options::get( 'classic_style' ) ? 'css/screen-classic.css' : 'css/screen.css' ),
+		null,
+		null
+	);
 
 	wp_add_inline_style( 'exhale-screen', App::resolve( Color::class      )->inlineStyle() );
 	wp_add_inline_style( 'exhale-screen', App::resolve( FontFamily::class )->inlineStyle() );

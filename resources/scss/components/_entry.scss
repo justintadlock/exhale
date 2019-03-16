@@ -77,7 +77,8 @@
 	}
 }
 
-.single .entry {
+.single .entry,
+.error-404 .entry {
 
 	&__header {
 		margin-bottom: 3rem;
