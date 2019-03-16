@@ -4,7 +4,7 @@
 
 		<div class="entry entry--error">
 
-			<?php $error = ( new Exhale\Tools\ErrorPage() )->setup() ?>
+			<?php $error = ( new Exhale\Template\ErrorPage() )->setup() ?>
 
 			<header class="entry__header">
 				<h1 class="entry__title"><?php $error->displayTitle() ?></h1>

@@ -132,19 +132,5 @@ return [
 		'default'             => 'ff5456',
 		'label'               => __( 'Custom: Persimmon' ),
 		'is_customizer_color' => false
-	],
-
-	// @todo - Get rid of these.
-	'black' => [
-		'default'             => '000000',
-		'label'               => __( 'Black' ),
-		'is_customizer_color' => false,
-		'is_editor_color'     => false
-	],
-	'white' => [
-		'default'             => 'ffffff',
-		'label'               => __( 'White' ),
-		'is_customizer_color' => false,
-		'is_editor_color'     => false
 	]
 ];

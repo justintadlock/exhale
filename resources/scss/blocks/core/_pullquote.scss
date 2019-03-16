@@ -27,7 +27,8 @@
 	}
 
 	&.is-style-solid-color {
-		margin-bottom: $spacing-global;
+		width: calc( 100% + $spacing-2x );
+		margin: 0 -#{ $spacing-global } $spacing-global;
 		padding: $spacing-global $spacing-global 0;
 	}
 

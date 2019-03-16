@@ -60,7 +60,7 @@
 	a:not( .wp-block-button__link ):hover,
 	a:not( .wp-block-button__link ):focus {
 		color:      inherit;
-		background: color-rgba( white, 0.2 );
+		background: color-rgba( theme-white, 0.2 );
 	}
 }
 

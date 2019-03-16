@@ -1,8 +1,6 @@
 		<footer class="app-footer">
 
-			<p class="app-footer__credit">
-				<?php Exhale\Tools\PoweredBy::display() ?>
-			</p>
+			<?php Exhale\Template\Footer::displayCredit() ?>
 
 			<?php Hybrid\View\display( 'nav/menu', 'social', [ 'location' => 'social' ] ) ?>
 

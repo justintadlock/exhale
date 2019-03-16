@@ -18,6 +18,7 @@ use WP_Customize_Color_Control;
 
 use Hybrid\App;
 use Hybrid\Contracts\Bootable;
+use Exhale\Template\Footer;
 
 use Exhale\Color\Settings       as ColorSettings;
 use Exhale\Font\Family\Choices  as FontFamilyChoices;
@@ -159,15 +160,7 @@ class Component implements Bootable {
 		$manager->add_setting( 'footer_credit', [
 			'default'           => sprintf( __( 'Powered by %s.' ), \Hybrid\Theme\render_link() ),
 			'sanitize_callback' => function( $value ) {
-				return wp_kses( $value, [
-					'a'       => [ 'href' => true, 'title' => true, 'class' => true ],
-					'abbr'    => [ 'title' => true ],
-					'acronym' => [ 'title' => true ],
-					'code'    => true,
-					'em'      => true,
-					'span'    => [ 'class' => true ],
-					'strong'  => true
-				] );
+				return wp_kses( $value, Footer::allowedTags() );
 			},
 			'transport'         => 'postMessage'
 		] );
@@ -220,9 +213,9 @@ class Component implements Bootable {
 		] );
 
 		$manager->add_control( 'footer_credit', [
-			'section' => 'footer',
-			'type'    => 'textarea',
-			'label'   => __( 'Custom Footer Text' ),
+			'section'         => 'footer',
+			'type'            => 'textarea',
+			'label'           => __( 'Custom Footer Text' ),
 			'active_callback' => function( $control ) {
 				return ! $control->manager->get_setting( 'powered_by' )->value();
 			}
@@ -255,13 +248,11 @@ class Component implements Bootable {
 		] );
 
 		$manager->selective_refresh->add_partial( 'powered_by', [
-			'selector'        => '.app-footer__credit',
-			'settings'        => [
-				'powered_by',
-				'footer_credit'
-			],
-			'render_callback' => function() {
-				return \Exhale\Tools\PoweredBy::render();
+			'selector'            => '.app-footer__credit',
+			'container_inclusive' => true,
+			'settings'            => [ 'powered_by', 'footer_credit' ],
+			'render_callback'     => function() {
+				return Footer::renderCredit();
 			}
 		] );
 

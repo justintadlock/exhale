@@ -70,7 +70,7 @@
 		max-height: 100%;
 		padding:    40px $spacing-half $spacing-fourth;
 		text-align: center;
-		color:      color-rgb( white );
+		color:      color-rgb( theme-white );
 		background: linear-gradient(
 			0deg,
 			color-rgba( theme-black, 0.7 ) 0,
@@ -85,8 +85,8 @@
 		a:hover,
 		a:focus,
 		a:active {
-			color:      color-rgb( white );
-			background: color-rgba( white, 0.2 );
+			color:      color-rgb( theme-white );
+			background: color-rgba( theme-white, 0.2 );
 		}
 	}
 

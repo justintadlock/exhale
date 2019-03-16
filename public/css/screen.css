@@ -37,7 +37,6 @@ html, body {
 
 body {
 	overflow-x: hidden;
-	background: rgb( var( --color-white ) );
 }
 
 p {
@@ -85,10 +84,7 @@ pre {
 	font-family: Source Code Pro, Monaco, Consolas, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 	font-size: inherit;
 	line-height: inherit;
-	color: #a9a9a9;
-	background: #222;
-	border-radius: 3px;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	border: 1px solid rgb( var( --color-border ) );
 	box-sizing: border-box;
 	overflow: auto;
 	word-wrap: normal;
@@ -208,7 +204,10 @@ h4 {
 	font-size: 1.25rem;
 }
 
-h5,
+h5 {
+	font-size: 1.125rem;
+}
+
 h6 {
 	font-size: 1rem;
 }
@@ -1076,7 +1075,7 @@ td {
 }
 
 .wp-block-cover-text {
-	color: rgb( var( --color-white ) );
+	color: rgb( var( --color-theme-white ) );
 	font-size: 2.5em;
 	z-index: 1;
 	margin-bottom: 0;
@@ -1091,8 +1090,8 @@ td {
 .wp-block-cover-text a:hover,
 .wp-block-cover-text a:focus,
 .wp-block-cover-text a:active {
-	color: rgb( var( --color-white ) );
-	background: rgba( var( --color-white ), 0.2 );
+	color: rgb( var( --color-theme-white ) );
+	background: rgba( var( --color-theme-white ), 0.2 );
 }
 
 .has-left-content .wp-block-cover-text {
@@ -1137,8 +1136,8 @@ td {
 	text-align: right;
 }
 .wp-block-file__button {
-	color: rgb( var( --color-white ) );
-	background: rgb( var( --color-custom-charcoal ) );
+	color: rgb( var( --color-theme-background ) );
+	background: rgb( var( --color-theme-primary ) );
 	border-radius: 3px;
 	display: inline-block;
 	margin: 0;
@@ -1148,6 +1147,7 @@ td {
 	word-break: break-all;
 }
 .wp-block-file__button:hover, .wp-block-file__button:focus {
+	color: rgb( var( --color-theme-background ) );
 	text-decoration: underline;
 }
 
@@ -1209,7 +1209,7 @@ td {
 	max-height: 100%;
 	padding: 40px 1.0625rem 0.53125rem;
 	text-align: center;
-	color: rgb( var( --color-white ) );
+	color: rgb( var( --color-theme-white ) );
 	background: linear-gradient(0deg, rgba( var( --color-theme-black ), 0.7 ) 0, rgba( var( --color-theme-black ), 0.3 ) 60%, transparent);
 }
 .blocks-gallery-item figcaption a {
@@ -1218,8 +1218,8 @@ td {
 .blocks-gallery-item figcaption a:hover,
 .blocks-gallery-item figcaption a:focus,
 .blocks-gallery-item figcaption a:active {
-	color: rgb( var( --color-white ) );
-	background: rgba( var( --color-white ), 0.2 );
+	color: rgb( var( --color-theme-white ) );
+	background: rgba( var( --color-theme-white ), 0.2 );
 }
 .blocks-gallery-item a + figcaption {
 	width: calc( 100% - 20px );
@@ -1453,7 +1453,8 @@ p.has-background {
 	margin-bottom: 0;
 }
 .wp-block-pullquote.is-style-solid-color {
-	margin-bottom: 2.125rem;
+	width: calc( 100% + $spacing-2x );
+	margin: 0 -2.125rem 2.125rem;
 	padding: 2.125rem 2.125rem 0;
 }
 .wp-block-pullquote::before {
@@ -1530,7 +1531,7 @@ p.has-background {
 }
 
 .is-style-stripes tr {
-	background: rgb( var( --color-wild-sand ) );
+	background: #f3f4f5;
 }
 
 .is-style-stripes td {
@@ -1565,6 +1566,7 @@ p.has-background {
 	font-size: inherit;
 	background: inherit;
 	color: inherit;
+	border: none;
 	box-shadow: none;
 }
 
@@ -1691,7 +1693,7 @@ p .aligncenter {
 [style*=background-color] a:not(.wp-block-button__link):hover,
 [style*=background-color] a:not(.wp-block-button__link):focus {
 	color: inherit;
-	background: rgba( var( --color-white ), 0.2 );
+	background: rgba( var( --color-theme-white ), 0.2 );
 }
 
 .has-text-color a:not(.wp-block-button__link),
@@ -1854,32 +1856,6 @@ p .aligncenter {
 :root .has-custom-persimmon-color a:not(.wp-block-button__link):hover,
 :root .has-custom-persimmon-color a:not(.wp-block-button__link):focus {
 	background: rgba( var( --color-custom-persimmon ), 0.2 );
-}
-
-:root .has-black-background-color {
-	background-color: rgb( var( --color-black ) );
-}
-
-:root .has-black-color {
-	color: rgb( var( --color-black ) );
-}
-
-:root .has-black-color a:not(.wp-block-button__link):hover,
-:root .has-black-color a:not(.wp-block-button__link):focus {
-	background: rgba( var( --color-black ), 0.2 );
-}
-
-:root .has-white-background-color {
-	background-color: rgb( var( --color-white ) );
-}
-
-:root .has-white-color {
-	color: rgb( var( --color-white ) );
-}
-
-:root .has-white-color a:not(.wp-block-button__link):hover,
-:root .has-white-color a:not(.wp-block-button__link):focus {
-	background: rgba( var( --color-white ), 0.2 );
 }
 
 .has-background-dim::before {

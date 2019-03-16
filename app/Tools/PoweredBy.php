@@ -65,15 +65,8 @@ class PoweredBy {
 	 * @return string
 	 */
 	public static function render() {
+		$collection = static::all();
 
-		$powered_by = get_theme_mod( 'powered_by', true );
-
-		if ( $powered_by ) {
-			$collection = static::all();
-
-			return $collection[ array_rand( $collection, 1 ) ];
-		} else {
-			return get_theme_mod( 'footer_credit' );
-		}
+		return $collection[ array_rand( $collection, 1 ) ];
 	}
 }
