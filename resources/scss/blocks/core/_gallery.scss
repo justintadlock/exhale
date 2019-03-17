@@ -14,14 +14,16 @@
 	padding:         0;
 	margin:          0 -#{ $spacing-fourth } $spacing-half;
 
-	&.alignfull {
-		padding: 0 $spacing-one-five;
+	&.alignfull,
+	&.alignwide {
+		padding: 0 $spacing-half;
 	}
 
 	@media ( max-width: $content-width ) {
 		&.alignwide,
 		&.alignfull {
-			padding: 0 $spacing-half;
+			padding: 0;
+			margin:  0 -#{ $spacing-fourth } $spacing-half;
 		}
 	}
 }
@@ -123,7 +125,7 @@
 }
 
 // 3-8 columns on larger screens.
-@media ( min-width: break( small ) ) {
+@media ( min-width: $content-width ) {
 
 	@for $i from 3 through 8 {
 
