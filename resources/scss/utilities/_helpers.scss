@@ -50,6 +50,7 @@
 /// We don't really know what color combos we have here, so we're going to make
 /// sure links don't clash with the background.
 
+/*
 [class*=background-color],
 [style*=background-color] {
 
@@ -63,6 +64,7 @@
 		background: color-rgba( theme-white, 0.2 );
 	}
 }
+*/
 
 /// If we have a text color, let's use that as the link color as well.  There's
 /// no way for us to know if the colors will clash here, so let's keep it simple.

@@ -78,6 +78,11 @@
 	}
 }
 
+// Button block margin is too large in editor.
+.edit-post-visual-editor .wp-block-button {
+	margin-bottom: 0;
+}
+
 // Code block fixes. The code block in the editor is a `<textarea>`.
 .wp-block-code {
 	@include code-block;
@@ -122,6 +127,13 @@
 }
 
 // Media text fixes.
+
+// Add appropriate padding to left/right.
+[data-align="full"] .wp-block-media-text {
+	padding-left: $spacing-global;
+	padding-right: $spacing-global;
+}
+
 .wp-block-media-text .editor-inner-blocks {
 	padding: 0;
 }

@@ -15,6 +15,11 @@
 .wp-block-button {
 	margin-bottom: $spacing-global;
 
+	&__link {
+		color:      color-rgb( theme-background );
+		background: color-rgb( theme-primary );
+	}
+
 	&__link,
 	&__link:hover,
 	&__link:focus {

@@ -16,6 +16,10 @@
 		"resizer resizer";
 	grid-template-columns: 50% auto;
 
+	@media ( max-width: $content-width ) {
+		padding: 0 $spacing-global;
+	}
+
 	&.alignfull {
 		padding: 0 $spacing-global;
 	}

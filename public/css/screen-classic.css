@@ -1071,18 +1071,21 @@ p .aligncenter {
 	margin-top: -2.125rem;
 }
 
-[class*=background-color] a:not(.wp-block-button__link),
-[style*=background-color] a:not(.wp-block-button__link) {
-	color: inherit;
-}
-[class*=background-color] a:not(.wp-block-button__link):hover,
-[class*=background-color] a:not(.wp-block-button__link):focus,
-[style*=background-color] a:not(.wp-block-button__link):hover,
-[style*=background-color] a:not(.wp-block-button__link):focus {
-	color: inherit;
-	background: rgba( var( --color-theme-white ), 0.2 );
-}
+/*
+[class*=background-color],
+[style*=background-color] {
 
+	a:not( .wp-block-button__link ) {
+		color: inherit;
+	}
+
+	a:not( .wp-block-button__link ):hover,
+	a:not( .wp-block-button__link ):focus {
+		color:      inherit;
+		background: color-rgba( theme-white, 0.2 );
+	}
+}
+*/
 .has-text-color a:not(.wp-block-button__link),
 .has-text-color a:not(.wp-block-button__link):hover,
 .has-text-color a:not(.wp-block-button__link):focus {
