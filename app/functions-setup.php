@@ -75,31 +75,6 @@ add_action( 'after_setup_theme', function() {
 	] );
 	**/
 
-	// Editor block font sizes. These font sizes are also defined in the
-	// `resources/scss/settings/_fonts.scss` file.
-	add_theme_support( 'editor-font-sizes', [
-		[
-			'name'      => __( 'Small' ),
-			'size'      => 16,
-			'slug'      => 'small'
-		],
-		[
-			'name'      => __( 'Regular' ),
-			'size'      => 19,
-			'slug'      => 'regular'
-		],
-		[
-			'name'      => __( 'Large' ),
-			'size'      => 22,
-			'slug'      => 'large'
-		],
-		[
-			'name'      => __( 'Larger' ),
-			'size'      => 25,
-			'slug'      => 'larger'
-		]
-	] );
-
 }, 5 );
 
 /**
