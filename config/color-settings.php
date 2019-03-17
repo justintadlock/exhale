@@ -71,7 +71,7 @@ return [
 		'description'     => __( 'Color used when hovering or focusing on a link.' )
 	],
 	'menu-primary' => [
-		'default'         => '858585',
+		'default'         => '959595',
 		'label'           => __( 'Primary Menu' ),
 		'is_editor_color' => false,
 		'description'     => __( 'Color for the primary menu links.' ),
