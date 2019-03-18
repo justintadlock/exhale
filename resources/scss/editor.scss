@@ -62,6 +62,27 @@
 	//@include typography;
 }
 
+.wp-block[data-align="wide"] {
+	max-width: 930px;
+}
+
+.wp-block[data-align="full"] {
+	max-width: none;
+}
+
+.edit-post-visual-editor.editor-styles-wrapper {
+
+	.wp-block[data-align="left"] .editor-block-list__block-edit {
+		margin-right: 1.5em;
+		margin-bottom: 0.25em;
+	}
+
+	.wp-block[data-align="right"] .editor-block-list__block-edit {
+		margin-left: 1.5em;
+		margin-bottom: 0.25em;
+	}
+}
+
 // Editor post title.
 .editor-post-title__block .editor-post-title__input {
 	line-height: 1.58;

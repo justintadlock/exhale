@@ -13,14 +13,17 @@
 .alignleft {
 	@media( min-width: break( 'mobile' ) ) {
 		float:     left;
-		margin:    0 1.5em 1.5em 0;
-		max-width: 50%;
+		margin:    0 1.5em 0.25em 0;
+
+		&:not(.is-resized) {
+			max-width: 50%;
+		}
 	}
 }
 
 .alignleft.is-small {
 	float:     left;
-	margin:    0 1.5em 1.5em 0;
+	margin:    0 1.5em 0.25em 0;
 	max-width: 50%;
 }
 
@@ -28,14 +31,17 @@
 .alignright {
 	@media( min-width: break( 'mobile' ) ) {
 		float:     right;
-		margin:    0 0 1.5em 1.5em;
-		max-width: 50%;
+		margin:    0 0 0.25em 1.5em;
+
+		&:not(.is-resized) {
+			max-width: 50%;
+		}
 	}
 }
 
 .alignright.is-small {
 	float:     right;
-	margin:    0 0 1.5em 1.5em;
+	margin:    0 0 0.25em 1.5em;
 	max-width: 50%;
 }
 
