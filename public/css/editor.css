@@ -505,7 +505,7 @@
 	flex-wrap: wrap;
 	list-style-type: none;
 	padding: 0;
-	margin: 0 -0.53125rem 1.0625rem;
+	margin: 0 -0.53125rem 2.125rem -0.53125rem;
 }
 .edit-post-visual-editor .wp-block-gallery.alignfull, .edit-post-visual-editor .wp-block-gallery.alignwide {
 	padding: 0 1.0625rem;
@@ -513,7 +513,7 @@
 @media (max-width: 650px) {
 	.edit-post-visual-editor .wp-block-gallery.alignwide, .edit-post-visual-editor .wp-block-gallery.alignfull {
 		padding: 0;
-		margin: 0 -0.53125rem 1.0625rem;
+		margin: 0 -0.53125rem 2.125rem -0.53125rem;
 	}
 }
 .edit-post-visual-editor .blocks-gallery-item {
