@@ -1185,6 +1185,7 @@
 	font-family: var(--font-family-primary);
 	font-size: 16px;
 	color: rgb( var( --color-theme-primary ) );
+	background: rgb( var( --color-theme-background ) );
 }
 
 .editor-writing-flow {
