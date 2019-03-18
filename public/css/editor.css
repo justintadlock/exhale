@@ -456,12 +456,12 @@
 	text-align: center;
 }
 .edit-post-visual-editor .is-type-video .wp-block-embed__wrapper {
+	display: block;
 	position: relative;
-	margin-bottom: 1.5rem;
-	padding-bottom: 56.25%;
-	padding-top: 30px;
+	width: 100%;
 	height: 0;
-	overflow: hidden;
+	padding-bottom: 56.25%;
+	margin-bottom: 2.125rem;
 }
 .edit-post-visual-editor .is-type-video .wp-block-embed__wrapper iframe,
 .edit-post-visual-editor .is-type-video .wp-block-embed__wrapper object,
