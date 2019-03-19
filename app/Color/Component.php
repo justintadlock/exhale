@@ -58,7 +58,7 @@ class Component implements Bootable {
 		add_action( 'after_setup_theme', [ $this, 'register' ] );
 
 		// Register default settings.
-		add_action( 'extant/color/settings/register', [ $this, 'registerDefaultSettings' ] );
+		add_action( 'exhale/color/settings/register', [ $this, 'registerDefaultSettings' ] );
 	}
 
 	/**
@@ -71,7 +71,7 @@ class Component implements Bootable {
 	public function register() {
 
 		// Hook for registering custom color settings.
-		do_action( 'extant/color/settings/register', $this->settings );
+		do_action( 'exhale/color/settings/register', $this->settings );
 
 		// Adds a color palette to the block editor.
 		add_theme_support( 'editor-color-palette', $this->settings->editorPalette() );

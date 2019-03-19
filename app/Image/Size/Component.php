@@ -58,7 +58,7 @@ class Component implements Bootable {
 		add_action( 'init', [ $this, 'register' ], 5 );
 
 		// Register default sizes.
-		add_action( 'extant/image/size/register', [ $this, 'registerDefaultSizes' ] );
+		add_action( 'exhale/image/size/register', [ $this, 'registerDefaultSizes' ] );
 
 		// Filter the image size names in the editor.
 		add_filter( 'image_size_names_choose', [ $this, 'imageSizeNamesChoose' ] );
@@ -74,7 +74,7 @@ class Component implements Bootable {
 	public function register() {
 
 		// Hook for registering custom image sizes.
-		do_action( 'extant/image/size/register', $this->sizes );
+		do_action( 'exhale/image/size/register', $this->sizes );
 
 		// Registers image sizes with WordPress.  Note that the
 		// `post-thumbnail` size should be properly register with the

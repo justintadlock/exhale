@@ -70,8 +70,8 @@ class Component implements Bootable {
 		add_action( 'after_setup_theme', [ $this, 'register' ] );
 
 		// Register default settings and choices.
-		add_action( 'extant/font/family/settings/register', [ $this, 'registerDefaultSettings' ] );
-		add_action( 'extant/font/family/choices/register',  [ $this, 'registerDefaultChoices'  ] );
+		add_action( 'exhale/font/family/settings/register', [ $this, 'registerDefaultSettings' ] );
+		add_action( 'exhale/font/family/choices/register',  [ $this, 'registerDefaultChoices'  ] );
 	}
 
 	/**
@@ -83,8 +83,8 @@ class Component implements Bootable {
 	 */
 	public function register() {
 
-		do_action( 'extant/font/family/settings/register', $this->settings );
-		do_action( 'extant/font/family/choices/register',  $this->choices  );
+		do_action( 'exhale/font/family/settings/register', $this->settings );
+		do_action( 'exhale/font/family/choices/register',  $this->choices  );
 	}
 
 	/**

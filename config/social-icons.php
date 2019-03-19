@@ -13,7 +13,7 @@ return [
 	'feed'            => 'rss-square-solid',
 	'flickr.com'      => 'flickr',
 	'foursquare.com'  => 'foursquare',
-	'getpocket.com'   => 'get',
+	'getpocket.com'   => 'getpocket',
 	'github.com'      => 'github',
 	'plus.google.com' => 'google',
 	'instagram.com'   => 'instagram',

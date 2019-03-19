@@ -63,9 +63,20 @@
 	padding: 0 $spacing-global 0 0;
 }
 
-@media ( max-width: break( 'small' ) ) {
+@media ( max-width: $content-width ) {
 
 	.wp-block-media-text.is-stacked-on-mobile {
+		grid-template-columns: 100% !important; // Overwrite core's inline style.
+		grid-template-areas:
+			"media-text-media"
+			"media-text-content";
+	}
+}
+
+@media ( max-width: $width-alignwide ) {
+
+	.wp-block-media-text.is-stacked-on-mobile.alignfull,
+	.wp-block-media-text.is-stacked-on-mobile.alignwide {
 		grid-template-columns: 100% !important; // Overwrite core's inline style.
 		grid-template-areas:
 			"media-text-media"

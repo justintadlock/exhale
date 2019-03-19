@@ -59,7 +59,7 @@ class Component implements Bootable {
 		add_action( 'after_setup_theme', [ $this, 'register' ], 5 );
 
 		// Register default sizes and choices.
-		add_action( 'extant/font/size/register', [ $this, 'registerDefaultSizes' ] );
+		add_action( 'exhale/font/size/register', [ $this, 'registerDefaultSizes' ] );
 	}
 
 	/**
@@ -71,7 +71,7 @@ class Component implements Bootable {
 	 */
 	public function register() {
 
-		do_action( 'extant/font/size/register', $this->sizes );
+		do_action( 'exhale/font/size/register', $this->sizes );
 
 		$_sizes = [];
 
