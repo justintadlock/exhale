@@ -611,6 +611,10 @@ td {
 		border-width: 1px 0;
 	}
 }
+.comment__content > ul,
+.comment__content > ol {
+	margin-bottom: 2.125rem;
+}
 .comment__meta {
 	font-family: var(--font-family-secondary);
 	font-size: 1rem;

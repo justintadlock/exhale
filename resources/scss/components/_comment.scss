@@ -34,7 +34,14 @@
 	&--status-unapproved {}
 
 	// Full comment text/content.
-	&__content {}
+	&__content {
+
+		// Readjust bottom margin for lists.
+		> ul,
+		> ol {
+			margin-bottom: $spacing-global;
+		}
+	}
 
 	// Comment under moderation message.
 	&__moderation {}
