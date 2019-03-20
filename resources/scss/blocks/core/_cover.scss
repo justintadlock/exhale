@@ -13,7 +13,7 @@
 	background-position: 50%;
 	min-height:          430px;
 	margin:              0 0 $spacing-global;
-	padding:             0 $spacing-global;
+	padding:             0 $spacing-global 0;
 	display:             flex;
 	justify-content:     center;
 	align-items:         center;
@@ -49,30 +49,41 @@
 	}
 }
 
-// Paragraph of text shown within the cover image element.
+.wp-block-cover__inner-container,
 .wp-block-cover-text {
-	color:         color-rgb( theme-white );
-	font-size:     2.75rem;
-	z-index:       1;
-	margin-bottom: 0;
-	max-width:     content-width();
-	padding:       $spacing-global 0;
-	text-align:    center;
-	text-shadow:   1px 1px 2px color-rgba( custom-charcoal, 0.5 );
-
-	@media ( max-width: $content-width ) {
-		font-size: 2.25rem;
-	}
+	color: color-rgb( theme-white );
 
 	a {
 		color: inherit;
 	}
 
 	a:hover,
-	a:focus,
-	a:active {
+	a:focus {
 		color:      color-rgb( theme-white );
 		background: color-rgba( theme-white, 0.2 );
+	}
+}
+
+.wp-block-cover__inner-container {
+	color:     color-rgb( theme-white );
+	z-index:   1;
+	max-width: content-width();
+
+	p, h1, h2, h3, h4, h5, h6 {
+		color:       inherit;
+		text-shadow: 1px 1px 2px color-rgba( custom-charcoal, 0.5 );
+	}
+}
+
+// Paragraph of text shown within the cover image element.
+.wp-block-cover-text {
+	font-size:     2.75rem;
+	padding:       $spacing-global 0;
+	text-align:    center;
+	text-shadow:   1px 1px 2px color-rgba( custom-charcoal, 0.5 );
+
+	@media ( max-width: $content-width ) {
+		font-size: 2.25rem;
 	}
 }
 

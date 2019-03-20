@@ -397,7 +397,7 @@
 	background-position: 50%;
 	min-height: 430px;
 	margin: 0 0 2.125rem;
-	padding: 0 2.125rem;
+	padding: 0 2.125rem 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -425,12 +425,32 @@
 	transform: translateX(-50%) translateY(-50%);
 	z-index: 1;
 }
+.edit-post-visual-editor .wp-block-cover__inner-container,
 .edit-post-visual-editor .wp-block-cover-text {
 	color: rgb( var( --color-theme-white ) );
-	font-size: 2.75rem;
+}
+.edit-post-visual-editor .wp-block-cover__inner-container a,
+.edit-post-visual-editor .wp-block-cover-text a {
+	color: inherit;
+}
+.edit-post-visual-editor .wp-block-cover__inner-container a:hover,
+.edit-post-visual-editor .wp-block-cover__inner-container a:focus,
+.edit-post-visual-editor .wp-block-cover-text a:hover,
+.edit-post-visual-editor .wp-block-cover-text a:focus {
+	color: rgb( var( --color-theme-white ) );
+	background: rgba( var( --color-theme-white ), 0.2 );
+}
+.edit-post-visual-editor .wp-block-cover__inner-container {
+	color: rgb( var( --color-theme-white ) );
 	z-index: 1;
-	margin-bottom: 0;
 	max-width: 650px;
+}
+.edit-post-visual-editor .wp-block-cover__inner-container p, .edit-post-visual-editor .wp-block-cover__inner-container h1, .edit-post-visual-editor .wp-block-cover__inner-container h2, .edit-post-visual-editor .wp-block-cover__inner-container h3, .edit-post-visual-editor .wp-block-cover__inner-container h4, .edit-post-visual-editor .wp-block-cover__inner-container h5, .edit-post-visual-editor .wp-block-cover__inner-container h6 {
+	color: inherit;
+	text-shadow: 1px 1px 2px rgba( var( --color-custom-charcoal ), 0.5 );
+}
+.edit-post-visual-editor .wp-block-cover-text {
+	font-size: 2.75rem;
 	padding: 2.125rem 0;
 	text-align: center;
 	text-shadow: 1px 1px 2px rgba( var( --color-custom-charcoal ), 0.5 );
@@ -439,15 +459,6 @@
 	.edit-post-visual-editor .wp-block-cover-text {
 		font-size: 2.25rem;
 	}
-}
-.edit-post-visual-editor .wp-block-cover-text a {
-	color: inherit;
-}
-.edit-post-visual-editor .wp-block-cover-text a:hover,
-.edit-post-visual-editor .wp-block-cover-text a:focus,
-.edit-post-visual-editor .wp-block-cover-text a:active {
-	color: rgb( var( --color-theme-white ) );
-	background: rgba( var( --color-theme-white ), 0.2 );
 }
 .edit-post-visual-editor .has-left-content .wp-block-cover-text {
 	text-align: left;
