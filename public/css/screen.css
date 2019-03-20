@@ -914,7 +914,7 @@ td {
 .pagination {
 	clear: both;
 	overflow: hidden;
-	padding: 1.5rem 0 0;
+	margin: 0 0 2.125rem;
 	text-align: center;
 	font-family: var(--font-family-secondary);
 	font-size: 15px;
