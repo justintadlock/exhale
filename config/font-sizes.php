@@ -4,20 +4,44 @@
 // `resources/scss/settings/_fonts.scss` file.
 
 return [
-	'small' => [
-		'name' => __( 'Small' ),
-		'size' => 16
+	'fine' => [
+		'label' => __( 'Fine' ),
+		'size'  => 13
 	],
-	'regular' => [
-		'name' => __( 'Regular' ),
-		'size' => 19
+	'diminutive' => [
+		'label' => __( 'Diminutive' ),
+		'size'  => 14
+	],
+	'tiny' => [
+		'label' => __( 'Tiny' ),
+		'size'  => 15
+	],
+	'small' => [
+		'label' => __( 'Small' ),
+		'size'  => 16
+	],
+	'medium' => [
+		'label' => __( 'Medium' ),
+		'size'  => 19
 	],
 	'large' => [
-		'name' => __( 'Large' ),
-		'size' => 22
+		'label' => __( 'Large' ),
+		'size'  => 22
 	],
-	'larger' => [
-		'name' => __( 'Larger' ),
-		'size' => 25
+	'extra-large' => [
+		'label' => __( 'Extra Large' ),
+		'size'  => 25
+	],
+	'huge' => [
+		'label' => __( 'Huge' ),
+		'size'  => 30
+	],
+	'gargantuan' => [
+		'label' => __( 'Gargantuan' ),
+		'size'  => 36
+	],
+	'colossal' => [
+		'label' => __( 'Colossal' ),
+		'size'  => 44
 	]
 ];

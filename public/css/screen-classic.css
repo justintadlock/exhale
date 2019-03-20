@@ -1314,11 +1314,23 @@ p .aligncenter {
 	opacity: 1;
 }
 
+.has-fine-font-size {
+	font-size: 13px;
+}
+
+.has-diminutive-font-size {
+	font-size: 14px;
+}
+
+.has-tiny-font-size {
+	font-size: 15px;
+}
+
 .has-small-font-size {
 	font-size: 16px;
 }
 
-.has-regular-font-size {
+.has-medium-font-size {
 	font-size: 19px;
 }
 
@@ -1326,8 +1338,20 @@ p .aligncenter {
 	font-size: 22px;
 }
 
-.has-larger-font-size {
+.has-extra-large-font-size {
 	font-size: 25px;
+}
+
+.has-huge-font-size {
+	font-size: 30px;
+}
+
+.has-gargantuan-font-size {
+	font-size: 36px;
+}
+
+.has-colossal-font-size {
+	font-size: 44px;
 }
 
 img.wp-smiley,

@@ -1166,17 +1166,35 @@
 .edit-post-visual-editor .has-background-dim-100::before {
 	opacity: 1;
 }
+.edit-post-visual-editor .has-fine-font-size {
+	font-size: 13px;
+}
+.edit-post-visual-editor .has-diminutive-font-size {
+	font-size: 14px;
+}
+.edit-post-visual-editor .has-tiny-font-size {
+	font-size: 15px;
+}
 .edit-post-visual-editor .has-small-font-size {
 	font-size: 16px;
 }
-.edit-post-visual-editor .has-regular-font-size {
+.edit-post-visual-editor .has-medium-font-size {
 	font-size: 19px;
 }
 .edit-post-visual-editor .has-large-font-size {
 	font-size: 22px;
 }
-.edit-post-visual-editor .has-larger-font-size {
+.edit-post-visual-editor .has-extra-large-font-size {
 	font-size: 25px;
+}
+.edit-post-visual-editor .has-huge-font-size {
+	font-size: 30px;
+}
+.edit-post-visual-editor .has-gargantuan-font-size {
+	font-size: 36px;
+}
+.edit-post-visual-editor .has-colossal-font-size {
+	font-size: 44px;
 }
 .edit-post-visual-editor img.wp-smiley,
 .edit-post-visual-editor img.emoji {
