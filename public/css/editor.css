@@ -429,14 +429,14 @@
 .edit-post-visual-editor .wp-block-cover-text {
 	color: rgb( var( --color-theme-white ) );
 }
-.edit-post-visual-editor .wp-block-cover__inner-container a,
-.edit-post-visual-editor .wp-block-cover-text a {
+.edit-post-visual-editor .wp-block-cover__inner-container a:not(.wp-block-button__link),
+.edit-post-visual-editor .wp-block-cover-text a:not(.wp-block-button__link) {
 	color: inherit;
 }
-.edit-post-visual-editor .wp-block-cover__inner-container a:hover,
-.edit-post-visual-editor .wp-block-cover__inner-container a:focus,
-.edit-post-visual-editor .wp-block-cover-text a:hover,
-.edit-post-visual-editor .wp-block-cover-text a:focus {
+.edit-post-visual-editor .wp-block-cover__inner-container a:not(.wp-block-button__link):hover,
+.edit-post-visual-editor .wp-block-cover__inner-container a:not(.wp-block-button__link):focus,
+.edit-post-visual-editor .wp-block-cover-text a:not(.wp-block-button__link):hover,
+.edit-post-visual-editor .wp-block-cover-text a:not(.wp-block-button__link):focus {
 	color: rgb( var( --color-theme-white ) );
 	background: rgba( var( --color-theme-white ), 0.2 );
 }

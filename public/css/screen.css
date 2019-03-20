@@ -1091,14 +1091,14 @@ td {
 .wp-block-cover-text {
 	color: rgb( var( --color-theme-white ) );
 }
-.wp-block-cover__inner-container a,
-.wp-block-cover-text a {
+.wp-block-cover__inner-container a:not(.wp-block-button__link),
+.wp-block-cover-text a:not(.wp-block-button__link) {
 	color: inherit;
 }
-.wp-block-cover__inner-container a:hover,
-.wp-block-cover__inner-container a:focus,
-.wp-block-cover-text a:hover,
-.wp-block-cover-text a:focus {
+.wp-block-cover__inner-container a:not(.wp-block-button__link):hover,
+.wp-block-cover__inner-container a:not(.wp-block-button__link):focus,
+.wp-block-cover-text a:not(.wp-block-button__link):hover,
+.wp-block-cover-text a:not(.wp-block-button__link):focus {
 	color: rgb( var( --color-theme-white ) );
 	background: rgba( var( --color-theme-white ), 0.2 );
 }
