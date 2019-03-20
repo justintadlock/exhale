@@ -15,6 +15,7 @@ namespace Exhale\Query;
 
 use WP_Query;
 use Hybrid\Contracts\Bootable;
+use Exhale\Settings\Options;
 
 /**
  * Query component class.
@@ -51,14 +52,14 @@ class Component implements Bootable {
 
 			$query->set(
 				'posts_per_page',
-				apply_filters( 'exhale/query/posts/archive/number', 100, $query )
+				apply_filters( 'exhale/query/posts/archive/number', Options::get( 'archive_posts_number' ), $query )
 			);
 
 		} elseif ( $query->is_main_query() && $query->is_home() ) {
 
 			$query->set(
 				'posts_per_page',
-				apply_filters( 'exhale/query/posts/home/number', 3, $query )
+				apply_filters( 'exhale/query/posts/home/number', Options::get( 'home_posts_number' ), $query )
 			);
 		}
 	}
