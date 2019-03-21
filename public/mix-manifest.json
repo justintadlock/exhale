@@ -1,9 +1,16 @@
 {
-    "/js/app.js": "/js/app.js?id=20aa78c3a44b56123fde",
-    "/css/screen.css": "/css/screen.css?id=0b517c9b1940c64d3852",
-    "/css/screen-classic.css": "/css/screen-classic.css?id=73cc0bb26d406630e2dd",
-    "/css/editor.css": "/css/editor.css?id=426427673fd135e83c40",
-    "/css/customize-controls.css": "/css/customize-controls.css?id=c1ec7bf0f3429f0596ed",
-    "/js/customize-controls.js": "/js/customize-controls.js?id=bc1732c9e7d5892813f0",
-    "/js/customize-preview.js": "/js/customize-preview.js?id=33b1656c9b9ee5052ba5"
+    "/js/app.js": "/js/app.js?id=b42b43d04c8f7560edc9",
+    "/css/screen.css": "/css/screen.css?id=1de0189a632c272afadd",
+    "/css/screen-classic.css": "/css/screen-classic.css?id=4f6ba4f141c4c1a347e3",
+    "/css/editor.css": "/css/editor.css?id=1ee89613b4eec714ae7b",
+    "/css/customize-controls.css": "/css/customize-controls.css?id=580f38a9e60c051f5e88",
+    "/js/app.js.map": "/js/app.js.map?id=92971931ea1543b6b16a",
+    "/css/screen.css.map": "/css/screen.css.map?id=cd9d56a2e534ee4bf78d",
+    "/css/screen-classic.css.map": "/css/screen-classic.css.map?id=a61855394c4e40306b31",
+    "/css/editor.css.map": "/css/editor.css.map?id=8188980e01f89d7f3d40",
+    "/css/customize-controls.css.map": "/css/customize-controls.css.map?id=d29d572ded1d5acc2703",
+    "/js/customize-controls.js": "/js/customize-controls.js?id=7d62dc7e1f5576b94a9c",
+    "/js/customize-controls.js.map": "/js/customize-controls.js.map?id=a3b506ac484406f5867e",
+    "/js/customize-preview.js": "/js/customize-preview.js?id=a3d19711043a8e0de5a1",
+    "/js/customize-preview.js.map": "/js/customize-preview.js.map?id=64747fe4318b849fe53f"
 }

@@ -10,7 +10,7 @@
 	display:       flex;
 	box-sizing:    border-box;
 	background:    color-rgb( header-background );
-	border-bottom: 1px solid color-rgba( border, 0.5 );
+	border-bottom: 1px solid color-rgba( border, 0.25 );
 
 	// Wrapper around the title and description.
 	&__branding {
@@ -86,7 +86,7 @@
 		}
 	}
 	.menu--primary {
-		border-top: 1px solid color-rgba( border, 0.5 );
+		border-top: 1px solid color-rgba( border, 0.25 );
 
 		.menu__items {
 			text-align: center;
