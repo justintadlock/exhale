@@ -455,9 +455,11 @@ td {
 }
 .app-header__branding {
 	flex-grow: 1;
-	white-space: nowrap;
+	overflow: hidden;
+	height: 58px;
 }
 .app-header__title {
+	white-space: nowrap;
 	float: left;
 	margin: 0;
 	padding: 19px 1.5rem 20px;
@@ -465,7 +467,6 @@ td {
 	font-family: var(--font-family-headings);
 	font-weight: bold;
 	line-height: 20px;
-	text-align: center;
 	background: rgb( var( --color-branding-background ) );
 }
 .app-header__title-link {
@@ -476,8 +477,20 @@ td {
 	color: rgb( var( --color-branding-alt ) );
 	text-decoration: underline;
 }
+.app-header__description {
+	white-space: nowrap;
+	float: left;
+	margin: 0;
+	padding: 24px 1.5rem 20px;
+	font-size: 15px;
+	line-height: 15px;
+	color: rgba( var( --color-branding ), 0.75 );
+	border-left: 1px solid rgba( var( --color-border ), 0.25 );
+}
+
 .menu--primary {
 	position: relative;
+	max-width: 70%;
 	white-space: nowrap;
 	overflow-x: auto;
 	overflow-y: hidden;
@@ -504,12 +517,16 @@ td {
 	.app-header {
 		display: block;
 	}
-	.app-header__title {
-		float: none;
+	.app-header__branding {
 		text-align: center;
+	}
+	.app-header__title, .app-header__description {
+		float: none;
+		display: inline-block;
 	}
 
 	.menu--primary {
+		max-width: 100%;
 		border-top: 1px solid rgba( var( --color-border ), 0.25 );
 	}
 	.menu--primary .menu__items {

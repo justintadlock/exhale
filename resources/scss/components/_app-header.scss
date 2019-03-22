@@ -15,11 +15,13 @@
 	// Wrapper around the title and description.
 	&__branding {
 		flex-grow: 1;
-		white-space: nowrap;
+		overflow: hidden;
+		height: 58px;
 	}
 
 	// The site title.
 	&__title {
+		white-space: nowrap;
 		float: left;
 		margin: 0;
 		padding: 19px 1.5rem 20px;
@@ -27,7 +29,6 @@
 		font-family: font-family( 'headings' );
 		font-weight: bold;
 		line-height: 20px;
-		text-align: center;
 		background: color-rgb( branding-background );
 	}
 
@@ -44,13 +45,23 @@
 	}
 
 	// The site description.
-	&__description {}
+	&__description {
+		white-space: nowrap;
+		float: left;
+		margin: 0;
+		padding: 24px 1.5rem 20px;
+		font-size: 15px;
+		line-height: 15px;
+		color: color-rgba( branding, 0.75 );
+		border-left: 1px solid color-rgba( border, 0.25 );
+	}
 }
 
 // See `nav-menu.scss` for menu styling. This part just deals with the header
 // layout styling.
 .menu--primary {
 	position: relative;
+	max-width: 70%;
 	white-space: nowrap;
 	overflow-x: auto;
 	overflow-y: hidden;
@@ -80,12 +91,19 @@
 @media ( max-width: $content-width ) {
 	.app-header {
 		display: block;
-		&__title {
-			float: none;
+
+		&__branding {
 			text-align: center;
+		}
+
+		&__title,
+		&__description {
+			float: none;
+			display: inline-block;
 		}
 	}
 	.menu--primary {
+		max-width:  100%;
 		border-top: 1px solid color-rgba( border, 0.25 );
 
 		.menu__items {
