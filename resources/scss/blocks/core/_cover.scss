@@ -51,6 +51,7 @@
 
 .wp-block-cover__inner-container,
 .wp-block-cover-text {
+	z-index: 2;
 	color: color-rgb( theme-white );
 
 	a:not(.wp-block-button__link) {

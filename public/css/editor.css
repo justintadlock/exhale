@@ -427,6 +427,7 @@
 }
 .edit-post-visual-editor .wp-block-cover__inner-container,
 .edit-post-visual-editor .wp-block-cover-text {
+	z-index: 2;
 	color: rgb( var( --color-theme-white ) );
 }
 .edit-post-visual-editor .wp-block-cover__inner-container a:not(.wp-block-button__link),
