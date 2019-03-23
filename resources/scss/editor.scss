@@ -42,8 +42,8 @@
 .edit-post-visual-editor.editor-styles-wrapper {
 	font-family: font-family( primary );
 	font-size:   16px;
-	color:       color-rgb( theme-primary );
-	background:  color-rgb( theme-background );
+	color:       var( --color-primary );
+	background:  var( --color-background );
 }
 
 .editor-writing-flow {
@@ -89,7 +89,7 @@
 	line-height: 1.58;
 	font-family: font-family( 'headings' );
 	font-weight: 700;
-	color:       color-rgb( headings );
+	color:       var( --color-headings );
 
 	letter-spacing: 1px;
 	text-align: center;

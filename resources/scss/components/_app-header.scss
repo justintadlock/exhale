@@ -9,8 +9,8 @@
 .app-header {
 	display:       flex;
 	box-sizing:    border-box;
-	background:    color-rgb( header-background );
-	border-bottom: 1px solid color-rgba( border, 0.25 );
+	background:    var( --color-header-background );
+	border-bottom: 1px solid var( --color-header-border );
 
 	// Wrapper around the title and description.
 	&__branding {
@@ -29,17 +29,17 @@
 		font-family: font-family( 'headings' );
 		font-weight: bold;
 		line-height: 20px;
-		background: color-rgb( branding-background );
+		background: var( --color-branding-background );
 	}
 
 	// Site title link.
 	&__title-link {
-		color: color-rgb( branding );
+		color: var( --color-branding );
 		text-decoration: none;
 
 		&:hover,
 		&:focus {
-			color: color-rgb( branding-alt );
+			color: var( --color-branding-alt );
 			text-decoration: underline;
 		}
 	}
@@ -52,8 +52,9 @@
 		padding: 24px 1.5rem 20px;
 		font-size: 15px;
 		line-height: 15px;
-		color: color-rgba( branding, 0.75 );
-		border-left: 1px solid color-rgba( border, 0.25 );
+		color: var( --color-header-description );
+		background: var( --color-branding-background );
+		border-left: 1px solid var( --color-header-border );
 	}
 }
 
@@ -94,6 +95,7 @@
 
 		&__branding {
 			text-align: center;
+			background: var( --color-branding-background );
 		}
 
 		&__title,
@@ -104,7 +106,7 @@
 	}
 	.menu--primary {
 		max-width:  100%;
-		border-top: 1px solid color-rgba( border, 0.25 );
+		border-top: 1px solid var( --color-header-border );
 
 		.menu__items {
 			text-align: center;

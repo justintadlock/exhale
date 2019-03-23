@@ -160,7 +160,7 @@ class Setting implements JsonSerializable {
 	 * @return string
 	 */
 	public function property() {
-		return sprintf( '--color-%s', $this->name() );
+		return sprintf( '--color-%s', str_replace( 'theme-', '', $this->name() ) );
 	}
 
 	/**

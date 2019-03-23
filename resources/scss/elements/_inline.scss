@@ -31,7 +31,7 @@ time[title] { cursor : help; }
 abbr,
 acronym {
 	// @todo - Should be lightened version of primary color.
-	border-bottom : 1px dotted color-rgb( theme-gray );
+	border-bottom : 1px dotted var( --color-gray );
 }
 
 acronym { text-transform: uppercase; }
@@ -63,12 +63,12 @@ del,
 s,
 strike {
 	text-decoration:       line-through;
-	text-decoration-color: color-rgb( primary-link );
+	text-decoration-color: var( --color-primary-link );
 }
 
 // Inserts.
 ins {
-	border-bottom:   1px dashed color-rgba( 'theme-green', 0.5 );
+	border-bottom:   1px dashed var( --color-green-light );
 	text-decoration: none;
 }
 

@@ -1,16 +1,9 @@
 {
-    "/js/app.js": "/js/app.js?id=b42b43d04c8f7560edc9",
-    "/css/screen.css": "/css/screen.css?id=aafe090f40657397a368",
-    "/css/screen-classic.css": "/css/screen-classic.css?id=2a98ee6ed7887bac93be",
-    "/css/editor.css": "/css/editor.css?id=436015ab441911d8d1c5",
-    "/css/customize-controls.css": "/css/customize-controls.css?id=580f38a9e60c051f5e88",
-    "/js/app.js.map": "/js/app.js.map?id=92971931ea1543b6b16a",
-    "/css/screen.css.map": "/css/screen.css.map?id=1e40b5cf00ccd29c0c13",
-    "/css/screen-classic.css.map": "/css/screen-classic.css.map?id=505acd7bf9a78e688263",
-    "/css/editor.css.map": "/css/editor.css.map?id=373e65c401b6a6d094a5",
-    "/css/customize-controls.css.map": "/css/customize-controls.css.map?id=d29d572ded1d5acc2703",
-    "/js/customize-controls.js": "/js/customize-controls.js?id=7d62dc7e1f5576b94a9c",
-    "/js/customize-controls.js.map": "/js/customize-controls.js.map?id=a3b506ac484406f5867e",
-    "/js/customize-preview.js": "/js/customize-preview.js?id=a3d19711043a8e0de5a1",
-    "/js/customize-preview.js.map": "/js/customize-preview.js.map?id=64747fe4318b849fe53f"
+    "/js/app.js": "/js/app.js?id=20aa78c3a44b56123fde",
+    "/css/screen.css": "/css/screen.css?id=e22237e947ef887f0f39",
+    "/css/screen-classic.css": "/css/screen-classic.css?id=6a06949249bf2a8acc33",
+    "/css/editor.css": "/css/editor.css?id=bff52441f6ef2fc409ff",
+    "/css/customize-controls.css": "/css/customize-controls.css?id=c1ec7bf0f3429f0596ed",
+    "/js/customize-controls.js": "/js/customize-controls.js?id=bc1732c9e7d5892813f0",
+    "/js/customize-preview.js": "/js/customize-preview.js?id=addedc2833180630d130"
 }

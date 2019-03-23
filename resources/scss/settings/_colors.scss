@@ -6,14 +6,6 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-@function color-rgb( $name ) {
-	@return unquote( "rgb( var( --color-#{ $name } ) )" );
-}
-
-@function color-rgba( $name, $alpha : 1 ) {
-	@return unquote( "rgba( var( --color-#{ $name } ), #{$alpha} )" );
-}
-
 /// Returns a map of block colors in name-value format. These are the colors
 /// defined via the `editor-color-palette` setting in `app/functions-setup.php`
 /// for the WordPress editor.
@@ -25,25 +17,80 @@
 @function block-colors() {
 
 	@return (
-		'theme-background' : color-rgb( 'theme-background' ),
-		'theme-primary'    : color-rgb( 'theme-primary' ),
-		'theme-secondary'  : color-rgb( 'theme-secondary' ),
-		'theme-black'      : color-rgb( 'theme-black' ),
-		'theme-white'      : color-rgb( 'theme-white' ),
-		'theme-red'        : color-rgb( 'theme-red' ),
-		'theme-green'      : color-rgb( 'theme-green' ),
-		'theme-blue'       : color-rgb( 'theme-blue' ),
-		'theme-gray'       : color-rgb( 'theme-gray' ),
-		'theme-yellow'     : color-rgb( 'theme-yellow' ),
-		'custom-charcoal'  : color-rgb( 'custom-charcoal' ),
-		'custom-persimmon' : color-rgb( 'custom-persimmon' )
-	);
-}
+		'theme-primary'    : var( --color-primary ),
+		'theme-secondary'  : var( --color-secondary ),
 
-
-@function color-text-map() {
-
-	@return (
-		charcoal       : #f1f1f1
+		'theme-black'           : var( --color-black ),
+		'theme-grey-darkest'    : var( --color-grey-darkest ),
+		'theme-grey-darker'     : var( --color-grey-darker ),
+		'theme-grey-dark'       : var( --color-grey-dark ),
+		'theme-grey'            : var( --color-grey ),
+		'theme-grey-light'      : var( --color-grey-light ),
+		'theme-grey-lighter'    : var( --color-grey-lighter ),
+		'theme-grey-lightest'   : var( --color-grey-lightest ),
+		'theme-white'           : var( --color-white ),
+		'theme-red-darkest'     : var( --color-red-darkest ),
+		'theme-red-darker'      : var( --color-red-darker ),
+		'theme-red-dark'        : var( --color-red-dark ),
+		'theme-red'             : var( --color-red ),
+		'theme-red-light'       : var( --color-red-light ),
+		'theme-red-lighter'     : var( --color-red-lighter ),
+		'theme-red-lightest'    : var( --color-red-lightest ),
+		'theme-orange-darkest'  : var( --color-orange-darkest ),
+		'theme-orange-darker'   : var( --color-orange-darker ),
+		'theme-orange-dark'     : var( --color-orange-dark ),
+		'theme-orange'          : var( --color-orange ),
+		'theme-orange-light'    : var( --color-orange-light ),
+		'theme-orange-lighter'  : var( --color-orange-lighter ),
+		'theme-orange-lightest' : var( --color-orange-lightest ),
+		'theme-yellow-darkest'  : var( --color-yellow-darkest ),
+		'theme-yellow-darker'   : var( --color-yellow-darker ),
+		'theme-yellow-dark'     : var( --color-yellow-dark ),
+		'theme-yellow'          : var( --color-yellow ),
+		'theme-yellow-light'    : var( --color-yellow-light ),
+		'theme-yellow-lighter'  : var( --color-yellow-lighter ),
+		'theme-yellow-lightest' : var( --color-yellow-lightest ),
+		'theme-green-darkest'   : var( --color-green-darkest ),
+		'theme-green-darker'    : var( --color-green-darker ),
+		'theme-green-dark'      : var( --color-green-dark ),
+		'theme-green'           : var( --color-green ),
+		'theme-green-light'     : var( --color-green-light ),
+		'theme-green-lighter'   : var( --color-green-lighter ),
+		'theme-green-lightest'  : var( --color-green-lightest ),
+		'theme-teal-darkest'    : var( --color-teal-darkest ),
+		'theme-teal-darker'     : var( --color-teal-darker ),
+		'theme-teal-dark'       : var( --color-teal-dark ),
+		'theme-teal'            : var( --color-teal ),
+		'theme-teal-light'      : var( --color-teal-light ),
+		'theme-teal-lighter'    : var( --color-teal-lighter ),
+		'theme-teal-lightest'   : var( --color-teal-lightest ),
+		'theme-blue-darkest'    : var( --color-blue-darkest ),
+		'theme-blue-darker'     : var( --color-blue-darker ),
+		'theme-blue-dark'       : var( --color-blue-dark ),
+		'theme-blue'            : var( --color-blue ),
+		'theme-blue-light'      : var( --color-blue-light ),
+		'theme-blue-lighter'    : var( --color-blue-lighter ),
+		'theme-blue-lightest'   : var( --color-blue-lightest ),
+		'theme-indigo-darkest'  : var( --color-indigo-darkest ),
+		'theme-indigo-darker'   : var( --color-indigo-darker ),
+		'theme-indigo-dark'     : var( --color-indigo-dark ),
+		'theme-indigo'          : var( --color-indigo ),
+		'theme-indigo-light'    : var( --color-indigo-light ),
+		'theme-indigo-lighter'  : var( --color-indigo-lighter ),
+		'theme-indigo-lightest' : var( --color-indigo-lightest ),
+		'theme-purple-darkest'  : var( --color-purple-darkest ),
+		'theme-purple-darker'   : var( --color-purple-darker ),
+		'theme-purple-dark'     : var( --color-purple-dark ),
+		'theme-purple'          : var( --color-purple ),
+		'theme-purple-light'    : var( --color-purple-light ),
+		'theme-purple-lighter'  : var( --color-purple-lighter ),
+		'theme-purple-lightest' : var( --color-purple-lightest ),
+		'theme-pink-darkest'    : var( --color-pink-darkest ),
+		'theme-pink-darker'     : var( --color-pink-darker ),
+		'theme-pink-dark'       : var( --color-pink-dark ),
+		'theme-pink'            : var( --color-pink ),
+		'theme-pink-light'      : var( --color-pink-light ),
+		'theme-pink-lighter'    : var( --color-pink-lighter ),
+		'theme-pink-lightest'   : var( --color-pink-lightest )
 	);
 }

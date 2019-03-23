@@ -11,8 +11,6 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-import { hexToRgb } from '../tools/hex-to-rgb';
-
 let settings = exhaleCustomizePreview.colorSettings;
 
 Object.keys( settings ).forEach( setting => {
@@ -21,7 +19,7 @@ Object.keys( settings ).forEach( setting => {
 		value.bind( to => {
 			document.documentElement.style.setProperty(
 				settings[ setting ].property,
-				hexToRgb( to )
+				to
 			);
 		} );
 	} );

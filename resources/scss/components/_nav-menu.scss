@@ -12,7 +12,7 @@
 		font-family: font-family( 'secondary' );
 		font-size:   16px;
 		line-height: 16px;
-		color: color-rgb( menu-primary );
+		color: var( --color-menu-primary );
 
 		.menu__items {
 			margin: 0;
@@ -27,12 +27,12 @@
 			display: inline-block;
 			padding:  21px 1.5rem;
 			text-decoration: none;
-			color:    color-rgb( menu-primary );
+			color:    var( --color-menu-primary );
 
 			&:hover,
 			&:focus {
 				text-decoration: underline;
-				color: color-rgb( menu-primary-alt );
+				color: var( --color-menu-primary-alt );
 			}
 		}
 	}
@@ -53,11 +53,11 @@
 		.menu__link {
 			display: inline-block;
 			margin:   0.5rem;
-			color:    color-rgb( secondary-link );
+			color:    var( --color-secondary-link );
 
 			&:hover,
 			&:focus {
-				color: color-rgb( secondary-link-alt );
+				color: var( --color-secondary-link-alt );
 			}
 
 			svg {

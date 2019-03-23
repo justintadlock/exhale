@@ -73,11 +73,11 @@
 		padding:    40px $spacing-half $spacing-fourth;
 		font-size:  1rem;
 		text-align: center;
-		color:      color-rgb( theme-white );
+		color:      var( --color-white );
 		background: linear-gradient(
 			0deg,
-			color-rgba( theme-black, 0.7 ) 0,
-			color-rgba( theme-black, 0.3 ) 60%,
+			rgba( 0, 0, 0, 0.7 ) 0,
+			rgba( 0, 0, 0, 0.3 ) 60%,
 			transparent
 		);
 
@@ -88,8 +88,8 @@
 		a:hover,
 		a:focus,
 		a:active {
-			color:      color-rgb( theme-white );
-			background: color-rgba( theme-white, 0.2 );
+			color:      var( --color-white );
+			background: rgba( 255, 255, 255, 0.2 );
 		}
 	}
 

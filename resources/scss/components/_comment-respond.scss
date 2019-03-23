@@ -9,7 +9,7 @@
 .comment-respond {
 	margin:  0 -#{ $spacing-global } $spacing-global;
 	padding: $spacing-global $spacing-global 0;
-	border:  1px solid color-rgb( border );
+	border:  1px solid var( --color-border );
 
 	@media only screen and ( max-width: $content-width ) {
 
@@ -48,7 +48,7 @@
 
 	.required {
 		font-weight: bold;
-		color:       color-rgb( primary-link );
+		color:       var( --color-primary-link );
 	}
 
 	// The wrapping element around individual form fields.

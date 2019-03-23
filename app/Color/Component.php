@@ -105,10 +105,12 @@ class Component implements Bootable {
 
 		foreach ( $this->settings as $setting ) {
 
+			$color = $setting->hex() ?: 'transparent';
+
 			$css .= sprintf(
 				'%s: %s;',
 				esc_html( $setting->property() ),
-				join( ',', array_map( 'absint', $setting->rgb() ) )
+				$setting->hex()
 			);
 		}
 

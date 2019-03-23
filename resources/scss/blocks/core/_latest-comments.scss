@@ -37,7 +37,7 @@
 		clear:       both;
 		margin-top:  $spacing-half;
 		padding-top: $spacing-half;
-		border-top:  1px solid color-rgb( border );
+		border-top:  1px solid var( --color-border );
 	}
 }
 

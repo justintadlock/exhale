@@ -12,7 +12,7 @@
 	// We must define a default border color here so that `blockquote::before`
 	// can eventually inherit this color. The border color can be overwritten
 	// via the editor ("main" color).
-	border-color: color-rgba( border, 0.5 );
+	border-color: var( --color-border );
 
 	@media only screen and ( max-width: 900px ) {
 		&.alignwide,
@@ -69,5 +69,5 @@
 	width:      calc( 100% + #{ $spacing-2x } );
 	margin:     0 -#{ $spacing-global } $spacing-global;
 	padding:    $spacing-global $spacing-global 0;
-	background: color-rgba( border, 0.5 );
+	background: var( --color-border );
 }

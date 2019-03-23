@@ -13,6 +13,6 @@
 	}
 
 	&.is-style-dots {
-		border-top: 4px dotted color-rgb( border );
+		border-top: 4px dotted var( --color-border );
 	}
 }

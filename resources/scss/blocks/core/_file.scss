@@ -18,8 +18,8 @@
 	}
 
 	&__button {
-		color:           color-rgb( theme-background );
-		background:      color-rgb( theme-primary );
+		color:           var( --color-background );
+		background:      var( --color-primary );
 		border-radius:   3px;
 		display:         inline-block;
 		margin:          0;
@@ -30,7 +30,7 @@
 
 		&:hover,
 		&:focus {
-			color:           color-rgb( theme-background );
+			color:           var( --color-background );
 			text-decoration: underline;
 		}
 	}

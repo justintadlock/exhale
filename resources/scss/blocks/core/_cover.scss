@@ -52,7 +52,7 @@
 .wp-block-cover__inner-container,
 .wp-block-cover-text {
 	z-index: 2;
-	color: color-rgb( theme-white );
+	color: var( --color-white );
 
 	a:not(.wp-block-button__link) {
 		color: inherit;
@@ -60,19 +60,19 @@
 
 	a:not(.wp-block-button__link):hover,
 	a:not(.wp-block-button__link):focus {
-		color:      color-rgb( theme-white );
-		background: color-rgba( theme-white, 0.2 );
+		color:      var( --color-white );
+		background: rgba( 255, 255, 255, 0.2 );
 	}
 }
 
 .wp-block-cover__inner-container {
-	color:     color-rgb( theme-white );
+	color:     var( --color-white );
 	z-index:   1;
 	max-width: content-width();
 
 	p, h1, h2, h3, h4, h5, h6 {
 		color:       inherit;
-		text-shadow: 1px 1px 2px color-rgba( custom-charcoal, 0.5 );
+		text-shadow: 1px 1px 2px rgba( 0, 0, 0, 0.5 );
 	}
 }
 
@@ -81,7 +81,7 @@
 	font-size:     2.75rem;
 	padding:       $spacing-global 0;
 	text-align:    center;
-	text-shadow:   1px 1px 2px color-rgba( custom-charcoal, 0.5 );
+	text-shadow:   1px 1px 2px rgba( 0, 0, 0, 0.5 );
 
 	@media ( max-width: $content-width ) {
 		font-size: 2.25rem;

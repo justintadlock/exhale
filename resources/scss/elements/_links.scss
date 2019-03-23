@@ -1,12 +1,12 @@
 // Links.
 a {
-	color:               color-rgb( primary-link );
+	color:               var( --color-primary-link );
 	text-decoration:     underline;
 	transition:          color 0.5s ease-in-out;
 	transition-property: color, background, border;
 
 	&:hover,
 	&:focus {
-		color: color-rgb( primary-link-alt );
+		color: var( --color-primary-link-alt );
 	}
 }
