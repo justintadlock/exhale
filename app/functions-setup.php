@@ -213,4 +213,13 @@ add_action( 'hybrid/templates/register', function( $templates ) {
 			'page'
 		]
 	] );
+
+	$templates->add( 'template-entry-content-only.php', [
+		'label'      => __( 'No Post Header/Footer' ),
+		'post_types' => [
+			'page',
+			'post'
+		]
+	] );
+
 } );
