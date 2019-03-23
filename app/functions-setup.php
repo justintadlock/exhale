@@ -207,7 +207,7 @@ add_filter( 'hybrid/template/path', function() {
  */
 add_action( 'hybrid/templates/register', function( $templates ) {
 
-	$templates->add( 'landing.php', [
+	$templates->add( 'template-landing.php', [
 		'label'      => __( 'Landing' ),
 		'post_types' => [
 			'page'
