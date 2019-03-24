@@ -118,6 +118,12 @@
 	color: inherit;
 }
 
+// Cover block.
+// Make sure inner blocks span the full width of the container.
+.wp-block-cover__inner-container .wp-block {
+	max-width: 100%;
+}
+
 // Class is used in the editor but not the front end.
 // Copied from `/elements/_quotes.scsss` and `/blocks/core/_pullquote.scss`.
 
