@@ -9,7 +9,7 @@ use function Hybrid\Theme\mod;
 
 class Mod {
 
-	public function get( $name, $default = '' ) {
+	public static function get( $name, $default = '' ) {
 		return mod( $name, $default );
 	}
 

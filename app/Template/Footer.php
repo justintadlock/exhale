@@ -13,6 +13,7 @@
 
 namespace Exhale\Template;
 
+use Exhale\Tools\Mod;
 use Exhale\Tools\PoweredBy;
 
 /**
@@ -48,9 +49,9 @@ class Footer {
 			'after'  => '</p>'
 		] );
 
-		$powered_by = get_theme_mod( 'powered_by', true );
+		$powered_by = Mod::get( 'powered_by', true );
 
-		$text = $powered_by ? PoweredBy::render() : get_theme_mod( 'footer_credit' );
+		$text = $powered_by ? PoweredBy::render() : Mod::get( 'footer_credit' );
 
 		return sprintf(
 			'%s%s%s',
