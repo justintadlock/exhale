@@ -20,7 +20,7 @@ use Hybrid\App;
 use Hybrid\Contracts\Bootable;
 use Exhale\Template\Footer;
 
-use Exhale\Color\Settings       as ColorSettings;
+use Exhale\Color\CustomizeColors;
 use Exhale\Font\Family\Choices  as FontFamilyChoices;
 use Exhale\Font\Family\Settings as FontFamilySettings;
 
@@ -137,7 +137,7 @@ class Component implements Bootable {
 				'transport'            => 'postMessage'
 			] );
 
-		}, App::resolve( ColorSettings::class )->customizeColors() );
+		}, App::resolve( CustomizeColors::class )->all() );
 
 		// Registers the font family settings.
 		array_map( function( $setting ) use ( $manager ) {
@@ -188,7 +188,7 @@ class Component implements Bootable {
 				] )
 			);
 
-		}, App::resolve( ColorSettings::class )->customizeColors() );
+		}, App::resolve( CustomizeColors::class )->all() );
 
 		// Registers the font family controls.
 		array_map( function( $setting ) use ( $manager ) {
@@ -326,7 +326,7 @@ class Component implements Bootable {
 		);
 
 		wp_localize_script( 'exhale-customize-preview', 'exhaleCustomizePreview', [
-			'colorSettings'      => App::resolve( ColorSettings::class      ),
+			'customizeColors'    => App::resolve( CustomizeColors::class    ),
 			'fontFamilySettings' => App::resolve( FontFamilySettings::class ),
 			'fontFamilyChoices'  => App::resolve( FontFamilyChoices::class  )
 		] );

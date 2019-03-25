@@ -65,7 +65,7 @@ class General extends View {
 
 	protected function addFields() {
 
-		add_settings_section( 'editor', esc_html__( 'Editor Flavor' ), [ $this, 'sectionEditor' ], 'exhale_settings' );
+		add_settings_section( 'editor', esc_html__( 'Editor' ), [ $this, 'sectionEditor' ], 'exhale_settings' );
 		add_settings_section( 'reading', esc_html__( 'Reading' ), [ $this, 'sectionReading' ], 'exhale_settings' );
 		add_settings_section( 'clean_wp', esc_html__( 'Clean WordPress' ), [ $this, 'sectionCleanWP' ], 'exhale_settings' );
 

@@ -25,24 +25,36 @@ use Exhale\Tools\Config;
 class Component implements Bootable {
 
 	/**
-	 * Color settings.
+	 * Editor colors.
 	 *
 	 * @since  1.0.0
 	 * @access protected
-	 * @var    Settings
+	 * @var    EditorColors
 	 */
-	protected $settings;
+	protected $editor_colors;
+
+	/**
+	 * Customize colors.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    CustomizeColors
+	 */
+	protected $customize_colors;
+
 
 	/**
 	 * Creates the component object.
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  Settings  $settings
+	 * @param  EditorColors     $editor
+	 * @param  CustomizeColors  $customize
 	 * @return void
 	 */
-	public function __construct( Settings $settings ) {
-		$this->settings = $settings;
+	public function __construct( EditorColors $editor, CustomizeColors $customize ) {
+		$this->editor_colors    = $editor;
+		$this->customize_colors = $customize;
 	}
 
 	/**
@@ -58,7 +70,8 @@ class Component implements Bootable {
 		add_action( 'after_setup_theme', [ $this, 'register' ] );
 
 		// Register default settings.
-		add_action( 'exhale/color/settings/register', [ $this, 'registerDefaultSettings' ] );
+		add_action( 'exhale/color/editor/register',    [ $this, 'registerDefaultEditorColors'    ] );
+		add_action( 'exhale/color/customize/register', [ $this, 'registerDefaultCustomizeColors' ] );
 	}
 
 	/**
@@ -71,24 +84,48 @@ class Component implements Bootable {
 	public function register() {
 
 		// Hook for registering custom color settings.
-		do_action( 'exhale/color/settings/register', $this->settings );
+		do_action( 'exhale/color/editor/register', $this->editor_colors );
 
 		// Adds a color palette to the block editor.
-		add_theme_support( 'editor-color-palette', $this->settings->editorPalette() );
+		add_theme_support( 'editor-color-palette', $this->editor_colors->palette() );
+
+		do_action( 'exhale/color/customize/register', $this->customize_colors );
 	}
 
 	/**
-	 * Registers default settings.
+	 * Registers default editor colors.
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  Settings  $settings
+	 * @param  EditorColors  $colors
 	 * @return void
 	 */
-	public function registerDefaultSettings( Settings $settings ) {
+	public function registerDefaultEditorColors( EditorColors $colors ) {
 
-		foreach ( Config::get( 'color-settings' ) as $name => $options ) {
-			$settings->add( $name, $options );
+		$base = Config::get( '_editor-colors' );
+
+		foreach ( Config::get( 'editor-colors' ) as $name => $options ) {
+
+			if ( isset( $base[ $name ] ) ) {
+				$options = array_merge( $base[ $name ], $options );
+			}
+
+			$colors->add( $name, $options );
+		}
+	}
+
+	/**
+	 * Registers default customize colors.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  CustomizeColors  $colors
+	 * @return void
+	 */
+	public function registerDefaultCustomizeColors( CustomizeColors $colors ) {
+
+		foreach ( Config::get( 'customize-colors' ) as $name => $options ) {
+			$colors->add( $name, $options );
 		}
 	}
 
@@ -103,14 +140,31 @@ class Component implements Bootable {
 
 		$css = '';
 
-		foreach ( $this->settings as $setting ) {
+		foreach ( $this->editor_colors as $color ) {
 
-			$color = $setting->hex() ?: 'transparent';
+			$hex = $color->hex() ?: 'transparent';
 
 			$css .= sprintf(
 				'%s: %s;',
-				esc_html( $setting->property() ),
-				$setting->hex()
+				esc_html( $color->property() ),
+				$hex
+			);
+		}
+
+		foreach ( $this->customize_colors as $color ) {
+
+			// If this is an editor color, let's skip it b/c it was
+			// already added.
+			if ( $color->isEditorColor() ) {
+				continue;
+			}
+
+			$hex = $color->hex() ?: 'transparent';
+
+			$css .= sprintf(
+				'%s: %s;',
+				esc_html( $color->property() ),
+				$hex
 			);
 		}
 

@@ -11,7 +11,7 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-let settings = exhaleCustomizePreview.colorSettings;
+let settings = exhaleCustomizePreview.customizeColors;
 
 Object.keys( settings ).forEach( setting => {
 

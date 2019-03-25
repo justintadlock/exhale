@@ -31,11 +31,13 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
-		$this->app->singleton( Settings::class );
+		$this->app->singleton( EditorColors::class    );
+		$this->app->singleton( CustomizeColors::class );
 
 		$this->app->singleton( Component::class, function() {
 			return new Component(
-				$this->app->resolve( Settings::class )
+				$this->app->resolve( EditorColors::class    ),
+				$this->app->resolve( CustomizeColors::class )
 			);
 		} );
 	}

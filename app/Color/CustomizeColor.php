@@ -1,8 +1,8 @@
 <?php
 /**
- * Color Setting.
+ * Customize Color.
  *
- * Creates a color setting object.
+ * Creates a customize color object.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -22,10 +22,10 @@ use function Hybrid\hex_to_rgb;
  * @since  1.0.0
  * @access public
  */
-class Setting implements JsonSerializable {
+class CustomizeColor implements JsonSerializable {
 
 	/**
-	 * Setting name.
+	 * Color name.
 	 *
 	 * @since  1.0.0
 	 * @access protected
@@ -34,7 +34,7 @@ class Setting implements JsonSerializable {
 	protected $name;
 
 	/**
-	 * Setting label.
+	 * Color label.
 	 *
 	 * @since  1.0.0
 	 * @access protected
@@ -43,7 +43,7 @@ class Setting implements JsonSerializable {
 	protected $label;
 
 	/**
-	 * Setting description.
+	 * Color description.
 	 *
 	 * @since  1.0.0
 	 * @access protected
@@ -52,7 +52,7 @@ class Setting implements JsonSerializable {
 	protected $description = '';
 
 	/**
-	 * Setting default (hex).
+	 * Color default (hex).
 	 *
 	 * @since  1.0.0
 	 * @access protected
@@ -67,16 +67,7 @@ class Setting implements JsonSerializable {
 	 * @access protected
 	 * @var    bool
 	 */
-	protected $is_editor_color = true;
-
-	/**
-	 * Whether the setting should appear in the customizer.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    bool
-	 */
-	protected $is_customizer_color = true;
+	protected $is_editor_color = false;
 
 	/**
 	 * Set up the object properties.
@@ -135,7 +126,7 @@ class Setting implements JsonSerializable {
 	public function label() {
 
 		return apply_filters(
-			"exhale/color/setting/{$this->name}/label",
+			"exhale/color/customize/{$this->name}/label",
 			$this->label ?: $this->name(),
 			$this
 		);
@@ -149,7 +140,7 @@ class Setting implements JsonSerializable {
 	 * @return string
 	 */
 	public function modName() {
-		return sprintf( 'color_%s', str_replace( '-', '_', $this->name() ) );
+		return sprintf( 'color_%s', $this->name() );
 	}
 
 	/**
@@ -160,7 +151,7 @@ class Setting implements JsonSerializable {
 	 * @return string
 	 */
 	public function property() {
-		return sprintf( '--color-%s', str_replace( 'theme-', '', $this->name() ) );
+		return sprintf( '--color-%s', $this->name() );
 	}
 
 	/**
@@ -184,7 +175,7 @@ class Setting implements JsonSerializable {
 	public function default() {
 
 		return apply_filters(
-			"exhale/color/setting/{$this->name}/default",
+			"exhale/color/customize/{$this->name}/default",
 			$this->default,
 			$this
 		);
@@ -198,10 +189,7 @@ class Setting implements JsonSerializable {
 	 * @return string
 	 */
 	public function mod() {
-
-		return $this->isCustomizerColor()
-		       ? get_theme_mod( $this->modName(), $this->default() )
-		       : $this->default();
+		return get_theme_mod( $this->modName(), $this->default() );
 	}
 
 	/**
@@ -235,16 +223,5 @@ class Setting implements JsonSerializable {
 	 */
 	public function isEditorColor() {
 		return $this->is_editor_color;
-	}
-
-	/**
-	 * Returns whether the setting should be shown in the customizer.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return string
-	 */
-	public function isCustomizerColor() {
-		return $this->is_customizer_color;
 	}
 }
