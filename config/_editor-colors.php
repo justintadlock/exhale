@@ -38,6 +38,14 @@
  */
 
 return [
+	'primary' => [
+		'color' => \Exhale\Tools\Mod::color( 'primary' ),
+		'label' => __( 'Primary' )
+	],
+	'secondary' => [
+		'color' => \Exhale\Tools\Mod::color( 'secondary' ),
+		'label' => __( 'Secondary' )
+	],
 	'black' => [
 		'color' => '22292f',
 		'label' => __( 'Black' )

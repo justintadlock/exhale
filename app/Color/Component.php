@@ -25,15 +25,6 @@ use Exhale\Tools\Config;
 class Component implements Bootable {
 
 	/**
-	 * Editor colors.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    EditorColors
-	 */
-	protected $editor_colors;
-
-	/**
 	 * Customize colors.
 	 *
 	 * @since  1.0.0
@@ -42,19 +33,28 @@ class Component implements Bootable {
 	 */
 	protected $customize_colors;
 
+	/**
+	 * Editor colors.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    EditorColors
+	 */
+	protected $editor_colors;
+
 
 	/**
 	 * Creates the component object.
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  EditorColors     $editor
 	 * @param  CustomizeColors  $customize
+	 * @param  EditorColors     $editor
 	 * @return void
 	 */
-	public function __construct( EditorColors $editor, CustomizeColors $customize ) {
-		$this->editor_colors    = $editor;
+	public function __construct( CustomizeColors $customize, EditorColors $editor ) {
 		$this->customize_colors = $customize;
+		$this->editor_colors    = $editor;
 	}
 
 	/**
@@ -69,9 +69,9 @@ class Component implements Bootable {
 		// Run registration on `after_setup_theme`.
 		add_action( 'after_setup_theme', [ $this, 'register' ] );
 
-		// Register default settings.
-		add_action( 'exhale/color/editor/register',    [ $this, 'registerDefaultEditorColors'    ] );
+		// Register colors.
 		add_action( 'exhale/color/customize/register', [ $this, 'registerDefaultCustomizeColors' ] );
+		add_action( 'exhale/color/editor/register',    [ $this, 'registerDefaultEditorColors'    ] );
 	}
 
 	/**
@@ -83,13 +83,27 @@ class Component implements Bootable {
 	 */
 	public function register() {
 
-		// Hook for registering custom color settings.
-		do_action( 'exhale/color/editor/register', $this->editor_colors );
+		// Hook for registering custom colors.
+		do_action( 'exhale/color/customize/register', $this->customize_colors );
+		do_action( 'exhale/color/editor/register',    $this->editor_colors    );
 
 		// Adds a color palette to the block editor.
 		add_theme_support( 'editor-color-palette', $this->editor_colors->palette() );
+	}
 
-		do_action( 'exhale/color/customize/register', $this->customize_colors );
+	/**
+	 * Registers default customize colors.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  CustomizeColors  $colors
+	 * @return void
+	 */
+	public function registerDefaultCustomizeColors( CustomizeColors $colors ) {
+
+		foreach ( Config::get( 'customize-colors' ) as $name => $options ) {
+			$colors->add( $name, $options );
+		}
 	}
 
 	/**
@@ -110,21 +124,6 @@ class Component implements Bootable {
 				$options = array_merge( $base[ $name ], $options );
 			}
 
-			$colors->add( $name, $options );
-		}
-	}
-
-	/**
-	 * Registers default customize colors.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @param  CustomizeColors  $colors
-	 * @return void
-	 */
-	public function registerDefaultCustomizeColors( CustomizeColors $colors ) {
-
-		foreach ( Config::get( 'customize-colors' ) as $name => $options ) {
 			$colors->add( $name, $options );
 		}
 	}

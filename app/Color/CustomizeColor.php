@@ -140,7 +140,7 @@ class CustomizeColor implements JsonSerializable {
 	 * @return string
 	 */
 	public function modName() {
-		return sprintf( 'color_%s', $this->name() );
+		return sprintf( 'color_%s', str_replace( '-', '_', $this->name() ) );
 	}
 
 	/**

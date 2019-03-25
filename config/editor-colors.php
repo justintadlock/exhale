@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'primary'         => [ 'color' => \get_theme_mod( 'color_primary',   '687d81' ) ],
-	'secondary'       => [ 'color' => \get_theme_mod( 'color_secondary', 'e3342f' ) ],
+	'primary'         => [],
+	'secondary'       => [],
 	'black'           => [],
 	'white'           => [],
 	'gray-darkest'    => [],
@@ -19,13 +19,6 @@ return [
 	'red-light'       => [],
 	'red-lighter'     => [],
 	'red-lightest'    => [],
-	'orange-darkest'  => [],
-	'orange-darker'   => [],
-	'orange-dark'     => [],
-	'orange'          => [],
-	'orange-light'    => [],
-	'orange-lighter'  => [],
-	'orange-lightest' => [],
 	'yellow-darkest'  => [],
 	'yellow-darker'   => [],
 	'yellow-dark'     => [],
