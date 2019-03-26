@@ -29,6 +29,7 @@
 @media( max-width: break( 'mobile' ) ) {
 	.alignleft:not(.is-small),
 	.alignright:not(.is-small ) {
+		float:   none;
 		display: block;
 		margin:  0 0 $spacing-global;
 	}
@@ -63,6 +64,14 @@ p .aligncenter {
 	margin-right: calc( -100vw / 2 + 100% / 2 );
 	max-width:    100vw;
 	width:        auto;
+}
+
+@media ( max-width: $content-width ) {
+	.alignwide,
+	.alignfull {
+		margin-left: -#{ $spacing-global };
+		margin-right: -#{ $spacing-global };
+	}
 }
 
 

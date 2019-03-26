@@ -22,8 +22,8 @@ input,
 select,
 textarea {
 	box-sizing:  border-box;
-	padding:     0 0.5em;
-	line-height: inherit;
+	padding:     0.5rem;
+	line-height: 1;
 	font-family: font-family( primary );
 	font-size:   1em;
 	color:       inherit;
@@ -46,6 +46,12 @@ input[type="week"],
 textarea,
 select {
 	width: 100%;
+	display: block;
+	font-size: 1.0625rem;
+}
+
+textarea {
+	line-height: inherit;
 }
 
 input[type="submit"],
@@ -62,7 +68,6 @@ button {
 	padding:         $spacing-half $spacing-global;
 	font-family:     font-family( secondary );
 	font-size:       1.125rem;
-	line-height:     1;
 	text-decoration: none;
 	white-space:     normal;
 	word-break:      break-all;

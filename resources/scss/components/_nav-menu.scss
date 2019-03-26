@@ -15,6 +15,7 @@
 		overflow-y: hidden;
 		scroll-behavior: smooth;
 		-ms-overflow-style: -ms-autohiding-scrollbar;
+		margin-left: auto; // This aligns the menu to the right.
 
 		font-family: font-family( 'secondary' );
 		font-size:   16px;

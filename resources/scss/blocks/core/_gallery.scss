@@ -14,23 +14,27 @@
 	padding:         0;
 	margin:          0 -#{ $spacing-fourth } $spacing-global -#{ $spacing-fourth };
 
-	&.alignfull,
-	&.alignwide {
-		padding: 0 $spacing-half;
+	&.alignwide,
+	&.alignfull {
+		padding: 0 calc( #{ $spacing-global } - #{ $spacing-fourth } );
 	}
 
-	@media ( max-width: $content-width ) {
+	@media ( min-width: $width-alignwide ) {
 		&.alignwide,
 		&.alignfull {
-			padding: 0;
-			margin:  0 -#{ $spacing-fourth } $spacing-global -#{ $spacing-fourth };
+			padding: 0 calc( #{ $spacing-global } - #{ $spacing-half } );
 		}
 	}
 }
 
+// Added this nested selector to fix the craptastic CSS that's being spit out in
+// Gutenberg 5.3.0 and mucking with margins.
+.wp-block-gallery[class*=columns] .blocks-gallery-item {
+	margin: $spacing-fourth;
+}
+
 // The wrapper for individual gallery images/figures.
 .blocks-gallery-item {
-	margin:          $spacing-fourth;
 	display:         flex;
 	flex-grow:       1;
 	flex-direction:  column;
@@ -60,7 +64,7 @@
 		width:      100%;
 		max-height: 100%;
 		padding:    40px $spacing-half $spacing-fourth;
-		font-size:  1rem;
+		font-size:  16px;
 		text-align: center;
 		color:      var( --color-white );
 		background: linear-gradient(
