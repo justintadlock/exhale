@@ -50,12 +50,6 @@
 	@include typography;
 }
 
-// Fix for paragraphs.
-//.editor-styles-wrapper .wp-block-paragraph {
-//	font-size: 1.1875em;
-//	line-height: 2;
-//}
-
 // The editor should conform to the content width.  We also need to add 30px b/c
 // of the padding and margin in the editor.
 .wp-block {

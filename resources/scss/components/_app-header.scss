@@ -15,105 +15,63 @@
 	// Wrapper around the title and description.
 	&__branding {
 		flex-grow: 1;
-		display: flex;
-		overflow: hidden;
-		height: 58px;
+		display:   flex;
+		overflow:  hidden;
+		max-width: 50%;
+		height:    58px;
+	}
+
+	// Title and description.
+	&__title,
+	&__description {
+		white-space: nowrap;
+		margin:      0;
+		line-height: 1;
+		background:  var( --color-branding-background );
 	}
 
 	// The site title.
 	&__title {
-		white-space: nowrap;
-		margin: 0;
-		padding: 19px 1.5rem 20px;
-		font-size: 20px;
+		padding:     19px 1.5rem 20px;
+		font-size:   20px;
 		font-family: font-family( 'headings' );
 		font-weight: bold;
-		line-height: 20px;
-		background: var( --color-branding-background );
-	}
-
-	// Site title link.
-	&__title-link {
-		color: var( --color-branding );
-		text-decoration: none;
-
-		&:hover,
-		&:focus {
-			color: var( --color-branding-alt );
-			text-decoration: underline;
-		}
 	}
 
 	// The site description.
 	&__description {
-		white-space: nowrap;
-		margin: 0;
-		padding: 24px 1.5rem 20px;
-		font-size: 15px;
-		line-height: 15px;
-		color: var( --color-header-description );
-		background: var( --color-branding-background );
+		padding:     24px 1.5rem 20px;
+		font-size:   15px;
+		color:       var( --color-header-description );
 		border-left: 1px solid var( --color-header-border );
 	}
-}
 
-// See `nav-menu.scss` for menu styling. This part just deals with the header
-// layout styling.
-.menu--primary {
-	position: relative;
-	max-width: 70%;
-	white-space: nowrap;
-	overflow-x: auto;
-	overflow-y: hidden;
-	scroll-behavior: smooth;
-	-ms-overflow-style: -ms-autohiding-scrollbar;
+	// Site title link.
+	&__title-link {
+		color:           var( --color-branding );
+		text-decoration: none;
 
-	&::-webkit-scrollbar {
-		display: none;
-	}
-
-	&.menu--scroll {
-		padding-left: 2rem;
-
-		.menu__items {
-			text-align: left;
+		&:hover,
+		&:focus {
+			color:           var( --color-branding-alt );
+			text-decoration: underline;
 		}
 	}
 
-	&.menu--scroll::before {
-		content: "\027f7";
-		position: absolute;
-		line-height: 58px;
-		left: 1.25rem;
-	}
-}
+	@media ( max-width: $content-width ) {
 
-@media ( max-width: $content-width ) {
-	.app-header {
 		display: block;
 
 		&__branding {
-			display: block;
+			max-width:  unset;
+			display:    block;
 			text-align: center;
 			background: var( --color-branding-background );
 		}
 
 		&__title,
 		&__description {
-			float: none;
 			display: inline-block;
-		}
-	}
-	.menu--primary {
-		max-width:  100%;
-		border-top: 1px solid var( --color-header-border );
-
-		.menu__items {
-			text-align: center;
-		}
-
-		&.menu--scroll .menu__items {
-			text-align: left;
 		}
 	}
 }

@@ -16,7 +16,7 @@
 	}
 
 	// We need nested selectors here to overwrite the core editor's right
-	// margin of `10px` on ``.wp-block-latest-comments.has-avatars .avatar`.
+	// margin of `10px` on `.wp-block-latest-comments.has-avatars .avatar`.
 	.wp-block-latest-comments__comment-avatar {
 		float:         left;
 		margin-right:  $spacing-half;

@@ -39,29 +39,18 @@
 
 	// Image figure.
 	figure {
-		margin:      0;
-		height:      100%;
-
-		// IE11 doesn't support flex and can't read this.
-		@supports( position: sticky ) {
-			display:         flex;
-			align-items:     flex-end;
-			justify-content: flex-start;
-		}
+		margin:          0;
+		height:          100%;
+		display:         flex;
+		align-items:     flex-end;
+		justify-content: flex-start;
 	}
 
 	img {
 		display:   block;
 		max-width: 100%;
 		height:    auto;
-
-		// Set an explicit width for IE.
-		width: 100%;
-
-		// IE11 can't read this.
-		@supports( position: sticky ) {
-			width: auto;
-		}
+		width:     auto;
 	}
 
 	figcaption {
@@ -93,6 +82,7 @@
 		}
 	}
 
+	// Our linked images have padding and borders, so we need to adjust this.
 	a + figcaption {
 		width: calc( 100% - 20px );
 		margin: 0 10px 10px;
@@ -105,13 +95,8 @@
 	img {
 		flex:       1;
 		width:      100%;
-
-		// IE11 doesn't support object-fit.
-		@supports( position: sticky ) {
-			flex:       1;
-			height:     100%;
-			object-fit: cover;
-		}
+		height:     100%;
+		object-fit: cover;
 	}
 }
 

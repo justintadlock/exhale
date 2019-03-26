@@ -16,20 +16,13 @@ a.wp-block-button__link {
 	margin-bottom: $spacing-global;
 
 	&__link {
-		color:      var( --color-background );
-		background: var( --color-primary );
-	}
-
-	&__link,
-	&__link:hover,
-	&__link:focus {
 		border-radius:   3px;
 		display:         inline-block;
 		margin:          0;
 		padding:         $spacing-half $spacing-global;
 		font-family:     font-family( secondary );
 		font-size:       1.125rem;
-		line-height:     1em;
+		line-height:     1;
 		text-decoration: none;
 		white-space:     normal;
 		word-break:      break-all;
@@ -45,8 +38,8 @@ a.wp-block-button__link {
 	}
 
 	&.is-style-outline .wp-block-button__link {
-		color: inherit;
+		color:      inherit;
 		background: transparent;
-		border: 1px solid var( --color-primary );
+		border:     1px solid var( --color-primary );
 	}
 }

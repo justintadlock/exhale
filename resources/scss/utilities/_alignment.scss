@@ -11,38 +11,27 @@
 
 // Left alignment.
 .alignleft {
-	@media( min-width: break( 'mobile' ) ) {
-		float:     left;
-		margin:    0 1.5em 0.25em 0;
-
-		&:not(.is-resized) {
-			max-width: 50%;
-		}
-	}
-}
-
-.alignleft.is-small {
-	float:     left;
-	margin:    0 1.5em 0.25em 0;
-	max-width: 50%;
+	float:  left;
+	margin: 0 1.5em 0.25em 0;
 }
 
 // Right alignment.
 .alignright {
-	@media( min-width: break( 'mobile' ) ) {
-		float:     right;
-		margin:    0 0 0.25em 1.5em;
-
-		&:not(.is-resized) {
-			max-width: 50%;
-		}
-	}
+	float:  right;
+	margin: 0 0 0.25em 1.5em;
 }
 
-.alignright.is-small {
-	float:     right;
-	margin:    0 0 0.25em 1.5em;
+.alignleft:not(.is-resized),
+.alignright:not(.is-resized) {
 	max-width: 50%;
+}
+
+@media( max-width: break( 'mobile' ) ) {
+	.alignleft:not(.is-small),
+	.alignright:not(.is-small ) {
+		display: block;
+		margin:  0 0 $spacing-global;
+	}
 }
 
 // Center alignment.
@@ -78,10 +67,9 @@ p .aligncenter {
 
 
 @media only screen and ( min-width: 900px ) {
-
-    .alignwide {
-        margin-left  : -125px;
-        margin-right : -125px;
-        max-width    : 900px;
-    }
+	.alignwide {
+		margin-left  : -125px;
+		margin-right : -125px;
+		max-width    : 900px;
+	}
 }

@@ -9,10 +9,49 @@
 .menu {
 
 	&--primary {
+		position: relative;
+		white-space: nowrap;
+		overflow-x: auto;
+		overflow-y: hidden;
+		scroll-behavior: smooth;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+
 		font-family: font-family( 'secondary' );
 		font-size:   16px;
-		line-height: 16px;
+		line-height: 1;
 		color: var( --color-menu-primary );
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		&.menu--scroll {
+			padding-left: 2rem;
+
+			.menu__items {
+				text-align: left;
+			}
+		}
+
+		@media ( max-width: $content-width ) {
+
+			border-top: 1px solid var( --color-header-border );
+
+			.menu__items {
+				text-align: center;
+			}
+
+			&.menu--scroll .menu__items {
+				text-align: left;
+			}
+		}
+
+		&.menu--scroll::before {
+			content: "\027f7";
+			position: absolute;
+			line-height: 58px;
+			left: 1.25rem;
+		}
 
 		.menu__items {
 			margin: 0;
