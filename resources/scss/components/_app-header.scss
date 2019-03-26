@@ -15,6 +15,7 @@
 	// Wrapper around the title and description.
 	&__branding {
 		flex-grow: 1;
+		display: flex;
 		overflow: hidden;
 		height: 58px;
 	}
@@ -22,7 +23,6 @@
 	// The site title.
 	&__title {
 		white-space: nowrap;
-		float: left;
 		margin: 0;
 		padding: 19px 1.5rem 20px;
 		font-size: 20px;
@@ -47,7 +47,6 @@
 	// The site description.
 	&__description {
 		white-space: nowrap;
-		float: left;
 		margin: 0;
 		padding: 24px 1.5rem 20px;
 		font-size: 15px;
@@ -94,6 +93,7 @@
 		display: block;
 
 		&__branding {
+			display: block;
 			text-align: center;
 			background: var( --color-branding-background );
 		}
