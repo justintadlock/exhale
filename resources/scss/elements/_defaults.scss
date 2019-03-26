@@ -12,8 +12,12 @@ html {
 	line-height: 1.667;
 	color:       var( --color-primary );
 
-	@media ( max-width: break( 'mobile' ) ) {
+	@media ( max-width: $content-width ) {
 		font-size: 15px;
+	}
+
+	@media ( max-width: break( 'mobile' ) ) {
+		font-size: 14px;
 	}
 }
 

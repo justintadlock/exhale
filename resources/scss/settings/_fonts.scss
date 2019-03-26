@@ -45,16 +45,16 @@
 @function editor-font-sizes() {
 
 	@return (
-		fine        : 13px,
-		diminutive  : 14px,
-		tiny        : 15px,
-		small       : 16px,
-		medium      : 19px,
-		large       : 22px,
-		extra-large : 25px,
-		huge        : 30px,
-		gargantuan  : 36px,
-		colossal    : 44px
+		fine        : decimal-round( 13 / 16, 2 ) * 1rem,
+		diminutive  : decimal-round( 14 / 16, 2 ) * 1rem,
+		tiny        : decimal-round( 15 / 16, 2 ) * 1rem,
+		small       : 1rem,
+		medium      : decimal-round( 19 / 16, 2 ) * 1rem,
+		large       : decimal-round( 22 / 16, 2 ) * 1rem,
+		extra-large : decimal-round( 25 / 16, 2 ) * 1rem,
+		huge        : decimal-round( 30 / 16, 2 ) * 1rem,
+		gargantuan  : decimal-round( 36 / 16, 2 ) * 1rem,
+		colossal    : decimal-round( 44 / 16, 2 ) * 1rem,
 	);
 }
 

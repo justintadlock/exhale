@@ -1,24 +1,23 @@
 
+// Bottom margin for all block-level elements not covered elsewhere.
+p,
+hr,
+address,
+table,
+figure {
+	margin-bottom: $spacing-global;
+}
+
 // Paragraphs.
 p {
-	margin: 0 0 $spacing-global;
-
 	&:empty {
-		margin      : 0;
-		padding     : 0;
-		line-height : 0;
+		display: none;
 	}
 }
 
 // Horizontal rules.
 hr {
-	height:        0;
-	margin-bottom: $spacing-global;
-	border:        none;
+	height:     0;
+	border:     none;
 	border-top: 2px solid var( --color-border );
-}
-
-// Address.
-address {
-	margin-bottom: $spacing-global;
 }

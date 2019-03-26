@@ -43,7 +43,7 @@
 	// Logged-in message at the top of the form.\
 	&__notes,
 	&__logged-in-as {
-		@include meta;
+		// components/_text-secondary.scss
 	}
 
 	.required {

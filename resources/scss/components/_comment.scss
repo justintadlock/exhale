@@ -48,8 +48,8 @@
 
 	// Metadata wrapper.
 	&__meta {
-		@include meta;
-		@include meta-links;
+		// components/_text-secondary.scss
+		//@include meta-links;
 		padding:       0 0 $spacing-half;
 		margin:        0 0 $spacing-half;
 		border-bottom: 1px solid var( --color-border );

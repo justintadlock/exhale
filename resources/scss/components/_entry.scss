@@ -8,17 +8,6 @@
 
 .entry {
 
-	// Type of entry/post.
-	&--type-post {}
-
-	&--type-page {}
-
-	// Sticky posts.
-	&.sticky {}
-
-	// Featured image.
-	&__image {}
-
 	// Header wrapper.
 	&.has-post-thumbnail .entry__header {
 		text-align: center;
@@ -29,7 +18,7 @@
 		margin-bottom: $spacing-fourth;
 
 		a {
-			color: var( --color-headings );
+			color:           var( --color-headings );
 			text-decoration: none;
 		}
 
@@ -53,8 +42,8 @@
 	// Meta wrappers.
 	&__byline,
 	&__footer {
-		@include meta;
-		@include meta-links;
+		// components/_text-secondary.scss
+		// @include meta-links;
 	}
 
 	&__byline {

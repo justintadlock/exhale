@@ -1,10 +1,6 @@
 // Figures.
-figure {
-	margin-bottom : $spacing-global;
-}
-
 figcaption {
-	@include meta;
+	// components/_text-secondary.scss
 	text-align: center;
 }
 
