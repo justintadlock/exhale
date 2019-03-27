@@ -15,10 +15,6 @@ html {
 	@media ( max-width: $content-width ) {
 		font-size: 15px;
 	}
-
-	@media ( max-width: break( 'mobile' ) ) {
-		font-size: 14px;
-	}
 }
 
 html, body {

@@ -6,12 +6,6 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-// Using `:root` here to overwrite general link rules.
-a.wp-block-button__link {
-	color:      var( --color-background );
-	background: var( --color-primary );
-}
-
 .wp-block-button {
 	margin-bottom: $spacing-global;
 
@@ -32,14 +26,24 @@ a.wp-block-button__link {
 	&__link:focus {
 		text-decoration: underline;
 	}
+}
 
-	&.is-style-squared .wp-block-button__link {
-		border-radius: 0;
-	}
+// Using `:root` here to overwrite general link rules.
+a.wp-block-button__link,
+.wp-block-button__link {
+	color:      var( --color-background );
+	background: var( --color-primary );
+}
 
-	&.is-style-outline .wp-block-button__link {
-		color:      inherit;
-		background: transparent;
-		border:     1px solid var( --color-primary );
-	}
+.is-style-squared .wp-block-button__link {
+	border-radius: 0;
+}
+
+.is-style-outline .wp-block-button__link {
+	background: transparent;
+	border:     1px solid currentColor;
+}
+
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: inherit;
 }

@@ -32,7 +32,7 @@
 
 	// The site title.
 	&__title {
-		padding:     19px 1.5rem 20px;
+		padding:     19px 1.5rem;
 		font-size:   20px;
 		font-family: font-family( 'headings' );
 		font-weight: bold;
@@ -40,7 +40,7 @@
 
 	// The site description.
 	&__description {
-		padding:     24px 1.5rem 20px;
+		padding:     22px 1.5rem 21px;
 		font-size:   15px;
 		color:       var( --color-header-description );
 		border-left: 1px solid var( --color-header-border );

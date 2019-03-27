@@ -38,8 +38,12 @@
 		border-color: inherit;
 	}
 
-	&.is-style-solid-color {
-		margin-bottom: $spacing-global;
+	&.is-style-default {
+		margin-bottom: 0;
+	}
+
+	&.is-style-default {
+		margin-bottom: 0;
 	}
 
 	&.is-style-solid-color::before {
@@ -53,7 +57,7 @@
 		font-style:   italic;
 	}
 
-	&.alignfull blockquote {
+	&.alignfull.is-style-solid-color blockquote {
 		width:        100%;
 		max-width:    900px;
 		margin-left:  auto;
@@ -68,10 +72,9 @@
 	}
 }
 
-// We need to have this sit alone so that it doesn't override background colors
-// with too high of a specificity.
+// We need to have this sit alone so that it doesn't alignments.
+
 .is-style-solid-color {
 	margin:     0 -#{ $spacing-global } $spacing-global;
 	padding:    $spacing-global $spacing-global 0;
-	background: var( --color-border );
 }

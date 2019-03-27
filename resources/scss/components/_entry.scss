@@ -89,3 +89,9 @@
 [class*=template-entry-content-only] .entry__content .alignfull:first-child {
 	margin-top: -3rem;
 }
+
+// Post password form.
+
+[name=post_password] {
+	margin-bottom: $spacing-global;
+}

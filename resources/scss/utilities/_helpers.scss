@@ -63,6 +63,14 @@
 	}
 }
 
+/// Give a default background color to blocks with an old background that the
+/// theme doesn't recognize so that our margins and paddings don't look off.
+
+.has-background,
+.is-style-solid-color {
+	background-color: var( --color-gray-lightest );
+}
+
 /// Loops through the theme colors and adds utility classes for them. Primarily,
 /// these are the `.has-{$color}-color` and `.has-{$color}-background-color`
 /// classes added via Gutenberg. However, they are useful elsewhere.

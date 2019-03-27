@@ -105,6 +105,7 @@
 .wp-block-code {
 	@include code-block;
 	width: calc( 100% + #{ $spacing-2x } );
+	color: var( --color-primary );
 }
 
 .wp-block-code .editor-plain-text,
@@ -143,6 +144,12 @@
 
 .wp-block-pullquote__citation {
 	margin-bottom: $spacing-global;
+}
+
+// This is necessary to disable the asinine decision of the Gutenberg (5.3.0)
+// developers to output a black border next to the quote in default styles.
+.wp-block-quote {
+	border: none;
 }
 
 // Fix for wide/full align in editor.
