@@ -71,7 +71,7 @@
 
 	.has-#{ $color-name }-background-color,
 	a.has-#{ $color-name }-background-color {
-		background: $color-value;
+		background-color: $color-value;
 	}
 
 	// We must specifically set `a.has-{$color-name}-color` so that the
