@@ -25,11 +25,11 @@ add_filter( 'excerpt_length', function() {
 add_filter( 'excerpt_more', function() {
 
 	return sprintf(
-		'&hellip;<a href="%s" class="entry__more-link">%s</a>',
+		'&thinsp;&hellip;&thinsp;<a href="%s" class="entry__more-link">%s</a>',
 		esc_url( get_permalink() ),
 		sprintf(
 			// Translators: %s is the post title for screen readers.
-			__( 'Continue reading %s &rarr;' ),
+			__( 'Continue reading&nbsp;%s&nbsp;&rarr;' ),
 			the_title( '<span class="screen-reader-text">', '</span>', false )
 		)
 	);
