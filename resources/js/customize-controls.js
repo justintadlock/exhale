@@ -12,7 +12,8 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-import footer from './customize-controls/footer';
+import footer       from './customize-controls/footer';
+//import imageFilters from './customize-controls/image-filters';
 
 // Hybrid Customize controls.
 //

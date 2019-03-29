@@ -18,11 +18,14 @@ use WP_Customize_Color_Control;
 
 use Hybrid\App;
 use Hybrid\Contracts\Bootable;
+use Exhale\Template\FeaturedImage;
 use Exhale\Template\Footer;
 
 use Exhale\Color\CustomizeColors;
 use Exhale\Font\Family\Choices  as FontFamilyChoices;
 use Exhale\Font\Family\Settings as FontFamilySettings;
+use Exhale\Image\Filter\Filters as ImageFilters;
+use Exhale\Image\Size\Sizes     as ImageSizes;
 
 use function Exhale\asset;
 
@@ -96,6 +99,12 @@ class Component implements Bootable {
 			'title' => __( 'Fonts' )
 		] );
 
+		// Create a media section.
+		$manager->add_section( 'media', [
+			'panel' => 'theme_options',
+			'title' => __( 'Media' )
+		] );
+
 		// Create a footer section.
 		$manager->add_section( 'footer', [
 			'panel' => 'theme_options',
@@ -149,6 +158,29 @@ class Component implements Bootable {
 			] );
 
 		}, App::resolve( FontFamilySettings::class )->all() );
+
+		$manager->add_setting( 'featured_image_size', [
+			'default'           => 'exhale-wide',
+			'sanitize_callback' => 'sanitize_key',
+			'transport'         => 'postMessage'
+		] );
+
+		// Image filters.
+		/*
+		$image_filter = App::resolve( ImageFilters::class )->get( get_theme_mod( 'image_filter_function', 'brightness' ) );
+
+		$manager->add_setting( 'image_filter_function', [
+			'default'           => 'brightness',
+			'sanitize_callback' => 'sanitize_key',
+			'transport'         => 'postMessage'
+		] );
+
+		$manager->add_setting( 'image_filter_amount', [
+			'default'           => $image_filter->lacuna(),
+			'sanitize_callback' => 'sanitize_key',
+			'transport'         => 'postMessage'
+		] );
+		*/
 
 		// Register footer settings.
 		$manager->add_setting( 'powered_by', [
@@ -205,6 +237,40 @@ class Component implements Bootable {
 
 		}, App::resolve( FontFamilySettings::class )->all() );
 
+		// Featured image size control.
+		$manager->add_control( 'featured_image_size', [
+			'section' => 'media',
+			'type'    => 'select',
+			'label'   => esc_html__( 'Featured Image Size' ),
+			'description' => sprintf(
+				esc_html__( 'For image to be sized correctly, make sure to regenerate them using a plugin such as %s if you have switched from a previous theme.' ),
+				sprintf( '<a href="https://wordpress.org/plugins/regenerate-thumbnails/">%s</a>', esc_html__( 'Regnerate Thumbnails' ) )
+			),
+			'choices' => App::resolve( ImageSizes::class )->customizeChoices()
+		] );
+
+		// Image filters.
+		/*
+		$image_filter = App::resolve( ImageFilters::class )->get( get_theme_mod( 'image_filter_function', 'brightness' ) );
+
+		$manager->add_control( 'image_filter_function', [
+			'section' => 'media',
+			'type'    => 'select',
+			'label'   => __( 'Image Filter' ),
+			'choices' => App::resolve( ImageFilters::class )->customizeChoices()
+		] );
+
+		$manager->add_control( 'image_filter_amount', [
+			'section' => 'media',
+			'type'    => 'range',
+			'label'   => __( 'Image Filter Amount' ),
+			'input_attrs' => [
+				'min' => $image_filter->min(),
+				'max' => $image_filter->max()
+			]
+		] );
+		*/
+
 		// Register the footer controls.
 		$manager->add_control( 'powered_by', [
 			'section'  => 'footer',
@@ -212,6 +278,7 @@ class Component implements Bootable {
 			'label'    => __( 'Show random "powered by" credit text.' )
 		] );
 
+		// Footer credit control.
 		$manager->add_control( 'footer_credit', [
 			'section'         => 'footer',
 			'type'            => 'textarea',
@@ -247,6 +314,19 @@ class Component implements Bootable {
 			}
 		] );
 
+		// Featured image size.
+		$manager->selective_refresh->add_partial( 'featured_image_size', [
+			'selector'            => '.entry__media',
+			'container_inclusive' => true,
+			'fallback_refresh'    => false,
+			'render_callback'     => function( $partial, $context ) {
+				return FeaturedImage::display( 'featured', [
+					'post_id' => absint( $context['post_id'] )
+				] );
+			}
+		] );
+
+		// Footer credit partial.
 		$manager->selective_refresh->add_partial( 'powered_by', [
 			'selector'            => '.app-footer__credit',
 			'container_inclusive' => true,
@@ -255,31 +335,6 @@ class Component implements Bootable {
 				return Footer::renderCredit();
 			}
 		] );
-
-/*
-		// Selectively refreshes the description in the header when the
-		// core WP `blogdescription` setting changes.
-		$manager->selective_refresh->add_partial( 'blogdescription', [
-			'selector'        => 'title',
-			'render_callback' => function() {
-				return is_front_page() ? wp_get_document_title() : null;
-			}
-		] );
-		*/
-
-/*
-		// Selectively refreshes the custom header if it doesn't support
-		// videos. Core WP won't properly refresh output from its own
-		// `the_custom_header_markup()` function unless video is supported.
-		if ( ! current_theme_supports( 'custom-header', 'video' ) ) {
-
-			$manager->selective_refresh->add_partial( 'header_image', [
-				'selector'            => '#wp-custom-header',
-				'render_callback'     => 'the_custom_header_markup',
-				'container_inclusive' => true,
-			] );
-		}
-		*/
 	}
 
 	/**
@@ -306,6 +361,12 @@ class Component implements Bootable {
 			[],
 			null
 		);
+
+
+		//wp_localize_script( 'exhale-customize-controls', 'exhaleCustomizeControls', [
+		//	'imageFilterSettings' => [ 'image_filter' ],
+		//	'imageFilters'       => App::resolve( ImageFilters::class       ),
+		//] );
 	}
 
 	/**

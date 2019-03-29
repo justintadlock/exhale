@@ -66,6 +66,8 @@ class Size {
 	 */
 	protected $crop = true;
 
+	protected $is_featured_size = true;
+
 	/**
 	 * Set up the object properties.
 	 *
@@ -144,5 +146,9 @@ class Size {
 	 */
 	public function crop() {
 		return (bool) $this->crop;
+	}
+
+	public function isFeaturedSize() {
+		return (bool) $this->is_featured_size;
 	}
 }

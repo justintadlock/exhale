@@ -26,8 +26,10 @@
 	// Parallax images should have a fixed background so that the image
 	// stays in place while everything else scrolls.
 	&.has-parallax {
+		background-position: 0 0; // This keeps the image from jumping.
 		background-attachment: fixed;
 	}
+
 
 	// Left/Right text content.
 	&.has-left-content {

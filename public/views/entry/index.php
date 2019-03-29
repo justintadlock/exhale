@@ -10,9 +10,7 @@
 		</div>
 	</header>
 
-	<?php the_post_thumbnail( 'exhale-wide', [ 'class' => 'entry__image alignwide' ] ) ?>
-
-
+	<?php Exhale\Template\FeaturedImage::display( 'featured' ) ?>
 
 	<div class="entry__summary">
 		<?php the_excerpt() ?>

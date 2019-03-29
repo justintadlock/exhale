@@ -36,7 +36,7 @@ $exhale->provider( \Exhale\CleanWP\Provider::class     );
 $exhale->provider( \Exhale\Color\Provider::class       );
 $exhale->provider( \Exhale\Customize\Provider::class   );
 $exhale->provider( \Exhale\Font\Provider::class        );
-$exhale->provider( \Exhale\Image\Size\Provider::class  );
+$exhale->provider( \Exhale\Image\Provider::class  );
 $exhale->provider( \Exhale\Query\Provider::class       );
 
 $exhale->provider( \Exhale\Settings\Provider::class );

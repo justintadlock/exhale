@@ -35,4 +35,23 @@ class Sizes extends Collection {
 	public function add( $name, $value ) {
 		parent::add( $name, new Size( $name, $value ) );
 	}
+
+	public function customizeChoices() {
+
+		$choices = [];
+
+		foreach ( $this->all() as $size ) {
+
+			if ( $size->isFeaturedSize() ) {
+				$choices[ $size->name() ] = sprintf(
+					esc_html__( '%1$s - %2$s&times;%3$s' ),
+					$size->label(),
+					$size->width(),
+					$size->height()
+				);
+			}
+		}
+
+		return $choices;
+	}
 }

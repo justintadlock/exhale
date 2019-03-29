@@ -2,9 +2,10 @@
 
 return [
 	'post-thumbnail' => [
-		'label'  => __( 'Theme: Thumbnail' ),
-		'width'  => 178,
-		'height' => 100
+		'label'            => __( 'Theme: Thumbnail' ),
+		'width'            => 178,
+		'height'           => 100,
+		'is_featured_size' => false
 	],
 	'exhale-medium' => [
 		'label'  => __( 'Theme: Medium' ),
