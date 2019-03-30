@@ -93,23 +93,21 @@ class Component implements Bootable {
 		// Move the color section to our theme options panel.
 		$manager->get_section( 'colors' )->panel = 'theme_options';
 
-		// Create a fonts section.
-		$manager->add_section( 'fonts', [
-			'panel' => 'theme_options',
-			'title' => __( 'Fonts' )
-		] );
+		// Add sections under the theme options panel.
+		$sections = [
+			'fonts'  => __( 'Fonts' ),
+			'media'  => __( 'Media' ),
+			'footer' => __( 'Footer' )
+		];
 
-		// Create a media section.
-		$manager->add_section( 'media', [
-			'panel' => 'theme_options',
-			'title' => __( 'Media' )
-		] );
+		array_map( function( $name, $title ) use ( $manager ) {
 
-		// Create a footer section.
-		$manager->add_section( 'footer', [
-			'panel' => 'theme_options',
-			'title' => __( 'Footer' )
-		] );
+			$manager->add_section( $name, [
+				'panel' => 'theme_options',
+				'title' => $title
+			] );
+
+		}, array_keys( $sections ), $sections );
 	}
 
 	/**
@@ -156,36 +154,34 @@ class Component implements Bootable {
 
 		}, App::resolve( FontFamilySettings::class )->all() );
 
+		// Featured image size setting.
 		$manager->add_setting( 'featured_image_size', [
 			'default'           => 'exhale-wide',
 			'sanitize_callback' => 'sanitize_key',
 			'transport'         => 'postMessage'
 		] );
 
-		// Image filters.
-		$manager->add_setting( 'image_default_filter_function', [
-			'default'           => 'grayscale',
-			'sanitize_callback' => 'sanitize_key',
-			'transport'         => 'postMessage'
-		] );
+		// Image filter settings.
+		$filter_settings = [
+			'image_default' => 0,
+			'image_hover'   => 100
+		];
 
-		$manager->add_setting( 'image_default_filter_amount', [
-			'default'           => 0,
-			'sanitize_callback' => 'sanitize_key',
-			'transport'         => 'postMessage'
-		] );
+		array_map( function( $name, $default ) use ( $manager ) {
 
-		$manager->add_setting( 'image_hover_filter_function', [
-			'default'           => 'grayscale',
-			'sanitize_callback' => 'sanitize_key',
-			'transport'         => 'postMessage'
-		] );
+			$manager->add_setting( "{$name}_filter_function", [
+				'default'           => 'grayscale',
+				'sanitize_callback' => 'sanitize_key',
+				'transport'         => 'postMessage'
+			] );
 
-		$manager->add_setting( 'image_hover_filter_amount', [
-			'default'           => 100,
-			'sanitize_callback' => 'sanitize_key',
-			'transport'         => 'postMessage'
-		] );
+			$manager->add_setting( "{$name}_filter_amount", [
+				'default'           => $default,
+				'sanitize_callback' => 'absint',
+				'transport'         => 'postMessage'
+			] );
+
+		}, array_keys( $filter_settings ), $filter_settings );
 
 		// Register footer settings.
 		$manager->add_setting( 'powered_by', [
@@ -257,8 +253,6 @@ class Component implements Bootable {
 		] );
 
 		// Image filters.
-		$image_filter = App::resolve( ImageFilters::class )->get( get_theme_mod( 'image_filter_function', 'brightness' ) );
-
 		$manager->add_control(
 			new Controls\ImageFilter( $manager, 'image_default_filter', [
 				'section'     => 'media',
