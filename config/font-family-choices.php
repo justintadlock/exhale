@@ -2,91 +2,113 @@
 
 return [
 	'system-ui' => [
-		'label' => _x( 'System UI', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'System UI' ),
 		'stack' => 'system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif'
 	],
 	'andale-mono' => [
-		'label' => _x( 'Andale Mono', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Andale Mono' ),
 		'stack' => '"Andale Mono", Consolas, Monaco, Menlo, Courier, Verdana, sans-serif'
 	],
 	'arial' => [
-		'label' => _x( 'Arial', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Arial' ),
 		'stack' => 'Arial, "Helvetica Neue", Helvetica, sans-serif'
 	],
 	'arial-black' => [
-		'label' => _x( 'Arial Black', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Arial Black' ),
 		'stack' => '"Arial Black", "Arial Bold", Arial, sans-serif'
 	],
 	'arial-narrow' => [
-		'label' => _x( 'Arial Narrow', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Arial Narrow' ),
 		'stack' => '"Arial Narrow", Arial, "Helvetica Neue", Helvetica, sans-serif'
 	],
 	'baskerville' => [
-		'label' => _x( 'Baskerville', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Baskerville' ),
 		'stack' => 'Baskerville, "Times New Roman", Times, serif'
 	],
 	'brush-script-mt' => [
-		'label' => _x( 'Brush Script MT', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Brush Script MT' ),
 		'stack' => '"Brush Script MT", cursive'
 	],
 	'comic-sans' => [
-		'label' => _x( 'Comic Sans', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Comic Sans' ),
 		'stack' => '"Comic Sans MS", "Comic Sans", "Chalkboard SE", "Comic Neue", cursive'
 	],
 	'courier-new' => [
-		'label' => _x( 'Courier New', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Courier New' ),
 		'stack' => '"Courier New", Courier, Verdana, sans-serif'
 	],
 	'georgia' => [
-		'label' => _x( 'Georgia', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Georgia' ),
 		'stack' => 'Georgia, "Times New Roman", Times, serif'
 	],
 	'gill-sans' => [
-		'label' => _x( 'Gill Sans', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Gill Sans' ),
 		'stack' => '"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif'
 	],
 	'helvetica' => [
-		'label' => _x( 'Helvetica', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Helvetica' ),
 		'stack' => '"Helvetica Neue", Helvetica, Arial, sans-serif'
 	],
 	'hoefler-text' => [
-		'label' => _x( 'Hoefler Text', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Hoefler Text' ),
 		'stack' => '"Hoefler Text", Garamond, "Times New Roman", Times, sans-serif'
 	],
 	'impact' => [
-		'label' => _x( 'Impact', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Impact' ),
 		'stack' => 'Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif'
 	],
 	'lucida-grande' => [
-		'label' => _x( 'Lucida Grande', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Lucida Grande' ),
 		'stack' => '"Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", sans-serif'
 	],
 	'menlo' => [
-		'label' => _x( 'Menlo', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Menlo' ),
 		'stack' => 'Menlo, Consolas, Monaco, "Andale Mono", Courier, Verdana, sans-serif'
 	],
 	'monaco' => [
-		'label' => _x( 'Monaco', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Monaco' ),
 		'stack' => 'Monaco, Consolas, Menlo, Courier, Verdana, sans-serif'
 	],
 	'palatino' => [
-		'label' => _x( 'Palatino', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Palatino' ),
 		'stack' => '"Palatino Linotype", Palatino, Georgia, "Times New Roman", Times, serif'
 	],
 	'tahoma' => [
-		'label' => _x( 'Tahoma', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Tahoma' ),
 		'stack' => 'Tahoma, Geneva, Verdana, sans-serif'
 	],
 	'times-new-roman' => [
-		'label' => _x( 'Times New Roman', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Times New Roman' ),
 		'stack' => '"Times New Roman", Times, Georgia, serif'
 	],
 	'trebuchet-ms' => [
-		'label' => _x( 'Trebuchet MS', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Trebuchet MS' ),
 		'stack' => '"Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Arial, sans-serif'
 	],
 	'verdana' => [
-		'label' => _x( 'Verdana', 'font family label' ),
+		// Translators: Font family label.
+		'label' => __( 'Verdana' ),
 		'stack' => 'Verdana, sans-serif'
 	]
 ];

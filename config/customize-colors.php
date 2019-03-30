@@ -19,8 +19,8 @@ return [
 	],
 	'primary-link-alt' => [
 		'default'         => '222222',
-		'label'           => __( 'Primary: Link Alt' ),
-		'description'     => __( 'Color used when hovering or focusing on a link.' )
+		'label'           => __( 'Primary: Link Hover' ),
+		'description'     => __( 'Color used when hovering or focusing a link.' )
 	],
 	'secondary' => [
 		'default'     => 'a9a9a9', // silver-chalice
@@ -35,8 +35,8 @@ return [
 	],
 	'secondary-link-alt' => [
 		'default'         => '222222',
-		'label'           => __( 'Secondary: Link Alt' ),
-		'description'     => __( 'Color used when hovering or focusing on a link.' )
+		'label'           => __( 'Secondary: Link Hover' ),
+		'description'     => __( 'Color used when hovering or focusing a link.' )
 	],
 	'headings' => [
 		'default'         => '222222', // mine-shaft
@@ -56,22 +56,22 @@ return [
 	'branding-background' => [
 		'default'         => 'fcfcfc',
 		'label'           => __( 'Header: Branding Background' ),
-		'description'     => __( 'Background color for the branding text.' ),
+		'description'     => __( 'Background color for the branding area.' ),
 	],
 	'branding' => [
 		'default'         => '757575',
 		'label'           => __( 'Header: Title Text' ),
-		'description'     => __( 'Color for the branding text.' ),
+		'description'     => __( 'Color for the branding title text.' ),
 	],
 	'branding-alt' => [
 		'default'         => '222222',
-		'label'           => __( 'Header: Title Text Alt' ),
-		'description'     => __( 'Color used when hovering or focusing on a link.' )
+		'label'           => __( 'Header: Title Text Hover' ),
+		'description'     => __( 'Color used when hovering or focusing a link.' )
 	],
 	'header-description' => [
 		'default'         => '959595',
 		'label'           => __( 'Header: Tagline Text' ),
-		'description'     => __( 'Color used for the tagline text.' )
+		'description'     => __( 'Color used for the branding tagline text.' )
 	],
 	'menu-primary' => [
 		'default'         => '959595',
@@ -80,12 +80,12 @@ return [
 	],
 	'menu-primary-alt' => [
 		'default'         => '222222',
-		'label'           => __( 'Header: Menu Link Alt' ),
-		'description'     => __( 'Color used when hovering or focusing on a link.' )
+		'label'           => __( 'Header: Menu Link Hover' ),
+		'description'     => __( 'Color used when hovering or focusing a link.' )
 	],
 	'border' => [
-		'default'         => 'e1e1e1', // mercury
+		'default'         => 'e1e1e1',
 		'label'           => __( 'Border' ),
-		'description'     => __( 'Color used for borders.' ),
+		'description'     => __( 'Color used for borders in general.' ),
 	]
 ];
