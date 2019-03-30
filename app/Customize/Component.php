@@ -126,10 +126,7 @@ class Component implements Bootable {
 		// Update the `transform` property of core WP settings.
 		$settings = [
 			$manager->get_setting( 'blogname' ),
-	//		$manager->get_setting( 'blogdescription' ),
-	//		$manager->get_setting( 'header_textcolor' ),
-	//		$manager->get_setting( 'header_image' ),
-	//		$manager->get_setting( 'header_image_data' )
+			$manager->get_setting( 'blogdescription' )
 		];
 
 		array_walk( $settings, function( &$setting ) {
@@ -322,12 +319,19 @@ class Component implements Bootable {
 			return;
 		}
 
-		// Selectively refreshes the title in the header when the core
-		// WP `blogname` setting changes.
+		// Selectively refreshes the title in the header.
 		$manager->selective_refresh->add_partial( 'blogname', [
 			'selector'        => '.app-header__title-link',
 			'render_callback' => function() {
 				return get_bloginfo( 'name', 'display' );
+			}
+		] );
+
+		// Selectively refreshes the tagline in the header.
+		$manager->selective_refresh->add_partial( 'blogdescription', [
+			'selector'        => '.app-header__description',
+			'render_callback' => function() {
+				return get_bloginfo( 'description', 'display' );
 			}
 		] );
 
