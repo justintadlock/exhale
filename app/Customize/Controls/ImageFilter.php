@@ -61,8 +61,9 @@ class ImageFilter extends WP_Customize_Control {
 
 		// Make sure we have labels.
 		$this->l10n = wp_parse_args( $this->l10n, [
-			'function' => esc_html__( 'Filter Function' ),
-			'amount'   => esc_html__( 'Filter Amount' )
+			'function'       => esc_html__( 'Filter Function' ),
+			'default_amount' => esc_html__( 'Default Filter Amount' ),
+			'hover_amount'   => esc_html__( 'Hover Filter Amount' ),
 		] );
 	}
 
@@ -91,10 +92,19 @@ class ImageFilter extends WP_Customize_Control {
 			'choices' => $filters
 		];
 
-		$this->json['amount'] = [
-			'link'    => $this->get_link( 'amount' ),
-			'value'   => $this->value( 'amount' ),
-			'label'   => $this->l10n[ 'amount' ],
+		$this->json['default_amount'] = [
+			'link'    => $this->get_link( 'default_amount' ),
+			'value'   => $this->value( 'default_amount' ),
+			'label'   => $this->l10n[ 'default_amount' ],
+			'min'     => $current_filter->min(),
+			'max'     => $current_filter->max(),
+			'lacuna'  => $current_filter->lacuna()
+		];
+
+		$this->json['hover_amount'] = [
+			'link'    => $this->get_link( 'hover_amount' ),
+			'value'   => $this->value( 'hover_amount' ),
+			'label'   => $this->l10n[ 'hover_amount' ],
 			'min'     => $current_filter->min(),
 			'max'     => $current_filter->max(),
 			'lacuna'  => $current_filter->lacuna()
@@ -139,16 +149,31 @@ class ImageFilter extends WP_Customize_Control {
 
 		<# } #>
 
-		<# if ( data.amount ) { #>
+		<# if ( data.default_amount ) { #>
 
-			<p class="exhale-image-filter-amount">
+			<p class="exhale-image-default-filter-amount">
 
 				<label>
-					<# if ( data.amount.label ) { #>
-						<span class="customize-control-title customize-control-title--subtitle">{{ data.amount.label }} (%)</span>
+					<# if ( data.default_amount.label ) { #>
+						<span class="customize-control-title customize-control-title--subtitle">{{ data.default_amount.label }} (%)</span>
 					<# } #>
 
-					<input type="number" step="10" min="{{{ data.amount.min }}}" max="{{{ data.amount.max }}}" {{{ data.amount.link }}} value="{{ data.amount.value }}" />
+					<input type="number" step="10" min="{{{ data.default_amount.min }}}" max="{{{ data.default_amount.max }}}" {{{ data.default_amount.link }}} value="{{ data.default_amount.value }}" />
+				</label>
+			</p>
+
+		<# } #>
+
+		<# if ( data.hover_amount ) { #>
+
+			<p class="exhale-image-hover-filter-amount">
+
+				<label>
+					<# if ( data.hover_amount.label ) { #>
+						<span class="customize-control-title customize-control-title--subtitle">{{ data.hover_amount.label }} (%)</span>
+					<# } #>
+
+					<input type="number" step="10" min="{{{ data.hover_amount.min }}}" max="{{{ data.hover_amount.max }}}" {{{ data.hover_amount.link }}} value="{{ data.hover_amount.value }}" />
 				</label>
 			</p>
 

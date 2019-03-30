@@ -11,43 +11,42 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-let filterSettings = [
-	'image_default',
-	'image_hover'
-];
-
-let properties = {
-	image_default : '--image-default-filter',
-	image_hover   : '--image-hover-filter'
-};
-
-function setProp( filterSetting, func, amt ) {
+function setProp( prop, func, amt ) {
 	document.documentElement.style.setProperty(
-		properties[ filterSetting ],
+		prop,
 		func + '(' + amt + '%)'
 	);
 }
 
-filterSettings.forEach( filterSetting => {
+let functionSetting      = 'image_default_filter_function';
+let defaultAmountSetting = 'image_default_filter_amount';
+let hoverAmountSetting   = 'image_hover_filter_amount';
 
-	let functionSetting = filterSetting + '_filter_function';
-	let amountSetting   = filterSetting + '_filter_amount';
+wp.customize( functionSetting, setting => {
 
-	wp.customize( functionSetting, setting => {
+	setting.bind( to => {
+		let defaultAmount = wp.customize( defaultAmountSetting ).get();
+		let hoverAmount   = wp.customize( hoverAmountSetting   ).get();
 
-		setting.bind( to => {
-			let amount = wp.customize( amountSetting ).get();
-
-			setProp( filterSetting, to, amount );
-		} );
+		setProp( '--image-default-filter', to, defaultAmount );
+		setProp( '--image-hover-filter',   to, hoverAmount   );
 	} );
+} );
 
-	wp.customize( amountSetting, setting => {
+wp.customize( defaultAmountSetting, setting => {
 
-		setting.bind( to => {
-			let func = wp.customize( functionSetting ).get();
+	setting.bind( to => {
+		let func = wp.customize( functionSetting ).get();
 
-			setProp( filterSetting, func, to );
-		} );
+		setProp( '--image-default-filter', func, to );
+	} );
+} );
+
+wp.customize( hoverAmountSetting, setting => {
+
+	setting.bind( to => {
+		let func = wp.customize( functionSetting ).get();
+
+		setProp( '--image-hover-filter', func, to );
 	} );
 } );

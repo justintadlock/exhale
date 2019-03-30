@@ -162,26 +162,23 @@ class Component implements Bootable {
 		] );
 
 		// Image filter settings.
-		$filter_settings = [
-			'image_default' => 0,
-			'image_hover'   => 100
-		];
+		$manager->add_setting( 'image_default_filter_function', [
+			'default'           => 'grayscale',
+			'sanitize_callback' => 'sanitize_key',
+			'transport'         => 'postMessage'
+		] );
 
-		array_map( function( $name, $default ) use ( $manager ) {
+		$manager->add_setting( 'image_default_filter_amount', [
+			'default'           => 100,
+			'sanitize_callback' => 'absint',
+			'transport'         => 'postMessage'
+		] );
 
-			$manager->add_setting( "{$name}_filter_function", [
-				'default'           => 'grayscale',
-				'sanitize_callback' => 'sanitize_key',
-				'transport'         => 'postMessage'
-			] );
-
-			$manager->add_setting( "{$name}_filter_amount", [
-				'default'           => $default,
-				'sanitize_callback' => 'absint',
-				'transport'         => 'postMessage'
-			] );
-
-		}, array_keys( $filter_settings ), $filter_settings );
+		$manager->add_setting( 'image_hover_filter_amount', [
+			'default'           => 0,
+			'sanitize_callback' => 'absint',
+			'transport'         => 'postMessage'
+		] );
 
 		// Register footer settings.
 		$manager->add_setting( 'powered_by', [
@@ -254,27 +251,15 @@ class Component implements Bootable {
 
 		// Image filters.
 		$manager->add_control(
-			new Controls\ImageFilter( $manager, 'image_default_filter', [
+			new Controls\ImageFilter( $manager, 'image_filter', [
 				'section'     => 'media',
-				'label'       => __( 'Image Default Filter' ),
-				'description' => __( 'Filter used on all images.' ),
+				'label'       => __( 'Image Filter' ),
+				'description' => __( 'CSS filters to apply to images across the site.' ),
 				'filters'     => App::resolve( ImageFilters::class ),
 				'settings'    => [
-					'function' => 'image_default_filter_function',
-					'amount'   => 'image_default_filter_amount'
-				]
-			] )
-		);
-
-		$manager->add_control(
-			new Controls\ImageFilter( $manager, 'image_hover_filter', [
-				'section'     => 'media',
-				'label'       => __( 'Image Hover Filter' ),
-				'description' => __( 'Filter used on an image when it is hovered or focused.' ),
-				'filters'     => App::resolve( ImageFilters::class ),
-				'settings'    => [
-					'function' => 'image_hover_filter_function',
-					'amount'   => 'image_hover_filter_amount'
+					'function'       => 'image_default_filter_function',
+					'default_amount' => 'image_default_filter_amount',
+					'hover_amount'   => 'image_hover_filter_amount'
 				]
 			] )
 		);

@@ -101,7 +101,7 @@ class Component implements Bootable {
 	       $default_filter_function = get_theme_mod( 'image_default_filter_function', 'grayscale' );
 	       $default_filter_amount   = get_theme_mod( 'image_default_filter_amount', 0 );
 
-	       $hover_filter_function = get_theme_mod( 'image_hover_filter_function', 'grayscale' );
+	     //  $hover_filter_function = get_theme_mod( 'image_hover_filter_function', 'grayscale' );
 	       $hover_filter_amount   = get_theme_mod( 'image_hover_filter_amount', 100 );
 
 	       $css = '';
@@ -114,7 +114,7 @@ class Component implements Bootable {
 
 	       $css .= sprintf(
 		       '--image-hover-filter: %s( %s%% );',
-		       esc_html( $hover_filter_function ),
+		       esc_html( $default_filter_function ),
 		       absint( $hover_filter_amount )
 	       );
 
