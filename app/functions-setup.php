@@ -64,6 +64,18 @@ add_action( 'after_setup_theme', function() {
 		'search-form'
 	] );
 
+	// Add custom logo support.
+	add_theme_support( 'custom-logo', [
+		'width'       => null,
+		'height'      => 58,
+		'flex-width'  => true,
+		'flex-height' => true,
+		'header-text' => [
+			'app-header__title',
+			'app-header__description'
+		]
+	] );
+
 }, 5 );
 
 /**
@@ -82,33 +94,6 @@ add_action( 'init', function() {
 	] );
 
 }, 5 );
-
-/**
- * Register sidebars.
- *
- * @link   https://developer.wordpress.org/reference/functions/register_sidebar/
- * @link   https://developer.wordpress.org/reference/functions/register_sidebars/
- * @since  1.0.0
- * @access public
- * @return void
- */
-/**
-add_action( 'widgets_init', function() {
-
-	$args = [
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget__title">',
-		'after_title'   => '</h3>'
-	];
-
-	register_sidebar( [
-		'id'   => 'primary',
-		'name' => esc_html_x( 'Primary', 'sidebar' )
-	] + $args );
-
-}, 5 );
-**/
 
 /**
  * Changes the theme template path to the `public/views` folder.

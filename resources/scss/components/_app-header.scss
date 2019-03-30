@@ -21,6 +21,31 @@
 		height:    58px;
 	}
 
+	// Custom logo.
+	&__logo-link {
+		display: inline-block;
+		// Centers our image no matter what size.
+		margin: auto 0;
+		padding: 0 1.5rem;
+		line-height: 0;
+		background:  var( --color-branding-background );
+	}
+
+	&__logo {
+		max-width: unset;
+		width: auto;
+		max-height: 58px;
+		padding: 0;
+		border: none;
+		filter: none;
+		box-shadow: none;
+		border-radius: 0;
+
+		&:hover {
+			filter: none;
+		}
+	}
+
 	// Title and description.
 	&__title,
 	&__description {
@@ -36,6 +61,10 @@
 		font-size:   20px;
 		font-family: font-family( 'headings' );
 		font-weight: bold;
+	}
+
+	&__logo-link + &__title {
+		margin-left: -1.5rem;
 	}
 
 	// The site description.
@@ -63,8 +92,10 @@
 		display: block;
 
 		&__branding {
+			justify-content: center;
+			flex-wrap: wrap;
 			max-width:  unset;
-			display:    block;
+	//		display:    block;
 			text-align: center;
 			background: var( --color-branding-background );
 		}
