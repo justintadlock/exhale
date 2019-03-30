@@ -11,9 +11,14 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Image\Size;
+namespace Exhale\Image;
 
 use Hybrid\Tools\ServiceProvider;
+use Exhale\Image\Filter\Filters;
+use Exhale\Image\Size\Sizes;
+
+use Exhale\Image\Filter\Component as FilterComponent;
+use Exhale\Image\Size\Component as SizeComponent;
 
 /**
  * Image size service provider class.
@@ -31,10 +36,15 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
-		$this->app->singleton( Sizes::class );
+		$this->app->singleton( Filters::class );
+		$this->app->singleton( Sizes::class   );
 
-		$this->app->singleton( Component::class, function() {
-			return new Component( $this->app->resolve( Sizes::class ) );
+		$this->app->singleton( FilterComponent::class, function() {
+			return new FilterComponent( $this->app->resolve( Filters::class ) );
+		} );
+
+		$this->app->singleton( SizeComponent::class, function() {
+			return new SizeComponent( $this->app->resolve( Sizes::class ) );
 		} );
 	}
 
@@ -46,6 +56,7 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
-		$this->app->resolve( Component::class )->boot();
+		$this->app->resolve( FilterComponent::class )->boot();
+		$this->app->resolve( SizeComponent::class   )->boot();
 	}
 }

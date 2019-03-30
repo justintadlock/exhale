@@ -15,3 +15,4 @@
 import { color }        from './customize-preview/color';
 import { customHeader } from './customize-preview/custom-header';
 import { font }         from './customize-preview/font-family';
+import { imageFilters } from './customize-preview/image-filters';

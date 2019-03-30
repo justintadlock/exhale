@@ -19,6 +19,10 @@ class FeaturedImage extends Image {
 			);
 		}
 
+		if ( ! isset( $args['link'] ) ) {
+			$args['link'] = true;
+		}
+
 		$args['size']    = Mod::get( 'featured_image_size', 'exhale-wide' );
 		$args['class']   = 'entry__image aligncenter';
 		$args['post_id'] = $post_id;

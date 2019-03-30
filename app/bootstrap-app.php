@@ -32,14 +32,13 @@ $exhale = new \Hybrid\Core\Application();
 
 $exhale->provider( \Exhale\Providers\AppServiceProvider::class );
 
-$exhale->provider( \Exhale\CleanWP\Provider::class     );
-$exhale->provider( \Exhale\Color\Provider::class       );
-$exhale->provider( \Exhale\Customize\Provider::class   );
-$exhale->provider( \Exhale\Font\Provider::class        );
-$exhale->provider( \Exhale\Image\Provider::class  );
-$exhale->provider( \Exhale\Query\Provider::class       );
-
-$exhale->provider( \Exhale\Settings\Provider::class );
+$exhale->provider( \Exhale\CleanWP\Provider::class   );
+$exhale->provider( \Exhale\Color\Provider::class     );
+$exhale->provider( \Exhale\Customize\Provider::class );
+$exhale->provider( \Exhale\Font\Provider::class      );
+$exhale->provider( \Exhale\Image\Provider::class     );
+$exhale->provider( \Exhale\Query\Provider::class     );
+$exhale->provider( \Exhale\Settings\Provider::class  );
 
 # ------------------------------------------------------------------------------
 # Perform bootstrap actions.

@@ -8,6 +8,15 @@
 
 .entry {
 
+	&__media {
+		text-align: center;
+	}
+
+	&__image.aligncenter {
+		display: inline-block;
+		margin-bottom: -0.75rem;
+	}
+
 	// Header wrapper.
 	&.has-post-thumbnail .entry__header {
 		text-align: center;

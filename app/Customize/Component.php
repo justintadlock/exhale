@@ -166,21 +166,29 @@ class Component implements Bootable {
 		] );
 
 		// Image filters.
-		/*
-		$image_filter = App::resolve( ImageFilters::class )->get( get_theme_mod( 'image_filter_function', 'brightness' ) );
-
-		$manager->add_setting( 'image_filter_function', [
-			'default'           => 'brightness',
+		$manager->add_setting( 'image_default_filter_function', [
+			'default'           => 'grayscale',
 			'sanitize_callback' => 'sanitize_key',
 			'transport'         => 'postMessage'
 		] );
 
-		$manager->add_setting( 'image_filter_amount', [
-			'default'           => $image_filter->lacuna(),
+		$manager->add_setting( 'image_default_filter_amount', [
+			'default'           => 0,
 			'sanitize_callback' => 'sanitize_key',
 			'transport'         => 'postMessage'
 		] );
-		*/
+
+		$manager->add_setting( 'image_hover_filter_function', [
+			'default'           => 'grayscale',
+			'sanitize_callback' => 'sanitize_key',
+			'transport'         => 'postMessage'
+		] );
+
+		$manager->add_setting( 'image_hover_filter_amount', [
+			'default'           => 100,
+			'sanitize_callback' => 'sanitize_key',
+			'transport'         => 'postMessage'
+		] );
 
 		// Register footer settings.
 		$manager->add_setting( 'powered_by', [
@@ -208,6 +216,8 @@ class Component implements Bootable {
 	 * @return void
 	 */
 	public function registerControls( WP_Customize_Manager $manager ) {
+
+		$manager->register_control_type( Controls\ImageFilter::class );
 
 		// Registers the color controls.
 		array_map( function( $setting ) use ( $manager ) {
@@ -250,26 +260,33 @@ class Component implements Bootable {
 		] );
 
 		// Image filters.
-		/*
 		$image_filter = App::resolve( ImageFilters::class )->get( get_theme_mod( 'image_filter_function', 'brightness' ) );
 
-		$manager->add_control( 'image_filter_function', [
-			'section' => 'media',
-			'type'    => 'select',
-			'label'   => __( 'Image Filter' ),
-			'choices' => App::resolve( ImageFilters::class )->customizeChoices()
-		] );
+		$manager->add_control(
+			new Controls\ImageFilter( $manager, 'image_default_filter', [
+				'section'     => 'media',
+				'label'       => __( 'Image Default Filter' ),
+				'description' => __( 'Filter used on all images.' ),
+				'filters'     => App::resolve( ImageFilters::class ),
+				'settings'    => [
+					'function' => 'image_default_filter_function',
+					'amount'   => 'image_default_filter_amount'
+				]
+			] )
+		);
 
-		$manager->add_control( 'image_filter_amount', [
-			'section' => 'media',
-			'type'    => 'range',
-			'label'   => __( 'Image Filter Amount' ),
-			'input_attrs' => [
-				'min' => $image_filter->min(),
-				'max' => $image_filter->max()
-			]
-		] );
-		*/
+		$manager->add_control(
+			new Controls\ImageFilter( $manager, 'image_hover_filter', [
+				'section'     => 'media',
+				'label'       => __( 'Image Hover Filter' ),
+				'description' => __( 'Filter used on an image when it is hovered or focused.' ),
+				'filters'     => App::resolve( ImageFilters::class ),
+				'settings'    => [
+					'function' => 'image_hover_filter_function',
+					'amount'   => 'image_hover_filter_amount'
+				]
+			] )
+		);
 
 		// Register the footer controls.
 		$manager->add_control( 'powered_by', [
@@ -362,11 +379,9 @@ class Component implements Bootable {
 			null
 		);
 
-
-		//wp_localize_script( 'exhale-customize-controls', 'exhaleCustomizeControls', [
-		//	'imageFilterSettings' => [ 'image_filter' ],
-		//	'imageFilters'       => App::resolve( ImageFilters::class       ),
-		//] );
+		wp_localize_script( 'exhale-customize-controls', 'exhaleCustomizeControls', [
+			'imageFilters' => App::resolve( ImageFilters::class )
+		] );
 	}
 
 	/**

@@ -13,7 +13,7 @@
  */
 
 import footer       from './customize-controls/footer';
-//import imageFilters from './customize-controls/image-filters';
+import imageFilters from './customize-controls/image-filters';
 
 // Hybrid Customize controls.
 //
