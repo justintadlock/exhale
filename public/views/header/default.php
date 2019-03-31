@@ -7,6 +7,8 @@
 
 <body <?php Hybrid\Attr\display( 'body' ) ?>>
 
+<?php do_action( 'wp_body_open' ) ?>
+
 <div class="app">
 
 	<header class="app-header">
