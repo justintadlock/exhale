@@ -13,7 +13,7 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Providers;
+namespace Exhale;
 
 use Hybrid\Tools\ServiceProvider;
 
@@ -23,7 +23,7 @@ use Hybrid\Tools\ServiceProvider;
  * @since  1.0.0
  * @access public
  */
-class AppServiceProvider extends ServiceProvider {
+class Provider extends ServiceProvider {
 
 	/**
 	 * Callback executed when the `\Hybrid\Core\Application` class registers
