@@ -70,6 +70,10 @@
 		grid-template-areas:
 			"media-text-media"
 			"media-text-content";
+
+		.wp-block-media-text__content {
+			padding: 0;
+		}
 	}
 }
 
@@ -81,5 +85,9 @@
 		grid-template-areas:
 			"media-text-media"
 			"media-text-content";
+
+		.wp-block-media-text__content {
+			padding: 0;
+		}
 	}
 }
