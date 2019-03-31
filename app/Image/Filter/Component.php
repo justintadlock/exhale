@@ -90,7 +90,7 @@ class Component implements Bootable {
 	}
 
 	/**
-	* Returns an inline style for the colors.
+	* Returns an inline style for the filters.
 	*
 	* @since  1.0.0
 	* @access public
@@ -99,10 +99,8 @@ class Component implements Bootable {
        public function inlineStyle() {
 
 	       $default_filter_function = get_theme_mod( 'image_default_filter_function', 'grayscale' );
-	       $default_filter_amount   = get_theme_mod( 'image_default_filter_amount', 0 );
-
-	     //  $hover_filter_function = get_theme_mod( 'image_hover_filter_function', 'grayscale' );
-	       $hover_filter_amount   = get_theme_mod( 'image_hover_filter_amount', 100 );
+	       $default_filter_amount   = get_theme_mod( 'image_default_filter_amount',   0           );
+	       $hover_filter_amount     = get_theme_mod( 'image_hover_filter_amount',     100         );
 
 	       $css = '';
 

@@ -2,7 +2,7 @@
 /**
  * CleanWP service provider.
  *
- * Bootstraps the query component.
+ * Bootstraps the Clean WP component.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>

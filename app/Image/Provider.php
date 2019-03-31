@@ -1,8 +1,8 @@
 <?php
 /**
- * Image Size Service Provider.
+ * Image Service Provider.
  *
- * Bootstraps the image size component.
+ * Bootstraps the image component.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -21,7 +21,7 @@ use Exhale\Image\Filter\Component as FilterComponent;
 use Exhale\Image\Size\Component as SizeComponent;
 
 /**
- * Image size service provider class.
+ * Image service provider class.
  *
  * @since  1.0.0
  * @access public
@@ -29,7 +29,7 @@ use Exhale\Image\Size\Component as SizeComponent;
 class Provider extends ServiceProvider {
 
 	/**
-	 * Binds image size component to the container.
+	 * Binds image component to the container.
 	 *
 	 * @since  1.0.0
 	 * @access public

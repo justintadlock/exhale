@@ -16,7 +16,7 @@ namespace Exhale\Color;
 use function Hybrid\hex_to_rgb;
 
 /**
- * Color setting class.
+ * Editor color class.
  *
  * @since  1.0.0
  * @access public

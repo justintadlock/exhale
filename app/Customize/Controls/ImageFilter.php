@@ -1,9 +1,9 @@
 <?php
 /**
- * Multiple select customizer control.
+ * CSS filter customize control.
  *
- * This class allows developers to create a `<select>` form field with the
- * `multiple` attribute within the WordPress theme customizer.
+ * Creates a control that allows users to select a CSS filter and the amount to
+ * apply by default and on hover/focus.
  *
  * @package   Hybrid
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -38,10 +38,17 @@ class ImageFilter extends WP_Customize_Control {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @var    string
+	 * @var    array
 	 */
 	public $l10n = [];
 
+	/**
+	 * Array of filter objects.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @var    array
+	 */
 	public $filters = [];
 
 	/**
@@ -61,9 +68,9 @@ class ImageFilter extends WP_Customize_Control {
 
 		// Make sure we have labels.
 		$this->l10n = wp_parse_args( $this->l10n, [
-			'function'       => esc_html__( 'Filter Function' ),
+			'function'       => esc_html__( 'Filter Function'       ),
 			'default_amount' => esc_html__( 'Default Filter Amount' ),
-			'hover_amount'   => esc_html__( 'Hover Filter Amount' ),
+			'hover_amount'   => esc_html__( 'Hover Filter Amount'   )
 		] );
 	}
 

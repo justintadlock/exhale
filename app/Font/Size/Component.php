@@ -17,7 +17,7 @@ use Hybrid\Contracts\Bootable;
 use Exhale\Tools\Config;
 
 /**
- * Font component class.
+ * Font size component class.
  *
  * @since  1.0.0
  * @access public

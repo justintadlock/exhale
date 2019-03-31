@@ -35,15 +35,4 @@ class Filters extends Collection {
 	public function add( $name, $value ) {
 		parent::add( $name, new Filter( $name, $value ) );
 	}
-
-	public function customizeChoices() {
-
-		$filters = [];
-
-		foreach ( $this->all() as $filter ) {
-			$filters[ $filter->name() ] = $filter->label();
-		}
-
-		return $filters;
-	}
 }

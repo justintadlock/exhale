@@ -17,7 +17,7 @@ use JsonSerializable;
 use function Hybrid\hex_to_rgb;
 
 /**
- * Color setting class.
+ * Customize color class.
  *
  * @since  1.0.0
  * @access public

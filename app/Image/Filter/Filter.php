@@ -88,6 +88,13 @@ class Filter implements JsonSerializable {
 		$this->name = $name;
 	}
 
+	/**
+	 * Returns the image filters in a format necessary for JSON serialization.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return array
+	 */
 	public function jsonSerialize() {
 
 		return [

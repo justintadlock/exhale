@@ -1,8 +1,8 @@
 <?php
 /**
- * Color CustomizeColors Collection.
+ * Customize Colors Collection.
  *
- * Houses the collection of customize colorss in a single array-object.
+ * Houses the collection of customize colors in a single array-object.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -16,7 +16,7 @@ namespace Exhale\Color;
 use Exhale\Tools\Collection;
 
 /**
- * Color settings class.
+ * Customize colors class.
  *
  * @since  1.0.0
  * @access public
@@ -24,7 +24,7 @@ use Exhale\Tools\Collection;
 class CustomizeColors extends Collection {
 
 	/**
-	 * Adds a new customize colors to the collection.
+	 * Adds a new customize color to the collection.
 	 *
 	 * @since  1.0.0
 	 * @access public

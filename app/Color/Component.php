@@ -42,7 +42,6 @@ class Component implements Bootable {
 	 */
 	protected $editor_colors;
 
-
 	/**
 	 * Creates the component object.
 	 *

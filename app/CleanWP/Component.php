@@ -1,8 +1,8 @@
 <?php
 /**
- * Query component.
+ * Clean WP component.
  *
- * Handles filters on the posts query.
+ * Handles cleaning up some ascpects of WP that are not needed on the front end.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -13,12 +13,11 @@
 
 namespace Exhale\CleanWP;
 
-use WP_Query;
 use Hybrid\Contracts\Bootable;
 use Exhale\Settings\Options;
 
 /**
- * Query component class.
+ * Clean WP component class.
  *
  * @since  1.0.0
  * @access public
@@ -49,8 +48,14 @@ class Component implements Bootable {
 		}
 	}
 
+	/**
+	 * Dequeues the embed JavaScript.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function dequeueEmbed() {
-
 		wp_dequeue_script( 'wp-embed' );
 	}
 }
