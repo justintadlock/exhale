@@ -253,9 +253,21 @@ class Component implements Bootable {
 		$manager->add_control(
 			new Controls\ImageFilter( $manager, 'image_filter', [
 				'section'     => 'media',
-				'label'       => __( 'Image Filter' ),
-				'description' => __( 'CSS filters to apply to images across the site.' ),
 				'filters'     => App::resolve( ImageFilters::class ),
+				'l10n'        => [
+					'function' => [
+						'label'       => __( 'Image Filter' ),
+						'description' => __( 'CSS filter function to apply to images.' )
+					],
+					'default_amount' => [
+						'label'       => __( 'Default Filter Amount' ),
+						'description' => __( 'Filter amount applied to all images.' )
+					],
+					'hover_amount' => [
+						'label'       => __( 'Hover Filter Amount' ),
+						'description' => __( 'Filter amount applied to linked images when they are hovered or focused.' )
+					]
+				],
 				'settings'    => [
 					'function'       => 'image_default_filter_function',
 					'default_amount' => 'image_default_filter_amount',

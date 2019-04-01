@@ -52,29 +52,6 @@ class ImageFilter extends WP_Customize_Control {
 	public $filters = [];
 
 	/**
-	 * Set up our control.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @param  object  $manager
-	 * @param  string  $id
-	 * @param  array   $args
-	 * @return void
-	 */
-	public function __construct( $manager, $id, $args = [] ) {
-
-		// Let the parent class do its thing.
-		parent::__construct( $manager, $id, $args );
-
-		// Make sure we have labels.
-		$this->l10n = wp_parse_args( $this->l10n, [
-			'function'       => esc_html__( 'Filter Function'       ),
-			'default_amount' => esc_html__( 'Default Filter Amount' ),
-			'hover_amount'   => esc_html__( 'Hover Filter Amount'   )
-		] );
-	}
-
-	/**
 	 * Add custom parameters to pass to the JS via JSON.
 	 *
 	 * @since  1.0.0
@@ -93,28 +70,31 @@ class ImageFilter extends WP_Customize_Control {
 		$current_filter = $this->filters->get( $this->value( 'function' ) );
 
 		$this->json['function'] = [
-			'link'    => $this->get_link( 'function' ),
-			'value'   => $this->value( 'function' ),
-			'label'   => $this->l10n[ 'function' ],
-			'choices' => $filters
+			'link'        => $this->get_link( 'function' ),
+			'value'       => $this->value( 'function' ),
+			'label'       => $this->l10n['function']['label'],
+			'description' => $this->l10n['function']['description'],
+			'choices'     => $filters
 		];
 
 		$this->json['default_amount'] = [
-			'link'    => $this->get_link( 'default_amount' ),
-			'value'   => $this->value( 'default_amount' ),
-			'label'   => $this->l10n[ 'default_amount' ],
-			'min'     => $current_filter->min(),
-			'max'     => $current_filter->max(),
-			'lacuna'  => $current_filter->lacuna()
+			'link'        => $this->get_link( 'default_amount' ),
+			'value'       => $this->value( 'default_amount' ),
+			'label'       => $this->l10n['default_amount']['label'],
+			'description' => $this->l10n['default_amount']['description'],
+			'min'         => $current_filter->min(),
+			'max'         => $current_filter->max(),
+			'lacuna'      => $current_filter->lacuna()
 		];
 
 		$this->json['hover_amount'] = [
-			'link'    => $this->get_link( 'hover_amount' ),
-			'value'   => $this->value( 'hover_amount' ),
-			'label'   => $this->l10n[ 'hover_amount' ],
-			'min'     => $current_filter->min(),
-			'max'     => $current_filter->max(),
-			'lacuna'  => $current_filter->lacuna()
+			'link'        => $this->get_link( 'hover_amount' ),
+			'value'       => $this->value( 'hover_amount' ),
+			'label'       => $this->l10n['hover_amount']['label'],
+			'description' => $this->l10n['hover_amount']['description'],
+			'min'         => $current_filter->min(),
+			'max'         => $current_filter->max(),
+			'lacuna'      => $current_filter->lacuna()
 		];
 	}
 
@@ -127,21 +107,17 @@ class ImageFilter extends WP_Customize_Control {
 	 */
 	protected function content_template() { ?>
 
-		<# if ( data.label ) { #>
-			<span class="customize-control-title">{{ data.label }}</span>
-		<# } #>
-
-		<# if ( data.description ) { #>
-			<span class="description customize-control-description">{{{ data.description }}}</span>
-		<# } #>
-
 		<# if ( data.function && data.function.choices ) { #>
 
 			<p class="exhale-image-filter-function">
 
 				<label>
 					<# if ( data.function.label ) { #>
-						<span class="customize-control-title customize-control-title--subtitle">{{ data.function.label }}</span>
+						<span class="customize-control-title">{{ data.function.label }}</span>
+					<# } #>
+
+					<# if ( data.function.description ) { #>
+						<span class="description customize-control-description">{{{ data.function.description }}}</span>
 					<# } #>
 
 					<select {{{ data.function.link }}}>
@@ -162,7 +138,11 @@ class ImageFilter extends WP_Customize_Control {
 
 				<label>
 					<# if ( data.default_amount.label ) { #>
-						<span class="customize-control-title customize-control-title--subtitle">{{ data.default_amount.label }} (%)</span>
+						<span class="customize-control-title">{{ data.default_amount.label }} (%)</span>
+					<# } #>
+
+					<# if ( data.default_amount.description ) { #>
+						<span class="description customize-control-description">{{{ data.default_amount.description }}}</span>
 					<# } #>
 
 					<input type="number" step="10" min="{{{ data.default_amount.min }}}" max="{{{ data.default_amount.max }}}" {{{ data.default_amount.link }}} value="{{ data.default_amount.value }}" />
@@ -177,7 +157,11 @@ class ImageFilter extends WP_Customize_Control {
 
 				<label>
 					<# if ( data.hover_amount.label ) { #>
-						<span class="customize-control-title customize-control-title--subtitle">{{ data.hover_amount.label }} (%)</span>
+						<span class="customize-control-title">{{ data.hover_amount.label }} (%)</span>
+					<# } #>
+
+					<# if ( data.hover_amount.description ) { #>
+						<span class="description customize-control-description">{{{ data.hover_amount.description }}}</span>
 					<# } #>
 
 					<input type="number" step="10" min="{{{ data.hover_amount.min }}}" max="{{{ data.hover_amount.max }}}" {{{ data.hover_amount.link }}} value="{{ data.hover_amount.value }}" />
