@@ -1,21 +1,85 @@
 <?php
+/**
+ * Options Page Class.
+ *
+ * Displays the theme settings page in the admin.
+ *
+ * @package    Exhale
+ * @subpackage Admin
+ * @author     Justin Tadlock <justintadlock@gmail.com>
+ * @copyright  Copyright (c) 2009 - 2018, Justin Tadlock
+ * @link       https://themehybrid.com/plugins/members
+ * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ */
 
 namespace Exhale\Settings\Admin;
 
 use Hybrid\Contracts\Bootable;
 use Exhale\Settings\Admin\Views;
 
+/**
+ * Options page class.
+ *
+ * @since  1.0.0
+ * @access public
+ */
 class OptionsPage implements Bootable {
 
-	protected $name = 'exhale-settings';
+	/**
+	 * Settings page name/slug.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    string
+	 */
+	protected $name;
 
-	protected $page = '';
-
-	protected $label = '';
-	protected $capability = 'edit_theme_options';
-
+	/**
+	 * Collection of views to display.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    Views\Views
+	 */
 	protected $views;
 
+	/**
+	 * Internationalized text label for the page.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    string
+	 */
+	protected $label = '';
+
+	/**
+	 * Required capability for accessing the page.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    string
+	 */
+	protected $capability = 'edit_theme_options';
+
+	/**
+	 * The settings page defined by WordPress.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    string
+	 */
+	protected $page = '';
+
+	/**
+	 * Creates the settings page object.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string       $name
+	 * @param  Views\Views  $views
+	 * @param  array        $args
+	 * @return void
+	 */
 	public function __construct( $name, Views\Views $views, array $args = [] ) {
 
 		foreach ( array_keys( get_object_vars( $this ) ) as $key ) {
@@ -25,20 +89,28 @@ class OptionsPage implements Bootable {
 			}
 		}
 
-		$this->name = $name;
+		$this->name  = $name;
 		$this->views = $views;
 	}
 
+	/**
+	 * Bootstraps the options page.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function boot() {
-
 		add_action( 'admin_menu', [ $this, 'adminMenu' ] );
 	}
 
-	public function name() {
-
-		return $this->name;
-	}
-
+	/**
+	 * Adds the settings page to WordPress.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function adminMenu() {
 
 		$this->page = add_theme_page(
@@ -51,30 +123,38 @@ class OptionsPage implements Bootable {
 
 		if ( $this->page ) {
 
-			add_action( 'admin_init', [ $this, 'init' ] );
-
+			add_action( 'admin_init',         [ $this, 'init' ] );
 			add_action( "load-{$this->page}", [ $this, 'load' ] );
-
-			add_action( 'admin_enqueue_scripts', [ $this, 'enqueue' ] );
 		}
 	}
 
+	/**
+	 * Called on `admin_init` to register views.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function init() {
 
 		$this->views->add( 'general', Views\General::class );
-	//	$this->addView( Views\Addons::class  );
 
 		$this->registerViews();
 	}
 
+	/**
+	 * Called on `load-{$this->page}`. Primarily for booting the current view.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function load() {
 
 		// Print custom styles.
 		add_action( 'admin_head', array( $this, 'print_styles' ) );
 
-		// Add help tabs for the current view.
-	//	$view = $this->get_view( exhale_get_current_settings_view() );
-
+		// Get the current view and boot it.
 		$view = $this->currentView();
 
 		if ( $view ) {
@@ -85,42 +165,27 @@ class OptionsPage implements Bootable {
 	/**
 	 * Print styles to the header.
 	 *
-	 * @since  2.0.0
+	 * @since  1.0.0
 	 * @access public
 	 * @return void
 	 */
 	public function print_styles() { ?>
 
 		<style type="text/css">
-			.appearance_page_exhale-settings .wp-filter { margin-bottom: 15px; }
+			<?php printf(
+				'.appearance_page_%s .wp-filter { margin-bottom: 15px; }',
+				esc_html( $this->name )
+			) ?>
 		</style>
 	<?php }
 
 	/**
-	 * Enqueue scripts/styles.
+	 * Outputs the settings page to the screen.
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string  $hook_suffix
 	 * @return void
 	 */
-	public function enqueue( $hook_suffix ) {
-
-		if ( $this->page !== $hook_suffix )
-			return;
-
-	//	$view = $this->get_view( exhale_get_current_settings_view() );
-
-	//	if ( $view )
-	//		$view->enqueue();
-	}
-
-	function register_settings() {
-
-		foreach ( $this->views as $view )
-			$view->register();
-	}
-
 	public function template() { ?>
 
 		<div class="wrap">
@@ -138,36 +203,53 @@ class OptionsPage implements Bootable {
 		</div><!-- wrap -->
 	<?php }
 
+	/**
+	 * Displays the filter links (tabs) bar at the top of the page.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	protected function filterLinks() { ?>
 
 		<ul class="filter-links">
 
 			<?php foreach ( $this->views as $view ) :
 
-				// Determine current class.
-				$class = $view->name() === $this->currentView()->name() ? 'class="current"' : '';
-
 				// Get the URL.
-				//$url = exhale_get_settings_view_url( $view->name );
-				$url = admin_url( 'options-general.php' );
+				$url = admin_url( 'themes.php' );
 
 				$url = add_query_arg( [
 					'page' => $this->name,
 					'view' => $view->name()
 				], $url );
 
-				if ( 'general' === $view->name() )
-					$url = remove_query_arg( 'view', $url ); ?>
+				if ( 'general' === $view->name() ) :
+					$url = remove_query_arg( 'view', $url );
+				endif; ?>
 
-				<li class="<?php echo sanitize_html_class( $view->name() ); ?>">
-					<a href="<?php echo esc_url( $url ); ?>" <?php echo $class; ?>><?php echo esc_html( $view->label() ); ?></a>
+				<li class="<?= sanitize_html_class( $view->name() ) ?>">
+					<?php printf(
+						'<a href="%s"%s>%s</a>',
+						esc_url( $url ),
+						$view->name() === $this->currentView()->name() ? ' class="current"' : '',
+						esc_html( $view->label() )
+					) ?>
 				</li>
 
-			<?php endforeach; ?>
+			<?php endforeach ?>
 
 		</ul>
 	<?php }
 
+	/**
+	 * Adds a view.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string|object  $view
+	 * @return void
+	 */
 	public function addView( $view ) {
 
 		if ( is_string( $view ) ) {
@@ -177,11 +259,26 @@ class OptionsPage implements Bootable {
 		$this->views[ $view->name() ] = $view;
 	}
 
+	/**
+	 * Resolves a view in the case that it is a string and not an object.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string
+	 * @return Views\View
+	 */
 	protected function resolveView( $view ) {
-
 		return new $view( $this );
 	}
 
+	/**
+	 * Calls a view's `register()` method.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  Views\View $view
+	 * @return void
+	 */
 	protected function registerView( $view ) {
 
 		if ( method_exists( $view, 'register' ) ) {
@@ -189,6 +286,14 @@ class OptionsPage implements Bootable {
 		}
 	}
 
+	/**
+	 * Calls a view's `boot()` method.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  Views\View $view
+	 * @return void
+	 */
 	protected function bootView( $view ) {
 
 		if ( method_exists( $view, 'boot' ) ) {
@@ -196,11 +301,25 @@ class OptionsPage implements Bootable {
 		}
 	}
 
+	/**
+	 * Returns the collection of views.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return Views\Views
+	 */
 	protected function getViews() {
 
 		return $this->views;
 	}
 
+	/**
+	 * Registers all views.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	protected function registerViews() {
 
 		foreach ( $this->views as $view ) {
@@ -208,6 +327,13 @@ class OptionsPage implements Bootable {
 		}
 	}
 
+	/**
+	 * Boots all views.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	protected function bootViews() {
 
 		foreach ( $this->views as $view ) {
@@ -215,10 +341,14 @@ class OptionsPage implements Bootable {
 		}
 	}
 
+	/**
+	 * Returns the current view object or `null`.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return null|Views\View
+	 */
 	public function currentView() {
-
-	//	if ( ! exhale_is_settings_page() )
-	//			return '';
 
 		$current = isset( $_GET['view'] ) ? sanitize_key( $_GET['view'] ) : 'general';
 

@@ -1,6 +1,8 @@
 <?php
 /**
- * Handles the general settings view.
+ * General Settings View.
+ *
+ * Displays the general theme settings view (tab) on the settings page.
  *
  * @package    Exhale
  * @subpackage Admin
@@ -14,16 +16,44 @@ namespace Exhale\Settings\Admin\Views;
 
 use Exhale\Settings\Options;
 
+/**
+ * General settings view class.
+ *
+ * @since  1.0.0
+ * @access public
+ */
 class General extends View {
 
+	/**
+	 * Returns the view name/ID.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return string
+	 */
 	public function name() {
 		return 'general';
 	}
 
+	/**
+	 * Returns the internationalized, human-readable view label.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return string
+	 */
 	public function label() {
 		return __( 'General' );
 	}
 
+	/**
+	 * Called on the `admin_init` hook and should be used to register theme
+	 * settings via the Settings API.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function register() {
 
 		// Get the current plugin settings w/o the defaults.
@@ -31,11 +61,22 @@ class General extends View {
 
 		// Register the setting.
 		register_setting( 'exhale_settings', 'exhale_settings', [ $this, 'validateSettings' ] );
+
+		// Register sections and fields.
+		add_action( 'exhale/settings/admin/view/general/register', [ $this, 'registerDefaultSections' ] );
+		add_action( 'exhale/settings/admin/view/general/register', [ $this, 'registerDefaultFields'   ] );
 	}
 
+	/**
+	 * Called on the `load-{$page}` hook when the view is booted. Use this
+	 * to add any actions or filters needed.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function boot() {
-
-		$this->addFields();
+		do_action( 'exhale/settings/admin/view/general/register' );
 	}
 
 	/**
@@ -63,26 +104,114 @@ class General extends View {
 		return $settings;
 	}
 
-	protected function addFields() {
+	/**
+	 * Registers default settings sections.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function registerDefaultSections() {
 
-		add_settings_section( 'editor', esc_html__( 'Editor' ), [ $this, 'sectionEditor' ], 'exhale_settings' );
-		add_settings_section( 'reading', esc_html__( 'Reading' ), [ $this, 'sectionReading' ], 'exhale_settings' );
-		add_settings_section( 'clean_wp', esc_html__( 'Clean WordPress' ), [ $this, 'sectionCleanWP' ], 'exhale_settings' );
+		$sections = [
+			'editor' => [
+				'label'    => __( 'Editor' ),
+				'callback' => 'sectionEditor'
+			],
+			'reading' => [
+				'label'    => __( 'Reading' ),
+				'callback' => 'sectionReading'
+			],
+			'clean_wp' => [
+				'label'    => __( 'Clean WordPress' ),
+				'callback' => 'sectionCleanWP'
+			]
+		];
 
-		// Editor fields.
-		add_settings_field( 'classic_style', esc_html__( 'Classic Editor' ), [ $this, 'fieldClassicStyle' ], 'exhale_settings', 'editor' );
+		array_map( function( $name, $section ) {
 
-		// Reading fields.
-		add_settings_field( 'home_posts_number', esc_html__( 'Blog Posts' ), [ $this, 'fieldHomePostsNumber' ], 'exhale_settings', 'reading' );
-		add_settings_field( 'archive_posts_number', esc_html__( 'Archive Posts' ), [ $this, 'fieldArchivePostsNumber' ], 'exhale_settings', 'reading' );
-		add_settings_field( 'error_page', esc_html__( '404 Page' ), [ $this, 'fieldErrorPage' ], 'exhale_settings', 'reading' );
+			add_settings_section(
+				$name,
+				$section['label'],
+				[ $this, $section['callback'] ],
+				'exhale_settings'
+			);
 
-		// Clean WP fields.
-		add_settings_field( 'emoji', esc_html__( 'Emoji' ), [ $this, 'fieldEmoji' ], 'exhale_settings', 'clean_wp' );
-		add_settings_field( 'toolbar', esc_html__( 'Toolbar' ), [ $this, 'fieldToolbar' ], 'exhale_settings', 'clean_wp' );
-		add_settings_field( 'embeds', esc_html__( 'Embeds' ), [ $this, 'fieldEmbeds' ], 'exhale_settings', 'clean_wp' );
+		}, array_keys( $sections ), $sections );
 	}
 
+	/**
+	 * Registers default settings fields.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function registerDefaultFields() {
+
+		$fields = [
+			// Editor fields.
+			'classic_style' => [
+				'label'    => __( 'Classic Editor' ),
+				'callback' => 'fieldClassicStyle',
+				'section'  => 'editor'
+			],
+
+			// Reading fields.
+			'home_posts_number' => [
+				'label'    => __( 'Blog Posts' ),
+				'callback' => 'fieldHomePostsNumber',
+				'section'  => 'reading'
+			],
+			'archive_posts_number' => [
+				'label'    => __( 'Archive Posts' ),
+				'callback' => 'fieldArchivePostsNumber',
+				'section'  => 'reading'
+			],
+			'error_page' => [
+				'label'    => __( '404 Page' ),
+				'callback' => 'fieldErrorPage',
+				'section'  => 'reading'
+			],
+
+			// Clean WP fields.
+			'emoji' => [
+				'label'    => __( 'Emoji' ),
+				'callback' => 'fieldEmoji',
+				'section'  => 'clean_wp',
+			],
+			'toolbar' => [
+				'label'    => __( 'Toolbar' ),
+				'callback' => 'fieldToolbar',
+				'section'  => 'clean_wp'
+			],
+			'embeds' => [
+				'label'    => __( 'Embeds' ),
+				'callback' => 'fieldEmbeds',
+				'section'  => 'clean_wp'
+			]
+		];
+
+		array_map( function( $name, $field ) {
+
+			add_settings_field(
+				$name,
+				$field['label'],
+				[ $this, $field['callback'] ],
+				'exhale_settings',
+				$field['section']
+			);
+
+		}, array_keys( $fields ), $fields );
+	}
+
+	/**
+	 * Displays the editor section.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function sectionEditor() { ?>
 
 		<p>
@@ -91,6 +220,13 @@ class General extends View {
 
 	<?php }
 
+	/**
+	 * Displays the reading section.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function sectionReading() { ?>
 
 		<p>
@@ -99,6 +235,13 @@ class General extends View {
 
 	<?php }
 
+	/**
+	 * Displays the clean WP section.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function sectionCleanWP() { ?>
 
 		<p>
@@ -107,6 +250,13 @@ class General extends View {
 
 	<?php }
 
+	/**
+	 * Displays the classic style field.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function fieldClassicStyle() { ?>
 
 		<p>
@@ -115,12 +265,20 @@ class General extends View {
 				<?php esc_html_e( 'Use Classic Editor Stylesheet' ) ?>
 			</label>
 		</p>
+
 		<p class="description">
 			<?php esc_html_e( 'Loads a smaller stylesheet if you are using the classic WordPress editor instead of the block editor.' ) ?>
 		</p>
 
 	<?php }
 
+	/**
+	 * Displays the home posts number field.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function fieldHomePostsNumber() { ?>
 
 		<label>
@@ -130,6 +288,13 @@ class General extends View {
 
 	<?php }
 
+	/**
+	 * Displays the archive posts number field.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function fieldArchivePostsNumber() { ?>
 
 		<label>
@@ -139,6 +304,13 @@ class General extends View {
 
 	<?php }
 
+	/**
+	 * Displays the 404 error page field.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function fieldErrorPage() {
 
 		$dropdown = wp_dropdown_pages( [
@@ -178,6 +350,13 @@ class General extends View {
 
 	<?php }
 
+	/**
+	 * Displays the emoji field.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function fieldEmoji() { ?>
 
 		<p>
@@ -186,12 +365,20 @@ class General extends View {
 				<?php esc_html_e( 'Disable Emoji Scripts' ) ?>
 			</label>
 		</p>
+
 		<p class="description">
 			<?php esc_html_e( 'All modern browsers support emoji natively. Disabling emoji scripts removes the JavaScript loaded on every page of your site for a small percentage of users on outdated browsers.' ) ?>
 		</p>
 
 	<?php }
 
+	/**
+	 * Displays the toolbar field.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function fieldToolbar() { ?>
 
 		<p>
@@ -206,6 +393,13 @@ class General extends View {
 
 	<?php }
 
+	/**
+	 * Displays the embeds field.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
 	public function fieldEmbeds() { ?>
 
 		<p>
@@ -214,6 +408,7 @@ class General extends View {
 				<?php esc_html_e( 'Disable WordPress Embeds' ) ?>
 			</label>
 		</p>
+
 		<p class="description">
 			<?php esc_html_e( 'Removes the JavaScript that allows other sites to embed your posts.' ) ?>
 		</p>

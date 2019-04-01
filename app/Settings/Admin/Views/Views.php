@@ -1,8 +1,8 @@
 <?php
 /**
- * Color Settings Collection.
+ * Views Collection.
  *
- * Houses the collection of color settings in a single array-object.
+ * Houses the collection of views in a single array-object.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -16,7 +16,7 @@ namespace Exhale\Settings\Admin\Views;
 use Hybrid\Tools\Collection;
 
 /**
- * Color settings class.
+ * Views class.
  *
  * @since  1.0.0
  * @access public
@@ -24,7 +24,7 @@ use Hybrid\Tools\Collection;
 class Views extends Collection {
 
 	/**
-	 * Adds a new color setting to the collection.
+	 * Adds a new view to the collection.
 	 *
 	 * @since  1.0.0
 	 * @access public
