@@ -331,7 +331,7 @@ return [
 		'label' => __( 'Pink: Lighter' )
 	],
 	'pink-lightest' => [
-		'default'             =>  'ffebef',
+		'color' =>  'ffebef',
 		'label' => __( 'Pink: Lightest' )
 	]
 ];

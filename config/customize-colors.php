@@ -2,89 +2,89 @@
 
 return [
 	'background' => [
-		'default'         => 'ffffff',
+		'color'           => 'ffffff',
 		'label'           => __( 'Background' ),
 		'description'     => __( 'Background color used for the site.' )
 	],
 	'primary' => [
-		'default'         => '687d81', // bayou
+		'color'           => '687d81', // bayou
 		'label'           => __( 'Primary: Text' ),
 		'description'     => __( 'Color used for most text on the site.' ),
 		'is_editor_color' => true
 	],
 	'primary-link' => [
-		'default'         => 'e3342f', // 'ff3b3d', // coral-red
+		'color'           => 'e3342f', // 'ff3b3d', // coral-red
 		'label'           => __( 'Primary: Link' ),
 		'description'     => __( 'Color used for links in primary text.' )
 	],
 	'primary-link-alt' => [
-		'default'         => '222222',
+		'color'           => '222222',
 		'label'           => __( 'Primary: Link Hover' ),
 		'description'     => __( 'Color used when hovering or focusing a link.' )
 	],
 	'secondary' => [
-		'default'     => 'a9a9a9', // silver-chalice
+		'color'       => 'a9a9a9', // silver-chalice
 		'label'       => __( 'Secondary: Text' ),
 		'description' => __( 'Color used for secondary text.' ),
 		'is_editor_color' => true
 	],
 	'secondary-link' => [
-		'default'         => 'a9a9a9',
+		'color'           => 'a9a9a9',
 		'label'           => __( 'Secondary: Link' ),
 		'description'     => __( 'Color used for links in secondary text.' )
 	],
 	'secondary-link-alt' => [
-		'default'         => '222222',
+		'color'           => '222222',
 		'label'           => __( 'Secondary: Link Hover' ),
 		'description'     => __( 'Color used when hovering or focusing a link.' )
 	],
 	'headings' => [
-		'default'         => '222222', // mine-shaft
+		'color'           => '222222', // mine-shaft
 		'label'           => __( 'Headings' ),
 		'description'     => __( 'Color used for text headings.' )
 	],
 	'header-background' => [
-		'default'         => 'fcfcfc',
+		'color'           => 'fcfcfc',
 		'label'           => __( 'Header: Background' ),
 		'description'     => __( 'Background color for the entire header block.' )
 	],
 	'header-border' => [
-		'default'         => 'f3f3f3',
+		'color'           => 'f3f3f3',
 		'label'           => __( 'Header: Border' ),
 		'description'     => __( 'Color used for borders in the header.' )
 	],
 	'branding-background' => [
-		'default'         => 'fcfcfc',
+		'color'           => 'fcfcfc',
 		'label'           => __( 'Header: Branding Background' ),
 		'description'     => __( 'Background color for the branding area.' ),
 	],
 	'branding' => [
-		'default'         => '757575',
+		'color'           => '757575',
 		'label'           => __( 'Header: Title Text' ),
 		'description'     => __( 'Color for the branding title text.' ),
 	],
 	'branding-alt' => [
-		'default'         => '222222',
+		'color'           => '222222',
 		'label'           => __( 'Header: Title Text Hover' ),
 		'description'     => __( 'Color used when hovering or focusing a link.' )
 	],
 	'header-description' => [
-		'default'         => '959595',
+		'color'           => '959595',
 		'label'           => __( 'Header: Tagline Text' ),
 		'description'     => __( 'Color used for the branding tagline text.' )
 	],
 	'menu-primary' => [
-		'default'         => '959595',
+		'color'           => '959595',
 		'label'           => __( 'Header: Menu Link' ),
 		'description'     => __( 'Color for the primary menu links.' ),
 	],
 	'menu-primary-alt' => [
-		'default'         => '222222',
+		'color'           => '222222',
 		'label'           => __( 'Header: Menu Link Hover' ),
 		'description'     => __( 'Color used when hovering or focusing a link.' )
 	],
 	'border' => [
-		'default'         => 'e1e1e1',
+		'color'           => 'e1e1e1',
 		'label'           => __( 'Border' ),
 		'description'     => __( 'Color used for borders in general.' ),
 	]

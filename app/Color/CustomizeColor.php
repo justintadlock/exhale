@@ -58,7 +58,7 @@ class CustomizeColor implements JsonSerializable {
 	 * @access protected
 	 * @var    string
 	 */
-	protected $default = '000000';
+	protected $color = '000000';
 
 	/**
 	 * Whether the setting should appear in the block editor.
@@ -172,11 +172,11 @@ class CustomizeColor implements JsonSerializable {
 	 * @access public
 	 * @return string
 	 */
-	public function default() {
+	public function color() {
 
 		return apply_filters(
 			"exhale/color/customize/{$this->name}/default",
-			$this->default,
+			$this->color,
 			$this
 		);
 	}
@@ -189,7 +189,7 @@ class CustomizeColor implements JsonSerializable {
 	 * @return string
 	 */
 	public function mod() {
-		return get_theme_mod( $this->modName(), $this->default() );
+		return get_theme_mod( $this->modName(), $this->color() );
 	}
 
 	/**

@@ -135,7 +135,7 @@ class Component implements Bootable {
 		array_map( function( $setting ) use ( $manager ) {
 
 			$manager->add_setting( $setting->modName(), [
-				'default'              => maybe_hash_hex_color( $setting->default() ),
+				'default'              => maybe_hash_hex_color( $setting->color() ),
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
 				'transport'            => 'postMessage'
@@ -147,7 +147,7 @@ class Component implements Bootable {
 		array_map( function( $setting ) use ( $manager ) {
 
 			$manager->add_setting( $setting->modName(), [
-				'default'           => $setting->default(),
+				'default'           => $setting->family(),
 				'sanitize_callback' => 'sanitize_key',
 				'transport'         => 'postMessage'
 			] );

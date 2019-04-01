@@ -57,7 +57,7 @@ class Setting implements JsonSerializable {
 	 * @access protected
 	 * @var    string
 	 */
-	protected $default = 'system-ui';
+	protected $family = 'system-ui';
 
 	/**
 	 * Set up the object properties.
@@ -162,11 +162,11 @@ class Setting implements JsonSerializable {
 	 * @access public
 	 * @return string
 	 */
-	public function default() {
+	public function family() {
 
 		return apply_filters(
 			"exhale/font/family/setting/{$this->name}/default",
-			$this->default,
+			$this->family,
 			$this
 		);
 	}
@@ -179,6 +179,6 @@ class Setting implements JsonSerializable {
 	 * @return string
 	 */
 	public function mod() {
-		return get_theme_mod( $this->modName(), $this->default() );
+		return get_theme_mod( $this->modName(), $this->family() );
 	}
 }
