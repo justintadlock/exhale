@@ -20,7 +20,7 @@ wp.customize.controlConstructor['exhale-image-filter'] = wp.customize.Control.ex
 				if ( ! value || 'none' === value ) {
 					container.style.display = 'none';
 				} else {
-					container.style.display = 'initial';
+					container.style.display = 'block';
 				}
 			} );
 
