@@ -12,10 +12,15 @@
  */
 
 function setProp( prop, func, amt ) {
-	document.documentElement.style.setProperty(
-		prop,
-		func + '(' + amt + '%)'
-	);
+
+	if ( ! func || 'none' === func ) {
+		document.documentElement.style.setProperty( prop, 'none' );
+	} else {
+		document.documentElement.style.setProperty(
+			prop,
+			func + '(' + amt + '%)'
+		);
+	}
 }
 
 let functionSetting      = 'image_default_filter_function';

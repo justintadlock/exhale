@@ -12,6 +12,18 @@ wp.customize.controlConstructor['exhale-image-filter'] = wp.customize.Control.ex
 
 		filterFunction.bind( value => {
 
+			let defaultAmountContainer = control.selector + ' .exhale-image-default-filter-amount';
+			let hoverAmountContainer   = control.selector + ' .exhale-image-hover-filter-amount';
+			let amountContainers       = document.querySelectorAll( defaultAmountContainer + ',' + hoverAmountContainer );
+
+			amountContainers.forEach( container => {
+				if ( ! value || 'none' === value ) {
+					container.style.display = 'none';
+				} else {
+					container.style.display = 'initial';
+				}
+			} );
+
 			let min    = filters[ value ].min;
 			let max    = filters[ value ].max;
 			let lacuna = filters[ value ].lacuna;

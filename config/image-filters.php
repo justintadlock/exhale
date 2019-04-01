@@ -1,6 +1,9 @@
 <?php
 
 return [
+	'none' => [
+		'label' => __( 'None' )
+	],
 	'brightness' => [
 		'label'   => __( 'Brightness' ),
 		'min'     => 0,

@@ -104,17 +104,21 @@ class Component implements Bootable {
 
 	       $css = '';
 
-	       $css .= sprintf(
-		       '--image-default-filter: %s( %s%% );',
-		       esc_html( $default_filter_function ),
-		       absint( $default_filter_amount )
-	       );
+	       if ( ! $default_filter_function || 'none' === $default_filter_function ) {
+		       $css .= '--image-default-filter: none; --image-hover-filter: none;';
+	       } else {
+		       $css .= sprintf(
+			       '--image-default-filter: %s( %s%% );',
+			       esc_html( $default_filter_function ),
+			       absint( $default_filter_amount )
+		       );
 
-	       $css .= sprintf(
-		       '--image-hover-filter: %s( %s%% );',
-		       esc_html( $default_filter_function ),
-		       absint( $hover_filter_amount )
-	       );
+		       $css .= sprintf(
+			       '--image-hover-filter: %s( %s%% );',
+			       esc_html( $default_filter_function ),
+			       absint( $hover_filter_amount )
+		       );
+	       }
 
 	       return sprintf( ':root { %s }', $css );
        }
