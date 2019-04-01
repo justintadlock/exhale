@@ -31,14 +31,14 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
+		$this->app->singleton( Family\Families::class );
 		$this->app->singleton( Family\Settings::class );
-		$this->app->singleton( Family\Choices::class  );
 		$this->app->singleton( Size\Sizes::class      );
 
 		$this->app->singleton( Family\Component::class, function() {
 			return new Family\Component(
-				$this->app->resolve( Family\Settings::class ),
-				$this->app->resolve( Family\Choices::class  )
+				$this->app->resolve( Family\Families::class ),
+				$this->app->resolve( Family\Settings::class )
 			);
 		} );
 

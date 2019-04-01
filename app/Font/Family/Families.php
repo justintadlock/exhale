@@ -1,8 +1,8 @@
 <?php
 /**
- * Font Family Choices Collection.
+ * Font Families Collection.
  *
- * Houses the collection of font family choices in a single array-object.
+ * Houses the collection of font families in a single array-object.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -16,15 +16,15 @@ namespace Exhale\Font\Family;
 use Exhale\Tools\Collection;
 
 /**
- * Font family choices class.
+ * Font families class.
  *
  * @since  1.0.0
  * @access public
  */
-class Choices extends Collection {
+class Families extends Collection {
 
 	/**
-	 * Adds a new font family choice to the collection.
+	 * Adds a new font family to the collection.
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -33,7 +33,7 @@ class Choices extends Collection {
 	 * @return void
 	 */
 	public function add( $name, $value ) {
-		parent::add( $name, new Choice( $name, $value ) );
+		parent::add( $name, new Family( $name, $value ) );
 	}
 
 	/**
@@ -46,12 +46,12 @@ class Choices extends Collection {
 	 */
 	public function customizeChoices() {
 
-		$customize = [];
+		$choices = [];
 
-		foreach ( $this->all() as $choice ) {
-			$customize[ esc_attr( $choice->name() ) ] = esc_html( $choice->label() );
+		foreach ( $this->all() as $family ) {
+			$choices[ esc_attr( $family->name() ) ] = esc_html( $family->label() );
 		}
 
-		return $customize;
+		return $choices;
 	}
 }

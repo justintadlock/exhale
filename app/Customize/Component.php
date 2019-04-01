@@ -22,7 +22,7 @@ use Exhale\Template\FeaturedImage;
 use Exhale\Template\Footer;
 
 use Exhale\Color\CustomizeColors;
-use Exhale\Font\Family\Choices  as FontFamilyChoices;
+use Exhale\Font\Family\Families as FontFamilies;
 use Exhale\Font\Family\Settings as FontFamilySettings;
 use Exhale\Image\Filter\Filters as ImageFilters;
 use Exhale\Image\Size\Sizes     as ImageSizes;
@@ -232,7 +232,7 @@ class Component implements Bootable {
 				'type'        => 'select',
 				'label'       => esc_html( $setting->label() ),
 				'description' => $setting->description(),
-				'choices'     => App::resolve( FontFamilyChoices::class )->customizeChoices()
+				'choices'     => App::resolve( FontFamilies::class )->customizeChoices()
 			] );
 
 		}, App::resolve( FontFamilySettings::class )->all() );
@@ -399,7 +399,7 @@ class Component implements Bootable {
 		wp_localize_script( 'exhale-customize-preview', 'exhaleCustomizePreview', [
 			'customizeColors'    => App::resolve( CustomizeColors::class    ),
 			'fontFamilySettings' => App::resolve( FontFamilySettings::class ),
-			'fontFamilyChoices'  => App::resolve( FontFamilyChoices::class  )
+			'fontFamilyChoices'  => App::resolve( FontFamilies::class       )
 		] );
 	}
 }

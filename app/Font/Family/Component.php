@@ -25,6 +25,15 @@ use Exhale\Tools\Config;
 class Component implements Bootable {
 
 	/**
+	 * Stores the font families object.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    Families
+	 */
+	protected $families;
+
+	/**
 	 * Stores the font family settings object.
 	 *
 	 * @since  1.0.0
@@ -34,27 +43,18 @@ class Component implements Bootable {
 	protected $settings;
 
 	/**
-	 * Stores the font family choices object.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    Choices
-	 */
-	protected $choices;
-
-	/**
 	 * Creates the component object.
 	 *
 	 * @since  1.0.0
 	 * @access public
+	 * @param  Families  $families
 	 * @param  Settings  $settings
-	 * @param  Choices   $choices
 	 * @return void
 	 */
-	public function __construct( Settings $settings, Choices $choices ) {
+	public function __construct( Families $families, Settings $settings ) {
 
+		$this->families = $families;
 		$this->settings = $settings;
-		$this->choices  = $choices;
 	}
 
 	/**
@@ -69,9 +69,9 @@ class Component implements Bootable {
 		// Run registration on `after_setup_theme`.
 		add_action( 'after_setup_theme', [ $this, 'register' ] );
 
-		// Register default settings and choices.
+		// Register default families and settings.
+		add_action( 'exhale/font/families/register',        [ $this, 'registerDefaultFamilies' ] );
 		add_action( 'exhale/font/family/settings/register', [ $this, 'registerDefaultSettings' ] );
-		add_action( 'exhale/font/family/choices/register',  [ $this, 'registerDefaultChoices'  ] );
 	}
 
 	/**
@@ -83,8 +83,23 @@ class Component implements Bootable {
 	 */
 	public function register() {
 
+		do_action( 'exhale/font/families/register',        $this->families );
 		do_action( 'exhale/font/family/settings/register', $this->settings );
-		do_action( 'exhale/font/family/choices/register',  $this->choices  );
+	}
+
+	/**
+	 * Registers default families.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  Families  $families
+	 * @return void
+	 */
+	public function registerDefaultFamilies( $families ) {
+
+		foreach ( Config::get( 'font-families' ) as $name => $options ) {
+			$families->add( $name, $options );
+		}
 	}
 
 	/**
@@ -99,21 +114,6 @@ class Component implements Bootable {
 
 		foreach ( Config::get( 'font-family-settings' ) as $name => $options ) {
 			$settings->add( $name, $options );
-		}
-	}
-
-	/**
-	 * Registers default choices.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @param  Choices  $settings
-	 * @return void
-	 */
-	public function registerDefaultChoices( $choices ) {
-
-		foreach ( Config::get( 'font-family-choices' ) as $name => $options ) {
-			$choices->add( $name, $options );
 		}
 	}
 
@@ -133,7 +133,7 @@ class Component implements Bootable {
 			$css .= sprintf(
 				'%s: %s;',
 				esc_html( $setting->property() ),
-				wp_strip_all_tags( $this->choices->get( $setting->mod() )->stack() )
+				wp_strip_all_tags( $this->families->get( $setting->mod() )->stack() )
 			);
 		}
 

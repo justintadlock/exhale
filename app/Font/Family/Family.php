@@ -1,8 +1,8 @@
 <?php
 /**
- * Font Family Choice.
+ * Font Family.
  *
- * Creates a font family setting choice object.
+ * Creates a font family object.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -21,7 +21,7 @@ use JsonSerializable;
  * @since  1.0.0
  * @access public
  */
-class Choice implements JsonSerializable {
+class Family implements JsonSerializable {
 
 	/**
 	 * Setting name.
@@ -106,7 +106,7 @@ class Choice implements JsonSerializable {
 	public function label() {
 
 		return apply_filters(
-			"exhale/font/family/choice/{$this->name}/label",
+			"exhale/font/family/{$this->name}/label",
 			$this->label ?: $this->name(),
 			$this
 		);
@@ -122,7 +122,7 @@ class Choice implements JsonSerializable {
 	public function stack() {
 
 		return apply_filters(
-			"exhale/font/family/choice/{$this->name}/stack",
+			"exhale/font/family/{$this->name}/stack",
 			$this->stack,
 			$this
 		);
