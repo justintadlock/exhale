@@ -218,7 +218,26 @@ class General extends View {
 			<?php esc_html_e( 'Settings based on which WordPress editor that you prefer to use.' ) ?>
 		</p>
 
-	<?php }
+		<?php
+		$wordpress     = $GLOBALS['wp_version'];
+		$gutenberg     = defined( 'GUTENBERG_VERSION' ) ? GUTENBERG_VERSION : 0;
+		$wordpress_req = '5.2';
+		$gutenberg_req = '5.3';
+
+		if ( version_compare( $wordpress, $wordpress_req, '<' ) && version_compare( $gutenberg, $gutenberg_req, '<' ) ) {
+
+			printf(
+				'<p>%s</p>',
+				sprintf(
+					// Translators: 1 is WordPress version, 2 is Gutenberg link, 3 is Gutenberg version.
+					esc_html__( 'Exhale requires at least WordPress version %1$s or %2$s version %3$s for the block editor to be styled correctly.' ),
+					$wordpress_req,
+					'<a href="https://wordpress.org/plugins/gutenberg">' . esc_html__( 'Gutenberg' ) . '</a>',
+					$gutenberg_req
+				)
+			);
+		}
+	}
 
 	/**
 	 * Displays the reading section.
