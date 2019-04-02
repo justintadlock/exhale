@@ -37,7 +37,7 @@ add_action( 'after_setup_theme', function() {
 	$GLOBALS['content_width'] = 650;
 
 	// Load theme translations.
-	load_theme_textdomain( 'exhale', get_parent_theme_file_path( 'resources/lang' ) );
+	load_theme_textdomain( 'exhale', get_parent_theme_file_path( 'public/lang' ) );
 
 	// Automatically add the `<title>` tag.
 	add_theme_support( 'title-tag' );
