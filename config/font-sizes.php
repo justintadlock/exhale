@@ -1,7 +1,15 @@
 <?php
-
-// Editor block font sizes. These font sizes are also defined in the
-// `resources/scss/settings/_fonts.scss` file.
+/**
+ * Font Sizes Config.
+ *
+ * Defines the font sizes available to users via the block editor.
+ *
+ * @package   Exhale
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright 2018 Justin Tadlock
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://themehybrid.com/themes/exhale
+ */
 
 return [
 	'fine' => [

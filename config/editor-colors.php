@@ -1,4 +1,16 @@
 <?php
+/**
+ * Editor Colors Config.
+ *
+ * Defines the editor colors used from `_editor-colors.php`. This can be
+ * overwritten in a child theme to include the child theme's preferred colors.
+ *
+ * @package   Exhale
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright 2018 Justin Tadlock
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://themehybrid.com/themes/exhale
+ */
 
 return [
 	'primary'         => [],

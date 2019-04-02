@@ -1,4 +1,15 @@
 <?php
+/**
+ * Font Family Settings Config.
+ *
+ * Defines the font family settings available to users in the customizer.
+ *
+ * @package   Exhale
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright 2018 Justin Tadlock
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://themehybrid.com/themes/exhale
+ */
 
 return [
 	'primary' => [
