@@ -188,6 +188,7 @@ class Component implements Bootable {
 		] );
 
 		$manager->add_setting( 'footer_credit', [
+			// Translators: %s is the theme link.
 			'default'           => sprintf( __( 'Powered by %s.' ), \Hybrid\Theme\render_link() ),
 			'sanitize_callback' => function( $value ) {
 				return wp_kses( $value, Footer::allowedTags() );
@@ -243,6 +244,7 @@ class Component implements Bootable {
 			'type'    => 'select',
 			'label'   => esc_html__( 'Featured Image Size' ),
 			'description' => sprintf(
+				// Translators: %s is a plugin link.
 				esc_html__( 'For image to be sized correctly, make sure to regenerate them using a plugin such as %s if you have switched from a previous theme.' ),
 				sprintf( '<a href="https://wordpress.org/plugins/regenerate-thumbnails/">%s</a>', esc_html__( 'Regnerate Thumbnails' ) )
 			),

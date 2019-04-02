@@ -2,9 +2,10 @@
 
 	<header class="comment__meta">
 		<?php Hybrid\Comment\display_parent_link( [
-			'depth' => 3,
-			'text'  => __( 'In reply to %s' ),
-			'after' => '<br /></div>',
+			// Translators: %s is the parent comment link.
+			'text'   => __( 'In reply to %s' ),
+			'depth'  => 3,
+			'after'  => '<br /></div>',
 			'before' => '<div class="comment__parent">' . Exhale\Tools\Svg::render( 'caret-right-solid' )
 		] ) ?>
 
