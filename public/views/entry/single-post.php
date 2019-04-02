@@ -18,7 +18,7 @@
 	<footer class="entry__footer">
 		<?php Hybrid\Post\display_terms( [
 			// Translators: %s is the category list.
-			'text'     => __( 'Posted in %s' ),
+			'text'     => __( 'Posted in %s', 'exhale' ),
 			'taxonomy' => 'category'
 		] ) ?>
 	</footer>

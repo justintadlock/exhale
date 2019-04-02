@@ -42,7 +42,7 @@ class Provider extends ServiceProvider {
 				'exhale-settings',
 				$this->app->resolve( Views::class ),
 				[
-					'label'      => __( 'Exhale Settings' ),
+					'label'      => __( 'Exhale Settings', 'exhale' ),
 					'capability' => 'edit_theme_options'
 				]
 			);

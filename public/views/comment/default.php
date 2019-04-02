@@ -3,7 +3,7 @@
 	<header class="comment__meta">
 		<?php Hybrid\Comment\display_parent_link( [
 			// Translators: %s is the parent comment link.
-			'text'   => __( 'In reply to %s' ),
+			'text'   => __( 'In reply to %s', 'exhale' ),
 			'depth'  => 3,
 			'after'  => '<br /></div>',
 			'before' => '<div class="comment__parent">' . Exhale\Tools\Svg::render( 'caret-right-solid' )
@@ -16,7 +16,7 @@
 			'text' => Hybrid\Comment\render_date( [
 				'format' => sprintf(
 					// Translators: Comment date + time format.
-					esc_html__( '%1$s, %2$s' ),
+					esc_html__( '%1$s, %2$s', 'exhale' ),
 					get_option( 'date_format' ),
 					get_option( 'time_format' )
 				)
@@ -31,7 +31,7 @@
 		<?php if ( ! Hybrid\Comment\is_approved() ) : ?>
 
 			<p class="comment__moderation">
-				<?php esc_html_e( 'Your comment is awaiting moderation.' ) ?>
+				<?php esc_html_e( 'Your comment is awaiting moderation.', 'exhale' ) ?>
 			</p>
 
 		<?php endif ?>

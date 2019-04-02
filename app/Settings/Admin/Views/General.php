@@ -43,7 +43,7 @@ class General extends View {
 	 * @return string
 	 */
 	public function label() {
-		return __( 'General' );
+		return __( 'General', 'exhale' );
 	}
 
 	/**
@@ -115,15 +115,15 @@ class General extends View {
 
 		$sections = [
 			'editor' => [
-				'label'    => __( 'Editor' ),
+				'label'    => __( 'Editor', 'exhale' ),
 				'callback' => 'sectionEditor'
 			],
 			'reading' => [
-				'label'    => __( 'Reading' ),
+				'label'    => __( 'Reading', 'exhale' ),
 				'callback' => 'sectionReading'
 			],
 			'clean_wp' => [
-				'label'    => __( 'Clean WordPress' ),
+				'label'    => __( 'Clean WordPress', 'exhale' ),
 				'callback' => 'sectionCleanWP'
 			]
 		];
@@ -152,41 +152,41 @@ class General extends View {
 		$fields = [
 			// Editor fields.
 			'classic_style' => [
-				'label'    => __( 'Classic Editor' ),
+				'label'    => __( 'Classic Editor', 'exhale' ),
 				'callback' => 'fieldClassicStyle',
 				'section'  => 'editor'
 			],
 
 			// Reading fields.
 			'home_posts_number' => [
-				'label'    => __( 'Blog Posts' ),
+				'label'    => __( 'Blog Posts', 'exhale' ),
 				'callback' => 'fieldHomePostsNumber',
 				'section'  => 'reading'
 			],
 			'archive_posts_number' => [
-				'label'    => __( 'Archive Posts' ),
+				'label'    => __( 'Archive Posts', 'exhale' ),
 				'callback' => 'fieldArchivePostsNumber',
 				'section'  => 'reading'
 			],
 			'error_page' => [
-				'label'    => __( '404 Page' ),
+				'label'    => __( '404 Page', 'exhale' ),
 				'callback' => 'fieldErrorPage',
 				'section'  => 'reading'
 			],
 
 			// Clean WP fields.
 			'emoji' => [
-				'label'    => __( 'Emoji' ),
+				'label'    => __( 'Emoji', 'exhale' ),
 				'callback' => 'fieldEmoji',
 				'section'  => 'clean_wp',
 			],
 			'toolbar' => [
-				'label'    => __( 'Toolbar' ),
+				'label'    => __( 'Toolbar', 'exhale' ),
 				'callback' => 'fieldToolbar',
 				'section'  => 'clean_wp'
 			],
 			'embeds' => [
-				'label'    => __( 'Embeds' ),
+				'label'    => __( 'Embeds', 'exhale' ),
 				'callback' => 'fieldEmbeds',
 				'section'  => 'clean_wp'
 			]
@@ -215,7 +215,7 @@ class General extends View {
 	public function sectionEditor() { ?>
 
 		<p>
-			<?php esc_html_e( 'Settings based on which WordPress editor that you prefer to use.' ) ?>
+			<?php esc_html_e( 'Settings based on which WordPress editor that you prefer to use.', 'exhale' ) ?>
 		</p>
 
 		<?php
@@ -230,9 +230,9 @@ class General extends View {
 				'<p>%s</p>',
 				sprintf(
 					// Translators: 1 is WordPress version, 2 is Gutenberg link, 3 is Gutenberg version.
-					esc_html__( 'Exhale requires at least WordPress version %1$s or %2$s version %3$s for the block editor to be styled correctly.' ),
+					esc_html__( 'Exhale requires at least WordPress version %1$s or %2$s version %3$s for the block editor to be styled correctly.', 'exhale' ),
 					$wordpress_req,
-					'<a href="https://wordpress.org/plugins/gutenberg">' . esc_html__( 'Gutenberg' ) . '</a>',
+					'<a href="https://wordpress.org/plugins/gutenberg">' . esc_html__( 'Gutenberg', 'exhale' ) . '</a>',
 					$gutenberg_req
 				)
 			);
@@ -249,7 +249,7 @@ class General extends View {
 	public function sectionReading() { ?>
 
 		<p>
-			<?php esc_html_e( 'Alter the posts for specific views on the front end. By default, the numbers are set for optimal use with this theme.' ) ?>
+			<?php esc_html_e( 'Alter the posts for specific views on the front end. By default, the numbers are set for optimal use with this theme.', 'exhale' ) ?>
 		</p>
 
 	<?php }
@@ -264,7 +264,7 @@ class General extends View {
 	public function sectionCleanWP() { ?>
 
 		<p>
-			<?php esc_html_e( 'Clean up unnecessary items on the front end of your site for speed improvements.' ) ?>
+			<?php esc_html_e( 'Clean up unnecessary items on the front end of your site for speed improvements.', 'exhale' ) ?>
 		</p>
 
 	<?php }
@@ -281,12 +281,12 @@ class General extends View {
 		<p>
 			<label>
 				<input type="checkbox" name="exhale_settings[classic_style]" value="true" <?php checked( Options::get( 'classic_style' ) ) ?> />
-				<?php esc_html_e( 'Use Classic Editor Stylesheet' ) ?>
+				<?php esc_html_e( 'Use Classic Editor Stylesheet', 'exhale' ) ?>
 			</label>
 		</p>
 
 		<p class="description">
-			<?php esc_html_e( 'Loads a smaller stylesheet if you are using the classic WordPress editor instead of the block editor.' ) ?>
+			<?php esc_html_e( 'Loads a smaller stylesheet if you are using the classic WordPress editor instead of the block editor.', 'exhale' ) ?>
 		</p>
 
 	<?php }
@@ -302,7 +302,7 @@ class General extends View {
 
 		<label>
 			<input type="number" name="exhale_settings[home_posts_number]" value="<?= esc_attr( Options::get( 'home_posts_number' ) ) ?>" min="-1" max="9999" maxlength="4" />
-			<?php esc_html_e( 'Number of posts to display on the blog posts page.' ) ?>
+			<?php esc_html_e( 'Number of posts to display on the blog posts page.', 'exhale' ) ?>
 		</label>
 
 	<?php }
@@ -318,7 +318,7 @@ class General extends View {
 
 		<label>
 			<input type="number" name="exhale_settings[archive_posts_number]" value="<?= esc_attr( Options::get( 'archive_posts_number' ) ) ?>" min="-1" max="9999" maxlength="4" />
-			<?php esc_html_e( 'Number of posts to display on archive pages.' ) ?>
+			<?php esc_html_e( 'Number of posts to display on archive pages.', 'exhale' ) ?>
 		</label>
 
 	<?php }
@@ -350,12 +350,12 @@ class General extends View {
 				<?php else : ?>
 
 					<select name="exhale_settings[error_page]">
-						<option value="0" selected="selected"><?php esc_html_e( 'No Private Pages' ) ?></option>
+						<option value="0" selected="selected"><?php esc_html_e( 'No Private Pages', 'exhale' ) ?></option>
 					</select>
 
 					<?php if ( current_user_can( 'publish_pages' ) ) : ?>
 
-						<a href="<?= esc_url( add_query_arg( 'post_type', 'page', admin_url( 'post-new.php' ) ) ) ?>"><?php esc_html_e( 'Add New Page' ) ?></a>
+						<a href="<?= esc_url( add_query_arg( 'post_type', 'page', admin_url( 'post-new.php' ) ) ) ?>"><?php esc_html_e( 'Add New Page', 'exhale' ) ?></a>
 
 					<?php endif ?>
 
@@ -364,7 +364,7 @@ class General extends View {
 		</p>
 
 		<p class="description">
-			<?php esc_html_e( 'Select a page to display when a user visits a 404 error page on your site. The page must be set to private so that it will not appear on the front end.' ) ?>
+			<?php esc_html_e( 'Select a page to display when a user visits a 404 error page on your site. The page must be set to private so that it will not appear on the front end.', 'exhale' ) ?>
 		</p>
 
 	<?php }
@@ -381,12 +381,12 @@ class General extends View {
 		<p>
 			<label>
 				<input type="checkbox" name="exhale_settings[disable_emoji]" value="true" <?php checked( Options::get( 'disable_emoji' ) ) ?> />
-				<?php esc_html_e( 'Disable Emoji Scripts' ) ?>
+				<?php esc_html_e( 'Disable Emoji Scripts', 'exhale' ) ?>
 			</label>
 		</p>
 
 		<p class="description">
-			<?php esc_html_e( 'All modern browsers support emoji natively. Disabling emoji scripts removes the JavaScript loaded on every page of your site for a small percentage of users on outdated browsers.' ) ?>
+			<?php esc_html_e( 'All modern browsers support emoji natively. Disabling emoji scripts removes the JavaScript loaded on every page of your site for a small percentage of users on outdated browsers.', 'exhale' ) ?>
 		</p>
 
 	<?php }
@@ -403,11 +403,11 @@ class General extends View {
 		<p>
 			<label>
 				<input type="checkbox" name="exhale_settings[disable_toolbar]" value="true" <?php checked( Options::get( 'disable_toolbar' ) ) ?> />
-				<?php esc_html_e( 'Disable Toolbar' ) ?>
+				<?php esc_html_e( 'Disable Toolbar', 'exhale' ) ?>
 			</label>
 		</p>
 		<p class="description">
-			<?php esc_html_e( 'Disables the toolbar on the front end of the site, which loads additional JavaScript and CSS on every page load.' ) ?>
+			<?php esc_html_e( 'Disables the toolbar on the front end of the site, which loads additional JavaScript and CSS on every page load.', 'exhale' ) ?>
 		</p>
 
 	<?php }
@@ -424,12 +424,12 @@ class General extends View {
 		<p>
 			<label>
 				<input type="checkbox" name="exhale_settings[disable_wp_embed]" value="true" <?php checked( Options::get( 'disable_wp_embed' ) ) ?> />
-				<?php esc_html_e( 'Disable WordPress Embeds' ) ?>
+				<?php esc_html_e( 'Disable WordPress Embeds', 'exhale' ) ?>
 			</label>
 		</p>
 
 		<p class="description">
-			<?php esc_html_e( 'Removes the JavaScript that allows other sites to embed your posts.' ) ?>
+			<?php esc_html_e( 'Removes the JavaScript that allows other sites to embed your posts.', 'exhale' ) ?>
 		</p>
 
 	<?php }
@@ -446,7 +446,7 @@ class General extends View {
 		<form method="post" action="options.php">
 			<?php settings_fields( 'exhale_settings' ); ?>
 			<?php do_settings_sections( 'exhale_settings' ); ?>
-			<?php submit_button( esc_attr__( 'Update Settings' ), 'primary' ); ?>
+			<?php submit_button( esc_attr__( 'Update Settings', 'exhale' ), 'primary' ); ?>
 		</form>
 
 	<?php }

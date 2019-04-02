@@ -32,17 +32,17 @@ class PoweredBy {
 	public static function all() {
 
 		return apply_filters( 'exhale/power/collection', [
-			__( 'Powered by heart and soul.' ),
-			__( 'Powered by crazy ideas and passion.' ),
-			__( 'Powered by the thing that holds all things together in the universe.' ),
-			__( 'Powered by love.' ),
-			__( 'Powered by the vast and endless void.' ),
-			__( 'Powered by the code of a maniac.' ),
-			__( 'Powered by peace and understanding.' ),
-			__( 'Powered by coffee.' ),
-			__( 'Powered by sleepness nights.' ),
-			__( 'Powered by the love of all things.' ),
-			__( 'Powered by something greater than myself.' )
+			__( 'Powered by heart and soul.', 'exhale' ),
+			__( 'Powered by crazy ideas and passion.', 'exhale' ),
+			__( 'Powered by the thing that holds all things together in the universe.', 'exhale' ),
+			__( 'Powered by love.', 'exhale' ),
+			__( 'Powered by the vast and endless void.', 'exhale' ),
+			__( 'Powered by the code of a maniac.', 'exhale' ),
+			__( 'Powered by peace and understanding.', 'exhale' ),
+			__( 'Powered by coffee.', 'exhale' ),
+			__( 'Powered by sleepness nights.', 'exhale' ),
+			__( 'Powered by the love of all things.', 'exhale' ),
+			__( 'Powered by something greater than myself.', 'exhale' )
 		] );
 	}
 

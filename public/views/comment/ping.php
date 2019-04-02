@@ -6,7 +6,7 @@
 			'text' => Hybrid\Comment\render_date( [
 				'format' => sprintf(
 					// Translators: Comment date + time format.
-					esc_html__( '%1$s, %2$s' ),
+					esc_html__( '%1$s, %2$s', 'exhale' ),
 					get_option( 'date_format' ),
 					get_option( 'time_format' )
 				)
@@ -20,7 +20,7 @@
 		<?php if ( ! Hybrid\Comment\is_approved() ) : ?>
 
 			<p class="comment__moderation">
-				<?php esc_html_e( 'Your comment is awaiting moderation.' ) ?>
+				<?php esc_html_e( 'Your comment is awaiting moderation.', 'exhale' ) ?>
 			</p>
 
 		<?php endif ?>

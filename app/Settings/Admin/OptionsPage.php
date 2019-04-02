@@ -192,7 +192,7 @@ class OptionsPage implements Bootable {
 			<h1 class="wp-heading-inline"><?= esc_html( $this->label ) ?></h1>
 
 			<?php if ( current_user_can( 'customize' ) ) : ?>
-				<a href="<?= esc_url( wp_customize_url() ) ?>" class="hide-if-no-js page-title-action"><?php esc_html_e( 'Customize' ) ?></a>
+				<a href="<?= esc_url( wp_customize_url() ) ?>" class="hide-if-no-js page-title-action"><?php esc_html_e( 'Customize', 'exhale' ) ?></a>
 			<?php endif ?>
 
 			<div class="wp-filter">

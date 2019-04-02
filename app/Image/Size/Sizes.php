@@ -45,7 +45,7 @@ class Sizes extends Collection {
 			if ( $size->isFeaturedSize() ) {
 				$choices[ $size->name() ] = sprintf(
 					// Translators: 1 is image size name, 2 is image size width, and 3 is image size height.
-					esc_html__( '%1$s - %2$s&times;%3$s' ),
+					esc_html__( '%1$s - %2$s&times;%3$s', 'exhale' ),
 					$size->label(),
 					$size->width(),
 					$size->height()

@@ -89,8 +89,8 @@ add_action( 'after_setup_theme', function() {
 add_action( 'init', function() {
 
 	register_nav_menus( [
-		'primary' => esc_html_x( 'Primary', 'nav menu location' ),
-		'social'  => esc_html_x( 'Social',  'nav menu location' )
+		'primary' => esc_html_x( 'Primary', 'nav menu location', 'exhale' ),
+		'social'  => esc_html_x( 'Social',  'nav menu location', 'exhale' )
 	] );
 
 }, 5 );
@@ -117,14 +117,14 @@ add_filter( 'hybrid/template/path', function() {
 add_action( 'hybrid/templates/register', function( $templates ) {
 
 	$templates->add( 'template-landing.php', [
-		'label'      => __( 'Landing' ),
+		'label'      => __( 'Landing', 'exhale' ),
 		'post_types' => [
 			'page'
 		]
 	] );
 
 	$templates->add( 'template-entry-content-only.php', [
-		'label'      => __( 'No Post Header/Footer' ),
+		'label'      => __( 'No Post Header/Footer', 'exhale' ),
 		'post_types' => [
 			'page',
 			'post'

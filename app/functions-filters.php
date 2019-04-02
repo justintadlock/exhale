@@ -29,7 +29,7 @@ add_filter( 'excerpt_more', function() {
 		esc_url( get_permalink() ),
 		sprintf(
 			// Translators: %s is the post title for screen readers.
-			__( 'Continue reading&nbsp;%s&nbsp;&rarr;' ),
+			__( 'Continue reading&nbsp;%s&nbsp;&rarr;', 'exhale' ),
 			the_title( '<span class="screen-reader-text">', '</span>', false )
 		)
 	);

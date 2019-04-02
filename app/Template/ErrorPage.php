@@ -110,7 +110,7 @@ class ErrorPage {
 			return;
 		}
 
-		esc_html_e( '404 Not Found' );
+		esc_html_e( '404 Not Found', 'exhale' );
 	}
 
 	/**
@@ -141,7 +141,7 @@ class ErrorPage {
 
 		printf(
 			'<p>%s</p>',
-			esc_html__( 'It looks like you stumbled upon a page that does not exist. Perhaps rolling the dice with a search might help.' )
+			esc_html__( 'It looks like you stumbled upon a page that does not exist. Perhaps rolling the dice with a search might help.', 'exhale' )
 		);
 
 		get_search_form();

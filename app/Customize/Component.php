@@ -75,7 +75,7 @@ class Component implements Bootable {
 	public function registerPanels( WP_Customize_Manager $manager ) {
 
 		$manager->add_panel( 'theme_options', [
-			'title' => __( 'Theme Options' )
+			'title' => __( 'Theme Options', 'exhale' )
 		] );
 	}
 
@@ -95,9 +95,9 @@ class Component implements Bootable {
 
 		// Add sections under the theme options panel.
 		$sections = [
-			'fonts'  => __( 'Fonts' ),
-			'media'  => __( 'Media' ),
-			'footer' => __( 'Footer' )
+			'fonts'  => __( 'Fonts', 'exhale' ),
+			'media'  => __( 'Media', 'exhale' ),
+			'footer' => __( 'Footer', 'exhale' )
 		];
 
 		array_map( function( $name, $title ) use ( $manager ) {
@@ -189,7 +189,7 @@ class Component implements Bootable {
 
 		$manager->add_setting( 'footer_credit', [
 			// Translators: %s is the theme link.
-			'default'           => sprintf( __( 'Powered by %s.' ), \Hybrid\Theme\render_link() ),
+			'default'           => sprintf( __( 'Powered by %s.', 'exhale' ), \Hybrid\Theme\render_link() ),
 			'sanitize_callback' => function( $value ) {
 				return wp_kses( $value, Footer::allowedTags() );
 			},
@@ -242,11 +242,11 @@ class Component implements Bootable {
 		$manager->add_control( 'featured_image_size', [
 			'section' => 'media',
 			'type'    => 'select',
-			'label'   => esc_html__( 'Featured Image Size' ),
+			'label'   => esc_html__( 'Featured Image Size', 'exhale' ),
 			'description' => sprintf(
 				// Translators: %s is a plugin link.
-				esc_html__( 'For image to be sized correctly, make sure to regenerate them using a plugin such as %s if you have switched from a previous theme.' ),
-				sprintf( '<a href="https://wordpress.org/plugins/regenerate-thumbnails/">%s</a>', esc_html__( 'Regnerate Thumbnails' ) )
+				esc_html__( 'For image to be sized correctly, make sure to regenerate them using a plugin such as %s if you have switched from a previous theme.', 'exhale' ),
+				sprintf( '<a href="https://wordpress.org/plugins/regenerate-thumbnails/">%s</a>', esc_html__( 'Regnerate Thumbnails', 'exhale' ) )
 			),
 			'choices' => App::resolve( ImageSizes::class )->customizeChoices()
 		] );
@@ -258,16 +258,16 @@ class Component implements Bootable {
 				'filters'     => App::resolve( ImageFilters::class ),
 				'l10n'        => [
 					'function' => [
-						'label'       => __( 'Image Filter' ),
-						'description' => __( 'CSS filter function to apply to images.' )
+						'label'       => __( 'Image Filter', 'exhale' ),
+						'description' => __( 'CSS filter function to apply to images.', 'exhale' )
 					],
 					'default_amount' => [
-						'label'       => __( 'Default Filter Amount' ),
-						'description' => __( 'Filter amount applied to all images.' )
+						'label'       => __( 'Default Filter Amount', 'exhale' ),
+						'description' => __( 'Filter amount applied to all images.', 'exhale' )
 					],
 					'hover_amount' => [
-						'label'       => __( 'Hover Filter Amount' ),
-						'description' => __( 'Filter amount applied to linked images when they are hovered or focused.' )
+						'label'       => __( 'Hover Filter Amount', 'exhale' ),
+						'description' => __( 'Filter amount applied to linked images when they are hovered or focused.', 'exhale' )
 					]
 				],
 				'settings'    => [
@@ -282,14 +282,14 @@ class Component implements Bootable {
 		$manager->add_control( 'powered_by', [
 			'section'  => 'footer',
 			'type'     => 'checkbox',
-			'label'    => __( 'Show random "powered by" credit text.' )
+			'label'    => __( 'Show random "powered by" credit text.', 'exhale' )
 		] );
 
 		// Footer credit control.
 		$manager->add_control( 'footer_credit', [
 			'section'         => 'footer',
 			'type'            => 'textarea',
-			'label'           => __( 'Custom Footer Text' ),
+			'label'           => __( 'Custom Footer Text', 'exhale' ),
 			'active_callback' => function( $control ) {
 				return ! $control->manager->get_setting( 'powered_by' )->value();
 			}

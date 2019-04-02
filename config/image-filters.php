@@ -14,46 +14,46 @@
 
 return [
 	'none' => [
-		'label' => __( 'None' )
+		'label' => __( 'None', 'exhale' )
 	],
 	'brightness' => [
-		'label'   => __( 'Brightness' ),
+		'label'   => __( 'Brightness', 'exhale' ),
 		'min'     => 0,
 		'max'     => 200,
 		'lacuna'  => 100
 	],
 	'contrast' => [
-		'label'  => __( 'Contrast' ),
+		'label'  => __( 'Contrast', 'exhale' ),
 		'min'    => 0,
 		'max'    => 200,
 		'lacuna' => 100
 	],
 	'grayscale' => [
-		'label'  => __( 'Grayscale' ),
+		'label'  => __( 'Grayscale', 'exhale' ),
 		'min'    => 0,
 		'max'    => 100,
 		'lacuna' => 0
 	],
 	'invert' => [
-		'label'  => __( 'Invert' ),
+		'label'  => __( 'Invert', 'exhale' ),
 		'min'    => 0,
 		'max'    => 100,
 		'lacuna' => 0
 	],
 	'opacity' => [
-		'label'  => __( 'Opacity' ),
+		'label'  => __( 'Opacity', 'exhale' ),
 		'min'    => 0,
 		'max'    => 100,
 		'lacuna' => 100
 	],
 	'saturate' => [
-		'label'  => __( 'Saturate' ),
+		'label'  => __( 'Saturate', 'exhale' ),
 		'min'    => 0,
 		'max'    => 200,
 		'lacuna' => 100
 	],
 	'sepia' => [
-		'label'  => __( 'Sepia' ),
+		'label'  => __( 'Sepia', 'exhale' ),
 		'min'    => 0,
 		'max'    => 100,
 		'lacuna' => 0
