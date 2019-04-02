@@ -13,8 +13,11 @@
 
 namespace Exhale\Image\Size;
 
+use WP_Customize_Manager;
+
 use Hybrid\Contracts\Bootable;
 use Exhale\Tools\Config;
+use Exhale\Template\FeaturedImage;
 
 /**
  * Image size component class.
@@ -62,6 +65,9 @@ class Component implements Bootable {
 
 		// Filter the image size names in the editor.
 		add_filter( 'image_size_names_choose', [ $this, 'imageSizeNamesChoose' ] );
+
+		// Add customizer settings and controls.
+		add_action( 'customize_register', [ $this, 'customizeRegister'] );
 	}
 
 	/**
@@ -122,5 +128,49 @@ class Component implements Bootable {
 		foreach ( Config::get( 'image-sizes' ) as $name => $options ) {
 			$sizes->add( $name, $options );
 		}
+	}
+
+	/**
+	 * Customize register callback.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  WP_Customize_Manager  $manager
+	 * @return void
+	 */
+	public function customizeRegister( WP_Customize_Manager $manager ) {
+
+		// Featured image size setting.
+		$manager->add_setting( 'featured_image_size', [
+			'default'           => 'exhale-wide',
+			'sanitize_callback' => 'sanitize_key',
+			'transport'         => 'postMessage'
+		] );
+
+		// Featured image size control.
+		$manager->add_control( 'featured_image_size', [
+			'section'     => 'media',
+			'type'        => 'select',
+			'priority'    => 5,
+			'choices'     => $this->sizes->customizeChoices(),
+			'label'       => esc_html__( 'Featured Image Size', 'exhale' ),
+			'description' => sprintf(
+				// Translators: %s is a plugin link.
+				esc_html__( 'For image to be sized correctly, make sure to regenerate them using a plugin such as %s if you have switched from a previous theme.', 'exhale' ),
+				sprintf( '<a href="https://wordpress.org/plugins/regenerate-thumbnails/">%s</a>', esc_html__( 'Regnerate Thumbnails', 'exhale' ) )
+			)
+		] );
+
+		// Featured image size partial.
+		$manager->selective_refresh->add_partial( 'featured_image_size', [
+			'selector'            => '.entry__media',
+			'container_inclusive' => true,
+			'fallback_refresh'    => false,
+			'render_callback'     => function( $partial, $context ) {
+				return FeaturedImage::display( 'featured', [
+					'post_id' => absint( $context['post_id'] )
+				] );
+			}
+		] );
 	}
 }

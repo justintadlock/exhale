@@ -13,6 +13,8 @@
 
 namespace Exhale\Font\Family;
 
+use WP_Customize_Manager;
+
 use Hybrid\Contracts\Bootable;
 use Exhale\Tools\Config;
 use Exhale\Tools\CustomProperties;
@@ -82,6 +84,9 @@ class Component implements Bootable {
 		// Register default families and settings.
 		add_action( 'exhale/font/families/register',        [ $this, 'registerDefaultFamilies' ] );
 		add_action( 'exhale/font/family/settings/register', [ $this, 'registerDefaultSettings' ] );
+
+		// Add customizer settings and controls.
+		add_action( 'customize_register', [ $this, 'customizeRegister'] );
 	}
 
 	/**
@@ -134,5 +139,40 @@ class Component implements Bootable {
 		foreach ( Config::get( 'font-family-settings' ) as $name => $options ) {
 			$settings->add( $name, $options );
 		}
+	}
+
+	/**
+	 * Customize register callback.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  WP_Customize_Manager  $manager
+	 * @return void
+	 */
+	public function customizeRegister( WP_Customize_Manager $manager ) {
+
+		// Registers the font family settings.
+		array_map( function( $setting ) use ( $manager ) {
+
+			$manager->add_setting( $setting->modName(), [
+				'default'           => $setting->family(),
+				'sanitize_callback' => 'sanitize_key',
+				'transport'         => 'postMessage'
+			] );
+
+		}, $this->settings->all() );
+
+		// Registers the font family controls.
+		array_map( function( $setting ) use ( $manager ) {
+
+			$manager->add_control( $setting->modName(), [
+				'section'     => 'fonts',
+				'type'        => 'select',
+				'label'       => esc_html( $setting->label() ),
+				'description' => $setting->description(),
+				'choices'     => $this->families->customizeChoices()
+			] );
+
+		}, $this->settings->all() );
 	}
 }

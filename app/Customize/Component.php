@@ -18,14 +18,12 @@ use WP_Customize_Color_Control;
 
 use Hybrid\App;
 use Hybrid\Contracts\Bootable;
-use Exhale\Template\FeaturedImage;
 use Exhale\Template\Footer;
 
 use Exhale\Color\Customize\Colors as CustomizeColors;
 use Exhale\Font\Family\Families   as FontFamilies;
 use Exhale\Font\Family\Settings   as FontFamilySettings;
 use Exhale\Image\Filter\Filters   as ImageFilters;
-use Exhale\Image\Size\Sizes       as ImageSizes;
 
 use function Exhale\asset;
 
@@ -95,8 +93,8 @@ class Component implements Bootable {
 
 		// Add sections under the theme options panel.
 		$sections = [
-			'fonts'  => __( 'Fonts', 'exhale' ),
-			'media'  => __( 'Media', 'exhale' ),
+			'fonts'  => __( 'Fonts',  'exhale' ),
+			'media'  => __( 'Media',  'exhale' ),
 			'footer' => __( 'Footer', 'exhale' )
 		];
 
@@ -131,55 +129,6 @@ class Component implements Bootable {
 			$setting->transport = 'postMessage';
 		} );
 
-		// Registers the color settings.
-		array_map( function( $setting ) use ( $manager ) {
-
-			$manager->add_setting( $setting->modName(), [
-				'default'              => maybe_hash_hex_color( $setting->color() ),
-				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
-				'sanitize_js_callback' => 'maybe_hash_hex_color',
-				'transport'            => 'postMessage'
-			] );
-
-		}, App::resolve( CustomizeColors::class )->all() );
-
-		// Registers the font family settings.
-		array_map( function( $setting ) use ( $manager ) {
-
-			$manager->add_setting( $setting->modName(), [
-				'default'           => $setting->family(),
-				'sanitize_callback' => 'sanitize_key',
-				'transport'         => 'postMessage'
-			] );
-
-		}, App::resolve( FontFamilySettings::class )->all() );
-
-		// Featured image size setting.
-		$manager->add_setting( 'featured_image_size', [
-			'default'           => 'exhale-wide',
-			'sanitize_callback' => 'sanitize_key',
-			'transport'         => 'postMessage'
-		] );
-
-		// Image filter settings.
-		$manager->add_setting( 'image_default_filter_function', [
-			'default'           => 'grayscale',
-			'sanitize_callback' => 'sanitize_key',
-			'transport'         => 'postMessage'
-		] );
-
-		$manager->add_setting( 'image_default_filter_amount', [
-			'default'           => 100,
-			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage'
-		] );
-
-		$manager->add_setting( 'image_hover_filter_amount', [
-			'default'           => 0,
-			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage'
-		] );
-
 		// Register footer settings.
 		$manager->add_setting( 'powered_by', [
 			'default'           => true,
@@ -208,75 +157,8 @@ class Component implements Bootable {
 	 */
 	public function registerControls( WP_Customize_Manager $manager ) {
 
+		// Register JS control types.
 		$manager->register_control_type( Controls\ImageFilter::class );
-
-		// Registers the color controls.
-		array_map( function( $setting ) use ( $manager ) {
-
-			$manager->add_control(
-				new WP_Customize_Color_Control( $manager, $setting->modName(), [
-					'section'     => 'colors',
-					'label'       => esc_html( $setting->label() ),
-					'description' => esc_html( $setting->description() )
-				] )
-			);
-
-		}, App::resolve( CustomizeColors::class )->all() );
-
-		// Registers the font family controls.
-		array_map( function( $setting ) use ( $manager ) {
-
-			// @todo - Use Hybrid Customize select group to separate
-			// web safe and Google fonts.
-			$manager->add_control( $setting->modName(), [
-				'section'     => 'fonts',
-				'type'        => 'select',
-				'label'       => esc_html( $setting->label() ),
-				'description' => $setting->description(),
-				'choices'     => App::resolve( FontFamilies::class )->customizeChoices()
-			] );
-
-		}, App::resolve( FontFamilySettings::class )->all() );
-
-		// Featured image size control.
-		$manager->add_control( 'featured_image_size', [
-			'section' => 'media',
-			'type'    => 'select',
-			'label'   => esc_html__( 'Featured Image Size', 'exhale' ),
-			'description' => sprintf(
-				// Translators: %s is a plugin link.
-				esc_html__( 'For image to be sized correctly, make sure to regenerate them using a plugin such as %s if you have switched from a previous theme.', 'exhale' ),
-				sprintf( '<a href="https://wordpress.org/plugins/regenerate-thumbnails/">%s</a>', esc_html__( 'Regnerate Thumbnails', 'exhale' ) )
-			),
-			'choices' => App::resolve( ImageSizes::class )->customizeChoices()
-		] );
-
-		// Image filters.
-		$manager->add_control(
-			new Controls\ImageFilter( $manager, 'image_filter', [
-				'section'     => 'media',
-				'filters'     => App::resolve( ImageFilters::class ),
-				'l10n'        => [
-					'function' => [
-						'label'       => __( 'Image Filter', 'exhale' ),
-						'description' => __( 'CSS filter function to apply to images.', 'exhale' )
-					],
-					'default_amount' => [
-						'label'       => __( 'Default Filter Amount', 'exhale' ),
-						'description' => __( 'Filter amount applied to all images.', 'exhale' )
-					],
-					'hover_amount' => [
-						'label'       => __( 'Hover Filter Amount', 'exhale' ),
-						'description' => __( 'Filter amount applied to linked images when they are hovered or focused.', 'exhale' )
-					]
-				],
-				'settings'    => [
-					'function'       => 'image_default_filter_function',
-					'default_amount' => 'image_default_filter_amount',
-					'hover_amount'   => 'image_hover_filter_amount'
-				]
-			] )
-		);
 
 		// Register the footer controls.
 		$manager->add_control( 'powered_by', [
@@ -325,18 +207,6 @@ class Component implements Bootable {
 			'selector'        => '.app-header__description',
 			'render_callback' => function() {
 				return get_bloginfo( 'description', 'display' );
-			}
-		] );
-
-		// Featured image size.
-		$manager->selective_refresh->add_partial( 'featured_image_size', [
-			'selector'            => '.entry__media',
-			'container_inclusive' => true,
-			'fallback_refresh'    => false,
-			'render_callback'     => function( $partial, $context ) {
-				return FeaturedImage::display( 'featured', [
-					'post_id' => absint( $context['post_id'] )
-				] );
 			}
 		] );
 

@@ -13,9 +13,12 @@
 
 namespace Exhale\Image\Filter;
 
+use WP_Customize_Manager;
+
 use Hybrid\Contracts\Bootable;
 use Exhale\Tools\Config;
 use Exhale\Tools\CustomProperties;
+use Exhale\Customize\Controls;
 
 /**
  * Image filter component class.
@@ -71,6 +74,9 @@ class Component implements Bootable {
 
 		// Register default filters.
 		add_action( 'exhale/image/filter/register', [ $this, 'registerDefaultFilters' ] );
+
+		// Add customizer settings and controls.
+		add_action( 'customize_register', [ $this, 'customizeRegister'] );
 	}
 
 	/**
@@ -136,5 +142,62 @@ class Component implements Bootable {
 			esc_html( $default_filter_function ),
 			absint( $hover_filter_amount )
 		) );
+	}
+
+	/**
+	 * Customize register callback.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  WP_Customize_Manager  $manager
+	 * @return void
+	 */
+	public function customizeRegister( WP_Customize_Manager $manager ) {
+
+		// Image filter settings.
+		$manager->add_setting( 'image_default_filter_function', [
+			'default'           => 'grayscale',
+			'sanitize_callback' => 'sanitize_key',
+			'transport'         => 'postMessage'
+		] );
+
+		$manager->add_setting( 'image_default_filter_amount', [
+			'default'           => 100,
+			'sanitize_callback' => 'absint',
+			'transport'         => 'postMessage'
+		] );
+
+		$manager->add_setting( 'image_hover_filter_amount', [
+			'default'           => 0,
+			'sanitize_callback' => 'absint',
+			'transport'         => 'postMessage'
+		] );
+
+		// Image filter controls.
+		$manager->add_control(
+			new Controls\ImageFilter( $manager, 'image_filter', [
+				'section'     => 'media',
+				'filters'     => $this->filters,
+				'l10n'        => [
+					'function' => [
+						'label'       => __( 'Image Filter', 'exhale' ),
+						'description' => __( 'CSS filter function to apply to images.', 'exhale' )
+					],
+					'default_amount' => [
+						'label'       => __( 'Default Filter Amount', 'exhale' ),
+						'description' => __( 'Filter amount applied to all images.', 'exhale' )
+					],
+					'hover_amount' => [
+						'label'       => __( 'Hover Filter Amount', 'exhale' ),
+						'description' => __( 'Filter amount applied to linked images when they are hovered or focused.', 'exhale' )
+					]
+				],
+				'settings'    => [
+					'function'       => 'image_default_filter_function',
+					'default_amount' => 'image_default_filter_amount',
+					'hover_amount'   => 'image_hover_filter_amount'
+				]
+			] )
+		);
 	}
 }

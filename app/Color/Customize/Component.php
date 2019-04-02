@@ -13,6 +13,9 @@
 
 namespace Exhale\Color\Customize;
 
+use WP_Customize_Manager;
+use WP_Customize_Color_Control;
+
 use Hybrid\Contracts\Bootable;
 use Exhale\Tools\Config;
 use Exhale\Tools\CustomProperties;
@@ -71,6 +74,9 @@ class Component implements Bootable {
 
 		// Register colors.
 		add_action( 'exhale/color/customize/register', [ $this, 'registerDefaultColors' ] );
+
+		// Add customizer settings and controls.
+		add_action( 'customize_register', [ $this, 'customizeRegister'] );
 	}
 
 	/**
@@ -104,5 +110,41 @@ class Component implements Bootable {
 		foreach ( Config::get( 'customize-colors' ) as $name => $options ) {
 			$colors->add( $name, $options );
 		}
+	}
+
+	/**
+	 * Customize register callback.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  WP_Customize_Manager  $manager
+	 * @return void
+	 */
+	public function customizeRegister( WP_Customize_Manager $manager ) {
+
+		// Registers the color settings.
+		array_map( function( $setting ) use ( $manager ) {
+
+			$manager->add_setting( $setting->modName(), [
+				'default'              => maybe_hash_hex_color( $setting->color() ),
+				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
+				'sanitize_js_callback' => 'maybe_hash_hex_color',
+				'transport'            => 'postMessage'
+			] );
+
+		}, $this->colors->all() );
+
+		// Registers the color controls.
+		array_map( function( $setting ) use ( $manager ) {
+
+			$manager->add_control(
+				new WP_Customize_Color_Control( $manager, $setting->modName(), [
+					'section'     => 'colors',
+					'label'       => esc_html( $setting->label() ),
+					'description' => esc_html( $setting->description() )
+				] )
+			);
+
+		}, $this->colors->all() );
 	}
 }
