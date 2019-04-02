@@ -16,6 +16,7 @@
 namespace Exhale;
 
 use Hybrid\Tools\ServiceProvider;
+use Exhale\Tools\CustomProperties;
 
 /**
  * App service provider.
@@ -42,5 +43,8 @@ class Provider extends ServiceProvider {
 
 			return file_exists( $file ) ? json_decode( file_get_contents( $file ), true ) : null;
 		} );
+
+		// Bind a single instance of the custom properties class.
+		$this->app->singleton( CustomProperties::class );
 	}
 }

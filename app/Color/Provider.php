@@ -14,6 +14,7 @@
 namespace Exhale\Color;
 
 use Hybrid\Tools\ServiceProvider;
+use Exhale\Tools\CustomProperties;
 
 /**
  * Color service provider class.
@@ -31,13 +32,20 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
-		$this->app->singleton( CustomizeColors::class );
-		$this->app->singleton( EditorColors::class    );
+		$this->app->singleton( Customize\Colors::class );
+		$this->app->singleton( Editor\Colors::class    );
 
-		$this->app->singleton( Component::class, function() {
-			return new Component(
-				$this->app->resolve( CustomizeColors::class ),
-				$this->app->resolve( EditorColors::class    )
+		$this->app->singleton( Customize\Component::class, function() {
+			return new Customize\Component(
+				$this->app->resolve( Customize\Colors::class ),
+				$this->app->resolve( CustomProperties::class )
+			);
+		} );
+
+		$this->app->singleton( Editor\Component::class, function() {
+			return new Editor\Component(
+				$this->app->resolve( Editor\Colors::class    ),
+				$this->app->resolve( CustomProperties::class )
 			);
 		} );
 	}
@@ -50,6 +58,7 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
-		$this->app->resolve( Component::class )->boot();
+		$this->app->resolve( Customize\Component::class )->boot();
+		$this->app->resolve( Editor\Component::class    )->boot();
 	}
 }

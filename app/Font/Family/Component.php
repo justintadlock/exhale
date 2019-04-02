@@ -15,6 +15,7 @@ namespace Exhale\Font\Family;
 
 use Hybrid\Contracts\Bootable;
 use Exhale\Tools\Config;
+use Exhale\Tools\CustomProperties;
 
 /**
  * Font component class.
@@ -43,6 +44,15 @@ class Component implements Bootable {
 	protected $settings;
 
 	/**
+	 * CSS custom properties.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    CustomProperties
+	 */
+	protected $properties;
+
+	/**
 	 * Creates the component object.
 	 *
 	 * @since  1.0.0
@@ -51,10 +61,10 @@ class Component implements Bootable {
 	 * @param  Settings  $settings
 	 * @return void
 	 */
-	public function __construct( Families $families, Settings $settings ) {
-
-		$this->families = $families;
-		$this->settings = $settings;
+	public function __construct( Families $families, Settings $settings, CustomProperties $properties ) {
+		$this->families   = $families;
+		$this->settings   = $settings;
+		$this->properties = $properties;
 	}
 
 	/**
@@ -83,8 +93,17 @@ class Component implements Bootable {
 	 */
 	public function register() {
 
+		// Hooks for registering custom fonts and settings.
 		do_action( 'exhale/font/families/register',        $this->families );
 		do_action( 'exhale/font/family/settings/register', $this->settings );
+
+		// Adds each font setting as a custom property.
+		foreach ( $this->settings as $setting ) {
+			$this->properties->add(
+				$setting->property(),
+			 	$this->families->get( $setting->mod() )->stack()
+			);
+		}
 	}
 
 	/**
@@ -115,28 +134,5 @@ class Component implements Bootable {
 		foreach ( Config::get( 'font-family-settings' ) as $name => $options ) {
 			$settings->add( $name, $options );
 		}
-	}
-
-	/**
-	 * Returns an inline style for the colors.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return string
-	 */
-	public function inlineStyle() {
-
-		$css = '';
-
-		foreach ( $this->settings as $setting ) {
-
-			$css .= sprintf(
-				'%s: %s;',
-				esc_html( $setting->property() ),
-				wp_strip_all_tags( $this->families->get( $setting->mod() )->stack() )
-			);
-		}
-
-		return sprintf( ':root { %s }', $css );
 	}
 }

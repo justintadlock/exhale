@@ -11,7 +11,7 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Color;
+namespace Exhale\Color\Customize;
 
 use JsonSerializable;
 use function Hybrid\hex_to_rgb;
@@ -22,7 +22,7 @@ use function Hybrid\hex_to_rgb;
  * @since  1.0.0
  * @access public
  */
-class CustomizeColor implements JsonSerializable {
+class Color implements JsonSerializable {
 
 	/**
 	 * Color name.

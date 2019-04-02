@@ -13,31 +13,29 @@
 
 return [
 	'background' => [
-		'color'           => 'ffffff',
-		'label'           => __( 'Background', 'exhale' ),
-		'description'     => __( 'Background color used for the site.', 'exhale' )
+		'color'       => 'ffffff',
+		'label'       => __( 'Background', 'exhale' ),
+		'description' => __( 'Background color used for the site.', 'exhale' )
 	],
 	'primary' => [
-		'color'           => '687d81', // bayou
-		'label'           => __( 'Primary: Text', 'exhale' ),
-		'description'     => __( 'Color used for most text on the site.', 'exhale' ),
-		'is_editor_color' => true
+		'color'       => '687d81',
+		'label'       => __( 'Primary: Text', 'exhale' ),
+		'description' => __( 'Color used for most text on the site.', 'exhale' )
 	],
 	'primary-link' => [
-		'color'           => 'e3342f', // 'ff3b3d', // coral-red
-		'label'           => __( 'Primary: Link', 'exhale' ),
-		'description'     => __( 'Color used for links in primary text.', 'exhale' )
+		'color'       => 'e3342f',
+		'label'       => __( 'Primary: Link', 'exhale' ),
+		'description' => __( 'Color used for links in primary text.', 'exhale' )
 	],
 	'primary-link-alt' => [
-		'color'           => '222222',
-		'label'           => __( 'Primary: Link Hover', 'exhale' ),
-		'description'     => __( 'Color used when hovering or focusing a link.', 'exhale' )
+		'color'       => '222222',
+		'label'       => __( 'Primary: Link Hover', 'exhale' ),
+		'description' => __( 'Color used when hovering or focusing a link.', 'exhale' )
 	],
 	'secondary' => [
-		'color'       => 'a9a9a9', // silver-chalice
+		'color'       => 'a9a9a9',
 		'label'       => __( 'Secondary: Text', 'exhale' ),
-		'description' => __( 'Color used for secondary text.', 'exhale' ),
-		'is_editor_color' => true
+		'description' => __( 'Color used for secondary text.', 'exhale' )
 	],
 	'secondary-link' => [
 		'color'           => 'a9a9a9',
@@ -50,7 +48,7 @@ return [
 		'description'     => __( 'Color used when hovering or focusing a link.', 'exhale' )
 	],
 	'headings' => [
-		'color'           => '222222', // mine-shaft
+		'color'           => '222222',
 		'label'           => __( 'Headings', 'exhale' ),
 		'description'     => __( 'Color used for text headings.', 'exhale' )
 	],

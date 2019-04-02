@@ -45,12 +45,12 @@
 
 return [
 	'primary' => [
-		'color' => \Exhale\Tools\Mod::color( 'primary' ),
-		'label' => __( 'Primary', 'exhale' )
+		'label'        => __( 'Primary', 'exhale' ),
+		'is_theme_mod' => true
 	],
 	'secondary' => [
-		'color' => \Exhale\Tools\Mod::color( 'secondary' ),
-		'label' => __( 'Secondary', 'exhale' )
+		'label'        => __( 'Secondary', 'exhale' ),
+		'is_theme_mod' => true
 	],
 	'black' => [
 		'color' => '22292f',

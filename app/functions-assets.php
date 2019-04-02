@@ -15,6 +15,7 @@
 namespace Exhale;
 
 use Hybrid\App;
+use Exhale\Tools\CustomProperties;
 use Exhale\Color\Component as Color;
 use Exhale\Font\Family\Component as FontFamily;
 use Exhale\Image\Filter\Component as ImageFilter;
@@ -50,9 +51,7 @@ add_action( 'wp_enqueue_scripts', function() {
 		null
 	);
 
-	wp_add_inline_style( 'exhale-screen', App::resolve( Color::class       )->inlineStyle() );
-	wp_add_inline_style( 'exhale-screen', App::resolve( FontFamily::class  )->inlineStyle() );
-	wp_add_inline_style( 'exhale-screen', App::resolve( ImageFilter::class )->inlineStyle() );
+	wp_add_inline_style( 'exhale-screen', App::resolve( CustomProperties::class )->css() );
 
 } );
 
@@ -68,9 +67,7 @@ add_action( 'enqueue_block_editor_assets', function() {
 	// Enqueue theme editor styles.
 	wp_enqueue_style( 'exhale-editor', asset( 'css/editor.css' ), null, null );
 
-	wp_add_inline_style( 'exhale-editor', App::resolve( Color::class      )->inlineStyle() );
-	wp_add_inline_style( 'exhale-editor', App::resolve( FontFamily::class )->inlineStyle() );
-	wp_add_inline_style( 'exhale-screen', App::resolve( ImageFilter::class )->inlineStyle() );
+	wp_add_inline_style( 'exhale-editor', App::resolve( CustomProperties::class )->css() );
 
 	// Unregister core block and theme styles.
 	wp_deregister_style( 'wp-block-library' );

@@ -11,7 +11,7 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Color;
+namespace Exhale\Color\Editor;
 
 use Exhale\Tools\Collection;
 
@@ -21,7 +21,7 @@ use Exhale\Tools\Collection;
  * @since  1.0.0
  * @access public
  */
-class EditorColors extends Collection {
+class Colors extends Collection {
 
 	/**
 	 * Adds a new color color to the collection.
@@ -33,7 +33,7 @@ class EditorColors extends Collection {
 	 * @return void
 	 */
 	public function add( $name, $value ) {
-		parent::add( $name, new EditorColor( $name, $value ) );
+		parent::add( $name, new Color( $name, $value ) );
 	}
 
 	/**

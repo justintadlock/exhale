@@ -21,11 +21,11 @@ use Hybrid\Contracts\Bootable;
 use Exhale\Template\FeaturedImage;
 use Exhale\Template\Footer;
 
-use Exhale\Color\CustomizeColors;
-use Exhale\Font\Family\Families as FontFamilies;
-use Exhale\Font\Family\Settings as FontFamilySettings;
-use Exhale\Image\Filter\Filters as ImageFilters;
-use Exhale\Image\Size\Sizes     as ImageSizes;
+use Exhale\Color\Customize\Colors as CustomizeColors;
+use Exhale\Font\Family\Families   as FontFamilies;
+use Exhale\Font\Family\Settings   as FontFamilySettings;
+use Exhale\Image\Filter\Filters   as ImageFilters;
+use Exhale\Image\Size\Sizes       as ImageSizes;
 
 use function Exhale\asset;
 

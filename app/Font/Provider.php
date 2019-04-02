@@ -14,6 +14,7 @@
 namespace Exhale\Font;
 
 use Hybrid\Tools\ServiceProvider;
+use Exhale\Tools\CustomProperties;
 
 /**
  * Font service provider class.
@@ -37,8 +38,9 @@ class Provider extends ServiceProvider {
 
 		$this->app->singleton( Family\Component::class, function() {
 			return new Family\Component(
-				$this->app->resolve( Family\Families::class ),
-				$this->app->resolve( Family\Settings::class )
+				$this->app->resolve( Family\Families::class  ),
+				$this->app->resolve( Family\Settings::class  ),
+				$this->app->resolve( CustomProperties::class )
 			);
 		} );
 

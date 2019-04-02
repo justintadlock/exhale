@@ -14,11 +14,7 @@
 namespace Exhale\Image;
 
 use Hybrid\Tools\ServiceProvider;
-use Exhale\Image\Filter\Filters;
-use Exhale\Image\Size\Sizes;
-
-use Exhale\Image\Filter\Component as FilterComponent;
-use Exhale\Image\Size\Component as SizeComponent;
+use Exhale\Tools\CustomProperties;
 
 /**
  * Image service provider class.
@@ -36,15 +32,20 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
-		$this->app->singleton( Filters::class );
-		$this->app->singleton( Sizes::class   );
+		$this->app->singleton( Filter\Filters::class );
+		$this->app->singleton( Size\Sizes::class   );
 
-		$this->app->singleton( FilterComponent::class, function() {
-			return new FilterComponent( $this->app->resolve( Filters::class ) );
+		$this->app->singleton( Filter\Component::class, function() {
+			return new Filter\Component(
+				$this->app->resolve( Filter\Filters::class   ),
+				$this->app->resolve( CustomProperties::class )
+			);
 		} );
 
-		$this->app->singleton( SizeComponent::class, function() {
-			return new SizeComponent( $this->app->resolve( Sizes::class ) );
+		$this->app->singleton( Size\Component::class, function() {
+			return new Size\Component(
+				$this->app->resolve( Size\Sizes::class )
+			);
 		} );
 	}
 
@@ -56,7 +57,7 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
-		$this->app->resolve( FilterComponent::class )->boot();
-		$this->app->resolve( SizeComponent::class   )->boot();
+		$this->app->resolve( Filter\Component::class )->boot();
+		$this->app->resolve( Size\Component::class   )->boot();
 	}
 }

@@ -11,7 +11,7 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Color;
+namespace Exhale\Color\Customize;
 
 use Exhale\Tools\Collection;
 
@@ -21,7 +21,7 @@ use Exhale\Tools\Collection;
  * @since  1.0.0
  * @access public
  */
-class CustomizeColors extends Collection {
+class Colors extends Collection {
 
 	/**
 	 * Adds a new customize color to the collection.
@@ -33,6 +33,6 @@ class CustomizeColors extends Collection {
 	 * @return void
 	 */
 	public function add( $name, $value ) {
-		parent::add( $name, new CustomizeColor( $name, $value ) );
+		parent::add( $name, new Color( $name, $value ) );
 	}
 }

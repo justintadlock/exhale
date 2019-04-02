@@ -11,8 +11,9 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Color;
+namespace Exhale\Color\Editor;
 
+use Exhale\Tools\Mod;
 use function Hybrid\hex_to_rgb;
 
 /**
@@ -21,7 +22,7 @@ use function Hybrid\hex_to_rgb;
  * @since  1.0.0
  * @access public
  */
-class EditorColor {
+class Color {
 
 	/**
 	 * Color name.
@@ -49,6 +50,15 @@ class EditorColor {
 	 * @var    string
 	 */
 	protected $color = '000000';
+
+	/**
+	 * Whether the color should be taken from theme mods.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    bool
+	 */
+	protected $is_theme_mod = false;
 
 	/**
 	 * Set up the object properties.
@@ -109,6 +119,17 @@ class EditorColor {
 	}
 
 	/**
+	 * Returns the color value.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return string
+	 */
+	public function color() {
+		return $this->isThemeMod() ? Mod::color( $this->name() ) : $this->color;
+	}
+
+	/**
 	 * Returns the hex color code.
 	 *
 	 * @since  1.0.0
@@ -128,5 +149,16 @@ class EditorColor {
 	 */
 	public function rgb() {
 		return hex_to_rgb( $this->color );
+	}
+
+	/**
+	 * Whether the color is a theme mod.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return bool
+	 */
+	public function isThemeMod() {
+		return $this->is_theme_mod;
 	}
 }

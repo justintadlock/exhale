@@ -15,6 +15,7 @@ namespace Exhale\Image\Filter;
 
 use Hybrid\Contracts\Bootable;
 use Exhale\Tools\Config;
+use Exhale\Tools\CustomProperties;
 
 /**
  * Image filter component class.
@@ -34,15 +35,26 @@ class Component implements Bootable {
 	protected $filters;
 
 	/**
+	 * CSS custom properties.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    CustomProperties
+	 */
+	protected $properties;
+
+	/**
 	 * Creates the component object.
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  Filters  $filters
+	 * @param  Filters          $filters
+	 * @param  CustomProperties $properties
 	 * @return void
 	 */
-	public function __construct( Filters $filters ) {
-		$this->filters = $filters;
+	public function __construct( Filters $filters, CustomProperties $properties ) {
+		$this->filters    = $filters;
+		$this->properties = $properties;
 	}
 
 	/**
@@ -72,6 +84,9 @@ class Component implements Bootable {
 
 		// Hook for registering custom image filters.
 		do_action( 'exhale/image/filter/register', $this->filters );
+
+		// Add custom properties.
+		$this->customProperties();
 	}
 
 	/**
@@ -90,36 +105,36 @@ class Component implements Bootable {
 	}
 
 	/**
-	* Returns an inline style for the filters.
-	*
-	* @since  1.0.0
-	* @access public
-	* @return string
-	*/
-       public function inlineStyle() {
+	 * Adds CSS custom properties.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @return string
+	 */
+	protected function customProperties() {
 
-	       $default_filter_function = get_theme_mod( 'image_default_filter_function', 'grayscale' );
-	       $default_filter_amount   = get_theme_mod( 'image_default_filter_amount',   0           );
-	       $hover_filter_amount     = get_theme_mod( 'image_hover_filter_amount',     100         );
+		$default_filter_function = get_theme_mod( 'image_default_filter_function', 'grayscale' );
+		$default_filter_amount   = get_theme_mod( 'image_default_filter_amount',   0           );
+		$hover_filter_amount     = get_theme_mod( 'image_hover_filter_amount',     100         );
 
-	       $css = '';
+		if ( ! $default_filter_function || 'none' === $default_filter_function ) {
 
-	       if ( ! $default_filter_function || 'none' === $default_filter_function ) {
-		       $css .= '--image-default-filter: none; --image-hover-filter: none;';
-	       } else {
-		       $css .= sprintf(
-			       '--image-default-filter: %s( %s%% );',
-			       esc_html( $default_filter_function ),
-			       absint( $default_filter_amount )
-		       );
+			$this->properties->add( '--image-default-filter', 'none' );
+			$this->properties->add( '--image-hover-filter',   'none' );
 
-		       $css .= sprintf(
-			       '--image-hover-filter: %s( %s%% );',
-			       esc_html( $default_filter_function ),
-			       absint( $hover_filter_amount )
-		       );
-	       }
+			return;
+		}
 
-	       return sprintf( ':root { %s }', $css );
-       }
+		$this->properties->add( '--image-default-filter', sprintf(
+			'%s( %s%% )',
+			esc_html( $default_filter_function ),
+			absint( $default_filter_amount )
+		) );
+
+		$this->properties->add( '--image-hover-filter', sprintf(
+			'%s( %s%% )',
+			esc_html( $default_filter_function ),
+			absint( $hover_filter_amount )
+		) );
+	}
 }
