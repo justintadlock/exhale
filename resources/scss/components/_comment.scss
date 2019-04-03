@@ -79,7 +79,19 @@
 		color: var( --color-secondary-link-alt );
 	}
 
-	&__author {}
+	&__author {
+		font-weight: bold;
+	}
+
+	&__meta .comment__author a {
+		color: var( --color-headings );
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
 
 	&__permalink {}
 
