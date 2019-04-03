@@ -13,8 +13,30 @@
 
 namespace Exhale;
 
+use Exhale\Settings\Options;
 use Exhale\Tools\Config;
 use Exhale\Tools\Svg;
+use Exhale\Template\ErrorPage;
+
+add_filter( 'hybrid/view/content/data', function( $data ) {
+
+	if ( is_404() ) {
+		$data->add( 'error', new ErrorPage() );
+	}
+
+	return $data;
+
+} );
+
+add_filter( 'display_post_states', function( $states, $post ) {
+
+	if ( 'page' === $post->post_type && $post->ID === absint( Options::get( 'error_page' ) ) ) {
+		$states['exhale_error_404'] = __( '404 Page', 'exhale' );
+	}
+
+	return $states;
+
+}, 10, 2 );
 
 add_filter( 'walker_nav_menu_start_el', __NAMESPACE__ . '\nav_menu_social_icons', 10, 4 );
 

@@ -2,9 +2,9 @@
 
 	<main id="main" class="app-main">
 
-		<div class="entry entry--error">
+		<?php $error->setup() ?>
 
-			<?php $error = ( new Exhale\Template\ErrorPage() )->setup() ?>
+		<div class="entry entry--error">
 
 			<header class="entry__header">
 				<h1 class="entry__title"><?php $error->displayTitle() ?></h1>
@@ -14,8 +14,9 @@
 				<?php $error->displayContent() ?>
 			</div>
 
-			<?php $error->reset() ?>
 		</div>
+
+		<?php $error->reset() ?>
 
 	</main>
 

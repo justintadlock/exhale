@@ -103,26 +103,18 @@ class ErrorPage {
 	 */
 	public function displayTitle() {
 
+		$format = function() {
+			return '%s';
+		};
+
 		if ( $this->hasPost() ) {
-			add_filter( 'private_title_format', [ $this, 'privateTitleFormat' ] );
+			add_filter( 'private_title_format', $format );
 			the_title();
-			remove_filter( 'private_title_format', [ $this, 'privateTitleFormat' ] );
+			remove_filter( 'private_title_format', $format );
 			return;
 		}
 
 		esc_html_e( '404 Not Found', 'exhale' );
-	}
-
-	/**
-	 * Filters the private title format to remove the "Private:" prefix that
-	 * WP adds.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function privateTitleFormat() {
-		return '%s';
 	}
 
 	/**
