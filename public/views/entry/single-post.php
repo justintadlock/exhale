@@ -21,6 +21,12 @@
 			'text'     => __( 'Posted in %s', 'exhale' ),
 			'taxonomy' => 'category'
 		] ) ?>
+		<?php Hybrid\Post\display_terms( [
+			// Translators: %s is the post tags list.
+			'text'     => __( 'Tagged %s', 'exhale' ),
+			'taxonomy' => 'post_tag',
+			'before'   => '<br />'
+		] ) ?>
 	</footer>
 
 </article>
