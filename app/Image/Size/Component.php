@@ -142,7 +142,7 @@ class Component implements Bootable {
 
 		// Featured image size setting.
 		$manager->add_setting( 'featured_image_size', [
-			'default'           => 'exhale-wide',
+			'default'           => 'exhale-landscape-large',
 			'sanitize_callback' => 'sanitize_key',
 			'transport'         => 'postMessage'
 		] );

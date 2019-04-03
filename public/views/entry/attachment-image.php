@@ -5,7 +5,7 @@
 	</header>
 
 	<figure class="alignfull">
-		<?php echo wp_get_attachment_image( get_the_ID(), 'full', false, [ 'class' => 'aligncenter' ] ) ?>
+		<?php echo wp_get_attachment_image( get_the_ID(), 'exhale-landscape-huge', false, [ 'class' => 'aligncenter' ] ) ?>
 	</figure>
 
 	<div class="entry__content">

@@ -13,28 +13,28 @@
 
 return [
 	'post-thumbnail' => [
-		'label'            => __( 'Theme: Thumbnail', 'exhale' ),
+		'label'            => __( 'Landscape: Thumbnail', 'exhale' ),
 		'width'            => 178,
 		'height'           => 100,
 		'is_featured_size' => false
 	],
-	'exhale-medium' => [
-		'label'  => __( 'Theme: Medium', 'exhale' ),
+	'exhale-landscape-medium' => [
+		'label'  => __( 'Landscape: Medium', 'exhale' ),
 		'width'  => 650,
 		'height' => 366
 	],
-	'exhale-wide' => [
-		'label'  => __( 'Theme: Wide', 'exhale' ),
+	'exhale-landscape-large' => [
+		'label'  => __( 'Landscape: Large', 'exhale' ),
 		'width'  => 900,
 		'height' => 506
 	],
-	'exhale-wider' => [
-		'label'  => __( 'Theme: Wider', 'exhale' ),
+	'exhale-landscape-extra-large' => [
+		'label'  => __( 'Landscape: Extra Large', 'exhale' ),
 		'width'  => 1366,
 		'height' => 768
 	],
-	'exhale-widest' => [
-		'label'  => __( 'Theme: Widest', 'exhale' ),
+	'exhale-landscape-huge' => [
+		'label'  => __( 'Landscape: Huge', 'exhale' ),
 		'width'  => 1920,
 		'height' => 1080
 	]
