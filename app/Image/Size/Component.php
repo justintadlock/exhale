@@ -156,7 +156,7 @@ class Component implements Bootable {
 			'label'       => esc_html__( 'Featured Image Size', 'exhale' ),
 			'description' => sprintf(
 				// Translators: %s is a plugin link.
-				esc_html__( 'For image to be sized correctly, make sure to regenerate them using a plugin such as %s if you have switched from a previous theme.', 'exhale' ),
+				esc_html__( 'For images to be sized correctly, make sure to regenerate them using a plugin such as %s if you have switched from a previous theme.', 'exhale' ),
 				sprintf( '<a href="https://wordpress.org/plugins/regenerate-thumbnails/">%s</a>', esc_html__( 'Regnerate Thumbnails', 'exhale' ) )
 			)
 		] );
