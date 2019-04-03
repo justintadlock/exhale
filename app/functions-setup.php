@@ -22,18 +22,13 @@ namespace Exhale;
 /**
  * Set up theme support.  This is where calls to `add_theme_support()` happen.
  *
- * @link   https://developer.wordpress.org/reference/functions/add_theme_support/
- * @link   https://developer.wordpress.org/themes/basics/theme-functions/
- * @link   https://developer.wordpress.org/reference/functions/load_theme_textdomain/
- * @link   https://github.com/WordPress/gutenberg/blob/master/docs/extensibility/theme-support.md
  * @since  1.0.0
  * @access public
  * @return void
  */
 add_action( 'after_setup_theme', function() {
 
-	// Sets the theme content width. This variable is also set in the
-	// `resources/scss/settings/_dimensions.scss` file.
+	// Sets the theme content width.
 	$GLOBALS['content_width'] = 650;
 
 	// Load theme translations.
@@ -51,8 +46,7 @@ add_action( 'after_setup_theme', function() {
 	// Add selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-	// Wide and full alignment. The styles for alignment is housed in the
-	// `resources/scss/utilities/_alignment.scss` file.
+	// Wide and full alignment.
 	add_theme_support( 'align-wide' );
 
 	// Outputs HTML5 markup for core features.
@@ -81,7 +75,6 @@ add_action( 'after_setup_theme', function() {
 /**
  * Register menus.
  *
- * @link   https://developer.wordpress.org/reference/functions/register_nav_menus/
  * @since  1.0.0
  * @access public
  * @return void

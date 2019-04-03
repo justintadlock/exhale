@@ -18,6 +18,18 @@ use Exhale\Tools\Config;
 use Exhale\Tools\Svg;
 use Exhale\Template\ErrorPage;
 
+# Add social icons.
+add_filter( 'walker_nav_menu_start_el', __NAMESPACE__ . '\nav_menu_social_icons', 10, 4 );
+
+/**
+ * Adds error data for the 404 content template. Passes in the `ErrorPage` object
+ * as the `$error` variable.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  \Hybrid\Tools\Collection  $data
+ * @return \Hybrid\Tools\Collection
+ */
 add_filter( 'hybrid/view/content/data', function( $data ) {
 
 	if ( is_404() ) {
@@ -28,6 +40,16 @@ add_filter( 'hybrid/view/content/data', function( $data ) {
 
 } );
 
+/**
+ * Filters the post states on the manage pages screen. Adds a "404 Page" state
+ * to show users which page has been assigned as their 404 page.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  array    $states
+ * @param  \WP_Post $post
+ * @return array
+ */
 add_filter( 'display_post_states', function( $states, $post ) {
 
 	if ( 'page' === $post->post_type && $post->ID === absint( Options::get( 'error_page' ) ) ) {
@@ -38,12 +60,24 @@ add_filter( 'display_post_states', function( $states, $post ) {
 
 }, 10, 2 );
 
-add_filter( 'walker_nav_menu_start_el', __NAMESPACE__ . '\nav_menu_social_icons', 10, 4 );
-
+/**
+ * Filters the excerpt length.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return int
+ */
 add_filter( 'excerpt_length', function() {
 	return 20;
-} );
+}, 5 );
 
+/**
+ * Filters the excerpt more link.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return string
+ */
 add_filter( 'excerpt_more', function() {
 
 	return sprintf(
@@ -51,7 +85,7 @@ add_filter( 'excerpt_more', function() {
 		esc_url( get_permalink() ),
 		sprintf(
 			// Translators: %s is the post title for screen readers.
-			__( 'Continue reading&nbsp;%s&nbsp;&rarr;', 'exhale' ),
+			esc_html__( 'Continue reading&nbsp;%s&nbsp;&rarr;', 'exhale' ),
 			the_title( '<span class="screen-reader-text">', '</span>', false )
 		)
 	);

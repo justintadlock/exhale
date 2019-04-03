@@ -16,16 +16,11 @@ namespace Exhale;
 
 use Hybrid\App;
 use Exhale\Tools\CustomProperties;
-use Exhale\Color\Component as Color;
-use Exhale\Font\Family\Component as FontFamily;
-use Exhale\Image\Filter\Component as ImageFilter;
 use Exhale\Settings\Options;
 
 /**
  * Enqueue scripts/styles for the front end.
  *
- * @link   https://developer.wordpress.org/reference/functions/wp_enqueue_script/
- * @link   https://developer.wordpress.org/reference/functions/wp_enqueue_style/
  * @since  1.0.0
  * @access public
  * @return void
@@ -85,7 +80,6 @@ add_action( 'enqueue_block_editor_assets', function() {
  * with Laravel Mix for handling cache busting. If used when you enqueue a script
  * or style, it'll append an ID to the filename.
  *
- * @link   https://laravel.com/docs/5.6/mix#versioning-and-cache-busting
  * @since  1.0.0
  * @access public
  * @param  string  $path  A relative path/file to append to the `public` folder.
