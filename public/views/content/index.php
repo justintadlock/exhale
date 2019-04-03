@@ -18,6 +18,4 @@
 
 	</main>
 
-	<?php // Hybrid\View\display( 'sidebar', 'primary', [ 'sidebar' => 'primary' ] ) ?>
-
 </div>

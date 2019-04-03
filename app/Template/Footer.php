@@ -49,9 +49,9 @@ class Footer {
 			'after'  => '</p>'
 		] );
 
-		$powered_by = Mod::get( 'powered_by', true );
-
-		$text = $powered_by ? PoweredBy::render() : Mod::get( 'footer_credit' );
+		$text = Mod::get( 'powered_by', true )
+		        ? PoweredBy::render()
+			: Mod::get( 'footer_credit' );
 
 		return sprintf(
 			'%s%s%s',
