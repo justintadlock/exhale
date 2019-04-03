@@ -73,7 +73,7 @@
 			&:hover,
 			&:focus {
 				text-decoration: underline;
-				color: var( --color-menu-primary-alt );
+				color: var( --color-menu-primary-hover );
 			}
 		}
 	}
@@ -98,7 +98,7 @@
 
 			&:hover,
 			&:focus {
-				color: var( --color-secondary-link-alt );
+				color: var( --color-secondary-link-hover );
 			}
 
 			svg {

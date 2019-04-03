@@ -18,7 +18,7 @@
 	}
 
 	&__button {
-		color:           var( --color-background );
+		color:           var( --color-content-background );
 		background:      var( --color-primary );
 		border-radius:   3px;
 		display:         inline-block;
@@ -30,7 +30,7 @@
 
 		&:hover,
 		&:focus {
-			color:           var( --color-background );
+			color:           var( --color-content-background );
 			text-decoration: underline;
 		}
 	}

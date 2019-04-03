@@ -59,7 +59,7 @@ input[type="reset"],
 input[type="button"],
 button {
 	cursor:          pointer;
-	color:           var( --color-background );
+	color:           var( --color-content-background );
 	background:      var( --color-primary );
 	border:          none;
 	border-radius:   3px;

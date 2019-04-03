@@ -40,7 +40,7 @@
 
 	.pagination__anchor--link:hover,
 	.pagination__anchor--link:focus {
-		color        : var( --color-background );
+		color        : var( --color-content-background );
 		background   : var( --color-primary );
 		border-color : var( --color-primary );
 		text-decoration: underline;

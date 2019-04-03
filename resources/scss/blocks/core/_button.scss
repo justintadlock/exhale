@@ -31,7 +31,7 @@
 // Using `:root` here to overwrite general link rules.
 a.wp-block-button__link,
 .wp-block-button__link {
-	color:      var( --color-background );
+	color:      var( --color-content-background );
 	background: var( --color-primary );
 }
 

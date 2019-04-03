@@ -77,12 +77,12 @@
 
 	// Site title link.
 	&__title-link {
-		color:           var( --color-branding );
+		color:           var( --color-header-title );
 		text-decoration: none;
 
 		&:hover,
 		&:focus {
-			color:           var( --color-branding-alt );
+			color:           var( --color-header-title-hover );
 			text-decoration: underline;
 		}
 	}
