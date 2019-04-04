@@ -1,8 +1,8 @@
 <?php
 /**
- * Customize Color.
+ * Font Family Setting.
  *
- * Creates a customize color object.
+ * Creates a font family setting object.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -11,21 +11,20 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Color\Customize;
+namespace Exhale\Font\Family\Setting;
 
 use JsonSerializable;
-use function Hybrid\hex_to_rgb;
 
 /**
- * Customize color class.
+ * Font family setting class.
  *
  * @since  1.0.0
  * @access public
  */
-class Color implements JsonSerializable {
+class Setting implements JsonSerializable {
 
 	/**
-	 * Color name.
+	 * Setting name.
 	 *
 	 * @since  1.0.0
 	 * @access protected
@@ -34,7 +33,7 @@ class Color implements JsonSerializable {
 	protected $name;
 
 	/**
-	 * Color label.
+	 * Setting label.
 	 *
 	 * @since  1.0.0
 	 * @access protected
@@ -43,7 +42,7 @@ class Color implements JsonSerializable {
 	protected $label;
 
 	/**
-	 * Color description.
+	 * Setting description.
 	 *
 	 * @since  1.0.0
 	 * @access protected
@@ -52,22 +51,13 @@ class Color implements JsonSerializable {
 	protected $description = '';
 
 	/**
-	 * Color default (hex).
+	 * Setting default (should be the name of a `Choice` object).
 	 *
 	 * @since  1.0.0
 	 * @access protected
 	 * @var    string
 	 */
-	protected $color = '000000';
-
-	/**
-	 * Whether the setting should appear in the block editor.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    bool
-	 */
-	protected $is_editor_color = false;
+	protected $family = 'system-ui';
 
 	/**
 	 * Set up the object properties.
@@ -126,7 +116,7 @@ class Color implements JsonSerializable {
 	public function label() {
 
 		return apply_filters(
-			"exhale/color/customize/{$this->name}/label",
+			"exhale/font/family/setting/{$this->name}/label",
 			$this->label ?: $this->name(),
 			$this
 		);
@@ -140,7 +130,7 @@ class Color implements JsonSerializable {
 	 * @return string
 	 */
 	public function modName() {
-		return sprintf( 'color_%s', str_replace( '-', '_', $this->name() ) );
+		return sprintf( 'font_family_%s', str_replace( '-', '_', $this->name() ) );
 	}
 
 	/**
@@ -151,7 +141,7 @@ class Color implements JsonSerializable {
 	 * @return string
 	 */
 	public function property() {
-		return sprintf( '--color-%s', $this->name() );
+		return sprintf( '--font-family-%s', $this->name() );
 	}
 
 	/**
@@ -172,11 +162,11 @@ class Color implements JsonSerializable {
 	 * @access public
 	 * @return string
 	 */
-	public function color() {
+	public function family() {
 
 		return apply_filters(
-			"exhale/color/customize/{$this->name}/default",
-			$this->color,
+			"exhale/font/family/setting/{$this->name}/default",
+			$this->family,
 			$this
 		);
 	}
@@ -189,39 +179,6 @@ class Color implements JsonSerializable {
 	 * @return string
 	 */
 	public function mod() {
-		return get_theme_mod( $this->modName(), $this->color() );
-	}
-
-	/**
-	 * Returns the hex color code of the setting value.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return string
-	 */
-	public function hex() {
-		return maybe_hash_hex_color( $this->mod() );
-	}
-
-	/**
-	 * Returns an array (`r`, `g`, `b`, keys) of the setting value in RGB.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return array
-	 */
-	public function rgb() {
-		return hex_to_rgb( $this->mod() );
-	}
-
-	/**
-	 * Returns whether the setting should be shown in the block editor.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return bool
-	 */
-	public function isEditorColor() {
-		return $this->is_editor_color;
+		return get_theme_mod( $this->modName(), $this->family() );
 	}
 }

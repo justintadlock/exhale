@@ -11,7 +11,7 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Font\Family;
+namespace Exhale\Font\Family\Setting;
 
 use Exhale\Tools\Collection;
 

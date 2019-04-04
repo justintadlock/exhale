@@ -37,36 +37,15 @@ class Component implements Bootable {
 	protected $families;
 
 	/**
-	 * Stores the font family settings object.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    Settings
-	 */
-	protected $settings;
-
-	/**
-	 * CSS custom properties.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    CustomProperties
-	 */
-	protected $properties;
-
-	/**
 	 * Creates the component object.
 	 *
 	 * @since  1.0.0
 	 * @access public
 	 * @param  Families  $families
-	 * @param  Settings  $settings
 	 * @return void
 	 */
-	public function __construct( Families $families, Settings $settings, CustomProperties $properties ) {
-		$this->families   = $families;
-		$this->settings   = $settings;
-		$this->properties = $properties;
+	public function __construct( Families $families ) {
+		$this->families = $families;
 	}
 
 	/**
@@ -81,12 +60,8 @@ class Component implements Bootable {
 		// Run registration on `after_setup_theme`.
 		add_action( 'after_setup_theme', [ $this, 'register' ] );
 
-		// Register default families and settings.
-		add_action( 'exhale/font/family/register',           [ $this, 'registerDefaultFamilies' ] );
-		add_action( 'exhale/font/family/customize/register', [ $this, 'registerDefaultSettings' ] );
-
-		// Add customizer settings and controls.
-		add_action( 'customize_register', [ $this, 'customizeRegister'] );
+		// Register default families.
+		add_action( 'exhale/font/family/register', [ $this, 'registerDefaultFamilies' ] );
 	}
 
 	/**
@@ -98,17 +73,8 @@ class Component implements Bootable {
 	 */
 	public function register() {
 
-		// Hooks for registering custom fonts and settings.
-		do_action( 'exhale/font/family/register',           $this->families );
-		do_action( 'exhale/font/family/customize/register', $this->settings );
-
-		// Adds each font setting as a custom property.
-		foreach ( $this->settings as $setting ) {
-			$this->properties->add(
-				$setting->property(),
-			 	$this->families->get( $setting->mod() )->stack()
-			);
-		}
+		// Hook for registering custom fonts.
+		do_action( 'exhale/font/family/register',  $this->families );
 	}
 
 	/**
@@ -124,55 +90,5 @@ class Component implements Bootable {
 		foreach ( Config::get( 'font-families' ) as $name => $options ) {
 			$families->add( $name, $options );
 		}
-	}
-
-	/**
-	 * Registers default settings.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @param  Settings  $settings
-	 * @return void
-	 */
-	public function registerDefaultSettings( Settings $settings ) {
-
-		foreach ( Config::get( 'customize-font-families' ) as $name => $options ) {
-			$settings->add( $name, $options );
-		}
-	}
-
-	/**
-	 * Customize register callback.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @param  WP_Customize_Manager  $manager
-	 * @return void
-	 */
-	public function customizeRegister( WP_Customize_Manager $manager ) {
-
-		// Registers the font family settings.
-		array_map( function( $setting ) use ( $manager ) {
-
-			$manager->add_setting( $setting->modName(), [
-				'default'           => $setting->family(),
-				'sanitize_callback' => 'sanitize_key',
-				'transport'         => 'postMessage'
-			] );
-
-		}, $this->settings->all() );
-
-		// Registers the font family controls.
-		array_map( function( $setting ) use ( $manager ) {
-
-			$manager->add_control( $setting->modName(), [
-				'section'     => 'fonts',
-				'type'        => 'select',
-				'label'       => esc_html( $setting->label() ),
-				'description' => $setting->description(),
-				'choices'     => $this->families->customizeChoices()
-			] );
-
-		}, $this->settings->all() );
 	}
 }

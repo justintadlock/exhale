@@ -31,7 +31,7 @@ class PoweredBy {
 	 */
 	public static function all() {
 
-		return apply_filters( 'exhale/power/collection', [
+		return apply_filters( 'exhale/poweredby/collection', [
 			__( 'Powered by heart and soul.', 'exhale' ),
 			__( 'Powered by crazy ideas and passion.', 'exhale' ),
 			__( 'Powered by the thing that holds all things together in the universe.', 'exhale' ),

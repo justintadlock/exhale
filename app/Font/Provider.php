@@ -32,15 +32,21 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
-		$this->app->singleton( Family\Families::class );
-		$this->app->singleton( Family\Settings::class );
-		$this->app->singleton( Size\Sizes::class      );
+		$this->app->singleton( Family\Families::class         );
+		$this->app->singleton( Family\Setting\Settings::class );
+		$this->app->singleton( Size\Sizes::class              );
 
 		$this->app->singleton( Family\Component::class, function() {
 			return new Family\Component(
-				$this->app->resolve( Family\Families::class  ),
-				$this->app->resolve( Family\Settings::class  ),
-				$this->app->resolve( CustomProperties::class )
+				$this->app->resolve( Family\Families::class  )
+			);
+		} );
+
+		$this->app->singleton( Family\Setting\Component::class, function() {
+			return new Family\Setting\Component(
+				$this->app->resolve( Family\Setting\Settings::class  ),
+				$this->app->resolve( Family\Families::class          ),
+				$this->app->resolve( CustomProperties::class         )
 			);
 		} );
 
@@ -59,7 +65,8 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
-		$this->app->resolve( Family\Component::class )->boot();
-		$this->app->resolve( Size\Component::class   )->boot();
+		$this->app->resolve( Family\Component::class         )->boot();
+		$this->app->resolve( Family\Setting\Component::class )->boot();
+		$this->app->resolve( Size\Component::class           )->boot();
 	}
 }

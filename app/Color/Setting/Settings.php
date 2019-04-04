@@ -1,6 +1,6 @@
 <?php
 /**
- * Customize Colors Collection.
+ * Color Settings Collection.
  *
  * Houses the collection of customize colors in a single array-object.
  *
@@ -11,17 +11,17 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Color\Customize;
+namespace Exhale\Color\Setting;
 
 use Exhale\Tools\Collection;
 
 /**
- * Customize colors class.
+ * Customize color settings class.
  *
  * @since  1.0.0
  * @access public
  */
-class Colors extends Collection {
+class Settings extends Collection {
 
 	/**
 	 * Adds a new customize color to the collection.
@@ -33,6 +33,6 @@ class Colors extends Collection {
 	 * @return void
 	 */
 	public function add( $name, $value ) {
-		parent::add( $name, new Color( $name, $value ) );
+		parent::add( $name, new Setting( $name, $value ) );
 	}
 }

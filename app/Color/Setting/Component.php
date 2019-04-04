@@ -11,7 +11,7 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Color\Customize;
+namespace Exhale\Color\Setting;
 
 use WP_Customize_Manager;
 use WP_Customize_Color_Control;
@@ -33,9 +33,9 @@ class Component implements Bootable {
 	 *
 	 * @since  1.0.0
 	 * @access protected
-	 * @var    Colors
+	 * @var    Settings
 	 */
-	protected $colors;
+	protected $settings;
 
 	/**
 	 * CSS custom properties.
@@ -51,12 +51,12 @@ class Component implements Bootable {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  Colors           $colors
+	 * @param  Settings         $settings
 	 * @param  CustomProperties $properties
 	 * @return void
 	 */
-	public function __construct( Colors $colors, CustomProperties $properties ) {
-		$this->colors     = $colors;
+	public function __construct( Settings $settings, CustomProperties $properties ) {
+		$this->settings   = $settings;
 		$this->properties = $properties;
 	}
 
@@ -72,8 +72,8 @@ class Component implements Bootable {
 		// Run registration on `after_setup_theme`.
 		add_action( 'after_setup_theme', [ $this, 'register' ] );
 
-		// Register colors.
-		add_action( 'exhale/color/customize/register', [ $this, 'registerDefaultColors' ] );
+		// Register color settings.
+		add_action( 'exhale/color/setting/register', [ $this, 'registerDefaultSettings' ] );
 
 		// Add customizer settings and controls.
 		add_action( 'customize_register', [ $this, 'customizeRegister'] );
@@ -88,27 +88,27 @@ class Component implements Bootable {
 	 */
 	public function register() {
 
-		// Hook for registering custom colors.
-		do_action( 'exhale/color/customize/register', $this->colors );
+		// Hook for registering custom color settings.
+		do_action( 'exhale/color/setting/register', $this->settings );
 
 		// Adds each color as a custom property.
-		foreach ( $this->colors as $color ) {
-			$this->properties->add( $color->property(), $color->hex() );
+		foreach ( $this->settings as $setting ) {
+			$this->properties->add( $setting->property(), $setting->hex() );
 		}
 	}
 
 	/**
-	 * Registers default customize colors.
+	 * Registers default customize color settings.
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  Colors  $colors
+	 * @param  Settings  $settings
 	 * @return void
 	 */
-	public function registerDefaultColors( Colors $colors ) {
+	public function registerDefaultSettings( Settings $settings ) {
 
-		foreach ( Config::get( 'customize-colors' ) as $name => $options ) {
-			$colors->add( $name, $options );
+		foreach ( Config::get( 'settings-color' ) as $name => $options ) {
+			$settings->add( $name, $options );
 		}
 	}
 
@@ -132,7 +132,7 @@ class Component implements Bootable {
 				'transport'            => 'postMessage'
 			] );
 
-		}, $this->colors->all() );
+		}, $this->settings->all() );
 
 		// Registers the color controls.
 		array_map( function( $setting ) use ( $manager ) {
@@ -145,6 +145,6 @@ class Component implements Bootable {
 				] )
 			);
 
-		}, $this->colors->all() );
+		}, $this->settings->all() );
 	}
 }
