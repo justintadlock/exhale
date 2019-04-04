@@ -82,8 +82,8 @@ class Component implements Bootable {
 		add_action( 'after_setup_theme', [ $this, 'register' ] );
 
 		// Register default families and settings.
-		add_action( 'exhale/font/families/register',        [ $this, 'registerDefaultFamilies' ] );
-		add_action( 'exhale/font/family/settings/register', [ $this, 'registerDefaultSettings' ] );
+		add_action( 'exhale/font/family/register',           [ $this, 'registerDefaultFamilies' ] );
+		add_action( 'exhale/font/family/customize/register', [ $this, 'registerDefaultSettings' ] );
 
 		// Add customizer settings and controls.
 		add_action( 'customize_register', [ $this, 'customizeRegister'] );
@@ -99,8 +99,8 @@ class Component implements Bootable {
 	public function register() {
 
 		// Hooks for registering custom fonts and settings.
-		do_action( 'exhale/font/families/register',        $this->families );
-		do_action( 'exhale/font/family/settings/register', $this->settings );
+		do_action( 'exhale/font/family/register',           $this->families );
+		do_action( 'exhale/font/family/customize/register', $this->settings );
 
 		// Adds each font setting as a custom property.
 		foreach ( $this->settings as $setting ) {
@@ -136,7 +136,7 @@ class Component implements Bootable {
 	 */
 	public function registerDefaultSettings( Settings $settings ) {
 
-		foreach ( Config::get( 'font-family-settings' ) as $name => $options ) {
+		foreach ( Config::get( 'customize-font-families' ) as $name => $options ) {
 			$settings->add( $name, $options );
 		}
 	}

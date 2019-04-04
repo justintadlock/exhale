@@ -1,8 +1,8 @@
 <?php
 /**
- * Font Family Settings Config.
+ * Customize Font Families Config.
  *
- * Defines the font family settings available to users in the customizer.
+ * Defines the font family options available in the customizer.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
