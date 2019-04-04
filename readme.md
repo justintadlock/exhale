@@ -22,6 +22,13 @@ The theme bundles the following resources.
 - [Hybrid Core](https://github.com/justintadlock/hybrid-core) by Justin Tadlock - [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
 - [Hybrid Carbon](https://github.com/justintadlock/hybrid-carbon) by Justin Tadlock - [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
 
+The theme uses the following third-party images within the screenshot, which are all under the [CC0 License](https://creativecommons.org/publicdomain/zero/1.0/) (Public Domain).
+
+- https://www.pexels.com/photo/architecture-buildings-business-city-358502/
+- https://www.pexels.com/photo/adventure-backlit-dawn-dusk-207896/
+- https://www.pexels.com/photo/yellow-blue-and-red-plastic-gameboard-toy-209712/
+- https://www.pexels.com/photo/people-notes-meeting-team-7095/
+
 ## Copyright and License
 
 Exhale is licensed under the [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
