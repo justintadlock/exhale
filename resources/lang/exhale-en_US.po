@@ -4,84 +4,84 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exhale 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/exhale\n"
-"POT-Creation-Date: 2019-04-02 10:52-0500\n"
+"POT-Creation-Date: 2019-04-04 13:04-0500\n"
+"PO-Revision-Date: 2019-04-04 13:04-0500\n"
+"Last-Translator: Justin Tadlock <justintadlock@gmailc.om>\n"
+"Language-Team: \n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-04-02 10:52-0500\n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.0.2\n"
-"Last-Translator: Justin Tadlock <justintadlock@gmailc.om>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en_US\n"
 
-#: app/Customize/Component.php:78
+#: app/Customize/Component.php:76
 msgid "Theme Options"
 msgstr ""
 
-#: app/Customize/Component.php:98
+#: app/Customize/Component.php:96
 msgid "Fonts"
 msgstr ""
 
-#: app/Customize/Component.php:99
+#: app/Customize/Component.php:97
 msgid "Media"
 msgstr ""
 
-#: app/Customize/Component.php:100
+#: app/Customize/Component.php:98
 msgid "Footer"
 msgstr ""
 
 #. Translators: %s is the theme link.
-#: app/Customize/Component.php:192
+#: app/Customize/Component.php:141
 msgid "Powered by %s."
 msgstr ""
 
-#: app/Customize/Component.php:245
-msgid "Featured Image Size"
+#: app/Customize/Component.php:167
+msgid "Show random \"powered by\" credit text."
 msgstr ""
 
-#. Translators: %s is a plugin link.
-#: app/Customize/Component.php:248
-msgid ""
-"For image to be sized correctly, make sure to regenerate them using a plugin "
-"such as %s if you have switched from a previous theme."
+#: app/Customize/Component.php:174
+msgid "Custom Footer Text"
 msgstr ""
 
-#: app/Customize/Component.php:249
-msgid "Regnerate Thumbnails"
-msgstr ""
-
-#: app/Customize/Component.php:261
+#: app/Image/Filter/Component.php:183
 msgid "Image Filter"
 msgstr ""
 
-#: app/Customize/Component.php:262
+#: app/Image/Filter/Component.php:184
 msgid "CSS filter function to apply to images."
 msgstr ""
 
-#: app/Customize/Component.php:265
+#: app/Image/Filter/Component.php:187
 msgid "Default Filter Amount"
 msgstr ""
 
-#: app/Customize/Component.php:266
+#: app/Image/Filter/Component.php:188
 msgid "Filter amount applied to all images."
 msgstr ""
 
-#: app/Customize/Component.php:269
+#: app/Image/Filter/Component.php:191
 msgid "Hover Filter Amount"
 msgstr ""
 
-#: app/Customize/Component.php:270
+#: app/Image/Filter/Component.php:192
 msgid ""
 "Filter amount applied to linked images when they are hovered or focused."
 msgstr ""
 
-#: app/Customize/Component.php:285
-msgid "Show random \"powered by\" credit text."
+#: app/Image/Size/Component.php:156
+msgid "Featured Image Size"
 msgstr ""
 
-#: app/Customize/Component.php:292
-msgid "Custom Footer Text"
+#. Translators: %s is a plugin link.
+#: app/Image/Size/Component.php:159
+msgid ""
+"For images to be sized correctly, regenerate them using a plugin such as %s "
+"if you have switched from a previous theme."
+msgstr ""
+
+#: app/Image/Size/Component.php:160
+msgid "Regnerate Thumbnails"
 msgstr ""
 
 #. Translators: 1 is image size name, 2 is image size width, and 3 is image
@@ -122,7 +122,7 @@ msgstr ""
 msgid "Archive Posts"
 msgstr ""
 
-#: app/Settings/Admin/Views/General.php:172
+#: app/Settings/Admin/Views/General.php:172 app/functions-filters.php:56
 msgid "404 Page"
 msgstr ""
 
@@ -235,12 +235,12 @@ msgstr ""
 msgid "Exhale Settings"
 msgstr ""
 
-#: app/Template/ErrorPage.php:113
+#: app/Template/ErrorPage.php:117
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:164
 msgid "404 Not Found"
 msgstr ""
 
-#: app/Template/ErrorPage.php:144
+#: app/Template/ErrorPage.php:136
 msgid ""
 "It looks like you stumbled upon a page that does not exist. Perhaps rolling "
 "the dice with a search might help."
@@ -307,23 +307,23 @@ msgid ""
 msgstr ""
 
 #. Translators: %s is the post title for screen readers.
-#: app/functions-filters.php:32
+#: app/functions-filters.php:88
 msgid "Continue reading&nbsp;%s&nbsp;&rarr;"
 msgstr ""
 
-#: app/functions-setup.php:120
+#: app/functions-setup.php:113
 msgid "Landing"
 msgstr ""
 
-#: app/functions-setup.php:127
+#: app/functions-setup.php:120
 msgid "No Post Header/Footer"
 msgstr ""
 
-#: config/_editor-colors.php:49
+#: config/_editor-colors.php:48
 msgid "Primary"
 msgstr ""
 
-#: config/_editor-colors.php:53
+#: config/_editor-colors.php:52
 msgid "Secondary"
 msgstr ""
 
@@ -615,131 +615,6 @@ msgstr ""
 msgid "Pink: Lightest"
 msgstr ""
 
-#: config/customize-colors.php:17
-msgid "Background"
-msgstr ""
-
-#: config/customize-colors.php:18
-msgid "Background color used for the site."
-msgstr ""
-
-#: config/customize-colors.php:22
-msgid "Primary: Text"
-msgstr ""
-
-#: config/customize-colors.php:23
-msgid "Color used for most text on the site."
-msgstr ""
-
-#: config/customize-colors.php:28
-msgid "Primary: Link"
-msgstr ""
-
-#: config/customize-colors.php:29
-msgid "Color used for links in primary text."
-msgstr ""
-
-#: config/customize-colors.php:33
-msgid "Primary: Link Hover"
-msgstr ""
-
-#: config/customize-colors.php:34 config/customize-colors.php:50
-#: config/customize-colors.php:80 config/customize-colors.php:95
-msgid "Color used when hovering or focusing a link."
-msgstr ""
-
-#: config/customize-colors.php:38
-msgid "Secondary: Text"
-msgstr ""
-
-#: config/customize-colors.php:39
-msgid "Color used for secondary text."
-msgstr ""
-
-#: config/customize-colors.php:44
-msgid "Secondary: Link"
-msgstr ""
-
-#: config/customize-colors.php:45
-msgid "Color used for links in secondary text."
-msgstr ""
-
-#: config/customize-colors.php:49
-msgid "Secondary: Link Hover"
-msgstr ""
-
-#: config/customize-colors.php:54
-msgid "Headings"
-msgstr ""
-
-#: config/customize-colors.php:55
-msgid "Color used for text headings."
-msgstr ""
-
-#: config/customize-colors.php:59
-msgid "Header: Background"
-msgstr ""
-
-#: config/customize-colors.php:60
-msgid "Background color for the entire header block."
-msgstr ""
-
-#: config/customize-colors.php:64
-msgid "Header: Border"
-msgstr ""
-
-#: config/customize-colors.php:65
-msgid "Color used for borders in the header."
-msgstr ""
-
-#: config/customize-colors.php:69
-msgid "Header: Branding Background"
-msgstr ""
-
-#: config/customize-colors.php:70
-msgid "Background color for the branding area."
-msgstr ""
-
-#: config/customize-colors.php:74
-msgid "Header: Title Text"
-msgstr ""
-
-#: config/customize-colors.php:75
-msgid "Color for the branding title text."
-msgstr ""
-
-#: config/customize-colors.php:79
-msgid "Header: Title Text Hover"
-msgstr ""
-
-#: config/customize-colors.php:84
-msgid "Header: Tagline Text"
-msgstr ""
-
-#: config/customize-colors.php:85
-msgid "Color used for the branding tagline text."
-msgstr ""
-
-#: config/customize-colors.php:89
-msgid "Header: Menu Link"
-msgstr ""
-
-#: config/customize-colors.php:90
-msgid "Color for the primary menu links."
-msgstr ""
-
-#: config/customize-colors.php:94
-msgid "Header: Menu Link Hover"
-msgstr ""
-
-#: config/customize-colors.php:99
-msgid "Border"
-msgstr ""
-
-#: config/customize-colors.php:100
-msgid "Color used for borders in general."
-msgstr ""
-
 #. Translators: Font family label.
 #: config/font-families.php:17
 msgid "System UI"
@@ -850,18 +725,6 @@ msgstr ""
 msgid "Verdana"
 msgstr ""
 
-#: config/font-family-settings.php:17
-msgid "Font used for most of the text on the site."
-msgstr ""
-
-#: config/font-family-settings.php:22
-msgid "Font used for secondary, less important text."
-msgstr ""
-
-#: config/font-family-settings.php:27
-msgid "Font used for text headings."
-msgstr ""
-
 #. Translators: Font size label.
 #: config/font-sizes.php:17
 msgid "Fine"
@@ -945,23 +808,160 @@ msgid "Sepia"
 msgstr ""
 
 #: config/image-sizes.php:16
-msgid "Theme: Thumbnail"
+msgid "Landscape: Thumbnail"
 msgstr ""
 
 #: config/image-sizes.php:22
-msgid "Theme: Medium"
+msgid "Landscape: Medium"
 msgstr ""
 
 #: config/image-sizes.php:27
-msgid "Theme: Wide"
+msgid "Landscape: Large"
 msgstr ""
 
 #: config/image-sizes.php:32
-msgid "Theme: Wider"
+msgid "Landscape: Extra Large"
 msgstr ""
 
 #: config/image-sizes.php:37
-msgid "Theme: Widest"
+msgid "Landscape: Huge"
+msgstr ""
+
+#: config/settings-color.php:17
+msgid "Background"
+msgstr ""
+
+#: config/settings-color.php:18
+msgid "Background color used for the site."
+msgstr ""
+
+#: config/settings-color.php:22
+msgid "Primary: Text"
+msgstr ""
+
+#: config/settings-color.php:23
+msgid "Color used for most text on the site."
+msgstr ""
+
+#: config/settings-color.php:27
+msgid "Primary: Link"
+msgstr ""
+
+#: config/settings-color.php:28
+msgid "Color used for links in primary text."
+msgstr ""
+
+#: config/settings-color.php:32
+msgid "Primary: Link Hover"
+msgstr ""
+
+#: config/settings-color.php:33 config/settings-color.php:48
+#: config/settings-color.php:78 config/settings-color.php:93
+msgid "Color used when hovering or focusing a link."
+msgstr ""
+
+#: config/settings-color.php:37
+msgid "Secondary: Text"
+msgstr ""
+
+#: config/settings-color.php:38
+msgid "Color used for secondary text."
+msgstr ""
+
+#: config/settings-color.php:42
+msgid "Secondary: Link"
+msgstr ""
+
+#: config/settings-color.php:43
+msgid "Color used for links in secondary text."
+msgstr ""
+
+#: config/settings-color.php:47
+msgid "Secondary: Link Hover"
+msgstr ""
+
+#: config/settings-color.php:52
+msgid "Headings"
+msgstr ""
+
+#: config/settings-color.php:53
+msgid "Color used for text headings."
+msgstr ""
+
+#: config/settings-color.php:57
+msgid "Header: Background"
+msgstr ""
+
+#: config/settings-color.php:58
+msgid "Background color for the entire header block."
+msgstr ""
+
+#: config/settings-color.php:62
+msgid "Header: Border"
+msgstr ""
+
+#: config/settings-color.php:63
+msgid "Color used for borders in the header."
+msgstr ""
+
+#: config/settings-color.php:67
+msgid "Header: Branding Background"
+msgstr ""
+
+#: config/settings-color.php:68
+msgid "Background color for the branding area."
+msgstr ""
+
+#: config/settings-color.php:72
+msgid "Header: Title Text"
+msgstr ""
+
+#: config/settings-color.php:73
+msgid "Color for the branding title text."
+msgstr ""
+
+#: config/settings-color.php:77
+msgid "Header: Title Text Hover"
+msgstr ""
+
+#: config/settings-color.php:82
+msgid "Header: Tagline Text"
+msgstr ""
+
+#: config/settings-color.php:83
+msgid "Color used for the branding tagline text."
+msgstr ""
+
+#: config/settings-color.php:87
+msgid "Header: Menu Link"
+msgstr ""
+
+#: config/settings-color.php:88
+msgid "Color for the primary menu links."
+msgstr ""
+
+#: config/settings-color.php:92
+msgid "Header: Menu Link Hover"
+msgstr ""
+
+#: config/settings-color.php:97
+msgid "Border"
+msgstr ""
+
+#: config/settings-color.php:98
+msgid "Color used for borders in general."
+msgstr ""
+
+#: config/settings-font-family.php:17
+msgid "Font used for most of the text on the site."
+msgstr ""
+
+#: config/settings-font-family.php:22
+msgid "Font used for secondary, less important text."
+msgstr ""
+
+#: config/settings-font-family.php:27
+msgid "Font used for text headings."
 msgstr ""
 
 #. Translators: %s is the parent comment link.
@@ -1077,6 +1077,11 @@ msgstr ""
 msgid "Posted in %s"
 msgstr ""
 
+#. Translators: %s is the post tags list.
+#: public/views/entry/single-post.php:26
+msgid "Tagged %s"
+msgstr ""
+
 #: public/views/header/default.php:16
 msgid "Skip to content"
 msgstr ""
@@ -1169,8 +1174,9 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Exhale is a next-generation theme designed to work with the latest WordPress "
-"editor (introduced in WP 5.0)."
+"Exhale is a next-generation theme designed to work with the WordPress block "
+"editor (Gutenberg) and offer an ideal experience for showcasing your site's "
+"content."
 msgstr ""
 
 #. Author of the plugin/theme
@@ -1181,12 +1187,12 @@ msgstr ""
 msgid "https://themehybrid.com"
 msgstr ""
 
-#: app/functions-setup.php:92
+#: app/functions-setup.php:85
 msgctxt "nav menu location"
 msgid "Primary"
 msgstr ""
 
-#: app/functions-setup.php:93
+#: app/functions-setup.php:86
 msgctxt "nav menu location"
 msgid "Social"
 msgstr ""
@@ -1196,23 +1202,23 @@ msgctxt "meta separator"
 msgid "&middot;"
 msgstr ""
 
-#: config/font-family-settings.php:16
+#: config/settings-font-family.php:16
 msgctxt "font family setting"
 msgid "Primary"
 msgstr ""
 
-#: config/font-family-settings.php:21
+#: config/settings-font-family.php:21
 msgctxt "font family setting"
 msgid "Secondary"
 msgstr ""
 
-#: config/font-family-settings.php:26
+#: config/settings-font-family.php:26
 msgctxt "font family setting"
 msgid "Headings"
 msgstr ""
 
 #. Translators: Separates tags, categories, etc. when displaying a post.
-#: vendor/justintadlock/hybrid-core/src/Post/functions-post.php:328
+#: vendor/justintadlock/hybrid-core/src/Post/functions-post.php:334
 msgctxt "taxonomy terms separator"
 msgid ", "
 msgstr ""

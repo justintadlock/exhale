@@ -1,90 +1,89 @@
 # <!=Copyright (C) 2019 Justin Tadlock
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Exhale 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/exhale\n"
-"POT-Creation-Date: 2019-04-02 10:44-0500\n"
+"POT-Creation-Date: 2019-04-04 18:02:52+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: node-wp-i18n 1.2.3\n"
 
-#: app/Customize/Component.php:78
+#: app/Customize/Component.php:76
 msgid "Theme Options"
 msgstr ""
 
-#: app/Customize/Component.php:98
+#: app/Customize/Component.php:96
 msgid "Fonts"
 msgstr ""
 
-#: app/Customize/Component.php:99
+#: app/Customize/Component.php:97
 msgid "Media"
 msgstr ""
 
-#: app/Customize/Component.php:100
+#: app/Customize/Component.php:98
 msgid "Footer"
 msgstr ""
 
+#: app/Customize/Component.php:141
 #. Translators: %s is the theme link.
-#: app/Customize/Component.php:192
 msgid "Powered by %s."
 msgstr ""
 
-#: app/Customize/Component.php:245
-msgid "Featured Image Size"
-msgstr ""
-
-#. Translators: %s is a plugin link.
-#: app/Customize/Component.php:248
-msgid ""
-"For image to be sized correctly, make sure to regenerate them using a plugin "
-"such as %s if you have switched from a previous theme."
-msgstr ""
-
-#: app/Customize/Component.php:249
-msgid "Regnerate Thumbnails"
-msgstr ""
-
-#: app/Customize/Component.php:261
-msgid "Image Filter"
-msgstr ""
-
-#: app/Customize/Component.php:262
-msgid "CSS filter function to apply to images."
-msgstr ""
-
-#: app/Customize/Component.php:265
-msgid "Default Filter Amount"
-msgstr ""
-
-#: app/Customize/Component.php:266
-msgid "Filter amount applied to all images."
-msgstr ""
-
-#: app/Customize/Component.php:269
-msgid "Hover Filter Amount"
-msgstr ""
-
-#: app/Customize/Component.php:270
-msgid "Filter amount applied to linked images when they are hovered or focused."
-msgstr ""
-
-#: app/Customize/Component.php:285
+#: app/Customize/Component.php:167
 msgid "Show random \"powered by\" credit text."
 msgstr ""
 
-#: app/Customize/Component.php:292
+#: app/Customize/Component.php:174
 msgid "Custom Footer Text"
 msgstr ""
 
+#: app/Image/Filter/Component.php:183
+msgid "Image Filter"
+msgstr ""
+
+#: app/Image/Filter/Component.php:184
+msgid "CSS filter function to apply to images."
+msgstr ""
+
+#: app/Image/Filter/Component.php:187
+msgid "Default Filter Amount"
+msgstr ""
+
+#: app/Image/Filter/Component.php:188
+msgid "Filter amount applied to all images."
+msgstr ""
+
+#: app/Image/Filter/Component.php:191
+msgid "Hover Filter Amount"
+msgstr ""
+
+#: app/Image/Filter/Component.php:192
+msgid "Filter amount applied to linked images when they are hovered or focused."
+msgstr ""
+
+#: app/Image/Size/Component.php:156
+msgid "Featured Image Size"
+msgstr ""
+
+#: app/Image/Size/Component.php:159
+#. Translators: %s is a plugin link.
+msgid ""
+"For images to be sized correctly, regenerate them using a plugin such as %s "
+"if you have switched from a previous theme."
+msgstr ""
+
+#: app/Image/Size/Component.php:160
+msgid "Regnerate Thumbnails"
+msgstr ""
+
+#: app/Image/Size/Sizes.php:48
 #. Translators: 1 is image size name, 2 is image size width, and 3 is image
 #. size height.
-#: app/Image/Size/Sizes.php:48
 msgid "%1$s - %2$s&times;%3$s"
 msgstr ""
 
@@ -120,7 +119,7 @@ msgstr ""
 msgid "Archive Posts"
 msgstr ""
 
-#: app/Settings/Admin/Views/General.php:172
+#: app/Settings/Admin/Views/General.php:172 app/functions-filters.php:56
 msgid "404 Page"
 msgstr ""
 
@@ -140,12 +139,12 @@ msgstr ""
 msgid "Settings based on which WordPress editor that you prefer to use."
 msgstr ""
 
+#: app/Settings/Admin/Views/General.php:233
 #. Translators: 1 is WordPress version, 2 is Gutenberg link, 3 is Gutenberg
 #. version.
-#: app/Settings/Admin/Views/General.php:233
 msgid ""
-"Exhale requires at least WordPress version %1$s or %2$s version %3$s for the "
-"block editor to be styled correctly."
+"Exhale requires at least WordPress version %1$s or %2$s version %3$s for "
+"the block editor to be styled correctly."
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:235
@@ -154,8 +153,8 @@ msgstr ""
 
 #: app/Settings/Admin/Views/General.php:252
 msgid ""
-"Alter the posts for specific views on the front end. By default, the numbers "
-"are set for optimal use with this theme."
+"Alter the posts for specific views on the front end. By default, the "
+"numbers are set for optimal use with this theme."
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:267
@@ -233,12 +232,12 @@ msgstr ""
 msgid "Exhale Settings"
 msgstr ""
 
-#: app/Template/ErrorPage.php:113
+#: app/Template/ErrorPage.php:117
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:164
 msgid "404 Not Found"
 msgstr ""
 
-#: app/Template/ErrorPage.php:144
+#: app/Template/ErrorPage.php:136
 msgid ""
 "It looks like you stumbled upon a page that does not exist. Perhaps rolling "
 "the dice with a search might help."
@@ -288,40 +287,40 @@ msgstr ""
 msgid "Powered by something greater than myself."
 msgstr ""
 
+#: app/bootstrap-compat.php:37
 #. Translators: 1 is the required WordPress version and 2 is the user's current
 #. version.
-#: app/bootstrap-compat.php:37
 msgid ""
 "Exhale requires at least WordPress version %1$s. You are running version "
 "%2$s. Please upgrade and try again."
 msgstr ""
 
+#: app/bootstrap-compat.php:46
 #. Translators: 1 is the required PHP version and 2 is the user's current
 #. version.
-#: app/bootstrap-compat.php:46
 msgid ""
 "Exhale requires at least PHP version %1$s. You are running version %2$s. "
 "Please upgrade and try again."
 msgstr ""
 
+#: app/functions-filters.php:88
 #. Translators: %s is the post title for screen readers.
-#: app/functions-filters.php:32
 msgid "Continue reading&nbsp;%s&nbsp;&rarr;"
 msgstr ""
 
-#: app/functions-setup.php:120
+#: app/functions-setup.php:113
 msgid "Landing"
 msgstr ""
 
-#: app/functions-setup.php:127
+#: app/functions-setup.php:120
 msgid "No Post Header/Footer"
 msgstr ""
 
-#: config/_editor-colors.php:49
+#: config/_editor-colors.php:48
 msgid "Primary"
 msgstr ""
 
-#: config/_editor-colors.php:53
+#: config/_editor-colors.php:52
 msgid "Secondary"
 msgstr ""
 
@@ -613,300 +612,163 @@ msgstr ""
 msgid "Pink: Lightest"
 msgstr ""
 
-#: config/customize-colors.php:17
-msgid "Background"
-msgstr ""
-
-#: config/customize-colors.php:18
-msgid "Background color used for the site."
-msgstr ""
-
-#: config/customize-colors.php:22
-msgid "Primary: Text"
-msgstr ""
-
-#: config/customize-colors.php:23
-msgid "Color used for most text on the site."
-msgstr ""
-
-#: config/customize-colors.php:28
-msgid "Primary: Link"
-msgstr ""
-
-#: config/customize-colors.php:29
-msgid "Color used for links in primary text."
-msgstr ""
-
-#: config/customize-colors.php:33
-msgid "Primary: Link Hover"
-msgstr ""
-
-#: config/customize-colors.php:34 config/customize-colors.php:50
-#: config/customize-colors.php:80 config/customize-colors.php:95
-msgid "Color used when hovering or focusing a link."
-msgstr ""
-
-#: config/customize-colors.php:38
-msgid "Secondary: Text"
-msgstr ""
-
-#: config/customize-colors.php:39
-msgid "Color used for secondary text."
-msgstr ""
-
-#: config/customize-colors.php:44
-msgid "Secondary: Link"
-msgstr ""
-
-#: config/customize-colors.php:45
-msgid "Color used for links in secondary text."
-msgstr ""
-
-#: config/customize-colors.php:49
-msgid "Secondary: Link Hover"
-msgstr ""
-
-#: config/customize-colors.php:54
-msgid "Headings"
-msgstr ""
-
-#: config/customize-colors.php:55
-msgid "Color used for text headings."
-msgstr ""
-
-#: config/customize-colors.php:59
-msgid "Header: Background"
-msgstr ""
-
-#: config/customize-colors.php:60
-msgid "Background color for the entire header block."
-msgstr ""
-
-#: config/customize-colors.php:64
-msgid "Header: Border"
-msgstr ""
-
-#: config/customize-colors.php:65
-msgid "Color used for borders in the header."
-msgstr ""
-
-#: config/customize-colors.php:69
-msgid "Header: Branding Background"
-msgstr ""
-
-#: config/customize-colors.php:70
-msgid "Background color for the branding area."
-msgstr ""
-
-#: config/customize-colors.php:74
-msgid "Header: Title Text"
-msgstr ""
-
-#: config/customize-colors.php:75
-msgid "Color for the branding title text."
-msgstr ""
-
-#: config/customize-colors.php:79
-msgid "Header: Title Text Hover"
-msgstr ""
-
-#: config/customize-colors.php:84
-msgid "Header: Tagline Text"
-msgstr ""
-
-#: config/customize-colors.php:85
-msgid "Color used for the branding tagline text."
-msgstr ""
-
-#: config/customize-colors.php:89
-msgid "Header: Menu Link"
-msgstr ""
-
-#: config/customize-colors.php:90
-msgid "Color for the primary menu links."
-msgstr ""
-
-#: config/customize-colors.php:94
-msgid "Header: Menu Link Hover"
-msgstr ""
-
-#: config/customize-colors.php:99
-msgid "Border"
-msgstr ""
-
-#: config/customize-colors.php:100
-msgid "Color used for borders in general."
-msgstr ""
-
-#. Translators: Font family label.
 #: config/font-families.php:17
+#. Translators: Font family label.
 msgid "System UI"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:22
+#. Translators: Font family label.
 msgid "Andale Mono"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:27
+#. Translators: Font family label.
 msgid "Arial"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:32
+#. Translators: Font family label.
 msgid "Arial Black"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:37
+#. Translators: Font family label.
 msgid "Arial Narrow"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:42
+#. Translators: Font family label.
 msgid "Baskerville"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:47
+#. Translators: Font family label.
 msgid "Brush Script MT"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:52
+#. Translators: Font family label.
 msgid "Comic Sans"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:57
+#. Translators: Font family label.
 msgid "Courier New"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:62
+#. Translators: Font family label.
 msgid "Georgia"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:67
+#. Translators: Font family label.
 msgid "Gill Sans"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:72
+#. Translators: Font family label.
 msgid "Helvetica"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:77
+#. Translators: Font family label.
 msgid "Hoefler Text"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:82
+#. Translators: Font family label.
 msgid "Impact"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:87
+#. Translators: Font family label.
 msgid "Lucida Grande"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:92
+#. Translators: Font family label.
 msgid "Menlo"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:97
+#. Translators: Font family label.
 msgid "Monaco"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:102
+#. Translators: Font family label.
 msgid "Palatino"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:107
+#. Translators: Font family label.
 msgid "Tahoma"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:112
+#. Translators: Font family label.
 msgid "Times New Roman"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:117
+#. Translators: Font family label.
 msgid "Trebuchet MS"
 msgstr ""
 
-#. Translators: Font family label.
 #: config/font-families.php:122
+#. Translators: Font family label.
 msgid "Verdana"
 msgstr ""
 
-#: config/font-family-settings.php:17
-msgid "Font used for most of the text on the site."
-msgstr ""
-
-#: config/font-family-settings.php:22
-msgid "Font used for secondary, less important text."
-msgstr ""
-
-#: config/font-family-settings.php:27
-msgid "Font used for text headings."
-msgstr ""
-
-#. Translators: Font size label.
 #: config/font-sizes.php:17
+#. Translators: Font size label.
 msgid "Fine"
 msgstr ""
 
-#. Translators: Font size label.
 #: config/font-sizes.php:22
+#. Translators: Font size label.
 msgid "Diminutive"
 msgstr ""
 
-#. Translators: Font size label.
 #: config/font-sizes.php:27
+#. Translators: Font size label.
 msgid "Tiny"
 msgstr ""
 
-#. Translators: Font size label.
 #: config/font-sizes.php:32
+#. Translators: Font size label.
 msgid "Small"
 msgstr ""
 
-#. Translators: Font size label.
 #: config/font-sizes.php:37
+#. Translators: Font size label.
 msgid "Medium"
 msgstr ""
 
-#. Translators: Font size label.
 #: config/font-sizes.php:42
+#. Translators: Font size label.
 msgid "Large"
 msgstr ""
 
-#. Translators: Font size label.
 #: config/font-sizes.php:47
+#. Translators: Font size label.
 msgid "Extra Large"
 msgstr ""
 
-#. Translators: Font size label.
 #: config/font-sizes.php:52
+#. Translators: Font size label.
 msgid "Huge"
 msgstr ""
 
-#. Translators: Font size label.
 #: config/font-sizes.php:57
+#. Translators: Font size label.
 msgid "Gargantuan"
 msgstr ""
 
-#. Translators: Font size label.
 #: config/font-sizes.php:62
+#. Translators: Font size label.
 msgid "Colossal"
 msgstr ""
 
@@ -943,32 +805,169 @@ msgid "Sepia"
 msgstr ""
 
 #: config/image-sizes.php:16
-msgid "Theme: Thumbnail"
+msgid "Landscape: Thumbnail"
 msgstr ""
 
 #: config/image-sizes.php:22
-msgid "Theme: Medium"
+msgid "Landscape: Medium"
 msgstr ""
 
 #: config/image-sizes.php:27
-msgid "Theme: Wide"
+msgid "Landscape: Large"
 msgstr ""
 
 #: config/image-sizes.php:32
-msgid "Theme: Wider"
+msgid "Landscape: Extra Large"
 msgstr ""
 
 #: config/image-sizes.php:37
-msgid "Theme: Widest"
+msgid "Landscape: Huge"
 msgstr ""
 
-#. Translators: %s is the parent comment link.
+#: config/settings-color.php:17
+msgid "Background"
+msgstr ""
+
+#: config/settings-color.php:18
+msgid "Background color used for the site."
+msgstr ""
+
+#: config/settings-color.php:22
+msgid "Primary: Text"
+msgstr ""
+
+#: config/settings-color.php:23
+msgid "Color used for most text on the site."
+msgstr ""
+
+#: config/settings-color.php:27
+msgid "Primary: Link"
+msgstr ""
+
+#: config/settings-color.php:28
+msgid "Color used for links in primary text."
+msgstr ""
+
+#: config/settings-color.php:32
+msgid "Primary: Link Hover"
+msgstr ""
+
+#: config/settings-color.php:33 config/settings-color.php:48
+#: config/settings-color.php:78 config/settings-color.php:93
+msgid "Color used when hovering or focusing a link."
+msgstr ""
+
+#: config/settings-color.php:37
+msgid "Secondary: Text"
+msgstr ""
+
+#: config/settings-color.php:38
+msgid "Color used for secondary text."
+msgstr ""
+
+#: config/settings-color.php:42
+msgid "Secondary: Link"
+msgstr ""
+
+#: config/settings-color.php:43
+msgid "Color used for links in secondary text."
+msgstr ""
+
+#: config/settings-color.php:47
+msgid "Secondary: Link Hover"
+msgstr ""
+
+#: config/settings-color.php:52
+msgid "Headings"
+msgstr ""
+
+#: config/settings-color.php:53
+msgid "Color used for text headings."
+msgstr ""
+
+#: config/settings-color.php:57
+msgid "Header: Background"
+msgstr ""
+
+#: config/settings-color.php:58
+msgid "Background color for the entire header block."
+msgstr ""
+
+#: config/settings-color.php:62
+msgid "Header: Border"
+msgstr ""
+
+#: config/settings-color.php:63
+msgid "Color used for borders in the header."
+msgstr ""
+
+#: config/settings-color.php:67
+msgid "Header: Branding Background"
+msgstr ""
+
+#: config/settings-color.php:68
+msgid "Background color for the branding area."
+msgstr ""
+
+#: config/settings-color.php:72
+msgid "Header: Title Text"
+msgstr ""
+
+#: config/settings-color.php:73
+msgid "Color for the branding title text."
+msgstr ""
+
+#: config/settings-color.php:77
+msgid "Header: Title Text Hover"
+msgstr ""
+
+#: config/settings-color.php:82
+msgid "Header: Tagline Text"
+msgstr ""
+
+#: config/settings-color.php:83
+msgid "Color used for the branding tagline text."
+msgstr ""
+
+#: config/settings-color.php:87
+msgid "Header: Menu Link"
+msgstr ""
+
+#: config/settings-color.php:88
+msgid "Color for the primary menu links."
+msgstr ""
+
+#: config/settings-color.php:92
+msgid "Header: Menu Link Hover"
+msgstr ""
+
+#: config/settings-color.php:97
+msgid "Border"
+msgstr ""
+
+#: config/settings-color.php:98
+msgid "Color used for borders in general."
+msgstr ""
+
+#: config/settings-font-family.php:17
+msgid "Font used for most of the text on the site."
+msgstr ""
+
+#: config/settings-font-family.php:22
+msgid "Font used for secondary, less important text."
+msgstr ""
+
+#: config/settings-font-family.php:27
+msgid "Font used for text headings."
+msgstr ""
+
 #: public/views/comment/default.php:6
+#. Translators: %s is the parent comment link.
 msgid "In reply to %s"
 msgstr ""
 
-#. Translators: Comment date + time format.
 #: public/views/comment/default.php:19 public/views/comment/ping.php:9
+#. Translators: Comment date + time format.
 msgid "%1$s, %2$s"
 msgstr ""
 
@@ -1070,9 +1069,14 @@ msgstr ""
 msgid "Video Info"
 msgstr ""
 
-#. Translators: %s is the category list.
 #: public/views/entry/single-post.php:21
+#. Translators: %s is the category list.
 msgid "Posted in %s"
+msgstr ""
+
+#: public/views/entry/single-post.php:26
+#. Translators: %s is the post tags list.
+msgid "Tagged %s"
 msgstr ""
 
 #: public/views/header/default.php:16
@@ -1105,19 +1109,19 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#. Translators: Media dimensions - 1 is width and 2 is height.
 #: vendor/justintadlock/hybrid-core/src/Media/Meta.php:179
 #: vendor/justintadlock/hybrid-core/src/Media/functions-media.php:203
+#. Translators: Media dimensions - 1 is width and 2 is height.
 msgid "%1$s &#215; %2$s"
 msgstr ""
 
-#. Translators: %s is the focal length of a camera.
 #: vendor/justintadlock/hybrid-core/src/Media/Meta.php:272
+#. Translators: %s is the focal length of a camera.
 msgid "%s mm"
 msgstr ""
 
-#. Translators: %s is the shutter speed of a camera.
 #: vendor/justintadlock/hybrid-core/src/Media/Meta.php:364
+#. Translators: %s is the shutter speed of a camera.
 msgid "%s sec"
 msgstr ""
 
@@ -1137,23 +1141,23 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#. Translators: %s is the search query.
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:150
+#. Translators: %s is the search query.
 msgid "Search results for: %s"
 msgstr ""
 
-#. Translators: 1 is the week number and 2 is the year.
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:238
+#. Translators: 1 is the week number and 2 is the year.
 msgid "Week %1$s of %2$s"
 msgstr ""
 
-#. Translators: Minute archive title. %s is the minute time format.
 #: vendor/justintadlock/hybrid-core/src/Util/Title.php:279
+#. Translators: Minute archive title. %s is the minute time format.
 msgid "Minute %s"
 msgstr ""
 
-#. Translators: Used as a placeholder for untitled posts on non-singular views.
 #: vendor/justintadlock/hybrid-core/src/functions-filters.php:209
+#. Translators: Used as a placeholder for untitled posts on non-singular views.
 msgid "(Untitled)"
 msgstr ""
 
@@ -1167,8 +1171,9 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Exhale is a next-generation theme designed to work with the latest WordPress "
-"editor (introduced in WP 5.0)."
+"Exhale is a next-generation theme designed to work with the WordPress block "
+"editor (Gutenberg) and offer an ideal experience for showcasing your site's "
+"content."
 msgstr ""
 
 #. Author of the plugin/theme
@@ -1179,12 +1184,12 @@ msgstr ""
 msgid "https://themehybrid.com"
 msgstr ""
 
-#: app/functions-setup.php:92
+#: app/functions-setup.php:85
 msgctxt "nav menu location"
 msgid "Primary"
 msgstr ""
 
-#: app/functions-setup.php:93
+#: app/functions-setup.php:86
 msgctxt "nav menu location"
 msgid "Social"
 msgstr ""
@@ -1194,23 +1199,23 @@ msgctxt "meta separator"
 msgid "&middot;"
 msgstr ""
 
-#: config/font-family-settings.php:16
+#: config/settings-font-family.php:16
 msgctxt "font family setting"
 msgid "Primary"
 msgstr ""
 
-#: config/font-family-settings.php:21
+#: config/settings-font-family.php:21
 msgctxt "font family setting"
 msgid "Secondary"
 msgstr ""
 
-#: config/font-family-settings.php:26
+#: config/settings-font-family.php:26
 msgctxt "font family setting"
 msgid "Headings"
 msgstr ""
 
+#: vendor/justintadlock/hybrid-core/src/Post/functions-post.php:334
 #. Translators: Separates tags, categories, etc. when displaying a post.
-#: vendor/justintadlock/hybrid-core/src/Post/functions-post.php:328
 msgctxt "taxonomy terms separator"
 msgid ", "
 msgstr ""
