@@ -81,9 +81,11 @@
 }
 
 // Editor post title.
-.editor-post-title__block .editor-post-title__input {
+.editor-post-title__block .editor-post-title__input,
+.editor-post-title__block .editor-post-title__input:focus {
 	line-height: 1.58;
 	font-family: font-family( 'headings' );
+	font-size:   3rem;
 	font-weight: 700;
 	color:       var( --color-headings );
 
