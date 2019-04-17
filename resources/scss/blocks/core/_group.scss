@@ -9,7 +9,8 @@
 .wp-block-group {
 
 	&.has-background {
-		padding: $spacing-global $spacing-global 0;
+		margin-bottom: $spacing-global;
+		padding:       $spacing-global $spacing-global 0;
 	}
 
 	> *:not([class*=align]):not(.editor-inner-blocks) {
