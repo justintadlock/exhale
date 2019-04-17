@@ -77,10 +77,6 @@
 	}
 }
 
-.has-media-on-the-right .wp-block-media-text__content {
-	padding: 0 $spacing-global 0 0;
-}
-
 @media ( max-width: $content-width ) {
 
 	.wp-block-media-text.is-stacked-on-mobile {
@@ -88,10 +84,6 @@
 		grid-template-areas:
 			"media-text-media"
 			"media-text-content";
-
-		.wp-block-media-text__content {
-			padding: 0;
-		}
 	}
 }
 
@@ -103,9 +95,5 @@
 		grid-template-areas:
 			"media-text-media"
 			"media-text-content";
-
-		.wp-block-media-text__content {
-			padding: 0;
-		}
 	}
 }
