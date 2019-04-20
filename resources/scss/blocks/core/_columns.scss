@@ -8,31 +8,43 @@
 
 .wp-block-columns {
 	display: block;
+	margin:  0 -#{ $spacing-half };
 
-	@media ( min-width: break( small ) ) {
+	@media ( min-width: $content-width ) {
 		display: flex;
+		flex-wrap: wrap;
 	}
 
 	&.alignwide,
 	&.alignfull {
-		margin-bottom: 0;
+		padding: 0 calc( #{ $spacing-global } - #{ $spacing-half } );
+	}
+
+	@media ( min-width: $width-alignwide ) {
+		&.alignwide {
+			margin: 0 calc( -125px + -#{ $spacing-half } );
+		}
 	}
 }
 
 // Individual columns.
 .wp-block-column {
 	flex: 1;
-
-	@media ( min-width: break( small ) ) {
-		margin-left: $spacing-global;
-	}
-
-	&:first-of-type {
-		margin-left: 0;
-	}
+	margin: 0 $spacing-half;
 }
 
 // Editor specific styling. Make sure columns span correctly.
 .editor-inner-blocks {
 	flex: 1;
+}
+
+// 3-8 columns on larger screens.
+@media ( min-width: $content-width ) {
+
+	@for $i from 3 through 8 {
+
+		.has-#{ $i }-columns .wp-block-column {
+			width: calc( 100% / #{ $i } - #{ $spacing-global } );
+		}
+	}
 }

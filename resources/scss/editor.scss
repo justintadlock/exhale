@@ -182,3 +182,15 @@
 .wp-block-media-text .editor-inner-blocks {
 	padding: 0;
 }
+
+// Columns block.  We need to remove negative margins in editor.
+
+.edit-post-visual-editor .wp-block-columns {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.edit-post-visual-editor [data-align="full"] .wp-block-columns {
+	padding-left: $spacing-global;
+	padding-right: $spacing-global;
+}
