@@ -8,9 +8,23 @@
 
 .wp-block-group {
 
+	&::after {
+		content:    ".";
+		display:    block;
+		height:     0;
+		clear:      both;
+		visibility: hidden;
+	}
+
+	&.alignfull,
+	&.alignwide,
 	&.has-background {
 		margin-bottom: $spacing-global;
-		padding:       $spacing-global $spacing-global 0;
+		padding:       0 $spacing-global;
+	}
+
+	&.has-background {
+		padding-top: $spacing-global;
 	}
 
 	> *:not([class*=align]):not(.editor-inner-blocks) {
