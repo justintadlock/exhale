@@ -13,3 +13,7 @@ p.has-background {
 	margin:   0 -#{ $spacing-global } $spacing-global;
 	padding:  $spacing-global;
 }
+
+.wp-block-column p.has-background {
+	margin: 0 0 $spacing-global;
+}
