@@ -7,11 +7,12 @@
 ////
 
 .app-footer {
-	padding-bottom: 1.5rem;
+	// @todo Footer with background will need top/bottom padding.
+	padding: 0 $spacing-global;
 
 	&__credit {
 		// components/_text-secondary.scss
-		margin-bottom: 1rem;
+		margin-bottom: $spacing-half;
 		text-align: center;
 	}
 }
