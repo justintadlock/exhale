@@ -49,6 +49,7 @@
 	&__content {
 		word-break: break-word;
 		grid-area:  media-text-content;
+		max-width:  $content-width;
 	}
 
 	> figure > img,
