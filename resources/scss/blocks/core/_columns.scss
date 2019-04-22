@@ -17,6 +17,7 @@
 
 	&.alignwide,
 	&.alignfull {
+		margin-bottom: 0;
 		padding: 0 calc( #{ $spacing-global } - #{ $spacing-half } );
 	}
 
