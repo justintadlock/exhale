@@ -16,6 +16,18 @@
 		"resizer resizer";
 	grid-template-columns: 50% auto;
 
+	&.is-vertically-aligned-top {
+		align-items: start;
+	}
+
+	&.is-vertically-aligned-center {
+		align-items: center;
+	}
+
+	&.is-vertically-aligned-bottom {
+		align-items: end;
+	}
+
 	@media ( max-width: $content-width ) {
 		padding: 0 $spacing-global;
 	}

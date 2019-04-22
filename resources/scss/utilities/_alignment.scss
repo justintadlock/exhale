@@ -93,20 +93,3 @@ p .aligncenter {
 		max-width: 100%;
 	}
 }
-
-/// Vertical alignments.
-///
-/// At the moment, this is only used with the media-text block, but could be
-/// used in other blocks in the future. This also assumes a grid display.
-
-.is-vertically-aligned-top {
-	align-items: start;
-}
-
-.is-vertically-aligned-center {
-	align-items: center;
-}
-
-.is-vertically-aligned-bottom {
-	align-items: end;
-}

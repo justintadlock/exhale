@@ -15,6 +15,18 @@
 		flex-wrap: wrap;
 	}
 
+	&.are-vertically-aligned-top {
+		align-items: flex-start;
+	}
+
+	&.are-vertically-aligned-center {
+		align-items: center;
+	}
+
+	&.are-vertically-aligned-bottom {
+		align-items: flex-end;
+	}
+
 	&.alignwide,
 	&.alignfull {
 		margin-bottom: 0;
@@ -32,6 +44,18 @@
 .wp-block-column {
 	flex: 1;
 	margin: 0 $spacing-half;
+
+	&.is-vertically-aligned-top {
+		align-self: flex-start;
+	}
+
+	&.is-vertically-aligned-center {
+		align-self: center;
+	}
+
+	&.is-vertically-aligned-bottom {
+		align-self: flex-end;
+	}
 }
 
 // Editor specific styling. Make sure columns span correctly.
