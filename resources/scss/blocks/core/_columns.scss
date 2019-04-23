@@ -43,7 +43,7 @@
 // Individual columns.
 .wp-block-column {
 	flex: 1;
-	margin: 0 $spacing-half;
+	margin: 0 $spacing-half $spacing-global;
 
 	&.is-vertically-aligned-top {
 		align-self: flex-start;
@@ -55,6 +55,16 @@
 
 	&.is-vertically-aligned-bottom {
 		align-self: flex-end;
+	}
+
+	// We're giving a bottom margin to the entire column, so we want to
+	// remove it from the last child. This is to make sure that we're always
+	// consistent. Floated images and other items where there's a difference
+	// in bottom margin than, say, something like a paragraph can make this
+	// inconsistent. Removing this margin and handling it on the column
+	// corrects the issue.
+	> *:last-child {
+		margin-bottom: 0;
 	}
 }
 
