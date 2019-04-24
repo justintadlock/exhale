@@ -59,6 +59,15 @@ add_action( 'wp_enqueue_scripts', function() {
  */
 add_action( 'enqueue_block_editor_assets', function() {
 
+	$deps = [
+		'wp-i18n',
+		'wp-blocks',
+		'wp-dom-ready',
+		'wp-edit-post',
+	];
+
+	wp_enqueue_script( 'exhale-editor', asset( 'js/editor.js' ), $deps, null, true );
+
 	// Enqueue theme editor styles.
 	wp_enqueue_style( 'exhale-editor', asset( 'css/editor.css' ), null, null );
 

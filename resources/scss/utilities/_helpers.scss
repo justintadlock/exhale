@@ -15,7 +15,8 @@
 /// Used for small images that are possibly something like a smiley, transparent
 /// PNG, and so on where we don't want borders.
 
-.is-borderless {
+.is-style-borderless,
+.is-style-borderless img {
 	border: none;
 	outline: none;
 	box-shadow: none;
