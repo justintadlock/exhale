@@ -68,6 +68,15 @@ add_action( 'enqueue_block_editor_assets', function() {
 
 	wp_enqueue_script( 'exhale-editor', asset( 'js/editor.js' ), $deps, null, true );
 
+	// For now, we're adding translations via PHP. In the future, when our
+	// tools catch up, we'll internationalize in the JS files.
+	wp_localize_script( 'exhale-editor', 'exhaleEditor', [
+		'labels' => [
+			'border'     => __( 'Bordered', 'exhale' ),
+			'borderless' => __( 'No Border', 'exhale' )
+		]
+	] );
+
 	// Enqueue theme editor styles.
 	wp_enqueue_style( 'exhale-editor', asset( 'css/editor.css' ), null, null );
 
