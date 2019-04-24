@@ -17,6 +17,8 @@ wp.domReady( () => {
 
 	let labels = exhaleEditor.labels;
 
+	// Image styles.
+
 	wp.blocks.registerBlockStyle( 'core/image', {
 		name      : 'default',
 		label     : labels.border,
@@ -25,7 +27,20 @@ wp.domReady( () => {
 
 	wp.blocks.registerBlockStyle( 'core/image', {
 		name  : 'borderless',
-		label : labels.borderless,
+		label : labels.borderless
+	} );
+
+	// Paragraph styles.
+
+	wp.blocks.registerBlockStyle( 'core/paragraph', {
+		name      : 'default',
+		label     : labels.default,
+		isDefault : true
+	} );
+
+	wp.blocks.registerBlockStyle( 'core/paragraph', {
+		name  : 'highlight',
+		label : labels.highlight
 	} );
 
 } );

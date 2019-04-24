@@ -72,8 +72,10 @@ add_action( 'enqueue_block_editor_assets', function() {
 	// tools catch up, we'll internationalize in the JS files.
 	wp_localize_script( 'exhale-editor', 'exhaleEditor', [
 		'labels' => [
-			'border'     => __( 'Bordered', 'exhale' ),
-			'borderless' => __( 'No Border', 'exhale' )
+			'default'    => __( 'Default',   'exhale' ),
+			'border'     => __( 'Bordered', 'exhale'  ),
+			'borderless' => __( 'No Border', 'exhale' ),
+			'highlight'  => __( 'Highlight', 'exhale' )
 		]
 	] );
 

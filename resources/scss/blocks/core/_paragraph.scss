@@ -9,11 +9,18 @@
 	text-transform: uppercase;
 }
 
-p.has-background {
+p.has-background,
+p.is-style-highlight {
 	margin:   0 -#{ $spacing-global } $spacing-global;
 	padding:  $spacing-global;
 }
 
-.wp-block-columns p.has-background {
+.wp-block-columns p.has-background,
+.wp-block-columns p.is-style-highlight {
 	margin: 0 0 $spacing-global;
+}
+
+.is-style-highlight {
+	background:       var( --color-gray-lightest );
+	background-image: linear-gradient( rgba(0,0,0,0.25) 8px, 8px, transparent 100% );
 }
