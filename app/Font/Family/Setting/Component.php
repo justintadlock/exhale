@@ -121,7 +121,15 @@ class Component implements Bootable {
 	 */
 	public function registerDefaultSettings( Settings $settings ) {
 
-		foreach ( Config::get( 'settings-font-family' ) as $name => $options ) {
+		$base   = Config::get( '_settings-font-family' );
+		$config = Config::get( 'settings-font-family'  );
+
+		foreach ( $base as $name => $options ) {
+
+			if ( isset( $config[ $name ] ) ) {
+				$options = array_merge( $options, $config[ $name ] );
+			}
+
 			$settings->add( $name, $options );
 		}
 	}

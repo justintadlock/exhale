@@ -12,19 +12,7 @@
  */
 
 return [
-	'primary' => [
-		'label'       => _x( 'Primary', 'font family setting', 'exhale' ),
-		'description' => __( 'Font used for most of the text on the site.', 'exhale' ),
-		'family'      => 'georgia'
-	],
-	'secondary' => [
-		'label'       => _x( 'Secondary', 'font family setting', 'exhale' ),
-		'description' => __( 'Font used for secondary, less important text.', 'exhale' ),
-		'family'      => 'system-ui',
-	],
-	'headings' => [
-		'label'       => _x( 'Headings', 'font family setting', 'exhale' ),
-		'description' => __( 'Font used for text headings.', 'exhale' ),
-		'family'      => 'system-ui'
-	]
+	'primary'   => [ 'family' => 'georgia'    ],
+	'secondary' => [ 'family' => 'system-ui'  ],
+	'headings'  => [ 'family' => 'system-ui'  ]
 ];
