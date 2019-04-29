@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Exhale 1.0.0\n"
+"Project-Id-Version: Exhale 1.1.0-alpha\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/exhale\n"
-"POT-Creation-Date: 2019-04-04 18:02:52+00:00\n"
+"POT-Creation-Date: 2019-04-29 18:57:45+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -301,6 +301,22 @@ msgstr ""
 msgid ""
 "Exhale requires at least PHP version %1$s. You are running version %2$s. "
 "Please upgrade and try again."
+msgstr ""
+
+#: app/functions-assets.php:75
+msgid "Default"
+msgstr ""
+
+#: app/functions-assets.php:76
+msgid "Bordered"
+msgstr ""
+
+#: app/functions-assets.php:77
+msgid "No Border"
+msgstr ""
+
+#: app/functions-assets.php:78
+msgid "Highlight"
 msgstr ""
 
 #: app/functions-filters.php:88
