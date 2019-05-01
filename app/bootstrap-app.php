@@ -39,6 +39,9 @@ $exhale->provider( \Exhale\Image\Provider::class     );
 $exhale->provider( \Exhale\Query\Provider::class     );
 $exhale->provider( \Exhale\Settings\Provider::class  );
 
+# Boot external projects.
+$exhale->provider( \Hybrid\Customize\CustomizeServiceProvider::class );
+
 # ------------------------------------------------------------------------------
 # Perform bootstrap actions.
 # ------------------------------------------------------------------------------

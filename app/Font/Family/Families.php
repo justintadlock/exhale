@@ -46,10 +46,21 @@ class Families extends Collection {
 	 */
 	public function customizeChoices() {
 
-		$choices = [];
+		$choices = [
+			'system' => [
+				'label'   => __( 'System Fonts', 'exhale' ),
+				'choices' => []
+			],
+			'google' => [
+				'label'   => __( 'Google Fonts', 'exhale' ),
+				'choices' => []
+			]
+		];
 
 		foreach ( $this->all() as $family ) {
-			$choices[ esc_attr( $family->name() ) ] = esc_html( $family->label() );
+			$group = $family->isGoogleFont() ? 'google' : 'system';
+
+			$choices[ $group ]['choices'][ $family->name() ] = $family->label();
 		}
 
 		return $choices;

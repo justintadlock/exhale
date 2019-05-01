@@ -51,6 +51,15 @@ class Family implements JsonSerializable {
 	protected $stack = 'system-ui';
 
 	/**
+	 * Font name on Google Fonts.
+	 *
+	 * @since  1.1.0
+	 * @access protected
+	 * @var    string
+	 */
+	protected $google = '';
+
+	/**
 	 * Set up the object properties.
 	 *
 	 * @since  1.0.0
@@ -81,7 +90,8 @@ class Family implements JsonSerializable {
 	public function jsonSerialize() {
 
 		return [
-			'stack' => $this->stack()
+			'stack'      => $this->stack(),
+			'googleName' => str_replace( '+', ' ', $this->googleName() )
 		];
 	}
 
@@ -126,5 +136,27 @@ class Family implements JsonSerializable {
 			$this->stack,
 			$this
 		);
+	}
+
+	/**
+	 * Returns whether the font is a Google font.
+	 *
+	 * @since  1.1.0
+	 * @access public
+	 * @return bool
+	 */
+	public function isGoogleFont() {
+		return (bool) $this->google;
+	}
+
+	/**
+	 * Returns the Google Font name.
+	 *
+	 * @since  1.1.0
+	 * @access public
+	 * @return string
+	 */
+	public function googleName() {
+		return $this->isGoogleFont() ? $this->google : '';
 	}
 }

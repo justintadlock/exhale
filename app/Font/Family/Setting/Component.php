@@ -16,9 +16,12 @@ namespace Exhale\Font\Family\Setting;
 use WP_Customize_Manager;
 
 use Hybrid\Contracts\Bootable;
+use Hybrid\Customize\Controls\SelectGroup;
 use Exhale\Font\Family\Families;
 use Exhale\Tools\Config;
 use Exhale\Tools\CustomProperties;
+
+use function Hybrid\Font\enqueue as enqueue_font;
 
 /**
  * Font family setting component class.
@@ -83,11 +86,22 @@ class Component implements Bootable {
 		// Run registration on `after_setup_theme`.
 		add_action( 'after_setup_theme', [ $this, 'register' ] );
 
+		// Re-register so that the cached mods are picked up in the
+		// customizer preview, which are not available on the earlier
+		// `after_setup_theme` hook.
+		if ( is_customize_preview() ) {
+			add_action( 'customize_preview_init', [ $this, 'register' ] );
+		}
+
 		// Register default settings.
 		add_action( 'exhale/font/family/setting/register', [ $this, 'registerDefaultSettings' ] );
 
 		// Add customizer settings and controls.
 		add_action( 'customize_register', [ $this, 'customizeRegister'] );
+
+		// Enqueue fonts.
+		add_action( 'wp_enqueue_scripts',          [ $this, 'enqueue' ], 5 );
+		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue' ], 5 );
 	}
 
 	/**
@@ -135,6 +149,52 @@ class Component implements Bootable {
 	}
 
 	/**
+	 * Enqueues any scripts/styles necessary for font settings.
+	 *
+	 * @since  1.1.0
+	 * @access public
+	 * @return void
+	 */
+	public function enqueue() {
+		$fonts = $this->googleFonts();
+
+		if ( $fonts ) {
+			enqueue_font( 'exhale', [
+				'family' => $fonts,
+				'subset' => [
+					'latin',
+					'latin-ext'
+				]
+			] );
+		}
+	}
+
+	/**
+	 * Returns an array of Google fonts to load.
+	 *
+	 * @since  1.1.0
+	 * @access protected
+	 * @return array
+	 */
+	protected function googleFonts() {
+		$fonts = [];
+
+		foreach ( $this->settings as $setting ) {
+
+			$family = $this->families->get( $setting->mod() );
+
+			if ( $family->isGoogleFont() && ! isset( $fonts[ $family->name() ] ) ) {
+				$fonts[ $family->name() ] = sprintf(
+					'%s:400,400i,700,700i',
+					$family->googleName()
+				);
+			}
+		}
+
+		return $fonts;
+	}
+
+	/**
 	 * Customize register callback.
 	 *
 	 * @since  1.0.0
@@ -158,13 +218,12 @@ class Component implements Bootable {
 		// Registers the font family controls.
 		array_map( function( $setting ) use ( $manager ) {
 
-			$manager->add_control( $setting->modName(), [
+			$manager->add_control( new SelectGroup( $manager, $setting->modName(), [
 				'section'     => 'fonts',
-				'type'        => 'select',
 				'label'       => esc_html( $setting->label() ),
 				'description' => $setting->description(),
 				'choices'     => $this->families->customizeChoices()
-			] );
+			] ) );
 
 		}, $this->settings->all() );
 	}

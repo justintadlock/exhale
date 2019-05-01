@@ -49,5 +49,8 @@
 		"stylelint-config-wordpress": "^13.1.0",
 		"theme-claim": "^0.1.2",
 		"vue-template-compiler": "^2.6.9"
+	},
+	"dependencies": {
+		"webfontloader": "^1.6.28"
 	}
 }

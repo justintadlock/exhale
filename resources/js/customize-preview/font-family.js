@@ -11,6 +11,8 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
+let WebFont = require( 'webfontloader' );
+
 let settings = exhaleCustomizePreview.fontFamilySettings;
 let choices  = exhaleCustomizePreview.fontFamilyChoices;
 
@@ -18,6 +20,20 @@ Object.keys( settings ).forEach( setting => {
 
 	wp.customize( settings[ setting ].modName, value => {
 		value.bind( to => {
+
+			// If this is a Google font, let's use the Web Font
+			// Loader to load it up.
+			if ( choices[ to ].googleName ) {
+				WebFont.load( {
+					google : {
+						families : [
+							choices[ to ].googleName
+						]
+					}
+				} );
+			}
+
+			// Update the custom CSS property.
 			document.documentElement.style.setProperty(
 				settings[ setting ].property,
 				choices[ to ].stack
