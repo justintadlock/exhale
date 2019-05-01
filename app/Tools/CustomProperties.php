@@ -17,8 +17,6 @@
 
 namespace Exhale\Tools;
 
-use Hybrid\Tools\Collection;
-
 /**
  * Custom properties class.
  *
