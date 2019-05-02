@@ -12,7 +12,15 @@
 		border-top-width: 4px;
 	}
 
+	&.is-style-dashed {
+		border-top: 4px dashed var( --color-border );
+	}
+
 	&.is-style-dots {
 		border-top: 4px dotted var( --color-border );
+	}
+
+	&.is-style-double {
+		border-top: 6px double var( --color-border );
 	}
 }

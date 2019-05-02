@@ -43,4 +43,16 @@ wp.domReady( () => {
 		label : labels.highlight
 	} );
 
+	// Separator styles.
+
+	wp.blocks.registerBlockStyle( 'core/separator', {
+		name  : 'dashed',
+		label : labels.borderDashed
+	} );
+
+	wp.blocks.registerBlockStyle( 'core/separator', {
+		name  : 'double',
+		label : labels.borderDouble
+	} );
+
 } );

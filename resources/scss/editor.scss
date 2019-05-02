@@ -199,3 +199,10 @@
 	padding-left: $spacing-global;
 	padding-right: $spacing-global;
 }
+
+// Separator block.
+// Override the `theme.css` included in Gutenberg 5.5.0.
+
+.edit-post-visual-editor .wp-block .wp-block-separator {
+	max-width: 100%;
+}
