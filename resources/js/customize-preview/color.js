@@ -19,7 +19,7 @@ Object.keys( settings ).forEach( setting => {
 		value.bind( to => {
 			document.documentElement.style.setProperty(
 				settings[ setting ].property,
-				to
+				to ? to : 'transparent'
 			);
 		} );
 	} );

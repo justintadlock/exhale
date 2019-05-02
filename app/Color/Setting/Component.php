@@ -93,7 +93,7 @@ class Component implements Bootable {
 
 		// Adds each color as a custom property.
 		foreach ( $this->settings as $setting ) {
-			$this->properties->add( $setting->property(), $setting->hex() );
+			$this->properties->add( $setting->property(), $setting->hex() ?: 'transparent' );
 		}
 	}
 
