@@ -14,6 +14,7 @@
 namespace Exhale\Color\Setting;
 
 use JsonSerializable;
+use Exhale\Contracts\CssCustomProperty;
 use function Hybrid\hex_to_rgb;
 
 /**
@@ -22,7 +23,7 @@ use function Hybrid\hex_to_rgb;
  * @since  1.0.0
  * @access public
  */
-class Setting implements JsonSerializable {
+class Setting implements JsonSerializable, CssCustomProperty {
 
 	/**
 	 * Color name.
@@ -101,7 +102,7 @@ class Setting implements JsonSerializable {
 
 		return [
 			'modName'  => $this->modName(),
-			'property' => $this->property()
+			'property' => $this->cssProperty()
 		];
 	}
 
@@ -141,17 +142,6 @@ class Setting implements JsonSerializable {
 	 */
 	public function modName() {
 		return sprintf( 'color_%s', str_replace( '-', '_', $this->name() ) );
-	}
-
-	/**
-	 * Returns the CSS custom property selector for the setting name.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return string
-	 */
-	public function property() {
-		return sprintf( '--color-%s', $this->name() );
 	}
 
 	/**
@@ -223,5 +213,50 @@ class Setting implements JsonSerializable {
 	 */
 	public function isEditorColor() {
 		return $this->is_editor_color;
+	}
+
+	/**
+	 * Returns a valid CSS selector for the property.
+	 *
+	 * @since  1.1.0
+	 * @access public
+	 * @return string
+	 */
+	public function cssSelector() {
+		return ':root';
+	}
+
+	/**
+	 * Returns the CSS property.
+	 *
+	 * @since  1.1.0
+	 * @access public
+	 * @return string
+	 */
+	public function cssProperty() {
+		return sprintf( '--color-%s', $this->name() );
+	}
+
+	/**
+	 * Returns the CSS property value.
+	 *
+	 * @since  1.1.0
+	 * @access public
+	 * @return string
+	 */
+	public function cssValue() {
+		return $this->hex() ?: 'transparent';
+	}
+
+	/**
+	 * Returns the CSS custom property selector for the setting name.
+	 *
+	 * @since      1.0.0
+	 * @deprecated 1.1.0
+	 * @access     public
+	 * @return     string
+	 */
+	public function property() {
+		return $this->cssProperty();
 	}
 }

@@ -14,6 +14,9 @@
 namespace Exhale\Font\Family\Setting;
 
 use JsonSerializable;
+use Hybrid\App;
+use Exhale\Contracts\CssCustomProperty;
+use Exhale\Font\Family\Families;
 
 /**
  * Font family setting class.
@@ -21,7 +24,7 @@ use JsonSerializable;
  * @since  1.0.0
  * @access public
  */
-class Setting implements JsonSerializable {
+class Setting implements JsonSerializable, CssCustomProperty {
 
 	/**
 	 * Setting name.
@@ -135,17 +138,6 @@ class Setting implements JsonSerializable {
 	}
 
 	/**
-	 * Returns the CSS custom property selector for the setting name.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return string
-	 */
-	public function property() {
-		return sprintf( '--font-family-%s', $this->name() );
-	}
-
-	/**
 	 * Returns the setting description.
 	 *
 	 * @since  1.0.0
@@ -181,5 +173,49 @@ class Setting implements JsonSerializable {
 	 */
 	public function mod() {
 		return get_theme_mod( $this->modName(), $this->family() );
+	}
+
+	/**
+	 * Returns a valid CSS selector for the property.
+	 *
+	 * @since  1.1.0
+	 * @access public
+	 * @return string
+	 */
+	public function cssSelector() {
+		return ':root';
+	}
+
+	/**
+	 * Returns the CSS property.
+	 *
+	 * @since  1.1.0
+	 * @access public
+	 * @return string
+	 */
+	public function cssProperty() {
+		return sprintf( '--font-family-%s', $this->name() );
+	}
+	/**
+	 * Returns the CSS property value.
+	 *
+	 * @since  1.1.0
+	 * @access public
+	 * @return string
+	 */
+	public function cssValue() {
+		return App::resolve( Families::class )->get( $this->mod() )->stack();
+	}
+
+	/**
+	 * Returns the CSS custom property selector for the setting name.
+	 *
+	 * @since      1.0.0
+	 * @deprecated 1.1.0
+	 * @access     public
+	 * @return     string
+	 */
+	public function property() {
+		return $this->cssProperty();
 	}
 }

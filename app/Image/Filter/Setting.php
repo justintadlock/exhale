@@ -1,8 +1,8 @@
 <?php
 /**
- * Color Editor Color.
+ * Font Family Setting.
  *
- * Creates an editor color object.
+ * Creates a font family setting object.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -11,61 +11,58 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Color\Editor;
+namespace Exhale\Image\Filter;
 
 use Exhale\Contracts\CssCustomProperty;
-use Exhale\Tools\Mod;
-use function Hybrid\hex_to_rgb;
-
 
 /**
- * Editor color class.
+ * Font family setting class.
  *
- * @since  1.0.0
+ * @since  1.1.0
  * @access public
  */
-class Color implements CssCustomProperty {
+class Setting implements CssCustomProperty {
 
 	/**
-	 * Color name.
+	 * Setting name.
 	 *
-	 * @since  1.0.0
+	 * @since  1.1.0
 	 * @access protected
 	 * @var    string
 	 */
 	protected $name;
 
 	/**
-	 * Color label.
+	 * Setting label.
 	 *
-	 * @since  1.0.0
+	 * @since  1.1.0
 	 * @access protected
 	 * @var    string
 	 */
 	protected $label;
 
 	/**
-	 * Color (hex).
+	 * Setting description.
 	 *
-	 * @since  1.0.0
+	 * @since  1.1.0
 	 * @access protected
 	 * @var    string
 	 */
-	protected $color = '000000';
+	protected $description = '';
 
 	/**
-	 * Whether the color should be taken from theme mods.
+	 * Setting default (should be the name of a `Choice` object).
 	 *
-	 * @since  1.0.0
+	 * @since  1.1.0
 	 * @access protected
-	 * @var    bool
+	 * @var    int
 	 */
-	protected $is_theme_mod = false;
+	protected $amount = 0;
 
 	/**
 	 * Set up the object properties.
 	 *
-	 * @since  1.0.0
+	 * @since  1.1.0
 	 * @access public
 	 * @param  string  $name
 	 * @param  array   $options
@@ -83,9 +80,9 @@ class Color implements CssCustomProperty {
 	}
 
 	/**
-	 * Returns the color name.
+	 * Returns the setting name.
 	 *
-	 * @since  1.0.0
+	 * @since  1.1.0
 	 * @access public
 	 * @return string
 	 */
@@ -94,63 +91,68 @@ class Color implements CssCustomProperty {
 	}
 
 	/**
-	 * Returns the color label.
+	 * Returns the setting label.
 	 *
-	 * @since  1.0.0
+	 * @since  1.1.0
 	 * @access public
 	 * @return string
 	 */
 	public function label() {
 
 		return apply_filters(
-			"exhale/color/editor/{$this->name}/label",
+			"exhale/image/filter/setting/{$this->name}/label",
 			$this->label ?: $this->name(),
 			$this
 		);
 	}
 
 	/**
-	 * Returns the color value.
+	 * Returns the setting name as a theme mod.
 	 *
-	 * @since  1.0.0
+	 * @since  1.1.0
 	 * @access public
 	 * @return string
 	 */
-	public function color() {
-		return $this->isThemeMod() ? Mod::color( $this->name() ) : $this->color;
+	public function modName() {
+		return sprintf( 'image_%s_filter_amount', str_replace( '-', '_', $this->name() ) );
 	}
 
 	/**
-	 * Returns the hex color code.
+	 * Returns the setting description.
 	 *
-	 * @since  1.0.0
+	 * @since  1.1.0
 	 * @access public
 	 * @return string
 	 */
-	public function hex() {
-		return maybe_hash_hex_color( $this->color() );
+	public function description() {
+		return $this->description;
 	}
 
 	/**
-	 * Returns an array (`r`, `g`, `b`, keys) of the setting value in RGB.
+	 * Returns the default setting value.
 	 *
-	 * @since  1.0.0
+	 * @since  1.1.0
 	 * @access public
-	 * @return array
+	 * @return string
 	 */
-	public function rgb() {
-		return hex_to_rgb( $this->color() );
+	public function amount() {
+
+		return apply_filters(
+			"exhale/image/filter/setting/{$this->name}/default",
+			$this->amount,
+			$this
+		);
 	}
 
 	/**
-	 * Whether the color is a theme mod.
+	 * Returns the theme mod for the setting.
 	 *
-	 * @since  1.0.0
+	 * @since  1.1.0
 	 * @access public
-	 * @return bool
+	 * @return string
 	 */
-	public function isThemeMod() {
-		return $this->is_theme_mod;
+	public function mod() {
+		return get_theme_mod( $this->modName(), $this->amount() );
 	}
 
 	/**
@@ -172,7 +174,7 @@ class Color implements CssCustomProperty {
 	 * @return string
 	 */
 	public function cssProperty() {
-		return sprintf( '--color-%s', $this->name() );
+		return sprintf( '--image-%s-filter', $this->name() );
 	}
 
 	/**
@@ -183,18 +185,17 @@ class Color implements CssCustomProperty {
 	 * @return string
 	 */
 	public function cssValue() {
-		return $this->hex() ?: 'transparent';
-	}
 
-	/**
-	 * Returns the CSS custom property selector for the color.
-	 *
-	 * @since      1.0.0
-	 * @deprecated 1.1.0
-	 * @access     public
-	 * @return     string
-	 */
-	public function property() {
-		return $this->cssProperty();
+		$filter_function = get_theme_mod( 'image_default_filter_function', 'grayscale' );
+
+		if ( 'none' === $filter_function ) {
+			return 'none';
+		}
+
+		return sprintf(
+			'%s( %s%% )',
+			esc_html( $filter_function ),
+			absint( $this->mod() )
+		);
 	}
 }

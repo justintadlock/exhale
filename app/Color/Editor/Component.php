@@ -92,7 +92,7 @@ class Component implements Bootable {
 		foreach ( $this->colors as $color ) {
 
 			if ( ! $color->isThemeMod() ) {
-				$this->properties->add( $color->property(), $color->hex() );
+				$this->properties->add( 'editor-color-' . $color->name(), $color );
 			}
 		}
 	}

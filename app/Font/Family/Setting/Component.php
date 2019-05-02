@@ -86,13 +86,6 @@ class Component implements Bootable {
 		// Run registration on `after_setup_theme`.
 		add_action( 'after_setup_theme', [ $this, 'register' ] );
 
-		// Re-register so that the cached mods are picked up in the
-		// customizer preview, which are not available on the earlier
-		// `after_setup_theme` hook.
-		if ( is_customize_preview() ) {
-			add_action( 'customize_preview_init', [ $this, 'register' ] );
-		}
-
 		// Register default settings.
 		add_action( 'exhale/font/family/setting/register', [ $this, 'registerDefaultSettings' ] );
 
@@ -118,10 +111,7 @@ class Component implements Bootable {
 
 		// Adds each font setting as a custom property.
 		foreach ( $this->settings as $setting ) {
-			$this->properties->add(
-				$setting->property(),
-			 	$this->families->get( $setting->mod() )->stack()
-			);
+			$this->properties->add( 'font-family-' . $setting->name(), $setting );
 		}
 	}
 

@@ -16,6 +16,7 @@ namespace Exhale\Image\Filter;
 use WP_Customize_Manager;
 
 use Hybrid\Contracts\Bootable;
+use Hybrid\Tools\Collection;
 use Exhale\Tools\Config;
 use Exhale\Tools\CustomProperties;
 use Exhale\Customize\Controls;
@@ -38,6 +39,15 @@ class Component implements Bootable {
 	protected $filters;
 
 	/**
+	 * Holds the filter amount settings.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    Collection
+	 */
+	protected $settings;
+
+	/**
 	 * CSS custom properties.
 	 *
 	 * @since  1.0.0
@@ -58,6 +68,7 @@ class Component implements Bootable {
 	public function __construct( Filters $filters, CustomProperties $properties ) {
 		$this->filters    = $filters;
 		$this->properties = $properties;
+		$this->settings   = new Collection();
 	}
 
 	/**
@@ -91,8 +102,23 @@ class Component implements Bootable {
 		// Hook for registering custom image filters.
 		do_action( 'exhale/image/filter/register', $this->filters );
 
+		// Add filter amount settings.
+		$this->settings->add( 'default', new Setting( 'default', [
+			'amount'      => 0,
+			'label'       => __( 'Default Filter Amount', 'exhale' ),
+			'description' => __( 'Filter amount applied to all images.', 'exhale' )
+		] ) );
+
+		$this->settings->add( 'hover', new Setting( 'hover', [
+			'amount'      => 100,
+			'label'       => __( 'Hover Filter Amount', 'exhale' ),
+			'description' => __( 'Filter amount applied to linked images when they are hovered or focused.', 'exhale' )
+		] ) );
+
 		// Add custom properties.
-		$this->customProperties();
+		foreach ( $this->settings as $setting ) {
+			$this->properties->add( 'image-filter-' . $setting->name(), $setting );
+		}
 	}
 
 	/**
@@ -108,40 +134,6 @@ class Component implements Bootable {
 		foreach ( Config::get( 'image-filters' ) as $name => $options ) {
 			$filters->add( $name, $options );
 		}
-	}
-
-	/**
-	 * Adds CSS custom properties.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @return string
-	 */
-	protected function customProperties() {
-
-		$default_filter_function = get_theme_mod( 'image_default_filter_function', 'grayscale' );
-		$default_filter_amount   = get_theme_mod( 'image_default_filter_amount',   0           );
-		$hover_filter_amount     = get_theme_mod( 'image_hover_filter_amount',     100         );
-
-		if ( ! $default_filter_function || 'none' === $default_filter_function ) {
-
-			$this->properties->add( '--image-default-filter', 'none' );
-			$this->properties->add( '--image-hover-filter',   'none' );
-
-			return;
-		}
-
-		$this->properties->add( '--image-default-filter', sprintf(
-			'%s( %s%% )',
-			esc_html( $default_filter_function ),
-			absint( $default_filter_amount )
-		) );
-
-		$this->properties->add( '--image-hover-filter', sprintf(
-			'%s( %s%% )',
-			esc_html( $default_filter_function ),
-			absint( $hover_filter_amount )
-		) );
 	}
 
 	/**
@@ -161,17 +153,15 @@ class Component implements Bootable {
 			'transport'         => 'postMessage'
 		] );
 
-		$manager->add_setting( 'image_default_filter_amount', [
-			'default'           => 100,
-			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage'
-		] );
+		// Image filter amount settings.
+		foreach ( $this->settings->all() as $setting ) {
 
-		$manager->add_setting( 'image_hover_filter_amount', [
-			'default'           => 0,
-			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage'
-		] );
+			$manager->add_setting( $setting->modName(), [
+				'default'           => $setting->amount(),
+				'sanitize_callback' => 'absint',
+				'transport'         => 'postMessage'
+			] );
+		}
 
 		// Image filter controls.
 		$manager->add_control(
@@ -184,18 +174,18 @@ class Component implements Bootable {
 						'description' => __( 'CSS filter function to apply to images.', 'exhale' )
 					],
 					'default_amount' => [
-						'label'       => __( 'Default Filter Amount', 'exhale' ),
-						'description' => __( 'Filter amount applied to all images.', 'exhale' )
+						'label'       => $this->settings->get( 'default' )->label(),
+						'description' => $this->settings->get( 'default' )->description()
 					],
 					'hover_amount' => [
-						'label'       => __( 'Hover Filter Amount', 'exhale' ),
-						'description' => __( 'Filter amount applied to linked images when they are hovered or focused.', 'exhale' )
+						'label'       => $this->settings->get( 'hover' )->label(),
+						'description' => $this->settings->get( 'hover' )->description()
 					]
 				],
 				'settings'    => [
 					'function'       => 'image_default_filter_function',
-					'default_amount' => 'image_default_filter_amount',
-					'hover_amount'   => 'image_hover_filter_amount'
+					'default_amount' => $this->settings->get( 'default' )->modName(),
+					'hover_amount'   => $this->settings->get( 'hover' )->modName()
 				]
 			] )
 		);

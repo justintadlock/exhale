@@ -34,16 +34,35 @@ class CustomProperties extends Collection {
 	 */
 	public function css() {
 
-		$css = '';
+		$css       = '';
+		$selectors = [];
 
-		foreach ( $this->all() as $property => $value ) {
-			$css .= sprintf(
-				'%s: %s;',
-				esc_html( $property ),
-				wp_strip_all_tags( $value )
-			);
+		// Loop through all the properties and sort them by selector.
+		foreach ( $this->all() as $property ) {
+
+			if ( ! isset( $selectors[ $property->cssSelector() ] ) ) {
+				$selectors[ $property->cssSelector() ] = [];
+			}
+
+			$selectors[ $property->cssSelector() ][] = $property;
 		}
 
-		return sprintf( ':root { %s }', $css );
+		// Loop through each of the selectors and add their CSS.
+		foreach ( $selectors as $selector => $properties ) {
+
+			$selector_css = '';
+
+			foreach ( $properties as $property ) {
+				$selector_css .= sprintf(
+					'%s: %s;',
+					esc_html( $property->cssProperty() ),
+					wp_strip_all_tags( $property->cssValue() )
+				);
+			}
+
+			$css .= sprintf( '%s { %s }', esc_html( $selector ), $selector_css );
+		}
+
+		return $css;
 	}
 }
