@@ -9,6 +9,7 @@
 .app-footer {
 	// @todo Footer with background will need top/bottom padding.
 	padding: 0 $spacing-global;
+	overflow-y: hidden;
 
 	&__credit {
 		// components/_text-secondary.scss

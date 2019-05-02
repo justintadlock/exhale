@@ -11,19 +11,24 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-let WebFont = require( 'webfontloader' );
-
-let settings = exhaleCustomizePreview.fontFamilySettings;
-let choices  = exhaleCustomizePreview.fontFamilyChoices;
+let WebFont     = require( 'webfontloader' );
+let settings    = exhaleCustomizePreview.fontFamilySettings;
+let choices     = exhaleCustomizePreview.fontFamilyChoices;
+let loadedFonts = [];
 
 Object.keys( settings ).forEach( setting => {
+
+	// If the Google Font is already loaded, add it to the loaded fonts array.
+	if ( choices[ settings[ setting ].mod ].googleName ) {
+		loadedFonts.push( settings[ setting ].mod );
+	}
 
 	wp.customize( settings[ setting ].modName, value => {
 		value.bind( to => {
 
 			// If this is a Google font, let's use the Web Font
 			// Loader to load it up.
-			if ( choices[ to ].googleName ) {
+			if ( -1 === loadedFonts.indexOf( to ) && choices[ to ].googleName ) {
 				WebFont.load( {
 					google : {
 						families : [
@@ -31,6 +36,9 @@ Object.keys( settings ).forEach( setting => {
 						]
 					}
 				} );
+
+				// Add to loaded fonts array.
+				loadedFonts.push( to );
 			}
 
 			// Update the custom CSS property.

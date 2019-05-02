@@ -90,6 +90,7 @@ class Setting implements JsonSerializable {
 	public function jsonSerialize() {
 
 		return [
+			'mod'      => $this->mod(),
 			'modName'  => $this->modName(),
 			'property' => $this->property()
 		];
