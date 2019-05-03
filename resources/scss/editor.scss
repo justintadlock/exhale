@@ -123,6 +123,13 @@
 	max-width: 100%;
 }
 
+// Image block.  Adds left/right margin because a white block covers the editor
+// when using an unaligned image inside of the columns block with wide alignment.
+
+.block-core-columns [data-type="core/image"]:not([data-align]) .wp-block-image {
+	display: table;
+}
+
 // Class is used in the editor but not the front end.
 // Copied from `/elements/_quotes.scsss` and `/blocks/core/_pullquote.scss`.
 
