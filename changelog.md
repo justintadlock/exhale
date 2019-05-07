@@ -30,6 +30,9 @@
 
 - Unregister the core block styles on the `enqueue_block_assets` hook. This stopped working on `enqueue_block_editor_assets` at some point. See: https://github.com/WordPress/gutenberg/issues/15007
 
+## Removed
+
+- Removed old `classic.css` file that's no longer in use (got renamed to `screen-classic.css`).
 
 ## [1.0.2] - 2019-04-22
 
