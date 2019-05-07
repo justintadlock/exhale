@@ -15,6 +15,8 @@ namespace Exhale\Image\Filter;
 
 use Exhale\Contracts\CssCustomProperty;
 
+use function Hybrid\Theme\mod;
+
 /**
  * Font family setting class.
  *
@@ -152,7 +154,7 @@ class Setting implements CssCustomProperty {
 	 * @return string
 	 */
 	public function mod() {
-		return get_theme_mod( $this->modName(), $this->amount() );
+		return mod( $this->modName(), $this->amount() );
 	}
 
 	/**
@@ -186,7 +188,7 @@ class Setting implements CssCustomProperty {
 	 */
 	public function cssValue() {
 
-		$filter_function = get_theme_mod( 'image_default_filter_function', 'grayscale' );
+		$filter_function = mod( 'image_default_filter_function', 'grayscale' );
 
 		if ( 'none' === $filter_function ) {
 			return 'none';
