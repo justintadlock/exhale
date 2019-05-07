@@ -51,13 +51,33 @@ add_action( 'wp_enqueue_scripts', function() {
 } );
 
 /**
+ * Unregisters the core block editor assets on the front end and admin.
+ *
+ * @link https://github.com/WordPress/gutenberg/issues/15007
+ * @since  1.1.0
+ * @access public
+ * @return void
+ */
+add_action( 'enqueue_block_assets', function() {
+
+	// Unregister core block and theme styles.
+	wp_deregister_style( 'wp-block-library' );
+	wp_deregister_style( 'wp-block-library-theme' );
+
+	// Re-register core block and theme styles with an empty string. This is
+	// necessary to get styles set up correctly.
+	wp_register_style( 'wp-block-library', '' );
+	wp_register_style( 'wp-block-library-theme', '' );
+} );
+
+/**
  * Enqueue scripts/styles for the editor.
  *
  * @since  1.0.0
  * @access public
  * @return void
  */
-add_action( 'enqueue_block_assets', function() {
+add_action( 'enqueue_block_editor_assets', function() {
 
 	$deps = [
 		'wp-i18n',
@@ -85,15 +105,6 @@ add_action( 'enqueue_block_assets', function() {
 	wp_enqueue_style( 'exhale-editor', asset( 'css/editor.css' ), null, null );
 
 	wp_add_inline_style( 'exhale-editor', App::resolve( CustomProperties::class )->css() );
-
-	// Unregister core block and theme styles.
-	wp_deregister_style( 'wp-block-library' );
-	wp_deregister_style( 'wp-block-library-theme' );
-
-	// Re-register core block and theme styles with an empty string. This is
-	// necessary to get styles set up correctly.
-	wp_register_style( 'wp-block-library', '' );
-	wp_register_style( 'wp-block-library-theme', '' );
 
 } );
 
