@@ -16,6 +16,18 @@
 		"resizer resizer";
 	grid-template-columns: 50% auto;
 
+	&.is-vertically-aligned-top {
+		align-items: start;
+	}
+
+	&.is-vertically-aligned-center {
+		align-items: center;
+	}
+
+	&.is-vertically-aligned-bottom {
+		align-items: end;
+	}
+
 	@media ( max-width: $content-width ) {
 		padding: 0 $spacing-global;
 	}
@@ -49,6 +61,7 @@
 	&__content {
 		word-break: break-word;
 		grid-area:  media-text-content;
+		max-width:  $content-width;
 	}
 
 	> figure > img,
@@ -57,10 +70,24 @@
 		width:          100%;
 		vertical-align: middle;
 	}
-}
 
-.has-media-on-the-right .wp-block-media-text__content {
-	padding: 0 $spacing-global 0 0;
+	&.is-image-fill figure {
+		height: 100%;
+		min-height: 250px;
+		background-size: cover;
+	}
+
+	// The image is visually hidden but accessible to assistive technologies.
+	&.is-image-fill figure > img {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		border: 0;
+	}
 }
 
 @media ( max-width: $content-width ) {
@@ -70,10 +97,6 @@
 		grid-template-areas:
 			"media-text-media"
 			"media-text-content";
-
-		.wp-block-media-text__content {
-			padding: 0;
-		}
 	}
 }
 
@@ -85,9 +108,5 @@
 		grid-template-areas:
 			"media-text-media"
 			"media-text-content";
-
-		.wp-block-media-text__content {
-			padding: 0;
-		}
 	}
 }

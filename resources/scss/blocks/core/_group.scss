@@ -1,0 +1,35 @@
+////
+/// Group block.
+///
+/// @group  Blocks
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.wp-block-group {
+
+	&::after {
+		content:    ".";
+		display:    block;
+		height:     0;
+		clear:      both;
+		visibility: hidden;
+	}
+
+	&.alignfull,
+	&.alignwide,
+	&.has-background {
+		margin-bottom: $spacing-global;
+		padding:       0 $spacing-global;
+	}
+
+	&.has-background {
+		padding-top: $spacing-global;
+	}
+
+	> *:not([class*=align]):not(.editor-inner-blocks) {
+		max-width: $content-width;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

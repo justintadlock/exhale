@@ -15,7 +15,7 @@
 namespace Exhale\Tools;
 
 use Hybrid\App;
-use Exhale\Color\CustomizeColors;
+use Exhale\Color\Setting\Settings as ColorSettings;
 
 use function Hybrid\Theme\mod;
 
@@ -50,7 +50,7 @@ class Mod {
 	 * @return mixed
 	 */
 	public static function color( $name, $default = '' ) {
-		$colors = App::resolve( CustomizeColors::class );
+		$colors = App::resolve( ColorSettings::class );
 
 		return $colors->has( $name ) ? $colors->get( $name )->mod() : $default;
 	}

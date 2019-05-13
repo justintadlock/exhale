@@ -137,7 +137,7 @@ class Color {
 	 * @return string
 	 */
 	public function hex() {
-		return maybe_hash_hex_color( $this->color );
+		return maybe_hash_hex_color( $this->color() );
 	}
 
 	/**
@@ -148,7 +148,7 @@ class Color {
 	 * @return array
 	 */
 	public function rgb() {
-		return hex_to_rgb( $this->color );
+		return hex_to_rgb( $this->color() );
 	}
 
 	/**

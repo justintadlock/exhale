@@ -81,4 +81,15 @@ p .aligncenter {
 		margin-right : -125px;
 		max-width    : 900px;
 	}
+
+	.alignfull .alignwide,
+	.alignwide .alignwide,
+	.alignwide .alignfull {
+		margin-left:  auto;
+		margin-right: auto;
+	}
+
+	.alignwide .alignfull {
+		max-width: 100%;
+	}
 }
