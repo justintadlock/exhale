@@ -17,6 +17,7 @@
 	word-wrap  : break-word;
 	word-break : normal;
 	box-sizing: border-box;
+	background: var( --color-content-background );
 
 	@include typography;
 }

@@ -89,7 +89,8 @@ class Component implements Bootable {
 	public function registerSections( WP_Customize_Manager $manager ) {
 
 		// Move the color section to our theme options panel.
-		$manager->get_section( 'colors' )->panel = 'theme_options';
+		$manager->get_section( 'colors' )->panel           = 'theme_options';
+		$manager->get_section( 'background_image' )->panel = 'theme_options';
 
 		// Add sections under the theme options panel.
 		$sections = [
@@ -159,6 +160,11 @@ class Component implements Bootable {
 
 		// Register JS control types.
 		$manager->register_control_type( Controls\ImageFilter::class );
+
+		// Change background color control labels.
+		$bg_color              = $manager->get_control( 'background_color' );
+		$bg_color->label       = __( 'Background', 'exhale' );
+		$bg_color->description = __( 'Background color used for the site.', 'exhale' );
 
 		// Register the footer controls.
 		$manager->add_control( 'powered_by', [

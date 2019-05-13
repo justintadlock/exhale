@@ -8,12 +8,15 @@
 
 .app-footer {
 	// @todo Footer with background will need top/bottom padding.
-	padding: 0 $spacing-global;
+	padding: $spacing-global $spacing-global 0;
 	overflow-y: hidden;
 
 	&__credit {
 		// components/_text-secondary.scss
-		margin-bottom: $spacing-half;
 		text-align: center;
+
+		+ .menu--social .menu__items {
+			margin-top: -#{ $spacing-half };
+		}
 	}
 }

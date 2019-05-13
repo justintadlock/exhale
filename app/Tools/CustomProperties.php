@@ -63,6 +63,16 @@ class CustomProperties extends Collection {
 			$css .= sprintf( '%s { %s }', esc_html( $selector ), $selector_css );
 		}
 
+		// Custom background support.
+		$color = current_theme_supports( 'custom-background' )
+		         ? get_background_color()
+			 : 'ffffff';
+
+		$css .= sprintf(
+			'body { --color-background: %s; }',
+			$color ? '#' . sanitize_hex_color_no_hash( $color ) : 'transparent'
+		);
+
 		return $css;
 	}
 }

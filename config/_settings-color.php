@@ -14,8 +14,8 @@
 return [
 	'content-background' => [
 		'color'       => 'ffffff',
-		'label'       => __( 'Background', 'exhale' ),
-		'description' => __( 'Background color used for the site.', 'exhale' )
+		'label'       => __( 'Content Background', 'exhale' ),
+		'description' => __( 'Background color used for content of the site.', 'exhale' )
 	],
 	'primary' => [
 		'color'       => '687d81',
