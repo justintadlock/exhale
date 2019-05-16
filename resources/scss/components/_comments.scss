@@ -10,6 +10,10 @@
 
 .comments {
 
+	max-width:    $content-width;
+	margin-left:  auto;
+	margin-right: auto;
+
 	// Header/title for the comments section.
 	&__title {}
 

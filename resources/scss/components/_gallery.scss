@@ -7,10 +7,9 @@
 ////
 
 .gallery {
-	max-width : 100%;
-	display   : block;
 	clear     : both;
-	margin    : 1.414em 0 1rem;
+	margin-top: 1.414em;
+	margin-bottom: 1rem;
 
 	&::after {
 		content    : ".";

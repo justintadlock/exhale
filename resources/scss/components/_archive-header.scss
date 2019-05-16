@@ -10,6 +10,12 @@
 	margin-bottom: 3rem;
 	text-align: center;
 
+	> * {
+		max-width:    $content-width;
+		margin-left:  auto;
+		margin-right: auto;
+	}
+
 	&__title {
 		@include heading-primary;
 		margin-bottom: 0.53125rem;
@@ -17,6 +23,6 @@
 
 	&__description {
 		// components/_text-secondary.scss
-		margin: 0;
+		margin-bottom: 0;
 	}
 }

@@ -11,13 +11,12 @@
 
 p.has-background,
 p.is-style-highlight {
-	margin:   0 -#{ $spacing-global } $spacing-global;
 	padding:  $spacing-global;
 }
 
 .wp-block-columns p.has-background,
 .wp-block-columns p.is-style-highlight {
-	margin: 0 0 $spacing-global;
+	box-sizing: border-box;
 }
 
 .is-style-highlight {

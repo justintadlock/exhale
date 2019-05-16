@@ -75,6 +75,5 @@
 // We need to have this sit alone so that it doesn't alignments.
 
 .is-style-solid-color {
-	margin:     0 -#{ $spacing-global } $spacing-global;
-	padding:    $spacing-global $spacing-global 0;
+	padding: $spacing-global $spacing-global 0;
 }

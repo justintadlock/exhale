@@ -8,7 +8,6 @@
 
 .wp-block-columns {
 	display: block;
-	margin:  0 -#{ $spacing-half };
 
 	@media ( min-width: $content-width ) {
 		display: flex;
@@ -31,12 +30,6 @@
 	&.alignfull {
 		margin-bottom: 0;
 		padding: 0 calc( #{ $spacing-global } - #{ $spacing-half } );
-	}
-
-	@media ( min-width: $width-alignwide ) {
-		&.alignwide {
-			margin: 0 calc( -125px + -#{ $spacing-half } );
-		}
 	}
 }
 

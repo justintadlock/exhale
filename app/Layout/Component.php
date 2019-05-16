@@ -108,7 +108,7 @@ class Component implements Bootable {
 	public function customizeRegister( WP_Customize_Manager $manager ) {
 
 		$manager->add_setting( 'layout', [
-			'default'           => 'wide',
+			'default'           => 'boxed',
 			'sanitize_callback' => 'sanitize_key',
 	//		'transport'         => 'postMessage'
 		] );
@@ -123,7 +123,7 @@ class Component implements Bootable {
 
 	public function bodyClass( $classes ) {
 
-		$layout = get_theme_mod( 'layout', 'wide' );
+		$layout = get_theme_mod( 'layout', 'boxed' );
 
 		$classes[] = sanitize_html_class( "layout-{$layout}" );
 

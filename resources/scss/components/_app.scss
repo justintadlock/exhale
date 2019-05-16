@@ -11,7 +11,9 @@
 .app {
 
 	.layout-boxed & {
-		max-width: 1050px;
-		margin:    3rem auto;
+		@media ( min-width: 1050px ) {
+			max-width: 1050px;
+			margin:    3rem auto;
+		}
 	}
 }
