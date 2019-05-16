@@ -9,4 +9,9 @@
 ////
 
 .app {
+
+	.layout-boxed & {
+		max-width: 1050px;
+		margin:    3rem auto;
+	}
 }
