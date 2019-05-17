@@ -24,6 +24,7 @@ use Exhale\Color\Setting\Settings       as ColorSettings;
 use Exhale\Font\Family\Families         as FontFamilies;
 use Exhale\Font\Family\Setting\Settings as FontFamilySettings;
 use Exhale\Image\Filter\Filters         as ImageFilters;
+use Exhale\Layout\Layouts;
 
 use function Exhale\asset;
 
@@ -277,7 +278,8 @@ class Component implements Bootable {
 		wp_localize_script( 'exhale-customize-preview', 'exhaleCustomizePreview', [
 			'colorSettings'      => App::resolve( ColorSettings::class      ),
 			'fontFamilySettings' => App::resolve( FontFamilySettings::class ),
-			'fontFamilyChoices'  => App::resolve( FontFamilies::class       )
+			'fontFamilyChoices'  => App::resolve( FontFamilies::class       ),
+			'layouts'            => App::resolve( Layouts::class            )
 		] );
 	}
 }

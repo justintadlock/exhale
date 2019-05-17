@@ -2,7 +2,7 @@
 /**
  * Layout.
  *
- * Creates a font layout object.
+ * Creates a layout object.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>

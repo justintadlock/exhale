@@ -16,6 +16,7 @@
 namespace Exhale;
 
 use Hybrid\Tools\ServiceProvider;
+use Exhale\Tools\Config;
 use Exhale\Tools\CustomProperties;
 
 /**
@@ -35,6 +36,15 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
+
+		// Bind a single instance of theme mod defaults.
+		$this->app->singleton( 'exhale/mods', function() {
+
+			return array_merge(
+				Config::get( '_settings-mods' ),
+				Config::get( 'settings-mods'  )
+			);
+		} );
 
 		// Bind the Laravel Mix manifest for cache-busting.
 		$this->app->singleton( 'exhale/mix', function() {

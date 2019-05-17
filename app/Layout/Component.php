@@ -1,8 +1,8 @@
 <?php
 /**
- * Layout Family Component.
+ * Layout Component.
  *
- * Manages the layout family component.
+ * Manages the layout component.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -15,9 +15,9 @@ namespace Exhale\Layout;
 
 use WP_Customize_Manager;
 
+use Hybrid\App;
 use Hybrid\Contracts\Bootable;
 use Exhale\Tools\Config;
-use Exhale\Tools\CustomProperties;
 
 /**
  * Layout component class.
@@ -63,6 +63,7 @@ class Component implements Bootable {
 		// Add customizer settings and controls.
 		add_action( 'customize_register', [ $this, 'customizeRegister'] );
 
+		// Adds a layout body class on the front end.
 		add_filter( 'body_class', [ $this, 'bodyClass' ] );
 
 		// Register default layouts.
@@ -107,10 +108,17 @@ class Component implements Bootable {
 	 */
 	public function customizeRegister( WP_Customize_Manager $manager ) {
 
+		$mods = App::resolve( 'exhale/mods' );
+
+		$manager->add_section( 'layouts', [
+			'panel' => 'theme_options',
+			'title' => __( 'Layouts', 'exhale' )
+		] );
+
 		$manager->add_setting( 'layout', [
-			'default'           => 'boxed',
+			'default'           => $mods['layout'],
 			'sanitize_callback' => 'sanitize_key',
-	//		'transport'         => 'postMessage'
+			'transport'         => 'postMessage'
 		] );
 
 		$manager->add_control( 'layout', [
@@ -121,11 +129,24 @@ class Component implements Bootable {
 		] );
 	}
 
+	/**
+	 * Filter on the body class on the front end that adds our layout class.
+	 *
+	 * @since  1.2.0
+	 * @access public
+	 * @param  array  $classes
+	 * @return array
+	 */
 	public function bodyClass( $classes ) {
 
-		$layout = get_theme_mod( 'layout', 'boxed' );
+		$mods = App::resolve( 'exhale/mods' );
 
-		$classes[] = sanitize_html_class( "layout-{$layout}" );
+		$classes[] = sanitize_html_class(
+			sprintf(
+				'layout-%s',
+				get_theme_mod( 'layout', $mods['layout'] )
+			)
+		);
 
 		return $classes;
 	}

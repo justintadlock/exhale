@@ -2,7 +2,7 @@
 /**
  * Layouts Collection.
  *
- * Houses the collection of font layouts in a single array-object.
+ * Houses the collection of layouts in a single array-object.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -16,7 +16,7 @@ namespace Exhale\Layout;
 use Exhale\Tools\Collection;
 
 /**
- * Font layouts class.
+ * Layouts class.
  *
  * @since  1.2.0
  * @access public
@@ -36,6 +36,13 @@ class Layouts extends Collection {
 		parent::add( $name, new Layout( $name, $value ) );
 	}
 
+	/**
+	 * Returns an array of the choices for the customizer control.
+	 *
+	 * @since  1.2.0
+	 * @access public
+	 * @return array
+	 */
 	public function customizeChoices() {
 
 		$choices = [];

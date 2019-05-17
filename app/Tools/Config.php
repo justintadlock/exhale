@@ -32,9 +32,11 @@ class Config {
 	 */
 	public static function get( $name ) {
 
+		$file = static::path( "{$name}.php" );
+
 		return (array) apply_filters(
 			"exhale/config/{$name}/",
-			include( static::path( "{$name}.php" ) )
+			file_exists( $file ) ? include( $file ) : []
 		);
 	}
 
