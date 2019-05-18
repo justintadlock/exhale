@@ -128,6 +128,8 @@ class Component implements Bootable {
 		$base   = Config::get( '_settings-font-family' );
 		$config = Config::get( 'settings-font-family'  );
 
+		$config = is_array( $config ) ? $config : [];
+
 		foreach ( $base as $name => $options ) {
 
 			if ( isset( $config[ $name ] ) ) {

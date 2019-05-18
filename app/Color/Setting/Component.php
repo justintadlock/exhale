@@ -110,6 +110,8 @@ class Component implements Bootable {
 		$base   = Config::get( '_settings-color' );
 		$config = Config::get( 'settings-color'  );
 
+		$config = is_array( $config ) ? $config : [];
+
 		foreach ( $base as $name => $options ) {
 
 			if ( isset( $config[ $name ] ) ) {

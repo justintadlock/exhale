@@ -15,7 +15,7 @@ return [
 	'primary' => [
 		'label'       => _x( 'Primary', 'font family setting', 'exhale' ),
 		'description' => __( 'Font used for most of the text on the site.', 'exhale' ),
-		'family'      => 'system-ui'
+		'family'      => 'georgia'
 	],
 	'secondary' => [
 		'label'       => _x( 'Secondary', 'font family setting', 'exhale' ),
