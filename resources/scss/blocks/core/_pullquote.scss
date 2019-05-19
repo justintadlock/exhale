@@ -27,6 +27,10 @@
 		margin-bottom: 0;
 	}
 
+	&.is-style-solid-color {
+		margin-bottom: $spacing-global;
+	}
+
 	// Inherits from blockquote and its pullquote <figure> wrapper.
 	&::before {
 		content: " ";
@@ -72,7 +76,7 @@
 	}
 }
 
-// We need to have this sit alone so that it doesn't alignments.
+// We need to have this sit alone so that it doesn't mess up alignments.
 
 .is-style-solid-color {
 	padding: $spacing-global $spacing-global 0;
