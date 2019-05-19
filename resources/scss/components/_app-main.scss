@@ -12,4 +12,9 @@
 .app-main {
 	margin:    0 auto 3rem;
 	box-sizing: border-box;
+
+	[class*="layout-boxed"] & {
+		margin-bottom: 0;
+	}
+
 }

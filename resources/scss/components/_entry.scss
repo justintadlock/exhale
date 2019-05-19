@@ -113,6 +113,10 @@
 	margin-top: -3rem;
 }
 
+[class*=template-entry-content-only] .entry__content > .alignfull:last-child {
+	margin-bottom: 0;
+}
+
 // Post password form.
 
 [name=post_password] {
