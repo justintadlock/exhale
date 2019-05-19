@@ -13,6 +13,7 @@
 
 namespace Exhale\Color\Setting;
 
+use Closure;
 use JsonSerializable;
 use Exhale\Contracts\CssCustomProperty;
 use function Hybrid\hex_to_rgb;
@@ -57,7 +58,7 @@ class Setting implements JsonSerializable, CssCustomProperty {
 	 *
 	 * @since  1.0.0
 	 * @access protected
-	 * @var    string
+	 * @var    string|Closure
 	 */
 	protected $color = '000000';
 
@@ -164,9 +165,13 @@ class Setting implements JsonSerializable, CssCustomProperty {
 	 */
 	public function color() {
 
+		$color = $this->color instanceof Closure
+		         ? $this->color->__invoke()
+			 : $this->color;
+
 		return apply_filters(
 			"exhale/color/setting/{$this->name}/default",
-			$this->color,
+			$color,
 			$this
 		);
 	}

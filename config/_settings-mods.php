@@ -1,5 +1,5 @@
 <?php
 
 return [
-	'layout' => 'wide'
+	'layout' => 'boxed'
 ];

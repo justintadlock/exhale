@@ -92,6 +92,39 @@ return [
 		'label'           => __( 'Header: Menu Link Hover', 'exhale' ),
 		'description'     => __( 'Color used when hovering or focusing a link.', 'exhale' )
 	],
+	'footer' => [
+		'label'           => __( 'Footer: Text', 'exhale' ),
+		'description'     => __( 'Color used for most text in the footer.', 'exhale' ),
+		'color'           => function() {
+			return \Exhale\Tools\Mod::color( 'secondary' );
+		}
+	],
+	'footer-background' => [
+		'label'           => __( 'Footer: Background', 'exhale' ),
+		'description'     => __( 'Background color for the entire footer section.', 'exhale' ),
+		'color'           => function() {
+			return \Exhale\Tools\Mod::color( 'header-background' );
+		}
+	],
+	'footer-border' => [
+		'color'           => '',
+		'label'           => __( 'Footer: Border', 'exhale' ),
+		'description'     => __( 'Color used for borders in the footer.', 'exhale' )
+	],
+	'footer-link' => [
+		'label'           => __( 'Footer: Link', 'exhale' ),
+		'description'     => __( 'Color for the links in the footer.', 'exhale' ),
+		'color'           => function() {
+			return \Exhale\Tools\Mod::color( 'secondary-link' );
+		}
+	],
+	'footer-link-hover' => [
+		'label'           => __( 'Footer: Link Hover', 'exhale' ),
+		'description'     => __( 'Color used when hovering or focusing a link.', 'exhale' ),
+		'color'           => function() {
+			return \Exhale\Tools\Mod::color( 'secondary-link-hover' );
+		}
+	],
 	'border' => [
 		'color'           => 'e1e1e1',
 		'label'           => __( 'Border', 'exhale' ),

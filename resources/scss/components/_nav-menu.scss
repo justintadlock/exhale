@@ -94,12 +94,6 @@
 		.menu__link {
 			display: inline-block;
 			margin:   0.5rem;
-			color:    var( --color-secondary-link );
-
-			&:hover,
-			&:focus {
-				color: var( --color-secondary-link-hover );
-			}
 
 			svg {
 				width: 24px;
