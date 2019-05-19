@@ -12,6 +12,8 @@
 	border:  1px solid var( --color-border );
 
 	@media only screen and ( max-width: $content-width ) {
+		margin: 0 0 $spacing-global;
+		border-width: 1px 0;
 
 		.comments__list + & {
 			border-width: 0 0 1px;
