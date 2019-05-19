@@ -196,7 +196,7 @@ class Component implements Bootable {
 	 */
 	public function customizeRegister( WP_Customize_Manager $manager ) {
 
-		// Registers the font family settings.
+		// Registers the font family settings and controls.
 		array_map( function( $setting ) use ( $manager ) {
 
 			$manager->add_setting( $setting->modName(), [
@@ -204,11 +204,6 @@ class Component implements Bootable {
 				'sanitize_callback' => 'sanitize_key',
 				'transport'         => 'postMessage'
 			] );
-
-		}, $this->settings->all() );
-
-		// Registers the font family controls.
-		array_map( function( $setting ) use ( $manager ) {
 
 			$manager->add_control( new SelectGroup( $manager, $setting->modName(), [
 				'section'     => 'fonts',

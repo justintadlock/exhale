@@ -132,7 +132,7 @@ class Component implements Bootable {
 	 */
 	public function customizeRegister( WP_Customize_Manager $manager ) {
 
-		// Registers the color settings.
+		// Registers the color settings and controls.
 		array_map( function( $setting ) use ( $manager ) {
 
 			$manager->add_setting( $setting->modName(), [
@@ -141,11 +141,6 @@ class Component implements Bootable {
 				'sanitize_js_callback' => 'maybe_hash_hex_color',
 				'transport'            => 'postMessage'
 			] );
-
-		}, $this->settings->all() );
-
-		// Registers the color controls.
-		array_map( function( $setting ) use ( $manager ) {
 
 			$manager->add_control(
 				new WP_Customize_Color_Control( $manager, $setting->modName(), [
