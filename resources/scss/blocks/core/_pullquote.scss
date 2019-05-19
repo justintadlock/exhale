@@ -14,9 +14,13 @@
 	// via the editor ("main" color).
 	border-color: var( --color-border );
 
+	&.alignfull {
+		padding-left: $spacing-global;
+		padding-right: $spacing-global;
+	}
+
 	@media only screen and ( max-width: 900px ) {
-		&.alignwide,
-		&.alignfull {
+		&.alignwide {
 			padding-left: $spacing-global;
 			padding-right: $spacing-global;
 		}
