@@ -14,6 +14,14 @@
 	margin-left:  auto;
 	margin-right: auto;
 
+	&__title,
+	&__closed {
+		@media only screen and ( max-width: $content-width ) {
+			padding-left: $spacing-global;
+			padding-right: $spacing-global;
+		}
+	}
+
 	// Header/title for the comments section.
 	&__title {}
 
