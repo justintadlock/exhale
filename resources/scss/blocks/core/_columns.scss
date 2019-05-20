@@ -14,6 +14,10 @@
 		flex-wrap: wrap;
 	}
 
+	&.alignfull {
+		margin: 0 $spacing-global;
+	}
+
 	&.alignwide,
 	&.alignfull {
 		margin-bottom: 0;
@@ -21,8 +25,7 @@
 
 	@media ( max-width: calc( #{ $width-alignwide } + #{ $spacing-2x } ) ) {
 
-		&.alignwide,
-		&.alignfull {
+		&.alignwide {
 			margin: 0 $spacing-global;
 		}
 	}
