@@ -106,13 +106,15 @@
 // Code block fixes. The code block in the editor is a `<textarea>`.
 .wp-block-code {
 	@include code-block;
-	width: calc( 100% + #{ $spacing-2x } );
 	color: var( --color-primary );
+	margin-left: -#{ $spacing-global };
+	margin-right: -#{ $spacing-global };
 }
 
 .wp-block-code .editor-plain-text,
 .wp-block-code .editor-plain-text:focus {
-	font-size: inherit;
+	font-size: 15px;
+	font-family: font-family( code );
 	background: inherit;
 	color: inherit;
 }
