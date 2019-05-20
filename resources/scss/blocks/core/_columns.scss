@@ -7,47 +7,53 @@
 ////
 
 .wp-block-columns {
-	display: block;
+	display: flex;
+	flex-wrap: nowrap;
 
-	@media ( min-width: $content-width ) {
-		display: flex;
+	@media ( max-width: $content-width ) {
 		flex-wrap: wrap;
-	}
-
-	&.are-vertically-aligned-top {
-		align-items: flex-start;
-	}
-
-	&.are-vertically-aligned-center {
-		align-items: center;
-	}
-
-	&.are-vertically-aligned-bottom {
-		align-items: flex-end;
 	}
 
 	&.alignwide,
 	&.alignfull {
 		margin-bottom: 0;
-		padding: 0 calc( #{ $spacing-global } - #{ $spacing-half } );
+	}
+
+	@media ( max-width: calc( #{ $width-alignwide } + #{ $spacing-2x } ) ) {
+
+		&.alignwide,
+		&.alignfull {
+			margin: 0 $spacing-global;
+		}
 	}
 }
 
-// Individual columns.
 .wp-block-column {
-	flex: 1;
-	margin: 0 $spacing-half $spacing-global;
+	margin-bottom: $spacing-global;
+	flex-grow: 1;
 
-	&.is-vertically-aligned-top {
-		align-self: flex-start;
+	@media ( max-width: $content-width ) {
+		// Responsiveness: Show at most one columns on mobile. This must be
+		// important since the Column assigns its own width as an inline style.
+		flex-basis: 100% !important;
 	}
 
-	&.is-vertically-aligned-center {
-		align-self: center;
-	}
+	// Prevent the columns from growing wider than their distributed sizes.
+	min-width: 0;
 
-	&.is-vertically-aligned-bottom {
-		align-self: flex-end;
+	// Prevent long unbroken words from overflowing.
+	word-break: break-word; // For back-compat.
+	overflow-wrap: break-word; // New standard.
+
+	@media ( min-width: $content-width ) {
+
+		flex-basis: calc(50% - #{$spacing-global});
+		flex-grow: 0;
+
+		// When columns are in a single row, add space before all except the first.
+		&:not(:first-child) {
+			margin-left: $spacing-global;
+		}
 	}
 
 	// We're giving a bottom margin to the entire column, so we want to
@@ -61,18 +67,36 @@
 	}
 }
 
-// Editor specific styling. Make sure columns span correctly.
-.editor-inner-blocks {
-	flex: 1;
+/**
+ * All Columns Alignment
+ */
+.wp-block-columns {
+	&.are-vertically-aligned-top {
+		align-items: flex-start;
+	}
+
+	&.are-vertically-aligned-center {
+		align-items: center;
+	}
+
+	&.are-vertically-aligned-bottom {
+		align-items: flex-end;
+	}
 }
 
-// 3-8 columns on larger screens.
-@media ( min-width: $content-width ) {
+/**
+ * Individual Column Alignment
+ */
+.wp-block-column {
+	&.is-vertically-aligned-top {
+		align-self: flex-start;
+	}
 
-	@for $i from 3 through 8 {
+	&.is-vertically-aligned-center {
+		align-self: center;
+	}
 
-		.has-#{ $i }-columns .wp-block-column {
-			width: calc( 100% / #{ $i } - #{ $spacing-global } );
-		}
+	&.is-vertically-aligned-bottom {
+		align-self: flex-end;
 	}
 }
