@@ -6,35 +6,30 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-.entry__content .wp-block-gallery:not(.alignwide):not(.alignfull) {
-	@media ( min-width: calc( #{ $content-width } + 64px ) ) {
-		max-width: calc( #{ $content-width } + #{ $spacing-half } );
-		margin: 0 auto $spacing-global;
-	}
-}
-
 // The wrapper element for the entire gallery.
 .wp-block-gallery {
 	display:         flex;
 	flex-wrap:       wrap;
 	list-style-type: none;
 	padding:         0;
-	margin:          0 0 $spacing-global;
+	margin-bottom:   $spacing-half;
 
-	padding: 0 calc( #{ $spacing-global } - #{ $spacing-fourth } );
+	&.alignfull,
+	&.alignwide {
+		margin-bottom: $spacing-half;
+	}
 
-	@media ( min-width: $width-alignwide ) {
-		&.alignwide,
-		&.alignfull {
-			padding: 0 calc( #{ $spacing-global } - #{ $spacing-half } - #{ $spacing-fourth } );
+	&.alignfull {
+		padding: 0 $spacing-half;
+	}
+
+	@media ( max-width: calc( #{ $width-alignwide } + #{ $spacing-global } ) ) {
+
+		&.alignfull,
+		&.alignwide {
+			padding: 0 calc( #{ $spacing-global } );
 		}
 	}
-}
-
-// Added this nested selector to fix the craptastic CSS that's being spit out in
-// Gutenberg 5.3.0 and mucking with margins.
-.wp-block-gallery[class*=columns] .blocks-gallery-item {
-	margin: $spacing-fourth;
 }
 
 // The wrapper for individual gallery images/figures.
@@ -44,6 +39,7 @@
 	flex-direction:  column;
 	justify-content: center;
 	position:        relative;
+	margin:          0 $spacing-half $spacing-half 0;
 
 	// Image figure.
 	figure {
@@ -111,11 +107,16 @@
 // Fallback to 2 columns.
 .blocks-gallery-item {
 	width: calc( 100% / 2 - #{ $spacing-half } );
+
+	&:nth-of-type( even ) {
+		margin-right: 0;
+	}
 }
 
 // 1 column.
 .columns-1 .blocks-gallery-item {
-	width: calc( 100% / 1 - #{ $spacing-half } );
+	width:        100%;
+	margin-right: 0;
 }
 
 // 3-8 columns on larger screens.
@@ -125,6 +126,19 @@
 
 		.columns-#{ $i } .blocks-gallery-item {
 			width: calc( 100% / #{ $i } - #{ $spacing-half } );
+			margin-right: $spacing-half;
 		}
 	}
+
+	// Reset margin for last child on each row.
+	@for $i from 1 through 8 {
+		.columns-#{ $i } .blocks-gallery-item:nth-of-type( #{ $i }n ) {
+			margin-right: 0;
+		}
+	}
+}
+
+// Always reset margin on last child.
+.blocks-gallery-item:last-child {
+	margin-right: 0;
 }

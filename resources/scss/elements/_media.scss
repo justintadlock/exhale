@@ -32,7 +32,7 @@ a img {
 // Remove the padding on full-width images, which doesn't look right on the
 // edges of the screen.
 
-.alignfull a img,
+.wp-block-image.alignfull a img,
 a img.alignfull {
 	padding: 0;
 }
