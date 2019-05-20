@@ -130,6 +130,16 @@
 	display: table;
 }
 
+// Bump out width via negative margins for paragraph block.
+
+.wp-block-paragraph {
+	&.is-style-highlight,
+	&.has-background {
+		margin-left: -#{ $spacing-global };
+		margin-right: -#{ $spacing-global };
+	}
+}
+
 // Class is used in the editor but not the front end.
 // Copied from `/elements/_quotes.scsss` and `/blocks/core/_pullquote.scss`.
 
