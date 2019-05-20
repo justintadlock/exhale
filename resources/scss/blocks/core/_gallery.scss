@@ -6,23 +6,27 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+.entry__content .wp-block-gallery:not(.alignwide):not(.alignfull) {
+	@media ( min-width: calc( #{ $content-width } + 64px ) ) {
+		max-width: calc( #{ $content-width } + #{ $spacing-half } );
+		margin: 0 auto $spacing-global;
+	}
+}
+
 // The wrapper element for the entire gallery.
 .wp-block-gallery {
 	display:         flex;
 	flex-wrap:       wrap;
 	list-style-type: none;
 	padding:         0;
-	margin:          0 -#{ $spacing-fourth } $spacing-global -#{ $spacing-fourth };
+	margin:          0 0 $spacing-global;
 
-	&.alignwide,
-	&.alignfull {
-		padding: 0 calc( #{ $spacing-global } - #{ $spacing-fourth } );
-	}
+	padding: 0 calc( #{ $spacing-global } - #{ $spacing-fourth } );
 
 	@media ( min-width: $width-alignwide ) {
 		&.alignwide,
 		&.alignfull {
-			padding: 0 calc( #{ $spacing-global } - #{ $spacing-half } );
+			padding: 0 calc( #{ $spacing-global } - #{ $spacing-half } - #{ $spacing-fourth } );
 		}
 	}
 }
