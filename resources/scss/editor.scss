@@ -149,6 +149,14 @@
 .wp-block-pullquote {
 	border-width: 0;
 	padding: 0;
+	margin-left: 0;
+	margin-right: 0;
+
+	// Gutenberg 5.7.
+	blockquote > .block-editor-rich-text p {
+		font-size: inherit;
+		line-height: inherit;
+	}
 
 	&.is-style-solid-color blockquote {
 		max-width: 100%;
