@@ -142,6 +142,20 @@
 	}
 }
 
+// Bump out width via negative margins for heading block.
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	&.has-background {
+		margin-left: -#{ $spacing-global };
+		margin-right: -#{ $spacing-global };
+	}
+}
+
 // Class is used in the editor but not the front end.
 // Copied from `/elements/_quotes.scsss` and `/blocks/core/_pullquote.scss`.
 
