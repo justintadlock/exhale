@@ -12,6 +12,10 @@
 		display: block;
 	}
 
+	&.alignfull img {
+		border-radius: 0;
+	}
+
 	&.alignfull img,
 	&.alignwide img {
 		margin-left:  auto;

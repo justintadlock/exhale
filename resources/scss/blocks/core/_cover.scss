@@ -23,6 +23,10 @@
 	border-radius: 3px;
 	box-sizing: border-box;
 
+	&.alignfull {
+		border-radius: 0;
+	}
+
 	// Parallax images should have a fixed background so that the image
 	// stays in place while everything else scrolls.
 	&.has-parallax {
