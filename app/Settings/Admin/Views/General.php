@@ -222,7 +222,7 @@ class General extends View {
 		$wordpress     = $GLOBALS['wp_version'];
 		$gutenberg     = defined( 'GUTENBERG_VERSION' ) ? GUTENBERG_VERSION : 0;
 		$wordpress_req = '5.2';
-		$gutenberg_req = '5.3';
+		$gutenberg_req = '5.6';
 
 		if ( version_compare( $wordpress, $wordpress_req, '<' ) && version_compare( $gutenberg, $gutenberg_req, '<' ) ) {
 
