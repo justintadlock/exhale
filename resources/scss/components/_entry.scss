@@ -78,7 +78,7 @@
 	}
 
 	&__footer {
-		margin-top: $spacing-half;
+		margin-top: $spacing-global;
 		margin-bottom: $spacing-global;
 	}
 
@@ -104,6 +104,13 @@
 	&__byline {
 		margin-bottom: 0;
 	}
+}
+
+// Remove the bottom margin from any full-aligned element if it's the last
+// element in the content.
+
+.entry__content > .alignfull:last-child {
+	margin-bottom: 0;
 }
 
 // Push any full-width items if they are the first child to the top of the page.
