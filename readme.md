@@ -12,7 +12,7 @@ There's a few requirements in order to develop a new theme or contribute back to
 
 * PHP 5.6+ (preferably 7+).
 * WordPress 5.0.
-* Gutenberg 5.3+ or WordPress 5.2+ for Gutenberg block styles.
+* Gutenberg 5.6+ or WordPress 5.2+ for Gutenberg block styles.
 
 ## Resources
 
@@ -26,10 +26,10 @@ The theme bundles the following resources.
 
 The theme uses the following third-party images within the screenshot, which are all under the [CC0 License](https://creativecommons.org/publicdomain/zero/1.0/) (Public Domain).
 
-- https://www.pexels.com/photo/architecture-buildings-business-city-358502/
-- https://www.pexels.com/photo/adventure-backlit-dawn-dusk-207896/
-- https://www.pexels.com/photo/yellow-blue-and-red-plastic-gameboard-toy-209712/
-- https://www.pexels.com/photo/people-notes-meeting-team-7095/
+- https://www.pexels.com/photo/daylight-environment-forest-idyllic-459225/
+- https://www.pexels.com/photo/sky-space-dark-galaxy-2150/
+- https://www.pexels.com/photo/background-beautiful-blossom-calm-waters-268533/
+- https://www.pexels.com/photo/background-blur-bokeh-bright-220067/
 
 ## Copyright and License
 
