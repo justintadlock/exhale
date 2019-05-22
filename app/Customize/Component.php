@@ -89,25 +89,37 @@ class Component implements Bootable {
 	 */
 	public function registerSections( WP_Customize_Manager $manager ) {
 
-		// Move the color section to our theme options panel.
-		$manager->get_section( 'colors' )->panel           = 'theme_options';
-		$manager->get_section( 'background_image' )->panel = 'theme_options';
+		$colors   = $manager->get_section( 'colors' );
+		$bg_image = $manager->get_section( 'background_image' );
 
-		// Add sections under the theme options panel.
-		$sections = [
-			'fonts'  => __( 'Fonts',  'exhale' ),
-			'media'  => __( 'Media',  'exhale' ),
-			'footer' => __( 'Footer', 'exhale' )
-		];
+		// Add the fonts section.
+		$manager->add_section( 'fonts', [
+			'panel'    => 'theme_options',
+			'title'    => __( 'Fonts',  'exhale' ),
+			'priority' => 10
+		] );
 
-		array_map( function( $name, $title ) use ( $manager ) {
+		// Move the color section and set its priority.
+		$colors->panel    = 'theme_options';
+		$colors->priority = 20;
 
-			$manager->add_section( $name, [
-				'panel' => 'theme_options',
-				'title' => $title
-			] );
+		// Move the background image section and set its priority.
+		$bg_image->panel    = 'theme_options';
+		$bg_image->priority = 25;
 
-		}, array_keys( $sections ), $sections );
+		// Add the media section.
+		$manager->add_section( 'media', [
+			'panel'    => 'theme_options',
+			'title'    => __( 'Media',  'exhale' ),
+			'priority' => 30
+		] );
+
+		// Add the footer section.
+		$manager->add_section( 'footer', [
+			'panel'    => 'theme_options',
+			'title'    => __( 'Footer',  'exhale' ),
+			'priority' => 40
+		] );
 	}
 
 	/**

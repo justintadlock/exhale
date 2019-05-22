@@ -110,9 +110,10 @@ class Component implements Bootable {
 
 		$mods = App::resolve( 'exhale/mods' );
 
-		$manager->add_section( 'layouts', [
-			'panel' => 'theme_options',
-			'title' => __( 'Layouts', 'exhale' )
+		$manager->add_section( 'layout', [
+			'panel'    => 'theme_options',
+			'title'    => __( 'Layout', 'exhale' ),
+			'priority' => 5
 		] );
 
 		$manager->add_setting( 'layout', [
@@ -122,10 +123,11 @@ class Component implements Bootable {
 		] );
 
 		$manager->add_control( 'layout', [
-			'section' => 'layouts',
-			'type'    => 'select',
-			'label'   => __( 'Layout', 'exhale' ),
-			'choices' => $this->layouts->customizeChoices()
+			'section'     => 'layout',
+			'type'        => 'select',
+			'label'       => __( 'Global Layout', 'exhale' ),
+			'description' => __( 'Select the layout used across the site.', 'exhale' ),
+			'choices'     => $this->layouts->customizeChoices()
 		] );
 	}
 
