@@ -36,7 +36,6 @@ let folders = [
 	'app',
 	'config',
 	'public',
-	'resources/lang',
 //	'resources/js',      // Required for WordPress.org theme review.
 //	'resources/scss',    // Required for WordPress.org theme review.
 	'vendor'

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exhale 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/exhale\n"
-"POT-Creation-Date: 2019-05-07 18:23:47+00:00\n"
-"PO-Revision-Date: 2019-05-07 13:24-0500\n"
+"POT-Creation-Date: 2019-05-22 19:05:21+00:00\n"
+"PO-Revision-Date: 2019-05-22 14:08-0500\n"
 "Last-Translator: Justin Tadlock <justintadlock@gmailc.om>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -15,32 +15,40 @@ msgstr ""
 "X-Generator: Poedit 2.2.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: app/Customize/Component.php:76
+#: app/Customize/Component.php:77
 msgid "Theme Options"
 msgstr ""
 
-#: app/Customize/Component.php:96
+#: app/Customize/Component.php:98
 msgid "Fonts"
 msgstr ""
 
-#: app/Customize/Component.php:97
+#: app/Customize/Component.php:113
 msgid "Media"
 msgstr ""
 
-#: app/Customize/Component.php:98
+#: app/Customize/Component.php:120
 msgid "Footer"
 msgstr ""
 
 #. Translators: %s is the theme link.
-#: app/Customize/Component.php:141
+#: app/Customize/Component.php:155
 msgid "Powered by %s."
 msgstr ""
 
-#: app/Customize/Component.php:167
+#: app/Customize/Component.php:179
+msgid "Background"
+msgstr ""
+
+#: app/Customize/Component.php:180
+msgid "Background color used for the site."
+msgstr ""
+
+#: app/Customize/Component.php:186
 msgid "Show random \"powered by\" credit text."
 msgstr ""
 
-#: app/Customize/Component.php:174
+#: app/Customize/Component.php:193
 msgid "Custom Footer Text"
 msgstr ""
 
@@ -77,18 +85,18 @@ msgstr ""
 msgid "CSS filter function to apply to images."
 msgstr ""
 
-#: app/Image/Size/Component.php:156
+#: app/Image/Size/Component.php:159
 msgid "Featured Image Size"
 msgstr ""
 
 #. Translators: %s is a plugin link.
-#: app/Image/Size/Component.php:159
+#: app/Image/Size/Component.php:162
 msgid ""
 "For images to be sized correctly, regenerate them using a plugin such as %s "
 "if you have switched from a previous theme."
 msgstr ""
 
-#: app/Image/Size/Component.php:160
+#: app/Image/Size/Component.php:163
 msgid "Regnerate Thumbnails"
 msgstr ""
 
@@ -98,7 +106,19 @@ msgstr ""
 msgid "%1$s - %2$s&times;%3$s"
 msgstr ""
 
-#: app/Settings/Admin/OptionsPage.php:195
+#: app/Layout/Component.php:115
+msgid "Layout"
+msgstr ""
+
+#: app/Layout/Component.php:128
+msgid "Global Layout"
+msgstr ""
+
+#: app/Layout/Component.php:129
+msgid "Select the layout used across the site."
+msgstr ""
+
+#: app/Settings/Admin/OptionsPage.php:198 app/ThemeManager/Theme.php:270
 msgid "Customize"
 msgstr ""
 
@@ -239,6 +259,10 @@ msgstr ""
 msgid "Update Settings"
 msgstr ""
 
+#: app/Settings/Admin/Views/Themes.php:55
+msgid "Themes"
+msgstr ""
+
 #: app/Settings/Provider.php:45
 msgid "Exhale Settings"
 msgstr ""
@@ -252,6 +276,26 @@ msgstr ""
 msgid ""
 "It looks like you stumbled upon a page that does not exist. Perhaps rolling "
 "the dice with a search might help."
+msgstr ""
+
+#: app/ThemeManager/Theme.php:234
+msgid "Active:"
+msgstr ""
+
+#: app/ThemeManager/Theme.php:279
+msgid "Activate %s"
+msgstr ""
+
+#: app/ThemeManager/Theme.php:280
+msgid "Activate"
+msgstr ""
+
+#: app/ThemeManager/Theme.php:289
+msgid "Live Preview"
+msgstr ""
+
+#: app/ThemeManager/Theme.php:298
+msgid "Download"
 msgstr ""
 
 #: app/Tools/PoweredBy.php:35
@@ -343,11 +387,11 @@ msgstr ""
 msgid "Continue reading&nbsp;%s&nbsp;&rarr;"
 msgstr ""
 
-#: app/functions-setup.php:113
+#: app/functions-setup.php:134
 msgid "Landing"
 msgstr ""
 
-#: app/functions-setup.php:120
+#: app/functions-setup.php:141
 msgid "No Post Header/Footer"
 msgstr ""
 
@@ -648,11 +692,11 @@ msgid "Pink: Lightest"
 msgstr ""
 
 #: config/_settings-color.php:17
-msgid "Background"
+msgid "Content Background"
 msgstr ""
 
 #: config/_settings-color.php:18
-msgid "Background color used for the site."
+msgid "Background color used for content of the site."
 msgstr ""
 
 #: config/_settings-color.php:22
@@ -677,6 +721,7 @@ msgstr ""
 
 #: config/_settings-color.php:33 config/_settings-color.php:48
 #: config/_settings-color.php:78 config/_settings-color.php:93
+#: config/_settings-color.php:123
 msgid "Color used when hovering or focusing a link."
 msgstr ""
 
@@ -764,11 +809,47 @@ msgstr ""
 msgid "Header: Menu Link Hover"
 msgstr ""
 
+#: config/_settings-color.php:96
+msgid "Footer: Text"
+msgstr ""
+
 #: config/_settings-color.php:97
+msgid "Color used for most text in the footer."
+msgstr ""
+
+#: config/_settings-color.php:103
+msgid "Footer: Background"
+msgstr ""
+
+#: config/_settings-color.php:104
+msgid "Background color for the entire footer section."
+msgstr ""
+
+#: config/_settings-color.php:111
+msgid "Footer: Border"
+msgstr ""
+
+#: config/_settings-color.php:112
+msgid "Color used for borders in the footer."
+msgstr ""
+
+#: config/_settings-color.php:115
+msgid "Footer: Link"
+msgstr ""
+
+#: config/_settings-color.php:116
+msgid "Color for the links in the footer."
+msgstr ""
+
+#: config/_settings-color.php:122
+msgid "Footer: Link Hover"
+msgstr ""
+
+#: config/_settings-color.php:130
 msgid "Border"
 msgstr ""
 
-#: config/_settings-color.php:98
+#: config/_settings-color.php:131
 msgid "Color used for borders in general."
 msgstr ""
 
@@ -1526,6 +1607,18 @@ msgstr ""
 msgid "Landscape: Huge"
 msgstr ""
 
+#: config/layouts.php:5
+msgid "Wide"
+msgstr ""
+
+#: config/layouts.php:8
+msgid "Boxed"
+msgstr ""
+
+#: config/layouts.php:11
+msgid "Boxed Content"
+msgstr ""
+
 #. Translators: %s is the parent comment link.
 #: public/views/comment/default.php:6
 msgid "In reply to %s"
@@ -1749,12 +1842,12 @@ msgstr ""
 msgid "https://themehybrid.com"
 msgstr ""
 
-#: app/functions-setup.php:85
+#: app/functions-setup.php:106
 msgctxt "nav menu location"
 msgid "Primary"
 msgstr ""
 
-#: app/functions-setup.php:86
+#: app/functions-setup.php:107
 msgctxt "nav menu location"
 msgid "Social"
 msgstr ""

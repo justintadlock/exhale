@@ -16,15 +16,14 @@
 		visibility: hidden;
 	}
 
-	&.alignfull,
-	&.alignwide,
 	&.has-background {
 		margin-bottom: $spacing-global;
-		padding:       0 $spacing-global;
+		padding:       $spacing-global $spacing-global 0;
 	}
 
-	&.has-background {
-		padding-top: $spacing-global;
+	&.alignfull.has-background > .alignfull:not(.has-background) {
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 	> *:not([class*=align]):not(.editor-inner-blocks) {
