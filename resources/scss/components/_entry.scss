@@ -26,6 +26,10 @@
 		text-align: center;
 	}
 
+	&__image {
+		padding: 0;
+	}
+
 	&__image.aligncenter {
 		display: inline-block;
 		margin-bottom: -0.75rem;
