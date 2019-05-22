@@ -22,8 +22,5 @@ return [
 	// Falls back to the `content-backgound` color for pre-1.2.0 compat.
 	'default-color'          => is_child_theme()
 	                            ? \Exhale\Tools\Mod::color( 'content-background', 'ffffff' )
-				    : 'f3f3f3',
-	'wp-head-callback'       => '_custom_background_cb',
-	'admin-head-callback'    => '',
-	'admin-preview-callback' => ''
+				    : 'f3f3f3'
 ];
