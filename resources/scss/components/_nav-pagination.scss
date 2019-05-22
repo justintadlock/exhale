@@ -9,7 +9,7 @@
 .pagination {
 	clear       : both;
 	overflow    : hidden;
-	margin      : 0 0 $spacing-global;
+	margin      : $spacing-global 0;
 	text-align  : center;
 	font-family : font-family( secondary );
 	font-size   : 15px;
