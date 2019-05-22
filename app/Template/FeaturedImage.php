@@ -55,7 +55,7 @@ class FeaturedImage extends Image {
 			$args['link'] = true;
 		}
 
-		$args['size']    = Mod::get( 'featured_image_size', 'exhale-landscape-large' );
+		$args['size']    = Mod::get( 'featured_image_size' );
 		$args['class']   = 'entry__image aligncenter';
 		$args['post_id'] = $post_id;
 		$args['before']  = sprintf( '<figure class="entry__media alignfull"%s>', $context );

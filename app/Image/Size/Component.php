@@ -15,6 +15,7 @@ namespace Exhale\Image\Size;
 
 use WP_Customize_Manager;
 
+use Hybrid\App;
 use Hybrid\Contracts\Bootable;
 use Exhale\Tools\Config;
 use Exhale\Template\FeaturedImage;
@@ -140,9 +141,11 @@ class Component implements Bootable {
 	 */
 	public function customizeRegister( WP_Customize_Manager $manager ) {
 
+		$mods = App::resolve( 'exhale/mods' );
+
 		// Featured image size setting.
 		$manager->add_setting( 'featured_image_size', [
-			'default'           => 'exhale-landscape-large',
+			'default'           => $mods['featured_image_size'],
 			'sanitize_callback' => 'sanitize_key',
 			'transport'         => 'postMessage'
 		] );

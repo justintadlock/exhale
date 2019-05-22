@@ -37,7 +37,13 @@ class Mod {
 	 * @return mixed
 	 */
 	public static function get( $name, $default = '' ) {
-		return mod( $name, $default );
+
+		$mods = App::resolve( 'exhale/mods' );
+
+		return mod(
+			$name,
+			! $default && isset( $mods[ $name ] ) ? $mods[ $name ] : $default
+		);
 	}
 
 	/**
