@@ -138,6 +138,7 @@ class OptionsPage implements Bootable {
 	public function init() {
 
 		$this->views->add( 'general', Views\General::class );
+		$this->views->add( 'themes',  Views\Themes::class  );
 
 		$this->registerViews();
 	}
@@ -173,7 +174,9 @@ class OptionsPage implements Bootable {
 
 		<style type="text/css">
 			<?php printf(
-				'.appearance_page_%s .wp-filter { margin-bottom: 15px; }',
+				'.appearance_page_%1$s .wp-filter { margin-bottom: 15px; }
+				 .appearance_page_%1$s .theme-browser .theme:hover,
+				 .appearance_page_%1$s .theme-browser .theme:focus { cursor: auto; }',
 				esc_html( $this->name )
 			) ?>
 		</style>

@@ -1,0 +1,8 @@
+{
+	"exhale" : {},
+	"exhale-unravel" : {
+		"label"        : "Exhale - Unravel",
+		"screenshot"   : "%s/public/img/themes/exhale-unravel.png",
+		"download_url" : "https://themehybrid.com/account"
+	}
+}
