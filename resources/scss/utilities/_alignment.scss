@@ -26,6 +26,13 @@
 	max-width: 50%;
 }
 
+@media( min-width: $content-width ) {
+	.entry__content > .alignleft:not(.is-resized),
+	.entry__content > .alignright:not(.is-resized) {
+		max-width: calc( #{ $content-width } / 2 );
+	}
+}
+
 @media( max-width: break( 'mobile' ) ) {
 	.alignleft:not(.is-small),
 	.alignright:not(.is-small ) {
