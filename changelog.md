@@ -1,5 +1,44 @@
 # Change Log
 
+## [1.2.0] - 2019-05-23
+
+### Fixed
+
+- Running `array_map()` over customizer settings and controls when it can be done once.
+- Fixed bottom margin for the Pullquote block when it has a solid background.
+- Correct font CSS for item author in RSS block.
+- Corrected the vertical alignments not working in the editor for the Columns block.
+- Fixed Pullquote font size, line height, and margins in editor.
+- Removed rounded corners from wide-aligned Image and Cover blocks so that the edges are flush with the container.
+
+### Added
+
+- Core `custom-background` support.
+- Layouts features that allows the selection between the following layouts:
+	- Wide (default)
+	- Boxed
+	- Boxed Content
+- New color options:
+	- Footer: Text
+	- Footer: Background
+	- Footer: Border
+	- Footer: Link
+	- Footer: Link Hover
+- Support for background and text colors with the Heading block.
+- Early version of theme manager via Appearance > Exhale Settings > Themes, which will primarily be used for showcasing new child themes.
+- Added `block-styles` and `wide-blocks` to the theme tags list.
+
+### Changed
+
+- Gutenberg 5.6+ is now required.
+- Overhaul of the CSS block system. Primarily, this made the `.entry__content` container a full-width block container.  This is so that we can avoid a lot of negative margin hacks and better prep blocks to work within any block container in the future with little addition of code.
+- New screenshot.
+- Reordered the customizer sections under Theme Options to better control them.
+
+### Removed
+
+- Took out `config/settings-font-family.php`, which falls back to `config/_settings-font-family.php`.
+
 ## [1.1.0] - 2019-05-07
 
 ### Fixed
