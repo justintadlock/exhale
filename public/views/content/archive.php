@@ -6,18 +6,20 @@
 
 		<?php if ( have_posts() ) : ?>
 
-			<ul class="entry-list">
+			<div class="entry-list">
+				<ul class="entry-list__items">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php Hybrid\Post\display_title( [
-					'tag'   => 'li',
-					'class' => 'entry-list__title'
-				] ) ?>
+					<?php Hybrid\Post\display_title( [
+						'tag'   => 'li',
+						'class' => 'entry-list__item'
+					] ) ?>
 
-			<?php endwhile ?>
+				<?php endwhile ?>
 
-			</ul>
+				</ul>
+			</div>
 
 			<?php Hybrid\View\display( 'nav/pagination', 'posts' ) ?>
 
