@@ -24,15 +24,17 @@
 
 	let menu = document.querySelector( '.menu--primary' );
 
-	if ( menu.scrollWidth > menu.clientWidth ) {
-		menu.classList.add( 'menu--scroll' );
-	}
+	if ( null !== menu ) {
+		if ( menu.scrollWidth > menu.clientWidth ) {
+			menu.classList.add( 'menu--scroll' );
+		}
 
-	window.onresize = function() {
-		menu.scrollWidth > menu.clientWidth
-		    ? menu.classList.add( 'menu--scroll' )
-		    : menu.classList.remove( 'menu--scroll' );
-	};
+		window.onresize = function() {
+			menu.scrollWidth > menu.clientWidth
+			    ? menu.classList.add( 'menu--scroll' )
+			    : menu.classList.remove( 'menu--scroll' );
+		};
+	}
 
 	let blockquoteCite = document.querySelectorAll( 'blockquote > p > cite' );
 
