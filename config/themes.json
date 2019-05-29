@@ -1,5 +1,10 @@
 {
 	"exhale" : {},
+	"exhale-manuscript" : {
+		"label"        : "Exhale - Manuscript",
+		"screenshot"   : "%s/public/img/themes/exhale-manuscript.png",
+		"download_url" : "https://themehybrid.com/account"
+	},
 	"exhale-unravel" : {
 		"label"        : "Exhale - Unravel",
 		"screenshot"   : "%s/public/img/themes/exhale-unravel.png",
