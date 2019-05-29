@@ -77,11 +77,16 @@
 	color:     var( --color-white );
 	z-index:   1;
 
-	h1, h2, h3, h4, h5, h6 {
+	h1:not([class*="-color"]),
+	h2:not([class*="-color"]),
+	h3:not([class*="-color"]),
+	h4:not([class*="-color"]),
+	h5:not([class*="-color"]),
+	h6:not([class*="-color"]) {
 		color:       inherit;
-		text-shadow: 1px 1px 2px rgba( 0, 0, 0, 0.5 );
 	}
-	p {
+
+	p, h1, h2, h3, h4, h5, h6 {
 		text-shadow: 1px 1px 2px rgba( 0, 0, 0, 0.5 );
 	}
 }
