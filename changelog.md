@@ -1,5 +1,30 @@
 # Change Log
 
+## [1.2.1] - 2019-05-30
+
+### Fixed
+
+- JavaScript error when no menu is assigned to the `primary` location.
+- Corrected the missing left/right margins for archive headers and entry lists on mobile.
+- Fixed Heading block custom text color being overwritten.
+- Paragraph blocks with backgrounds should extend to the edge of the screen on mobile.
+- Corrected the post title width to `900px` in the block editor.
+- Pagination anchor color should be content background color on hover.  This is how it was originally, at least until we added support for a body background.
+
+### Added
+
+- Gutenberg 5.8 compatibility.
+- Added the [Manuscript](https://themehybrid.com/themes/manuscript) child theme to the Exhale Settings > Themes view.
+
+### Changed
+
+- Moved media display to within the `.entry__content` container on attachment pages.
+- Added a consistent `<figure>` wrapper around the media display on attachment pages.
+- Added a wrapper `<div>` around entry lists on archive pages.  Structure is now:
+	- `<div class="entry-list">`
+	- `<ul class="entry-list__items">`
+	- `<li class="entry-list__item">`
+
 ## [1.2.0] - 2019-05-23
 
 ### Fixed
