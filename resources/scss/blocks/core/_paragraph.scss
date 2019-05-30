@@ -14,6 +14,15 @@ p.is-style-highlight {
 	padding:  $spacing-global;
 }
 
+@media ( max-width: calc( #{ $content-width } + 64px ) ) {
+
+	.entry__content > p.has-background,
+	.entry__content > p.is-style-highlight {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
 .wp-block-columns p.has-background,
 .wp-block-columns p.is-style-highlight {
 	box-sizing: border-box;
