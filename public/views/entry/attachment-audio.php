@@ -4,9 +4,10 @@
 		<?php Hybrid\Post\display_title() ?>
 	</header>
 
-	<?php Hybrid\Media\display( [ 'type' => 'audio' ] ) ?>
-
 	<div class="entry__content">
+		<figure class="aligncenter">
+			<?php Hybrid\Media\display( [ 'type' => 'audio' ] ) ?>
+		</figure>
 		<?php the_content() ?>
 		<?php Hybrid\View\display( 'nav/pagination', 'post' ) ?>
 	</div>

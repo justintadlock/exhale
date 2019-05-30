@@ -4,11 +4,10 @@
 		<?php Hybrid\Post\display_title() ?>
 	</header>
 
-	<figure class="alignfull">
-		<?php echo wp_get_attachment_image( get_the_ID(), 'exhale-landscape-huge', false, [ 'class' => 'aligncenter' ] ) ?>
-	</figure>
-
 	<div class="entry__content">
+		<figure class="wp-block-image alignfull">
+			<?php echo wp_get_attachment_image( get_the_ID(), 'exhale-landscape-huge', false, [ 'class' => 'aligncenter' ] ) ?>
+		</figure>
 		<?php the_content() ?>
 		<?php Hybrid\View\display( 'nav/pagination', 'post' ) ?>
 	</div>
