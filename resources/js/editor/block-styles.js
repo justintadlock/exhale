@@ -30,6 +30,19 @@ wp.domReady( () => {
 		label : labels.borderless
 	} );
 
+	// Media & Text styles.
+
+	wp.blocks.registerBlockStyle( 'core/media-text', {
+		name      : 'default',
+		label     : labels.default,
+		isDefault : true
+	} );
+
+	wp.blocks.registerBlockStyle( 'core/media-text', {
+		name  : 'borderless',
+		label : labels.borderless
+	} );
+
 	// Paragraph styles.
 
 	wp.blocks.registerBlockStyle( 'core/paragraph', {
