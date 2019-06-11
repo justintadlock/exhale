@@ -41,6 +41,13 @@
 	box-shadow: none;
 }
 
+/// List styles.
+
+.is-style-list-none   { list-style: none;   }
+.is-style-list-disc   { list-style: disc;   }
+.is-style-list-circle { list-style: circle; }
+.is-style-list-square { list-style: square; }
+
 /// Used for paragraphs that only contain an image. These have no height. We use
 /// JS to add the `.is-collapsed` class and remove any margins and paddings.
 

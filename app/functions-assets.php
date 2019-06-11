@@ -99,7 +99,13 @@ add_action( 'enqueue_block_editor_assets', function() {
 			'borderless'   => __( 'No Border', 'exhale' ),
 			'highlight'    => __( 'Highlight', 'exhale' ),
 			'rounded'      => __( 'Rounded',   'exhale' ),
-			'shadow'       => __( 'Shadow',    'exhale' )
+			'shadow'       => __( 'Shadow',    'exhale' ),
+
+			// Lists.
+			'list-none'    => __( 'Bullets: None', 'exhale' ),
+			'list-disc'    => __( 'Bullets: Disc', 'exhale' ),
+			'list-circle'  => __( 'Bullets: Circle', 'exhale' ),
+			'list-square'  => __( 'Bullets: Square', 'exhale' ),
 		]
 	] );
 

@@ -40,6 +40,28 @@ wp.domReady( () => {
 		label : labels.shadow
 	} );
 
+	// List styles.
+
+	let listStyles = [
+		'none',
+		'disc',
+		'circle',
+		'square'
+	];
+
+	wp.blocks.registerBlockStyle( 'core/list', {
+		name      : 'default',
+		label     : labels.default,
+		isDefault : true
+	} );
+
+	listStyles.forEach( style => {
+		wp.blocks.registerBlockStyle( 'core/list', {
+			name      : 'list-' + style,
+			label     : labels[ 'list-' + style ]
+		} );
+	} );
+
 	// Media & Text styles.
 
 	wp.blocks.registerBlockStyle( 'core/media-text', {
