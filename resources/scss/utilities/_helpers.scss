@@ -22,6 +22,17 @@
 	box-shadow: none;
 }
 
+.is-style-shadow,
+.is-style-shadow.wp-block-image img,
+.is-style-shadow.wp-block-media-text img {
+	box-shadow: 0 4px 10px 0 rgba( 0, 0, 0, 0.3 );
+}
+
+.wp-block-image[class*=is-style-shadow],
+.wp-block-media-text[class*=is-style-shadow] {
+	box-shadow: none;
+}
+
 /// Used for paragraphs that only contain an image. These have no height. We use
 /// JS to add the `.is-collapsed` class and remove any margins and paddings.
 

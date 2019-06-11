@@ -97,7 +97,8 @@ add_action( 'enqueue_block_editor_assets', function() {
 			'borderDouble' => __( 'Double',    'exhale' ),
 			'borderDashed' => __( 'Dashed',    'exhale' ),
 			'borderless'   => __( 'No Border', 'exhale' ),
-			'highlight'    => __( 'Highlight', 'exhale' )
+			'highlight'    => __( 'Highlight', 'exhale' ),
+			'shadow'       => __( 'Shadow',    'exhale' )
 		]
 	] );
 

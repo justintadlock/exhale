@@ -30,6 +30,11 @@ wp.domReady( () => {
 		label : labels.borderless
 	} );
 
+	wp.blocks.registerBlockStyle( 'core/image', {
+		name  : 'shadow',
+		label : labels.shadow
+	} );
+
 	// Media & Text styles.
 
 	wp.blocks.registerBlockStyle( 'core/media-text', {
@@ -43,6 +48,11 @@ wp.domReady( () => {
 		label : labels.borderless
 	} );
 
+	wp.blocks.registerBlockStyle( 'core/media-text', {
+		name  : 'shadow',
+		label : labels.shadow
+	} );
+
 	// Paragraph styles.
 
 	wp.blocks.registerBlockStyle( 'core/paragraph', {
@@ -54,6 +64,11 @@ wp.domReady( () => {
 	wp.blocks.registerBlockStyle( 'core/paragraph', {
 		name  : 'highlight',
 		label : labels.highlight
+	} );
+
+	wp.blocks.registerBlockStyle( 'core/paragraph', {
+		name  : 'shadow',
+		label : labels.shadow
 	} );
 
 	// Separator styles.
