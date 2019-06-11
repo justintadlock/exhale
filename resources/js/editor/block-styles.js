@@ -31,6 +31,11 @@ wp.domReady( () => {
 	} );
 
 	wp.blocks.registerBlockStyle( 'core/image', {
+		name  : 'rounded',
+		label : labels.rounded
+	} );
+
+	wp.blocks.registerBlockStyle( 'core/image', {
 		name  : 'shadow',
 		label : labels.shadow
 	} );

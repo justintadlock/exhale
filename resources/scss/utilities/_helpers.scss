@@ -22,6 +22,14 @@
 	box-shadow: none;
 }
 
+// Creates a rounded image.
+
+.is-style-rounded img {
+	border-radius: 9999px;
+}
+
+// Adds a box-shadow to elements.
+
 .is-style-shadow,
 .is-style-shadow.wp-block-image img,
 .is-style-shadow.wp-block-media-text img {
