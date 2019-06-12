@@ -148,10 +148,16 @@ class Theme {
 
 		$screenshot = $this->installed() ? $this->wp_theme->get_screenshot() : $this->screenshot;
 
-		return sprintf(
+		$screenshot = sprintf(
 			$screenshot,
 			get_template_directory_uri(),
 			get_stylesheet_directory_uri()
+		);
+
+		return add_query_arg(
+			'version',
+			wp_get_theme( get_template() )->get( 'Version' ),
+			$screenshot
 		);
 	}
 
