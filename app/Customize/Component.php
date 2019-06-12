@@ -25,6 +25,7 @@ use Exhale\Font\Family\Families         as FontFamilies;
 use Exhale\Font\Family\Setting\Settings as FontFamilySettings;
 use Exhale\Image\Filter\Filters         as ImageFilters;
 use Exhale\Layout\Layouts;
+use Exhale\Tools\Mod;
 
 use function Exhale\asset;
 
@@ -145,14 +146,14 @@ class Component implements Bootable {
 
 		// Register footer settings.
 		$manager->add_setting( 'powered_by', [
-			'default'           => true,
+			'default'           => Mod::fallback( 'powered_by' ),
 			'sanitize_callback' => 'wp_validate_boolean',
 			'transport'         => 'postMessage'
 		] );
 
 		$manager->add_setting( 'footer_credit', [
 			// Translators: %s is the theme link.
-			'default'           => sprintf( __( 'Powered by %s.', 'exhale' ), \Hybrid\Theme\render_link() ),
+			'default'           => Mod::fallback( 'footer_credit' ),
 			'sanitize_callback' => function( $value ) {
 				return wp_kses( $value, Footer::allowedTags() );
 			},

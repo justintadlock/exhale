@@ -14,6 +14,7 @@
 
 namespace Exhale\Tools;
 
+use Closure;
 use Hybrid\App;
 use Exhale\Color\Setting\Settings as ColorSettings;
 
@@ -38,12 +39,34 @@ class Mod {
 	 */
 	public static function get( $name, $default = '' ) {
 
-		$mods = App::resolve( 'exhale/mods' );
+		$fallback = static::fallback( $name );
 
 		return mod(
 			$name,
-			! $default && isset( $mods[ $name ] ) ? $mods[ $name ] : $default
+			! $default && $fallback ? $fallback : $default
 		);
+	}
+
+	/**
+	 * Returns a default theme mod.
+	 *
+	 * @since  1.3.0
+	 * @access public
+	 * @param  string  $name
+	 * @return mixed
+	 */
+	public static function fallback( $name ) {
+
+		$mods = App::resolve( 'exhale/mods' );
+
+		if ( isset( $mods[ $name ] ) ) {
+
+			return $mods[ $name ] instanceof Closure
+			       ? $mods[ $name ]->__invoke()
+			       : $mods[ $name ];
+		}
+
+		return null;
 	}
 
 	/**

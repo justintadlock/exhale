@@ -13,7 +13,9 @@
 
 namespace Exhale\Image\Filter;
 
+use Hybrid\App;
 use Exhale\Contracts\CssCustomProperty;
+use Exhale\Tools\Mod;
 
 use function Hybrid\Theme\mod;
 
@@ -141,7 +143,7 @@ class Setting implements CssCustomProperty {
 
 		return apply_filters(
 			"exhale/image/filter/setting/{$this->name}/default",
-			$this->amount,
+			Mod::fallback( $this->modName() ),
 			$this
 		);
 	}
@@ -154,7 +156,7 @@ class Setting implements CssCustomProperty {
 	 * @return string
 	 */
 	public function mod() {
-		return mod( $this->modName(), $this->amount() );
+		return Mod::get( $this->modName(), $this->amount() );
 	}
 
 	/**
@@ -188,7 +190,7 @@ class Setting implements CssCustomProperty {
 	 */
 	public function cssValue() {
 
-		$filter_function = mod( 'image_default_filter_function', 'grayscale' );
+		$filter_function = Mod::get( 'image_default_filter_function' );
 
 		if ( 'none' === $filter_function ) {
 			return 'none';

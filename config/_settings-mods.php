@@ -13,6 +13,20 @@
  */
 
 return [
+	// Set the default layout.
+	'layout' => 'wide',
+
+	// Set the default featured image size.
 	'featured_image_size' => 'exhale-landscape-large',
-	'layout'              => 'wide'
+
+	// Set the default image filter mods.
+	'image_default_filter_function' => 'grayscale',
+	'image_default_filter_amount'   => 0,
+	'image_hover_filter_amount'     => 100,
+
+	// Set the default footer credit.
+	'powered_by'    => true,
+	'footer_credit' => function() {
+		return sprintf( __( 'Powered by %s.', 'exhale' ), \Hybrid\Theme\render_link() );
+	}
 ];

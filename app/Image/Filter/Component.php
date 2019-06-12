@@ -104,13 +104,11 @@ class Component implements Bootable {
 
 		// Add filter amount settings.
 		$this->settings->add( 'default', new Setting( 'default', [
-			'amount'      => 0,
 			'label'       => __( 'Default Filter Amount', 'exhale' ),
 			'description' => __( 'Filter amount applied to all images.', 'exhale' )
 		] ) );
 
 		$this->settings->add( 'hover', new Setting( 'hover', [
-			'amount'      => 100,
 			'label'       => __( 'Hover Filter Amount', 'exhale' ),
 			'description' => __( 'Filter amount applied to linked images when they are hovered or focused.', 'exhale' )
 		] ) );

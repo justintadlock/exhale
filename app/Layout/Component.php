@@ -15,9 +15,9 @@ namespace Exhale\Layout;
 
 use WP_Customize_Manager;
 
-use Hybrid\App;
 use Hybrid\Contracts\Bootable;
 use Exhale\Tools\Config;
+use Exhale\Tools\Mod;
 
 /**
  * Layout component class.
@@ -108,8 +108,6 @@ class Component implements Bootable {
 	 */
 	public function customizeRegister( WP_Customize_Manager $manager ) {
 
-		$mods = App::resolve( 'exhale/mods' );
-
 		$manager->add_section( 'layout', [
 			'panel'    => 'theme_options',
 			'title'    => __( 'Layout', 'exhale' ),
@@ -117,7 +115,7 @@ class Component implements Bootable {
 		] );
 
 		$manager->add_setting( 'layout', [
-			'default'           => $mods['layout'],
+			'default'           => Mod::fallback( 'layout' ),
 			'sanitize_callback' => 'sanitize_key',
 			'transport'         => 'postMessage'
 		] );
@@ -141,13 +139,8 @@ class Component implements Bootable {
 	 */
 	public function bodyClass( $classes ) {
 
-		$mods = App::resolve( 'exhale/mods' );
-
 		$classes[] = sanitize_html_class(
-			sprintf(
-				'layout-%s',
-				get_theme_mod( 'layout', $mods['layout'] )
-			)
+			sprintf( 'layout-%s', Mod::get( 'layout' ) )
 		);
 
 		return $classes;
