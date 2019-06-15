@@ -24,8 +24,9 @@ td {
 
 th {
 	font-family: font-family( headings );
+	font-weight: var( --font-weight-headings );
+	font-style:  var( --font-style-headings );
 	font-size   : 16px;
-	font-weight : 700;
 	text-align  : left;
 }
 

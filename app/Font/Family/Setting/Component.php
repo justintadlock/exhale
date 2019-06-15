@@ -15,10 +15,13 @@ namespace Exhale\Font\Family\Setting;
 
 use WP_Customize_Manager;
 
+use Hybrid\App;
 use Hybrid\Contracts\Bootable;
 use Hybrid\Customize\Controls\SelectGroup;
 use Exhale\Font\Family\Families;
+use Exhale\Font\Style\Styles;
 use Exhale\Tools\Config;
+use Exhale\Tools\CustomProperty;
 use Exhale\Tools\CustomProperties;
 
 use function Hybrid\Font\enqueue as enqueue_font;
@@ -111,7 +114,7 @@ class Component implements Bootable {
 
 		// Adds each font setting as a custom property.
 		foreach ( $this->settings as $setting ) {
-			$this->properties->add( 'font-family-' . $setting->name(), $setting );
+			$this->properties->add( 'font-' . $setting->name(), $setting );
 		}
 	}
 
@@ -171,14 +174,46 @@ class Component implements Bootable {
 	protected function googleFonts() {
 		$fonts = [];
 
+		$styles = App::resolve( Styles::class );
+
 		foreach ( $this->settings as $setting ) {
 
 			$family = $this->families->get( $setting->mod() );
 
+			$font_styles = [ '400', '400i', '700', '700i' ];
+
+			if ( is_customize_preview() ) {
+				$font_styles = $family->styles();
+			} elseif ( $setting->hasOption( 'style' ) ) {
+				$font_styles = [
+					$styles->get( $setting->mod( 'style' ) )->normal(),
+					$styles->get( $setting->mod( 'style' ) )->italic()
+				];
+
+				foreach( $styles->get( $setting->mod( 'style' ) )->bolds() as $bold ) {
+
+					if ( in_array( $bold, $family->styles() ) ) {
+						$font_styles[] = $bold;
+						break;
+					}
+				}
+
+				foreach( $styles->get( $setting->mod( 'style' ) )->boldItalics() as $b_italic ) {
+
+					if ( in_array( $b_italic, $family->styles() ) ) {
+						$font_styles[] = $b_italic;
+						break;
+					}
+				}
+
+				$font_styles = array_unique( $font_styles );
+			}
+
 			if ( $family->isGoogleFont() && ! isset( $fonts[ $family->name() ] ) ) {
 				$fonts[ $family->name() ] = sprintf(
-					'%s:400,400i,700,700i',
-					$family->googleName()
+					'%s:%s',
+					$family->googleName(),
+					join( ',', $font_styles )
 				);
 			}
 		}
@@ -196,21 +231,54 @@ class Component implements Bootable {
 	 */
 	public function customizeRegister( WP_Customize_Manager $manager ) {
 
-		// Registers the font family settings and controls.
-		array_map( function( $setting ) use ( $manager ) {
+		$styles = App::resolve( Styles::class );
 
-			$manager->add_setting( $setting->modName(), [
+		// Registers the font family settings and controls.
+		array_map( function( $setting ) use ( $manager, $styles ) {
+
+			$control = [
+				'section' => 'fonts',
+				'label'   => $setting->label(),
+				'description' => $setting->description(),
+				'settings' => [
+					'family' => 'font_family_' . $setting->name()
+				],
+				'family'  => [
+					'choices' => $this->families->customizeChoices( $setting->requiredStyles() )
+				],
+				'style'   => []
+			];
+
+			$manager->add_setting( 'font_family_' . $setting->name(), [
 				'default'           => $setting->family(),
 				'sanitize_callback' => 'sanitize_key',
 				'transport'         => 'postMessage'
 			] );
 
-			$manager->add_control( new SelectGroup( $manager, $setting->modName(), [
-				'section'     => 'fonts',
-				'label'       => esc_html( $setting->label() ),
-				'description' => $setting->description(),
-				'choices'     => $this->families->customizeChoices()
-			] ) );
+			if ( ! $setting->requiredStyles() ) {
+				$control['settings']['style'] = 'font_style_' . $setting->name();
+
+				$choices = [];
+
+				foreach ( $styles->customizeChoices() as $choice => $label ) {
+
+					if ( in_array( $choice, $this->families->get( $setting->mod() )->styles() ) ) {
+						$choices[ $choice ] = $label;
+					}
+				}
+
+				$control['style']['choices'] = $choices;
+
+				$manager->add_setting( 'font_style_' . $setting->name(), [
+					'default'           => '400',
+					'sanitize_callback' => 'sanitize_key',
+					'transport'         => 'postMessage'
+				] );
+			}
+
+			$manager->add_control( new \Exhale\Customize\Controls\Font( $manager, 'font_' . $setting->name(),
+				$control
+			 ) );
 
 		}, $this->settings->all() );
 	}

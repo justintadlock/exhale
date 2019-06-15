@@ -36,9 +36,21 @@ class CustomProperties extends Collection {
 
 		$css       = '';
 		$selectors = [];
+		$all       = [];
+
+		foreach ( $this->all() as $property ) {
+
+			if ( method_exists( $property, 'cssCustomProperties' ) ) {
+				foreach ( $property->cssCustomProperties() as $property ) {
+					$all[] = $property;
+				}
+			} else {
+				$all[] = $property;
+			}
+		}
 
 		// Loop through all the properties and sort them by selector.
-		foreach ( $this->all() as $property ) {
+		foreach ( $all as $property ) {
 
 			if ( ! isset( $selectors[ $property->cssSelector() ] ) ) {
 				$selectors[ $property->cssSelector() ] = [];

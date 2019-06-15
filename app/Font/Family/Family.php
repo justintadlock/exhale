@@ -60,6 +60,22 @@ class Family implements JsonSerializable {
 	protected $google = '';
 
 	/**
+	 * Font styles.  This is primarily used for Google Fonts.  By default,
+	 * we'll assume all fonts have the regular, regular italic, bold, and
+	 * bold italic styles that are necessary for body copy.
+	 *
+	 * @since  1.3.0
+	 * @access protected
+	 * @var    array
+	 */
+	protected $styles = [
+		'400',
+		'400i',
+		'700',
+		'700i'
+	];
+
+	/**
 	 * Set up the object properties.
 	 *
 	 * @since  1.0.0
@@ -91,7 +107,8 @@ class Family implements JsonSerializable {
 
 		return [
 			'stack'      => $this->stack(),
-			'googleName' => str_replace( '+', ' ', $this->googleName() )
+			'googleName' => str_replace( '+', ' ', $this->googleName() ),
+			'styles'     => $this->styles()
 		];
 	}
 
@@ -158,5 +175,21 @@ class Family implements JsonSerializable {
 	 */
 	public function googleName() {
 		return $this->isGoogleFont() ? $this->google : '';
+	}
+
+	public function styles() {
+		return $this->styles;
+	}
+
+	public function forBodyCopy() {
+
+		$body_copy = [
+			'400',
+			'400i',
+			'700',
+			'700i'
+		];
+
+		return empty( array_diff( $body_copy, $this->styles() ) );
 	}
 }

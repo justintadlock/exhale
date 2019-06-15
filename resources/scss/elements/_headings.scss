@@ -4,8 +4,17 @@ h1, h2, h3, h4, h5, h6 {
 	margin:      0 0 0.5em;
 	line-height: 1.58;
 	font-family: font-family( 'headings' );
-	font-weight: 700;
+	font-weight: var( --font-weight-headings );
+	font-style:  var( --font-style-headings );
 	color:       var( --color-headings );
+
+	em, i {
+		font-style: var( --font-style-headings-italic, italic );
+	}
+
+	strong, b {
+		font-weight: var( --font-weight-headings-bold, 700 );
+	}
 }
 
 *:not(div) + h2,

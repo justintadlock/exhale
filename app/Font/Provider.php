@@ -35,6 +35,13 @@ class Provider extends ServiceProvider {
 		$this->app->singleton( Family\Families::class         );
 		$this->app->singleton( Family\Setting\Settings::class );
 		$this->app->singleton( Size\Sizes::class              );
+		$this->app->singleton( Style\Styles::class            );
+
+		$this->app->singleton( Style\Component::class, function() {
+			return new Style\Component(
+				$this->app->resolve( Style\Styles::class )
+			);
+		} );
 
 		$this->app->singleton( Family\Component::class, function() {
 			return new Family\Component(
@@ -66,6 +73,7 @@ class Provider extends ServiceProvider {
 	 */
 	public function boot() {
 		$this->app->resolve( Family\Component::class         )->boot();
+		$this->app->resolve( Style\Component::class          )->boot();
 		$this->app->resolve( Family\Setting\Component::class )->boot();
 		$this->app->resolve( Size\Component::class           )->boot();
 	}

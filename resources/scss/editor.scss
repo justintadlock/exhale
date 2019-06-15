@@ -86,7 +86,8 @@
 	line-height: 1.58;
 	font-family: font-family( 'headings' );
 	font-size:   3rem;
-	font-weight: 700;
+	font-weight: var( --font-weight-headings );
+	font-style:  var( --font-style-headings );
 	color:       var( --color-headings );
 
 	letter-spacing: 1px;

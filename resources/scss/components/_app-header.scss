@@ -60,7 +60,8 @@
 		padding:     19px 1.5rem;
 		font-size:   20px;
 		font-family: font-family( 'headings' );
-		font-weight: bold;
+		font-weight: var( --font-weight-headings );
+		font-style:  var( --font-style-headings );
 	}
 
 	.wp-custom-logo &__title {

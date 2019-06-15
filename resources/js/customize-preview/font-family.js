@@ -14,6 +14,7 @@
 let WebFont     = require( 'webfontloader' );
 let settings    = exhaleCustomizePreview.fontFamilySettings;
 let choices     = exhaleCustomizePreview.fontFamilyChoices;
+let styles      = exhaleCustomizePreview.fontStyles;
 let loadedFonts = [];
 
 Object.keys( settings ).forEach( setting => {
@@ -32,7 +33,7 @@ Object.keys( settings ).forEach( setting => {
 				WebFont.load( {
 					google : {
 						families : [
-							choices[ to ].googleName
+							choices[ to ].googleName + ':' + choices[ to ].styles.join( ',' )
 						]
 					}
 				} );
@@ -49,4 +50,19 @@ Object.keys( settings ).forEach( setting => {
 		} );
 	} );
 
+	wp.customize( 'font_style_' + settings[ setting ].name, value => {
+		value.bind( to => {
+			let style = styles[ to ];
+
+			document.documentElement.style.setProperty(
+				'--font-weight-' + settings[ setting ].name,
+				style.weight
+			);
+
+			document.documentElement.style.setProperty(
+				'--font-style-' + settings[ setting ].name,
+				style.style
+			);
+		} );
+	} );
 } );

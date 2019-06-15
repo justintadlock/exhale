@@ -13,18 +13,24 @@
 
 return [
 	'primary' => [
-		'label'       => _x( 'Primary', 'font family setting', 'exhale' ),
-		'description' => __( 'Font used for most of the text on the site.', 'exhale' ),
-		'family'      => 'georgia'
+		'label'           => _x( 'Primary', 'font family setting', 'exhale' ),
+		'description'     => __( 'Font used for most of the text on the site.', 'exhale' ),
+		'family'          => 'georgia',
+		'options'         => [ 'family' ],
+		'required_styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'secondary' => [
-		'label'       => _x( 'Secondary', 'font family setting', 'exhale' ),
-		'description' => __( 'Font used for secondary, less important text.', 'exhale' ),
-		'family'      => 'system-ui'
+		'label'           => _x( 'Secondary', 'font family setting', 'exhale' ),
+		'description'     => __( 'Font used for secondary, less important text.', 'exhale' ),
+		'family'          => 'system-ui',
+		'options'         => [ 'family' ],
+		'required_styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'headings' => [
-		'label'       => _x( 'Headings', 'font family setting', 'exhale' ),
-		'description' => __( 'Font used for text headings.', 'exhale' ),
-		'family'      => 'system-ui'
+		'label'           => _x( 'Headings', 'font family setting', 'exhale' ),
+		'description'     => __( 'Font used for text headings.', 'exhale' ),
+		'family'          => 'system-ui',
+		'style'           => '700',
+		'options'         => [ 'family', 'style' ]
 	]
 ];

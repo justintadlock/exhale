@@ -44,7 +44,7 @@ class Families extends Collection {
 	 * @access public
 	 * @return array
 	 */
-	public function customizeChoices() {
+	public function customizeChoices( $styles = [] ) {
 
 		$choices = [
 			'system' => [
@@ -58,9 +58,13 @@ class Families extends Collection {
 		];
 
 		foreach ( $this->all() as $family ) {
-			$group = $family->isGoogleFont() ? 'google' : 'system';
 
-			$choices[ $group ]['choices'][ $family->name() ] = $family->label();
+			if ( ! $styles || empty( array_diff( $styles, $family->styles() ) ) ) {
+
+				$group = $family->isGoogleFont() ? 'google' : 'system';
+
+				$choices[ $group ]['choices'][ $family->name() ] = $family->label();
+			}
 		}
 
 		return $choices;

@@ -23,6 +23,7 @@ use Exhale\Template\Footer;
 use Exhale\Color\Setting\Settings       as ColorSettings;
 use Exhale\Font\Family\Families         as FontFamilies;
 use Exhale\Font\Family\Setting\Settings as FontFamilySettings;
+use Exhale\Font\Style\Styles            as FontStyles;
 use Exhale\Image\Filter\Filters         as ImageFilters;
 use Exhale\Layout\Layouts;
 use Exhale\Tools\Mod;
@@ -174,6 +175,7 @@ class Component implements Bootable {
 
 		// Register JS control types.
 		$manager->register_control_type( Controls\ImageFilter::class );
+		$manager->register_control_type( Controls\Font::class        );
 
 		// Change background color control labels.
 		$bg_color              = $manager->get_control( 'background_color' );
@@ -267,7 +269,9 @@ class Component implements Bootable {
 		);
 
 		wp_localize_script( 'exhale-customize-controls', 'exhaleCustomizeControls', [
-			'imageFilters' => App::resolve( ImageFilters::class )
+			'fontFamilyChoices'  => App::resolve( FontFamilies::class       ),
+			'fontStyles'   => App::resolve( FontStyles::class   ),
+			'imageFilters' => App::resolve( ImageFilters::class ),
 		] );
 	}
 
@@ -292,6 +296,7 @@ class Component implements Bootable {
 			'colorSettings'      => App::resolve( ColorSettings::class      ),
 			'fontFamilySettings' => App::resolve( FontFamilySettings::class ),
 			'fontFamilyChoices'  => App::resolve( FontFamilies::class       ),
+			'fontStyles'         => App::resolve( FontStyles::class         ),
 			'layouts'            => App::resolve( Layouts::class            )
 		] );
 	}

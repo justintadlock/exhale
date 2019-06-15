@@ -19,8 +19,9 @@ li > ul,
 li > ol { margin-bottom : 0; }
 
 dt {
-	font-weight: 700;
 	font-family: font-family( 'headings' );
+	font-weight: var( --font-weight-headings );
+	font-style:  var( --font-style-headings );
 }
 
 dd {

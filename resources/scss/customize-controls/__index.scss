@@ -15,3 +15,14 @@
 	width:       480px;
 	height:      568px;
 }
+
+// Add a separator between font controls.
+.customize-control-exhale-font {
+	border-top: 1px solid #ddd;
+	padding-top: 12px;
+
+	&:first-of-type {
+		border-top: none;
+		padding-top: 0;
+	}
+}
