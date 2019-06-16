@@ -1,8 +1,8 @@
 <?php
 /**
- * Font Family Setting.
+ * Font Setting.
  *
- * Creates a font family setting object.
+ * Creates a font setting object.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -11,7 +11,7 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Font\Family\Setting;
+namespace Exhale\Font\Setting;
 
 use JsonSerializable;
 use Hybrid\App;
@@ -20,9 +20,9 @@ use Exhale\Font\Style\Styles;
 use Exhale\Tools\CustomProperty;
 
 /**
- * Font family setting class.
+ * Font setting class.
  *
- * @since  1.0.0
+ * @since  1.3.0
  * @access public
  */
 class Setting implements JsonSerializable {
@@ -30,7 +30,7 @@ class Setting implements JsonSerializable {
 	/**
 	 * Setting name.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access protected
 	 * @var    string
 	 */
@@ -39,7 +39,7 @@ class Setting implements JsonSerializable {
 	/**
 	 * Setting label.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access protected
 	 * @var    string
 	 */
@@ -48,7 +48,7 @@ class Setting implements JsonSerializable {
 	/**
 	 * Setting description.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access protected
 	 * @var    string
 	 */
@@ -57,7 +57,7 @@ class Setting implements JsonSerializable {
 	/**
 	 * Family default.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access protected
 	 * @var    string
 	 */
@@ -96,7 +96,7 @@ class Setting implements JsonSerializable {
 	/**
 	 * Set up the object properties.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access public
 	 * @param  string  $name
 	 * @param  array   $options
@@ -117,7 +117,7 @@ class Setting implements JsonSerializable {
 	 * Returns a JSON-ready array of only the properties we'll need for use
 	 * in the customize-preview JS.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access public
 	 * @return array
 	 */
@@ -140,7 +140,7 @@ class Setting implements JsonSerializable {
 	/**
 	 * Returns the setting name.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access public
 	 * @return string
 	 */
@@ -151,7 +151,7 @@ class Setting implements JsonSerializable {
 	/**
 	 * Returns the setting label.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access public
 	 * @return string
 	 */
@@ -167,7 +167,7 @@ class Setting implements JsonSerializable {
 	/**
 	 * Returns the setting description.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access public
 	 * @return string
 	 */
@@ -178,7 +178,7 @@ class Setting implements JsonSerializable {
 	/**
 	 * Returns the default family value.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access public
 	 * @return string
 	 */
@@ -200,7 +200,7 @@ class Setting implements JsonSerializable {
 	/**
 	 * Returns the setting name as a theme mod.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access public
 	 * @param  string  $option
 	 * @return string
@@ -216,7 +216,7 @@ class Setting implements JsonSerializable {
 	/**
 	 * Returns the theme mod for the setting.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access public
 	 * @param  string  $option
 	 * @return string

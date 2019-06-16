@@ -1,8 +1,8 @@
 <?php
 /**
- * Font Family Setting Component.
+ * Font Setting Component.
  *
- * Manages the font family setting component.
+ * Manages the font setting component.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -11,76 +11,91 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Font\Family\Setting;
+namespace Exhale\Font\Setting;
 
 use WP_Customize_Manager;
 
 use Hybrid\App;
 use Hybrid\Contracts\Bootable;
-use Hybrid\Customize\Controls\SelectGroup;
+use Exhale\Customize\Controls\Font as CustomizeControlFont;
 use Exhale\Font\Family\Families;
 use Exhale\Font\Style\Styles;
 use Exhale\Tools\Config;
-use Exhale\Tools\CustomProperty;
 use Exhale\Tools\CustomProperties;
 
 use function Hybrid\Font\enqueue as enqueue_font;
 
 /**
- * Font family setting component class.
+ * Font setting component class.
  *
- * @since  1.0.0
+ * @since  1.3.0
  * @access public
  */
 class Component implements Bootable {
 
 	/**
-	 * Stores the font family settings object.
+	 * Stores the font settings object.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access protected
 	 * @var    Settings
 	 */
 	protected $settings;
 
 	/**
-	 * Stores the font families object.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    Families
-	 */
-	protected $families;
-
-	/**
 	 * CSS custom properties.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access protected
 	 * @var    CustomProperties
 	 */
 	protected $properties;
 
 	/**
+	 * Stores the font families object.
+	 *
+	 * @since  1.3.0
+	 * @access protected
+	 * @var    Families
+	 */
+	protected $families;
+
+	/**
+	 * Stores the font styles object.
+	 *
+	 * @since  1.3.0
+	 * @access protected
+	 * @var    Families
+	 */
+	protected $styles;
+
+	/**
 	 * Creates the component object.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access public
 	 * @param  Settings          $settings
-	 * @param  Families          $families
 	 * @param  CustomProperties  $settings
+	 * @param  Families          $families
+	 * @param  Styles            $styles
 	 * @return void
 	 */
-	public function __construct( Settings $settings, Families $families, CustomProperties $properties ) {
+	public function __construct(
+		Settings         $settings,
+		CustomProperties $properties,
+		Families         $families,
+		Styles           $styles
+	) {
 		$this->settings   = $settings;
-		$this->families   = $families;
 		$this->properties = $properties;
+		$this->families   = $families;
+		$this->styles     = $styles;
 	}
 
 	/**
 	 * Bootstraps the component.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access public
 	 * @return void
 	 */
@@ -90,7 +105,7 @@ class Component implements Bootable {
 		add_action( 'after_setup_theme', [ $this, 'register' ] );
 
 		// Register default settings.
-		add_action( 'exhale/font/family/setting/register', [ $this, 'registerDefaultSettings' ] );
+		add_action( 'exhale/font/setting/register', [ $this, 'registerDefaultSettings' ] );
 
 		// Add customizer settings and controls.
 		add_action( 'customize_register', [ $this, 'customizeRegister'] );
@@ -103,14 +118,14 @@ class Component implements Bootable {
 	/**
 	 * Runs the register actions.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access public
 	 * @return void
 	 */
 	public function register() {
 
 		// Hook for registering settings.
-		do_action( 'exhale/font/family/setting/register', $this->settings );
+		do_action( 'exhale/font/setting/register', $this->settings );
 
 		// Adds each font setting as a custom property.
 		foreach ( $this->settings as $setting ) {
@@ -121,7 +136,7 @@ class Component implements Bootable {
 	/**
 	 * Registers default settings.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access public
 	 * @param  Settings  $settings
 	 * @return void
@@ -146,7 +161,7 @@ class Component implements Bootable {
 	/**
 	 * Enqueues any scripts/styles necessary for font settings.
 	 *
-	 * @since  1.1.0
+	 * @since  1.3.0
 	 * @access public
 	 * @return void
 	 */
@@ -167,14 +182,12 @@ class Component implements Bootable {
 	/**
 	 * Returns an array of Google fonts to load.
 	 *
-	 * @since  1.1.0
+	 * @since  1.3.0
 	 * @access protected
 	 * @return array
 	 */
 	protected function googleFonts() {
 		$fonts = [];
-
-		$styles = App::resolve( Styles::class );
 
 		foreach ( $this->settings as $setting ) {
 
@@ -183,14 +196,19 @@ class Component implements Bootable {
 			$font_styles = [ '400', '400i', '700', '700i' ];
 
 			if ( is_customize_preview() ) {
+
 				$font_styles = $family->styles();
+
 			} elseif ( $setting->hasOption( 'style' ) ) {
+
+				$style = $this->styles->get( $setting->mod( 'style' ) );
+
 				$font_styles = [
-					$styles->get( $setting->mod( 'style' ) )->normal(),
-					$styles->get( $setting->mod( 'style' ) )->italic()
+					$style->normal(),
+					$style->italic()
 				];
 
-				foreach( $styles->get( $setting->mod( 'style' ) )->bolds() as $bold ) {
+				foreach( $style->bolds() as $bold ) {
 
 					if ( in_array( $bold, $family->styles() ) ) {
 						$font_styles[] = $bold;
@@ -198,7 +216,7 @@ class Component implements Bootable {
 					}
 				}
 
-				foreach( $styles->get( $setting->mod( 'style' ) )->boldItalics() as $b_italic ) {
+				foreach( $style->boldItalics() as $b_italic ) {
 
 					if ( in_array( $b_italic, $family->styles() ) ) {
 						$font_styles[] = $b_italic;
@@ -224,32 +242,30 @@ class Component implements Bootable {
 	/**
 	 * Customize register callback.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access public
 	 * @param  WP_Customize_Manager  $manager
 	 * @return void
 	 */
 	public function customizeRegister( WP_Customize_Manager $manager ) {
 
-		$styles = App::resolve( Styles::class );
-
-		// Registers the font family settings and controls.
-		array_map( function( $setting ) use ( $manager, $styles ) {
+		// Registers the font settings and controls.
+		array_map( function( $setting ) use ( $manager ) {
 
 			$control = [
-				'section' => 'fonts',
-				'label'   => $setting->label(),
+				'section'     => 'fonts',
+				'label'       => $setting->label(),
 				'description' => $setting->description(),
-				'settings' => [
-					'family' => 'font_family_' . $setting->name()
+				'settings'    => [
+					'family' => $setting->modName( 'family' )
 				],
-				'family'  => [
+				'family'      => [
 					'choices' => $this->families->customizeChoices( $setting->requiredStyles() )
 				],
-				'style'   => []
+				'style'       => []
 			];
 
-			$manager->add_setting( 'font_family_' . $setting->name(), [
+			$manager->add_setting( $setting->modName( 'family' ), [
 				'default'           => $setting->family(),
 				'sanitize_callback' => 'sanitize_key',
 				'transport'         => 'postMessage'
@@ -260,25 +276,31 @@ class Component implements Bootable {
 
 				$choices = [];
 
-				foreach ( $styles->customizeChoices() as $choice => $label ) {
+				foreach ( $this->styles->customizeChoices() as $choice => $label ) {
 
-					if ( in_array( $choice, $this->families->get( $setting->mod() )->styles() ) ) {
+					$family = $this->families->get( $setting->mod() );
+
+					if ( in_array( $choice, $family->styles() ) ) {
 						$choices[ $choice ] = $label;
 					}
 				}
 
 				$control['style']['choices'] = $choices;
 
-				$manager->add_setting( 'font_style_' . $setting->name(), [
+				$manager->add_setting( $setting->modName( 'style' ), [
 					'default'           => '400',
 					'sanitize_callback' => 'sanitize_key',
 					'transport'         => 'postMessage'
 				] );
 			}
 
-			$manager->add_control( new \Exhale\Customize\Controls\Font( $manager, 'font_' . $setting->name(),
-				$control
-			 ) );
+			$manager->add_control(
+				new CustomizeControlFont(
+					$manager,
+					'font_' . $setting->name(),
+					$control
+				)
+			);
 
 		}, $this->settings->all() );
 	}

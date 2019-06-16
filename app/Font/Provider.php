@@ -32,10 +32,10 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
-		$this->app->singleton( Family\Families::class         );
-		$this->app->singleton( Family\Setting\Settings::class );
-		$this->app->singleton( Size\Sizes::class              );
-		$this->app->singleton( Style\Styles::class            );
+		$this->app->singleton( Family\Families::class  );
+		$this->app->singleton( Setting\Settings::class );
+		$this->app->singleton( Size\Sizes::class       );
+		$this->app->singleton( Style\Styles::class     );
 
 		$this->app->singleton( Style\Component::class, function() {
 			return new Style\Component(
@@ -49,11 +49,12 @@ class Provider extends ServiceProvider {
 			);
 		} );
 
-		$this->app->singleton( Family\Setting\Component::class, function() {
-			return new Family\Setting\Component(
-				$this->app->resolve( Family\Setting\Settings::class  ),
-				$this->app->resolve( Family\Families::class          ),
-				$this->app->resolve( CustomProperties::class         )
+		$this->app->singleton( Setting\Component::class, function() {
+			return new Setting\Component(
+				$this->app->resolve( Setting\Settings::class  ),
+				$this->app->resolve( CustomProperties::class  ),
+				$this->app->resolve( Family\Families::class   ),
+				$this->app->resolve( Style\Styles::class      )
 			);
 		} );
 
@@ -72,9 +73,9 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
-		$this->app->resolve( Family\Component::class         )->boot();
-		$this->app->resolve( Style\Component::class          )->boot();
-		$this->app->resolve( Family\Setting\Component::class )->boot();
-		$this->app->resolve( Size\Component::class           )->boot();
+		$this->app->resolve( Family\Component::class  )->boot();
+		$this->app->resolve( Style\Component::class   )->boot();
+		$this->app->resolve( Setting\Component::class )->boot();
+		$this->app->resolve( Size\Component::class    )->boot();
 	}
 }

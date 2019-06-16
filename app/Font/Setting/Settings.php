@@ -1,8 +1,8 @@
 <?php
 /**
- * Font Family Settings Collection.
+ * Font Settings Collection.
  *
- * Houses the collection of font family settings in a single array-object.
+ * Houses the collection of font settings in a single array-object.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -11,22 +11,22 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Font\Family\Setting;
+namespace Exhale\Font\Setting;
 
 use Exhale\Tools\Collection;
 
 /**
- * Font family settings class.
+ * Font settings class.
  *
- * @since  1.0.0
+ * @since  1.3.0
  * @access public
  */
 class Settings extends Collection {
 
 	/**
-	 * Adds a new font family setting to the collection.
+	 * Adds a new font setting to the collection.
 	 *
-	 * @since  1.0.0
+	 * @since  1.3.0
 	 * @access public
 	 * @param  string  $name
 	 * @param  array   $value
