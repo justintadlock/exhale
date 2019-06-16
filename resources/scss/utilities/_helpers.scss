@@ -30,9 +30,10 @@
 
 // Adds a box-shadow to elements.
 
-.is-style-shadow,
+.is-style-shadow.wp-block-paragraph,
 .is-style-shadow.wp-block-image img,
-.is-style-shadow.wp-block-media-text img {
+.is-style-shadow.wp-block-media-text img,
+.is-style-shadow.wp-block-gallery img {
 	box-shadow: 0 4px 10px 0 rgba( 0, 0, 0, 0.3 );
 }
 

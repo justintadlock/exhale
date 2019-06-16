@@ -40,6 +40,19 @@ wp.domReady( () => {
 		label : labels.shadow
 	} );
 
+	// Image styles.
+
+	wp.blocks.registerBlockStyle( 'core/gallery', {
+		name      : 'default',
+		label     : labels.default,
+		isDefault : true
+	} );
+
+	wp.blocks.registerBlockStyle( 'core/gallery', {
+		name  : 'shadow',
+		label : labels.shadow
+	} );
+
 	// List styles.
 
 	let listStyles = [
