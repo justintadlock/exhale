@@ -120,6 +120,8 @@
 // Push any full-width items if they are the first child to the top of the page.
 // This cancels out the padding set on `.app-content`.
 
+[class*=template-canvas] .entry__content > .alignfull:first-child,
+[class*=template-landing-canvas] .entry__content > .alignfull:first-child,
 [class*=template-entry-content-only] .entry__content > .alignfull:first-child {
 	margin-top: -3rem;
 }

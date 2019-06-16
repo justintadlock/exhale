@@ -130,19 +130,20 @@ add_filter( 'hybrid/template/path', function() {
  */
 add_action( 'hybrid/templates/register', function( $templates ) {
 
-	$templates->add( 'template-landing.php', [
-		'label'      => __( 'Landing', 'exhale' ),
-		'post_types' => [
-			'page'
-		]
+	$templates->add( 'template-canvas.php', [
+		'label' => __( 'Content Canvas', 'exhale' )
 	] );
 
-	$templates->add( 'template-entry-content-only.php', [
-		'label'      => __( 'No Post Header/Footer', 'exhale' ),
-		'post_types' => [
-			'page',
-			'post'
-		]
+	$templates->add( 'template-landing.php', [
+		'label' => __( 'Landing', 'exhale' )
 	] );
+
+	$templates->add( 'template-landing-canvas.php', [
+		'label' => __( 'Landing: Content Canvas', 'exhale' )
+	] );
+
+	//$templates->add( 'template-entry-content-only.php', [
+	//	'label' => __( 'No Post Header/Footer', 'exhale' )
+	//] );
 
 } );

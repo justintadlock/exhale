@@ -120,3 +120,22 @@ function nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 
 	return $item_output;
 }
+
+/**
+ * Converts old page template slugs to the updated slug.
+ *
+ * @since  1.3.0
+ * @access public
+ * @return void
+ */
+add_action( 'template_redirect', function() {
+
+	if ( is_singular() ) {
+		$post_id = get_queried_object_id();
+
+		if ( 'template-entry-content-only.php' === get_page_template_slug( $post_id ) ) {
+			update_post_meta( $post_id, '_wp_page_template', 'template-canvas.php' );
+		}
+	}
+
+}, ~PHP_INT_MAX );
