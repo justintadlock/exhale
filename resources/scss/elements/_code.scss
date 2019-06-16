@@ -9,7 +9,7 @@ code {
 code {
 	padding    : 0.125em 0.25em;
 	font-family: font-family( 'code' );
-    	font-size  : 0.875em;
+    	font-size  : 15px;
 	font-style:  normal;
 	color:       inherit;
 	background : rgba( 214, 224, 231, 0.25 );
@@ -26,9 +26,4 @@ pre {
 		font-size  : 15px;
 		background : transparent;
 	}
-}
-
-.comment__content pre {
-	border-left: none;
-	border-right: none;
 }
