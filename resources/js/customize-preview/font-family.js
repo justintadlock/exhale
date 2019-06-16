@@ -20,11 +20,11 @@ let loadedFonts = [];
 Object.keys( settings ).forEach( setting => {
 
 	// If the Google Font is already loaded, add it to the loaded fonts array.
-	if ( choices[ settings[ setting ].mod ].googleName ) {
-		loadedFonts.push( settings[ setting ].mod );
+	if ( choices[ settings[ setting ].mods.family ].googleName ) {
+		loadedFonts.push( settings[ setting ].mods.family );
 	}
 
-	wp.customize( settings[ setting ].modName, value => {
+	wp.customize( settings[ setting ].modNames.family, value => {
 		value.bind( to => {
 
 			// If this is a Google font, let's use the Web Font
@@ -44,13 +44,13 @@ Object.keys( settings ).forEach( setting => {
 
 			// Update the custom CSS property.
 			document.documentElement.style.setProperty(
-				settings[ setting ].property,
+				'--font-family-' + settings[ setting ].name,
 				choices[ to ].stack
 			);
 		} );
 	} );
 
-	wp.customize( 'font_style_' + settings[ setting ].name, value => {
+	wp.customize( settings[ setting ].modNames.style, value => {
 		value.bind( to => {
 			let style = styles[ to ];
 

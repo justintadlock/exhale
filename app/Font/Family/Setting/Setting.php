@@ -15,7 +15,6 @@ namespace Exhale\Font\Family\Setting;
 
 use JsonSerializable;
 use Hybrid\App;
-use Exhale\Contracts\CssCustomProperty;
 use Exhale\Font\Family\Families;
 use Exhale\Font\Style\Styles;
 use Exhale\Tools\CustomProperty;
@@ -26,7 +25,7 @@ use Exhale\Tools\CustomProperty;
  * @since  1.0.0
  * @access public
  */
-class Setting implements JsonSerializable, CssCustomProperty {
+class Setting implements JsonSerializable {
 
 	/**
 	 * Setting name.
@@ -56,7 +55,7 @@ class Setting implements JsonSerializable, CssCustomProperty {
 	protected $description = '';
 
 	/**
-	 * Setting default (should be the name of a `Choice` object).
+	 * Family default.
 	 *
 	 * @since  1.0.0
 	 * @access protected
@@ -64,8 +63,22 @@ class Setting implements JsonSerializable, CssCustomProperty {
 	 */
 	protected $family = 'system-ui';
 
+	/**
+	 * Style default.
+	 *
+	 * @since  1.3.0
+	 * @access protected
+	 * @var    string
+	 */
 	protected $style = '400';
 
+	/**
+	 * Supported options.
+	 *
+	 * @since  1.3.0
+	 * @access protected
+	 * @var    string
+	 */
 	protected $options = [
 		'family'
 	];
@@ -112,9 +125,14 @@ class Setting implements JsonSerializable, CssCustomProperty {
 
 		return [
 			'name'           => $this->name(),
-			'mod'            => $this->mod(),
-			'modName'        => $this->modName(),
-			'property'       => $this->property(),
+			'mods'           => [
+				'family' => $this->mod( 'family' ),
+				'style'  => $this->mod( 'style'  )
+			],
+			'modNames'       => [
+				'family' => $this->modName( 'family' ),
+				'style'  => $this->modName( 'style'  )
+			],
 			'requiredStyles' => $this->requiredStyles()
 		];
 	}
@@ -147,17 +165,6 @@ class Setting implements JsonSerializable, CssCustomProperty {
 	}
 
 	/**
-	 * Returns the setting name as a theme mod.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return string
-	 */
-	public function modName() {
-		return sprintf( 'font_family_%s', str_replace( '-', '_', $this->name() ) );
-	}
-
-	/**
 	 * Returns the setting description.
 	 *
 	 * @since  1.0.0
@@ -169,24 +176,41 @@ class Setting implements JsonSerializable, CssCustomProperty {
 	}
 
 	/**
-	 * Returns the default setting value.
+	 * Returns the default family value.
 	 *
 	 * @since  1.0.0
 	 * @access public
 	 * @return string
 	 */
 	public function family() {
-
-		return apply_filters(
-			"exhale/font/family/setting/{$this->name}/default",
-			$this->family,
-			$this
-		);
+		return $this->family;
 	}
 
+	/**
+	 * Returns the default style value.
+	 *
+	 * @since  1.3.0
+	 * @access public
+	 * @return string
+	 */
 	public function style() {
-
 		return $this->style;
+	}
+
+	/**
+	 * Returns the setting name as a theme mod.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string  $option
+	 * @return string
+	 */
+	public function modName( $option = 'family' ) {
+		return sprintf(
+			'font_%s_%s',
+			$option,
+			str_replace( '-', '_', $this->name() )
+		);
 	}
 
 	/**
@@ -194,32 +218,30 @@ class Setting implements JsonSerializable, CssCustomProperty {
 	 *
 	 * @since  1.0.0
 	 * @access public
+	 * @param  string  $option
 	 * @return string
 	 */
-	public function mod( $name = 'family' ) {
+	public function mod( $option = 'family' ) {
 
-		if ( 'family' === $name ) {
-
+		if ( method_exists( $this, $option ) ) {
 			return get_theme_mod(
-				sprintf( "font_{$name}_%s", str_replace( '-', '_', $this->name() ) ),
-				$this->family()
-			);
-
-		} elseif ( 'style' === $name ) {
-
-			return get_theme_mod(
-				sprintf( "font_{$name}_%s", str_replace( '-', '_', $this->name() ) ),
-				$this->style()
+				$this->modName( $option ),
+				$this->$option()
 			);
 		}
 
 		return null;
-
-		return get_theme_mod( $this->modName(), $this->family() );
 	}
 
+	/**
+	 * Conditional check if the setting supports a given option.
+	 *
+	 * @since  1.3.0
+	 * @access public
+	 * @param  string  $option
+	 * @return string
+	 */
 	public function hasOption( $option = 'family' ) {
-
 		return in_array( $option, $this->options );
 	}
 
@@ -234,38 +256,35 @@ class Setting implements JsonSerializable, CssCustomProperty {
 		return $this->required_styles;
 	}
 
+	/**
+	 * Returns the array of custom CSS properties.
+	 *
+	 * @since  1.3.0
+	 * @access public
+	 * @return array
+	 */
 	public function cssCustomProperties() {
 
 		$properties = [];
 
+		$family = App::resolve( Families::class )->get( $this->mod( 'family' ) );
+
 		$properties[ 'font-family-' . $this->name() ] = new CustomProperty(
 			':root',
 			sprintf( '--font-family-%s', $this->name() ),
-			App::resolve( Families::class )->get( $this->mod( 'family' ) )->stack()
+			$family->stack()
 		);
 
-		if ( in_array( 'style', $this->options ) ) {
+		if ( $this->hasOption( 'style' ) ) {
 
-			$properties[ 'font-weight-' . $this->name() ] = new CustomProperty(
-				':root',
-				sprintf( '--font-weight-%s', $this->name() ),
-				App::resolve( Styles::class )->get( $this->mod( 'style' ) )->weight()
-			);
+			$style = App::resolve( Styles::class )->get( $this->mod( 'style' ) );
 
-			$properties[ 'font-style-' . $this->name() ] = new CustomProperty(
-				':root',
-				sprintf( '--font-style-%s', $this->name() ),
-				App::resolve( Styles::class )->get( $this->mod( 'style' ) )->style()
-			);
+			$bold_weight  = $style->weight();
+			$italic_style = 'italic';
 
-			$style  = App::resolve( Styles::class )->get( $this->mod( 'style' ) );
-			$family = App::resolve( Families::class )->get( $this->mod( 'family' ) );
-
-			$bold_weight        = 700;
-
-			$italic_style = false !== strpos( $style->italic(), 'i' )
-			                ? 'italic'
-					: 'normal';
+			if ( ! in_array( $style->italic(), $family->styles() ) ) {
+				$italic_style = 'normal';
+			}
 
 			foreach( $style->bolds() as $bold ) {
 
@@ -274,6 +293,18 @@ class Setting implements JsonSerializable, CssCustomProperty {
 					break;
 				}
 			}
+
+			$properties[ 'font-weight-' . $this->name() ] = new CustomProperty(
+				':root',
+				sprintf( '--font-weight-%s', $this->name() ),
+				$style->weight()
+			);
+
+			$properties[ 'font-style-' . $this->name() ] = new CustomProperty(
+				':root',
+				sprintf( '--font-style-%s', $this->name() ),
+				$style->style()
+			);
 
 			if ( 700 !== $bold_weight ) {
 				$properties[ 'font-weight-' . $this->name() . '-bold' ] = new CustomProperty(
@@ -293,50 +324,5 @@ class Setting implements JsonSerializable, CssCustomProperty {
 		}
 
 		return $properties;
-	}
-
-	/**
-	 * Returns a valid CSS selector for the property.
-	 *
-	 * @since  1.1.0
-	 * @access public
-	 * @return string
-	 */
-	public function cssSelector() {
-		return ':root';
-	}
-
-	/**
-	 * Returns the CSS property.
-	 *
-	 * @since  1.1.0
-	 * @access public
-	 * @return string
-	 */
-	public function cssProperty() {
-		return sprintf( '--font-family-%s', $this->name() );
-	}
-
-	/**
-	 * Returns the CSS property value.
-	 *
-	 * @since  1.1.0
-	 * @access public
-	 * @return string
-	 */
-	public function cssValue() {
-		return App::resolve( Families::class )->get( $this->mod() )->stack();
-	}
-
-	/**
-	 * Returns the CSS custom property selector for the setting name.
-	 *
-	 * @since      1.0.0
-	 * @deprecated 1.1.0
-	 * @access     public
-	 * @return     string
-	 */
-	public function property() {
-		return $this->cssProperty();
 	}
 }
