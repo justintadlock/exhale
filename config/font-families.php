@@ -84,8 +84,9 @@ return [
 	],
 	'arial-black' => [
 		// Translators: Font family label.
-		'label' => __( 'Arial Black', 'exhale' ),
-		'stack' => '"Arial Black", "Arial Bold", Arial, sans-serif'
+		'label'  => __( 'Arial Black', 'exhale' ),
+		'stack'  => '"Arial Black", "Arial Bold", Arial, sans-serif',
+		'styles' => [ '900', '900i' ]
 	],
 	'arial-narrow' => [
 		// Translators: Font family label.
@@ -259,6 +260,13 @@ return [
 		'label' => __( 'Comic Sans', 'exhale' ),
 		'stack' => '"Comic Sans MS", "Comic Sans", "Chalkboard SE", "Comic Neue", cursive'
 	],
+	'cookie' => [
+		// Translators: Font family label.
+		'label'  => __( 'Cookie', 'exhale' ),
+		'stack'  => 'Cookie, cursive',
+		'google' => 'Cookie',
+		'styles' => [ '400' ]
+	],
 	'cormorant' => [
 		// Translators: Font family label.
 		'label'  => __( 'Cormorant', 'exhale' ),
@@ -323,6 +331,13 @@ return [
 		'label'  => __( 'Cuprum', 'exhale' ),
 		'stack'  => 'Cuprum, sans-serif',
 		'google' => 'Cuprum'
+	],
+	'dancing-script' => [
+		// Translators: Font family label.
+		'label'  => __( 'Dancing Script', 'exhale' ),
+		'stack'  => '"Dancing Script", cursive',
+		'google' => 'Dancing+Script',
+		'styles' => [ '400', '700' ]
 	],
 	'eb-garamond' => [
 		// Translators: Font family label.
@@ -419,6 +434,13 @@ return [
 		'label'  => __( 'Great Vibes', 'exhale' ),
 		'stack'  => '"Great Vibes", cursive',
 		'google' => 'Great+Vibes',
+		'styles' => [ '400' ]
+	],
+	'handlee' => [
+		// Translators: Font family label.
+		'label'  => __( 'Handlee', 'exhale' ),
+		'stack'  => 'Handlee, cursive',
+		'google' => 'Handlee',
 		'styles' => [ '400' ]
 	],
 	'helvetica' => [
@@ -534,6 +556,13 @@ return [
 		// Translators: Font family label.
 		'label' => __( 'Lucida Grande', 'exhale' ),
 		'stack' => '"Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", sans-serif'
+	],
+	'mali' => [
+		// Translators: Font family label.
+		'label'  => __( 'Mali', 'exhale' ),
+		'stack'  => 'Mali, cursive',
+		'google' => 'Mali',
+		'styles' => [ '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i' ]
 	],
 	'manuale' => [
 		// Translators: Font family label.
@@ -794,6 +823,13 @@ return [
 		'stack'  => 'Rosario, sans-serif',
 		'google' => 'Rosario'
 	],
+	'rouge-script' => [
+		// Translators: Font family label.
+		'label'  => __( 'Rouge Script', 'exhale' ),
+		'stack'  => '"Rouge Script", cursive',
+		'google' => 'Rouge+Script',
+		'styles' => [ '400' ]
+	],
 	'rubik' => [
 		// Translators: Font family label.
 		'label'  => __( 'Rubik', 'exhale' ),
@@ -868,6 +904,13 @@ return [
 		// Translators: Font family label.
 		'label' => __( 'Tahoma', 'exhale' ),
 		'stack' => 'Tahoma, Geneva, Verdana, sans-serif'
+	],
+	'tangerine' => [
+		// Translators: Font family label.
+		'label'  => __( 'Tangerine', 'exhale' ),
+		'stack'  => 'Tangerine, cursive',
+		'google' => 'Tangerine',
+		'styles' => [ '400', '700' ]
 	],
 	'taviraj' => [
 		// Translators: Font family label.
@@ -951,6 +994,13 @@ return [
 		'stack'  => '"Work Sans", sans-serif',
 		'google' => 'Work+Sans',
 		'styles' => [ '100', '200', '300', '400', '500', '600', '700', '800', '900' ]
+	],
+	'yellowtail' => [
+		// Translators: Font family label.
+		'label'  => __( 'Yellowtail', 'exhale' ),
+		'stack'  => 'Yellowtail, cursive',
+		'google' => 'Yellowtail',
+		'styles' => [ '400' ]
 	],
 	'zilla-slab' => [
 		// Translators: Font family label.
