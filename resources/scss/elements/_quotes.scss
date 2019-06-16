@@ -1,6 +1,7 @@
 // Quotes.
 
 blockquote {
+	box-sizing: border-box;
 	margin:     0;
 	padding:    0 $spacing-global;
 	font-style: italic;
