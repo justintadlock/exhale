@@ -15,6 +15,8 @@ let WebFont     = require( 'webfontloader' );
 let settings    = exhaleCustomizePreview.fontSettings;
 let families    = exhaleCustomizePreview.fontFamilies;
 let styles      = exhaleCustomizePreview.fontStyles;
+let caps        = exhaleCustomizePreview.fontVariantCaps;
+let transforms  = exhaleCustomizePreview.textTransforms;
 let loadedFonts = [];
 
 Object.keys( settings ).forEach( key => {
@@ -69,6 +71,32 @@ Object.keys( settings ).forEach( key => {
 			document.documentElement.style.setProperty(
 				'--font-style-' + setting.name,
 				style.style
+			);
+		} );
+	} );
+
+	wp.customize( setting.modNames.transform, value => {
+
+		value.bind( to => {
+
+			let transform = transforms[ to ];
+
+			document.documentElement.style.setProperty(
+				'--text-transform-' + setting.name,
+				transform.transform
+			);
+		} );
+	} );
+
+	wp.customize( setting.modNames.caps, value => {
+
+		value.bind( to => {
+
+			let cap = caps[ to ];
+
+			document.documentElement.style.setProperty(
+				'--font-variant-caps-' + setting.name,
+				cap.cap
 			);
 		} );
 	} );

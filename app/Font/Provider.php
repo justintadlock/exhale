@@ -32,16 +32,12 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
-		$this->app->singleton( Family\Families::class  );
-		$this->app->singleton( Setting\Settings::class );
-		$this->app->singleton( Size\Sizes::class       );
-		$this->app->singleton( Style\Styles::class     );
-
-		$this->app->singleton( Style\Component::class, function() {
-			return new Style\Component(
-				$this->app->resolve( Style\Styles::class )
-			);
-		} );
+		$this->app->singleton( Family\Families::class          );
+		$this->app->singleton( Setting\Settings::class         );
+		$this->app->singleton( Size\Sizes::class               );
+		$this->app->singleton( Style\Styles::class             );
+		$this->app->singleton( TextTransform\Transforms::class );
+		$this->app->singleton( VariantCaps\Caps::class         );
 
 		$this->app->singleton( Family\Component::class, function() {
 			return new Family\Component(
@@ -49,12 +45,34 @@ class Provider extends ServiceProvider {
 			);
 		} );
 
+		$this->app->singleton( Style\Component::class, function() {
+			return new Style\Component(
+				$this->app->resolve( Style\Styles::class )
+			);
+		} );
+
+		$this->app->singleton( TextTransform\Component::class, function() {
+			return new TextTransform\Component(
+				$this->app->resolve( TextTransform\Transforms::class )
+			);
+		} );
+
+		$this->app->singleton( VariantCaps\Component::class, function() {
+			return new VariantCaps\Component(
+				$this->app->resolve( VariantCaps\Caps::class )
+			);
+		} );
+
 		$this->app->singleton( Setting\Component::class, function() {
 			return new Setting\Component(
-				$this->app->resolve( Setting\Settings::class  ),
-				$this->app->resolve( CustomProperties::class  ),
-				$this->app->resolve( Family\Families::class   ),
-				$this->app->resolve( Style\Styles::class      )
+				$this->app->resolve( Setting\Settings::class ),
+				$this->app->resolve( CustomProperties::class ),
+				[
+					'families'   => $this->app->resolve( Family\Families::class          ),
+					'styles'     => $this->app->resolve( Style\Styles::class             ),
+					'caps'       => $this->app->resolve( VariantCaps\Caps::class         ),
+					'transforms' => $this->app->resolve( TextTransform\Transforms::class )
+				]
 			);
 		} );
 
@@ -73,9 +91,11 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
-		$this->app->resolve( Family\Component::class  )->boot();
-		$this->app->resolve( Style\Component::class   )->boot();
-		$this->app->resolve( Setting\Component::class )->boot();
-		$this->app->resolve( Size\Component::class    )->boot();
+		$this->app->resolve( Family\Component::class        )->boot();
+		$this->app->resolve( Style\Component::class         )->boot();
+		$this->app->resolve( TextTransform\Component::class )->boot();
+		$this->app->resolve( Setting\Component::class       )->boot();
+		$this->app->resolve( Size\Component::class          )->boot();
+		$this->app->resolve( VariantCaps\Component::class   )->boot();
 	}
 }

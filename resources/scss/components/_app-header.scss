@@ -57,11 +57,8 @@
 
 	// The site title.
 	&__title {
-		padding:     19px 1.5rem;
-		font-size:   20px;
-		font-family: font-family( 'headings' );
-		font-weight: var( --font-weight-headings );
-		font-style:  var( --font-style-headings );
+		padding:           19px 1.5rem;
+		font-size:         20px;
 	}
 
 	.wp-custom-logo &__title {

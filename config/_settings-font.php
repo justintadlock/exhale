@@ -17,7 +17,9 @@ return [
 		'description'     => __( 'Font used for text headings.', 'exhale' ),
 		'family'          => 'system-ui',
 		'style'           => '700',
-		'options'         => [ 'family', 'style' ]
+		'variant'         => 'normal',
+		'transform'       => 'none',
+		'options'         => [ 'family', 'style', 'caps', 'transform' ]
 	],
 	'primary' => [
 		'label'           => _x( 'Primary', 'font family setting', 'exhale' ),

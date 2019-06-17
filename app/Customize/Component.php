@@ -20,11 +20,13 @@ use Hybrid\App;
 use Hybrid\Contracts\Bootable;
 use Exhale\Template\Footer;
 
-use Exhale\Color\Setting\Settings as ColorSettings;
-use Exhale\Font\Family\Families   as FontFamilies;
-use Exhale\Font\Setting\Settings  as FontSettings;
-use Exhale\Font\Style\Styles      as FontStyles;
-use Exhale\Image\Filter\Filters   as ImageFilters;
+use Exhale\Color\Setting\Settings        as ColorSettings;
+use Exhale\Font\Family\Families          as FontFamilies;
+use Exhale\Font\Setting\Settings         as FontSettings;
+use Exhale\Font\Style\Styles             as FontStyles;
+use Exhale\Font\VariantCaps\Caps         as FontVariantCaps;
+use Exhale\Font\TextTransform\Transforms as TextTransforms;
+use Exhale\Image\Filter\Filters          as ImageFilters;
 use Exhale\Layout\Layouts;
 use Exhale\Tools\Mod;
 
@@ -293,11 +295,13 @@ class Component implements Bootable {
 		);
 
 		wp_localize_script( 'exhale-customize-preview', 'exhaleCustomizePreview', [
-			'colorSettings' => App::resolve( ColorSettings::class ),
-			'fontSettings'  => App::resolve( FontSettings::class  ),
-			'fontFamilies'  => App::resolve( FontFamilies::class  ),
-			'fontStyles'    => App::resolve( FontStyles::class    ),
-			'layouts'       => App::resolve( Layouts::class       )
+			'colorSettings'    => App::resolve( ColorSettings::class   ),
+			'fontSettings'     => App::resolve( FontSettings::class    ),
+			'fontFamilies'     => App::resolve( FontFamilies::class    ),
+			'fontStyles'       => App::resolve( FontStyles::class      ),
+			'fontVariantCaps'  => App::resolve( FontVariantCaps::class ),
+			'layouts'          => App::resolve( Layouts::class         ),
+			'textTransforms'   => App::resolve( TextTransforms::class  )
 		] );
 	}
 }

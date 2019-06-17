@@ -83,12 +83,13 @@
 // Editor post title.
 .editor-post-title__block .editor-post-title__input,
 .editor-post-title__block .editor-post-title__input:focus {
-	line-height: 1.58;
-	font-family: font-family( 'headings' );
-	font-size:   3rem;
-	font-weight: var( --font-weight-headings );
-	font-style:  var( --font-style-headings );
-	color:       var( --color-headings );
+	line-height:       1.58;
+	font-size:         3rem;
+	font-family:       var( --font-family-headings );
+	font-weight:       var( --font-weight-headings );
+	font-style:        var( --font-style-headings );
+	font-variant-caps: var( --font-variant-caps-headings, normal );
+	text-transform:    var( --text-transform-headings,    none   );
 
 	letter-spacing: 1px;
 	text-align: center;

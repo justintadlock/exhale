@@ -20,6 +20,8 @@ use Hybrid\Contracts\Bootable;
 use Exhale\Customize\Controls\Font as CustomizeControlFont;
 use Exhale\Font\Family\Families;
 use Exhale\Font\Style\Styles;
+use Exhale\Font\TextTransform\Transforms;
+use Exhale\Font\VariantCaps\Caps;
 use Exhale\Tools\Config;
 use Exhale\Tools\CustomProperties;
 
@@ -70,26 +72,43 @@ class Component implements Bootable {
 	protected $styles;
 
 	/**
+	 * Stores the font variant caps object.
+	 *
+	 * @since  1.3.0
+	 * @access protected
+	 * @var    Caps
+	 */
+	protected $caps;
+
+	/**
+	 * Stores the text transforms object.
+	 *
+	 * @since  1.3.0
+	 * @access protected
+	 * @var    Transforms
+	 */
+	protected $transforms;
+
+	/**
 	 * Creates the component object.
 	 *
 	 * @since  1.3.0
 	 * @access public
 	 * @param  Settings          $settings
 	 * @param  CustomProperties  $settings
-	 * @param  Families          $families
-	 * @param  Styles            $styles
+	 * @param  array             $collections
 	 * @return void
 	 */
-	public function __construct(
-		Settings         $settings,
-		CustomProperties $properties,
-		Families         $families,
-		Styles           $styles
-	) {
+	public function __construct( Settings $settings, CustomProperties $properties, array $collections = [] ) {
+
+		foreach ( array_keys( get_object_vars( $this ) ) as $key ) {
+			if ( isset( $collections[ $key ] ) ) {
+				$this->$key = $collections[ $key ];
+			}
+		}
+
 		$this->settings   = $settings;
 		$this->properties = $properties;
-		$this->families   = $families;
-		$this->styles     = $styles;
 	}
 
 	/**
@@ -273,7 +292,9 @@ class Component implements Bootable {
 				'description' => $setting->description(),
 				'settings'    => [],
 				'family'      => [],
-				'style'       => []
+				'style'       => [],
+				'caps'        => [],
+				'transform'   => []
 			];
 
 			// If the setting has the family option.
@@ -302,8 +323,6 @@ class Component implements Bootable {
 				$control['settings']['style'] = $setting->modName( 'style' );
 
 				// Add the style choices to the control.
-				$control['style']['choices'] = [];
-
 				$limit = $setting->hasOption( 'family' )
 				         ? $this->families->get( $setting->mod() )->styles()
 				         : [];
@@ -313,6 +332,40 @@ class Component implements Bootable {
 				// Register the family setting.
 				$manager->add_setting( $setting->modName( 'style' ), [
 					'default'           => '400',
+					'sanitize_callback' => 'sanitize_key',
+					'transport'         => 'postMessage'
+				] );
+			}
+
+			// If the setting has the text-transform option.
+			if ( $setting->hasOption( 'transform' ) ) {
+
+				// Add the transform setting name to the control.
+				$control['settings']['transform'] = $setting->modName( 'transform' );
+
+				// Add the transform choices to the control.
+				$control['transform']['choices'] = $this->transforms->customizeChoices();
+
+				// Register the transform setting.
+				$manager->add_setting( $setting->modName( 'transform' ), [
+					'default'           => 'none',
+					'sanitize_callback' => 'sanitize_key',
+					'transport'         => 'postMessage'
+				] );
+			}
+
+			// If the setting has the caps option.
+			if ( $setting->hasOption( 'caps' ) ) {
+
+				// Add the caps setting name to the control.
+				$control['settings']['caps'] = $setting->modName( 'caps' );
+
+				// Add the caps choices to the control.
+				$control['caps']['choices'] = $this->caps->customizeChoices();
+
+				// Register the caps setting.
+				$manager->add_setting( $setting->modName( 'caps' ), [
+					'default'           => 'normal',
 					'sanitize_callback' => 'sanitize_key',
 					'transport'         => 'postMessage'
 				] );

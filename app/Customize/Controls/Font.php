@@ -34,8 +34,41 @@ class Font extends WP_Customize_Control {
 	 */
 	public $type = 'exhale-font';
 
-	public $family;
-	public $style;
+	/**
+	 * Font family sub-control options.
+	 *
+	 * @since  1.3.0
+	 * @access public
+	 * @var    array
+	 */
+	public $family = [];
+
+	/**
+	 * Font style sub-control options.
+	 *
+	 * @since  1.3.0
+	 * @access public
+	 * @var    array
+	 */
+	public $style = [];
+
+	/**
+	 * Font variant caps sub-control options.
+	 *
+	 * @since  1.3.0
+	 * @access public
+	 * @var    array
+	 */
+	public $caps = [];
+
+	/**
+	 * Text transform sub-control options.
+	 *
+	 * @since  1.3.0
+	 * @access public
+	 * @var    array
+	 */
+	public $transform = [];
 
 	/**
 	 * Add custom parameters to pass to the JS via JSON.
@@ -47,20 +80,40 @@ class Font extends WP_Customize_Control {
 	public function to_json() {
 		parent::to_json();
 
-		$this->json['family'] = [
-			'link'    => $this->get_link( 'family' ),
-			'value'   => $this->value( 'family' ),
-			'label'   => isset( $this->family['label'] ) ?: __( 'Family', 'exhale' ),
-			'choices' => $this->family['choices']
-		];
+		if ( $this->family ) {
+			$this->json['family'] = wp_parse_args( $this->family, [
+				'link'    => $this->get_link( 'family' ),
+				'value'   => $this->value( 'family' ),
+				'label'   => __( 'Family', 'exhale' ),
+				'choices' => $this->family['choices']
+			] );
+		}
 
 		if ( $this->style ) {
-			$this->json['style'] = [
+			$this->json['style'] = wp_parse_args( $this->style, [
 				'link'    => $this->get_link( 'style' ),
 				'value'   => $this->value( 'style' ),
-				'label'   => isset( $this->style['label'] ) ?: __( 'Style', 'exhale' ),
+				'label'   => __( 'Style', 'exhale' ),
 				'choices' => $this->style['choices']
-			];
+			] );
+		}
+
+		if ( $this->caps ) {
+			$this->json['caps'] = wp_parse_args( $this->caps, [
+				'link'    => $this->get_link( 'caps' ),
+				'value'   => $this->value( 'caps' ),
+				'label'   => __( 'Variant: Caps', 'exhale' ),
+				'choices' => $this->caps['choices']
+			] );
+		}
+
+		if ( $this->transform ) {
+			$this->json['transform'] = wp_parse_args( $this->transform, [
+				'link'    => $this->get_link( 'transform' ),
+				'value'   => $this->value( 'transform' ),
+				'label'   => __( 'Text Transform', 'exhale' ),
+				'choices' => $this->transform['choices']
+			] );
 		}
 	}
 
@@ -124,6 +177,46 @@ class Font extends WP_Customize_Control {
 					<# _.each( data.style.choices, function( label, choice ) { #>
 
 						<option value="{{ choice }}" <# if ( choice === data.style.value ) { #> selected="selected" <# } #>>{{ label }}</option>
+
+					<# } ) #>
+
+				</select>
+			</li>
+		<# } #>
+
+		<# if ( data.caps && data.caps.choices ) { #>
+
+			<li class="typography-text-caps">
+
+				<# if ( data.caps.label ) { #>
+					<span class="customize-control-title">{{ data.caps.label }}</span>
+				<# } #>
+
+				<select {{{ data.caps.link }}}>
+
+					<# _.each( data.caps.choices, function( label, choice ) { #>
+
+						<option value="{{ choice }}" <# if ( choice === data.caps.value ) { #> selected="selected" <# } #>>{{ label }}</option>
+
+					<# } ) #>
+
+				</select>
+			</li>
+		<# } #>
+
+		<# if ( data.transform && data.transform.choices ) { #>
+
+			<li class="typography-text-transform">
+
+				<# if ( data.transform.label ) { #>
+					<span class="customize-control-title">{{ data.transform.label }}</span>
+				<# } #>
+
+				<select {{{ data.transform.link }}}>
+
+					<# _.each( data.transform.choices, function( label, choice ) { #>
+
+						<option value="{{ choice }}" <# if ( choice === data.transform.value ) { #> selected="selected" <# } #>>{{ label }}</option>
 
 					<# } ) #>
 

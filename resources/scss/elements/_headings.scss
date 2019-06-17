@@ -1,12 +1,17 @@
+// All headings.
+h1, h2, h3, h4, h5, h6, th, dt,
+.app-header__title {
+	font-family:       var( --font-family-headings );
+	font-weight:       var( --font-weight-headings );
+	font-style:        var( --font-style-headings );
+	font-variant-caps: var( --font-variant-caps-headings, normal );
+	text-transform:    var( --text-transform-headings,    none   );
+}
 
 // Headings.
 h1, h2, h3, h4, h5, h6 {
-	margin:      0 0 0.5em;
-	line-height: 1.58;
-	font-family: font-family( 'headings' );
-	font-weight: var( --font-weight-headings );
-	font-style:  var( --font-style-headings );
-	color:       var( --color-headings );
+	margin:            0 0 0.5em;
+	line-height:       1.58;
 
 	em, i {
 		font-style: var( --font-style-headings-italic, italic );

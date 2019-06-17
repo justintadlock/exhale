@@ -17,6 +17,8 @@ use JsonSerializable;
 use Hybrid\App;
 use Exhale\Font\Family\Families;
 use Exhale\Font\Style\Styles;
+use Exhale\Font\TextTransform\Transforms;
+use Exhale\Font\VariantCaps\Caps;
 use Exhale\Tools\CustomProperty;
 
 /**
@@ -73,6 +75,24 @@ class Setting implements JsonSerializable {
 	protected $style = '400';
 
 	/**
+	 * Font variant caps default.
+	 *
+	 * @since  1.3.0
+	 * @access protected
+	 * @var    string
+	 */
+	protected $caps = 'normal';
+
+	/**
+	 * Text transform default.
+	 *
+	 * @since  1.3.0
+	 * @access protected
+	 * @var    string
+	 */
+	protected $transform = 'none';
+
+	/**
 	 * Supported options.
 	 *
 	 * @since  1.3.0
@@ -126,12 +146,16 @@ class Setting implements JsonSerializable {
 		return [
 			'name'           => $this->name(),
 			'mods'           => [
-				'family' => $this->mod( 'family' ),
-				'style'  => $this->mod( 'style'  )
+				'family'    => $this->mod( 'family'    ),
+				'style'     => $this->mod( 'style'     ),
+				'caps'      => $this->mod( 'caps'      ),
+				'transform' => $this->mod( 'transform' )
 			],
 			'modNames'       => [
-				'family' => $this->modName( 'family' ),
-				'style'  => $this->modName( 'style'  )
+				'family'    => $this->modName( 'family'    ),
+				'style'     => $this->modName( 'style'     ),
+				'caps'      => $this->modName( 'caps'      ),
+				'transform' => $this->modName( 'transform' )
 			],
 			'requiredStyles' => $this->requiredStyles()
 		];
@@ -156,12 +180,7 @@ class Setting implements JsonSerializable {
 	 * @return string
 	 */
 	public function label() {
-
-		return apply_filters(
-			"exhale/font/setting/{$this->name}/label",
-			$this->label ?: $this->name(),
-			$this
-		);
+		return $this->label ?: $this->name();
 	}
 
 	/**
@@ -198,6 +217,28 @@ class Setting implements JsonSerializable {
 	}
 
 	/**
+	 * Returns the default font-variant-caps value.
+	 *
+	 * @since  1.3.0
+	 * @access public
+	 * @return string
+	 */
+	public function caps() {
+		return $this->caps;
+	}
+
+	/**
+	 * Returns the default text-transform value.
+	 *
+	 * @since  1.3.0
+	 * @access public
+	 * @return string
+	 */
+	public function transform() {
+		return $this->transform;
+	}
+
+	/**
 	 * Returns the setting name as a theme mod.
 	 *
 	 * @since  1.3.0
@@ -207,9 +248,15 @@ class Setting implements JsonSerializable {
 	 */
 	public function modName( $option = 'family' ) {
 
+		$map = [
+			'family'    => 'font_family_%s',
+			'style'     => 'font_style_%s',
+			'caps'      => 'font_variant_caps_%s',
+			'transform' => 'text_transform_%s'
+		];
+
 		return sprintf(
-			'font_%s_%s',
-			$option,
+			$map[ $option ],
 			str_replace( '-', '_', $this->name() )
 		);
 	}
@@ -320,6 +367,34 @@ class Setting implements JsonSerializable {
 					':root',
 					sprintf( '--font-style-%s-italic', $this->name() ),
 					$italic_style
+				);
+			}
+		}
+
+		if ( $this->hasOption( 'caps' ) ) {
+
+			$cap = App::resolve( Caps::class )->get( $this->mod( 'caps' ) );
+
+			if ( 'normal' !== $cap->cap() ) {
+
+				$properties[ 'font-variant-caps-' . $this->name() ] = new CustomProperty (
+					':root',
+					sprintf( '--font-variant-caps-%s', $this->name() ),
+					$cap->cap()
+				);
+			}
+		}
+
+		if ( $this->hasOption( 'transform' ) ) {
+
+			$transform = App::resolve( Transforms::class )->get( $this->mod( 'transform' ) );
+
+			if ( 'none' !== $transform->transform() ) {
+
+				$properties[ 'text-transform-' . $this->name() ] = new CustomProperty (
+					':root',
+					sprintf( '--text-transform-%s', $this->name() ),
+					$transform->transform()
 				);
 			}
 		}
