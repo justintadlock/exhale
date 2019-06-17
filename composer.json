@@ -22,10 +22,6 @@
                 "composer/installers" : "~1.0",
                 "justintadlock/hybrid-core" : "^5.0",
 		"justintadlock/hybrid-carbon": "^1.0",
-		"justintadlock/hybrid-font": "^1.0",
-		"justintadlock/hybrid-customize": "^1.0"
-        },
-	"require-dev": {
-		"samikeijonen/phpcs-composer": "dev-master"
-	}
+		"justintadlock/hybrid-font": "^1.0"
+        }
 }
