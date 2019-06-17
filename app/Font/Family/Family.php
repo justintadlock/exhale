@@ -178,19 +178,14 @@ class Family implements JsonSerializable {
 		return $this->isGoogleFont() ? $this->google : '';
 	}
 
+	/**
+	 * Returns the font styles that this family supports.
+	 *
+	 * @since  1.3.0
+	 * @access public
+	 * @return array
+	 */
 	public function styles() {
 		return $this->styles;
-	}
-
-	public function forBodyCopy() {
-
-		$body_copy = [
-			'400',
-			'400i',
-			'700',
-			'700i'
-		];
-
-		return empty( array_diff( $body_copy, $this->styles() ) );
 	}
 }

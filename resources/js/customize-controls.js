@@ -12,9 +12,9 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-import fonts        from './customize-controls/fonts';
-import footer       from './customize-controls/footer';
-import imageFilters from './customize-controls/image-filters';
+import controlFont        from './customize-controls/control-font';
+import controlImageFilter from './customize-controls/control-image-filter';
+import footer             from './customize-controls/footer';
 
 // Hybrid Customize controls.
 //

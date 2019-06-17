@@ -42,14 +42,18 @@ class Styles extends Collection {
 	 *
 	 * @since  1.3.0
 	 * @access public
+	 * @param  array  $styles  Limit choices to specific styles.
 	 * @return array
 	 */
-	public function customizeChoices() {
+	public function customizeChoices( array $styles = [] ) {
 
 		$choices = [];
 
 		foreach ( $this->all() as $style ) {
-			$choices[ $style->name() ] = $style->label();
+
+			if ( ! $styles || in_array( $style->name(), $styles ) ) {
+				$choices[ $style->name() ] = $style->label();
+			}
 		}
 
 		return $choices;

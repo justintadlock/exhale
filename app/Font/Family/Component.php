@@ -74,7 +74,7 @@ class Component implements Bootable {
 	public function register() {
 
 		// Hook for registering custom fonts.
-		do_action( 'exhale/font/family/register',  $this->families );
+		do_action( 'exhale/font/family/register', $this->families );
 	}
 
 	/**

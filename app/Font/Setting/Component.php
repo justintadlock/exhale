@@ -143,8 +143,16 @@ class Component implements Bootable {
 	 */
 	public function registerDefaultSettings( Settings $settings ) {
 
-		$base   = Config::get( '_settings-font-family' );
-		$config = Config::get( 'settings-font-family'  );
+		// Base configuration.
+		$base = Config::get( '_settings-font' );
+
+		// Back-compat with child themes that registered a config of
+		// `config/settings-font-family.php` pre-1.3.
+		if ( is_child_theme() ) {
+			$config = Config::get( 'settings-font-family' );
+		}
+
+		$config = $config ?: Config::get( 'settings-font' );
 
 		$config = is_array( $config ) ? $config : [];
 
@@ -252,41 +260,57 @@ class Component implements Bootable {
 		// Registers the font settings and controls.
 		array_map( function( $setting ) use ( $manager ) {
 
+			// Bail if the setting doesn't handle the font family.
+			// In the future we'll allow this.
+			if ( ! $setting->hasOption( 'family' ) ) {
+				return;
+			}
+
+			// Set up the default control arguments.
 			$control = [
 				'section'     => 'fonts',
 				'label'       => $setting->label(),
 				'description' => $setting->description(),
-				'settings'    => [
-					'family' => $setting->modName( 'family' )
-				],
-				'family'      => [
-					'choices' => $this->families->customizeChoices( $setting->requiredStyles() )
-				],
+				'settings'    => [],
+				'family'      => [],
 				'style'       => []
 			];
 
-			$manager->add_setting( $setting->modName( 'family' ), [
-				'default'           => $setting->family(),
-				'sanitize_callback' => 'sanitize_key',
-				'transport'         => 'postMessage'
-			] );
+			// If the setting has the family option.
+			if ( $setting->hasOption( 'family' ) ) {
 
-			if ( ! $setting->requiredStyles() ) {
-				$control['settings']['style'] = 'font_style_' . $setting->name();
+				// Add the family setting name to the control.
+				$control['settings']['family'] = $setting->modName( 'family' );
 
-				$choices = [];
+				// Add the family choices to the control.
+				$control['family']['choices'] = $this->families->customizeChoices(
+					$setting->requiredStyles()
+				);
 
-				foreach ( $this->styles->customizeChoices() as $choice => $label ) {
+				// Register the family setting.
+				$manager->add_setting( $setting->modName( 'family' ), [
+					'default'           => $setting->family(),
+					'sanitize_callback' => 'sanitize_key',
+					'transport'         => 'postMessage'
+				] );
+			}
 
-					$family = $this->families->get( $setting->mod() );
+			// If the setting has the style option.
+			if ( $setting->hasOption( 'style' ) ) {
 
-					if ( in_array( $choice, $family->styles() ) ) {
-						$choices[ $choice ] = $label;
-					}
-				}
+				// Add the style setting name to the control.
+				$control['settings']['style'] = $setting->modName( 'style' );
 
-				$control['style']['choices'] = $choices;
+				// Add the style choices to the control.
+				$control['style']['choices'] = [];
 
+				$limit = $setting->hasOption( 'family' )
+				         ? $this->families->get( $setting->mod() )->styles()
+				         : [];
+
+				$control['style']['choices'] = $this->styles->customizeChoices( $limit );
+
+				// Register the family setting.
 				$manager->add_setting( $setting->modName( 'style' ), [
 					'default'           => '400',
 					'sanitize_callback' => 'sanitize_key',
@@ -294,13 +318,12 @@ class Component implements Bootable {
 				] );
 			}
 
-			$manager->add_control(
-				new CustomizeControlFont(
-					$manager,
-					'font_' . $setting->name(),
-					$control
-				)
-			);
+			// Register the font control.
+			$manager->add_control( new CustomizeControlFont(
+				$manager,
+				sprintf( 'font_%s', $setting->name() ),
+				$control
+			) );
 
 		}, $this->settings->all() );
 	}

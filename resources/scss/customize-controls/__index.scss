@@ -18,11 +18,11 @@
 
 // Add a separator between font controls.
 .customize-control-exhale-font {
-	border-top: 1px solid #ddd;
-	padding-top: 12px;
+	padding-bottom: 12px;
+	border-bottom:  1px solid #ddd;
 
-	&:first-of-type {
-		border-top: none;
-		padding-top: 0;
+	&:last-of-type {
+		padding-bottom: 0;
+		border-bottom:  none;
 	}
 }

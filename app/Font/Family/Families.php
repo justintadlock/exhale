@@ -42,9 +42,10 @@ class Families extends Collection {
 	 *
 	 * @since  1.0.0
 	 * @access public
+	 * @param  array  $styles  Array of styles family must support.
 	 * @return array
 	 */
-	public function customizeChoices( $styles = [] ) {
+	public function customizeChoices( array $styles = [] ) {
 
 		$choices = [
 			'system' => [

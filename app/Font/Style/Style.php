@@ -132,21 +132,58 @@ class Style implements JsonSerializable {
 	 * @return string
 	 */
 	public function style() {
-		return $this->style;
+
+		$allowed = [
+			'normal',
+			'italic'
+		];
+
+		return in_array( $this->style, $allowed ) ? $this->style : 'normal';
 	}
 
+	/**
+	 * Returns the font weight.
+	 *
+	 * @since  1.3.0
+	 * @access public
+	 * @return int
+	 */
 	public function weight() {
-		return $this->weight;
+
+		$allowed = range( 100, 900, 100 );
+
+		return in_array( $this->weight, $allowed ) ? $this->weight : 400;
 	}
 
+	/**
+	 * Returns the normal style name for this font style.
+	 *
+	 * @since  1.3.0
+	 * @access public
+	 * @return string
+	 */
 	public function normal() {
 		return str_replace( 'i', '', $this->name() );
 	}
 
+	/**
+	 * Returns the italic style name for this font style.
+	 *
+	 * @since  1.3.0
+	 * @access public
+	 * @return string
+	 */
 	public function italic() {
 		return sprintf( '%si', $this->normal() );
 	}
 
+	/**
+	 * Returns a range of potentially bold weights for this font style.
+	 *
+	 * @since  1.3.0
+	 * @access public
+	 * @return array
+	 */
 	public function bolds() {
 
 		$bolds  = [];
@@ -154,21 +191,35 @@ class Style implements JsonSerializable {
 		$max    = 900;
 
 		if ( $max > $normal + 300 ) {
-			$range = range( $normal + 300, $max, 100 );
+
+			$range   = range( $normal + 300, $max, 100 );
 			$range[] = $normal + 200;
 			$range[] = $normal + 100;
+
 		} elseif ( $max > $normal + 200 ) {
-			$range = range( $normal + 200, $max, 100 );
+
+			$range   = range( $normal + 200, $max, 100 );
 			$range[] = $normal + 100;
+
 		} elseif ( $max > $normal + 100 ) {
+
 			$range = range( $normal + 100, $max, 100 );
+
 		} else {
+
 			$range = range( $normal, $max, 100 );
 		}
 
 		return $range;
 	}
 
+	/**
+	 * Returns a range of potential bold-italic styles for this font style.
+	 *
+	 * @since  1.3.0
+	 * @access public
+	 * @return array
+	 */
 	public function boldItalics() {
 		$bold_italics = [];
 
@@ -178,14 +229,4 @@ class Style implements JsonSerializable {
 
 		return $bold_italics;
 	}
-
-
-
-
-
-
-
-
-
-
 }

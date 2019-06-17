@@ -1,8 +1,8 @@
 <?php
 /**
- * Customize Font Families Config.
+ * Customize Font Config.
  *
- * Defines the font family options available in the customizer.
+ * Defines the font options available in the customizer.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -12,6 +12,13 @@
  */
 
 return [
+	'headings' => [
+		'label'           => _x( 'Headings', 'font family setting', 'exhale' ),
+		'description'     => __( 'Font used for text headings.', 'exhale' ),
+		'family'          => 'system-ui',
+		'style'           => '700',
+		'options'         => [ 'family', 'style' ]
+	],
 	'primary' => [
 		'label'           => _x( 'Primary', 'font family setting', 'exhale' ),
 		'description'     => __( 'Font used for most of the text on the site.', 'exhale' ),
@@ -25,12 +32,5 @@ return [
 		'family'          => 'system-ui',
 		'options'         => [ 'family' ],
 		'required_styles' => [ '400', '400i', '700', '700i' ]
-	],
-	'headings' => [
-		'label'           => _x( 'Headings', 'font family setting', 'exhale' ),
-		'description'     => __( 'Font used for text headings.', 'exhale' ),
-		'family'          => 'system-ui',
-		'style'           => '700',
-		'options'         => [ 'family', 'style' ]
 	]
 ];

@@ -158,7 +158,7 @@ class Setting implements JsonSerializable {
 	public function label() {
 
 		return apply_filters(
-			"exhale/font/family/setting/{$this->name}/label",
+			"exhale/font/setting/{$this->name}/label",
 			$this->label ?: $this->name(),
 			$this
 		);
@@ -206,6 +206,7 @@ class Setting implements JsonSerializable {
 	 * @return string
 	 */
 	public function modName( $option = 'family' ) {
+
 		return sprintf(
 			'font_%s_%s',
 			$option,
