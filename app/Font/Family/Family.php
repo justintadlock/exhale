@@ -106,6 +106,7 @@ class Family implements JsonSerializable {
 	public function jsonSerialize() {
 
 		return [
+			'name'       => $this->name(),
 			'stack'      => $this->stack(),
 			'googleName' => str_replace( '+', ' ', $this->googleName() ),
 			'styles'     => $this->styles()

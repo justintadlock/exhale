@@ -269,9 +269,9 @@ class Component implements Bootable {
 		);
 
 		wp_localize_script( 'exhale-customize-controls', 'exhaleCustomizeControls', [
-			'fontFamilyChoices'  => App::resolve( FontFamilies::class ),
-			'fontStyles'         => App::resolve( FontStyles::class   ),
-			'imageFilters'       => App::resolve( ImageFilters::class )
+			'fontFamilies'  => App::resolve( FontFamilies::class ),
+			'fontStyles'    => App::resolve( FontStyles::class   ),
+			'imageFilters'  => App::resolve( ImageFilters::class )
 		] );
 	}
 
@@ -293,11 +293,11 @@ class Component implements Bootable {
 		);
 
 		wp_localize_script( 'exhale-customize-preview', 'exhaleCustomizePreview', [
-			'colorSettings'      => App::resolve( ColorSettings::class ),
-			'fontFamilySettings' => App::resolve( FontSettings::class  ),
-			'fontFamilyChoices'  => App::resolve( FontFamilies::class  ),
-			'fontStyles'         => App::resolve( FontStyles::class    ),
-			'layouts'            => App::resolve( Layouts::class       )
+			'colorSettings' => App::resolve( ColorSettings::class ),
+			'fontSettings'  => App::resolve( FontSettings::class  ),
+			'fontFamilies'  => App::resolve( FontFamilies::class  ),
+			'fontStyles'    => App::resolve( FontStyles::class    ),
+			'layouts'       => App::resolve( Layouts::class       )
 		] );
 	}
 }

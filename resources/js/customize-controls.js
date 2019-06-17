@@ -24,5 +24,5 @@ import imageFilters from './customize-controls/image-filters';
 // import checkboxMultiple from 'hybrid-customize/js/controls/checkbox-multiple.js';
 // import palette          from 'hybrid-customize/js/controls/palette.js';
 // import radioImage       from 'hybrid-customize/js/controls/radio-image.js';
-import selectGroup      from 'hybrid-customize/js/controls/select-group.js';
+// import selectGroup      from 'hybrid-customize/js/controls/select-group.js';
 // import selectMultiple   from 'hybrid-customize/js/controls/select-multiple.js';
