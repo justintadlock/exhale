@@ -124,7 +124,7 @@ function nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 /**
  * Converts old page template slugs to the updated slug.
  *
- * @since  1.3.0
+ * @since  2.0.0
  * @access public
  * @return void
  */

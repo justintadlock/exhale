@@ -18,7 +18,7 @@ use Exhale\Contracts\CssCustomProperty;
 /**
  * CSS custom property interface.
  *
- * @since  1.3.0
+ * @since  2.0.0
  * @access public
  */
 class CustomProperty implements CssCustomProperty {
@@ -36,7 +36,7 @@ class CustomProperty implements CssCustomProperty {
 	/**
 	 * Returns a valid CSS selector for the property.
 	 *
-	 * @since  1.3.0
+	 * @since  2.0.0
 	 * @access public
 	 * @return string
 	 */
@@ -47,7 +47,7 @@ class CustomProperty implements CssCustomProperty {
 	/**
 	 * Returns the CSS property.
 	 *
-	 * @since  1.3.0
+	 * @since  2.0.0
 	 * @access public
 	 * @return string
 	 */
@@ -58,7 +58,7 @@ class CustomProperty implements CssCustomProperty {
 	/**
 	 * Returns the CSS property value.
 	 *
-	 * @since  1.3.0
+	 * @since  2.0.0
 	 * @access public
 	 * @return string
 	 */

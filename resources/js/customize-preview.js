@@ -14,6 +14,6 @@
 
 import { color }        from './customize-preview/color';
 import { customHeader } from './customize-preview/custom-header';
-import { font }         from './customize-preview/fonts';
 import { imageFilters } from './customize-preview/image-filters';
 import { layouts }      from './customize-preview/layout';
+import { typography }   from './customize-preview/typography';

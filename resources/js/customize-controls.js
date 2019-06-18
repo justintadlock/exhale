@@ -12,8 +12,8 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-import controlFont        from './customize-controls/control-font';
 import controlImageFilter from './customize-controls/control-image-filter';
+import controlTypography  from './customize-controls/control-typography';
 import footer             from './customize-controls/footer';
 
 // Hybrid Customize controls.

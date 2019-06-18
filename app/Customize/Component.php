@@ -18,17 +18,17 @@ use WP_Customize_Color_Control;
 
 use Hybrid\App;
 use Hybrid\Contracts\Bootable;
-use Exhale\Template\Footer;
-
-use Exhale\Color\Setting\Settings        as ColorSettings;
-use Exhale\Font\Family\Families          as FontFamilies;
-use Exhale\Font\Setting\Settings         as FontSettings;
-use Exhale\Font\Style\Styles             as FontStyles;
-use Exhale\Font\VariantCaps\Caps         as FontVariantCaps;
-use Exhale\Font\TextTransform\Transforms as TextTransforms;
-use Exhale\Image\Filter\Filters          as ImageFilters;
 use Exhale\Layout\Layouts;
+use Exhale\Template\Footer;
 use Exhale\Tools\Mod;
+
+use Exhale\Color\Setting\Settings               as ColorSettings;
+use Exhale\Image\Filter\Filters                 as ImageFilters;
+use Exhale\Typography\Font\Family\Families      as FontFamilies;
+use Exhale\Typography\Font\Style\Styles         as FontStyles;
+use Exhale\Typography\Font\VariantCaps\Caps     as FontVariantCaps;
+use Exhale\Typography\Text\Transform\Transforms as TextTransforms;
+use Exhale\Typography\Setting\Settings          as TypographySettings;
 
 use function Exhale\asset;
 
@@ -97,9 +97,9 @@ class Component implements Bootable {
 		$bg_image = $manager->get_section( 'background_image' );
 
 		// Add the fonts section.
-		$manager->add_section( 'fonts', [
+		$manager->add_section( 'typography', [
 			'panel'    => 'theme_options',
-			'title'    => __( 'Fonts',  'exhale' ),
+			'title'    => __( 'Typography',  'exhale' ),
 			'priority' => 10
 		] );
 
@@ -177,7 +177,7 @@ class Component implements Bootable {
 
 		// Register JS control types.
 		$manager->register_control_type( Controls\ImageFilter::class );
-		$manager->register_control_type( Controls\Font::class        );
+		$manager->register_control_type( Controls\Typography::class  );
 
 		// Change background color control labels.
 		$bg_color              = $manager->get_control( 'background_color' );
@@ -295,13 +295,13 @@ class Component implements Bootable {
 		);
 
 		wp_localize_script( 'exhale-customize-preview', 'exhaleCustomizePreview', [
-			'colorSettings'    => App::resolve( ColorSettings::class   ),
-			'fontSettings'     => App::resolve( FontSettings::class    ),
-			'fontFamilies'     => App::resolve( FontFamilies::class    ),
-			'fontStyles'       => App::resolve( FontStyles::class      ),
-			'fontVariantCaps'  => App::resolve( FontVariantCaps::class ),
-			'layouts'          => App::resolve( Layouts::class         ),
-			'textTransforms'   => App::resolve( TextTransforms::class  )
+			'colorSettings'      => App::resolve( ColorSettings::class      ),
+			'typographySettings' => App::resolve( TypographySettings::class ),
+			'fontFamilies'       => App::resolve( FontFamilies::class       ),
+			'fontStyles'         => App::resolve( FontStyles::class         ),
+			'fontVariantCaps'    => App::resolve( FontVariantCaps::class    ),
+			'layouts'            => App::resolve( Layouts::class            ),
+			'textTransforms'     => App::resolve( TextTransforms::class     )
 		] );
 	}
 }

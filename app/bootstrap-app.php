@@ -30,18 +30,16 @@ $exhale = new \Hybrid\Core\Application();
 # for running the theme. Service providers are essentially the backbone of the
 # bootstrapping process.
 
-$exhale->provider( \Exhale\Provider::class           );
-$exhale->provider( \Exhale\CleanWP\Provider::class   );
-$exhale->provider( \Exhale\Color\Provider::class     );
-$exhale->provider( \Exhale\Customize\Provider::class );
-$exhale->provider( \Exhale\Font\Provider::class      );
-$exhale->provider( \Exhale\Image\Provider::class     );
-$exhale->provider( \Exhale\Layout\Provider::class    );
-$exhale->provider( \Exhale\Query\Provider::class     );
-$exhale->provider( \Exhale\Settings\Provider::class  );
-
-# Boot external projects.
-$exhale->provider( \Hybrid\Customize\CustomizeServiceProvider::class );
+$exhale->provider( \Exhale\Provider::class            );
+$exhale->provider( \Exhale\CleanWP\Provider::class    );
+$exhale->provider( \Exhale\Color\Provider::class      );
+$exhale->provider( \Exhale\Customize\Provider::class  );
+$exhale->provider( \Exhale\Editor\Provider::class     );
+$exhale->provider( \Exhale\Image\Provider::class      );
+$exhale->provider( \Exhale\Layout\Provider::class     );
+$exhale->provider( \Exhale\Query\Provider::class      );
+$exhale->provider( \Exhale\Settings\Provider::class   );
+$exhale->provider( \Exhale\Typography\Provider::class );
 
 # ------------------------------------------------------------------------------
 # Perform bootstrap actions.

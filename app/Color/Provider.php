@@ -33,19 +33,11 @@ class Provider extends ServiceProvider {
 	 */
 	public function register() {
 		$this->app->singleton( Setting\Settings::class );
-		$this->app->singleton( Editor\Colors::class    );
 
 		$this->app->singleton( Setting\Component::class, function() {
 			return new Setting\Component(
 				$this->app->resolve( Setting\Settings::class  ),
 				$this->app->resolve( CustomProperties::class  )
-			);
-		} );
-
-		$this->app->singleton( Editor\Component::class, function() {
-			return new Editor\Component(
-				$this->app->resolve( Editor\Colors::class    ),
-				$this->app->resolve( CustomProperties::class )
 			);
 		} );
 	}
@@ -59,6 +51,5 @@ class Provider extends ServiceProvider {
 	 */
 	public function boot() {
 		$this->app->resolve( Setting\Component::class )->boot();
-		$this->app->resolve( Editor\Component::class  )->boot();
 	}
 }

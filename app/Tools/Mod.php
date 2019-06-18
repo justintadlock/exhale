@@ -50,7 +50,7 @@ class Mod {
 	/**
 	 * Returns a default theme mod.
 	 *
-	 * @since  1.3.0
+	 * @since  2.0.0
 	 * @access public
 	 * @param  string  $name
 	 * @return mixed
