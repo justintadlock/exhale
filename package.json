@@ -19,8 +19,7 @@
 		"lint:scripts": "cross-env eslint './resources/js/**/*.js'",
 		"i18n": "npm run i18n:textdomain && npm run i18n:pot",
 		"i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules",
-		"i18n:pot": "npx wpi18n makepot --domain-path=/resources/lang",
-		"rename": "theme-claim"
+		"i18n:pot": "npx wpi18n makepot --domain-path=/resources/lang"
 	},
 	"repository": {
 		"type": "git",
@@ -46,7 +45,6 @@
 		"sass-loader": "^7.1.0",
 		"stylelint": "^9.10.1",
 		"stylelint-config-wordpress": "^13.1.0",
-		"theme-claim": "^0.1.2",
 		"vue-template-compiler": "^2.6.9"
 	},
 	"dependencies": {
