@@ -12,6 +12,7 @@ h1, h2, h3, h4, h5, h6, th, dt,
 h1, h2, h3, h4, h5, h6 {
 	margin:            0 0 0.5em;
 	line-height:       1.58;
+	color:             var( --color-headings );
 
 	em, i {
 		font-style: var( --font-style-headings-italic, italic );
