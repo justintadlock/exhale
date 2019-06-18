@@ -30,12 +30,12 @@ add_action( 'template_redirect',  'exhale_preview'        );
  */
 function exhale_compat_message() {
 
-	if ( version_compare( $GLOBALS['wp_version'], '5.0', '<' ) ) {
+	if ( version_compare( $GLOBALS['wp_version'], '5.2', '<' ) ) {
 
 		return sprintf(
 			// Translators: 1 is the required WordPress version and 2 is the user's current version.
 			__( 'Exhale requires at least WordPress version %1$s. You are running version %2$s. Please upgrade and try again.', 'exhale' ),
-			'5.0',
+			'5.2',
 			$GLOBALS['wp_version']
 		);
 
