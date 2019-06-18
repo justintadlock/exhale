@@ -1,0 +1,35 @@
+////
+/// Buttons
+///
+/// @group  Components
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.wp-block-button__link,
+.wp-block-file__button {
+	cursor:          pointer;
+	display:         inline-block;
+	margin:          0;
+	padding:         $spacing-half $spacing-global;
+	line-height:     1;
+	font-family:     var( --font-family-secondary );
+	font-size:       1.125rem;
+	text-decoration: none;
+	color:           var( --color-content-background );
+	background:      var( --color-primary );
+	border:          none;
+	border-radius:   3px;
+	white-space:     normal;
+	word-break:      break-all;
+	transition:      all 0.5s ease-in-out;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}

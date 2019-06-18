@@ -9,28 +9,15 @@
 .wp-block-button {
 	margin-bottom: $spacing-global;
 
-	&__link {
-		border-radius:   3px;
-		display:         inline-block;
-		margin:          0;
-		padding:         $spacing-half $spacing-global;
-		font-family:     font-family( secondary );
-		font-size:       1.125rem;
-		line-height:     1;
-		text-decoration: none;
-		white-space:     normal;
-		word-break:      break-all;
-	}
+	// See `components/_button.scss`.
+	&__link {}
 
 	&__link:hover,
-	&__link:focus {
-		text-decoration: underline;
-	}
+	&__link:focus {}
 }
 
-// Using `:root` here to overwrite general link rules.
-a.wp-block-button__link,
-.wp-block-button__link {
+// Using `a` here to overwrite general link rules.
+a.wp-block-button__link {
 	color:      var( --color-content-background );
 	background: var( --color-primary );
 }

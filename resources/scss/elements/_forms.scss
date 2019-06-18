@@ -24,7 +24,7 @@ textarea {
 	box-sizing:  border-box;
 	padding:     0.5rem;
 	line-height: 1;
-	font-family: font-family( primary );
+	font-family: var( --font-family-primary );
 	font-size:   1em;
 	color:       inherit;
 	background:  transparent;
@@ -54,27 +54,8 @@ textarea {
 	line-height: inherit;
 }
 
+// See `components/_button.scss`.
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
-button {
-	cursor:          pointer;
-	color:           var( --color-content-background );
-	background:      var( --color-primary );
-	border:          none;
-	border-radius:   3px;
-	display:         inline-block;
-	margin:          0;
-	padding:         $spacing-half $spacing-global;
-	font-family:     font-family( secondary );
-	font-size:       1.125rem;
-	text-decoration: none;
-	white-space:     normal;
-	word-break:      break-all;
-	transition:      all 0.5s ease-in-out;
-
-	&:hover,
-	&:focus {
-		text-decoration: underline;
-	}
-}
+button {}

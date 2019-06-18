@@ -17,22 +17,12 @@
 		text-align: right;
 	}
 
-	&__button {
-		color:           var( --color-content-background );
-		background:      var( --color-primary );
-		border-radius:   3px;
-		display:         inline-block;
-		margin:          0;
-		padding:         0.5em 3em;
-		text-decoration: none;
-		white-space:     normal;
-		word-break:      break-all;
+	// See `components/_button.scss`.
+	&__button {}
 
-		&:hover,
-		&:focus {
-			color:           var( --color-content-background );
-			text-decoration: underline;
-		}
+	&__button:hover,
+	&__button:focus {
+		color:  var( --color-content-background );
 	}
 }
 
