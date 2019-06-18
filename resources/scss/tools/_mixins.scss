@@ -22,7 +22,7 @@
 }
 
 @mixin meta {
-	font-family: font-family( secondary );
+	font-family: var( --font-family-secondary );
 	font-size: 16px;
 	color: var( --color-secondary );
 }

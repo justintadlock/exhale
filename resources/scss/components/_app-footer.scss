@@ -17,7 +17,7 @@
 	&__credit {
 		// components/_text-secondary.scss
 		text-align:  center;
-		font-family: font-family( secondary );
+		font-family: var( --font-family-secondary );
 		font-size:   16px;
 
 		+ .menu--social .menu__items {
