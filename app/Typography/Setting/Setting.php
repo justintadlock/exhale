@@ -351,17 +351,21 @@ class Setting implements JsonSerializable {
 				}
 			}
 
-			$properties[ 'font-weight-' . $this->name() ] = new CustomProperty(
-				':root',
-				sprintf( '--font-weight-%s', $this->name() ),
-				$style->weight()
-			);
+			if ( 400 !== $style->weight() ) {
+				$properties[ 'font-weight-' . $this->name() ] = new CustomProperty(
+					':root',
+					sprintf( '--font-weight-%s', $this->name() ),
+					$style->weight()
+				);
+			}
 
-			$properties[ 'font-style-' . $this->name() ] = new CustomProperty(
-				':root',
-				sprintf( '--font-style-%s', $this->name() ),
-				$style->style()
-			);
+			if ( 'normal' !== $style->style() ) {
+				$properties[ 'font-style-' . $this->name() ] = new CustomProperty(
+					':root',
+					sprintf( '--font-style-%s', $this->name() ),
+					$style->style()
+				);
+			}
 
 			if ( 700 !== $bold_weight ) {
 				$properties[ 'font-weight-' . $this->name() . '-bold' ] = new CustomProperty(
