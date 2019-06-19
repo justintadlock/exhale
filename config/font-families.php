@@ -35,13 +35,15 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Alegreya', 'exhale' ),
 		'stack'  => 'Alegreya, serif',
-		'google' => 'Alegreya'
+		'google' => 'Alegreya',
+		'styles' => [ '400', '400i', '500', '500i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'alegreya-sans' => [
 		// Translators: Font family label.
 		'label'  => __( 'Alegreya Sans', 'exhale' ),
 		'stack'  => '"Alegreya Sans", sans-serif',
-		'google' => 'Alegreya+Sans'
+		'google' => 'Alegreya+Sans',
+		'styles' => [ '100', '100i', '300', '300i', '400', '400i', '500', '500i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'alfa-slab-one' => [
 		// Translators: Font family label.
@@ -54,19 +56,36 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Almendra', 'exhale' ),
 		'stack'  => 'Almendra, serif',
-		'google' => 'Almendra'
+		'google' => 'Almendra',
+		'styles' => [ '400', '400i', '700', '700i' ]
+	],
+	'almendra-display' => [
+		// Translators: Font family label.
+		'label'  => __( 'Almendra Display', 'exhale' ),
+		'stack'  => '"Almendra Display", cursive',
+		'google' => 'Almendra+Display',
+		'styles' => [ '400' ]
+	],
+	'almendra-sc' => [
+		// Translators: Font family label.
+		'label'  => __( 'Almendra Small Caps', 'exhale' ),
+		'stack'  => '"Almendra SC", serif',
+		'google' => 'Almendra+SC',
+		'styles' => [ '400' ]
 	],
 	'amaranth' => [
 		// Translators: Font family label.
 		'label'  => __( 'Amaranth', 'exhale' ),
 		'stack'  => 'Amaranth, sans-serif',
-		'google' => 'Amaranth'
+		'google' => 'Amaranth',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'amiri' => [
 		// Translators: Font family label.
 		'label'  => __( 'Amiri', 'exhale' ),
 		'stack'  => 'Amiri, serif',
-		'google' => 'Amiri'
+		'google' => 'Amiri',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'andale-mono' => [
 		// Translators: Font family label.
@@ -77,19 +96,29 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Anonymous Pro', 'exhale' ),
 		'stack'  => '"Anonymous Pro", monospace',
-		'google' => 'Anonymous+Pro'
+		'google' => 'Anonymous+Pro',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'archivo' => [
 		// Translators: Font family label.
 		'label'  => __( 'Archivo', 'exhale' ),
 		'stack'  => 'Archivo, sans-serif',
-		'google' => 'Archivo'
+		'google' => 'Archivo',
+		'styles' => [ '400', '400i', '500', '500i', '600', '600i', '700', '700i' ]
+	],
+	'archivo-black' => [
+		// Translators: Font family label.
+		'label'  => __( 'Archivo Black', 'exhale' ),
+		'stack'  => '"Archivo Black", sans-serif',
+		'google' => 'Archivo+Black',
+		'styles' => [ '400'  ]
 	],
 	'archivo-narrow' => [
 		// Translators: Font family label.
 		'label'  => __( 'Archivo Narrow', 'exhale' ),
 		'stack'  => '"Archivo Narrow", sans-serif',
-		'google' => 'Archivo+Narrow'
+		'google' => 'Archivo+Narrow',
+		'styles' => [ '400', '400i', '500', '500i', '600', '600i', '700', '700i' ]
 	],
 	'arial' => [
 		// Translators: Font family label.
@@ -111,7 +140,8 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Arimo', 'exhale' ),
 		'stack'  => 'Arimo, sans-serif',
-		'google' => 'Arimo'
+		'google' => 'Arimo',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'arizonia' => [
 		// Translators: Font family label.
@@ -124,43 +154,57 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Arsenal', 'exhale' ),
 		'stack'  => 'Arsenal, sans-serif',
-		'google' => 'Arsenal'
+		'google' => 'Arsenal',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'arvo' => [
 		// Translators: Font family label.
 		'label'  => __( 'Arvo', 'exhale' ),
 		'stack'  => 'Arvo, serif',
-		'google' => 'Arvo'
+		'google' => 'Arvo',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'asap' => [
 		// Translators: Font family label.
 		'label'  => __( 'Asap', 'exhale' ),
 		'stack'  => 'Asap, sans-serif',
-		'google' => 'Asap'
+		'google' => 'Asap',
+		'styles' => [ '400', '400i', '500', '500i', '600', '600i', '700', '700i' ]
 	],
 	'asap-condensed' => [
 		// Translators: Font family label.
 		'label'  => __( 'Asap Condensed', 'exhale' ),
 		'stack'  => '"Asap Condensed", sans-serif',
-		'google' => 'Asap+Condensed'
+		'google' => 'Asap+Condensed',
+		'styles' => [ '400', '400i', '500', '500i', '600', '600i', '700', '700i' ]
 	],
 	'averia-libre' => [
 		// Translators: Font family label.
 		'label'  => __( 'Averia Libre', 'exhale' ),
 		'stack'  => '"Averia Libre", cursive',
-		'google' => 'Averia+Libre'
+		'google' => 'Averia+Libre',
+		'styles' => [ '300', '300i', '400', '400i', '700', '700i' ]
+	],
+	'averia-gruesa-libre' => [
+		// Translators: Font family label.
+		'label'  => __( 'Averia Gruesa Libre', 'exhale' ),
+		'stack'  => '"Averia Gruesa Libre", cursive',
+		'google' => 'Averia+Gruesa+Libre',
+		'styles' => [ '400' ]
 	],
 	'averia-sans-libre' => [
 		// Translators: Font family label.
 		'label'  => __( 'Averia Sans Libre', 'exhale' ),
 		'stack'  => '"Averia Sans Libre", sans-serif',
-		'google' => 'Averia+Sans+Libre'
+		'google' => 'Averia+Sans+Libre',
+		'styles' => [ '300', '300i', '400', '400i', '700', '700i' ]
 	],
 	'averia-serif-libre' => [
 		// Translators: Font family label.
 		'label'  => __( 'Averia Serif Libre', 'exhale' ),
 		'stack'  => '"Averia Serif Libre", sans-serif',
-		'google' => 'Averia+Serif+Libre'
+		'google' => 'Averia+Serif+Libre',
+		'styles' => [ '300', '300i', '400', '400i', '700', '700i' ]
 	],
 	'bangers' => [
 		// Translators: Font family label.
@@ -173,19 +217,22 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Barlow', 'exhale' ),
 		'stack'  => 'Barlow, sans-serif',
-		'google' => 'Barlow'
+		'google' => 'Barlow',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'barlow-condensed' => [
 		// Translators: Font family label.
 		'label'  => __( 'Barlow Condensed', 'exhale' ),
 		'stack'  => '"Barlow Condensed", sans-serif',
-		'google' => 'Barlow+Condensed'
+		'google' => 'Barlow+Condensed',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'barlow-semi-condensed' => [
 		// Translators: Font family label.
 		'label'  => __( 'Barlow Semi Condensed', 'exhale' ),
 		'stack'  => '"Barlow Semi Condensed", sans-serif',
-		'google' => 'Barlow+Semi+Condensed'
+		'google' => 'Barlow+Semi+Condensed',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'baskerville' => [
 		// Translators: Font family label.
@@ -222,19 +269,36 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Cabin', 'exhale' ),
 		'stack'  => 'Cabin, sans-serif',
-		'google' => 'Cabin'
+		'google' => 'Cabin',
+		'styles' => [ '400', '400i', '500', '500i', '600', '600i', '700', '700i' ]
+	],
+	'cabin-condensed' => [
+		// Translators: Font family label.
+		'label'  => __( 'Cabin Condensed', 'exhale' ),
+		'stack'  => '"Cabin Condensed", sans-serif',
+		'google' => 'Cabin+Condensed',
+		'styles' => [ '400', '500', '600', '700' ]
+	],
+	'cabin-sketch' => [
+		// Translators: Font family label.
+		'label'  => __( 'Cabin Sketch', 'exhale' ),
+		'stack'  => '"Cabin Sketch", cursive',
+		'google' => 'Cabin+Sketch',
+		'styles' => [ '400', '700' ]
 	],
 	'cambay' => [
 		// Translators: Font family label.
 		'label'  => __( 'Cambay', 'exhale' ),
 		'stack'  => 'Cambay, sans-serif',
-		'google' => 'Cambay'
+		'google' => 'Cambay',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'cantarell' => [
 		// Translators: Font family label.
 		'label'  => __( 'Cantarell', 'exhale' ),
 		'stack'  => 'Cantarell, sans-serif',
-		'google' => 'Cantarell'
+		'google' => 'Cantarell',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'cardo' => [
 		// Translators: Font family label.
@@ -247,7 +311,8 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Caudex', 'exhale' ),
 		'stack'  => 'Caudex, serif',
-		'google' => 'Caudex'
+		'google' => 'Caudex',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'caveat' => [
 		// Translators: Font family label.
@@ -267,7 +332,8 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Chivo', 'exhale' ),
 		'stack'  => 'Chivo, sans-serif',
-		'google' => 'Chivo'
+		'google' => 'Chivo',
+		'styles' => [ '300', '300i', '400', '400i', '700', '700i', '900', '900i' ]
 	],
 	'comfortaa' => [
 		// Translators: Font family label.
@@ -339,19 +405,22 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Cousine', 'exhale' ),
 		'stack'  => 'Cousine, monospace',
-		'google' => 'Cousine'
+		'google' => 'Cousine',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'crimson-text' => [
 		// Translators: Font family label.
 		'label'  => __( 'Crimson Text', 'exhale' ),
 		'stack'  => '"Crimson Text", serif',
-		'google' => 'Crimson+Text'
+		'google' => 'Crimson+Text',
+		'styles' => [ '400', '400i', '600', '600i', '700', '700i' ]
 	],
 	'cuprum' => [
 		// Translators: Font family label.
 		'label'  => __( 'Cuprum', 'exhale' ),
 		'stack'  => 'Cuprum, sans-serif',
-		'google' => 'Cuprum'
+		'google' => 'Cuprum',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'dancing-script' => [
 		// Translators: Font family label.
@@ -364,13 +433,15 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'EB Garamond', 'exhale' ),
 		'stack'  => '"EB Garamond", serif',
-		'google' => 'EB+Garamond'
+		'google' => 'EB+Garamond',
+		'styles' => [ '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i' ]
 	],
 	'economica' => [
 		// Translators: Font family label.
 		'label'  => __( 'Economica', 'exhale' ),
 		'stack'  => 'Economica, sans-serif',
-		'google' => 'Economica'
+		'google' => 'Economica',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'elsie' => [
 		// Translators: Font family label.
@@ -390,55 +461,71 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Exo', 'exhale' ),
 		'stack'  => 'Exo, sans-serif',
-		'google' => 'Exo'
+		'google' => 'Exo',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'exo-2' => [
 		// Translators: Font family label.
 		'label'  => __( 'Exo 2', 'exhale' ),
 		'stack'  => '"Exo 2", sans-serif',
-		'google' => 'Exo+2'
+		'google' => 'Exo+2',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'expletus-sans' => [
 		// Translators: Font family label.
 		'label'  => __( 'Expletus Sans', 'exhale' ),
 		'stack'  => '"Expletus Sans", sans-serif',
-		'google' => 'Expletus+Sans'
+		'google' => 'Expletus+Sans',
+		'styles' => [ '400', '400i', '500', '500i', '600', '600i', '700', '700i' ]
 	],
 	'faustina' => [
 		// Translators: Font family label.
 		'label'  => __( 'Faustina', 'exhale' ),
 		'stack'  => 'Faustina, serif',
-		'google' => 'Faustina'
+		'google' => 'Faustina',
+		'styles' => [ '400', '400i', '500', '500i', '600', '600i', '700', '700i' ]
+	],
+	'fira-mono' => [
+		// Translators: Font family label.
+		'label'  => __( 'Fira Mono', 'exhale' ),
+		'stack'  => '"Fira Mono", monospace',
+		'google' => 'Fira+Mono',
+		'styles' => [ '400', '500', '700' ]
 	],
 	'fira-sans' => [
 		// Translators: Font family label.
 		'label'  => __( 'Fira Sans', 'exhale' ),
 		'stack'  => '"Fira Sans", sans-serif',
-		'google' => 'Fira+Sans'
+		'google' => 'Fira+Sans',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'fira-sans-condensed' => [
 		// Translators: Font family label.
 		'label'  => __( 'Fira Sans Condensed', 'exhale' ),
 		'stack'  => '"Fira Sans Condensed", sans-serif',
-		'google' => 'Fira+Sans+Condensed'
+		'google' => 'Fira+Sans+Condensed',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'fira-sans-extra-condensed' => [
 		// Translators: Font family label.
 		'label'  => __( 'Fira Sans Extra Condensed', 'exhale' ),
 		'stack'  => '"Fira Sans Extra Condensed", sans-serif',
-		'google' => 'Fira+Sans+Extra+Condensed'
+		'google' => 'Fira+Sans+Extra+Condensed',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'gentium-basic' => [
 		// Translators: Font family label.
 		'label'  => __( 'Gentium Basic', 'exhale' ),
 		'stack'  => '"Gentium Basic", serif',
-		'google' => 'Gentium Basic'
+		'google' => 'Gentium+Basic',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'gentium-book-basic' => [
 		// Translators: Font family label.
 		'label'  => __( 'Gentium Book Basic', 'exhale' ),
 		'stack'  => '"Gentium Book Basic", serif',
-		'google' => 'Gentium Book Basic'
+		'google' => 'Gentium+Book+Basic',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'georgia' => [
 		// Translators: Font family label.
@@ -485,25 +572,29 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'IBM Plex Mono', 'exhale' ),
 		'stack'  => '"IBM Plex Mono", monospace',
-		'google' => 'IBM+Plex+Mono'
+		'google' => 'IBM+Plex+Mono',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i' ]
 	],
 	'ibm-plex-sans' => [
 		// Translators: Font family label.
 		'label'  => __( 'IBM Plex Sans', 'exhale' ),
 		'stack'  => '"IBM Plex Sans", sans-serif',
-		'google' => 'IBM+Plex+Sans'
+		'google' => 'IBM+Plex+Sans',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i' ]
 	],
 	'ibm-plex-sans-condensed' => [
 		// Translators: Font family label.
 		'label'  => __( 'IBM Plex Sans Condensed', 'exhale' ),
 		'stack'  => '"IBM Plex Sans Condensed", sans-serif',
-		'google' => 'IBM+Plex+Sans+Condensed'
+		'google' => 'IBM+Plex+Sans+Condensed',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i' ]
 	],
 	'ibm-plex-serif' => [
 		// Translators: Font family label.
 		'label'  => __( 'IBM Plex Serif', 'exhale' ),
 		'stack'  => '"IBM Plex Serif", serif',
-		'google' => 'IBM+Plex+Serif'
+		'google' => 'IBM+Plex+Serif',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i' ]
 	],
 	'impact' => [
 		// Translators: Font family label.
@@ -521,7 +612,8 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Istok Web', 'exhale' ),
 		'stack'  => '"Istok Web", sans-serif',
-		'google' => 'Istock+Web'
+		'google' => 'Istock+Web',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'josefin-sans' => [
 		// Translators: Font family label.
@@ -541,13 +633,15 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Kanit', 'exhale' ),
 		'stack'  => 'Kanit, sans-serif',
-		'google' => 'Kanit'
+		'google' => 'Kanit',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'karla' => [
 		// Translators: Font family label.
 		'label'  => __( 'Karla', 'exhale' ),
 		'stack'  => 'Karla, sans-serif',
-		'google' => 'Karla'
+		'google' => 'Karla',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'lato' => [
 		// Translators: Font family label.
@@ -567,19 +661,22 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Libre Franklin', 'exhale' ),
 		'stack'  => '"Libre Franklin", sans-serif',
-		'google' => 'Libre+Franklin'
+		'google' => 'Libre+Franklin',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'lobster-two' => [
 		// Translators: Font family label.
 		'label'  => __( 'Lobster Two', 'exhale' ),
 		'stack'  => '"Lobster Two", cursive',
-		'google' => 'Lobster+Two'
+		'google' => 'Lobster+Two',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'lora' => [
 		// Translators: Font family label.
 		'label'  => __( 'Lora', 'exhale' ),
 		'stack'  => 'Lora, Georgia, serif',
-		'google' => 'Lora'
+		'google' => 'Lora',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'lucida-grande' => [
 		// Translators: Font family label.
@@ -597,13 +694,15 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Manuale', 'exhale' ),
 		'stack'  => 'Manuale, sans-serif',
-		'google' => 'Manuale'
+		'google' => 'Manuale',
+		'styles' => [ '400', '400i', '500', '500i', '600', '600i', '700', '700i' ]
 	],
 	'marvel' => [
 		// Translators: Font family label.
 		'label'  => __( 'Marvel', 'exhale' ),
 		'stack'  => 'Marvel, sans-serif',
-		'google' => 'Marvel'
+		'google' => 'Marvel',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'menlo' => [
 		// Translators: Font family label.
@@ -635,7 +734,8 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Montserrat Alternates', 'exhale' ),
 		'stack'  => '"Montserrat Alternates", sans-serif',
-		'google' => 'Montserrat+Alternates'
+		'google' => 'Montserrat+Alternates',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'monaco' => [
 		// Translators: Font family label.
@@ -653,43 +753,50 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Neuton', 'exhale' ),
 		'stack'  => 'Neuton, serif',
-		'google' => 'Neuton'
+		'google' => 'Neuton',
+		'styles' => [ '200', '300', '400', '400i', '700', '800' ]
 	],
 	'nobile' => [
 		// Translators: Font family label.
 		'label'  => __( 'Nobile', 'exhale' ),
 		'stack'  => 'Nobile, sans-serif',
-		'google' => 'Nobile'
+		'google' => 'Nobile',
+		'styles' => [ '400', '400i', '500', '500i', '700', '700i' ]
 	],
 	'noticia-text' => [
 		// Translators: Font family label.
 		'label'  => __( 'Noticia Text', 'exhale' ),
 		'stack'  => '"Noticia Text", serif',
-		'google' => 'Noticia+Text'
+		'google' => 'Noticia+Text',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'noto-sans' => [
 		// Translators: Font family label.
 		'label'  => __( 'Noto Sans', 'exhale' ),
 		'stack'  => '"Noto Sans", sans-serif',
-		'google' => 'Noto+Sans'
+		'google' => 'Noto+Sans',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'noto-serif' => [
 		// Translators: Font family label.
 		'label'  => __( 'Noto Serif', 'exhale' ),
 		'stack'  => '"Noto Serif", serif',
-		'google' => 'Noto+Serif'
+		'google' => 'Noto+Serif',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'nunito' => [
 		// Translators: Font family label.
 		'label'  => __( 'Nunito', 'exhale' ),
 		'stack'  => 'Nunito, sans-serif',
-		'google' => 'Nunito'
+		'google' => 'Nunito',
+		'styles' => [ '200', '200i', '300', '300i', '400', '400i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'nunito-sans' => [
 		// Translators: Font family label.
 		'label'  => __( 'Nunito Sans', 'exhale' ),
 		'stack'  => '"Nunito Sans", sans-serif',
-		'google' => 'Nunito+Sans'
+		'google' => 'Nunito+Sans',
+		'styles' => [ '200', '200i', '300', '300i', '400', '400i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'palatino' => [
 		// Translators: Font family label.
@@ -735,13 +842,29 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Overlock', 'exhale' ),
 		'stack'  => 'Overlock, cursive',
-		'google' => 'Overlock'
+		'google' => 'Overlock',
+		'styles' => [ '400', '400i', '700', '700i', '900', '900i' ]
+	],
+	'overlock-sc' => [
+		// Translators: Font family label.
+		'label'  => __( 'Overlock Small Caps', 'exhale' ),
+		'stack'  => '"Overlock SC", cursive',
+		'google' => 'Overlock+SC',
+		'styles' => [ '400' ]
 	],
 	'overpass' => [
 		// Translators: Font family label.
 		'label'  => __( 'Overpass', 'exhale' ),
 		'stack'  => 'Overpass, sans-serif',
-		'google' => 'Overpass'
+		'google' => 'Overpass',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
+	],
+	'overpass-mono' => [
+		// Translators: Font family label.
+		'label'  => __( 'Overpass Mono', 'exhale' ),
+		'stack'  => '"Overpass Mono", monospace',
+		'google' => 'Overpass+Mono',
+		'styles' => [ '300', '400', '600', '700' ]
 	],
 	'pacifico' => [
 		// Translators: Font family label.
@@ -761,7 +884,8 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Philosopher', 'exhale' ),
 		'stack'  => 'Philosopher, sans-serif',
-		'google' => 'Philosopher'
+		'google' => 'Philosopher',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'playball' => [
 		// Translators: Font family label.
@@ -788,7 +912,8 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Poppins', 'exhale' ),
 		'stack'  => 'Poppins, sans-serif',
-		'google' => 'Poppins'
+		'google' => 'Poppins',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'prata' => [
 		// Translators: Font family label.
@@ -801,55 +926,92 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Prompt', 'exhale' ),
 		'stack'  => 'Prompt, sans-serif',
-		'google' => 'Prompt'
+		'google' => 'Prompt',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'proza-libre' => [
 		// Translators: Font family label.
 		'label'  => __( 'Proza Libre', 'exhale' ),
 		'stack'  => '"Proza Libre", sans-serif',
-		'google' => 'Proza+Libre'
+		'google' => 'Proza+Libre',
+		'styles' => [ '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i' ]
 	],
 	'pt-sans' => [
 		// Translators: Font family label.
 		'label'  => __( 'PT Sans', 'exhale' ),
 		'stack'  => '"PT Sans", sans-serif',
-		'google' => 'PT+Sans'
+		'google' => 'PT+Sans',
+		'styles' => [ '400', '400i', '700', '700i' ]
+	],
+	'pt-sans-caption' => [
+		// Translators: Font family label.
+		'label'  => __( 'PT Sans Caption', 'exhale' ),
+		'stack'  => '"PT Sans Caption", sans-serif',
+		'google' => 'PT+Sans+Caption',
+		'styles' => [ '400', '700' ]
+	],
+	'pt-sans-narrow' => [
+		// Translators: Font family label.
+		'label'  => __( 'PT Sans Narrow', 'exhale' ),
+		'stack'  => '"PT Sans Narrow", sans-serif',
+		'google' => 'PT+Sans+Narrow',
+		'styles' => [ '400', '700' ]
 	],
 	'pt-serif' => [
 		// Translators: Font family label.
 		'label'  => __( 'PT Serif', 'exhale' ),
 		'stack'  => '"PT Serif", serif',
-		'google' => 'PT+Serif'
+		'google' => 'PT+Serif',
+		'styles' => [ '400', '400i', '700', '700i' ]
+	],
+	'pt-serif-caption' => [
+		// Translators: Font family label.
+		'label'  => __( 'PT Serif Caption', 'exhale' ),
+		'stack'  => '"PT Serif Caption", serif',
+		'google' => 'PT+Serif+Caption',
+		'styles' => [ '400', '400i' ]
 	],
 	'puritan' => [
 		// Translators: Font family label.
 		'label'  => __( 'Puritan', 'exhale' ),
 		'stack'  => 'Puritan, sans-serif',
-		'google' => 'Puritan'
+		'google' => 'Puritan',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'quantico' => [
 		// Translators: Font family label.
 		'label'  => __( 'Quantico', 'exhale' ),
 		'stack'  => 'Quantico, sans-serif',
-		'google' => 'Quantico'
+		'google' => 'Quantico',
+		'styles' => [ '400', '400i', '700', '700i' ]
+	],
+	'quattrocento' => [
+		// Translators: Font family label.
+		'label'  => __( 'Quattrocento', 'exhale' ),
+		'stack'  => 'Quattrocento, serif',
+		'google' => 'Quattrocento',
+		'styles' => [ '400', '700' ]
 	],
 	'quattrocento-sans' => [
 		// Translators: Font family label.
 		'label'  => __( 'Quattrocento Sans', 'exhale' ),
 		'stack'  => '"Quattrocento Sans", sans-serif',
-		'google' => 'Quattrocento+Sans'
+		'google' => 'Quattrocento+Sans',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'raleway' => [
 		// Translators: Font family label.
 		'label'  => __( 'Raleway', 'exhale' ),
 		'stack'  => 'Raleway, sans-serif',
-		'google' => 'Raleway'
+		'google' => 'Raleway',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'rambla' => [
 		// Translators: Font family label.
 		'label'  => __( 'Rambla', 'exhale' ),
 		'stack'  => 'Rambla, sans-serif',
-		'google' => 'Rambla'
+		'google' => 'Rambla',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'righteous' => [
 		// Translators: Font family label.
@@ -890,7 +1052,8 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Rosario', 'exhale' ),
 		'stack'  => 'Rosario, sans-serif',
-		'google' => 'Rosario'
+		'google' => 'Rosario',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'rouge-script' => [
 		// Translators: Font family label.
@@ -903,7 +1066,8 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Rubik', 'exhale' ),
 		'stack'  => 'Rubik, sans-serif',
-		'google' => 'Rubik'
+		'google' => 'Rubik',
+		'styles' => [ '300', '300i', '400', '400i', '500', '500i', '700', '700i', '900', '900i' ]
 	],
 	'sacramento' => [
 		// Translators: Font family label.
@@ -916,7 +1080,8 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Sansita', 'exhale' ),
 		'stack'  => 'Sansita, sans-serif',
-		'google' => 'Sansita'
+		'google' => 'Sansita',
+		'styles' => [ '400', '400i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'satisfy' => [
 		// Translators: Font family label.
@@ -929,13 +1094,15 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Scada', 'exhale' ),
 		'stack'  => 'Scada, sans-serif',
-		'google' => 'Scada'
+		'google' => 'Scada',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'share' => [
 		// Translators: Font family label.
 		'label'  => __( 'Share', 'exhale' ),
 		'stack'  => 'Share, sans-serif',
-		'google' => 'Share'
+		'google' => 'Share',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'slabo-27px' => [
 		// Translators: Font family label.
@@ -962,19 +1129,22 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Space Mono', 'exhale' ),
 		'stack'  => '"Space Mono", monospace',
-		'google' => 'Space+Mono'
+		'google' => 'Space+Mono',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'spectral' => [
 		// Translators: Font family label.
 		'label'  => __( 'Spectral', 'exhale' ),
 		'stack'  => 'Spectral, serif',
-		'google' => 'Spectral'
+		'google' => 'Spectral',
+		'styles' => [ '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i' ]
 	],
 	'spectral-sc' => [
 		// Translators: Font family label.
 		'label'  => __( 'Spectral Small Caps', 'exhale' ),
 		'stack'  => '"Spectral SC", serif',
-		'google' => 'Spectral+SC'
+		'google' => 'Spectral+SC',
+		'styles' => [ '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i' ]
 	],
 	'tahoma' => [
 		// Translators: Font family label.
@@ -992,7 +1162,8 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Taviraj', 'exhale' ),
 		'stack'  => 'Taviraj, serif',
-		'google' => 'Taviraj'
+		'google' => 'Taviraj',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'times-new-roman' => [
 		// Translators: Font family label.
@@ -1003,13 +1174,15 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Tinos', 'exhale' ),
 		'stack'  => 'Tinos, serif',
-		'google' => 'Tinos'
+		'google' => 'Tinos',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'titillium-web' => [
 		// Translators: Font family label.
 		'label'  => __( 'Titillium Web', 'exhale' ),
 		'stack'  => '"Titillium Web", sans-serif',
-		'google' => 'Titillium+Web'
+		'google' => 'Titillium+Web',
+		'styles' => [ '200', '200i', '300', '300i', '400', '400i', '600', '600i', '700', '700i', '900' ]
 	],
 	'trebuchet-ms' => [
 		// Translators: Font family label.
@@ -1020,19 +1193,29 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Trirong', 'exhale' ),
 		'stack'  => 'Trirong, serif',
-		'google' => 'Trirong'
+		'google' => 'Trirong',
+		'styles' => [ '100', '100i', '200', '200i', '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i', '800', '800i', '900', '900i' ]
 	],
 	'ubuntu' => [
 		// Translators: Font family label.
 		'label'  => __( 'Ubuntu', 'exhale' ),
 		'stack'  => 'Ubuntu, sans-serif',
-		'google' => 'Ubuntu'
+		'google' => 'Ubuntu',
+		'styles' => [ '300', '300i', '400', '400i', '500', '500i', '700', '700i' ]
+	],
+	'ubuntu-condensed' => [
+		// Translators: Font family label.
+		'label'  => __( 'Ubuntu Condensed', 'exhale' ),
+		'stack'  => '"Ubuntu Condensed", sans-serif',
+		'google' => 'Ubuntu+Condensed',
+		'styles' => [ '400' ]
 	],
 	'ubuntu-mono' => [
 		// Translators: Font family label.
 		'label'  => __( 'Ubuntu Mono', 'exhale' ),
 		'stack'  => '"Ubuntu Mono", monospace',
-		'google' => 'Ubuntu+Mono'
+		'google' => 'Ubuntu+Mono',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'ultra' => [
 		// Translators: Font family label.
@@ -1045,7 +1228,8 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Unna', 'exhale' ),
 		'stack'  => 'Unna, serif',
-		'google' => 'Unna'
+		'google' => 'Unna',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'verdana' => [
 		// Translators: Font family label.
@@ -1056,13 +1240,15 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Volkhov', 'exhale' ),
 		'stack'  => 'Volkhov, serif',
-		'google' => 'Volkhov'
+		'google' => 'Volkhov',
+		'styles' => [ '400', '400i', '700', '700i' ]
 	],
 	'vollkorn' => [
 		// Translators: Font family label.
 		'label'  => __( 'Vollkorn', 'exhale' ),
 		'stack'  => 'Vollkorn, serif',
-		'google' => 'Vollkorn'
+		'google' => 'Vollkorn',
+		'styles' => [ '400', '400i', '600', '600i', '700', '700i', '900', '900i' ]
 	],
 	'work-sans' => [
 		// Translators: Font family label.
@@ -1082,6 +1268,7 @@ return [
 		// Translators: Font family label.
 		'label'  => __( 'Zilla Slab', 'exhale' ),
 		'stack'  => '"Zilla Slab", serif',
-		'google' => 'Zilla+Slab'
+		'google' => 'Zilla+Slab',
+		'styles' => [ '300', '300i', '400', '400i', '500', '500i', '700', '700i' ]
 	]
 ];

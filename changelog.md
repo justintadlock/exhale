@@ -20,11 +20,17 @@
 	- Abril Fatface
 	- Aguafina Script
 	- Alfa Slab One
+	- Almendra Display
+	- Almendra Small Caps
+	- Archivo Black
 	- Arizonia
+	- Averia Gruesa Libre
 	- Bangers
 	- Berkshire Swash
 	- Bitter
 	- Bree Serif
+	- Cabin Condensed
+	- Cabin Sketch
 	- Caveat
 	- Caveat Brush
 	- Comfortaa
@@ -35,6 +41,7 @@
 	- Dancing Script
 	- Elsie
 	- Elsie Swash Caps
+	- Fira Mono
 	- Great Vibes
 	- Handlee
 	- Henny Penny
@@ -45,10 +52,16 @@
 	- Oleo Script Swash Caps
 	- Open Sans Condensed
 	- Oswaled
+	- Overlock Small Caps
+	- Overpass Mono
 	- Pacifico
 	- Patua One
 	- Playball
 	- Prata
+	- PT Sans Caption
+	- PT Sans Narrow
+	- PT Serif Caption
+	- Quattrocento
 	- Righteous
 	- Roboto Slab
 	- Rouge Script
@@ -57,6 +70,7 @@
 	- Slabo 27px
 	- Source Serif Pro
 	- Tangerine
+	- Ubuntu Condensed
 	- Ultra
 	- Work Sans
 	- Yellowtail
