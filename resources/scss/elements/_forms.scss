@@ -54,8 +54,9 @@ textarea {
 	line-height: inherit;
 }
 
-// See `components/_button.scss`.
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
-button {}
+button {
+	@include button;
+}

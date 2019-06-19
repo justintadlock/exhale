@@ -48,3 +48,26 @@
 	box-sizing    : content-box;
 	margin-bottom : $spacing-global;
 }
+
+@mixin button {
+	cursor:          pointer;
+	display:         inline-block;
+	margin:          0;
+	padding:         $spacing-half $spacing-global;
+	line-height:     1;
+	font-family:     var( --font-family-secondary );
+	font-size:       1.125rem;
+	text-decoration: none;
+	color:           var( --color-content-background );
+	background:      var( --color-primary );
+	border:          none;
+	border-radius:   3px;
+	white-space:     normal;
+	word-break:      break-all;
+	transition:      all 0.5s ease-in-out;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
