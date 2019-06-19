@@ -138,6 +138,7 @@
 
 .wp-block-paragraph {
 	&.is-style-highlight,
+	&.is-style-shadow,
 	&.has-background {
 		margin-left: -#{ $spacing-global };
 		margin-right: -#{ $spacing-global };
@@ -146,6 +147,7 @@
 
 .wp-block-columns .wp-block-paragraph {
 	&.is-style-highlight,
+	&.is-style-shadow,
 	&.has-background {
 		margin-left: 0;
 		margin-right: 0;
