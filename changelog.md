@@ -1,5 +1,80 @@
 # Change Log
 
+## [2.0.0] - 2019-06-19
+
+### Added
+
+- New typography system to replace font family system.
+	- Headings now support family, style, caps, and text transform settings.
+	- System is set up for future typography-related settings.
+- New block styles:
+	- **Image:** Shadow, Rounded.
+	- **Gallery:** Shadow
+	- **List:** None, Circle, Disc, Square.
+	- **Media & Text:** Borderless.
+	- **Paragraph:** Shadow.
+- New post/page templates (supported for all post types):
+	- **Content Canvas:** Only the post content is shown in the content area.
+	- **Landing: Content Canvas:** Only the post content is shown for the entire page.
+- New Google fonts:
+	- Abril Fatface
+	- Aguafina Script
+	- Alfa Slab One
+	- Arizonia
+	- Bangers
+	- Berkshire Swash
+	- Bitter
+	- Bree Serif
+	- Caveat
+	- Caveat Brush
+	- Comfortaa
+	- Cookie
+	- Cormorant Small Caps
+	- Cormorant Upright
+	- Cormorant Unicase
+	- Dancing Script
+	- Elsie
+	- Elsie Swash Caps
+	- Great Vibes
+	- Handlee
+	- Henny Penny
+	- Indie Flower
+	- Libre Baskerville
+	- Mali
+	- Oleo Script
+	- Oleo Script Swash Caps
+	- Open Sans Condensed
+	- Oswaled
+	- Pacifico
+	- Patua One
+	- Playball
+	- Prata
+	- Righteous
+	- Roboto Slab
+	- Rouge Script
+	- Sacremento
+	- Satisfy
+	- Slabo 27px
+	- Source Serif Pro
+	- Tangerine
+	- Ultra
+	- Work Sans
+	- Yellowtail
+- `Exhale\Tools\Mod::fallback()` method for grabbing the default/fallback theme mod.
+- `config/settings-mods.php` now supports configuring all default theme mods other than fonts and colors.
+
+### Fixed
+
+- Added a `?ver` parameter to screenshot images on the Exhale Settings > Themes page for cache busting.
+- Blockquotes now appear with their proper left/right padding.
+
+### Changed
+
+- WordPress 5.2 as a minimum requirement.
+- `config/settings-font-family.php` is now `config/settings-typography.php`.
+- `<code>` output has a font size of `15px`.
+- "No Post Header/Footer" template is now "Content Canvas".
+
 ## [1.2.1] - 2019-05-30
 
 ### Fixed
