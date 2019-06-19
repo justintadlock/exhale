@@ -2,12 +2,12 @@
 
 return [
 	'100'  => [
-		'label'  => __( 'Thin', 'exhale' ),
+		'label'  => __( 'Thin (Hairline)', 'exhale' ),
 		'weight' => 100,
 		'style'  => 'normal'
 	],
 	'100i' => [
-		'label'  =>  __( 'Thin Italic', 'exhale' ),
+		'label'  =>  __( 'Thin (Hairline) Italic', 'exhale' ),
 		'weight' => 100,
 		'style'  => 'italic'
 	],
@@ -32,12 +32,12 @@ return [
 		'style'  => 'italic'
 	],
 	'400'  => [
-		'label'  =>  __( 'Regular', 'exhale' ),
+		'label'  =>  __( 'Normal', 'exhale' ),
 		'weight' => 400,
 		'style'  => 'normal'
 	],
 	'400i' => [
-		'label'  =>  __( 'Regular Italic', 'exhale' ),
+		'label'  =>  __( 'Normal Italic', 'exhale' ),
 		'weight' => 400,
 		'style'  => 'italic'
 	],
@@ -82,12 +82,12 @@ return [
 		'style'  => 'italic'
 	],
 	'900'  => [
-		'label'  =>  __( 'Black', 'exhale' ),
+		'label'  =>  __( 'Black (Heavy)', 'exhale' ),
 		'weight' => 900,
 		'style'  => 'normal'
 	],
 	'900i' => [
-		'label'  =>  __( 'Black Italic', 'exhale' ),
+		'label'  =>  __( 'Black (Heavy) Italic', 'exhale' ),
 		'weight' => 900,
 		'style'  => 'italic'
 	]
