@@ -144,6 +144,14 @@
 	}
 }
 
+.wp-block-columns .wp-block-paragraph {
+	&.is-style-highlight,
+	&.has-background {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
 // Bump out width via negative margins for heading block.
 
 h1,
