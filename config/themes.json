@@ -5,6 +5,11 @@
 		"screenshot"   : "%s/public/img/themes/exhale-manuscript.png",
 		"download_url" : "https://themehybrid.com/account"
 	},
+	"exhale-mountains" : {
+		"label"        : "Exhale - Mountains",
+		"screenshot"   : "%s/public/img/themes/exhale-mountains.png",
+		"download_url" : "https://themehybrid.com/account"
+	},
 	"exhale-unravel" : {
 		"label"        : "Exhale - Unravel",
 		"screenshot"   : "%s/public/img/themes/exhale-unravel.png",
