@@ -16,6 +16,7 @@
 - New post/page templates (supported for all post types):
 	- **Content Canvas:** Only the post content is shown in the content area.
 	- **Landing: Content Canvas:** Only the post content is shown for the entire page.
+- Use the native `loading` (lazy-loading) attribute for featured images.
 - New Google fonts:
 	- Abril Fatface
 	- Aguafina Script
@@ -88,6 +89,7 @@
 
 - Added a `?ver` parameter to screenshot images on the Exhale Settings > Themes page for cache busting.
 - Blockquotes now appear with their proper left/right padding.
+- Columns block nested within group block with padding left/right margins corrected.
 
 ### Changed
 
