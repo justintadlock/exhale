@@ -31,6 +31,16 @@
 	}
 }
 
+// Remove left/right margin when in a group with padding.
+@media ( max-width: calc( #{ $width-alignwide } + #{ $spacing-2x } ) ) {
+
+	.wp-block-group.has-background .wp-block-columns {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+
 .wp-block-column {
 	margin-bottom: $spacing-global;
 	flex-grow: 1;
@@ -50,7 +60,8 @@
 
 	@media ( min-width: $content-width ) {
 
-		flex-basis: calc(50% - #{$spacing-global});
+		// flex-basis: calc(50% - #{$spacing-global});
+		flex-basis: 50%;
 		flex-grow: 0;
 
 		// When columns are in a single row, add space before all except the first.
