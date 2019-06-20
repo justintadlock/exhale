@@ -346,7 +346,7 @@ class Component implements Bootable {
 
 				// Register the family setting.
 				$manager->add_setting( $setting->modName( 'style' ), [
-					'default'           => '400',
+					'default'           => $setting->style(),
 					'sanitize_callback' => 'sanitize_key',
 					'transport'         => 'postMessage'
 				] );
@@ -363,7 +363,7 @@ class Component implements Bootable {
 
 				// Register the transform setting.
 				$manager->add_setting( $setting->modName( 'transform' ), [
-					'default'           => 'none',
+					'default'           => $setting->transform(),
 					'sanitize_callback' => 'sanitize_key',
 					'transport'         => 'postMessage'
 				] );
@@ -380,7 +380,7 @@ class Component implements Bootable {
 
 				// Register the caps setting.
 				$manager->add_setting( $setting->modName( 'caps' ), [
-					'default'           => 'normal',
+					'default'           => $setting->caps(),
 					'sanitize_callback' => 'sanitize_key',
 					'transport'         => 'postMessage'
 				] );
