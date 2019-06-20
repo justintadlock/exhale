@@ -55,6 +55,13 @@ class FeaturedImage extends Image {
 			$args['link'] = true;
 		}
 
+
+		$args['attr']['loading'] = 'auto';
+
+		if ( 0 < $GLOBALS['wp_query']->current_post ) {
+			$args['attr']['loading'] = 'lazy';
+		}
+
 		$args['size']    = Mod::get( 'featured_image_size' );
 		$args['class']   = 'entry__image aligncenter';
 		$args['post_id'] = $post_id;
