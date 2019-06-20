@@ -33,6 +33,7 @@
 	- Cabin Sketch
 	- Caveat
 	- Caveat Brush
+	- Cherry Swash
 	- Comfortaa
 	- Cookie
 	- Cormorant Small Caps
@@ -42,12 +43,15 @@
 	- Elsie
 	- Elsie Swash Caps
 	- Fira Mono
+	- Give You Glory
+	- Gloria Hallelujah
 	- Great Vibes
 	- Handlee
 	- Henny Penny
 	- Indie Flower
 	- Libre Baskerville
 	- Mali
+	- Nothing You Could Do
 	- Oleo Script
 	- Oleo Script Swash Caps
 	- Open Sans Condensed
@@ -62,12 +66,15 @@
 	- PT Sans Narrow
 	- PT Serif Caption
 	- Quattrocento
+	- Quicksand
 	- Righteous
 	- Roboto Slab
 	- Rouge Script
 	- Sacremento
 	- Satisfy
 	- Slabo 27px
+	- Shadows Into Light
+	- Source Code Pro
 	- Source Serif Pro
 	- Tangerine
 	- Ubuntu Condensed

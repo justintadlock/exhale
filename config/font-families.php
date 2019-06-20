@@ -328,6 +328,13 @@ return [
 		'google' => 'Caveat+Brush',
 		'styles' => [ '400' ]
 	],
+	'cherry-swash' => [
+		// Translators: Font family label.
+		'label'  => __( 'Cherry Swash', 'exhale' ),
+		'stack'  => '"Cherry Swash", cursive',
+		'google' => 'Cherry+Swash',
+		'styles' => [ '400', '700' ]
+	],
 	'chivo' => [
 		// Translators: Font family label.
 		'label'  => __( 'Chivo', 'exhale' ),
@@ -536,6 +543,20 @@ return [
 		// Translators: Font family label.
 		'label' => __( 'Gill Sans', 'exhale' ),
 		'stack' => '"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif'
+	],
+	'give-you-glory' => [
+		// Translators: Font family label.
+		'label'  => __( 'Give You Glory', 'exhale' ),
+		'stack'  => '"Give You Glory", cursive',
+		'google' => 'Give+You+Glory',
+		'styles' => [ '400' ]
+	],
+	'gloria-hallelujah' => [
+		// Translators: Font family label.
+		'label'  => __( 'Gloria Hallelujah', 'exhale' ),
+		'stack'  => '"Gloria Hallelujah", cursive',
+		'google' => 'Gloria+Hallelujah',
+		'styles' => [ '400' ]
 	],
 	'great-vibes' => [
 		// Translators: Font family label.
@@ -762,6 +783,13 @@ return [
 		'stack'  => 'Nobile, sans-serif',
 		'google' => 'Nobile',
 		'styles' => [ '400', '400i', '500', '500i', '700', '700i' ]
+	],
+	'nothing-you-could-do' => [
+		// Translators: Font family label.
+		'label'  => __( 'Nothing You Could Do', 'exhale' ),
+		'stack'  => '"Nothing You Could Do", cursive',
+		'google' => 'Nothing+You+Could+Do',
+		'styles' => [ '400' ]
 	],
 	'noticia-text' => [
 		// Translators: Font family label.
@@ -999,6 +1027,13 @@ return [
 		'google' => 'Quattrocento+Sans',
 		'styles' => [ '400', '400i', '700', '700i' ]
 	],
+	'quicksand' => [
+		// Translators: Font family label.
+		'label'  => __( 'Quicksand', 'exhale' ),
+		'stack'  => 'Quicksand, sans-serif',
+		'google' => 'Quicksand',
+		'styles' => [ '300', '400', '500', '700' ]
+	],
 	'raleway' => [
 		// Translators: Font family label.
 		'label'  => __( 'Raleway', 'exhale' ),
@@ -1097,6 +1132,20 @@ return [
 		'google' => 'Scada',
 		'styles' => [ '400', '400i', '700', '700i' ]
 	],
+	'shadows-into-light' => [
+		// Translators: Font family label.
+		'label'  => __( 'Shadows Into Light', 'exhale' ),
+		'stack'  => '"Shadows Into Light", cursive',
+		'google' => 'Shadows+Into+Light',
+		'styles' => [ '400' ]
+	],
+	'shadows-into-light-two' => [
+		// Translators: Font family label.
+		'label'  => __( 'Shadows Into Light Two', 'exhale' ),
+		'stack'  => '"Shadows Into Light Two", cursive',
+		'google' => 'Shadows+Into+Light+Two',
+		'styles' => [ '400' ]
+	],
 	'share' => [
 		// Translators: Font family label.
 		'label'  => __( 'Share', 'exhale' ),
@@ -1110,6 +1159,13 @@ return [
 		'stack'  => '"Slabo 27px", serif',
 		'google' => 'Slabo+27px',
 		'styles' => [ '400' ]
+	],
+	'source-code-pro' => [
+		// Translators: Font family label.
+		'label'  => __( 'Source Code Pro', 'exhale' ),
+		'stack'  => '"Source Code Pro", monospace',
+		'google' => 'Source+Code+Pro',
+		'styles' => [ '200', '300', '400', '500', '600', '700', '900' ]
 	],
 	'source-sans-pro' => [
 		// Translators: Font family label.
