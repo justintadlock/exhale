@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exhale 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/exhale\n"
-"POT-Creation-Date: 2019-05-22 19:05:21+00:00\n"
-"PO-Revision-Date: 2019-05-22 14:08-0500\n"
+"POT-Creation-Date: 2019-06-20 14:45:56+00:00\n"
+"PO-Revision-Date: 2019-06-20 09:47-0500\n"
 "Last-Translator: Justin Tadlock <justintadlock@gmailc.om>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -15,88 +15,92 @@ msgstr ""
 "X-Generator: Poedit 2.2.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: app/Customize/Component.php:77
+#: app/Customize/Component.php:81
 msgid "Theme Options"
 msgstr ""
 
-#: app/Customize/Component.php:98
-msgid "Fonts"
+#: app/Customize/Component.php:102
+msgid "Typography"
 msgstr ""
 
-#: app/Customize/Component.php:113
+#: app/Customize/Component.php:117
 msgid "Media"
 msgstr ""
 
-#: app/Customize/Component.php:120
+#: app/Customize/Component.php:124
 msgid "Footer"
 msgstr ""
 
 #. Translators: %s is the theme link.
-#: app/Customize/Component.php:155
-msgid "Powered by %s."
-msgstr ""
-
-#: app/Customize/Component.php:179
+#: app/Customize/Component.php:184
 msgid "Background"
 msgstr ""
 
-#: app/Customize/Component.php:180
+#: app/Customize/Component.php:185
 msgid "Background color used for the site."
 msgstr ""
 
-#: app/Customize/Component.php:186
+#: app/Customize/Component.php:191
 msgid "Show random \"powered by\" credit text."
 msgstr ""
 
-#: app/Customize/Component.php:193
+#: app/Customize/Component.php:198
 msgid "Custom Footer Text"
 msgstr ""
 
-#: app/Font/Family/Families.php:51
-msgid "System Fonts"
+#: app/Customize/Controls/Typography.php:87
+msgid "Font Family"
 msgstr ""
 
-#: app/Font/Family/Families.php:55
-msgid "Google Fonts"
+#: app/Customize/Controls/Typography.php:96
+msgid "Font Style"
 msgstr ""
 
-#: app/Image/Filter/Component.php:108
+#: app/Customize/Controls/Typography.php:105
+msgid "Font Variant: Caps"
+msgstr ""
+
+#: app/Customize/Controls/Typography.php:114
+msgid "Text Transform"
+msgstr ""
+
+#: app/Image/Filter/Component.php:107
 msgid "Default Filter Amount"
 msgstr ""
 
-#: app/Image/Filter/Component.php:109
+#: app/Image/Filter/Component.php:108
 msgid "Filter amount applied to all images."
 msgstr ""
 
-#: app/Image/Filter/Component.php:114
+#: app/Image/Filter/Component.php:112
 msgid "Hover Filter Amount"
 msgstr ""
 
-#: app/Image/Filter/Component.php:115
+#: app/Image/Filter/Component.php:113
 msgid ""
 "Filter amount applied to linked images when they are hovered or focused."
 msgstr ""
 
-#: app/Image/Filter/Component.php:173
+#: app/Image/Filter/Component.php:171
 msgid "Image Filter"
 msgstr ""
 
-#: app/Image/Filter/Component.php:174
+#: app/Image/Filter/Component.php:172
 msgid "CSS filter function to apply to images."
 msgstr ""
 
-#: app/Image/Size/Component.php:159
+#: app/Image/Size/Component.php:157
 msgid "Featured Image Size"
 msgstr ""
 
 #. Translators: %s is a plugin link.
-#: app/Image/Size/Component.php:162
+#: app/Image/Size/Component.php:160
 msgid ""
 "For images to be sized correctly, regenerate them using a plugin such as %s "
 "if you have switched from a previous theme."
 msgstr ""
 
-#: app/Image/Size/Component.php:163
+#: app/Image/Size/Component.php:161
 msgid "Regnerate Thumbnails"
 msgstr ""
 
@@ -106,19 +110,19 @@ msgstr ""
 msgid "%1$s - %2$s&times;%3$s"
 msgstr ""
 
-#: app/Layout/Component.php:115
+#: app/Layout/Component.php:113
 msgid "Layout"
 msgstr ""
 
-#: app/Layout/Component.php:128
+#: app/Layout/Component.php:126
 msgid "Global Layout"
 msgstr ""
 
-#: app/Layout/Component.php:129
+#: app/Layout/Component.php:127
 msgid "Select the layout used across the site."
 msgstr ""
 
-#: app/Settings/Admin/OptionsPage.php:198 app/ThemeManager/Theme.php:270
+#: app/Settings/Admin/OptionsPage.php:198 app/ThemeManager/Theme.php:276
 msgid "Customize"
 msgstr ""
 
@@ -278,23 +282,23 @@ msgid ""
 "the dice with a search might help."
 msgstr ""
 
-#: app/ThemeManager/Theme.php:234
+#: app/ThemeManager/Theme.php:240
 msgid "Active:"
 msgstr ""
 
-#: app/ThemeManager/Theme.php:279
+#: app/ThemeManager/Theme.php:285
 msgid "Activate %s"
 msgstr ""
 
-#: app/ThemeManager/Theme.php:280
+#: app/ThemeManager/Theme.php:286
 msgid "Activate"
 msgstr ""
 
-#: app/ThemeManager/Theme.php:289
+#: app/ThemeManager/Theme.php:295
 msgid "Live Preview"
 msgstr ""
 
-#: app/ThemeManager/Theme.php:298
+#: app/ThemeManager/Theme.php:304
 msgid "Download"
 msgstr ""
 
@@ -342,6 +346,14 @@ msgstr ""
 msgid "Powered by something greater than myself."
 msgstr ""
 
+#: app/Typography/Font/Family/Families.php:52
+msgid "System Fonts"
+msgstr ""
+
+#: app/Typography/Font/Family/Families.php:56
+msgid "Google Fonts"
+msgstr ""
+
 #. Translators: 1 is the required WordPress version and 2 is the user's current
 #. version.
 #: app/bootstrap-compat.php:37
@@ -382,17 +394,45 @@ msgstr ""
 msgid "Highlight"
 msgstr ""
 
+#: app/functions-assets.php:101
+msgid "Rounded"
+msgstr ""
+
+#: app/functions-assets.php:102
+msgid "Shadow"
+msgstr ""
+
+#: app/functions-assets.php:105
+msgid "Bullets: None"
+msgstr ""
+
+#: app/functions-assets.php:106
+msgid "Bullets: Disc"
+msgstr ""
+
+#: app/functions-assets.php:107
+msgid "Bullets: Circle"
+msgstr ""
+
+#: app/functions-assets.php:108
+msgid "Bullets: Square"
+msgstr ""
+
 #. Translators: %s is the post title for screen readers.
 #: app/functions-filters.php:88
 msgid "Continue reading&nbsp;%s&nbsp;&rarr;"
 msgstr ""
 
 #: app/functions-setup.php:134
+msgid "Content Canvas"
+msgstr ""
+
+#: app/functions-setup.php:138
 msgid "Landing"
 msgstr ""
 
-#: app/functions-setup.php:141
-msgid "No Post Header/Footer"
+#: app/functions-setup.php:142
+msgid "Landing: Content Canvas"
 msgstr ""
 
 #: config/_editor-colors.php:48
@@ -853,16 +893,70 @@ msgstr ""
 msgid "Color used for borders in general."
 msgstr ""
 
-#: config/_settings-font-family.php:17
+#: config/_settings-mods.php:30
+msgid "Powered by %s."
+msgstr ""
+
+#: config/_settings-typography.php:17
+msgid "Font used for text headings."
+msgstr ""
+
+#: config/_settings-typography.php:26
 msgid "Font used for most of the text on the site."
 msgstr ""
 
-#: config/_settings-font-family.php:22
+#: config/_settings-typography.php:33
 msgid "Font used for secondary, less important text."
 msgstr ""
 
-#: config/_settings-font-family.php:27
-msgid "Font used for text headings."
+#. Translators: Font size label.
+#: config/editor-font-sizes.php:17
+msgid "Fine"
+msgstr ""
+
+#. Translators: Font size label.
+#: config/editor-font-sizes.php:22
+msgid "Diminutive"
+msgstr ""
+
+#. Translators: Font size label.
+#: config/editor-font-sizes.php:27
+msgid "Tiny"
+msgstr ""
+
+#. Translators: Font size label.
+#: config/editor-font-sizes.php:32
+msgid "Small"
+msgstr ""
+
+#. Translators: Font size label.
+#: config/editor-font-sizes.php:37 config/font-styles.php:45
+msgid "Medium"
+msgstr ""
+
+#. Translators: Font size label.
+#: config/editor-font-sizes.php:42
+msgid "Large"
+msgstr ""
+
+#. Translators: Font size label.
+#: config/editor-font-sizes.php:47
+msgid "Extra Large"
+msgstr ""
+
+#. Translators: Font size label.
+#: config/editor-font-sizes.php:52
+msgid "Huge"
+msgstr ""
+
+#. Translators: Font size label.
+#: config/editor-font-sizes.php:57
+msgid "Gargantuan"
+msgstr ""
+
+#. Translators: Font size label.
+#: config/editor-font-sizes.php:62
+msgid "Colossal"
 msgstr ""
 
 #. Translators: Font family label.
@@ -872,690 +966,1062 @@ msgstr ""
 
 #. Translators: Font family label.
 #: config/font-families.php:22
+msgid "Abril Fatface"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:29
+msgid "Aguafina Script"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:36
 msgid "Alegreya"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:28
+#: config/font-families.php:43
 msgid "Alegreya Sans"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:34
-msgid "Almendra"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:40
-msgid "Amaranth"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:46
-msgid "Amiri"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:52
-msgid "Andale Mono"
+#: config/font-families.php:50
+msgid "Alfa Slab One"
 msgstr ""
 
 #. Translators: Font family label.
 #: config/font-families.php:57
-msgid "Anonymous Pro"
+msgid "Almendra"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:63
-msgid "Archivo"
+#: config/font-families.php:64
+msgid "Almendra Display"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:69
-msgid "Archivo Narrow"
+#: config/font-families.php:71
+msgid "Almendra Small Caps"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:75
-msgid "Arial"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:80
-msgid "Arial Black"
+#: config/font-families.php:78
+msgid "Amaranth"
 msgstr ""
 
 #. Translators: Font family label.
 #: config/font-families.php:85
+msgid "Amiri"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:92
+msgid "Andale Mono"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:97
+msgid "Anonymous Pro"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:104
+msgid "Archivo"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:111
+msgid "Archivo Black"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:118
+msgid "Archivo Narrow"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:125
+msgid "Arial"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:130
+msgid "Arial Black"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:136
 msgid "Arial Narrow"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:90
+#: config/font-families.php:141
 msgid "Arimo"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:96
+#: config/font-families.php:148
+msgid "Arizonia"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:155
 msgid "Arsenal"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:102
+#: config/font-families.php:162
 msgid "Arvo"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:108
+#: config/font-families.php:169
 msgid "Asap"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:114
+#: config/font-families.php:176
 msgid "Asap Condensed"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:120
+#: config/font-families.php:183
 msgid "Averia Libre"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:126
+#: config/font-families.php:190
+msgid "Averia Gruesa Libre"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:197
 msgid "Averia Sans Libre"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:132
+#: config/font-families.php:204
 msgid "Averia Serif Libre"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:138
+#: config/font-families.php:211
+msgid "Bangers"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:218
 msgid "Barlow"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:144
+#: config/font-families.php:225
 msgid "Barlow Condensed"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:150
+#: config/font-families.php:232
 msgid "Barlow Semi Condensed"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:156
+#: config/font-families.php:239
 msgid "Baskerville"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:161
+#: config/font-families.php:244
+msgid "Berkshire Swash"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:251
+msgid "Bitter"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:258
+msgid "Bree Serif"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:265
 msgid "Brush Script MT"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:166
+#: config/font-families.php:270
 msgid "Cabin"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:172
-msgid "Cambay"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:178
-msgid "Cantarell"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:184
-msgid "Caudex"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:190
-msgid "Chivo"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:196
-msgid "Comic Sans"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:201
-msgid "Cormorant"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:207
-msgid "Cormorant Garamond"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:213
-msgid "Cormorant Infant"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:219
-msgid "Courier New"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:224
-msgid "Cousine"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:230
-msgid "Crimson Text"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:236
-msgid "Cuprum"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:242
-msgid "EB Garamond"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:248
-msgid "Economica"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:254
-msgid "Exo"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:260
-msgid "Exo 2"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:266
-msgid "Expletus Sans"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:272
-msgid "Faustina"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:278
-msgid "Fira Sans"
+#: config/font-families.php:277
+msgid "Cabin Condensed"
 msgstr ""
 
 #. Translators: Font family label.
 #: config/font-families.php:284
-msgid "Fira Sans Condensed"
+msgid "Cabin Sketch"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:290
-msgid "Fira Sans Extra Condensed"
+#: config/font-families.php:291
+msgid "Cambay"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:296
-msgid "Gentium Basic"
+#: config/font-families.php:298
+msgid "Cantarell"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:302
-msgid "Gentium Book Basic"
+#: config/font-families.php:305
+msgid "Cardo"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:308
-msgid "IBM Plex Mono"
+#: config/font-families.php:312
+msgid "Caudex"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:314 config/font-families.php:363
-msgid "IBM Plex Sans"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:320
-msgid "IBM Plex Sans Condensed"
+#: config/font-families.php:319
+msgid "Caveat"
 msgstr ""
 
 #. Translators: Font family label.
 #: config/font-families.php:326
-msgid "IBM Plex Serif"
+msgid "Caveat Brush"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:332
-msgid "Istok Web"
+#: config/font-families.php:333
+msgid "Cherry Swash"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:338
-msgid "Georgia"
+#: config/font-families.php:340
+msgid "Chivo"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:343
-msgid "Gill Sans"
+#: config/font-families.php:347
+msgid "Comfortaa"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:348
-msgid "Helvetica"
+#: config/font-families.php:354
+msgid "Comic Sans"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:353
-msgid "Hoefler Text"
+#: config/font-families.php:359
+msgid "Cookie"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:358
-msgid "Impact"
+#: config/font-families.php:366
+msgid "Cormorant"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:369
-msgid "Josefin Sans"
+#: config/font-families.php:373
+msgid "Cormorant Garamond"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:375
-msgid "Josefin Slab"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:381
-msgid "Kanit"
+#: config/font-families.php:380
+msgid "Cormorant Infant"
 msgstr ""
 
 #. Translators: Font family label.
 #: config/font-families.php:387
-msgid "Karla"
+msgid "Cormorant Small Caps"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:393
-msgid "Lato"
+#: config/font-families.php:394
+msgid "Cormorant Upright"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:399
-msgid "Libre Franklin"
+#: config/font-families.php:401
+msgid "Cormorant Unicase"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:405
-msgid "Lobster Two"
+#: config/font-families.php:408
+msgid "Courier New"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:411
-msgid "Lora"
+#: config/font-families.php:413
+msgid "Cousine"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:417
-msgid "Lucida Grande"
+#: config/font-families.php:420
+msgid "Crimson Text"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:422
-msgid "Manuale"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:428
-msgid "Marvel"
+#: config/font-families.php:427
+msgid "Cuprum"
 msgstr ""
 
 #. Translators: Font family label.
 #: config/font-families.php:434
-msgid "Menlo"
+msgid "Dancing Script"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:439
-msgid "Merriweather"
+#: config/font-families.php:441
+msgid "EB Garamond"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:445
-msgid "Merriweather Sans"
+#: config/font-families.php:448
+msgid "Economica"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:451
-msgid "Montserrat"
+#: config/font-families.php:455
+msgid "Elsie"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:457
-msgid "Montserrat Alternates"
+#: config/font-families.php:462
+msgid "Elsie Swash Caps"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:463
-msgid "Monaco"
+#: config/font-families.php:469
+msgid "Exo"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:468
-msgid "Muli"
+#: config/font-families.php:476
+msgid "Exo 2"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:474
-msgid "Neuton"
+#: config/font-families.php:483
+msgid "Expletus Sans"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:480
-msgid "Nobile"
+#: config/font-families.php:490
+msgid "Faustina"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:486
-msgid "Noticia Text"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:492
-msgid "Noto Sans"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:498
-msgid "Noto Serif"
+#: config/font-families.php:497
+msgid "Fira Mono"
 msgstr ""
 
 #. Translators: Font family label.
 #: config/font-families.php:504
-msgid "Nunito"
+msgid "Fira Sans"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:510
-msgid "Nunito Sans"
+#: config/font-families.php:511
+msgid "Fira Sans Condensed"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:516
-msgid "Palatino"
+#: config/font-families.php:518
+msgid "Fira Sans Extra Condensed"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:521
-msgid "Open Sans"
+#: config/font-families.php:525
+msgid "Gentium Basic"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:527
-msgid "Overlock"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:533
-msgid "Overpass"
+#: config/font-families.php:532
+msgid "Gentium Book Basic"
 msgstr ""
 
 #. Translators: Font family label.
 #: config/font-families.php:539
-msgid "Philosopher"
+msgid "Georgia"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:545
-msgid "Playfair Display"
+#: config/font-families.php:544
+msgid "Gill Sans"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:551
-msgid "Playfair Display Small Caps"
+#: config/font-families.php:549
+msgid "Give You Glory"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:557
-msgid "Poppins"
+#: config/font-families.php:556
+msgid "Gloria Hallelujah"
 msgstr ""
 
 #. Translators: Font family label.
 #: config/font-families.php:563
-msgid "Prompt"
+msgid "Great Vibes"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:569
-msgid "Proza Libre"
+#: config/font-families.php:570
+msgid "Handlee"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:575
-msgid "PT Sans"
+#: config/font-families.php:577
+msgid "Helvetica"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:581
-msgid "PT Serif"
+#: config/font-families.php:582
+msgid "Henny Penny"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:587
-msgid "Puritan"
+#: config/font-families.php:589
+msgid "Hoefler Text"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:593
-msgid "Quantico"
+#: config/font-families.php:594
+msgid "IBM Plex Mono"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:599
-msgid "Quattrocento Sans"
+#: config/font-families.php:601
+msgid "IBM Plex Sans"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:605
-msgid "Raleway"
+#: config/font-families.php:608
+msgid "IBM Plex Sans Condensed"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:611
-msgid "Rambla"
+#: config/font-families.php:615
+msgid "IBM Plex Serif"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:617
-msgid "Roboto"
+#: config/font-families.php:622
+msgid "Impact"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:623
-msgid "Roboto Condensed"
+#: config/font-families.php:627
+msgid "Indie Flower"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:629
-msgid "Roboto Mono"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:635
-msgid "Rosario"
+#: config/font-families.php:634
+msgid "Istok Web"
 msgstr ""
 
 #. Translators: Font family label.
 #: config/font-families.php:641
-msgid "Rubik"
+msgid "Josefin Sans"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:647
-msgid "Sansita"
+#: config/font-families.php:648
+msgid "Josefin Slab"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:653
-msgid "Scada"
+#: config/font-families.php:655
+msgid "Kanit"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:659
-msgid "Share"
+#: config/font-families.php:662
+msgid "Karla"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:665
-msgid "Source Sans Pro"
+#: config/font-families.php:669
+msgid "Lato"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:671
-msgid "Space Mono"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:677
-msgid "Spectral"
+#: config/font-families.php:676
+msgid "Libre Baskerville"
 msgstr ""
 
 #. Translators: Font family label.
 #: config/font-families.php:683
-msgid "Spectral Small Caps"
+msgid "Libre Franklin"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:689
-msgid "Tahoma"
+#: config/font-families.php:690
+msgid "Lobster Two"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:694
-msgid "Taviraj"
+#: config/font-families.php:697
+msgid "Lora"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:700
-msgid "Times New Roman"
+#: config/font-families.php:704
+msgid "Lucida Grande"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:705
-msgid "Tinos"
+#: config/font-families.php:709
+msgid "Mali"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:711
-msgid "Titillium Web"
+#: config/font-families.php:716
+msgid "Manuale"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:717
-msgid "Trebuchet MS"
+#: config/font-families.php:723
+msgid "Marvel"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:722
-msgid "Trirong"
+#: config/font-families.php:730
+msgid "Menlo"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:728
-msgid "Ubuntu"
+#: config/font-families.php:735
+msgid "Merriweather"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:734
-msgid "Ubuntu Mono"
+#: config/font-families.php:742
+msgid "Merriweather Sans"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:740
-msgid "Unna"
+#: config/font-families.php:749
+msgid "Montserrat"
 msgstr ""
 
 #. Translators: Font family label.
-#: config/font-families.php:746
-msgid "Verdana"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:751
-msgid "Volkhov"
-msgstr ""
-
-#. Translators: Font family label.
-#: config/font-families.php:757
-msgid "Vollkorn"
+#: config/font-families.php:756
+msgid "Montserrat Alternates"
 msgstr ""
 
 #. Translators: Font family label.
 #: config/font-families.php:763
+msgid "Monaco"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:768
+msgid "Muli"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:775
+msgid "Neuton"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:782
+msgid "Nobile"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:789
+msgid "Nothing You Could Do"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:796
+msgid "Noticia Text"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:803
+msgid "Noto Sans"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:810
+msgid "Noto Serif"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:817
+msgid "Nunito"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:824
+msgid "Nunito Sans"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:831
+msgid "Palatino"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:836
+msgid "Oleo Script"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:843
+msgid "Oleo Script Swash Caps"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:850
+msgid "Open Sans"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:857
+msgid "Open Sans Condensed"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:864
+msgid "Oswald"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:871
+msgid "Overlock"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:878
+msgid "Overlock Small Caps"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:885
+msgid "Overpass"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:892
+msgid "Overpass Mono"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:899
+msgid "Pacifico"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:906
+msgid "Patua One"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:913
+msgid "Philosopher"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:920
+msgid "Playball"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:927
+msgid "Playfair Display"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:934
+msgid "Playfair Display Small Caps"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:941
+msgid "Poppins"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:948
+msgid "Prata"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:955
+msgid "Prompt"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:962
+msgid "Proza Libre"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:969
+msgid "PT Sans"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:976
+msgid "PT Sans Caption"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:983
+msgid "PT Sans Narrow"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:990
+msgid "PT Serif"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:997
+msgid "PT Serif Caption"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1004
+msgid "Puritan"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1011
+msgid "Quantico"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1018
+msgid "Quattrocento"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1025
+msgid "Quattrocento Sans"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1032
+msgid "Quicksand"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1039
+msgid "Raleway"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1046
+msgid "Rambla"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1053
+msgid "Righteous"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1060
+msgid "Roboto"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1067
+msgid "Roboto Condensed"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1074
+msgid "Roboto Mono"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1081
+msgid "Roboto Slab"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1088
+msgid "Rosario"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1095
+msgid "Rouge Script"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1102
+msgid "Rubik"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1109
+msgid "Sacramento"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1116
+msgid "Sansita"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1123
+msgid "Satisfy"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1130
+msgid "Scada"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1137
+msgid "Shadows Into Light"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1144
+msgid "Shadows Into Light Two"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1151
+msgid "Share"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1158
+msgid "Slabo 27px"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1165
+msgid "Source Code Pro"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1172
+msgid "Source Sans Pro"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1179
+msgid "Source Serif Pro"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1186
+msgid "Space Mono"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1193
+msgid "Spectral"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1200
+msgid "Spectral Small Caps"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1207
+msgid "Tahoma"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1212
+msgid "Tangerine"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1219
+msgid "Taviraj"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1226
+msgid "Times New Roman"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1231
+msgid "Tinos"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1238
+msgid "Titillium Web"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1245
+msgid "Trebuchet MS"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1250
+msgid "Trirong"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1257
+msgid "Ubuntu"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1264
+msgid "Ubuntu Condensed"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1271
+msgid "Ubuntu Mono"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1278
+msgid "Ultra"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1285
+msgid "Unna"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1292
+msgid "Verdana"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1297
+msgid "Volkhov"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1304
+msgid "Vollkorn"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1311
+msgid "Work Sans"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1318
+msgid "Yellowtail"
+msgstr ""
+
+#. Translators: Font family label.
+#: config/font-families.php:1325
 msgid "Zilla Slab"
 msgstr ""
 
-#. Translators: Font size label.
-#: config/font-sizes.php:17
-msgid "Fine"
+#: config/font-styles.php:5
+msgid "Thin (Hairline)"
 msgstr ""
 
-#. Translators: Font size label.
-#: config/font-sizes.php:22
-msgid "Diminutive"
+#: config/font-styles.php:10
+msgid "Thin (Hairline) Italic"
 msgstr ""
 
-#. Translators: Font size label.
-#: config/font-sizes.php:27
-msgid "Tiny"
+#: config/font-styles.php:15
+msgid "Extra-Light"
 msgstr ""
 
-#. Translators: Font size label.
-#: config/font-sizes.php:32
-msgid "Small"
+#: config/font-styles.php:20
+msgid "Extra-Light Italic"
 msgstr ""
 
-#. Translators: Font size label.
-#: config/font-sizes.php:37
-msgid "Medium"
+#: config/font-styles.php:25
+msgid "Light"
 msgstr ""
 
-#. Translators: Font size label.
-#: config/font-sizes.php:42
-msgid "Large"
+#: config/font-styles.php:30
+msgid "Light Italic"
 msgstr ""
 
-#. Translators: Font size label.
-#: config/font-sizes.php:47
-msgid "Extra Large"
+#: config/font-styles.php:35 config/font-variant-caps.php:16
+msgid "Normal"
 msgstr ""
 
-#. Translators: Font size label.
-#: config/font-sizes.php:52
-msgid "Huge"
+#: config/font-styles.php:40
+msgid "Normal Italic"
 msgstr ""
 
-#. Translators: Font size label.
-#: config/font-sizes.php:57
-msgid "Gargantuan"
+#: config/font-styles.php:50
+msgid "Medium Italic"
 msgstr ""
 
-#. Translators: Font size label.
-#: config/font-sizes.php:62
-msgid "Colossal"
+#: config/font-styles.php:55
+msgid "Semi-Bold"
 msgstr ""
 
-#: config/image-filters.php:17
+#: config/font-styles.php:60
+msgid "Semi-Bold Italic"
+msgstr ""
+
+#: config/font-styles.php:65
+msgid "Bold"
+msgstr ""
+
+#: config/font-styles.php:70
+msgid "Bold Italic"
+msgstr ""
+
+#: config/font-styles.php:75
+msgid "Extra-Bold"
+msgstr ""
+
+#: config/font-styles.php:80
+msgid "Extra-Bold Italic"
+msgstr ""
+
+#: config/font-styles.php:85
+msgid "Black (Heavy)"
+msgstr ""
+
+#: config/font-styles.php:90
+msgid "Black (Heavy) Italic"
+msgstr ""
+
+#: config/font-variant-caps.php:19
+msgid "Small Caps"
+msgstr ""
+
+#: config/font-variant-caps.php:22
+msgid "All Small Caps"
+msgstr ""
+
+#: config/font-variant-caps.php:25
+msgid "Petite Caps"
+msgstr ""
+
+#: config/font-variant-caps.php:28
+msgid "All Petite Caps"
+msgstr ""
+
+#: config/font-variant-caps.php:31
+msgid "Titling Caps"
+msgstr ""
+
+#: config/font-variant-caps.php:34
+msgid "Unicase"
+msgstr ""
+
+#: config/image-filters.php:17 config/text-transforms.php:16
 msgid "None"
 msgstr ""
 
@@ -1619,6 +2085,18 @@ msgstr ""
 msgid "Boxed Content"
 msgstr ""
 
+#: config/text-transforms.php:19
+msgid "Capitalize"
+msgstr ""
+
+#: config/text-transforms.php:22
+msgid "Lowercase"
+msgstr ""
+
+#: config/text-transforms.php:25
+msgid "Uppercase"
+msgstr ""
+
 #. Translators: %s is the parent comment link.
 #: public/views/comment/default.php:6
 msgid "In reply to %s"
@@ -1637,93 +2115,93 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: public/views/entry/attachment-audio.php:16
+#: public/views/entry/attachment-audio.php:17
 msgid "Audio Info"
 msgstr ""
 
-#: public/views/entry/attachment-audio.php:19
-#: public/views/entry/attachment-video.php:19
+#: public/views/entry/attachment-audio.php:20
+#: public/views/entry/attachment-video.php:20
 msgid "Run Time:"
 msgstr ""
 
-#: public/views/entry/attachment-audio.php:20
+#: public/views/entry/attachment-audio.php:21
 msgid "Artist:"
 msgstr ""
 
-#: public/views/entry/attachment-audio.php:21
+#: public/views/entry/attachment-audio.php:22
 msgid "Album:"
 msgstr ""
 
-#: public/views/entry/attachment-audio.php:22
+#: public/views/entry/attachment-audio.php:23
 msgid "Track Number:"
 msgstr ""
 
-#: public/views/entry/attachment-audio.php:23
+#: public/views/entry/attachment-audio.php:24
 msgid "Year:"
 msgstr ""
 
-#: public/views/entry/attachment-audio.php:24
+#: public/views/entry/attachment-audio.php:25
 msgid "Genre:"
 msgstr ""
 
-#: public/views/entry/attachment-audio.php:25
-#: public/views/entry/attachment-image.php:28
-#: public/views/entry/attachment-video.php:21
+#: public/views/entry/attachment-audio.php:26
+#: public/views/entry/attachment-image.php:27
+#: public/views/entry/attachment-video.php:22
 msgid "Name:"
 msgstr ""
 
-#: public/views/entry/attachment-audio.php:26
-#: public/views/entry/attachment-image.php:29
-#: public/views/entry/attachment-video.php:22
+#: public/views/entry/attachment-audio.php:27
+#: public/views/entry/attachment-image.php:28
+#: public/views/entry/attachment-video.php:23
 msgid "Mime Type:"
 msgstr ""
 
-#: public/views/entry/attachment-audio.php:27
-#: public/views/entry/attachment-image.php:30
-#: public/views/entry/attachment-video.php:23
+#: public/views/entry/attachment-audio.php:28
+#: public/views/entry/attachment-image.php:29
+#: public/views/entry/attachment-video.php:24
 msgid "Type:"
 msgstr ""
 
-#: public/views/entry/attachment-audio.php:28
-#: public/views/entry/attachment-image.php:31
-#: public/views/entry/attachment-video.php:24
+#: public/views/entry/attachment-audio.php:29
+#: public/views/entry/attachment-image.php:30
+#: public/views/entry/attachment-video.php:25
 msgid "Size:"
 msgstr ""
 
-#: public/views/entry/attachment-image.php:18
+#: public/views/entry/attachment-image.php:17
 msgid "Image Info"
 msgstr ""
 
-#: public/views/entry/attachment-image.php:21
-#: public/views/entry/attachment-video.php:20
+#: public/views/entry/attachment-image.php:20
+#: public/views/entry/attachment-video.php:21
 msgid "Dimensions:"
 msgstr ""
 
-#: public/views/entry/attachment-image.php:22
+#: public/views/entry/attachment-image.php:21
 msgid "Date:"
 msgstr ""
 
-#: public/views/entry/attachment-image.php:23
+#: public/views/entry/attachment-image.php:22
 msgid "Camera:"
 msgstr ""
 
-#: public/views/entry/attachment-image.php:24
+#: public/views/entry/attachment-image.php:23
 msgid "Aperture:"
 msgstr ""
 
-#: public/views/entry/attachment-image.php:25
+#: public/views/entry/attachment-image.php:24
 msgid "Focal Length:"
 msgstr ""
 
-#: public/views/entry/attachment-image.php:26
+#: public/views/entry/attachment-image.php:25
 msgid "ISO:"
 msgstr ""
 
-#: public/views/entry/attachment-image.php:27
+#: public/views/entry/attachment-image.php:26
 msgid "Shutter Speed:"
 msgstr ""
 
-#: public/views/entry/attachment-video.php:16
+#: public/views/entry/attachment-video.php:17
 msgid "Video Info"
 msgstr ""
 
@@ -1857,19 +2335,19 @@ msgctxt "meta separator"
 msgid "&middot;"
 msgstr ""
 
-#: config/_settings-font-family.php:16
+#: config/_settings-typography.php:16
+msgctxt "font family setting"
+msgid "Headings"
+msgstr ""
+
+#: config/_settings-typography.php:25
 msgctxt "font family setting"
 msgid "Primary"
 msgstr ""
 
-#: config/_settings-font-family.php:21
+#: config/_settings-typography.php:32
 msgctxt "font family setting"
 msgid "Secondary"
-msgstr ""
-
-#: config/_settings-font-family.php:26
-msgctxt "font family setting"
-msgid "Headings"
 msgstr ""
 
 #. Translators: Separates tags, categories, etc. when displaying a post.
