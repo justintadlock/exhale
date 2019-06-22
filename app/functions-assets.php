@@ -98,6 +98,7 @@ add_action( 'enqueue_block_editor_assets', function() {
 			'borderDashed' => __( 'Dashed',    'exhale' ),
 			'borderless'   => __( 'No Border', 'exhale' ),
 			'highlight'    => __( 'Highlight', 'exhale' ),
+			'reverse'      => __( 'Reverse',   'exhale' ),
 			'rounded'      => __( 'Rounded',   'exhale' ),
 			'shadow'       => __( 'Shadow',    'exhale' ),
 

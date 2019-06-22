@@ -49,6 +49,11 @@ wp.domReady( () => {
 	} );
 
 	wp.blocks.registerBlockStyle( 'core/gallery', {
+		name  : 'reverse',
+		label : labels.reverse,
+	} );
+
+	wp.blocks.registerBlockStyle( 'core/gallery', {
 		name  : 'shadow',
 		label : labels.shadow
 	} );

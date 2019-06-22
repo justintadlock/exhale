@@ -14,6 +14,10 @@
 	padding:         0;
 	margin-bottom:   $spacing-half;
 
+	&.is-style-reverse {
+		flex-wrap: wrap-reverse;
+	}
+
 	&.alignfull,
 	&.alignwide {
 		margin-bottom: $spacing-half;
