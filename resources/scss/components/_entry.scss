@@ -22,22 +22,14 @@
 		}
 	}
 
-	&__media {
-		text-align: center;
-	}
-
-	&__image {
-		padding: 0;
-	}
-
-	&__image.aligncenter {
-		display: inline-block;
-		margin-bottom: -0.75rem;
-	}
-
 	// Header wrapper.
-	.entry__header {
-		text-align: center;
+	&__header {
+		margin-bottom: $spacing-global;
+		text-align:    center;
+
+		+ .entry__summary {
+			margin-top: calc( -#{ $spacing-global } + #{ $spacing-fourth } );
+		}
 	}
 
 	// Entry title.
@@ -53,6 +45,19 @@
 		a:focus {
 			text-decoration: underline;
 		}
+	}
+
+	&__media {
+		text-align: center;
+	}
+
+	&__image {
+		padding: 0;
+	}
+
+	&__image.aligncenter {
+		display: inline-block;
+		margin-bottom: -0.75rem;
 	}
 
 	// Full entry content.
@@ -73,14 +78,6 @@
 		// @include meta-links;
 	}
 
-	&__byline {
-		margin-bottom: $spacing-fourth;
-	}
-
-	&.has-post-thumbnail .entry__byline {
-		margin-bottom: $spacing-global;
-	}
-
 	&__footer {
 		margin-top: $spacing-global;
 		margin-bottom: $spacing-global;
@@ -96,17 +93,8 @@
 .single .entry,
 .error-404 .entry {
 
-	&__header {
-		margin-bottom: 3rem;
-		text-align: center;
-	}
-
 	&__title {
 		@include heading-primary;
-	}
-
-	&__byline {
-		margin-bottom: 0;
 	}
 }
 

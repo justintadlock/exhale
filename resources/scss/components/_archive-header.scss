@@ -7,7 +7,7 @@
 ////
 
 .archive-header {
-	margin-bottom: 3rem;
+	margin-bottom: $spacing-global;
 	text-align: center;
 
 	> * {
@@ -28,6 +28,5 @@
 
 	&__description {
 		// components/_text-secondary.scss
-		margin-bottom: 0;
 	}
 }
