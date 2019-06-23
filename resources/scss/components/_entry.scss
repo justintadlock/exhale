@@ -8,20 +8,6 @@
 
 .entry {
 
-	&__header > *,
-	&__footer,
-	&__content > *,
-	&__summary > * {
-		margin-left:  $spacing-global;
-		margin-right: $spacing-global;
-
-		@media ( min-width: calc( #{ $content-width } + 64px ) ) {
-			max-width:    $content-width;
-			margin-left:  auto;
-			margin-right: auto;
-		}
-	}
-
 	// Header wrapper.
 	&__header {
 		margin-bottom: $spacing-global;

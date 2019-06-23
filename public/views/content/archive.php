@@ -6,7 +6,7 @@
 
 		<?php if ( have_posts() ) : ?>
 
-			<div class="entry-list">
+			<div class="entry-list o-content-width">
 				<ul class="entry-list__items">
 
 				<?php while ( have_posts() ) : the_post(); ?>

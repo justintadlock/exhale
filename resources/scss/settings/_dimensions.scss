@@ -11,6 +11,8 @@ $width-alignfull : 100vw;
 
 $content-width: 650px;
 
+$content-width-padded : calc( #{ $content-width } + 68px );
+
 /// Defines the content width. This should match the theme's `$content_width`
 /// setting in `app/functions-setup.php`.
 ///

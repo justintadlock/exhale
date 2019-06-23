@@ -7,22 +7,18 @@
 ////
 
 .comment-respond {
-	margin:  0 -#{ $spacing-global } $spacing-global;
-	padding: $spacing-global $spacing-global 0;
-	border:  1px solid var( --color-border );
+	margin-bottom: $spacing-global;
+	padding:       $spacing-global $spacing-global 0;
+	border:        1px solid var( --color-border );
 
-	@media only screen and ( max-width: $content-width ) {
-		margin: 0 0 $spacing-global;
-		border-width: 1px 0;
+	@media only screen and ( max-width: $content-width-padded ) {
+		margin-bottom: 0;
+		border-width:  0 0 1px;
+	}
 
-		.comments__list + & {
-			border-width: 0 0 1px;
-		}
-
-		+ .comment--depth-1 {
-			margin-top: -#{ $spacing-global };
-			border-width: 0 0 1px;
-		}
+	.children & {
+		margin: 0 -#{ $spacing-global } 0 -#{ $spacing-2x };
+		border-width: 1px 0 0;
 	}
 
 	// Header/title for the respond section.
@@ -91,10 +87,4 @@
 
 	// Comments closed message.
 	&__closed {}
-}
-
-.children .comment-respond {
-	margin: 0 -#{ $spacing-global } 0 -#{ $spacing-2x };
-	border-width: 0;
-	border-top-width: 1px;
 }

@@ -1,10 +1,10 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
-	<header class="entry__header">
+	<header class="entry__header o-content-width">
 		<?php Hybrid\Post\display_title() ?>
 	</header>
 
-	<div class="entry__content">
+	<div class="entry__content o-content-width">
 		<figure class="wp-block-image alignfull">
 			<?php echo wp_get_attachment_image( get_the_ID(), 'exhale-landscape-huge', false, [ 'class' => 'aligncenter' ] ) ?>
 		</figure>
@@ -12,7 +12,7 @@
 		<?php Hybrid\View\display( 'nav/pagination', 'post' ) ?>
 	</div>
 
-	<div class="media-meta media-meta--image">
+	<div class="media-meta media-meta--image o-content-width">
 
 		<h3 class="media-meta__title"><?php esc_html_e( 'Image Info', 'exhale' ) ?></h3>
 

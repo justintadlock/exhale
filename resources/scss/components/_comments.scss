@@ -9,15 +9,18 @@
 ////
 
 .comments {
-	max-width: $content-width;
-	margin:    $spacing-global auto 0;
+	margin-bottom: $spacing-global;
+
+	> * {
+		max-width:    $content-width;
+		margin-left:  auto;
+		margin-right: auto;
+	}
 
 	&__title,
 	&__closed {
-		@media only screen and ( max-width: $content-width ) {
-			padding-left: $spacing-global;
-			padding-right: $spacing-global;
-		}
+		padding-left:  $spacing-global;
+		padding-right: $spacing-global;
 	}
 
 	// Header/title for the comments section.
@@ -29,10 +32,14 @@
 	// only way to change this class is with a custom Walker).
 	// @link https://core.trac.wordpress.org/ticket/44923
 
+	&__list {
+		max-width: $content-width-padded;
+	}
+
 	&__list,
 	&__list .children {
 		list-style: none;
-		margin:     0;
+		margin-bottom: 0;
 		padding:    0;
 	}
 

@@ -1,6 +1,6 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
-	<header class="entry__header">
+	<header class="entry__header o-content-width">
 		<?php Hybrid\Post\display_title() ?>
 
 		<div class="entry__byline">
@@ -10,12 +10,12 @@
 		</div>
 	</header>
 
-	<div class="entry__content">
+	<div class="entry__content o-content-width">
 		<?php the_content() ?>
 		<?php Hybrid\View\display( 'nav/pagination', 'post' ) ?>
 	</div>
 
-	<footer class="entry__footer">
+	<footer class="entry__footer o-content-width">
 		<?php Hybrid\Post\display_terms( [
 			// Translators: %s is the category list.
 			'text'     => __( 'Posted in %s', 'exhale' ),
@@ -24,8 +24,7 @@
 		<?php Hybrid\Post\display_terms( [
 			// Translators: %s is the post tags list.
 			'text'     => __( 'Tagged %s', 'exhale' ),
-			'taxonomy' => 'post_tag',
-			'before'   => '<br />'
+			'taxonomy' => 'post_tag'
 		] ) ?>
 	</footer>
 

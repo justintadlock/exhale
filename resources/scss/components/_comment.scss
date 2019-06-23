@@ -11,13 +11,13 @@
 .comment {
 
 	&--depth-1 {
-		margin: 0 -#{ $spacing-global } $spacing-global;
-		padding: $spacing-global $spacing-global 0;
-		border:  1px solid var( --color-border );
+		margin-bottom: $spacing-global;
+		padding:       $spacing-global $spacing-global 0;
+		border:        1px solid var( --color-border );
 
-		@media only screen and ( max-width: $content-width ) {
-			border-width: 0 0 1px;
-			margin: 0;
+		@media only screen and ( max-width: $content-width-padded ) {
+			margin-bottom: 0;
+			border-width:  0 0 1px;
 
 			&:first-child {
 				border-width: 1px 0;

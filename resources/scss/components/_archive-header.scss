@@ -8,18 +8,7 @@
 
 .archive-header {
 	margin-bottom: $spacing-global;
-	text-align: center;
-
-	> * {
-		margin-left:  $spacing-global;
-		margin-right: $spacing-global;
-
-		@media ( min-width: calc( #{ $content-width } + 64px ) ) {
-			max-width:    $content-width;
-			margin-left:  auto;
-			margin-right: auto;
-		}
-	}
+	text-align:    center;
 
 	&__title {
 		@include heading-primary;

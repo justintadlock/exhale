@@ -1,10 +1,10 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
-	<header class="entry__header">
+	<header class="entry__header o-content-width">
 		<?php Hybrid\Post\display_title() ?>
 	</header>
 
-	<div class="entry__content">
+	<div class="entry__content o-content-width">
 		<figure class="aligncenter">
 			<?php Hybrid\Media\display( [ 'type' => 'audio' ] ) ?>
 		</figure>
@@ -12,7 +12,7 @@
 		<?php Hybrid\View\display( 'nav/pagination', 'post' ) ?>
 	</div>
 
-	<div class="media-meta media-meta--audio">
+	<div class="media-meta media-meta--audio o-content-width">
 
 		<h3 class="media-meta__title"><?php esc_html_e( 'Audio Info', 'exhale' ) ?></h3>
 

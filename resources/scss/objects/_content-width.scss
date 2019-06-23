@@ -1,0 +1,25 @@
+////
+/// Content width wrapper.
+///
+/// Used as a wrapper for elements whose inner elements need to be set to the
+/// content width.  Anything that needs to "break out" of the width, can simply
+/// change its `max-width` value.
+///
+/// @group  Objects
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.o-content-width {
+
+	> * {
+		margin-left:  $spacing-global;
+		margin-right: $spacing-global;
+
+		@media ( min-width: $content-width-padded ) {
+			max-width:    $content-width;
+			margin-left:  auto;
+			margin-right: auto;
+		}
+	}
+}

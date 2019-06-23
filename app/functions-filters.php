@@ -139,3 +139,21 @@ add_action( 'template_redirect', function() {
 	}
 
 }, ~PHP_INT_MAX );
+
+/**
+ * Changes the `<span>` wrapper for entry terms to a `<div>`.
+ *
+ * @since  2.1.0
+ * @access public
+ * @param  string  $html
+ * @return string
+ */
+add_filter( 'hybrid/post/terms', function( $html ) {
+
+	return str_replace(
+		[ '<span', '</span>' ],
+		[ '<div',  '</div>'  ],
+		$html
+	);
+
+} );
