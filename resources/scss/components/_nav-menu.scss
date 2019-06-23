@@ -8,20 +8,36 @@
 
 .menu {
 
-	&--primary {
-		position: relative;
-		white-space: nowrap;
-		overflow-x: auto;
-		overflow-y: hidden;
-		scroll-behavior: smooth;
-		scrollbar-width: none; // Firefox.
-		-ms-overflow-style: -ms-autohiding-scrollbar;
-		margin-left: auto; // This aligns the menu to the right.
+	&__items {
+		list-style: none;
+		margin:     0;
+		padding:    0;
+	}
 
-		font-family: font-family( 'secondary' );
+	&__item {
+		display: inline-block;
+	}
+
+	&__link {
+		display: inline-block;
+	}
+
+	// Primary menu.
+
+	&--primary {
+		position:           relative;
+		white-space:        nowrap;
+		overflow-x:         auto;
+		overflow-y:         hidden;
+		scroll-behavior:    smooth;
+		scrollbar-width:    none; // Firefox.
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		margin-left:        auto; // This aligns the menu to the right.
+
+		font-family: var( --font-family-secondary );
 		font-size:   16px;
 		line-height: 1;
-		color: var( --color-menu-primary );
+		color:       var( --color-menu-primary );
 
 		&::-webkit-scrollbar {
 			display: none;
@@ -49,15 +65,10 @@
 		}
 
 		&.menu--scroll::before {
-			content: "\027f7";
-			position: absolute;
+			content:     "\027f7";
+			position:    absolute;
 			line-height: 58px;
-			left: 1.25rem;
-		}
-
-		.menu__items {
-			margin: 0;
-			padding: 0;
+			left:        1.25rem;
 		}
 
 		.menu__item {
@@ -65,38 +76,32 @@
 		}
 
 		.menu__link {
-			display: inline-block;
-			padding:  21px 1.5rem;
+			padding:         21px 1.5rem;
 			text-decoration: none;
-			color:    var( --color-menu-primary );
+			color:           inherit;
 
 			&:hover,
 			&:focus {
 				text-decoration: underline;
-				color: var( --color-menu-primary-hover );
+				color:           var( --color-menu-primary-hover );
 			}
 		}
 	}
 
+	// Social menu.
+
 	&--social {
 
 		.menu__items {
-			list-style: none;
-			text-align: center;
-			margin: 0 0 $spacing-global;
-			padding: 0;
-		}
-
-		.menu__item {
-			display: inline-block;
+			text-align:    center;
+			margin-bottom: $spacing-global;
 		}
 
 		.menu__link {
-			display: inline-block;
 			margin:   0.5rem;
 
 			svg {
-				width: 24px;
+				width:  24px;
 				height: 24px;
 			}
 		}
