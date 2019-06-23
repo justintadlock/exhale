@@ -1,9 +1,8 @@
 /**
- * Customize controls script.
+ * Editor Script.
  *
- * This file handles the JavaScript for the controls panel in the customizer.
- * Any includes or imports should be handled in this file. The final result gets
- * saved back into `dist/js/customize-controls.js`.
+ * This imports all modules for the block editor. The final result gets saved
+ * back into `public/js/editor.js`.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>

@@ -1,9 +1,8 @@
 /**
  * Customize controls script.
  *
- * This file handles the JavaScript for the controls panel in the customizer.
- * Any includes or imports should be handled in this file. The final result gets
- * saved back into `dist/js/customize-controls.js`.
+ * This imports all modules for the customize controls pane. The final result
+ * gets saved back into `public/js/customize-controls.js`.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
