@@ -84,10 +84,9 @@
 	}
 }
 
-// Remove the bottom margin from any full-aligned element if it's the last
-// element in the content.
+// Remove the bottom margin from the last element on single posts.
 
-.entry__content > .alignfull:last-child {
+.single .entry__content > :last-child {
 	margin-bottom: 0;
 }
 
