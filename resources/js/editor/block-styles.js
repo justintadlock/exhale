@@ -10,122 +10,24 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
+import * as blockStyles from './block-styles/index';
+
 // WordPress dependencies.
 // const { __ } = wp.i18n;
 
 wp.domReady( () => {
 
-	let labels = exhaleEditor.labels;
+	Object.keys( blockStyles ).forEach( block => {
 
-	// Image styles.
+		blockStyles[ block ].styles.forEach( options => {
 
-	wp.blocks.registerBlockStyle( 'core/image', {
-		name      : 'default',
-		label     : labels.border,
-		isDefault : true
-	} );
+			wp.blocks.registerBlockStyle(
+				blockStyles[ block ].name,
+				options
+			);
 
-	wp.blocks.registerBlockStyle( 'core/image', {
-		name  : 'borderless',
-		label : labels.borderless
-	} );
-
-	wp.blocks.registerBlockStyle( 'core/image', {
-		name  : 'rounded',
-		label : labels.rounded
-	} );
-
-	wp.blocks.registerBlockStyle( 'core/image', {
-		name  : 'shadow',
-		label : labels.shadow
-	} );
-
-	// Image styles.
-
-	wp.blocks.registerBlockStyle( 'core/gallery', {
-		name      : 'default',
-		label     : labels.default,
-		isDefault : true
-	} );
-
-	wp.blocks.registerBlockStyle( 'core/gallery', {
-		name  : 'reverse',
-		label : labels.reverse,
-	} );
-
-	wp.blocks.registerBlockStyle( 'core/gallery', {
-		name  : 'shadow',
-		label : labels.shadow
-	} );
-
-	// List styles.
-
-	let listStyles = [
-		'none',
-		'disc',
-		'circle',
-		'square'
-	];
-
-	wp.blocks.registerBlockStyle( 'core/list', {
-		name      : 'default',
-		label     : labels.default,
-		isDefault : true
-	} );
-
-	listStyles.forEach( style => {
-		wp.blocks.registerBlockStyle( 'core/list', {
-			name      : 'list-' + style,
-			label     : labels[ 'list-' + style ]
 		} );
-	} );
 
-	// Media & Text styles.
-
-	wp.blocks.registerBlockStyle( 'core/media-text', {
-		name      : 'default',
-		label     : labels.default,
-		isDefault : true
-	} );
-
-	wp.blocks.registerBlockStyle( 'core/media-text', {
-		name  : 'borderless',
-		label : labels.borderless
-	} );
-
-	wp.blocks.registerBlockStyle( 'core/media-text', {
-		name  : 'shadow',
-		label : labels.shadow
-	} );
-
-	// Paragraph styles.
-
-	wp.blocks.registerBlockStyle( 'core/paragraph', {
-		name      : 'default',
-		label     : labels.default,
-		isDefault : true
-	} );
-
-	wp.blocks.registerBlockStyle( 'core/paragraph', {
-		name  : 'highlight',
-		label : labels.highlight
-	} );
-
-	wp.blocks.registerBlockStyle( 'core/paragraph', {
-		name  : 'shadow',
-		label : labels.shadow
-	} );
-
-	// Separator styles.
-
-	wp.blocks.registerBlockStyle( 'core/separator', {
-		name  : 'dashed',
-		label : labels.borderDashed
-	} );
-
-	wp.blocks.registerBlockStyle( 'core/separator', {
-		name  : 'double',
-		label : labels.borderDouble
 	} );
 
 } );
