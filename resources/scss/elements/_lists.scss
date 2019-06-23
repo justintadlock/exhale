@@ -19,8 +19,8 @@ li > ul,
 li > ol { margin-bottom : 0; }
 
 dd {
-	display:       list-item;
-	margin:        0 0 0.5em $spacing-global;
+	display: list-item;
+	margin:  0 0 0.5em $spacing-global;
 
 	+ dd {
 		margin-top: -0.5em;

@@ -7,50 +7,48 @@
 ////
 
 .pagination {
-	clear       : both;
-	overflow    : hidden;
-	margin      : $spacing-global 0;
-	text-align  : center;
-	font-family : font-family( secondary );
-	font-size   : 15px;
-}
+	clear:       both;
+	margin:      $spacing-global 0;
+	text-align:  center;
+	font-family: var( --font-family-secondary );
+	font-size:   15px;
 
-.pagination__items {
-	list-style  : none;
-	display    : inline-block;
-	margin  : 0;
-	padding: 0;
-	/* Get rid of whitespace between inline-block elements. */
-	font-size   : 0px;
-}
-
-.pagination__item {
-	display     : inline-block;
-	margin      : 0 -1px 0 0;
-	font-size   : 15px;
-	font-weight: 600;
-}
-
-.pagination__anchor {
-	display : block;
-	padding: 0.375rem 1.125rem;
-	border: 1px solid var( --color-border );
-	text-decoration: none;
-}
-
-	.pagination__anchor--link:hover,
-	.pagination__anchor--link:focus {
-		color        : var( --color-content-background );
-		background   : var( --color-primary );
-		border-color : var( --color-primary );
-		text-decoration: underline;
+	&__items {
+		list-style: none;
+		display:    inline-block;
+		margin:     0;
+		padding:    0;
+		font-size:  0px; // Get rid of whitespace between inline-block elements.
 	}
 
-@media only screen and ( max-width: 650px ) {
+	&__item {
+		display:     inline-block;
+		margin:      0 -1px 0 0;
+		font-size:   15px;
+		font-weight: 700;
+	}
 
-	.pagination__item { display: none; }
+	&__anchor {
+		display:         block;
+		padding:         0.375rem 1.125rem;
+		border:          1px solid var( --color-border );
+		text-decoration: none;
 
-	.pagination__item--current,
-	.pagination__item--prev,
-	.pagination__item--next { display: inline-block; }
+		&--link:hover,
+		&--link:focus {
+			color        : var( --color-content-background );
+			background   : var( --color-primary );
+			border-color : var( --color-primary );
+			text-decoration: underline;
+		}
+	}
+
+	@media only screen and ( max-width: $content-width ) {
+
+		&__item { display: none; }
+
+		&__item--current,
+		&__item--prev,
+		&__item--next { display: inline-block; }
+	}
 }

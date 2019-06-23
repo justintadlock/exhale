@@ -36,12 +36,6 @@
 		};
 	}
 
-	let blockquoteCite = document.querySelectorAll( 'blockquote > p > cite' );
-
-	blockquoteCite.forEach( function( cite ) {
-		cite.parentNode.classList.add( 'has-cite' );
-	} );
-
 	let images = document.querySelectorAll( 'img' );
 
 	images.forEach( function( image ) {

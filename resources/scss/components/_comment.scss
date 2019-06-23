@@ -66,25 +66,25 @@
 		font-size: 0.9125em;
 
 		svg {
-			height: 1em;
+			height:         1em;
 			vertical-align: text-bottom;
-			padding: 0 0.25em 0.1em;
+			padding:        0 0.25em 0.1em;
 		}
 	}
 
 	&__parent-link {
-		font-size: 0.9125em;
-		display: inline-block;
+		font-size:     0.9125em;
+		display:       inline-block;
 		margin-bottom: $spacing-fourth;
-		color: var( --color-secondary-link-hover );
+		color:         var( --color-secondary-link-hover );
 	}
 
 	&__author {
-		font-weight: bold;
+		font-weight: 700;
 	}
 
 	&__meta .comment__author a {
-		color: var( --color-headings );
+		color:           var( --color-headings );
 		text-decoration: none;
 
 		&:hover,

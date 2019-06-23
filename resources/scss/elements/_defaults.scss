@@ -6,6 +6,12 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+html, body {
+	width:   100%;
+	margin:  0;
+	padding: 0;
+}
+
 html {
 	font-size:   16px;
 	font-family: var( --font-family-primary );
@@ -17,15 +23,6 @@ html {
 	}
 }
 
-html, body {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-}
-
-// Body styles. Note that we're hiding horizontal overflow so that wide images
-// don't overflow.
 body {
-	overflow-x: hidden;
 	background-color: var( --color-background, 'transparent' );
 }

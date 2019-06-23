@@ -18,20 +18,17 @@ mark,
 cite { font-style : italic; }
 
 i i,
-em em,
-mark mark,
-cite cite { font-style : normal; }
+em em { font-style : normal; }
 
 // Abbreviations, acronymns, etc.
 
 abbr[title],
 acronym[title],
-time[title] { cursor : help; }
+time[title] { cursor: help; }
 
 abbr,
 acronym {
-	// @todo - Should be lightened version of primary color.
-	border-bottom : 1px dotted var( --color-gray );
+	border-bottom : 1px dotted var( --color-border );
 }
 
 acronym { text-transform: uppercase; }

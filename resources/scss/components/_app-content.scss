@@ -9,19 +9,18 @@
 ////
 
 .app-content {
-	overflow: hidden;
-	position:  relative;
-	max-width: 100%;
-	margin:    0 auto;
-	padding:   3rem 0 0;
-	word-wrap  : break-word;
-	word-break : normal;
+	overflow:   hidden;
+	margin:     0 auto;
+	padding:    3rem 0 0;
+	word-wrap:  break-word;
+	word-break: normal;
 	box-sizing: border-box;
 	background: var( --color-content-background );
 
 	@include typography;
 
 	.layout-boxed-content & {
+
 		@media ( min-width: 1050px ) {
 			max-width: 1050px;
 			margin:    3rem auto;
