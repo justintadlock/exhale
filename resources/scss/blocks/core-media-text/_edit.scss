@@ -1,0 +1,17 @@
+////
+/// Media & Text editor block.
+///
+/// @group  Editor
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+// Add appropriate padding to left/right.
+[data-align="full"] .wp-block-media-text {
+	padding-left:  $spacing-global;
+	padding-right: $spacing-global;
+}
+
+.wp-block-media-text .editor-inner-blocks {
+	padding: 0;
+}

@@ -1,0 +1,14 @@
+////
+/// Separator editor block.
+///
+/// @group  Editor
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+// Separator block.
+// Override the `theme.css` included in Gutenberg 5.5.0.
+
+.edit-post-visual-editor .wp-block .wp-block-separator {
+	max-width: 100%;
+}

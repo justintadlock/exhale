@@ -1,11 +1,11 @@
 ////
-/// Objects imports.
+/// Button editor block.
 ///
-/// Undecorated design patterns.
-///
-/// @group  Objects
+/// @group  Editor
 /// @author Justin Tadlock <justintadlock@gmail.com>
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-@import 'content-width';
+.wp-block-button {
+	margin-bottom: 0;
+}

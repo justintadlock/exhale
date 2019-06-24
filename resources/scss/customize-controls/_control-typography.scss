@@ -1,20 +1,12 @@
 ////
-/// Customize controls styles.
+/// Typography control.
 ///
-/// Styles should focus on the customize controls panel. This covers panels,
-/// sections, and controls.
+/// Styles for the typography customize control.
 ///
 /// @group  CustomizeControls
 /// @author Justin Tadlock <justintadlock@gmail.com>
 /// @link   https://themehybrid.com/themes/exhale
 ////
-
-// Widens the "mobile" device view a bit.
-.preview-mobile .wp-full-overlay-main {
-	margin-left: -240px;
-	width:       480px;
-	height:      568px;
-}
 
 // Add a separator between font controls.
 .customize-control-exhale-typography {

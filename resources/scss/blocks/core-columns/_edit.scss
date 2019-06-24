@@ -1,0 +1,19 @@
+////
+/// Columns editor block.
+///
+/// @group  Editor
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+// Columns block.  We need to remove negative margins in editor.
+
+.wp-block-columns {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+[data-align="full"] .wp-block-columns {
+	padding-left: $spacing-global;
+	padding-right: $spacing-global;
+}

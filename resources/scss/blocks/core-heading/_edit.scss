@@ -1,0 +1,21 @@
+////
+/// Heading editor block.
+///
+/// @group  Editor
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+// Bump out width via negative margins for heading block.
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	&.has-background {
+		margin-left: -#{ $spacing-global };
+		margin-right: -#{ $spacing-global };
+	}
+}

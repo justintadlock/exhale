@@ -1,0 +1,22 @@
+////
+/// Code editor block.
+///
+/// @group  Editor
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.wp-block-code {
+	@include code-block;
+	color: var( --color-primary );
+	margin-left: -#{ $spacing-global };
+	margin-right: -#{ $spacing-global };
+
+	.editor-plain-text,
+	.editor-plain-text:focus {
+		font-size: 15px;
+		font-family: font-family( code );
+		background: inherit;
+		color: inherit;
+	}
+}

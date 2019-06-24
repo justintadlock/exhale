@@ -1,0 +1,14 @@
+////
+/// Image editor block.
+///
+/// @group  Editor
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+// Image block.  Adds left/right margin because a white block covers the editor
+// when using an unaligned image inside of the columns block with wide alignment.
+
+.block-core-columns [data-type="core/image"]:not([data-align]) .wp-block-image {
+	display: table;
+}

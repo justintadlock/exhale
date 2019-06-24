@@ -1,0 +1,40 @@
+////
+/// Pullquote editor block.
+///
+/// @group  Editor
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+// `.wp-block-pullquote` class is used in the editor but not the front end.
+// Copied from `/elements/_quotes.scsss` and `/blocks/core/_pullquote.scss`.
+
+// Gutenberg 5.3 fix.
+.wp-block-pullquote {
+	border-width: 0;
+	padding: 0;
+	margin-left: 0;
+	margin-right: 0;
+
+	// Gutenberg 5.7.
+	blockquote > .block-editor-rich-text p {
+		font-size: inherit;
+		line-height: inherit;
+	}
+
+	&.is-style-solid-color blockquote {
+		max-width: 100%;
+		text-align: center;
+	}
+}
+
+.wp-block-pullquote__citation,
+.wp-block-quote__citation {
+	font-size: 0.875em;
+	font-style: normal;
+	font-variant: small-caps;
+}
+
+.wp-block-pullquote__citation {
+	margin-bottom: $spacing-global;
+}

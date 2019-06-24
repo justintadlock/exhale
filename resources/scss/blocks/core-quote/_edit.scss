@@ -1,0 +1,13 @@
+////
+/// Quote editor block.
+///
+/// @group  Editor
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+// This is necessary to disable the asinine decision of the Gutenberg (5.3.0)
+// developers to output a black border next to the quote in default styles.
+.wp-block-quote {
+	border: none;
+}

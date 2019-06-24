@@ -1,0 +1,12 @@
+////
+/// Cover editor block.
+///
+/// @group  Editor
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+// Make sure inner blocks span the full width of the container.
+.wp-block-cover__inner-container .wp-block {
+	max-width: 100%;
+}

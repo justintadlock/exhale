@@ -1,0 +1,23 @@
+////
+/// Customize preview frame.
+///
+/// Styles for the customize preview frame (`#customize-preview` ID).
+///
+/// @group  CustomizeControls
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.wp-full-overlay-main {
+
+	.preview-desktop & {}
+
+	.preview-tablet & {}
+
+	// Widens the "mobile" device view a bit.
+	.preview-mobile & {
+		margin-left: -240px;
+		width:       480px;
+		height:      568px;
+	}
+}
