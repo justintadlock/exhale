@@ -45,6 +45,8 @@
 @media( min-width: $content-width ) {
 	.entry__content > .alignleft:not(.is-resized),
 	.entry__content > .alignright:not(.is-resized),
+	.wp-block-group > .alignleft:not(.is-resized),
+	.wp-block-group > .alignright:not(.is-resized),
 	.wp-block-group__inner-container > .alignleft:not(.is-resized),
 	.wp-block-group__inner-container > .alignright:not(.is-resized) {
 		max-width: calc( #{ $content-width } / 2 );
@@ -112,11 +114,13 @@ p .aligncenter {
 @media ( min-width: $content-width-padded ) {
 
 	.entry__content > .alignleft,
+	.entry__content .wp-block-group > .alignleft,
 	.entry__content .wp-block-group__inner-container > .alignleft {
 		margin-left: calc( ( 100% - #{ $content-width } ) / 2 );
 	}
 
 	.entry__content > .alignright,
+	.entry__content .wp-block-group > .alignright,
 	.entry__content .wp-block-group__inner-container > .alignright {
 		margin-right: calc( ( 100% - #{ $content-width } ) / 2 );
 	}
