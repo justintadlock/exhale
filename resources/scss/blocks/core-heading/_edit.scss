@@ -19,3 +19,40 @@ h6 {
 		margin-right: -#{ $spacing-global };
 	}
 }
+
+.wp-block-heading {
+
+	// Copied from `elements/_headings.scss`.
+	h1, h2, h3, h4, h5, h6 {
+		margin:            0 0 0.5em;
+		line-height:       1.58;
+	}
+
+	h1 {
+		font-size:  3rem;
+
+		@media ( max-width: $content-width ) {
+			font-size: 2.5rem;
+		}
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+	}
+
+	h4 {
+		font-size: 1.25rem;
+	}
+
+	h5 {
+		font-size: 1.125rem;
+	}
+
+	h6 {
+		font-size: 1rem;
+	}
+}
