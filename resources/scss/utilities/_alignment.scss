@@ -9,6 +9,20 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+// Text alignment (added in Gutenberg 6.0).
+
+.has-text-align-center {
+	text-align: center;
+}
+
+.has-text-align-left {
+	text-align: left;
+}
+
+.has-text-align-right {
+	text-align: right;
+}
+
 // Left alignment.
 .alignleft {
 	float:  left;
