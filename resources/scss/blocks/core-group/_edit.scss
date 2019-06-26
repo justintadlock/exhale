@@ -1,0 +1,27 @@
+////
+/// Group editor block.
+///
+/// @group  Editor
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+// Fix in Gutenberg 6.0 where nested alignfull elements are too wide.  Gutenberg
+// has the width at `100% + 60px`.
+.wp-block[data-type="core/group"][data-align=full]
+	.wp-block-group__inner-container
+	> .editor-inner-blocks
+	> .editor-block-list__layout
+	> .wp-block[data-align=full] {
+		width: calc( 100% + 30px ) !important;
+	}
+
+
+.wp-block-group {
+
+	> .editor-inner-blocks,
+	> .wp-block-group__inner-container,
+	.wp-block-group__inner-container > .editor-inner-blocks {
+		max-width: 100%;
+	}
+}

@@ -18,17 +18,17 @@
 
 	&.has-background {
 		margin-bottom: $spacing-global;
-		padding:       $spacing-global $spacing-global 0;
+		padding:       $spacing-global 0 0;
 	}
 
-	&.alignfull.has-background > .alignfull:not(.has-background) {
-		padding-left: 0;
-		padding-right: 0;
-	}
+	&__inner-container > * {
+		margin-left:  $spacing-global;
+		margin-right: $spacing-global;
 
-	> *:not([class*=align]):not(.editor-inner-blocks) {
-		max-width: $content-width;
-		margin-left: auto;
-		margin-right: auto;
+		@media ( min-width: $content-width-padded ) {
+			max-width:    $content-width;
+			margin-left:  auto;
+			margin-right: auto;
+		}
 	}
 }
