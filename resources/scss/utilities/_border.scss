@@ -1,0 +1,43 @@
+////
+/// Border helper classes.
+///
+/// @group  Utilities
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+$rounded: (
+	none:        0,
+	small:       0.1875rem,
+	medium:      0.375rem,
+	large:       0.5625rem,
+	extra-large: 0.75rem
+);
+
+/// Used for small images that are possibly something like a smiley, transparent
+/// PNG, and so on where we don't want borders.
+
+.is-style-borderless,
+.is-style-borderless img {
+	border: none;
+	outline: none;
+	box-shadow: none;
+}
+
+/// Rounded block style.
+///
+/// @deprecated 2.1.0
+
+.is-style-rounded img {
+	border-radius: 9999px;
+}
+
+// Border Radius.
+
+@each $radius-name, $radius-value in $rounded {
+	.rounded-#{ $radius-name },
+	.rounded-#{ $radius-name } img,
+	.wp-block-gallery.rounded-#{ $radius-name } figcaption {
+		border-radius: #{ $radius-value }
+	}
+}

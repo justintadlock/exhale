@@ -1,0 +1,25 @@
+////
+/// Effect helper classes.
+///
+/// @group  Utilities
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+// Box-shadow.
+
+$shadows : (
+	none:        none,
+	small:       0 2px  5px  0 rgba( 0, 0, 0, 0.3 ),
+	medium:      0 4px  10px 0 rgba( 0, 0, 0, 0.3 ),
+	large:       0 8px  15px 0 rgba( 0, 0, 0, 0.3 ),
+	extra-large: 0 12px 20px 0 rgba( 0, 0, 0, 0.3 )
+);
+
+@each $shadow-name, $shadow-value in $shadows {
+
+	.shadow-#{ $shadow-name },
+	.shadow-#{ $shadow-name } img {
+		box-shadow: #{ $shadow-value }
+	}
+}

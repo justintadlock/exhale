@@ -1,0 +1,30 @@
+////
+/// List helper classes.
+///
+/// @group  Utilities
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+// List Style Type.
+
+.list-none,
+.is-style-list-none {
+	list-style:   none;
+	padding-left: 0;
+}
+
+.list-disc,
+.is-style-list-disc {
+	list-style: disc;
+}
+
+.list-circle,
+.is-style-list-circle {
+	list-style: circle;
+}
+
+.list-square,
+.is-style-list-square {
+	list-style: square;
+}

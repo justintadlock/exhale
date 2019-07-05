@@ -12,22 +12,6 @@
 	margin: 0 0.5em;
 }
 
-/// Used for small images that are possibly something like a smiley, transparent
-/// PNG, and so on where we don't want borders.
-
-.is-style-borderless,
-.is-style-borderless img {
-	border: none;
-	outline: none;
-	box-shadow: none;
-}
-
-// Creates a rounded image.
-
-.is-style-rounded img {
-	border-radius: 9999px;
-}
-
 // Adds a box-shadow to elements.
 
 p.has-background,
@@ -36,43 +20,9 @@ p.is-style-shadow {
 	padding: $spacing-global;
 }
 
-// Adds a box-shadow to elements.
-
-$shadows : (
-	none:        none,
-	small:       0 2px  5px  0 rgba( 0, 0, 0, 0.3 ),
-	medium:      0 4px  10px 0 rgba( 0, 0, 0, 0.3 ),
-	large:       0 8px  15px 0 rgba( 0, 0, 0, 0.3 ),
-	extra-large: 0 12px 20px 0 rgba( 0, 0, 0, 0.3 )
-);
-
-@each $shadow-name, $shadow-value in $shadows {
-
-	.shadow-#{ $shadow-name },
-	.shadow-#{ $shadow-name } img {
-		box-shadow: #{ $shadow-value }
-	}
-}
-
 .is-style-shadow,
 .is-style-shadow img {
 	box-shadow: 0 4px 10px 0 rgba( 0, 0, 0, 0.3 );
-}
-
-$rounded: (
-	none:        0,
-	small:       0.1875rem,
-	medium:      0.375rem,
-	large:       0.5625rem,
-	extra-large: 0.75rem
-);
-
-@each $radius-name, $radius-value in $rounded {
-	.rounded-#{ $radius-name },
-	.rounded-#{ $radius-name } img,
-	.wp-block-gallery.rounded-#{ $radius-name } figcaption {
-		border-radius: #{ $radius-value }
-	}
 }
 
 .wp-block-image,
@@ -82,125 +32,10 @@ $rounded: (
 	border-radius: none;
 }
 
-/// List styles.
-
-.list-none,
-.is-style-list-none   { list-style: none; padding-left: 0; }
-
-.list-disc,
-.is-style-list-disc   { list-style: disc;   }
-
-.list-circle,
-.is-style-list-circle { list-style: circle; }
-
-.list-square,
-.is-style-list-square { list-style: square; }
-
 /// Used for paragraphs that only contain an image. These have no height. We use
 /// JS to add the `.is-collapsed` class and remove any margins and paddings.
 
 .is-collapsed {
 	margin-bottom: 0;
 	margin-top: 0;
-}
-
-/// Removes the whitespace between full-width elements so that they're stacked
-/// directly on top of one another.  All the ridiculous CSS wrangling is due to
-/// Gutenberg not adding a `.has-background` class to blocks with a background.
-///
-/// @link https://github.com/WordPress/gutenberg/issues/11172
-
-.alignfull[style*=background-color] + .alignfull[style*=background-color],
-.alignfull[style*=background-color] + .alignfull[class*=background-color],
-.alignfull[style*=background-color] + .alignfull.wp-block-cover,
-.alignfull[class*=background-color] + .alignfull[class*=background-color],
-.alignfull[class*=background-color] + .alignfull[style*=background-color],
-.alignfull[class*=background-color] + .alignfull.wp-block-cover,
-.alignfull.wp-block-cover + .alignfull.wp-block-cover,
-.alignfull.wp-block-cover + .alignfull[style*=background-cover],
-.alignfull.wp-block-cover + .alignfull[class*=background-cover] {
-	margin-top: -#{ $spacing-global };
-}
-
-/// If we have a text color, let's use that as the link color as well.  There's
-/// no way for us to know if the colors will clash here, so let's keep it simple.
-
-.has-text-color {
-
-	a:not( .wp-block-button__link ) {
-		color: inherit;
-	}
-
-	a:not( .wp-block-button__link ):hover,
-	a:not( .wp-block-button__link ):focus {
-		color:      inherit;
-		background: rgba( 255, 255, 255, 0.2 );
-	}
-}
-
-/// Give a default background color to blocks with an old background that the
-/// theme doesn't recognize so that our margins and paddings don't look off.
-
-.has-background,
-.is-style-solid-color {
-	background-color: var( --color-gray-lightest );
-}
-
-/// Loops through the theme colors and adds utility classes for them. Primarily,
-/// these are the `.has-{$color}-color` and `.has-{$color}-background-color`
-/// classes added via Gutenberg. However, they are useful elsewhere.
-
-@each $color-name, $color-value in block-colors() {
-
-	.has-#{ $color-name }-background-color,
-	a.has-#{ $color-name }-background-color {
-		background-color: $color-value;
-	}
-
-	// We must specifically set `a.has-{$color-name}-color` so that the
-	// various link states keep the same color. This is generally used with
-	// things like buttons.
-
-	.has-#{ $color-name }-color,
-	a.has-#{ $color-name }-color {
-		color: $color-value;
-	}
-
-}
-
-/// Background dim handling. Right now, this is primarily used with the Cover
-/// block. However, it may be applied to other elements in the future, so we're
-/// keeping it separate.
-
-.has-background-dim::before {
-	background-color: inherit;
-	content:         "";
-	position:         absolute;
-	top:              0;
-	left:             0;
-	bottom:           0;
-	right:            0;
-	z-index:          0;
-	opacity:          0.5;
-}
-
-// The background dim can be any number from 10-100, by 10s. We're just running
-// a simple loop to add a black background color over the element.
-
-@for $dim from 1 through 10 {
-
-	.has-background-dim-#{ $dim * 10 }::before {
-		opacity: $dim * 0.1;
-	}
-}
-
-/// Loops through the editor font sizes and adds utility classes for them. This
-/// handles the `.has-{$size}-font-size` classes added via Gutenberg, which may
-/// be useful elsewhere.
-
-@each $font-size-name, $font-size-value in editor-font-sizes() {
-
-	.has-#{ $font-size-name }-font-size {
-		font-size: #{ $font-size-value };
-	}
 }

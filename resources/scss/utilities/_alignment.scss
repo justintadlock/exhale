@@ -9,20 +9,6 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-// Text alignment (added in Gutenberg 6.0).
-
-.has-text-align-center {
-	text-align: center;
-}
-
-.has-text-align-left {
-	text-align: left;
-}
-
-.has-text-align-right {
-	text-align: right;
-}
-
 // Left alignment.
 .alignleft {
 	float:  left;
@@ -124,4 +110,22 @@ p .aligncenter {
 	.entry__content .wp-block-group__inner-container > .alignright {
 		margin-right: calc( ( 100% - #{ $content-width } ) / 2 );
 	}
+}
+
+/// Removes the whitespace between full-width elements so that they're stacked
+/// directly on top of one another.  All the ridiculous CSS wrangling is due to
+/// Gutenberg not adding a `.has-background` class to blocks with a background.
+///
+/// @link https://github.com/WordPress/gutenberg/issues/11172
+
+.alignfull[style*=background-color] + .alignfull[style*=background-color],
+.alignfull[style*=background-color] + .alignfull[class*=background-color],
+.alignfull[style*=background-color] + .alignfull.wp-block-cover,
+.alignfull[class*=background-color] + .alignfull[class*=background-color],
+.alignfull[class*=background-color] + .alignfull[style*=background-color],
+.alignfull[class*=background-color] + .alignfull.wp-block-cover,
+.alignfull.wp-block-cover + .alignfull.wp-block-cover,
+.alignfull.wp-block-cover + .alignfull[style*=background-cover],
+.alignfull.wp-block-cover + .alignfull[class*=background-cover] {
+	margin-top: -#{ $spacing-global };
 }
