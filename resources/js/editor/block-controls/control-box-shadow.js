@@ -22,12 +22,12 @@ const { labels } = exhaleEditor;
 export default ( props ) => {
 
 	let options = [
-		{ label: labels.default,         value: ''            },
-		{ label: labels.none,            value: 'none'        },
-		{ label: labels.sizes.small,     value: 'small'       },
-		{ label: labels.sizes.medium,    value: 'medium'      },
-		{ label: labels.sizes.large,     value: 'large'       },
-		{ label: labels.size.extraLarge, value: 'extra-large' }
+		{ label: labels.default,          value: ''            },
+		{ label: labels.none,             value: 'none'        },
+		{ label: labels.sizes.small,      value: 'small'       },
+		{ label: labels.sizes.medium,     value: 'medium'      },
+		{ label: labels.sizes.large,      value: 'large'       },
+		{ label: labels.sizes.extraLarge, value: 'extra-large' }
 	];
 
 	// Get the box-shadow attribute.
