@@ -30,23 +30,70 @@
 
 // Adds a box-shadow to elements.
 
-p.is-style-shadow,
-.is-style-shadow.wp-block-image img,
-.is-style-shadow.wp-block-media-text img,
-.is-style-shadow.wp-block-gallery img {
+p.has-background,
+p.is-style-highlight,
+p.is-style-shadow {
+	padding: $spacing-global;
+}
+
+// Adds a box-shadow to elements.
+
+$shadows : (
+	none:        none,
+	small:       0 2px  5px  0 rgba( 0, 0, 0, 0.3 ),
+	medium:      0 4px  10px 0 rgba( 0, 0, 0, 0.3 ),
+	large:       0 8px  15px 0 rgba( 0, 0, 0, 0.3 ),
+	extra-large: 0 12px 20px 0 rgba( 0, 0, 0, 0.3 )
+);
+
+@each $shadow-name, $shadow-value in $shadows {
+
+	.shadow-#{ $shadow-name },
+	.shadow-#{ $shadow-name } img {
+		box-shadow: #{ $shadow-value }
+	}
+}
+
+.is-style-shadow,
+.is-style-shadow img {
 	box-shadow: 0 4px 10px 0 rgba( 0, 0, 0, 0.3 );
 }
 
-.wp-block-image[class*=is-style-shadow],
-.wp-block-media-text[class*=is-style-shadow] {
+$rounded: (
+	none:        0,
+	small:       0.1875rem,
+	medium:      0.375rem,
+	large:       0.5625rem,
+	extra-large: 0.75rem
+);
+
+@each $radius-name, $radius-value in $rounded {
+	.rounded-#{ $radius-name },
+	.rounded-#{ $radius-name } img,
+	.wp-block-gallery.rounded-#{ $radius-name } figcaption {
+		border-radius: #{ $radius-value }
+	}
+}
+
+.wp-block-image,
+.wp-block-media-text,
+.wp-block-gallery {
 	box-shadow: none;
+	border-radius: none;
 }
 
 /// List styles.
 
-.is-style-list-none   { list-style: none;   }
+.list-none,
+.is-style-list-none   { list-style: none; padding-left: 0; }
+
+.list-disc,
 .is-style-list-disc   { list-style: disc;   }
+
+.list-circle,
 .is-style-list-circle { list-style: circle; }
+
+.list-square,
 .is-style-list-square { list-style: square; }
 
 /// Used for paragraphs that only contain an image. These have no height. We use

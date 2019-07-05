@@ -12,9 +12,6 @@
 
 import * as blockStyles from './block-styles/index';
 
-// WordPress dependencies.
-// const { __ } = wp.i18n;
-
 wp.domReady( () => {
 
 	Object.keys( blockStyles ).forEach( block => {

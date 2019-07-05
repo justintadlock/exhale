@@ -29,6 +29,8 @@
 		"url": "https://github.com/justintadlock/exhale/issues"
 	},
 	"devDependencies": {
+		"@babel/preset-react": "^7.0.0",
+		"babel-plugin-transform-react-jsx": "^6.24.1",
 		"browser-sync": "^2.26.3",
 		"browser-sync-webpack-plugin": "2.2.2",
 		"copy-webpack-plugin": "^4.6.0",
@@ -48,6 +50,7 @@
 		"vue-template-compiler": "^2.6.9"
 	},
 	"dependencies": {
+		"lodash.assign": "^4.2.0",
 		"webfontloader": "^1.6.28"
 	}
 }

@@ -84,6 +84,8 @@ add_action( 'enqueue_block_editor_assets', function() {
 		'wp-blocks',
 		'wp-dom-ready',
 		'wp-edit-post',
+		'wp-element',
+		'wp-token-list'
 	];
 
 	wp_enqueue_script( 'exhale-editor', asset( 'js/editor.js' ), $deps, null, true );
@@ -92,21 +94,40 @@ add_action( 'enqueue_block_editor_assets', function() {
 	// tools catch up, we'll internationalize in the JS files.
 	wp_localize_script( 'exhale-editor', 'exhaleEditor', [
 		'labels' => [
-			'default'      => __( 'Default',   'exhale' ),
-			'border'       => __( 'Bordered',  'exhale' ),
-			'borderDouble' => __( 'Double',    'exhale' ),
-			'borderDashed' => __( 'Dashed',    'exhale' ),
-			'borderless'   => __( 'No Border', 'exhale' ),
-			'highlight'    => __( 'Highlight', 'exhale' ),
-			'reverse'      => __( 'Reverse',   'exhale' ),
-			'rounded'      => __( 'Rounded',   'exhale' ),
-			'shadow'       => __( 'Shadow',    'exhale' ),
+			'default'        => __( 'Default',         'exhale' ),
+			'border'         => __( 'Bordered',        'exhale' ),
+			'borderDouble'   => __( 'Double',          'exhale' ),
+			'borderDashed'   => __( 'Dashed',          'exhale' ),
+			'borderless'     => __( 'No Border',       'exhale' ),
+			'borderRadius'   => __( 'Border Radius',   'exhale' ),
+			'designSettings' => __( 'Design Settings', 'exhale' ),
+			'highlight'      => __( 'Highlight',       'exhale' ),
+			'listType'       => __( 'Bullets',         'exhale' ),
+			'none'           => __( 'None',            'exhale' ),
+			'reverse'        => __( 'Reverse',         'exhale' ),
+			'rounded'        => __( 'Rounded',         'exhale' ),
+			'shadow'         => __( 'Shadow',          'exhale' ),
 
 			// Lists.
-			'list-none'    => __( 'Bullets: None', 'exhale' ),
-			'list-disc'    => __( 'Bullets: Disc', 'exhale' ),
-			'list-circle'  => __( 'Bullets: Circle', 'exhale' ),
-			'list-square'  => __( 'Bullets: Square', 'exhale' ),
+			'lists' => [
+				'disc'   => __( 'Disc',   'exhale' ),
+				'circle' => __( 'Circle', 'exhale' ),
+				'square' => __( 'Square', 'exhale' )
+			],
+
+			// Sizes.
+			'sizes' => [
+				'fine'       => __( 'Fine',        'exhale' ),
+				'diminutive' => __( 'Diminutive',  'exhale' ),
+				'tiny'       => __( 'Tiny',        'exhale' ),
+				'small'      => __( 'Small',       'exhale' ),
+				'medium'     => __( 'Medium',      'exhale' ),
+				'large'      => __( 'Large',       'exhale' ),
+				'extraLarge' => __( 'Extra Large', 'exhale' ),
+				'huge'       => __( 'Huge',        'exhale' ),
+				'gargantuan' => __( 'Gargantuan',  'exhale' ),
+				'colossal'   => __( 'Colossal',    'exhale' )
+			]
 		]
 	] );
 

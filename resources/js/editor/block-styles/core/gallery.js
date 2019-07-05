@@ -24,9 +24,9 @@ export default {
 			name  : 'reverse',
 			label : labels.reverse,
 		},
-		{
-			name  : 'shadow',
-			label : labels.shadow
-		}
+	//	{
+	//		name  : 'shadow',
+	//		label : labels.shadow
+	//	}
 	]
 };

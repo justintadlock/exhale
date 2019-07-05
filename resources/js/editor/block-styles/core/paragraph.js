@@ -24,9 +24,9 @@ export default {
 			name  : 'highlight',
 			label : labels.highlight
 		},
-		{
-			name  : 'shadow',
-			label : labels.shadow
-		}
+	//	{
+	//		name  : 'shadow',
+	//		label : labels.shadow
+	//	}
 	]
 };

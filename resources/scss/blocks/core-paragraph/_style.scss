@@ -9,12 +9,6 @@
 	text-transform: uppercase;
 }
 
-p.has-background,
-p.is-style-highlight,
-p.is-style-shadow {
-	padding:  $spacing-global;
-}
-
 @media ( max-width: calc( #{ $content-width } + 64px ) ) {
 
 	.entry__content > p.has-background,

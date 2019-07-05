@@ -11,4 +11,6 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-import blockStyles from './editor/block-styles';
+import blockStyles         from './editor/block-styles';
+import filterBlockEdit     from './editor/filter-block-edit';
+import filterBlockRegister from './editor/filter-block-register';

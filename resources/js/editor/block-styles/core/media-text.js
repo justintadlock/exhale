@@ -24,9 +24,9 @@ export default {
 			name  : 'borderless',
 			label : labels.borderless
 		},
-		{
-			name  : 'shadow',
-			label : labels.shadow
-		}
+	//	{
+	//		name  : 'shadow',
+	//		label : labels.shadow
+	//	}
 	]
 };

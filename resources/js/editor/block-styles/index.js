@@ -12,7 +12,7 @@
 
 export { default as gallery   } from './core/gallery';
 export { default as image     } from './core/image';
-export { default as list      } from './core/list';
+// export { default as list      } from './core/list';
 export { default as mediaText } from './core/media-text';
 export { default as paragraph } from './core/paragraph';
 export { default as separator } from './core/separator';

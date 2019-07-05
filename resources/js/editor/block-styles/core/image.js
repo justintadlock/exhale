@@ -24,13 +24,13 @@ export default {
 			name  : 'borderless',
 			label : labels.borderless
 		},
-		{
-			name  : 'rounded',
-			label : labels.rounded
-		},
-		{
-			name  : 'shadow',
-			label : labels.shadow
-		}
+	//	{
+	//		name  : 'rounded',
+	//		label : labels.rounded
+	//	},
+	//	{
+	//		name  : 'shadow',
+	//		label : labels.shadow
+	//	}
 	]
 };
