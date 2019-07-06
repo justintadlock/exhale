@@ -15,7 +15,8 @@
 	}
 
 	&.alignfull {
-		margin: 0 $spacing-global;
+		padding-left:  $spacing-global;
+		padding-right: $spacing-global;
 	}
 
 	&.alignwide,
@@ -26,7 +27,8 @@
 	@media ( max-width: calc( #{ $width-alignwide } + #{ $spacing-2x } ) ) {
 
 		&.alignwide {
-			margin: 0 $spacing-global;
+			padding-left:  $spacing-global;
+			padding-right: $spacing-global;
 		}
 	}
 }
