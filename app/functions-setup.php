@@ -104,6 +104,7 @@ add_action( 'init', function() {
 
 	register_nav_menus( [
 		'primary' => esc_html_x( 'Primary', 'nav menu location', 'exhale' ),
+		'footer'  => esc_html_x( 'Footer',  'nav menu location', 'exhale' ),
 		'social'  => esc_html_x( 'Social',  'nav menu location', 'exhale' )
 	] );
 

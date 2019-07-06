@@ -7,23 +7,13 @@
 ////
 
 .app-footer {
-	// @todo Footer with background will need top/bottom padding.
 	padding:          $spacing-global $spacing-global 0;
 	overflow-y:       hidden;
 	color:            var( --color-footer );
 	background-color: var( --color-footer-background );
 	border-top:       1px solid var( --color-footer-border );
-
-	&__credit {
-		// components/_text-secondary.scss
-		text-align:  center;
-		font-family: var( --font-family-secondary );
-		font-size:   16px;
-
-		+ .menu--social .menu__items {
-			margin-top: -#{ $spacing-half };
-		}
-	}
+	font-family:      var( --font-family-secondary );
+	font-size:        16px;
 
 	a {
 		color: var( --color-footer-link );
@@ -31,6 +21,16 @@
 		&:hover,
 		&:focus {
 			color: var( --color-footer-link-hover );
+		}
+	}
+
+	&__credit {
+		// components/_text-secondary.scss
+		text-align:  center;
+
+		.menu--footer + &,
+		+ .menu--social {
+			margin-top: -#{ $spacing-half };
 		}
 	}
 }

@@ -1,5 +1,7 @@
 		<footer class="app-footer">
 
+			<?php Hybrid\View\display( 'nav/menu', 'footer', [ 'location' => 'footer' ] ) ?>
+
 			<?php Exhale\Template\Footer::displayCredit() ?>
 
 			<?php Hybrid\View\display( 'nav/menu', 'social', [ 'location' => 'social' ] ) ?>

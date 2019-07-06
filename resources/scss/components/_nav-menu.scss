@@ -85,14 +85,32 @@
 		}
 	}
 
+	// Centered menus.
+	&--footer,
+	&--social {
+		text-align:    center;
+		margin-bottom: $spacing-global;
+	}
+
+	// Footer menu.
+
+	&--footer {
+		.menu__item {
+			margin: 0 $spacing-half;
+		}
+		.menu__link {
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+			}
+		}
+	}
+
 	// Social menu.
 
 	&--social {
-
-		.menu__items {
-			text-align:    center;
-			margin-bottom: $spacing-global;
-		}
 
 		.menu__link {
 			margin:   0.5rem;
