@@ -8,13 +8,15 @@
 
 // Fix in Gutenberg 6.0 where nested alignfull elements are too wide.  Gutenberg
 // has the width at `100% + 60px`.
-.wp-block[data-type="core/group"][data-align=full]
+/*.wp-block[data-type="core/group"][data-align=full]
 	.wp-block-group__inner-container
 	> .editor-inner-blocks
 	> .editor-block-list__layout
 	> .wp-block[data-align=full] {
 		width: calc( 100% + 30px ) !important;
+		max-width: 100%
 	}
+	*/
 
 
 .wp-block-group {
@@ -24,4 +26,19 @@
 	.wp-block-group__inner-container > .editor-inner-blocks {
 		max-width: 100%;
 	}
+}
+
+// This is getting a bit ridiculous, but Gutenberg has some crazy styles.
+// This is a fix for wide-aligned things within the core group block.
+
+.wp-block[data-type="core/group"]
+	> .editor-block-list__block-edit
+	.wp-block-group.has-background
+	> .wp-block-group__inner-container
+	> .editor-inner-blocks
+	> .editor-block-list__layout
+	> .wp-block[data-align=full]
+{
+	margin-left: 0;
+	max-width:   100%;
 }
