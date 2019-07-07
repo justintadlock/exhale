@@ -11,7 +11,7 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-let sidebarFooter = document.querySelector( '.sidebar--footer' );
+let sidebarFooter = document.querySelector( '.grid--sidebar-footer' );
 
 let widths = [
 	'alignfull',

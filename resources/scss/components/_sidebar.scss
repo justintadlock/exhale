@@ -11,9 +11,22 @@
 	&--primary {}
 
 	&--footer {
-		margin: 0 auto $spacing-global;
+		margin: -#{ $spacing-global} 0 $spacing-global;
+		padding-top:   $spacing-global;
 		border-bottom: 1px solid var( --color-footer-border );
+	}
 
+	&__title {}
+}
+
+.grid {
+
+	// Double up selector to overwrite alignment utilities.
+	&.grid--sidebar-footer {
+		margin-bottom: 0;
+	}
+
+	&--sidebar-footer {
 		max-width: $content-width;
 
 		@media( min-width: 900px ) {
@@ -22,6 +35,4 @@
 			}
 		}
 	}
-
-	&__title {}
 }

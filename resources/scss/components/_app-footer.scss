@@ -7,13 +7,18 @@
 ////
 
 .app-footer {
-	padding:          $spacing-global $spacing-global 0;
+	padding:          $spacing-global 0 0;
 	overflow-y:       hidden;
 	color:            var( --color-footer );
 	background-color: var( --color-footer-background );
 	border-top:       1px solid var( --color-footer-border );
 	font-family:      var( --font-family-secondary );
 	font-size:        16px;
+
+	> * {
+		padding-left:  $spacing-global;
+		padding-right: $spacing-global;
+	}
 
 	a {
 		color: var( --color-footer-link );

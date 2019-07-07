@@ -1,7 +1,7 @@
 ////
-/// Gallery block.
+/// Grid component.
 ///
-/// @group  Blocks
+/// @group  Components
 /// @author Justin Tadlock <justintadlock@gmail.com>
 /// @link   https://themehybrid.com/themes/exhale
 ////
@@ -11,6 +11,7 @@
 	display:         flex;
 	flex-wrap:       wrap;
 	list-style-type: none;
+	margin:          0 auto;
 	padding:         0;
 }
 
