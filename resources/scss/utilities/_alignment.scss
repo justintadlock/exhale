@@ -82,8 +82,8 @@ p .aligncenter {
 .wp-block-group .alignfull,
 .wp-block-group .alignwide {
 	max-width:    100%;
-	margin-left:  0;
-	margin-right: 0;
+	margin-left:  auto;
+	margin-right: auto;
 }
 
 @media( min-width: 900px ) {

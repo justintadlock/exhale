@@ -131,7 +131,8 @@ class Classic implements Bootable {
 
 		// Add the gallery wrapper.
 		$output = sprintf(
-			'<ul class="wp-block-gallery alignwide columns-%s is-cropped">%s</ul>',
+			'<ul class="wp-block-gallery %s columns-%s is-cropped">%s</ul>',
+			in_the_loop() ? 'alignwide' : 'alignnone',
 			absint( $atts['columns'] ),
 			$output
 		);

@@ -1,0 +1,59 @@
+////
+/// Gallery block.
+///
+/// @group  Blocks
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+// The wrapper element for the entire gallery.
+.grid {
+	display:         flex;
+	flex-wrap:       wrap;
+	list-style-type: none;
+	padding:         0;
+}
+
+.grid__item {
+	display:         flex;
+	flex-grow:       1;
+	flex-direction:  column;
+	justify-content: flex-start;
+	position:        relative;
+	width:           100%;
+
+	// 2 columns on medium screens.
+	@media ( min-width: $content-width ) {
+		width: calc( 100% / 2 - #{ $spacing-global } );
+		margin-right: $spacing-global;
+
+		&:nth-of-type( even ) {
+			margin-right: 0;
+		}
+	}
+
+	.columns-1 > & {
+		width:        100%;
+		margin-right: 0;
+	}
+
+	// 2-8 columns on larger screens.
+	@media ( min-width: $width-alignwide ) {
+
+		@for $i from 2 through 4 {
+
+			.columns-#{ $i } > & {
+				width: calc( 100% / #{ $i } - #{ $spacing-global } );
+				margin-right: $spacing-global;
+			}
+
+			.columns-#{ $i } > &:nth-of-type( #{ $i }n ) {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}

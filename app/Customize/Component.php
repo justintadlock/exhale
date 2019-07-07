@@ -162,6 +162,25 @@ class Component implements Bootable {
 			},
 			'transport'         => 'postMessage'
 		] );
+
+		// Register sidebar footer settings.
+		$manager->add_setting( 'sidebar_footer_align', [
+			'default'           => Mod::fallback( 'sidebar_footer_align' ),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => function( $align ) {
+				return in_array( $align, [ 'alignwide', 'alignfull', 'alignnone' ] )
+				       ? $align :
+				       'alignfull';
+			}
+		] );
+
+		$manager->add_setting( 'sidebar_footer_columns', [
+			'default'           => Mod::fallback( 'sidebar_footer_columns' ),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => function( $columns ) {
+				return in_array( $columns, range( 1, 4 ) ) ? $columns : 3;
+			}
+		] );
 	}
 
 	/**
@@ -199,6 +218,28 @@ class Component implements Bootable {
 			'active_callback' => function( $control ) {
 				return ! $control->manager->get_setting( 'powered_by' )->value();
 			}
+		] );
+
+		// Register the footer sidebar controls.
+		$manager->add_control( 'sidebar_footer_align', [
+			'section' => 'footer',
+			'type'    => 'select',
+			'label'   => __( 'Footer Sidebar: Width', 'exhale' ),
+			'choices' => [
+				''          => __( 'Normal', 'exhale' ),
+				'alignwide' => __( 'Wide',   'exhale' ),
+				'alignfull' => __( 'Full',   'exhale' )
+			]
+		] );
+
+		$manager->add_control( 'sidebar_footer_columns', [
+			'section' => 'footer',
+			'type'    => 'number',
+			'label'   => __( 'Footer Sidebar: Columns', 'exhale' ),
+			'input_attrs' => [
+				'min' => 1,
+				'max' => 4
+			]
 		] );
 	}
 

@@ -10,5 +10,18 @@
 
 	&--primary {}
 
+	&--footer {
+		margin: 0 auto $spacing-global;
+		border-bottom: 1px solid var( --color-footer-border );
+
+		max-width: $content-width;
+
+		@media( min-width: 900px ) {
+			&.alignwide {
+				max-width: $width-alignwide;
+			}
+		}
+	}
+
 	&__title {}
 }

@@ -111,6 +111,29 @@ add_action( 'init', function() {
 }, 5 );
 
 /**
+ * Register sidebars.
+ *
+ * @since  2.1.0
+ * @access public
+ * @return void
+ */
+add_action( 'widgets_init', function() {
+
+	$args = [
+	];
+
+	register_sidebar( [
+		'id'   => 'footer',
+		'name' => esc_html_x( 'Footer', 'sidebar' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s grid__item">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget__title">',
+		'after_title'   => '</h3>'
+	] );
+
+}, 5 );
+
+/**
  * Changes the theme template path to the `public/views` folder.
  *
  * @since  1.0.0

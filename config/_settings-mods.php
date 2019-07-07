@@ -16,6 +16,10 @@ return [
 	// Set the default layout.
 	'layout' => 'wide',
 
+	// Footer sidebar layout.
+	'sidebar_footer_align'   => 'alignfull', // '', 'alignwide', 'alignfull'
+	'sidebar_footer_columns' => 3,           // 1, 2, 3, 4
+
 	// Set the default featured image size.
 	'featured_image_size' => 'exhale-landscape-large',
 

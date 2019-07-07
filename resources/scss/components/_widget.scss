@@ -8,10 +8,22 @@
 
 .widget {
 
+	// Widget titles.
+	&__title {
+		margin-top: 0;
+		color:      inherit;
+	}
+
 	// Core widgets.
 	&--archives {}
 	&--calendar {}
-	&--categories {}
+
+	&--categories {
+		.postform {
+			margin-bottom: $spacing-global;
+		}
+	}
+
 	&--custom-html {}
 	&--media-audio {}
 	&--media-gallery {}
@@ -27,6 +39,7 @@
 	&--search {}
 	&--tag-cloud {}
 
-	// Widget titles.
-	&__title {}
+	.tagcloud {
+		margin-bottom: $spacing-global;
+	}
 }
