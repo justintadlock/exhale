@@ -172,7 +172,43 @@ class Color implements CssCustomProperty {
 	 * @return string
 	 */
 	public function cssProperty() {
-		return sprintf( '--color-%s', $this->name() );
+
+		$medium = [
+			'gray',
+			'red',
+			'orange',
+			'yellow',
+			'green',
+			'teal',
+			'blue',
+			'indigo',
+			'purple',
+			'pink'
+		];
+
+		if ( in_array( $this->name(), $medium ) ) {
+			return sprintf( '--%s-500', $this->name() );
+		}
+
+		$pattern = [
+			'lightest',
+			'lighter',
+			'light',
+			'dark',
+			'darker',
+			'darkest'
+		];
+
+		$replace = [
+			'100',
+			'300',
+			'400',
+			'600',
+			'700',
+			'900'
+		];
+
+		return sprintf( '--%s', str_replace( $pattern, $replace, $this->name() ) );
 	}
 
 	/**

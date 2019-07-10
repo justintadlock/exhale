@@ -70,7 +70,7 @@
 		padding:    40px $spacing-half $spacing-fourth;
 		font-size:  16px;
 		text-align: center;
-		color:      var( --color-white );
+		color:      var( --white );
 		background: linear-gradient(
 			0deg,
 			rgba( 0, 0, 0, 0.7 ) 0,
@@ -85,7 +85,7 @@
 		a:hover,
 		a:focus,
 		a:active {
-			color:      var( --color-white );
+			color:      var( --white );
 			background: rgba( 255, 255, 255, 0.2 );
 		}
 	}

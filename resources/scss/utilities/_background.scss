@@ -11,7 +11,7 @@
 
 .has-background,
 .is-style-solid-color {
-	background-color: var( --color-gray-lightest );
+	background-color: var( --gray-100 );
 }
 
 /// Loops through the theme colors and adds utility classes for them. Primarily,

@@ -7,10 +7,10 @@
 ////
 
 $table-bg-colors : (
-	// subtle-light-gray: var( --color-gray-lightest ), // default
-	subtle-pale-green: var( --color-green-lightest ),
-	subtle-pale-blue:  var( --color-blue-lightest ),
-	subtle-pale-pink:  var( --color-pink-lightest )
+	// subtle-light-gray: var( --gray-100 ), // default
+	subtle-pale-green: var( --green-100 ),
+	subtle-pale-blue:  var( --blue-100 ),
+	subtle-pale-pink:  var( --pink-100 )
 );
 
 .wp-block-table {
@@ -21,7 +21,7 @@ $table-bg-colors : (
 }
 
 .is-style-stripes tr {
-	background: var( --color-gray-lightest );
+	background: var( --gray-100 );
 }
 
 .is-style-stripes td {
