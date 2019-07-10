@@ -358,14 +358,9 @@ class Component implements Bootable {
 			'fallback_refresh'    => false,
 			'render_callback'     => function( $partial, $context ) {
 
-				$hierarchy = ! empty( $context['hierarchy'] )
-				             ? $context['hierarchy']
-					     : [];
-
-				return \Hybrid\View\render(
-					'loop',
-					\Exhale\Tools\Mod::get( 'content_layout' ),
-					[ 'hierarchy' => $hierarchy ]
+				return App::resolve( 'view/engine' )->render(
+					sprintf( 'loop/%s', Mod::get( 'content_layout' ) ),
+					! empty( $context['slugs'] ) ? $context['slugs'] : []
 				);
 			}
 		] );

@@ -2,7 +2,7 @@
 
 	<main id="main" class="app-main">
 
-		<?php Hybrid\View\display( 'partials', 'archive-header' ) ?>
+		<?php $engine->display( 'partials', 'archive-header' ) ?>
 
 		<?php if ( have_posts() ) : ?>
 
@@ -21,7 +21,7 @@
 				</ul>
 			</div>
 
-			<?php Hybrid\View\display( 'nav/pagination', 'posts' ) ?>
+			<?php $engine->display( 'nav/pagination', 'posts' ) ?>
 
 		<?php endif ?>
 

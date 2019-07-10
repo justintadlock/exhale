@@ -9,7 +9,7 @@
 			<?php Hybrid\Media\display( [ 'type' => 'video' ] ) ?>
 		</figure>
 		<?php the_content() ?>
-		<?php Hybrid\View\display( 'nav/pagination', 'post' ) ?>
+		<?php $engine->display( 'nav/pagination', 'post' ) ?>
 	</div>
 
 	<div class="media-meta media-meta--video o-content-width">

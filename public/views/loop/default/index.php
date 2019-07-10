@@ -2,17 +2,17 @@
 
 	<div <?php Hybrid\Attr\display( 'loop', 'default', [
 		'data-customize-partial-placement-context' => esc_attr( wp_json_encode( [
-			'hierarchy' => $data->hierarchy
+			'slugs' => $view->slugs()
 		] ) )
 	] ) ?>>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php Hybrid\View\display( 'entry', $data->hierarchy ) ?>
+			<?php $engine->display( 'entry', $view->slugs() ) ?>
 
 		<?php endwhile ?>
 
-		<?php Hybrid\View\display( 'nav/pagination', 'posts' ) ?>
+		<?php $engine->display( 'nav/pagination', 'posts' ) ?>
 
 	</div>
 

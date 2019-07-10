@@ -12,7 +12,7 @@
 
 	<div class="entry__content o-content-width">
 		<?php the_content() ?>
-		<?php Hybrid\View\display( 'nav/pagination', 'post' ) ?>
+		<?php $engine->display( 'nav/pagination', 'post' ) ?>
 	</div>
 
 	<footer class="entry__footer o-content-width">

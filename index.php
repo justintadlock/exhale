@@ -8,4 +8,8 @@
  * All it does is correctly load up our `public/views/index.php` template.
  */
 
-Hybrid\View\display( 'index' );
+// Access the view template engine.
+$engine = Hybrid\App::resolve( 'view/engine' );
+
+// Load the index template.
+$engine->display( 'index' );
