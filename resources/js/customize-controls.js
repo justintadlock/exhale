@@ -13,6 +13,7 @@
 
 import controlImageFilter from './customize-controls/control-image-filter';
 import controlTypography  from './customize-controls/control-typography';
+import contentLayout      from './customize-controls/content-layout';
 import footer             from './customize-controls/footer';
 
 // Hybrid Customize controls.

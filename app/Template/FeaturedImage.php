@@ -14,7 +14,9 @@
 
 namespace Exhale\Template;
 
+use Hybrid\App;
 use Hybrid\Carbon\Image;
+use Exhale\Image\Size\Sizes;
 use Exhale\Tools\Mod;
 
 /**
@@ -69,5 +71,70 @@ class FeaturedImage extends Image {
 		$args['after']   = '</figure>';
 
 		return parent::carbon( $type, $args );
+	}
+
+
+       public static function display( $type, array $args = [] ) {
+	       echo static::render( $type, $args );
+       }
+
+	/**
+	 * Returns the image HTML.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  array|string  $type
+	 * @param  array         $args
+	 * @return string
+	 */
+	public static function render( $type, array $args = [] ) {
+
+		$image = static::image( $type, $args );
+
+		if ( $image ) {
+			return $image->render();
+		}
+
+		$layout = App::resolve( 'layouts/loop' )->get( Mod::get( 'content_layout' ) );
+
+		if ( is_home() || is_archive() && $layout->requiresImage() ) {
+			return static::svgFallback( $type, $args );
+		}
+
+		return '';
+	}
+
+	private static function svgFallback( $type, array $args = [] ) {
+
+		$size = App::resolve( Sizes::class )->get( Mod::get( 'featured_image_size' ) );
+
+		$post_id = ! empty( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
+		$context = '';
+
+			// If we're viewing this in the customize preview frame, we need
+			// to add an attribute, which will pass our custom context back
+			// to the partial render method.
+			if ( is_customize_preview() ) {
+				$data = [ 'post_id' => $post_id ];
+
+				$context = sprintf(
+					' data-customize-partial-placement-context="%s"',
+					esc_attr( wp_json_encode( $data ) )
+				);
+			}
+
+		return sprintf(
+			'<figure class="entry__media alignfull"%1$s><a href="%2$s">
+				<?xml version="1.0"?>
+				<svg class="entry__image aligncenter" fill="#%3$s" width="%4$s" height="%5$s" viewBox="0 0 %4$s %5$s">
+					<rect class="svg-shape" width="%4$s" height="%5$s" />
+				</svg>
+			</a></figure>',
+			$context,
+			esc_url( get_permalink( $args['post_id'] ) ),
+			sanitize_hex_color_no_hash( \Exhale\Tools\Mod::color( 'primary-link' ) ),
+			esc_attr( $size->width() ),
+			esc_attr( $size->height() )
+		);
 	}
 }

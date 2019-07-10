@@ -13,7 +13,7 @@
 
 namespace Exhale\Image\Size;
 
-use Hybrid\Tools\Collection;
+use Exhale\Tools\Collection;
 
 /**
  * Image sizes class.
@@ -36,21 +36,17 @@ class Sizes extends Collection {
 		parent::add( $name, new Size( $name, $value ) );
 	}
 
-	public function customizeChoices() {
+	public function customizeChoices( $sizes = [] ) {
 
 		$choices = [];
 
 		foreach ( $this->all() as $size ) {
 
-			if ( $size->isFeaturedSize() ) {
-				$choices[ $size->name() ] = sprintf(
-					// Translators: 1 is image size name, 2 is image size width, and 3 is image size height.
-					esc_html__( '%1$s - %2$s&times;%3$s', 'exhale' ),
-					$size->label(),
-					$size->width(),
-					$size->height()
-				);
+			if ( $sizes && ! in_array( $size->name(), $sizes ) ) {
+				continue;
 			}
+
+			$choices[ $size->name() ] = $size->label();
 		}
 
 		return $choices;

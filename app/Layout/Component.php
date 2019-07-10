@@ -28,24 +28,35 @@ use Exhale\Tools\Mod;
 class Component implements Bootable {
 
 	/**
-	 * Stores the layouts object.
+	 * Stores the global layouts object.
 	 *
-	 * @since  1.2.0
+	 * @since  2.1.0
 	 * @access protected
 	 * @var    Layouts
 	 */
-	protected $layouts;
+	protected $global;
+
+	/**
+	 * Stores the loop layouts object.
+	 *
+	 * @since  2.1.0
+	 * @access protected
+	 * @var    Layouts
+	 */
+	protected $loop;
 
 	/**
 	 * Creates the component object.
 	 *
 	 * @since  1.2.0
 	 * @access public
-	 * @param  Layouts  $layouts
+	 * @param  Layouts  $global
+	 * @param  Layouts  $loop
 	 * @return void
 	 */
-	public function __construct( Layouts $layouts ) {
-		$this->layouts = $layouts;
+	public function __construct( Layouts $global, Layouts $loop ) {
+		$this->global = $global;
+		$this->loop   = $loop;
 	}
 
 	/**
@@ -67,7 +78,8 @@ class Component implements Bootable {
 		add_filter( 'body_class', [ $this, 'bodyClass' ] );
 
 		// Register default layouts.
-		add_action( 'exhale/layout/register', [ $this, 'registerDefaultLayouts' ] );
+		add_action( 'exhale/layout/global/register', [ $this, 'registerDefaultGlobalLayouts' ] );
+		add_action( 'exhale/layout/loop/register',   [ $this, 'registerDefaultLoopLayouts'   ] );
 	}
 
 	/**
@@ -80,21 +92,37 @@ class Component implements Bootable {
 	public function register() {
 
 		// Hook for registering custom layouts.
-		do_action( 'exhale/layout/register', $this->layouts );
+		do_action( 'exhale/layout/global/register', $this->global );
+		do_action( 'exhale/layout/loop/register',   $this->loop   );
 	}
 
 	/**
-	 * Registers default layouts.
+	 * Registers default global layouts.
 	 *
-	 * @since  1.2.0
+	 * @since  2.1.0
 	 * @access public
 	 * @param  Layouts  $layouts
 	 * @return void
 	 */
-	public function registerDefaultLayouts( $layouts ) {
+	public function registerDefaultGlobalLayouts( $layouts ) {
 
 		foreach ( Config::get( 'layouts' ) as $name => $options ) {
-			$layouts->add( $name, $options );
+			$layouts->add( $name, new Layout( $name, $options ) );
+		}
+	}
+
+	/**
+	 * Registers default loop layouts.
+	 *
+	 * @since  2.1.0
+	 * @access public
+	 * @param  Layouts  $layouts
+	 * @return void
+	 */
+	public function registerDefaultLoopLayouts( $layouts ) {
+
+		foreach ( Config::get( 'layouts-loop' ) as $name => $options ) {
+			$layouts->add( $name, new LayoutLoop( $name, $options ) );
 		}
 	}
 
@@ -125,7 +153,7 @@ class Component implements Bootable {
 			'type'        => 'select',
 			'label'       => __( 'Global Layout', 'exhale' ),
 			'description' => __( 'Select the layout used across the site.', 'exhale' ),
-			'choices'     => $this->layouts->customizeChoices()
+			'choices'     => $this->global->customizeChoices()
 		] );
 	}
 

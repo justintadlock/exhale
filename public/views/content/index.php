@@ -4,17 +4,11 @@
 
 		<?php Hybrid\View\display( 'partials', 'archive-header' ) ?>
 
-		<?php if ( have_posts() ) : ?>
-
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php Hybrid\View\display( 'entry', Hybrid\Template\hierarchy() ) ?>
-
-			<?php endwhile ?>
-
-			<?php Hybrid\View\display( 'nav/pagination', 'posts' ) ?>
-
-		<?php endif ?>
+		<?php Hybrid\View\display(
+			'loop',
+			Exhale\Tools\Mod::get( 'content_layout' ),
+			[ 'hierarchy' => $data->hierarchy ]
+		) ?>
 
 	</main>
 

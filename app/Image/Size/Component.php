@@ -15,6 +15,7 @@ namespace Exhale\Image\Size;
 
 use WP_Customize_Manager;
 
+use Hybrid\App;
 use Hybrid\Contracts\Bootable;
 use Exhale\Tools\Config;
 use Exhale\Tools\Mod;
@@ -148,18 +149,27 @@ class Component implements Bootable {
 			'transport'         => 'postMessage'
 		] );
 
+		$sizes = App::resolve( 'layouts/loop' )->get( Mod::get( 'content_layout' ) )->imageSizes();
+
 		// Featured image size control.
 		$manager->add_control( 'featured_image_size', [
-			'section'     => 'media',
+			'section'     => 'layout',
 			'type'        => 'select',
-			'priority'    => 5,
-			'choices'     => $this->sizes->customizeChoices(),
+			'priority'    => 28,
+			'choices'     => $this->sizes->customizeChoices( $sizes ),
 			'label'       => esc_html__( 'Featured Image Size', 'exhale' ),
 			'description' => sprintf(
 				// Translators: %s is a plugin link.
-				esc_html__( 'For images to be sized correctly, regenerate them using a plugin such as %s if you have switched from a previous theme.', 'exhale' ),
+				esc_html__( 'For images to be sized correctly, regenerate them using the %s plugin.', 'exhale' ),
 				sprintf( '<a href="https://wordpress.org/plugins/regenerate-thumbnails/">%s</a>', esc_html__( 'Regnerate Thumbnails', 'exhale' ) )
-			)
+			),
+			'active_callback' => function( $control ) {
+				$sizes = App::resolve( 'layouts/loop' )->get(
+					$control->manager->get_setting( 'content_layout' )->value()
+				)->imageSizes();
+
+				return ! empty( $sizes );
+			}
 		] );
 
 		// Featured image size partial.

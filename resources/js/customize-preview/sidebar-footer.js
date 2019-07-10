@@ -11,11 +11,14 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-let sidebarFooter = document.querySelector( '.grid--sidebar-footer' );
+let sidebarFooter = document.querySelector( '.flex-grid--sidebar-footer' );
 
 let widths = [
-	'alignfull',
-	'alignwide'
+	'max-w-2xl',
+	'max-w-3xl',
+	'max-w-4xl',
+	'max-w-5xl',
+	'max-w-full'
 ];
 
 let columns = [
@@ -25,7 +28,7 @@ let columns = [
 	'columns-4'
 ];
 
-wp.customize( 'sidebar_footer_align', value => {
+wp.customize( 'sidebar_footer_width', value => {
 	value.bind( to => {
 
 		// Remove all layout classes.
@@ -33,7 +36,7 @@ wp.customize( 'sidebar_footer_align', value => {
 
 		// Add new layout class.
 		if ( to ) {
-			sidebarFooter.classList.add( to );
+			sidebarFooter.classList.add( 'max-w-' + to );
 		}
 	} );
 } );

@@ -6,7 +6,9 @@
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php Hybrid\View\display( 'entry', Hybrid\Template\hierarchy() ) ?>
+				<?php Hybrid\View\display( 'entry', $data->hierarchy, [
+					'hierarchy' => $data->hierarchy
+				] ) ?>
 
 				<?php comments_template() ?>
 

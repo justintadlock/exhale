@@ -24,7 +24,7 @@ use Exhale\Tools\Collection;
 class Layouts extends Collection {
 
 	/**
-	 * Adds a new font family to the collection.
+	 * Adds a new layout to the collection.
 	 *
 	 * @since  1.2.0
 	 * @access public
@@ -33,7 +33,11 @@ class Layouts extends Collection {
 	 * @return void
 	 */
 	public function add( $name, $value ) {
-		parent::add( $name, new Layout( $name, $value ) );
+
+		parent::add(
+			$name,
+		 	$value instanceof Layout ? $value : new Layout( $name, $value )
+		);
 	}
 
 	/**

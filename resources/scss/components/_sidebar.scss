@@ -18,21 +18,3 @@
 
 	&__title {}
 }
-
-.grid {
-
-	// Double up selector to overwrite alignment utilities.
-	&.grid--sidebar-footer {
-		margin-bottom: 0;
-	}
-
-	&--sidebar-footer {
-		max-width: $content-width;
-
-		@media( min-width: 900px ) {
-			&.alignwide {
-				max-width: $width-alignwide;
-			}
-		}
-	}
-}

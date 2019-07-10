@@ -14,10 +14,35 @@
 
 return [
 	// Set the default layout.
-	'layout' => 'wide',
+	'layout'         => 'wide',
+
+	// Content layout.
+	'content_layout'        => 'grid',
+	'content_layout_home'   => function() {
+		return \Exhale\Tools\Mod::get( 'content_layout' );
+	},
+	'content_layout_archive' => function() {
+		return \Exhale\Tools\Mod::get( 'content_layout' );
+	},
+
+	'content_layout_width'         => 'full',
+	'content_layout_home_width'    => function() {
+		return \Exhale\Tools\Mod::get( 'content_layout_width' );
+	},
+	'content_layout_archive_width' => function() {
+		return \Exhale\Tools\Mod::get( 'content_layout_width' );
+	},
+
+	'content_layout_columns'         => 4,
+	'content_layout_home_columns'    => function() {
+		return \Exhale\Tools\Mod::get( 'content_layout_columns' );
+	},
+	'content_layout_archive_columns' => function() {
+		return \Exhale\Tools\Mod::get( 'content_layout_columns' );
+	},
 
 	// Footer sidebar layout.
-	'sidebar_footer_align'   => 'alignfull', // '', 'alignwide', 'alignfull'
+	'sidebar_footer_width'   => 'full',
 	'sidebar_footer_columns' => 3,           // 1, 2, 3, 4
 
 	// Set the default featured image size.

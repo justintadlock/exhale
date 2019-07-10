@@ -119,13 +119,10 @@ add_action( 'init', function() {
  */
 add_action( 'widgets_init', function() {
 
-	$args = [
-	];
-
 	register_sidebar( [
-		'id'   => 'footer',
-		'name' => esc_html_x( 'Footer', 'sidebar' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s grid__item">',
+		'id'            => 'footer',
+		'name'          => esc_html_x( 'Footer', 'sidebar' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s flex-grid__item">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget__title">',
 		'after_title'   => '</h3>'

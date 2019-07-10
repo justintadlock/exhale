@@ -24,6 +24,7 @@ use Exhale\Tools\Mod;
 
 use Exhale\Color\Setting\Settings               as ColorSettings;
 use Exhale\Image\Filter\Filters                 as ImageFilters;
+use Exhale\Image\Size\Sizes                     as ImageSizes;
 use Exhale\Typography\Font\Family\Families      as FontFamilies;
 use Exhale\Typography\Font\Style\Styles         as FontStyles;
 use Exhale\Typography\Font\VariantCaps\Caps     as FontVariantCaps;
@@ -164,14 +165,10 @@ class Component implements Bootable {
 		] );
 
 		// Register sidebar footer settings.
-		$manager->add_setting( 'sidebar_footer_align', [
-			'default'           => Mod::fallback( 'sidebar_footer_align' ),
+		$manager->add_setting( 'sidebar_footer_width', [
+			'default'           => Mod::fallback( 'sidebar_footer_width' ),
 			'transport'         => 'postMessage',
-			'sanitize_callback' => function( $align ) {
-				return in_array( $align, [ 'alignwide', 'alignfull', 'alignnone' ] )
-				       ? $align :
-				       'alignfull';
-			}
+			'sanitize_callback' => 'sanitize_key'
 		] );
 
 		$manager->add_setting( 'sidebar_footer_columns', [
@@ -179,6 +176,26 @@ class Component implements Bootable {
 			'transport'         => 'postMessage',
 			'sanitize_callback' => function( $columns ) {
 				return in_array( $columns, range( 1, 4 ) ) ? $columns : 3;
+			}
+		] );
+
+		$manager->add_setting( 'content_layout', [
+			'default'           => Mod::fallback( 'content_layout' ),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_key'
+		] );
+
+		$manager->add_setting( 'content_layout_width', [
+			'default'           => Mod::fallback( 'content_layout_width' ),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_key'
+		] );
+
+		$manager->add_setting( 'content_layout_columns', [
+			'default'           => Mod::fallback( 'content_layout_columns' ),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => function( $columns ) {
+				return in_array( $columns, range( 2, 6 ) ) ? $columns : 4;
 			}
 		] );
 	}
@@ -221,14 +238,16 @@ class Component implements Bootable {
 		] );
 
 		// Register the footer sidebar controls.
-		$manager->add_control( 'sidebar_footer_align', [
+		$manager->add_control( 'sidebar_footer_width', [
 			'section' => 'footer',
 			'type'    => 'select',
 			'label'   => __( 'Footer Sidebar: Width', 'exhale' ),
 			'choices' => [
-				''          => __( 'Normal', 'exhale' ),
-				'alignwide' => __( 'Wide',   'exhale' ),
-				'alignfull' => __( 'Full',   'exhale' )
+				'2xl'       => __( 'Huge',       'exhale' ),
+				'3xl'       => __( 'Gargantuan', 'exhale' ),
+				'4xl'       => __( 'Colossal',   'exhale' ),
+				'5xl'       => __( 'Titanic',    'exhale' ),
+				'full'      => __( 'Full',       'exhale' )
 			]
 		] );
 
@@ -240,6 +259,53 @@ class Component implements Bootable {
 				'min' => 1,
 				'max' => 4
 			]
+		] );
+
+		$manager->add_control( 'content_layout', [
+			'section' => 'layout',
+			'type'    => 'select',
+			'priority' => 20,
+			'label'    => __( 'Content: Layout', 'exhale' ),
+			'choices'  => [
+				'default' => __( 'Default', 'exhale' ),
+				'grid'    => __( 'Grid',    'exhale' ),
+				'list'    => __( 'List',    'exhale' )
+			]
+		] );
+
+		$manager->add_control( 'content_layout_width', [
+			'section' => 'layout',
+			'type'    => 'select',
+			'priority' => 24,
+			'label'   => __( 'Content: Width', 'exhale' ),
+			'choices' => [
+				'2xl'       => __( 'Huge',       'exhale' ),
+				'3xl'       => __( 'Gargantuan', 'exhale' ),
+				'4xl'       => __( 'Colossal',   'exhale' ),
+				'5xl'       => __( 'Titanic',    'exhale' ),
+				'full'      => __( 'Full',       'exhale' )
+			],
+			'active_callback' => function( $control ) {
+				return App::resolve( 'layouts/loop' )->get(
+					$control->manager->get_setting( 'content_layout' )->value()
+				)->supportsWidth();
+			}
+		] );
+
+		$manager->add_control( 'content_layout_columns', [
+			'section' => 'layout',
+			'type'    => 'number',
+			'priority' => 26,
+			'label'   => __( 'Content: Columns', 'exhale' ),
+			'input_attrs' => [
+				'min' => 2,
+				'max' => 6
+			],
+			'active_callback' => function( $control ) {
+				return App::resolve( 'layouts/loop' )->get(
+					$control->manager->get_setting( 'content_layout' )->value()
+				)->supportsColumns();
+			}
 		] );
 	}
 
@@ -284,6 +350,25 @@ class Component implements Bootable {
 				return Footer::renderCredit();
 			}
 		] );
+
+		// Content layout partial.
+		$manager->selective_refresh->add_partial( 'content_layout', [
+			'selector'            => '.loop',
+			'container_inclusive' => true,
+			'fallback_refresh'    => false,
+			'render_callback'     => function( $partial, $context ) {
+
+				$hierarchy = ! empty( $context['hierarchy'] )
+				             ? $context['hierarchy']
+					     : [];
+
+				return \Hybrid\View\render(
+					'loop',
+					\Exhale\Tools\Mod::get( 'content_layout' ),
+					[ 'hierarchy' => $hierarchy ]
+				);
+			}
+		] );
 	}
 
 	/**
@@ -314,7 +399,9 @@ class Component implements Bootable {
 		wp_localize_script( 'exhale-customize-controls', 'exhaleCustomizeControls', [
 			'fontFamilies'  => App::resolve( FontFamilies::class ),
 			'fontStyles'    => App::resolve( FontStyles::class   ),
-			'imageFilters'  => App::resolve( ImageFilters::class )
+			'imageFilters'  => App::resolve( ImageFilters::class ),
+			'imageSizes'    => App::resolve( ImageSizes::class   ),
+			'loopLayouts'        => App::resolve( 'layouts/loop' )
 		] );
 	}
 
@@ -341,7 +428,7 @@ class Component implements Bootable {
 			'fontFamilies'       => App::resolve( FontFamilies::class       ),
 			'fontStyles'         => App::resolve( FontStyles::class         ),
 			'fontVariantCaps'    => App::resolve( FontVariantCaps::class    ),
-			'layouts'            => App::resolve( Layouts::class            ),
+			'layouts'            => App::resolve( 'layouts/global' ),
 			'textTransforms'     => App::resolve( TextTransforms::class     )
 		] );
 	}

@@ -13,13 +13,15 @@
 
 namespace Exhale\Image\Size;
 
+use JsonSerializable;
+
 /**
  * Image size class.
  *
  * @since  1.0.0
  * @access public
  */
-class Size {
+class Size implements JsonSerializable {
 
 	/**
 	 * Image size name.
@@ -89,6 +91,24 @@ class Size {
 	}
 
 	/**
+	 * Returns the image sizes in a format necessary for JSON serialization.
+	 *
+	 * @since  2.1.0
+	 * @access public
+	 * @return array
+	 */
+	public function jsonSerialize() {
+
+		return [
+			'name'   => $this->name(),
+			'label'  => $this->label(),
+			'type'   => $this->type(),
+			'width'  => $this->width(),
+			'height' => $this->height()
+		];
+	}
+
+	/**
 	 * Returns the image size name.
 	 *
 	 * @since  1.0.0
@@ -135,6 +155,26 @@ class Size {
 	 */
 	public function height() {
 		return absint( $this->height );
+	}
+
+	/**
+	 * Returns the image size type. Can be one of square, landscape, or portrait.
+	 *
+	 * @since  2.1.0
+	 * @access public
+	 * @return string
+	 */
+	public function type() {
+
+		$type = 'square';
+
+		if ( $this->width() > $this->height() ) {
+			$type = 'landscape';
+		} elseif ( $this->width() < $this->height() ) {
+			$type = 'portrait';
+		}
+
+		return $type;
 	}
 
 	/**

@@ -6,11 +6,11 @@
 			<?php Hybrid\Sidebar\display_name( $data->sidebar ) ?>
 		</h3>
 
-		<div <?php Hybrid\Attr\display( 'grid', "sidebar-{$data->sidebar}", [
+		<div <?php Hybrid\Attr\display( 'flex-grid', "sidebar-{$data->sidebar}", [
 			'class' => sprintf(
-				'grid grid--sidebar-footer columns-%s %s',
+				'flex-grid flex-grid--sidebar-footer columns-%s max-w-%s mx-auto',
 				esc_attr( Exhale\Tools\Mod::get( 'sidebar_footer_columns' ) ),
-				esc_attr( Exhale\Tools\Mod::get( 'sidebar_footer_align' ) )
+				esc_attr( Exhale\Tools\Mod::get( 'sidebar_footer_width' ) )
 			)
 		] ) ?>>
 

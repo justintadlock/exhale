@@ -1,0 +1,41 @@
+
+
+.loop {
+
+	&--grid {
+		padding: 0 $spacing-global;
+
+		.entry__media,
+		.entry__image {
+			margin-bottom: 0;
+		}
+	}
+
+	&__items {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.grid .entry__title {
+	margin:    0;
+	font-size: 1.5625rem;
+}
+
+@media ( min-width: $content-width ) {
+	.grid .entry__title {
+		font-size: 1.125rem;
+	}
+}
+
+@media ( min-width: $width-alignwide ) {
+
+	.columns-5 .entry__title,
+	.columns-6 .entry__title {
+		font-size: 1rem;
+	}
+}
+
+.grid--portrait .entry__title {
+	font-size: 1rem;
+}

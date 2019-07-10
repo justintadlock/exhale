@@ -1,10 +1,13 @@
 <?php
 
+use Hybrid\Template;
+use Hybrid\View;
+
 // Load header/* template.
-Hybrid\View\display( 'header', Hybrid\Template\hierarchy() );
+View\display( 'header', Template\hierarchy(), [ 'hierarchy' => Template\hierarchy() ] );
 
 // Load content/* template.
-Hybrid\View\display( 'content', Hybrid\Template\hierarchy() );
+View\display( 'content', Template\hierarchy(), [ 'hierarchy' => Template\hierarchy() ] );
 
 // Load footer/* template.
-Hybrid\View\display( 'footer', Hybrid\Template\hierarchy() );
+View\display( 'footer', Template\hierarchy(), [ 'hierarchy' => Template\hierarchy() ] );

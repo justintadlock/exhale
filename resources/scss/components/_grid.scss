@@ -6,16 +6,52 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-// The wrapper element for the entire gallery.
 .grid {
+	display:               grid;
+	grid-template-columns: repeat( 1, 1fr );
+	grid-gap:              2.125rem;
+	list-style-type:       none;
+	margin-bottom:         $spacing-global;
+	padding:               0;
+
+	&--portrait {
+		grid-template-columns: repeat( 2, 1fr );
+	}
+
+	// 2 columns on medium screens.
+	@media ( min-width: $content-width ) {
+		grid-template-columns: repeat( 2, 1fr );
+	}
+
+	// 3-8 columns on larger screens.
+	@media ( min-width: $width-alignwide ) {
+
+		@for $i from 3 through 6 {
+			&.columns-#{ $i } {
+				grid-template-columns: repeat( #{ $i }, 1fr );
+			}
+		}
+	}
+
+	&__item > :last-child {
+		margin-bottom: 0;
+	}
+}
+
+// The wrapper element for the entire gallery.
+.flex-grid {
 	display:         flex;
 	flex-wrap:       wrap;
 	list-style-type: none;
-	margin:          0 auto;
+	margin:          0;
 	padding:         0;
+
+	&.flex-grid--sidebar-footer {
+		margin-bottom: 0;
+	}
 }
 
-.grid__item {
+.flex-grid__item {
 	display:         flex;
 	flex-grow:       1;
 	flex-direction:  column;

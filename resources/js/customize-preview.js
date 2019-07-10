@@ -12,6 +12,7 @@
  */
 
 import { color }        from './customize-preview/color';
+import { contentLayout} from './customize-preview/content-layout';
 import { customHeader } from './customize-preview/custom-header';
 import { imageFilters } from './customize-preview/image-filters';
 import { layouts }      from './customize-preview/layout';
