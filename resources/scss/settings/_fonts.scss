@@ -6,6 +6,18 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+$text-2xs  : 0.8125rem; // 13px
+$text-xs   : 0.875rem;  // 14px
+$text-sm   : 0.9375rem; // 15px
+$text-base : 1rem;      // 16px
+$text-lg   : 1.1875rem; // 19px
+$text-xl   : 1.375rem;  // 22px
+$text-2xl  : 1.5625rem; // 25px
+$text-3xl  : 1.875rem;  // 30px
+$text-4xl  : 2.25rem;   // 36px
+$text-5xl  : 2.75rem;   // 44px
+$text-6xl  : 4rem;      // 64px
+
 /// Returns a map of font families in name-value format.
 ///
 /// @since  1.0.0
@@ -45,16 +57,16 @@
 @function editor-font-sizes() {
 
 	@return (
-		fine        : decimal-round( 13 / 16, 2 ) * 1rem,
-		diminutive  : decimal-round( 14 / 16, 2 ) * 1rem,
-		tiny        : decimal-round( 15 / 16, 2 ) * 1rem,
-		small       : 1rem,
-		medium      : decimal-round( 19 / 16, 2 ) * 1rem,
-		large       : decimal-round( 22 / 16, 2 ) * 1rem,
-		extra-large : decimal-round( 25 / 16, 2 ) * 1rem,
-		huge        : decimal-round( 30 / 16, 2 ) * 1rem,
-		gargantuan  : decimal-round( 36 / 16, 2 ) * 1rem,
-		colossal    : decimal-round( 44 / 16, 2 ) * 1rem,
+		fine        : $text-2xs,
+		diminutive  : $text-xs,
+		tiny        : $text-sm,
+		small       : $text-base,
+		medium      : $text-lg,
+		large       : $text-xl,
+		extra-large : $text-2xl,
+		huge        : $text-3xl,
+		gargantuan  : $text-4xl,
+		colossal    : $text-5xl
 	);
 }
 
