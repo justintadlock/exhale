@@ -25,6 +25,8 @@ return [
 		return \Exhale\Tools\Mod::get( 'content_layout' );
 	},
 
+	'posts_per_page' => 10,
+
 	'content_layout_width'         => 'full',
 	'content_layout_home_width'    => function() {
 		return \Exhale\Tools\Mod::get( 'content_layout_width' );

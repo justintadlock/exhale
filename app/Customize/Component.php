@@ -97,6 +97,14 @@ class Component implements Bootable {
 		$colors   = $manager->get_section( 'colors' );
 		$bg_image = $manager->get_section( 'background_image' );
 
+		// Add the loop layout section.
+		$manager->add_section( 'content', [
+			'panel'       => 'theme_options',
+			'title'       => __( 'Content',  'exhale' ),
+			'description' => __( 'Customize the design of your blog and archive pages.', 'exhale' ),
+			'priority'    => 6
+		] );
+
 		// Add the fonts section.
 		$manager->add_section( 'typography', [
 			'panel'    => 'theme_options',
@@ -185,6 +193,12 @@ class Component implements Bootable {
 			'sanitize_callback' => 'sanitize_key'
 		] );
 
+		$manager->add_setting( 'posts_per_page', [
+			'default'           => Mod::fallback( 'posts_per_page' ),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'absint'
+		] );
+
 		$manager->add_setting( 'content_layout_width', [
 			'default'           => Mod::fallback( 'content_layout_width' ),
 			'transport'         => 'postMessage',
@@ -262,10 +276,11 @@ class Component implements Bootable {
 		] );
 
 		$manager->add_control( 'content_layout', [
-			'section' => 'layout',
+			'section' => 'content',
 			'type'    => 'select',
 			'priority' => 20,
-			'label'    => __( 'Content: Layout', 'exhale' ),
+			'label'    => __( 'Layout', 'exhale' ),
+			'description' => __( 'Layout style for the content area.', 'exhale' ),
 			'choices'  => [
 				'default' => __( 'Default', 'exhale' ),
 				'grid'    => __( 'Grid',    'exhale' ),
@@ -273,11 +288,23 @@ class Component implements Bootable {
 			]
 		] );
 
+		$manager->add_control( 'posts_per_page', [
+			'section' => 'content',
+			'type'    => 'number',
+			'priority' => 22,
+			'label'    => __( 'Posts Per Page', 'exhale' ),
+			'description' => __( 'Number of posts to display.', 'exhale' ),
+			'input_attrs' => [
+				'min' => 1
+			]
+		] );
+
 		$manager->add_control( 'content_layout_width', [
-			'section' => 'layout',
+			'section' => 'content',
 			'type'    => 'select',
 			'priority' => 24,
-			'label'   => __( 'Content: Width', 'exhale' ),
+			'label'   => __( 'Width', 'exhale' ),
+			'description' => __( 'Width for the content area container.', 'exhale' ),
 			'choices' => [
 				'2xl'       => __( 'Huge',       'exhale' ),
 				'3xl'       => __( 'Gargantuan', 'exhale' ),
@@ -293,10 +320,11 @@ class Component implements Bootable {
 		] );
 
 		$manager->add_control( 'content_layout_columns', [
-			'section' => 'layout',
+			'section' => 'content',
 			'type'    => 'number',
 			'priority' => 26,
 			'label'   => __( 'Content: Columns', 'exhale' ),
+			'description' => __( 'Number of columns to organize posts.', 'exhale' ),
 			'input_attrs' => [
 				'min' => 2,
 				'max' => 6
@@ -353,6 +381,19 @@ class Component implements Bootable {
 
 		// Content layout partial.
 		$manager->selective_refresh->add_partial( 'content_layout', [
+			'selector'            => '.loop',
+			'container_inclusive' => true,
+			'fallback_refresh'    => false,
+			'render_callback'     => function( $partial, $context ) {
+
+				return App::resolve( 'view/engine' )->render(
+					sprintf( 'loop/%s', Mod::get( 'content_layout' ) ),
+					! empty( $context['slugs'] ) ? $context['slugs'] : []
+				);
+			}
+		] );
+
+		$manager->selective_refresh->add_partial( 'posts_per_page', [
 			'selector'            => '.loop',
 			'container_inclusive' => true,
 			'fallback_refresh'    => false,

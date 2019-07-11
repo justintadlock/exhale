@@ -153,7 +153,7 @@ class Component implements Bootable {
 
 		// Featured image size control.
 		$manager->add_control( 'featured_image_size', [
-			'section'     => 'layout',
+			'section'     => 'content',
 			'type'        => 'select',
 			'priority'    => 28,
 			'choices'     => $this->sizes->customizeChoices( $sizes ),

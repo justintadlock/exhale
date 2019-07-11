@@ -138,7 +138,7 @@ class Component implements Bootable {
 
 		$manager->add_section( 'layout', [
 			'panel'    => 'theme_options',
-			'title'    => __( 'Layout', 'exhale' ),
+			'title'    => __( 'Layout: Global', 'exhale' ),
 			'priority' => 5
 		] );
 
