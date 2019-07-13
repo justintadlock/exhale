@@ -33,7 +33,7 @@ let columns = [
 	'columns-6'
 ];
 
-let aspectRatios = [
+let orientations = [
 	'landscape',
 	'portrait',
 	'square'
@@ -87,13 +87,13 @@ types.forEach( ( type ) => {
 			}
 
 			// Remove all layout classes.
-			aspectRatios.forEach( ( ratio ) => {
+			orientations.forEach( ( orientation ) => {
 
-				if ( to.includes( ratio ) && ! container.classList.contains( 'grid--' + ratio ) ) {
-					container.classList.add( 'grid--' + ratio );
+				if ( to.includes( orientation ) && ! container.classList.contains( 'grid--' + orientation ) ) {
+					container.classList.add( 'grid--' + orientation );
 
-				} else if ( ! to.includes( ratio ) ) {
-					container.classList.remove( 'grid--' + ratio );
+				} else if ( ! to.includes( orientation ) ) {
+					container.classList.remove( 'grid--' + orientation );
 				}
 			} );
 

@@ -100,11 +100,11 @@ class Size implements JsonSerializable {
 	public function jsonSerialize() {
 
 		return [
-			'name'   => $this->name(),
-			'label'  => $this->label(),
-			'type'   => $this->type(),
-			'width'  => $this->width(),
-			'height' => $this->height()
+			'name'        => $this->name(),
+			'label'       => $this->label(),
+			'width'       => $this->width(),
+			'height'      => $this->height(),
+			'orientation' => $this->orientation()
 		];
 	}
 
@@ -158,23 +158,24 @@ class Size implements JsonSerializable {
 	}
 
 	/**
-	 * Returns the image size type. Can be one of square, landscape, or portrait.
+	 * Returns the image size orientation. Can be one of square, landscape,
+	 * or portrait.
 	 *
 	 * @since  2.1.0
 	 * @access public
 	 * @return string
 	 */
-	public function type() {
+	public function orientation() {
 
-		$type = 'square';
+		$orientation = 'square';
 
 		if ( $this->width() > $this->height() ) {
-			$type = 'landscape';
+			$orientation = 'landscape';
 		} elseif ( $this->width() < $this->height() ) {
-			$type = 'portrait';
+			$orientation = 'portrait';
 		}
 
-		return $type;
+		return $orientation;
 	}
 
 	/**

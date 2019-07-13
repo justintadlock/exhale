@@ -13,7 +13,7 @@
 		<ul <?php Hybrid\Attr\display( 'grid', 'posts', [
 			'class' => sprintf(
 				'grid grid--posts grid--%s columns-%s max-w-%s mx-auto',
-				Exhale\Template\Loop::imageSize()->type(),
+				Exhale\Template\Loop::imageSize()->orientation(),
 				Exhale\Template\Loop::columns(),
 				Exhale\Template\Loop::width()
 			)
