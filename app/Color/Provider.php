@@ -40,6 +40,14 @@ class Provider extends ServiceProvider {
 				$this->app->resolve( CustomProperties::class  )
 			);
 		} );
+
+		$this->app->singleton( Customize::class, function() {
+			return new Customize( [
+				'settings' => $this->app->resolve( Setting\Settings::class )
+			] );
+		} );
+
+		$this->app->alias( Setting\Settings::class, 'color/settings' );
 	}
 
 	/**

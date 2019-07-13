@@ -71,6 +71,8 @@ class Setting implements JsonSerializable, CssCustomProperty {
 	 */
 	protected $is_editor_color = false;
 
+	protected $section = 'colors';
+
 	/**
 	 * Set up the object properties.
 	 *
@@ -154,6 +156,10 @@ class Setting implements JsonSerializable, CssCustomProperty {
 	 */
 	public function description() {
 		return $this->description;
+	}
+
+	public function section() {
+		return $this->section ?: 'colors';
 	}
 
 	/**

@@ -13,6 +13,7 @@
 
 namespace Exhale\Tools;
 
+use Closure;
 use Exhale\Contracts\CssCustomProperty;
 
 /**
@@ -63,6 +64,9 @@ class CustomProperty implements CssCustomProperty {
 	 * @return string
 	 */
 	public function cssValue() {
-		return $this->value;
+
+		return $this->value instanceof Closure
+		       ? $this->value->__invoke()
+		       : $this->value;
 	}
 }

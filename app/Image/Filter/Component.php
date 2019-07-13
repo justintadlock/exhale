@@ -19,7 +19,8 @@ use Hybrid\Contracts\Bootable;
 use Hybrid\Tools\Collection;
 use Exhale\Tools\Config;
 use Exhale\Tools\CustomProperties;
-use Exhale\Customize\Controls;
+use Exhale\Tools\CustomProperty;
+use Exhale\Tools\Mod;
 
 /**
  * Image filter component class.
@@ -37,15 +38,6 @@ class Component implements Bootable {
 	 * @var    Filters
 	 */
 	protected $filters;
-
-	/**
-	 * Holds the filter amount settings.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    Collection
-	 */
-	protected $settings;
 
 	/**
 	 * CSS custom properties.
@@ -68,7 +60,6 @@ class Component implements Bootable {
 	public function __construct( Filters $filters, CustomProperties $properties ) {
 		$this->filters    = $filters;
 		$this->properties = $properties;
-		$this->settings   = new Collection();
 	}
 
 	/**
@@ -85,9 +76,6 @@ class Component implements Bootable {
 
 		// Register default filters.
 		add_action( 'exhale/image/filter/register', [ $this, 'registerDefaultFilters' ] );
-
-		// Add customizer settings and controls.
-		add_action( 'customize_register', [ $this, 'customizeRegister'] );
 	}
 
 	/**
@@ -102,21 +90,27 @@ class Component implements Bootable {
 		// Hook for registering custom image filters.
 		do_action( 'exhale/image/filter/register', $this->filters );
 
-		// Add filter amount settings.
-		$this->settings->add( 'default', new Setting( 'default', [
-			'label'       => __( 'Default Filter Amount', 'exhale' ),
-			'description' => __( 'Filter amount applied to all images.', 'exhale' )
-		] ) );
+		array_map( function( $amount ) {
 
-		$this->settings->add( 'hover', new Setting( 'hover', [
-			'label'       => __( 'Hover Filter Amount', 'exhale' ),
-			'description' => __( 'Filter amount applied to linked images when they are hovered or focused.', 'exhale' )
-		] ) );
+			$this->properties->add( "image-{$amount}-default", new CustomProperty(
+				':root',
+				"--image-{$amount}-filter",
+				function() use ( $amount ) {
+					$filter_function = Mod::get( 'image_default_filter_function' );
 
-		// Add custom properties.
-		foreach ( $this->settings as $setting ) {
-			$this->properties->add( 'image-filter-' . $setting->name(), $setting );
-		}
+					if ( 'none' === $filter_function ) {
+						return 'none';
+					}
+
+					return sprintf(
+						'%s( %s%% )',
+						esc_html( $filter_function ),
+						absint( Mod::get( "image_{$amount}_filter_amount" ) )
+					);
+				}
+			) );
+
+		}, [ 'default', 'hover' ] );
 	}
 
 	/**
@@ -143,49 +137,5 @@ class Component implements Bootable {
 	 * @return void
 	 */
 	public function customizeRegister( WP_Customize_Manager $manager ) {
-
-		// Image filter settings.
-		$manager->add_setting( 'image_default_filter_function', [
-			'default'           => 'grayscale',
-			'sanitize_callback' => 'sanitize_key',
-			'transport'         => 'postMessage'
-		] );
-
-		// Image filter amount settings.
-		foreach ( $this->settings->all() as $setting ) {
-
-			$manager->add_setting( $setting->modName(), [
-				'default'           => $setting->amount(),
-				'sanitize_callback' => 'absint',
-				'transport'         => 'postMessage'
-			] );
-		}
-
-		// Image filter controls.
-		$manager->add_control(
-			new Controls\ImageFilter( $manager, 'image_filter', [
-				'section'     => 'media',
-				'filters'     => $this->filters,
-				'l10n'        => [
-					'function' => [
-						'label'       => __( 'Image Filter', 'exhale' ),
-						'description' => __( 'CSS filter function to apply to images.', 'exhale' )
-					],
-					'default_amount' => [
-						'label'       => $this->settings->get( 'default' )->label(),
-						'description' => $this->settings->get( 'default' )->description()
-					],
-					'hover_amount' => [
-						'label'       => $this->settings->get( 'hover' )->label(),
-						'description' => $this->settings->get( 'hover' )->description()
-					]
-				],
-				'settings'    => [
-					'function'       => 'image_default_filter_function',
-					'default_amount' => $this->settings->get( 'default' )->modName(),
-					'hover_amount'   => $this->settings->get( 'hover' )->modName()
-				]
-			] )
-		);
 	}
 }

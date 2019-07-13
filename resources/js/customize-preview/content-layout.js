@@ -11,6 +11,11 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
+let types = [
+	'blog',
+	'archive'
+];
+
 let widths = [
 	'max-w-2xl',
 	'max-w-3xl',
@@ -34,62 +39,65 @@ let aspectRatios = [
 	'square'
 ];
 
-wp.customize( 'featured_image_size', value => {
-	value.bind( to => {
+types.forEach( ( type ) => {
 
-		let container = document.querySelector( '.grid--posts' );
+	wp.customize( `loop_${type}_width`, value => {
+		value.bind( to => {
 
-		if ( ! container ) {
-			return;
-		}
+			let container = document.querySelector( `.loop--${type} .grid--posts` );
 
-		// Remove all layout classes.
-		aspectRatios.forEach( ( ratio ) => {
+			if ( ! container ) {
+				return;
+			}
 
-			if ( to.includes( ratio ) && ! container.classList.contains( 'grid--' + ratio ) ) {
-				container.classList.add( 'grid--' + ratio );
+			// Remove all layout classes.
+			container.classList.remove( ...widths );
 
-			} else if ( ! to.includes( ratio ) ) {
-				container.classList.remove( 'grid--' + ratio );
+			// Add new layout class.
+			if ( to ) {
+				container.classList.add( 'max-w-' + to );
 			}
 		} );
-
 	} );
-} );
 
+	wp.customize( `loop_${type}_columns`, value => {
+		value.bind( to => {
 
-wp.customize( 'content_layout_width', value => {
-	value.bind( to => {
+			let container = document.querySelector( `.loop--${type} .grid--posts` );
 
-		let container = document.querySelector( '.grid--posts' );
+			if ( ! container ) {
+				return;
+			}
 
-		if ( ! container ) {
-			return;
-		}
+			// Remove all layout classes.
+			container.classList.remove( ...columns );
 
-		// Remove all layout classes.
-		container.classList.remove( ...widths );
-
-		// Add new layout class.
-		if ( to ) {
-			container.classList.add( 'max-w-' + to );
-		}
+			// Add new layout class.
+			container.classList.add( 'columns-' + to );
+		} );
 	} );
-} );
 
-wp.customize( 'content_layout_columns', value => {
-	value.bind( to => {
+	wp.customize( `loop_${type}_image_size`, value => {
+		value.bind( to => {
 
-		let container = document.querySelector( '.grid--posts' );
+			let container = document.querySelector( `.loop--${type} .grid--posts` );
 
-		if ( ! container ) {
-			return;
-		}
+			if ( ! container ) {
+				return;
+			}
 
-		// Remove all layout classes.
-		container.classList.remove( ...columns );
+			// Remove all layout classes.
+			aspectRatios.forEach( ( ratio ) => {
 
-		// Add new layout class.
-		container.classList.add( 'columns-' + to );
+				if ( to.includes( ratio ) && ! container.classList.contains( 'grid--' + ratio ) ) {
+					container.classList.add( 'grid--' + ratio );
+
+				} else if ( ! to.includes( ratio ) ) {
+					container.classList.remove( 'grid--' + ratio );
+				}
+			} );
+
+		} );
 	} );
+
 } );

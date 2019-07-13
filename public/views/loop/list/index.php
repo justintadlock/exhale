@@ -1,9 +1,13 @@
 <?php if ( have_posts() ) : ?>
 
-	<div <?php Hybrid\Attr\display( 'loop', 'grid', [
-		'data-customize-partial-placement-context' => esc_attr( wp_json_encode( [
+	<div <?php Hybrid\Attr\display( 'loop', 'list', [
+		'class' => sprintf(
+			'loop loop--list loop--%s',
+			Exhale\Template\Loop::type()
+		),
+		'data-customize-partial-placement-context' => wp_json_encode( [
 			'slugs' => $view->slugs()
-		] ) )
+		] )
 	] ) ?>>
 
 		<ul class="loop__items max-w-2xl mx-auto">

@@ -76,7 +76,7 @@ class Component implements Bootable {
 		add_action( 'exhale/color/setting/register', [ $this, 'registerDefaultSettings' ] );
 
 		// Add customizer settings and controls.
-		add_action( 'customize_register', [ $this, 'customizeRegister'] );
+	//	add_action( 'customize_register', [ $this, 'customizeRegister'] );
 	}
 
 	/**
@@ -131,25 +131,5 @@ class Component implements Bootable {
 	 * @return void
 	 */
 	public function customizeRegister( WP_Customize_Manager $manager ) {
-
-		// Registers the color settings and controls.
-		array_map( function( $setting ) use ( $manager ) {
-
-			$manager->add_setting( $setting->modName(), [
-				'default'              => maybe_hash_hex_color( $setting->color() ),
-				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
-				'sanitize_js_callback' => 'maybe_hash_hex_color',
-				'transport'            => 'postMessage'
-			] );
-
-			$manager->add_control(
-				new WP_Customize_Color_Control( $manager, $setting->modName(), [
-					'section'     => 'colors',
-					'label'       => esc_html( $setting->label() ),
-					'description' => esc_html( $setting->description() )
-				] )
-			);
-
-		}, $this->settings->all() );
 	}
 }

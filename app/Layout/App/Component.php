@@ -11,18 +11,20 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Layout;
+namespace Exhale\Layout\App;
 
 use WP_Customize_Manager;
 
 use Hybrid\Contracts\Bootable;
+use Exhale\Layout\Layout;
+use Exhale\Layout\Layouts;
 use Exhale\Tools\Config;
 use Exhale\Tools\Mod;
 
 /**
  * Layout component class.
  *
- * @since  1.2.0
+ * @since  2.1.0
  * @access public
  */
 class Component implements Bootable {
@@ -34,35 +36,24 @@ class Component implements Bootable {
 	 * @access protected
 	 * @var    Layouts
 	 */
-	protected $global;
-
-	/**
-	 * Stores the loop layouts object.
-	 *
-	 * @since  2.1.0
-	 * @access protected
-	 * @var    Layouts
-	 */
-	protected $loop;
+	protected $layouts;
 
 	/**
 	 * Creates the component object.
 	 *
-	 * @since  1.2.0
+	 * @since  2.1.0
 	 * @access public
-	 * @param  Layouts  $global
-	 * @param  Layouts  $loop
+	 * @param  Layouts  $layouts
 	 * @return void
 	 */
-	public function __construct( Layouts $global, Layouts $loop ) {
-		$this->global = $global;
-		$this->loop   = $loop;
+	public function __construct( Layouts $layouts ) {
+		$this->layouts = $layouts;
 	}
 
 	/**
 	 * Bootstraps the component.
 	 *
-	 * @since  1.2.0
+	 * @since  2.1.0
 	 * @access public
 	 * @return void
 	 */
@@ -71,29 +62,24 @@ class Component implements Bootable {
 		// Run registration on `after_setup_theme`.
 		add_action( 'after_setup_theme', [ $this, 'register' ] );
 
-		// Add customizer settings and controls.
-		add_action( 'customize_register', [ $this, 'customizeRegister'] );
-
 		// Adds a layout body class on the front end.
 		add_filter( 'body_class', [ $this, 'bodyClass' ] );
 
 		// Register default layouts.
-		add_action( 'exhale/layout/global/register', [ $this, 'registerDefaultGlobalLayouts' ] );
-		add_action( 'exhale/layout/loop/register',   [ $this, 'registerDefaultLoopLayouts'   ] );
+		add_action( 'exhale/layout/global/register', [ $this, 'registerDefaultLayouts' ] );
 	}
 
 	/**
 	 * Runs the register actions.
 	 *
-	 * @since  1.2.0
+	 * @since  2.1.0
 	 * @access public
 	 * @return void
 	 */
 	public function register() {
 
 		// Hook for registering custom layouts.
-		do_action( 'exhale/layout/global/register', $this->global );
-		do_action( 'exhale/layout/loop/register',   $this->loop   );
+		do_action( 'exhale/layout/global/register', $this->layouts );
 	}
 
 	/**
@@ -104,7 +90,7 @@ class Component implements Bootable {
 	 * @param  Layouts  $layouts
 	 * @return void
 	 */
-	public function registerDefaultGlobalLayouts( $layouts ) {
+	public function registerDefaultLayouts( $layouts ) {
 
 		foreach ( Config::get( 'layouts' ) as $name => $options ) {
 			$layouts->add( $name, new Layout( $name, $options ) );
@@ -112,55 +98,20 @@ class Component implements Bootable {
 	}
 
 	/**
-	 * Registers default loop layouts.
-	 *
-	 * @since  2.1.0
-	 * @access public
-	 * @param  Layouts  $layouts
-	 * @return void
-	 */
-	public function registerDefaultLoopLayouts( $layouts ) {
-
-		foreach ( Config::get( 'layouts-loop' ) as $name => $options ) {
-			$layouts->add( $name, new LayoutLoop( $name, $options ) );
-		}
-	}
-
-	/**
 	 * Customize register callback.
 	 *
-	 * @since  1.2.0
+	 * @since  2.1.0
 	 * @access public
 	 * @param  WP_Customize_Manager  $manager
 	 * @return void
 	 */
 	public function customizeRegister( WP_Customize_Manager $manager ) {
-
-		$manager->add_section( 'layout', [
-			'panel'    => 'theme_options',
-			'title'    => __( 'Layout: Global', 'exhale' ),
-			'priority' => 5
-		] );
-
-		$manager->add_setting( 'layout', [
-			'default'           => Mod::fallback( 'layout' ),
-			'sanitize_callback' => 'sanitize_key',
-			'transport'         => 'postMessage'
-		] );
-
-		$manager->add_control( 'layout', [
-			'section'     => 'layout',
-			'type'        => 'select',
-			'label'       => __( 'Global Layout', 'exhale' ),
-			'description' => __( 'Select the layout used across the site.', 'exhale' ),
-			'choices'     => $this->global->customizeChoices()
-		] );
 	}
 
 	/**
 	 * Filter on the body class on the front end that adds our layout class.
 	 *
-	 * @since  1.2.0
+	 * @since  2.1.0
 	 * @access public
 	 * @param  array  $classes
 	 * @return array

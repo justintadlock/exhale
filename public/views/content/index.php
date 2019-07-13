@@ -5,7 +5,7 @@
 		<?php $engine->display( 'partials', 'archive-header' ) ?>
 
 		<?php $engine->display(
-			sprintf( 'loop/%s', Exhale\Tools\Mod::get( 'content_layout' ) ),
+			sprintf( 'loop/%s', Exhale\Template\Loop::layout()->name() ),
 			$view->slugs()
 		) ?>
 

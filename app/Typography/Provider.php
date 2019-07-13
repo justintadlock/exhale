@@ -90,6 +90,22 @@ class Provider extends ServiceProvider {
 				]
 			);
 		} );
+
+		$this->app->singleton( Customize::class, function() {
+			return new Customize( [
+				'settings'   => $this->app->resolve( Setting\Settings::class     ),
+				'families'   => $this->app->resolve( Family\Families::class      ),
+				'styles'     => $this->app->resolve( Style\Styles::class         ),
+				'caps'       => $this->app->resolve( VariantCaps\Caps::class     ),
+				'transforms' => $this->app->resolve( Transform\Transforms::class )
+			] );
+		} );
+
+		$this->app->alias( Family\Families::class,      'font/families'       );
+		$this->app->alias( Style\Styles::class,         'font/styles'         );
+		$this->app->alias( VariantCaps\Caps::class,     'font/variant/caps'   );
+		$this->app->alias( Transform\Transforms::class, 'text/transforms'     );
+		$this->app->alias( Setting\Settings::class,     'typography/settings' );
 	}
 
 	/**

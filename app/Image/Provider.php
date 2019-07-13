@@ -47,6 +47,15 @@ class Provider extends ServiceProvider {
 				$this->app->resolve( Size\Sizes::class )
 			);
 		} );
+
+		$this->app->singleton( Customize::class, function() {
+			return new Customize( [
+				'filters' => $this->app->resolve( Filter\Filters::class )
+			] );
+		} );
+
+		$this->app->alias( Filter\Filters::class, 'image/filters' );
+		$this->app->alias( Size\Sizes::class,     'image/sizes'   );
 	}
 
 	/**

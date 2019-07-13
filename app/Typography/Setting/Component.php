@@ -137,7 +137,7 @@ class Component implements Bootable {
 		add_action( 'exhale/typography/setting/register', [ $this, 'registerDefaultSettings' ] );
 
 		// Add customizer settings and controls.
-		add_action( 'customize_register', [ $this, 'customizeRegister'] );
+		//add_action( 'customize_register', [ $this, 'customizeRegister'] );
 
 		// Enqueue fonts.
 		add_action( 'wp_enqueue_scripts',          [ $this, 'enqueue' ], 5 );
@@ -291,108 +291,6 @@ class Component implements Bootable {
 	 */
 	public function customizeRegister( WP_Customize_Manager $manager ) {
 
-		// Registers the font settings and controls.
-		array_map( function( $setting ) use ( $manager ) {
 
-			// Bail if the setting doesn't handle the font family.
-			// In the future we'll allow this.
-			if ( ! $setting->hasOption( 'family' ) ) {
-				return;
-			}
-
-			// Set up the default control arguments.
-			$control = [
-				'section'     => 'typography',
-				'label'       => $setting->label(),
-				'description' => $setting->description(),
-				'settings'    => [],
-				'family'      => [],
-				'style'       => [],
-				'caps'        => [],
-				'transform'   => []
-			];
-
-			// If the setting has the family option.
-			if ( $setting->hasOption( 'family' ) ) {
-
-				// Add the family setting name to the control.
-				$control['settings']['family'] = $setting->modName( 'family' );
-
-				// Add the family choices to the control.
-				$control['family']['choices'] = $this->families->customizeChoices(
-					$setting->requiredStyles()
-				);
-
-				// Register the family setting.
-				$manager->add_setting( $setting->modName( 'family' ), [
-					'default'           => $setting->family(),
-					'sanitize_callback' => 'sanitize_key',
-					'transport'         => 'postMessage'
-				] );
-			}
-
-			// If the setting has the style option.
-			if ( $setting->hasOption( 'style' ) ) {
-
-				// Add the style setting name to the control.
-				$control['settings']['style'] = $setting->modName( 'style' );
-
-				// Add the style choices to the control.
-				$limit = $setting->hasOption( 'family' )
-				         ? $this->families->get( $setting->mod() )->styles()
-				         : [];
-
-				$control['style']['choices'] = $this->styles->customizeChoices( $limit );
-
-				// Register the family setting.
-				$manager->add_setting( $setting->modName( 'style' ), [
-					'default'           => $setting->style(),
-					'sanitize_callback' => 'sanitize_key',
-					'transport'         => 'postMessage'
-				] );
-			}
-
-			// If the setting has the text-transform option.
-			if ( $setting->hasOption( 'transform' ) ) {
-
-				// Add the transform setting name to the control.
-				$control['settings']['transform'] = $setting->modName( 'transform' );
-
-				// Add the transform choices to the control.
-				$control['transform']['choices'] = $this->transforms->customizeChoices();
-
-				// Register the transform setting.
-				$manager->add_setting( $setting->modName( 'transform' ), [
-					'default'           => $setting->transform(),
-					'sanitize_callback' => 'sanitize_key',
-					'transport'         => 'postMessage'
-				] );
-			}
-
-			// If the setting has the caps option.
-			if ( $setting->hasOption( 'caps' ) ) {
-
-				// Add the caps setting name to the control.
-				$control['settings']['caps'] = $setting->modName( 'caps' );
-
-				// Add the caps choices to the control.
-				$control['caps']['choices'] = $this->caps->customizeChoices();
-
-				// Register the caps setting.
-				$manager->add_setting( $setting->modName( 'caps' ), [
-					'default'           => $setting->caps(),
-					'sanitize_callback' => 'sanitize_key',
-					'transport'         => 'postMessage'
-				] );
-			}
-
-			// Register the font control.
-			$manager->add_control( new CustomizeControlTypography(
-				$manager,
-				sprintf( 'font_%s', $setting->name() ),
-				$control
-			) );
-
-		}, $this->settings->all() );
 	}
 }

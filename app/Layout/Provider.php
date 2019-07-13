@@ -36,11 +36,20 @@ class Provider extends ServiceProvider {
 		$this->app->singleton( 'layouts/global', Layouts::class );
 		$this->app->singleton( 'layouts/loop',   Layouts::class );
 
-		$this->app->singleton( Component::class, function() {
-			return new Component(
-				$this->app->resolve( 'layouts/global' ),
-				$this->app->resolve( 'layouts/loop'   )
-			);
+		$this->app->singleton( App\Component::class, function() {
+			return new App\Component( $this->app->resolve( 'layouts/global' ) );
+		} );
+
+		$this->app->singleton( Loop\Component::class, function() {
+			return new Loop\Component( $this->app->resolve( 'layouts/loop' ) );
+		} );
+
+		$this->app->singleton( Customize::class, function() {
+			return new Customize( [
+				'app_layouts'  => $this->app->resolve( 'layouts/global' ),
+				'loop_layouts' => $this->app->resolve( 'layouts/loop'   ),
+				'image_sizes'  => $this->app->resolve( 'image/sizes'    )
+			] );
 		} );
 	}
 
@@ -52,6 +61,7 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
-		$this->app->resolve( Component::class )->boot();
+		$this->app->resolve( App\Component::class )->boot();
+		$this->app->resolve( Loop\Component::class )->boot();
 	}
 }

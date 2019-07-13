@@ -64,7 +64,9 @@ class FeaturedImage extends Image {
 			$args['attr']['loading'] = 'lazy';
 		}
 
-		$args['size']    = Mod::get( 'featured_image_size' );
+		$l_type = is_home() ? 'blog' : 'archive';
+
+		$args['size']    = Mod::get( "loop_{$l_type}_image_size" );
 		$args['class']   = 'entry__image aligncenter';
 		$args['post_id'] = $post_id;
 		$args['before']  = sprintf( '<figure class="entry__media alignfull"%s>', $context );
@@ -95,7 +97,9 @@ class FeaturedImage extends Image {
 			return $image->render();
 		}
 
-		$layout = App::resolve( 'layouts/loop' )->get( Mod::get( 'content_layout' ) );
+		$l_type = is_home() ? 'blog' : 'archive';
+
+		$layout = App::resolve( 'layouts/loop' )->get( Mod::get( "loop_{$l_type}_layout" ) );
 
 		if ( is_home() || is_archive() && $layout->requiresImage() ) {
 			return static::svgFallback( $type, $args );
@@ -106,7 +110,9 @@ class FeaturedImage extends Image {
 
 	private static function svgFallback( $type, array $args = [] ) {
 
-		$size = App::resolve( Sizes::class )->get( Mod::get( 'featured_image_size' ) );
+		$l_type = is_home() ? 'blog' : 'archive';
+
+		$size = App::resolve( Sizes::class )->get( Mod::get( "loop_{$l_type}_image_size" ) );
 
 		$post_id = ! empty( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 		$context = '';

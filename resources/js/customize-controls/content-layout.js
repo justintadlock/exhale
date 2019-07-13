@@ -2,76 +2,84 @@
 // Global set via `wp_localize_script()`.
 const { loopLayouts, imageSizes } = exhaleCustomizeControls;
 
-wp.customize.control( 'content_layout', control => {
+let types = [
+	'blog',
+	'archive'
+];
 
-	control.setting.bind( layout => {
+types.forEach( type => {
 
-		// Activate/Deactivate the width and columns controls, depending
-		// on whether the current layout supports them.
+	wp.customize.control( `loop_${type}_layout`, control => {
 
-		let widthControl   = wp.customize.control( 'content_layout_width'   );
-		let columnsControl = wp.customize.control( 'content_layout_columns' );
+		control.setting.bind( layout => {
 
-		loopLayouts[ layout ].supportsWidth
-			? widthControl.activate()
-			: widthControl.deactivate();
+			// Activate/Deactivate the width and columns controls, depending
+			// on whether the current layout supports them.
 
-		loopLayouts[ layout ].supportsColumns
-			? columnsControl.activate()
-			: columnsControl.deactivate();
+			let widthControl   = wp.customize.control( `loop_${type}_width`   );
+			let columnsControl = wp.customize.control( `loop_${type}_columns` );
 
-		// Activate/Deactivate the featured image control, depending on
-		// whether the layout supports them.  If the layout does support
-		// featured images, only display the featured image sizes that
-		// the layout supports.
+			loopLayouts[ layout ].supportsWidth
+				? widthControl.activate()
+				: widthControl.deactivate();
 
-		let featuredImageControl = wp.customize.control( 'featured_image_size' );
-		let featuredImageSetting = featuredImageControl.settings.default;
+			loopLayouts[ layout ].supportsColumns
+				? columnsControl.activate()
+				: columnsControl.deactivate();
 
-		if ( ! loopLayouts[ layout ].imageSizes.length ) {
+			// Activate/Deactivate the featured image control, depending on
+			// whether the layout supports them.  If the layout does support
+			// featured images, only display the featured image sizes that
+			// the layout supports.
 
-			featuredImageControl.deactivate();
+			let featuredImageControl = wp.customize.control( `loop_${type}_image_size` );
+			let featuredImageSetting = featuredImageControl.settings.default;
 
-		} else {
+			if ( ! loopLayouts[ layout ].imageSizes.length ) {
 
-			let select = document.querySelector(
-				featuredImageControl.selector + ' [data-customize-setting-link=' + featuredImageSetting.id + ']'
-			);
+				featuredImageControl.deactivate();
 
-			// Remove all options from the select. We're going to
-			// rebuild it below.
-			for ( let i = select.options.length; i >= 0 ; i-- ) {
-				select.remove( i );
-			}
+			} else {
 
-			// Set the selected option. If the current option is
-			// supported by the layout, use it. Otherwise, use the
-			// first available featured image size.
+				let select = document.querySelector(
+					featuredImageControl.selector + ' [data-customize-setting-link=' + featuredImageSetting.id + ']'
+				);
 
-			let selectedOption = loopLayouts[ layout ].imageSizes[0];
-
-			if ( loopLayouts[ layout ].imageSizes.includes( featuredImageSetting.get() ) ) {
-				selectedOption = featuredImageSetting.get();
-			}
-
-			featuredImageSetting.set( selectedOption );
-
-			loopLayouts[ layout ].imageSizes.forEach( size => {
-
-				let opt       = document.createElement( 'option' );
-				opt.value     = size;
-				opt.innerHTML = imageSizes[ size ].label;
-
-				if ( size === selectedOption ) {
-					opt.setAttribute( 'selected', 'selected' );
+				// Remove all options from the select. We're going to
+				// rebuild it below.
+				for ( let i = select.options.length; i >= 0 ; i-- ) {
+					select.remove( i );
 				}
 
-				select.appendChild( opt );
+				// Set the selected option. If the current option is
+				// supported by the layout, use it. Otherwise, use the
+				// first available featured image size.
 
-			} );
+				let selectedOption = loopLayouts[ layout ].imageSizes[0];
 
-			featuredImageControl.activate();
-		}
+				if ( loopLayouts[ layout ].imageSizes.includes( featuredImageSetting.get() ) ) {
+					selectedOption = featuredImageSetting.get();
+				}
 
+				featuredImageSetting.set( selectedOption );
+
+				loopLayouts[ layout ].imageSizes.forEach( size => {
+
+					let opt       = document.createElement( 'option' );
+					opt.value     = size;
+					opt.innerHTML = imageSizes[ size ].label;
+
+					if ( size === selectedOption ) {
+						opt.setAttribute( 'selected', 'selected' );
+					}
+
+					select.appendChild( opt );
+
+				} );
+
+				featuredImageControl.activate();
+			}
+
+		} );
 	} );
 } );

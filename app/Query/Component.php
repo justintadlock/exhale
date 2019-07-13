@@ -52,14 +52,15 @@ class Component implements Bootable {
 
 			$query->set(
 				'posts_per_page',
-				apply_filters( 'exhale/query/posts/archive/number', Options::get( 'archive_posts_number' ), $query )
+				\Exhale\Tools\Mod::get( 'loop_archive_limit' )
+			//	apply_filters( 'exhale/query/posts/archive/number', Options::get( 'archive_posts_number' ), $query )
 			);
 
 		} elseif ( $query->is_main_query() && $query->is_home() ) {
 
 			$query->set(
 				'posts_per_page',
-				\Exhale\Tools\Mod::get( 'posts_per_page' )
+				\Exhale\Tools\Mod::get( 'loop_blog_limit' )
 			//	apply_filters( 'exhale/query/posts/home/number', Options::get( 'home_posts_number' ), $query )
 			);
 		}

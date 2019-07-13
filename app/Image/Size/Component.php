@@ -69,7 +69,7 @@ class Component implements Bootable {
 		add_filter( 'image_size_names_choose', [ $this, 'imageSizeNamesChoose' ] );
 
 		// Add customizer settings and controls.
-		add_action( 'customize_register', [ $this, 'customizeRegister'] );
+	//	add_action( 'customize_register', [ $this, 'customizeRegister'] );
 	}
 
 	/**
@@ -141,47 +141,5 @@ class Component implements Bootable {
 	 * @return void
 	 */
 	public function customizeRegister( WP_Customize_Manager $manager ) {
-
-		// Featured image size setting.
-		$manager->add_setting( 'featured_image_size', [
-			'default'           => Mod::fallback( 'featured_image_size' ),
-			'sanitize_callback' => 'sanitize_key',
-			'transport'         => 'postMessage'
-		] );
-
-		$sizes = App::resolve( 'layouts/loop' )->get( Mod::get( 'content_layout' ) )->imageSizes();
-
-		// Featured image size control.
-		$manager->add_control( 'featured_image_size', [
-			'section'     => 'content',
-			'type'        => 'select',
-			'priority'    => 28,
-			'choices'     => $this->sizes->customizeChoices( $sizes ),
-			'label'       => esc_html__( 'Featured Image Size', 'exhale' ),
-			'description' => sprintf(
-				// Translators: %s is a plugin link.
-				esc_html__( 'For images to be sized correctly, regenerate them using the %s plugin.', 'exhale' ),
-				sprintf( '<a href="https://wordpress.org/plugins/regenerate-thumbnails/">%s</a>', esc_html__( 'Regnerate Thumbnails', 'exhale' ) )
-			),
-			'active_callback' => function( $control ) {
-				$sizes = App::resolve( 'layouts/loop' )->get(
-					$control->manager->get_setting( 'content_layout' )->value()
-				)->imageSizes();
-
-				return ! empty( $sizes );
-			}
-		] );
-
-		// Featured image size partial.
-		$manager->selective_refresh->add_partial( 'featured_image_size', [
-			'selector'            => '.entry__media',
-			'container_inclusive' => true,
-			'fallback_refresh'    => false,
-			'render_callback'     => function( $partial, $context ) {
-				return FeaturedImage::display( 'featured', [
-					'post_id' => absint( $context['post_id'] )
-				] );
-			}
-		] );
 	}
 }

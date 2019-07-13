@@ -13,7 +13,14 @@
 
 namespace Exhale\Customize;
 
+use Hybrid\Tools\Collection;
 use Hybrid\Tools\ServiceProvider;
+
+use Exhale\Color;
+use Exhale\Image;
+use Exhale\Layout;
+use Exhale\Footer;
+use Exhale\Typography;
 
 /**
  * Customize service provider.
@@ -31,7 +38,16 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
-		$this->app->singleton( Component::class );
+
+		$this->app->singleton( Component::class, function() {
+			return new Component( [
+				Color\Customize::class,
+				Image\Customize::class,
+				Layout\Customize::class,
+				Footer\Customize::class,
+				Typography\Customize::class
+			] );
+		} );
 	}
 
 	/**
