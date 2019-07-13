@@ -96,9 +96,7 @@ class General extends View {
 		$settings['disable_wp_embed'] = ! empty( $settings['disable_wp_embed'] );
 
 		// Integers.
-		$settings['home_posts_number']    = intval( $settings['home_posts_number']    );
-		$settings['archive_posts_number'] = intval( $settings['archive_posts_number'] );
-		$settings['error_page']           = absint( $settings['error_page']           );
+		$settings['error_page'] = absint( $settings['error_page']           );
 
 		// Return the validated/sanitized settings.
 		return $settings;
@@ -158,16 +156,6 @@ class General extends View {
 			],
 
 			// Reading fields.
-			'home_posts_number' => [
-				'label'    => __( 'Blog Posts', 'exhale' ),
-				'callback' => 'fieldHomePostsNumber',
-				'section'  => 'reading'
-			],
-			'archive_posts_number' => [
-				'label'    => __( 'Archive Posts', 'exhale' ),
-				'callback' => 'fieldArchivePostsNumber',
-				'section'  => 'reading'
-			],
 			'error_page' => [
 				'label'    => __( '404 Page', 'exhale' ),
 				'callback' => 'fieldErrorPage',
@@ -249,7 +237,7 @@ class General extends View {
 	public function sectionReading() { ?>
 
 		<p>
-			<?php esc_html_e( 'Alter the posts for specific views on the front end. By default, the numbers are set for optimal use with this theme.', 'exhale' ) ?>
+			<?php esc_html_e( 'Alter the output for specific views on the front end.', 'exhale' ) ?>
 		</p>
 
 	<?php }
@@ -288,38 +276,6 @@ class General extends View {
 		<p class="description">
 			<?php esc_html_e( 'Loads a smaller stylesheet if you are using the classic WordPress editor instead of the block editor.', 'exhale' ) ?>
 		</p>
-
-	<?php }
-
-	/**
-	 * Displays the home posts number field.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function fieldHomePostsNumber() { ?>
-
-		<label>
-			<input type="number" name="exhale_settings[home_posts_number]" value="<?= esc_attr( Options::get( 'home_posts_number' ) ) ?>" min="-1" max="9999" maxlength="4" />
-			<?php esc_html_e( 'Number of posts to display on the blog posts page.', 'exhale' ) ?>
-		</label>
-
-	<?php }
-
-	/**
-	 * Displays the archive posts number field.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function fieldArchivePostsNumber() { ?>
-
-		<label>
-			<input type="number" name="exhale_settings[archive_posts_number]" value="<?= esc_attr( Options::get( 'archive_posts_number' ) ) ?>" min="-1" max="9999" maxlength="4" />
-			<?php esc_html_e( 'Number of posts to display on archive pages.', 'exhale' ) ?>
-		</label>
 
 	<?php }
 
@@ -450,4 +406,24 @@ class General extends View {
 		</form>
 
 	<?php }
+
+	/**
+	 * Displays the home posts number field.
+	 *
+	 * @since      1.0.0
+	 * @deprecated 2.1.0
+	 * @access     public
+	 * @return     void
+	 */
+	public function fieldHomePostsNumber() {}
+
+	/**
+	 * Displays the archive posts number field.
+	 *
+	 * @since      1.0.0
+	 * @deprecated 2.1.0
+	 * @access     public
+	 * @return     void
+	 */
+	public function fieldArchivePostsNumber() {}
 }

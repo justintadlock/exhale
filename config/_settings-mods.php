@@ -14,50 +14,28 @@
 
 return [
 	// Set the default layout.
-	'layout'         => 'wide',
+	'layout' => 'wide',
 
-	// Content layout.
+	// Archive layout.
 	'loop_archive_layout'     => 'list',
 	'loop_archive_limit'      => 10,
 	'loop_archive_width'      => 'full',
 	'loop_archive_columns'    => 4,
 	'loop_archive_image_size' => 'exhale-landscape-large',
+	'loop_archive_limit'      => function() {
+		return \Exhale\Settings\Options::get( 'archive_posts_number' );
+	},
 
-	'loop_blog_layout'     => 'grid',
-	'loop_blog_limit'      => 10,
+	// Blog layout.
+	'loop_blog_layout'     => 'default',
 	'loop_blog_width'      => 'full',
 	'loop_blog_columns'    => 4,
-	'loop_blog_image_size' => 'exhale-landscape-large',
-
-
-	'featured_image_size' => 'exhale-landscape-extra-large',
-	/*
-	'content_layout'        => 'grid',
-	'content_layout_home'   => function() {
-		return \Exhale\Tools\Mod::get( 'content_layout' );
+	'loop_blog_image_size' => function() {
+		return \Exhale\Tools\Mod::get( 'featured_image_size' );
 	},
-	'content_layout_archive' => function() {
-		return \Exhale\Tools\Mod::get( 'content_layout' );
+	'loop_blog_limit'      => function() {
+		return \Exhale\Settings\Options::get( 'home_posts_number' );
 	},
-
-	'posts_per_page' => 10,
-
-	'content_layout_width'         => 'full',
-	'content_layout_home_width'    => function() {
-		return \Exhale\Tools\Mod::get( 'content_layout_width' );
-	},
-	'content_layout_archive_width' => function() {
-		return \Exhale\Tools\Mod::get( 'content_layout_width' );
-	},
-
-	'content_layout_columns'         => 4,
-	'content_layout_home_columns'    => function() {
-		return \Exhale\Tools\Mod::get( 'content_layout_columns' );
-	},
-	'content_layout_archive_columns' => function() {
-		return \Exhale\Tools\Mod::get( 'content_layout_columns' );
-	},
-	*/
 
 	// Footer sidebar layout.
 	'sidebar_footer_width'   => 'full',
@@ -75,5 +53,8 @@ return [
 	'powered_by'    => true,
 	'footer_credit' => function() {
 		return sprintf( __( 'Powered by %s.', 'exhale' ), \Hybrid\Theme\render_link() );
-	}
+	},
+
+	// @deprecated 2.1.0
+	'featured_image_size' => 'exhale-landscape-extra-large',
 ];

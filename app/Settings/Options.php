@@ -53,8 +53,8 @@ class Options {
 		return apply_filters( 'exhale/settings/options/defaults', [
 			// 1.0.0
 			'classic_style'        => false,
-			'home_posts_number'    => 3,
-			'archive_posts_number' => 100,
+			'home_posts_number'    => 10,    // @deprecated 2.1.0
+			'archive_posts_number' => 10,    // @deprecated 2.1.0
 			'disable_emoji'        => true,
 			'disable_toolbar'      => false,
 			'disable_wp_embed'     => false,
