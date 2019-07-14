@@ -194,18 +194,18 @@ class Color implements CssCustomProperty {
 			'lightest',
 			'lighter',
 			'light',
-			'dark',
+			'darkest',
 			'darker',
-			'darkest'
+			'dark'
 		];
 
 		$replace = [
 			'100',
 			'300',
 			'400',
-			'600',
+			'900',
 			'700',
-			'900'
+			'600'
 		];
 
 		return sprintf( '--%s', str_replace( $pattern, $replace, $this->name() ) );
