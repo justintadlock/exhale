@@ -38,11 +38,7 @@ return [
 	},
 
 	// Footer sidebar layout.
-	'sidebar_footer_width'   => 'full',
-	'sidebar_footer_columns' => 3,           // 1, 2, 3, 4
-
-	// Set the default featured image size.
-	'featured_image_size' => 'exhale-landscape-extra-large',
+	'sidebar_footer_width' => 'full',
 
 	// Set the default image filter mods.
 	'image_default_filter_function' => 'grayscale',
@@ -56,5 +52,5 @@ return [
 	},
 
 	// @deprecated 2.1.0
-	'featured_image_size' => 'exhale-landscape-extra-large',
+	'featured_image_size' => 'exhale-landscape-large',
 ];

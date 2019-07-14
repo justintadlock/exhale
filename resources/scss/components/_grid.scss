@@ -18,9 +18,18 @@
 		grid-template-columns: repeat( 2, 1fr );
 	}
 
+	&--sidebar-footer {
+		grid-row-gap: 0;
+		margin-bottom: 0;
+	}
+
 	// 2 columns on medium screens.
 	@media ( min-width: $content-width ) {
 		grid-template-columns: repeat( 2, 1fr );
+
+		&.columns-1 {
+			grid-template-columns: repeat( 1, 1fr );
+		}
 	}
 
 	// 3-8 columns on larger screens.
@@ -35,62 +44,5 @@
 
 	&__item > :last-child {
 		margin-bottom: 0;
-	}
-}
-
-// The wrapper element for the entire gallery.
-.flex-grid {
-	display:         flex;
-	flex-wrap:       wrap;
-	list-style-type: none;
-	margin:          0;
-	padding:         0;
-
-	&.flex-grid--sidebar-footer {
-		margin-bottom: 0;
-	}
-}
-
-.flex-grid__item {
-	display:         flex;
-	flex-grow:       1;
-	flex-direction:  column;
-	justify-content: flex-start;
-	position:        relative;
-	width:           100%;
-
-	// 2 columns on medium screens.
-	@media ( min-width: $content-width ) {
-		width: calc( 100% / 2 - #{ $spacing-global } );
-		margin-right: $spacing-global;
-
-		&:nth-of-type( even ) {
-			margin-right: 0;
-		}
-	}
-
-	.columns-1 > & {
-		width:        100%;
-		margin-right: 0;
-	}
-
-	// 2-8 columns on larger screens.
-	@media ( min-width: $width-alignwide ) {
-
-		@for $i from 2 through 4 {
-
-			.columns-#{ $i } > & {
-				width: calc( 100% / #{ $i } - #{ $spacing-global } );
-				margin-right: $spacing-global;
-			}
-
-			.columns-#{ $i } > &:nth-of-type( #{ $i }n ) {
-				margin-right: 0;
-			}
-		}
-	}
-
-	&:last-child {
-		margin-right: 0;
 	}
 }

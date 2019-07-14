@@ -197,6 +197,10 @@ class Component implements Bootable {
 		$manager->add_section( 'theme_footer_sidebar', [
 			'panel'    => 'theme_footer',
 			'title'    => __( 'Sidebar', 'exhale' ),
+			'description' => sprintf(
+				'<a class="button button-secondary" href="javascript:wp.customize.panel( \'widgets\' ).focus();">%s</a>',
+				__( 'Add Footer Widgets &rarr;', 'exhale' )
+			),
 			'priority' => 20
 		] );
 

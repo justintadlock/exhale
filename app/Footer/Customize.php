@@ -44,14 +44,6 @@ class Customize extends Customizable {
 			'sanitize_callback' => 'sanitize_key'
 		] );
 
-		$manager->add_setting( 'sidebar_footer_columns', [
-			'default'           => Mod::fallback( 'sidebar_footer_columns' ),
-			'transport'         => 'postMessage',
-			'sanitize_callback' => function( $columns ) {
-				return in_array( $columns, range( 1, 4 ) ) ? $columns : 3;
-			}
-		] );
-
 		// Register footer settings.
 		$manager->add_setting( 'powered_by', [
 			'default'           => Mod::fallback( 'powered_by' ),
@@ -90,17 +82,6 @@ class Customize extends Customizable {
 				'4xl'       => __( 'Colossal',   'exhale' ),
 				'5xl'       => __( 'Titanic',    'exhale' ),
 				'full'      => __( 'Full',       'exhale' )
-			]
-		] );
-
-		// Sidebar columns control.
-		$manager->add_control( 'sidebar_footer_columns', [
-			'section' => 'theme_footer_sidebar',
-			'type'    => 'number',
-			'label'   => __( 'Footer Sidebar: Columns', 'exhale' ),
-			'input_attrs' => [
-				'min' => 1,
-				'max' => 4
 			]
 		] );
 

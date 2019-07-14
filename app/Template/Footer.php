@@ -82,4 +82,24 @@ class Footer {
 			'strong'  => [ 'class' => true ]
 		];
 	}
+
+	/**
+	 * Returns an array of active footer sidebar IDs.
+	 *
+	 * @since  2.1.0
+	 * @access public
+	 * @return array
+	 */
+	public static function activeSidebars() {
+		$active_sidebars = [];
+
+		foreach ( range( 1, 4 ) as $id ) {
+
+			if ( is_active_sidebar( "footer-{$id}" ) ) {
+				$active_sidebars[] = "footer-{$id}";
+			}
+		}
+
+		return $active_sidebars;
+	}
 }

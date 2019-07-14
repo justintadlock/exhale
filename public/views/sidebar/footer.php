@@ -1,22 +1,33 @@
-<?php if ( is_active_sidebar( $data->sidebar ) ) : ?>
+<?php if ( $active_sidebars = Exhale\Template\Footer::activeSidebars() ) : ?>
 
-	<aside <?php Hybrid\Attr\display( 'sidebar', $data->sidebar ) ?>>
+	<aside <?php Hybrid\Attr\display( 'sidebar', $sidebar ) ?>>
 
-		<h3 class="sidebar__title screen-reader-text">
-			<?php Hybrid\Sidebar\display_name( $data->sidebar ) ?>
-		</h3>
-
-		<div <?php Hybrid\Attr\display( 'flex-grid', "sidebar-{$data->sidebar}", [
+		<ul <?php Hybrid\Attr\display( 'grid', 'sidebar-footer', [
 			'class' => sprintf(
-				'flex-grid flex-grid--sidebar-footer columns-%s max-w-%s mx-auto',
-				esc_attr( Exhale\Tools\Mod::get( 'sidebar_footer_columns' ) ),
+				'grid grid--sidebar-footer columns-%s max-w-%s mx-auto',
+				esc_attr( count( $active_sidebars ) ),
 				esc_attr( Exhale\Tools\Mod::get( 'sidebar_footer_width' ) )
 			)
 		] ) ?>>
 
-			<?php dynamic_sidebar( $data->sidebar ) ?>
+			<?php foreach ( range( 1, 4 ) as $id ) : ?>
 
-		</div>
+				<?php if ( in_array( "{$sidebar}-{$id}", $active_sidebars ) ) : ?>
+
+					<li <?php Hybrid\Attr\display( 'sidebar', "{$sidebar}-{$id}", [
+						'class' => sprintf(
+							'sidebar sidebar--footer-%s grid__item',
+							esc_attr( $id )
+						)
+					] ) ?>>
+						<?php dynamic_sidebar( "{$sidebar}-{$id}" ) ?>
+					</li>
+
+				<?php endif ?>
+
+			<?php endforeach ?>
+
+		</ul>
 
 	</aside>
 

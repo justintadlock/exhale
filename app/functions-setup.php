@@ -119,14 +119,20 @@ add_action( 'init', function() {
  */
 add_action( 'widgets_init', function() {
 
-	register_sidebar( [
-		'id'            => 'footer',
-		'name'          => esc_html_x( 'Footer', 'sidebar' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s flex-grid__item">',
+	$args = [
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget__title">',
 		'after_title'   => '</h3>'
-	] );
+	];
+
+	foreach ( range( 1, 4 ) as $num ) {
+
+		register_sidebar( [
+			'id'   => "footer-{$num}",
+			'name' => sprintf( __( 'Footer %d', 'exhale' ), $num )
+		] + $args );
+	}
 
 }, 5 );
 

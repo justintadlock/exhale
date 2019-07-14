@@ -18,10 +18,9 @@
 	&--archives {}
 	&--calendar {}
 
-	&--categories {
-		.postform {
-			margin-bottom: $spacing-global;
-		}
+	&--categories .postform,
+	&--archives [name=archive-dropdown] {
+		margin-bottom: $spacing-global;
 	}
 
 	&--custom-html {}

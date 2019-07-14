@@ -11,7 +11,14 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-let sidebarFooter = document.querySelector( '.flex-grid--sidebar-footer' );
+let sidebarFooter = document.querySelector( '.grid--sidebar-footer' );
+
+let sidebars = [
+	'footer-1',
+	'footer-2',
+	'footer-3',
+	'footer-4'
+];
 
 let widths = [
 	'max-w-2xl',
@@ -28,8 +35,29 @@ let columns = [
 	'columns-4'
 ];
 
+if ( 'undefined' !== typeof wp.customize.selectiveRefresh ) {
+
+	wp.customize.selectiveRefresh.bind( 'sidebar-update', ( sidebarPartial ) => {
+
+		if ( sidebars.includes( sidebarPartial.sidebarId ) ) {
+
+			if ( ! sidebarFooter ) {
+				return;
+			}
+
+			sidebarFooter.classList.remove( ...columns );
+
+			sidebarFooter.classList.add( 'columns-' + sidebarFooter.childElementCount );
+		}
+	} );
+}
+
 wp.customize( 'sidebar_footer_width', value => {
 	value.bind( to => {
+
+		if ( ! sidebarFooter ) {
+			return;
+		}
 
 		// Remove all layout classes.
 		sidebarFooter.classList.remove( ...widths );
@@ -38,16 +66,5 @@ wp.customize( 'sidebar_footer_width', value => {
 		if ( to ) {
 			sidebarFooter.classList.add( 'max-w-' + to );
 		}
-	} );
-} );
-
-wp.customize( 'sidebar_footer_columns', value => {
-	value.bind( to => {
-
-		// Remove all layout classes.
-		sidebarFooter.classList.remove( ...columns );
-
-		// Add new layout class.
-		sidebarFooter.classList.add( 'columns-' + to );
 	} );
 } );
