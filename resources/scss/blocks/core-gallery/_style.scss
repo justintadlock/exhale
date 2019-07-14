@@ -89,12 +89,6 @@
 			background: rgba( 255, 255, 255, 0.2 );
 		}
 	}
-
-	// Our linked images have padding and borders, so we need to adjust this.
-	a + figcaption {
-		width: calc( 100% - 20px );
-		margin: 0 10px 10px;
-	}
 }
 
 // Cropped images.
