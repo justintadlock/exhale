@@ -74,8 +74,6 @@ class Classic implements Bootable {
 			'orderby'          => $atts['orderby'],
 			'exclude'          => $atts['exclude'],
 			'include'          => $atts['include'],
-			'numberposts'      => $atts['numberposts'],
-			'offset'           => $atts['offset'],
 			'suppress_filters' => true
 		];
 
