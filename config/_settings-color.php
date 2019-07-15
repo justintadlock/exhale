@@ -108,19 +108,19 @@ return [
 		'description'     => __( 'Color used when hovering or focusing a link.', 'exhale' ),
 		'section'         => 'theme_header_colors'
 	],
-	'footer' => [
-		'label'           => __( 'Footer: Text', 'exhale' ),
-		'description'     => __( 'Color used for most text in the footer.', 'exhale' ),
-		'color'           => function() {
-			return \Exhale\Tools\Mod::color( 'secondary' );
-		},
-		'section'         => 'theme_footer_colors'
-	],
 	'footer-background' => [
 		'label'           => __( 'Footer: Background', 'exhale' ),
 		'description'     => __( 'Background color for the entire footer section.', 'exhale' ),
 		'color'           => function() {
 			return \Exhale\Tools\Mod::color( 'header-background' );
+		},
+		'section'         => 'theme_footer_colors'
+	],
+	'footer' => [
+		'label'           => __( 'Footer: Text', 'exhale' ),
+		'description'     => __( 'Color used for most text in the footer.', 'exhale' ),
+		'color'           => function() {
+			return \Exhale\Tools\Mod::color( 'secondary' );
 		},
 		'section'         => 'theme_footer_colors'
 	],
@@ -143,6 +143,46 @@ return [
 		'description'     => __( 'Color used when hovering or focusing a link.', 'exhale' ),
 		'color'           => function() {
 			return \Exhale\Tools\Mod::color( 'secondary-link-hover' );
+		},
+		'section'         => 'theme_footer_colors'
+	],
+	'sidebar-footer-background' => [
+		'label'           => __( 'Sidebar Footer: Background', 'exhale' ),
+		'description'     => __( 'Background color for the entire footer section.', 'exhale' ),
+		'color'           => function() {
+			return \Exhale\Tools\Mod::color( 'footer-background' );
+		},
+		'section'         => 'theme_footer_colors'
+	],
+	'sidebar-footer' => [
+		'label'           => __( 'Sidebar Footer: Text', 'exhale' ),
+		'description'     => __( 'Color used for most text in the footer.', 'exhale' ),
+		'color'           => function() {
+			return \Exhale\Tools\Mod::color( 'footer' );
+		},
+		'section'         => 'theme_footer_colors'
+	],
+	'sidebar-footer-headings' => [
+		'label'           => __( 'Sidebar Footer: Headings', 'exhale' ),
+		'description'     => __( 'Color used for most text in the footer.', 'exhale' ),
+		'color'           => function() {
+			return \Exhale\Tools\Mod::color( 'footer' );
+		},
+		'section'         => 'theme_footer_colors'
+	],
+	'sidebar-footer-link' => [
+		'label'           => __( 'Sidebar Footer: Link', 'exhale' ),
+		'description'     => __( 'Color for the links in the footer.', 'exhale' ),
+		'color'           => function() {
+			return \Exhale\Tools\Mod::color( 'footer-link' );
+		},
+		'section'         => 'theme_footer_colors'
+	],
+	'sidebar-footer-link-hover' => [
+		'label'           => __( 'Sidebar Footer: Link Hover', 'exhale' ),
+		'description'     => __( 'Color used when hovering or focusing a link.', 'exhale' ),
+		'color'           => function() {
+			return \Exhale\Tools\Mod::color( 'footer-link-hover' );
 		},
 		'section'         => 'theme_footer_colors'
 	],

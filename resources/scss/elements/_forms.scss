@@ -20,13 +20,14 @@ textarea {
 
 input,
 select,
-textarea {
+textarea,
+button {
 	box-sizing:  border-box;
 	padding:     0.5rem;
 	line-height: 1;
 	font-family: var( --font-family-primary );
 	font-size:   1em;
-	color:       inherit;
+	color:       currentColor;
 	background:  transparent;
 	border:      1px solid var( --color-border );
 }
@@ -58,5 +59,26 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"],
 button {
-	@include button;
+	cursor:          pointer;
+	display:         inline-block;
+	margin:          0;
+	padding:         0.75rem $spacing-global;
+	line-height:     1;
+	font-family:     var( --font-family-secondary );
+	font-size:       1rem;
+	text-decoration: none;
+	border-radius:   3px;
+	white-space:     normal;
+	word-break:      break-all;
+	transition:      all 0.5s ease-in-out;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+::placeholder {
+	color: currentColor;
+	opacity: 1;
 }

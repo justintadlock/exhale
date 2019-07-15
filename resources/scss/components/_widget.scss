@@ -38,7 +38,8 @@
 	&--search {}
 	&--tag-cloud {}
 
-	.tagcloud {
+	.tagcloud,
+	.search-form {
 		margin-bottom: $spacing-global;
 	}
 }

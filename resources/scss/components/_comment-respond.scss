@@ -79,7 +79,12 @@
 		}
 	}
 
+	&__submit[type=submit] {
+		padding: $spacing-half $spacing-global;
+	}
+
 	&__submit {
+
 		@media only screen and ( max-width: $content-width ) {
 			width: 100%;
 		}

@@ -11,9 +11,38 @@
 	&--primary {}
 
 	&--footer {
-		margin: -#{ $spacing-global} 0 $spacing-global;
-		padding-top:   $spacing-global;
-		border-bottom: 1px solid var( --color-footer-border );
+		margin:           -#{ $spacing-global} 0 $spacing-global;
+		padding-top:      $spacing-global;
+		color:            var( --color-sidebar-footer );
+		background-color: var( --color-sidebar-footer-background );
+		border-bottom:    1px solid var( --color-footer-border );
+
+		h1, h2, h3, h4, h5, h6 {
+			color: var( --color-sidebar-footer-headings );
+		}
+
+		a {
+			color: var( --color-sidebar-footer-link );
+
+			&:hover,
+			&:focus {
+				color: var( --color-sidebar-footer-link-hover );
+			}
+		}
+
+		input,
+		select,
+		textarea {
+			background:   var( --color-sidebar-footer-background );
+			border-color: currentColor;
+		}
+
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"],
+		button {
+			border-color: currentColor;
+		}
 	}
 
 	&__title {}
