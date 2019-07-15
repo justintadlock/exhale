@@ -35,11 +35,63 @@ class Loop {
 	 */
 	public static function type( $type = '' ) {
 
-		if ( $type ) {
+		if ( ! $type ) {
+
+			$type = 'archive';
+
+			if ( is_home() ) {
+				$type = 'blog';
+			} if ( is_post_type_archive() ) {
+				$type = sprintf(
+					'archive_%s',
+					get_post_type_object( get_query_var( 'post_type' ) )->name
+				);
+			} elseif ( is_tax() ) {
+				$type = sprintf(
+					'archive_%s',
+					get_queried_object()->taxonomy
+				);
+			}
+		}
+
+		return static::maybeInherit( $type );
+	}
+
+	/**
+	 * Helper method to determine whether the current layout should return
+	 * the actual type or the inherited type.
+	 *
+	 * @since  2.1.0
+	 * @access private
+	 * @param  string  $type
+	 * @return string
+	 */
+	private static function maybeInherit( $type ) {
+
+		if ( in_array( $type, [ 'blog', 'archive' ] ) ) {
 			return $type;
 		}
 
-		return is_home() ? 'blog' : 'archive';
+		$inherit = Mod::get( sprintf( 'loop_%s_inherit', $type ) );
+
+		if ( $inherit ) {
+			return static::type( $inherit );
+		}
+
+		return false === $inherit ? $type : 'archive';
+	}
+
+	/**
+	 * Returns the posts per page limit for the loop.
+	 *
+	 * @since  2.1.0
+	 * @access public
+	 * @param  string  $type
+	 * @return int
+	 */
+	public static function limit( $type = '' ) {
+
+		return Mod::get( sprintf( 'loop_%s_limit', static::type() ) );
 	}
 
 	/**

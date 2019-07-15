@@ -43,7 +43,7 @@ class Mod {
 
 		return mod(
 			$name,
-			! $default && $fallback ? $fallback : $default
+			! $default && ! is_null( $fallback ) ? $fallback : $default
 		);
 	}
 

@@ -40,5 +40,6 @@ array_map( function( $file ) {
 	'functions-assets',
 	'functions-filters',
 	'functions-setup',
-	'functions-template'
+	'functions-template',
+	'functions-woocommerce'
 ] );

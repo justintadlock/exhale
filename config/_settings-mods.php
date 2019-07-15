@@ -18,7 +18,6 @@ return [
 
 	// Archive layout.
 	'loop_archive_layout'     => 'list',
-	'loop_archive_limit'      => 10,
 	'loop_archive_width'      => 'full',
 	'loop_archive_columns'    => 4,
 	'loop_archive_image_size' => 'exhale-landscape-large',
@@ -36,6 +35,18 @@ return [
 	'loop_blog_limit'      => function() {
 		return \Exhale\Settings\Options::get( 'home_posts_number' );
 	},
+
+	// Archive product layout (WooCommerce).
+	'loop_archive_product_inherit'    => false,
+	'loop_archive_product_layout'     => 'grid',
+	'loop_archive_product_width'      => 'full',
+	'loop_archive_product_columns'    => 5,
+	'loop_archive_product_image_size' => 'exhale-portrait-small',
+	'loop_archive_product_limit'      => 10,
+
+	// Product taxonomy layouts (WooCommerce).
+	'loop_archive_product_cat_inherit' => 'archive_product',
+	'loop_archive_product_tag_inherit' => 'archive_product',
 
 	// Footer sidebar layout.
 	'sidebar_footer_width' => 'full',

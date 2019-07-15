@@ -22,9 +22,13 @@
 	font-size: 1.5625rem;
 }
 
+.grid--portrait .entry__title {
+	font-size: 1.125rem;
+}
+
 @media ( min-width: $content-width ) {
 	.grid .entry__title {
-		font-size: 1.125rem;
+		font-size: 1.25rem;
 	}
 }
 
@@ -32,10 +36,6 @@
 
 	.columns-5 .entry__title,
 	.columns-6 .entry__title {
-		font-size: 1rem;
+		font-size: 1.125rem;
 	}
-}
-
-.grid--portrait .entry__title {
-	font-size: 1rem;
 }
