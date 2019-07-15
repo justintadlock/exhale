@@ -11,8 +11,8 @@
 .app {
 
 	.layout-boxed & {
-		@media ( min-width: 1050px ) {
-			max-width: 1050px;
+		@media ( min-width: $max-w-5xl ) {
+			max-width: $max-w-5xl;
 			margin:    3rem auto;
 		}
 	}

@@ -24,7 +24,7 @@
 		margin-bottom: 0;
 	}
 
-	@media ( max-width: calc( #{ $width-alignwide } + #{ $spacing-2x } ) ) {
+	@media ( max-width: $width-alignwide + $spacing-2x ) {
 
 		&.alignwide {
 			padding-left:  $spacing-global;
@@ -34,7 +34,7 @@
 }
 
 // Remove left/right margin when in a group with padding.
-@media ( max-width: calc( #{ $width-alignwide } + #{ $spacing-2x } ) ) {
+@media ( max-width: $width-alignwide + $spacing-2x ) {
 
 	.wp-block-group.has-background .wp-block-columns {
 		margin-left: 0;
