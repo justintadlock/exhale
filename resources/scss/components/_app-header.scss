@@ -19,6 +19,7 @@
 		overflow:  hidden;
 		max-width: 50%;
 		height:    58px;
+		padding:   0 $spacing-global;
 	}
 
 	// Custom logo.
@@ -26,7 +27,6 @@
 		display: inline-block;
 		// Centers our image no matter what size.
 		margin: auto 0;
-		padding: 0 1.5rem;
 		line-height: 0;
 		background:  var( --color-branding-background );
 	}
@@ -57,16 +57,17 @@
 
 	// The site title.
 	&__title {
-		padding:           19px 1.5rem;
+		padding:           19px 0;
 		font-size:         20px;
 	}
 
 	.wp-custom-logo &__title {
-		margin-left: -1.5rem;
+		margin-left: $spacing-half;
 	}
 
 	// The site description.
 	&__description {
+		margin-left: 1.5rem;
 		padding:     22px 1.5rem 21px;
 		font-size:   15px;
 		color:       var( --color-header-description );
@@ -85,7 +86,7 @@
 		}
 	}
 
-	@media ( max-width: $content-width ) {
+	@media ( max-width: $width-alignwide ) {
 
 		display: block;
 

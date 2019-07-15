@@ -30,6 +30,7 @@
 		scrollbar-width:    none; // Firefox.
 		-ms-overflow-style: -ms-autohiding-scrollbar;
 		margin-left:        auto; // This aligns the menu to the right.
+		padding-right:      $spacing-global - 1.5rem;
 
 		font-family: var( --font-family-secondary );
 		font-size:   16px;
@@ -48,7 +49,8 @@
 			}
 		}
 
-		@media ( max-width: $content-width ) {
+		@media ( max-width: $width-alignwide ) {
+			padding: 0;
 
 			border-top: 1px solid var( --color-header-border );
 
