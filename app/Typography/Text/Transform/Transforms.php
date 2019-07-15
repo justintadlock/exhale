@@ -42,9 +42,10 @@ class Transforms extends Collection {
 	 *
 	 * @since  2.0.0
 	 * @access public
+	 * @param  array  $transforms
 	 * @return array
 	 */
-	public function customizeChoices() {
+	public function customizeChoices( $transforms = [] ) {
 
 		$choices = [];
 
