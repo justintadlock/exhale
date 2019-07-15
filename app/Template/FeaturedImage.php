@@ -145,7 +145,7 @@ class FeaturedImage extends Image {
 		if ( ! isset( $args['link'] ) || $args['link'] ) {
 			$svg = sprintf(
 				'<a href="%s">%s</a>',
-				esc_url( get_permalink( $args['post_id'] ) ),
+				esc_url( get_permalink( $post_id ) ),
 				$svg
 			);
 		}
