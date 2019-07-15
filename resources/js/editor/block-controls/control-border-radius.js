@@ -22,23 +22,16 @@ const { labels } = exhaleEditor;
 export default ( props ) => {
 
 	let options = [
-		{ label: labels.default,          value: ''            },
-		{ label: labels.none,             value: 'none'        },
-		{ label: labels.sizes.small,      value: 'small'       },
-		{ label: labels.sizes.medium,     value: 'medium'      },
-		{ label: labels.sizes.large,      value: 'large'       },
-		{ label: labels.sizes.extraLarge, value: 'extra-large' }
+		{ label: labels.default,          value: ''     },
+		{ label: labels.none,             value: 'none' },
+		{ label: labels.sizes.small,      value: 'sm'   },
+		{ label: labels.sizes.medium,     value: 'md'   },
+		{ label: labels.sizes.large,      value: 'lg'   },
+		{ label: labels.sizes.extraLarge, value: 'xl'   }
 	];
 
 	// Get the border-radius attribute.
 	let { borderRadius } = props.attributes;
-
-	// Replace the class name based on the border-radius value.
-	props.attributes.className = updateClass(
-		props.attributes.className,
-		borderRadius ? 'rounded-' + borderRadius : '',
-		options.filter( opt => opt.value ).map( opt => 'rounded-' + opt.value )
-	);
 
 	return (
 		<SelectControl
@@ -49,6 +42,11 @@ export default ( props ) => {
 			onChange={ ( selected ) => {
 				props.setAttributes( {
 					borderRadius: selected,
+					className: updateClass(
+						props.attributes.className,
+						selected ? 'rounded-' + selected : '',
+						options.filter( opt => opt.value ).map( opt => 'rounded-' + opt.value )
+					)
 				} );
 			} }
 		/>

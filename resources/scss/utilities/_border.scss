@@ -6,12 +6,12 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-$rounded: (
-	none:        0,
-	small:       0.1875rem,
-	medium:      0.375rem,
-	large:       0.5625rem,
-	extra-large: 0.75rem
+$border-radius: (
+	none: $rounded-none,
+	sm:   $rounded-sm,
+	md:   $rounded-md,
+	lg:   $rounded-lg,
+	xl:   $rounded-xl
 );
 
 /// Used for small images that are possibly something like a smiley, transparent
@@ -34,7 +34,7 @@ $rounded: (
 
 // Border Radius.
 
-@each $radius-name, $radius-value in $rounded {
+@each $radius-name, $radius-value in $border-radius {
 	.rounded-#{ $radius-name },
 	.rounded-#{ $radius-name } img,
 	.wp-block-gallery.rounded-#{ $radius-name } figcaption {
