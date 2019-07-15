@@ -22,23 +22,16 @@ const { labels } = exhaleEditor;
 export default ( props ) => {
 
 	let options = [
-		{ label: labels.default,          value: ''            },
-		{ label: labels.none,             value: 'none'        },
-		{ label: labels.sizes.small,      value: 'small'       },
-		{ label: labels.sizes.medium,     value: 'medium'      },
-		{ label: labels.sizes.large,      value: 'large'       },
-		{ label: labels.sizes.extraLarge, value: 'extra-large' }
+		{ label: labels.default,          value: ''     },
+		{ label: labels.none,             value: 'none' },
+		{ label: labels.sizes.small,      value: 'sm'   },
+		{ label: labels.sizes.medium,     value: 'md'   },
+		{ label: labels.sizes.large,      value: 'lg'   },
+		{ label: labels.sizes.extraLarge, value: 'xl'   }
 	];
 
 	// Get the box-shadow attribute.
 	let { boxShadow } = props.attributes;
-
-	// Replace the class name based on the box-shadow value.
-	props.attributes.className = updateClass(
-		props.attributes.className,
-		boxShadow ? 'shadow-' + boxShadow : '',
-		options.filter( opt => opt.value ).map( opt => 'shadow-' + opt.value )
-	);
 
 	return (
 		<SelectControl
@@ -49,6 +42,11 @@ export default ( props ) => {
 			onChange={ ( selected ) => {
 				props.setAttributes( {
 					boxShadow: selected,
+					className: updateClass(
+						props.attributes.className,
+						selected ? 'shadow-' + selected : '',
+						options.filter( opt => opt.value ).map( opt => 'shadow-' + opt.value )
+					)
 				} );
 			} }
 		/>

@@ -16,7 +16,7 @@ svg {
 
 img,
 .entry__image {
-	box-shadow:    0 2px  5px  0 rgba( 0, 0, 0, 0.3 );
+	box-shadow:    $shadow-sm;
 	border-radius: 3px;
 	box-sizing:    border-box;
 	filter:        var( --image-default-filter );

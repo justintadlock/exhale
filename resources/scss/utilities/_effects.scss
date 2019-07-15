@@ -9,11 +9,14 @@
 // Box-shadow.
 
 $shadows : (
-	none:        none,
-	small:       0 2px  5px  0 rgba( 0, 0, 0, 0.3 ),
-	medium:      0 4px  10px 0 rgba( 0, 0, 0, 0.3 ),
-	large:       0 8px  15px 0 rgba( 0, 0, 0, 0.3 ),
-	extra-large: 0 12px 20px 0 rgba( 0, 0, 0, 0.3 )
+	none:    $shadow-none,
+	sm:      $shadow-sm,
+	md:      $shadow-md,
+	lg:      $shadow-lg,
+	xl:      $shadow-xl,
+	2xl:     $shadow-2xl,
+	//inner:   $shadow-inner,
+	//outline: $shadow-outline
 );
 
 @each $shadow-name, $shadow-value in $shadows {
