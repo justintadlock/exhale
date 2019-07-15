@@ -27,7 +27,7 @@
 }
 
 .wp-block[data-align="wide"] {
-	max-width: 930px;
+	max-width: $width-alignwide;
 }
 
 .wp-block[data-align="full"] {
@@ -87,4 +87,23 @@
 .edit-post-visual-editor.editor-styles-wrapper .wp-block[data-align="center"] figure {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+// Overwrite core styles dropped into the footer.
+
+.edit-post-visual-editor .wp-block-paragraph {
+	margin: 0 0 $spacing-global;
+}
+
+.edit-post-visual-editor .block-library-list ul,
+.edit-post-visual-editor .block-library-list ol {
+
+	padding-left: 2em;
+	margin:       0 0 $spacing-global;
+
+	ul, ol {
+		list-style-type:   inherit;
+		margin:       0;
+		padding-left: $spacing-global;
+	}
 }

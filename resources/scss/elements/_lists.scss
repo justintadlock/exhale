@@ -5,6 +5,8 @@ ol {
 	margin:       0 0 $spacing-global;
 
 	ul, ol {
+		list-style-type:   inherit;
+		margin:       0;
 		padding-left: $spacing-global;
 	}
 
