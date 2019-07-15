@@ -184,12 +184,15 @@ class Customize extends Customizable {
 				'type'        => 'select',
 				'label'       => __( 'Width', 'exhale' ),
 				'description' => __( 'Width for the content area container.', 'exhale' ),
+				// Note that the labels don't match the actual
+				// sizes, which wouldn't make as much sense to
+				// the user.
 				'choices' => [
-					'2xl'       => __( 'Huge',       'exhale' ),
-					'3xl'       => __( 'Gargantuan', 'exhale' ),
-					'4xl'       => __( 'Colossal',   'exhale' ),
-					'5xl'       => __( 'Titanic',    'exhale' ),
-					'full'      => __( 'Full',       'exhale' )
+					'2xl'       => __( 'Medium',      'exhale' ),
+					'3xl'       => __( 'Large',       'exhale' ),
+					'4xl'       => __( 'Extra Large', 'exhale' ),
+					'5xl'       => __( 'Huge',        'exhale' ),
+					'full'      => __( 'Full',        'exhale' )
 				],
 				'active_callback' => function( $control ) use ( $type ) {
 					return $this->loop_layouts->get(
