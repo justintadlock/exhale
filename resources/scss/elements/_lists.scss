@@ -1,11 +1,11 @@
 // Lists.
 ul,
 ol {
-	padding-left: $spacing-global;
-	margin: 0 0 $spacing-global;
+	padding-left: 2em;
+	margin:       0 0 $spacing-global;
 
-	@media ( max-width: break( 'mobile' ) ) {
-		padding-left: $spacing-half;
+	ul, ol {
+		padding-left: $spacing-global;
 	}
 
 	&.aligncenter,
