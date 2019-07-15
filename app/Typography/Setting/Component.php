@@ -173,7 +173,8 @@ class Component implements Bootable {
 	public function registerDefaultSettings( Settings $settings ) {
 
 		// Base configuration.
-		$base = Config::get( '_settings-typography' );
+		$base   = Config::get( '_settings-typography' );
+		$config = [];
 
 		// Back-compat with child themes that registered a config of
 		// `config/settings-font-family.php` pre-2.0.
