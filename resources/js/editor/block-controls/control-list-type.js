@@ -32,13 +32,6 @@ export default ( props ) => {
 	// Get the list-style-type attribute.
 	let { listType } = props.attributes;
 
-	// Replace the class name based on the list-style-type value.
-	props.attributes.className = updateClass(
-		props.attributes.className,
-		listType ? 'list-' + listType : '',
-		options.filter( opt => opt.value ).map( opt => 'list-' + opt.value )
-	);
-
 	return (
 		<SelectControl
 			key="listType"
@@ -48,6 +41,11 @@ export default ( props ) => {
 			onChange={ ( selected ) => {
 				props.setAttributes( {
 					listType: selected,
+					className: updateClass(
+						props.attributes.className,
+						selected ? 'list-' + selected : '',
+						options.filter( opt => opt.value ).map( opt => 'list-' + opt.value )
+					)
 				} );
 			} }
 		/>
