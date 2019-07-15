@@ -31,7 +31,7 @@ use Exhale\Tools\Config;
 add_action( 'after_setup_theme', function() {
 
 	// Sets the theme content width.
-	$GLOBALS['content_width'] = 650;
+	$GLOBALS['content_width'] = 640;
 
 	// Load theme translations.
 	load_theme_textdomain( 'exhale', get_parent_theme_file_path( 'public/lang' ) );

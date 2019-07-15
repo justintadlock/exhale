@@ -22,13 +22,13 @@ return [
 	],
 	'exhale-landscape-medium' => [
 		'label'  => __( 'Landscape: Medium', 'exhale' ),
-		'width'  => 650,
-		'height' => 366
+		'width'  => 640,
+		'height' => 360
 	],
 	'exhale-landscape-large' => [
 		'label'  => __( 'Landscape: Large', 'exhale' ),
-		'width'  => 900,
-		'height' => 506
+		'width'  => 896,
+		'height' => 504
 	],
 	'exhale-landscape-extra-large' => [
 		'label'  => __( 'Landscape: Extra Large', 'exhale' ),

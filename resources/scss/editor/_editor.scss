@@ -22,7 +22,7 @@
 // The editor should conform to the content width.  We also need to add 30px b/c
 // of the padding and margin in the editor.
 .wp-block {
-	max-width: $content-width + 30px;
+	max-width: calc( #{ $content-width } + 30px );
 	//@include typography;
 }
 
@@ -61,9 +61,9 @@
 	letter-spacing: 1px;
 	text-align: center;
 
-	@media only screen and ( min-width: 900px ) {
+	@media only screen and ( min-width: #{ $width-alignwide } ) {
 	//	font-size: 2.75rem;
-		max-width    : 900px;
+		max-width    : $width-alignwide;
 	}
 }
 

@@ -19,7 +19,7 @@
 		padding-right: $spacing-global;
 	}
 
-	@media only screen and ( max-width: 900px ) {
+	@media only screen and ( max-width: #{ $width-alignwide } ) {
 		&.alignwide {
 			padding-left: $spacing-global;
 			padding-right: $spacing-global;
@@ -67,7 +67,7 @@
 
 	&.alignfull.is-style-solid-color blockquote {
 		width:        100%;
-		max-width:    900px;
+		max-width:    $width-alignwide;
 		margin-left:  auto;
 		margin-right: auto;
 	}

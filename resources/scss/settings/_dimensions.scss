@@ -6,12 +6,12 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-$width-alignwide : 900px;
+$width-alignwide : 56rem;
 $width-alignfull : 100vw;
 
-$content-width: 650px;
+$content-width: 40rem;
 
-$content-width-padded : calc( #{ $content-width } + 68px );
+$content-width-padded : $content-width + ( $spacing-global * 2 );
 
 /// Defines the content width. This should match the theme's `$content_width`
 /// setting in `app/functions-setup.php`.
@@ -21,5 +21,5 @@ $content-width-padded : calc( #{ $content-width } + 68px );
 /// @return {number}  The content width in pixels.
 
 @function content-width() {
-	@return 650px;
+	@return $content-width;
 }

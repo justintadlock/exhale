@@ -86,13 +86,13 @@ p .aligncenter {
 	margin-right: auto;
 }
 
-@media( min-width: 900px ) {
+@media( min-width: #{ $width-alignwide } ) {
 
 	.alignwide,
 	.entry__content > .alignwide,
 	.entry__content > .alignfull .alignwide,
 	.entry__content > .alignwide .alignwide {
-		max-width:    900px;
+		max-width:    $width-alignwide;
 		margin-left:  auto;
 		margin-right: auto;
 	}

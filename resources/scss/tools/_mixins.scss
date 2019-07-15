@@ -9,15 +9,15 @@
 // Used for the main content.
 
 @mixin typography {
-	font-size:   1.1875rem; // 19px
-	line-height: 1.8;
+	font-size:   1.125rem; // 19px
+	line-height: 1.75;
 }
 
 @mixin heading-primary {
 	text-align: center;
 
-	@media only screen and ( min-width: 900px ) {
-		max-width: 900px;
+	@media only screen and ( min-width: #{ $width-alignwide } ) {
+		max-width: $width-alignwide;
 	}
 }
 
