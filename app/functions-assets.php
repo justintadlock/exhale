@@ -95,10 +95,8 @@ add_action( 'enqueue_block_editor_assets', function() {
 	wp_localize_script( 'exhale-editor', 'exhaleEditor', [
 		'labels' => [
 			'default'        => __( 'Default',         'exhale' ),
-			'border'         => __( 'Bordered',        'exhale' ),
 			'borderDouble'   => __( 'Double',          'exhale' ),
 			'borderDashed'   => __( 'Dashed',          'exhale' ),
-			'borderless'     => __( 'No Border',       'exhale' ),
 			'borderRadius'   => __( 'Border Radius',   'exhale' ),
 			'designSettings' => __( 'Design Settings', 'exhale' ),
 			'highlight'      => __( 'Highlight',       'exhale' ),
