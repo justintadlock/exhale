@@ -72,6 +72,8 @@ mix.then( () => {
 	];
 
 	files.forEach( file => {
-		rimraf.sync( file );
+		if ( fs.existsSync( file ) ) {
+			rimraf.sync( file );
+		}
 	} );
 } );
