@@ -6,11 +6,11 @@
 
 		<div class="entry entry--error">
 
-			<header class="entry__header">
+			<header class="entry__header o-content-width">
 				<h1 class="entry__title"><?php $error->displayTitle() ?></h1>
 			</header>
 
-			<div class="entry__content">
+			<div class="entry__content o-content-width">
 				<?php $error->displayContent() ?>
 			</div>
 
