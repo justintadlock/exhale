@@ -1,5 +1,59 @@
 # Change Log
 
+## [2.1.0] - 2019-07-17
+
+### Added
+
+- Gutenberg 6.1 support.
+- New content loop layout options:
+	- Layouts: Choose between Blog, Grid, or List.
+	- Posts Per Page: Select number of posts to show.
+	- Width: Choose from a set of predefined widths.
+	- Columns: With the grid layout, select 2-6 columns.
+	- Featured Image Size: Select size of featured image for page.
+- Footer sidebars:
+	- Adds 4 new footer sidebars.
+	- Sidebar columns auto-adjust based on active sidebars.
+	- New color options.
+	- Set of predefined width options.
+- Editor design settings:
+	- Box shadow setting for Image, Paragraph, Gallery, Media & Text blocks.
+	- Border radius setting for Image, Paragraph, Gallery, Media & Text blocks.
+	- List style setting for List blocks.
+- Added new text alignment classes:
+	- `.has-text-align-center`
+	- `.has-text-align-left`
+	- `.has-text-align-right`
+- New "Reverse" style for the Gallery block, which can be used to flip the rows of the gallery.
+- Began work toward making the theme be more of a utility and component toolkit.
+- Rudimentary support for WooCommerce added.
+- Added an `.o-content-width` object for styling items and their children that should be the width of the content.
+- New "Titanic" font size for the editor.
+
+### Fixed
+
+- Styling for post date in the Latest Posts block.
+
+### Changed
+
+- Upgraded to version 5.1 of the Hybrid Core framework.
+- Replaced the Theme Options panel in the customizer with:
+	- Theme: Global.
+	- Theme: Header.
+	- Theme: Content.
+	- Theme: Footer.
+- Tightened up margins, line-heights, and font sizes.
+
+### Removed
+
+- Editor styles:
+	- Shadow style replaced in Design Settings.
+	- Rounded style replaced in Design Settings.
+	- List styles replaced in Design Settings.
+	- Border/Borderless styles removed in favor of Box Shadow settings.
+- Removed the blog and archive posts-per-page settings from Appearance > Exhale Settings in favor of the content settings in the customizer.
+- Support for the old Subhead block that was never in any version of Gutenberg Exhale supported.
+
 ## [2.0.0] - 2019-06-19
 
 ### Added
