@@ -15,51 +15,56 @@ return [
 	'fine' => [
 		// Translators: Font size label.
 		'label' => __( 'Fine', 'exhale' ),
-		'size'  => 13
+		'size'  => 12
 	],
 	'diminutive' => [
 		// Translators: Font size label.
 		'label' => __( 'Diminutive', 'exhale' ),
-		'size'  => 14
+		'size'  => 13
 	],
 	'tiny' => [
 		// Translators: Font size label.
 		'label' => __( 'Tiny', 'exhale' ),
-		'size'  => 15
+		'size'  => 14
 	],
 	'small' => [
 		// Translators: Font size label.
 		'label' => __( 'Small', 'exhale' ),
-		'size'  => 16
+		'size'  => 15
 	],
 	'medium' => [
 		// Translators: Font size label.
 		'label' => __( 'Medium', 'exhale' ),
-		'size'  => 19
+		'size'  => 16
 	],
 	'large' => [
 		// Translators: Font size label.
 		'label' => __( 'Large', 'exhale' ),
-		'size'  => 22
+		'size'  => 18
 	],
 	'extra-large' => [
 		// Translators: Font size label.
 		'label' => __( 'Extra Large', 'exhale' ),
-		'size'  => 25
+		'size'  => 20
 	],
 	'huge' => [
 		// Translators: Font size label.
 		'label' => __( 'Huge', 'exhale' ),
-		'size'  => 30
+		'size'  => 24
 	],
 	'gargantuan' => [
 		// Translators: Font size label.
 		'label' => __( 'Gargantuan', 'exhale' ),
-		'size'  => 36
+		'size'  => 30
 	],
 	'colossal' => [
 		// Translators: Font size label.
 		'label' => __( 'Colossal', 'exhale' ),
-		'size'  => 44
+		'size'  => 36
+	],
+	'titanic' => [
+		// Translators: Font size label.
+		'label' => __( 'Titanic', 'exhale' ),
+		'size'  => 48
 	]
 ];
