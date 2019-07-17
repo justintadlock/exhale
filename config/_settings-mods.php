@@ -26,7 +26,7 @@ return [
 	},
 
 	// Blog layout.
-	'loop_blog_layout'     => 'default',
+	'loop_blog_layout'     => 'blog',
 	'loop_blog_width'      => 'full',
 	'loop_blog_columns'    => 4,
 	'loop_blog_image_size' => function() {

@@ -13,13 +13,10 @@
 
 namespace Exhale\Layout\Loop;
 
-use Exhale\Layout\LayoutLoop as Layout;
-
 use WP_Customize_Manager;
 
 use Hybrid\App;
 use Hybrid\Contracts\Bootable;
-use Exhale\Layout\Layouts;
 use Exhale\Tools\Config;
 use Exhale\Tools\Mod;
 use Exhale\Template\FeaturedImage;
@@ -96,16 +93,5 @@ class Component implements Bootable {
 		foreach ( Config::get( 'layouts-loop' ) as $name => $options ) {
 			$layouts->add( $name, new Layout( $name, $options ) );
 		}
-	}
-
-	/**
-	 * Customize register callback.
-	 *
-	 * @since  2.1.0
-	 * @access public
-	 * @param  WP_Customize_Manager  $manager
-	 * @return void
-	 */
-	public function customizeRegister( WP_Customize_Manager $manager ) {
 	}
 }

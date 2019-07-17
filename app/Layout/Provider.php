@@ -33,8 +33,8 @@ class Provider extends ServiceProvider {
 	 */
 	public function register() {
 
-		$this->app->singleton( 'layouts/global', Layouts::class );
-		$this->app->singleton( 'layouts/loop',   Layouts::class );
+		$this->app->singleton( 'layouts/global', Layouts::class      );
+		$this->app->singleton( 'layouts/loop',   Loop\Layouts::class );
 
 		$this->app->singleton( App\Component::class, function() {
 			return new App\Component( $this->app->resolve( 'layouts/global' ) );

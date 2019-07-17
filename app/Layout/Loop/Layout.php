@@ -11,7 +11,9 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Layout;
+namespace Exhale\Layout\Loop;
+
+use Exhale\Layout\Layout as Base;
 
 /**
  * Loop layout class.
@@ -19,7 +21,7 @@ namespace Exhale\Layout;
  * @since  2.1.0
  * @access public
  */
-class LayoutLoop extends Layout{
+class Layout extends Base {
 
 	/**
 	 * Array of image sizes this layout supports for its featured images.

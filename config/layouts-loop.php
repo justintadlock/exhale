@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'default' => [
-		'label'       => __( 'Default', 'exhale' ),
+	'blog' => [
+		'label'       => __( 'Blog', 'exhale' ),
 		'image_sizes' => [
 			'exhale-landscape-medium',
 			'exhale-landscape-large',

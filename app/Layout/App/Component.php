@@ -98,17 +98,6 @@ class Component implements Bootable {
 	}
 
 	/**
-	 * Customize register callback.
-	 *
-	 * @since  2.1.0
-	 * @access public
-	 * @param  WP_Customize_Manager  $manager
-	 * @return void
-	 */
-	public function customizeRegister( WP_Customize_Manager $manager ) {
-	}
-
-	/**
 	 * Filter on the body class on the front end that adds our layout class.
 	 *
 	 * @since  2.1.0

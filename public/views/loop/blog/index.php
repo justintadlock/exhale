@@ -1,8 +1,8 @@
 <?php if ( have_posts() ) : ?>
 
-	<div <?php Hybrid\Attr\display( 'loop', 'default', [
+	<div <?php Hybrid\Attr\display( 'loop', 'blog', [
 		'class' => sprintf(
-			'loop loop--default loop--%s',
+			'loop loop--blog loop--%s',
 			Exhale\Template\Loop::type()
 		),
 		'data-customize-partial-placement-context' => wp_json_encode( [
@@ -12,7 +12,7 @@
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php $engine->display( 'entry', $view->slugs() ) ?>
+			<?php $engine->display( 'entry/blog', $view->slugs() ) ?>
 
 		<?php endwhile ?>
 
