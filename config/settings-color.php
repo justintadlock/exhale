@@ -12,7 +12,8 @@
  */
 
 return [
-	'footer'            => [ 'color' => 'a9a9a9' ],
-	'footer-background' => [ 'color' => 'fcfcfc' ],
-	'footer-border'     => [ 'color' => 'f3f3f3' ]
+	'sidebar-footer-headings' => [ 'color' => '959595' ],
+	'footer'                  => [ 'color' => 'a9a9a9' ],
+	'footer-background'       => [ 'color' => 'fcfcfc' ],
+	'footer-border'           => [ 'color' => 'f3f3f3' ]
 ];
