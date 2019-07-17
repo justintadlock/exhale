@@ -162,11 +162,7 @@ class Customize extends Customizable {
 				'type'        => 'select',
 				'label'       => __( 'Layout', 'exhale' ),
 				'description' => __( 'Layout style for the content area.', 'exhale' ),
-				'choices'     => [
-					'default' => __( 'Default', 'exhale' ),
-					'grid'    => __( 'Grid',    'exhale' ),
-					'list'    => __( 'List',    'exhale' )
-				]
+				'choices'     => $this->loop_layouts->customizeChoices()
 			] );
 
 			$manager->add_control( "loop_{$type}_limit", [
