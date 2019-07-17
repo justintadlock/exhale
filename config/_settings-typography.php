@@ -16,7 +16,7 @@ return [
 		'label'           => _x( 'Headings', 'font family setting', 'exhale' ),
 		'description'     => __( 'Font used for text headings.', 'exhale' ),
 		'family'          => 'system-ui',
-		'style'           => '600',
+		'style'           => '700',
 		'variant'         => 'normal',
 		'transform'       => 'none',
 		'options'         => [ 'family', 'style', 'caps', 'transform' ]
@@ -24,7 +24,7 @@ return [
 	'primary' => [
 		'label'           => _x( 'Primary', 'font family setting', 'exhale' ),
 		'description'     => __( 'Font used for most of the text on the site.', 'exhale' ),
-		'family'          => 'system-ui',
+		'family'          => 'georgia',
 		'options'         => [ 'family' ],
 		'required_styles' => [ '400', '400i', '700', '700i' ]
 	],
