@@ -1,5 +1,11 @@
 # Change Log
 
+## [2.1.1] - 2019-07-18
+
+### Fixed
+
+- Corrected error when customizing the footer credit textarea in the customizer during the sanitization process.
+
 ## [2.1.0] - 2019-07-17
 
 ### Added
