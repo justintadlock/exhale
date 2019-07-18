@@ -55,7 +55,7 @@ class Customize extends Customizable {
 			// Translators: %s is the theme link.
 			'default'           => Mod::fallback( 'footer_credit' ),
 			'sanitize_callback' => function( $value ) {
-				return wp_kses( $value, Footer::allowedTags() );
+				return wp_kses( $value, TemplateFooter::allowedTags() );
 			},
 			'transport'         => 'postMessage'
 		] );
