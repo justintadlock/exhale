@@ -14,12 +14,13 @@
 
 	// Wrapper around the title and description.
 	&__branding {
-		flex-grow: 1;
+		flex:      1 0 auto;
 		display:   flex;
 		overflow:  hidden;
 		max-width: 50%;
 		height:    58px;
 		padding:   0 $spacing-global;
+		background:  var( --color-branding-background );
 	}
 
 	// Custom logo.
@@ -28,7 +29,6 @@
 		// Centers our image no matter what size.
 		margin: auto 0;
 		line-height: 0;
-		background:  var( --color-branding-background );
 	}
 
 	&__logo {
@@ -52,7 +52,6 @@
 		white-space: nowrap;
 		margin:      0;
 		line-height: 1;
-		background:  var( --color-branding-background );
 	}
 
 	// The site title.
@@ -68,7 +67,7 @@
 	// The site description.
 	&__description {
 		margin-left: 1.5rem;
-		padding:     22px 1.5rem 21px;
+		padding:     22px 0 21px 1.5rem;
 		font-size:   15px;
 		color:       var( --color-header-description );
 		border-left: 1px solid var( --color-header-border );
@@ -96,7 +95,6 @@
 			max-width:  unset;
 	//		display:    block;
 			text-align: center;
-			background: var( --color-branding-background );
 		}
 
 		&__title,
