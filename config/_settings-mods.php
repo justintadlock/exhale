@@ -53,6 +53,20 @@ return [
 	'loop_archive_product_cat_inherit' => 'archive_product',
 	'loop_archive_product_tag_inherit' => 'archive_product',
 
+	// Theme archive layouts (Theme Designer plugin).
+	'loop_archive_theme_inherit'    => false,
+	'loop_archive_theme_layout'     => 'grid',
+	'loop_archive_theme_width'      => '4xl',
+	'loop_archive_theme_columns'    => 2,
+	'loop_archive_theme_image_size' => 'exhale-landscape-medium',
+
+	// Plugin archive layouts (Plugin Developer plugin).
+	'loop_archive_plugin_inherit'    => false,
+	'loop_archive_plugin_layout'     => 'grid',
+	'loop_archive_plugin_width'      => '4xl',
+	'loop_archive_plugin_columns'    => 2,
+	'loop_archive_plugin_image_size' => 'exhale-landscape-medium',
+
 	// Footer sidebar layout.
 	'sidebar_footer_width' => 'full',
 
