@@ -16,6 +16,7 @@ namespace Exhale\Customize;
 use Hybrid\Tools\Collection;
 use Hybrid\Tools\ServiceProvider;
 
+use Exhale\Background;
 use Exhale\Color;
 use Exhale\Image;
 use Exhale\Layout;
@@ -41,6 +42,7 @@ class Provider extends ServiceProvider {
 
 		$this->app->singleton( Component::class, function() {
 			return new Component( [
+				Background\Customize::class,
 				Color\Customize::class,
 				Image\Customize::class,
 				Layout\Customize::class,

@@ -11,6 +11,7 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
+import { backgroundPattern } from './customize-preview/background-pattern';
 import { color }        from './customize-preview/color';
 import { contentLayout} from './customize-preview/content-layout';
 import { customHeader } from './customize-preview/custom-header';

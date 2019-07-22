@@ -16,6 +16,11 @@ return [
 	// Set the default layout.
 	'layout' => 'wide',
 
+	// Backgrounds.
+	'color_content_background_fill'   => 'a9a9a9',
+	'content_background_fill_opacity' => 0.5,
+	'content_background_svg'          => '',
+
 	// Archive layout.
 	'loop_archive_layout'     => 'list',
 	'loop_archive_width'      => 'full',

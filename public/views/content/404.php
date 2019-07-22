@@ -1,4 +1,4 @@
-<div class="app-content">
+<div <?php Hybrid\Attr\display( 'app-content' ) ?>>
 
 	<main id="main" class="app-main">
 

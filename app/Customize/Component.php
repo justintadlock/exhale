@@ -179,6 +179,12 @@ class Component implements Bootable {
 			'priority' => 15
 		] );
 
+		$manager->add_section( 'theme_content_background', [
+			'panel'     => 'theme_content',
+			'title'     => __( 'Background', 'exhale' ),
+			'priority'  => 15
+		] );
+
 		// Customize the static front page section.
 		$static_front           = $manager->get_section( 'static_front_page' );
 		$static_front->panel    = 'theme_content';
@@ -258,8 +264,9 @@ class Component implements Bootable {
 	public function registerControls( WP_Customize_Manager $manager ) {
 
 		// Register JS control types.
-		$manager->register_control_type( Controls\ImageFilter::class );
-		$manager->register_control_type( Controls\Typography::class  );
+		$manager->register_control_type( Controls\BackgroundSvg::class );
+		$manager->register_control_type( Controls\ImageFilter::class   );
+		$manager->register_control_type( Controls\Typography::class    );
 
 		// Change background color control labels.
 		$bg_color              = $manager->get_control( 'background_color' );

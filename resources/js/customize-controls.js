@@ -13,6 +13,8 @@
 
 import controlImageFilter from './customize-controls/control-image-filter';
 import controlTypography  from './customize-controls/control-typography';
+
+import backgroundPattern  from './customize-controls/background-pattern';
 import contentLayout      from './customize-controls/content-layout';
 import footer             from './customize-controls/footer';
 
