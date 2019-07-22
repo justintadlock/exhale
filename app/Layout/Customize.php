@@ -70,6 +70,15 @@ class Customize extends Customizable {
 			'archive' => __( 'Archives', 'exhale' )
 		];
 
+		$post_types = get_post_types( [ 'public' => true, '_builtin' => false, ], 'objects', 'and' );
+
+		foreach ( $post_types as $type ) {
+			$loop_layouts["archive_{$type->name}"] =sprintf(
+				__( 'Archive: %s', 'exhale' ),
+				$type->labels->name
+			);
+		}
+
 		array_map( function( $type, $label ) use ( $manager ) {
 
 			// Add the loop layout section.
@@ -96,6 +105,13 @@ class Customize extends Customizable {
 			'sanitize_callback' => 'sanitize_key',
 			'transport'         => 'postMessage'
 		] );
+
+		$types = array_merge(
+			[ 'blog', 'archive' ],
+			array_map( function( $name ) {
+				return "archive_{$name}";
+			}, get_post_types( [ 'public' => true, '_builtin' => false, ], 'names', 'and' ) )
+		);
 
 		array_map( function( $type ) use ( $manager ) {
 
@@ -131,10 +147,7 @@ class Customize extends Customizable {
 				'sanitize_callback' => 'sanitize_key'
 			] );
 
-		}, [
-			'archive',
-			'blog'
-		] );
+		}, $types );
 	}
 
 	/**
@@ -154,6 +167,13 @@ class Customize extends Customizable {
 			'description' => __( 'Select the layout used across the site.', 'exhale' ),
 			'choices'     => $this->app_layouts->customizeChoices()
 		] );
+
+		$types = array_merge(
+			[ 'blog', 'archive' ],
+			array_map( function( $name ) {
+				return "archive_{$name}";
+			}, get_post_types( [ 'public' => true, '_builtin' => false, ], 'names', 'and' ) )
+		);
 
 		array_map( function( $type ) use ( $manager ) {
 
@@ -191,9 +211,12 @@ class Customize extends Customizable {
 					'full'      => __( 'Full',        'exhale' )
 				],
 				'active_callback' => function( $control ) use ( $type ) {
-					return $this->loop_layouts->get(
-						$control->manager->get_setting( "loop_{$type}_layout" )->value()
-					)->supportsWidth();
+
+					$value = $control->manager->get_setting( "loop_{$type}_layout" )->value();
+
+					return $this->loop_layouts->has( $value )
+					       ? $this->loop_layouts->get( $value )->supportsWidth()
+					       : $this->loop_layouts->get( 'blog' )->supportsWidth();
 				}
 			] );
 
@@ -207,9 +230,12 @@ class Customize extends Customizable {
 					'max' => 6
 				],
 				'active_callback' => function( $control ) use ( $type ) {
-					return $this->loop_layouts->get(
-						$control->manager->get_setting( "loop_{$type}_layout" )->value()
-					)->supportsColumns();
+
+					$value = $control->manager->get_setting( "loop_{$type}_layout" )->value();
+
+					return $this->loop_layouts->has( $value )
+					       ? $this->loop_layouts->get( $value )->supportsColumns()
+					       : $this->loop_layouts->get( 'blog' )->supportsColumns();
 				}
 			] );
 
@@ -217,7 +243,7 @@ class Customize extends Customizable {
 				'section'     => "theme_content_loop_{$type}",
 				'type'        => 'select',
 				'choices'     => $this->image_sizes->customizeChoices(
-					$this->loop_layouts->get( Mod::get( "loop_{$type}_layout" ) )->imageSizes()
+					$this->loop_layouts->get( Mod::get( "loop_{$type}_layout", 'blog' ) )->imageSizes()
 				),
 				'label'       => esc_html__( 'Featured Image Size', 'exhale' ),
 				'description' => sprintf(
@@ -226,18 +252,18 @@ class Customize extends Customizable {
 					sprintf( '<a href="https://wordpress.org/plugins/regenerate-thumbnails/">%s</a>', esc_html__( 'Regnerate Thumbnails', 'exhale' ) )
 				),
 				'active_callback' => function( $control ) use ( $type ) {
-					$sizes = $this->loop_layouts->get(
-						$control->manager->get_setting( "loop_{$type}_layout" )->value()
-					)->imageSizes();
+
+					$value = $control->manager->get_setting( "loop_{$type}_layout" )->value();
+
+					$sizes = $this->loop_layouts->has( $value )
+					         ? $this->loop_layouts->get( $value )->imageSizes()
+					         : $this->loop_layouts->get( 'blog' )->imageSizes();
 
 					return ! empty( $sizes );
 				}
 			] );
 
-		}, [
-			'archive',
-			'blog'
-		] );
+		}, $types );
 	}
 
 	/**
@@ -249,6 +275,13 @@ class Customize extends Customizable {
 	 * @return void
 	 */
 	public function registerPartials( WP_Customize_Manager $manager ) {
+
+		$types = array_merge(
+			[ 'blog', 'archive' ],
+			array_map( function( $name ) {
+				return "archive_{$name}";
+			}, get_post_types( [ 'public' => true, '_builtin' => false, ], 'names', 'and' ) )
+		);
 
 		array_map( function( $type ) use ( $manager ) {
 
@@ -300,10 +333,7 @@ class Customize extends Customizable {
 				}
 			] );
 
-		}, [
-			'archive',
-			'blog'
-		] );
+		}, $types );
 	}
 
 	/**
@@ -316,7 +346,15 @@ class Customize extends Customizable {
 	*/
 	public function controlsJson( Collection $json ) {
 
+		$types = array_merge(
+			[ 'blog', 'archive' ],
+			array_map( function( $name ) {
+				return "archive_{$name}";
+			}, get_post_types( [ 'public' => true, '_builtin' => false, ], 'names', 'and' ) )
+		);
+
 		$json->add( 'loopLayouts', $this->loop_layouts );
+		$json->add( 'loopQueries', $types              );
 		$json->add( 'imageSizes',  $this->image_sizes  );
 	}
 
@@ -330,6 +368,14 @@ class Customize extends Customizable {
 	*/
 	public function previewJson( Collection $json ) {
 
-		$json->add( 'layouts', $this->app_layouts );
+		$types = array_merge(
+			[ 'blog', 'archive' ],
+			array_map( function( $name ) {
+				return "archive_{$name}";
+			}, get_post_types( [ 'public' => true, '_builtin' => false, ], 'names', 'and' ) )
+		);
+
+		$json->add( 'layouts',     $this->app_layouts );
+		$json->add( 'loopQueries', $types             );
 	}
 }

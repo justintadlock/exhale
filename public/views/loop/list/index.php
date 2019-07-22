@@ -3,7 +3,7 @@
 	<div <?php Hybrid\Attr\display( 'loop', 'list', [
 		'class' => sprintf(
 			'loop loop--list loop--%s',
-			Exhale\Template\Loop::type()
+			str_replace( '_', '-', Exhale\Template\Loop::type() )
 		),
 		'data-customize-partial-placement-context' => wp_json_encode( [
 			'slugs' => $view->slugs()

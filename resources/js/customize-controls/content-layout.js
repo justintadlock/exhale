@@ -1,13 +1,8 @@
 
 // Global set via `wp_localize_script()`.
-const { loopLayouts, imageSizes } = exhaleCustomizeControls;
+const { loopLayouts, loopQueries, imageSizes } = exhaleCustomizeControls;
 
-let types = [
-	'blog',
-	'archive'
-];
-
-types.forEach( type => {
+Object.values( loopQueries ).forEach( type => {
 
 	wp.customize.control( `loop_${type}_layout`, control => {
 

@@ -11,10 +11,8 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-let types = [
-	'blog',
-	'archive'
-];
+// Global set via `wp_localize_script()`.
+const { loopQueries } = exhaleCustomizePreview;
 
 let widths = [
 	'max-w-2xl',
@@ -39,12 +37,14 @@ let orientations = [
 	'square'
 ];
 
-types.forEach( ( type ) => {
+Object.values( loopQueries ).forEach( ( type ) => {
+
+	let loopClass = '.loop--' + type.replace( /_/g, '-' );
 
 	wp.customize( `loop_${type}_width`, value => {
 		value.bind( to => {
 
-			let container = document.querySelector( `.loop--${type} .grid--posts` );
+			let container = document.querySelector( `${loopClass} .grid--posts` );
 
 			if ( ! container ) {
 				return;
@@ -63,7 +63,7 @@ types.forEach( ( type ) => {
 	wp.customize( `loop_${type}_columns`, value => {
 		value.bind( to => {
 
-			let container = document.querySelector( `.loop--${type} .grid--posts` );
+			let container = document.querySelector( `${loopClass} .grid--posts` );
 
 			if ( ! container ) {
 				return;
@@ -80,7 +80,7 @@ types.forEach( ( type ) => {
 	wp.customize( `loop_${type}_image_size`, value => {
 		value.bind( to => {
 
-			let container = document.querySelector( `.loop--${type} .grid--posts` );
+			let container = document.querySelector( `${loopClass} .grid--posts` );
 
 			if ( ! container ) {
 				return;
