@@ -2,15 +2,15 @@
 	return;
 } ?>
 
-<section id="comments" class="comments">
+<section id="comments" class="comments my-8">
 
 	<?php if ( have_comments() ) : ?>
 
-		<h2 class="comments__title"><?php comments_number() ?></h2>
+		<h2 class="comments__title max-w-2xl mx-auto px-8"><?php comments_number() ?></h2>
 
 		<?php Hybrid\View\display( 'nav/pagination', 'comments' ) ?>
 
-		<ol class="comments__list">
+		<ol class="comments__list list-none mb-0 p-0">
 
 			<?php wp_list_comments( [
 				'avatar_size' => 60,
@@ -25,7 +25,7 @@
 
 	<?php if ( ! comments_open() ) : ?>
 
-		<p class="comments__closed">
+		<p class="comments__closed max-w-2xl mx-auto px-8 has-text-align-center">
 			<?php esc_html_e( 'Comments are closed.', 'exhale' ) ?>
 		</p>
 

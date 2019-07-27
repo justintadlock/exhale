@@ -58,17 +58,17 @@ $text-6xl  : 4rem;      // 64px
 @function editor-font-sizes() {
 
 	@return (
-		fine        : $text-3xs,
-		diminutive  : $text-2xs,
-		tiny        : $text-xs,
-		small       : $text-sm,
-		medium      : $text-base,
-		large       : $text-lg,
-		extra-large : $text-xl,
-		huge        : $text-2xl,
-		gargantuan  : $text-3xl,
-		colossal    : $text-4xl,
-		titanic     : $text-5xl
+	        3xs: $text-3xs,
+		2xs  : $text-2xs,
+		xs        : $text-xs,
+		sm       : $text-sm,
+		base      : $text-base,
+		lg       : $text-lg,
+		xl : $text-xl,
+		2xl        : $text-2xl,
+		3xl  : $text-3xl,
+		4xl    : $text-4xl,
+		5xl     : $text-5xl
 	);
 }
 

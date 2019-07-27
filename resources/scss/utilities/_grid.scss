@@ -1,0 +1,108 @@
+
+
+.grid {
+	//clear:                 both;
+	//display:               grid;
+	//grid-template-columns: repeat( 1, 1fr );
+	//grid-gap:              $spacing-global;
+	//list-style-type:       none;
+	//margin-bottom:         $spacing-global;
+	//padding:               0;
+
+	&--portrait {
+	//	grid-template-columns: repeat( 2, 1fr );
+	}
+
+	&--sidebar-footer {
+	//	grid-row-gap: 0;
+	//	margin-bottom: 0;
+	}
+
+	// 2 columns on medium screens.
+	//@media ( min-width: $content-width ) {
+	//	grid-template-columns: repeat( 2, 1fr );
+
+	//	&.columns-1 {
+	//		grid-template-columns: repeat( 1, 1fr );
+	//	}
+	//}
+
+	// 3-8 columns on larger screens.
+	//@media ( min-width: $width-alignwide ) {
+
+	//	@for $i from 3 through 6 {
+	//		&.columns-#{ $i } {
+	//			grid-template-columns: repeat( #{ $i }, 1fr );
+	//		}
+	//	}
+	//}
+
+	//&__item > :last-child {
+	//	margin-bottom: 0;
+	//}
+}
+
+$grid-columns: (
+	grid-col-1: repeat( 1, 1fr ),
+	grid-col-2: repeat( 2, 1fr ),
+	grid-col-3: repeat( 3, 1fr ),
+	grid-col-4: repeat( 4, 1fr ),
+	grid-col-5: repeat( 5, 1fr ),
+	grid-col-6: repeat( 6, 1fr )
+);
+
+$sizing-unit: 0.25rem;
+
+$grid-gap: (
+	grid-gap-8:  $sizing-unit * 8,
+	grid-gap-12: $sizing-unit * 12,
+	grid-gap-16: $sizing-unit * 16
+);
+
+$grid-row-gap: (
+	grid-row-gap-8:  $sizing-unit * 8,
+	grid-row-gap-12: $sizing-unit * 12,
+	grid-row-gap-16: $sizing-unit * 16
+);
+
+$grid-column-gap: (
+	grid-col-gap-8:  $sizing-unit * 8,
+	grid-col-gap-12: $sizing-unit * 12,
+	grid-col-gap-16: $sizing-unit * 16
+);
+
+@each $name, $value in $grid-columns {
+	.#{ $name } {
+		grid-template-columns: $value;
+	}
+}
+
+@each $name, $value in $grid-gap {
+	.#{ $name } {
+		grid-gap: $value;
+	}
+}
+
+@each $name, $value in $grid-row-gap {
+	.#{ $name } {
+		grid-row-gap: $value;
+	}
+}
+
+@each $name, $value in $grid-column-gap {
+	.#{ $name } {
+		grid-column-gap: $value;
+	}
+}
+
+@each $prefix, $breakpoint in ( sm: $breakpoint-sm, md: $breakpoint-md ) {
+
+	@media ( min-width: $breakpoint ) {
+
+		@each $name, $value in $grid-columns {
+			.#{ $prefix }\:#{ $name } {
+				grid-template-columns: $value;
+			}
+		}
+	}
+}

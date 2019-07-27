@@ -31,8 +31,6 @@ wp.customize.bind( 'ready', () => {
 
 		let css = 'url("data:image/svg+xml,' + url + '")';
 
-		console.log( css );
-
 		return css;
 	};
 

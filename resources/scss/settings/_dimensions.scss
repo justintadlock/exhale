@@ -13,6 +13,11 @@ $content-width: 40rem;
 
 $content-width-padded : $content-width + ( $spacing-global * 2 );
 
+$alignwide-padded : $width-alignwide + ( $spacing-global * 2 );
+
+$breakpoint-sm: $content-width + ( $spacing-global * 2 );
+$breakpoint-md: $width-alignwide + ( $spacing-global * 2 );
+
 /// Defines the content width. This should match the theme's `$content_width`
 /// setting in `app/functions-setup.php`.
 ///

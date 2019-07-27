@@ -9,21 +9,22 @@
 ////
 
 .app-content {
-	overflow:   hidden;
-	margin:     0 auto;
-	padding:    3rem 0 0;
+	//overflow:   hidden;
+	//margin:     0 auto;
+	//padding:    3rem 0 0;
 	word-wrap:  break-word;
 	word-break: normal;
 	box-sizing: border-box;
 	background: var( --color-content-background );
 
-	@include typography;
+
+	//@include typography;
 
 	.layout-boxed-content & {
 
 		@media ( min-width: $max-w-5xl ) {
-			max-width: $max-w-5xl;
-			margin:    3rem auto;
+		//	max-width: $max-w-5xl;
+		//	margin:    3rem auto;
 		}
 	}
 }

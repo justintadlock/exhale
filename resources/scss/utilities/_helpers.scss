@@ -6,10 +6,10 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-/// Separator used in metadata, etc.
+/// Clear floats.
 
-.sep {
-	margin: 0 0.5em;
+.clear {
+	clear: both;
 }
 
 // Adds a box-shadow to elements.
@@ -18,11 +18,6 @@ p.has-background,
 p.is-style-highlight,
 p.is-style-shadow {
 	padding: $spacing-global;
-}
-
-.is-style-shadow,
-.is-style-shadow img {
-	box-shadow: 0 4px 10px 0 rgba( 0, 0, 0, 0.3 );
 }
 
 .wp-block-image,

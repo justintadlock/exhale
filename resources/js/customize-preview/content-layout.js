@@ -23,18 +23,21 @@ let widths = [
 ];
 
 let columns = [
-	'columns-1',
-	'columns-2',
-	'columns-3',
-	'columns-4',
-	'columns-5',
-	'columns-6'
+	'grid-col-1',
+	'grid-col-2',
+	'grid-col-3',
+	'grid-col-4',
+	'grid-col-5',
+	'grid-col-6'
 ];
 
-let orientations = [
-	'landscape',
-	'portrait',
-	'square'
+let mdColumns = [
+	'md\:grid-col-1',
+	'md\:grid-col-2',
+	'md\:grid-col-3',
+	'md\:grid-col-4',
+	'md\:grid-col-5',
+	'md\:grid-col-6'
 ];
 
 Object.values( loopQueries ).forEach( ( type ) => {
@@ -70,10 +73,10 @@ Object.values( loopQueries ).forEach( ( type ) => {
 			}
 
 			// Remove all layout classes.
-			container.classList.remove( ...columns );
+			container.classList.remove( ...mdColumns );
 
 			// Add new layout class.
-			container.classList.add( 'columns-' + to );
+			container.classList.add( 'md\:grid-col-' + to );
 		} );
 	} );
 
@@ -86,16 +89,13 @@ Object.values( loopQueries ).forEach( ( type ) => {
 				return;
 			}
 
-			// Remove all layout classes.
-			orientations.forEach( ( orientation ) => {
+			container.classList.remove( ...columns );
 
-				if ( to.includes( orientation ) && ! container.classList.contains( 'grid--' + orientation ) ) {
-					container.classList.add( 'grid--' + orientation );
-
-				} else if ( ! to.includes( orientation ) ) {
-					container.classList.remove( 'grid--' + orientation );
-				}
-			} );
+			if ( to.includes( 'landscape' ) ) {
+				container.classList.add( 'grid-col-1' );
+			} else {
+				container.classList.add( 'grid-col-2' );
+			}
 
 		} );
 	} );

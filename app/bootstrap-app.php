@@ -32,6 +32,7 @@ $exhale = new \Hybrid\Core\Application();
 
 $exhale->provider( \Exhale\Provider::class            );
 $exhale->provider( \Exhale\Background\Provider::class );
+$exhale->provider( \Exhale\Block\Provider::class      );
 $exhale->provider( \Exhale\CleanWP\Provider::class    );
 $exhale->provider( \Exhale\Color\Provider::class      );
 $exhale->provider( \Exhale\Customize\Provider::class  );

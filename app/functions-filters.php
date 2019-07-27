@@ -81,7 +81,7 @@ add_filter( 'excerpt_length', function() {
 add_filter( 'excerpt_more', function() {
 
 	return sprintf(
-		'&thinsp;&hellip;&thinsp;<a href="%s" class="entry__more-link">%s</a>',
+		'&thinsp;&hellip;&thinsp;<a href="%s" class="entry__more-link italic">%s</a>',
 		esc_url( get_permalink() ),
 		sprintf(
 			// Translators: %s is the post title for screen readers.
@@ -120,6 +120,34 @@ function nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 
 	return $item_output;
 }
+
+add_filter( 'nav_menu_css_class', function( $classes, $items, $args, $depth ) {
+
+	if ( 'primary' === $args->theme_location ) {
+		$classes[] = 'md:inline';
+	} elseif ( 'footer' === $args->theme_location ) {
+		$classes[] = 'inline mx-4';
+	} elseif ( 'social' === $args->theme_location ) {
+		$classes[] = 'inline mx-2';
+	}
+
+	return $classes;
+
+}, 15, 4 );
+
+add_filter( 'nav_menu_link_attributes', function( $attr, $item, $args, $depth ) {
+
+	if ( 'primary' === $args->theme_location ) {
+		$attr['class'] .= ' block md:inline-block px-8 py-4 md:p-6 no-underline hover:underline focus:underline';
+	} elseif ( 'footer' === $args->theme_location ) {
+		$attr['class'] .= ' no-underline hover:underline focus:underline';
+	} elseif ( 'social' === $args->theme_location ) {
+		$attr['class'] .= ' inline-flex';
+	}
+
+	return $attr;
+
+}, 15, 4 );
 
 /**
  * Converts old page template slugs to the updated slug.

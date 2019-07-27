@@ -28,11 +28,20 @@ let widths = [
 	'max-w-full'
 ];
 
-let columns = [
-	'columns-1',
-	'columns-2',
-	'columns-3',
-	'columns-4'
+let smColumns = [
+	'sm\:grid-col-1',
+	'sm\:grid-col-2',
+	'sm\:grid-col-3',
+	'sm\:grid-col-4',
+	'sm\:grid-col-5',
+	'sm\:grid-col-6'
+];
+
+let mdColumns = [
+	'md\:columns-1',
+	'md\:columns-2',
+	'md\:columns-3',
+	'md\:columns-4'
 ];
 
 if ( 'undefined' !== typeof wp.customize.selectiveRefresh ) {
@@ -45,9 +54,14 @@ if ( 'undefined' !== typeof wp.customize.selectiveRefresh ) {
 				return;
 			}
 
-			sidebarFooter.classList.remove( ...columns );
+			let count = sidebarFooter.childElementCount;
 
-			sidebarFooter.classList.add( 'columns-' + sidebarFooter.childElementCount );
+			sidebarFooter.classList.remove( ...smColumns );
+			sidebarFooter.classList.remove( ...mdColumns );
+
+			sidebarFooter.classList.add( 'sm\:grid-col-' + 2 <= count ? 2 : 1 );
+
+			sidebarFooter.classList.add( `md\:grid-col-${ count }` );
 		}
 	} );
 }

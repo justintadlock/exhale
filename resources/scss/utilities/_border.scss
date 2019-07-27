@@ -6,6 +6,42 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+$border-width: (
+	'':   1px,
+	'-0': 0,
+	'-2': 0.125rem,
+	'-4': 0.25rem,
+//	-8: 0.5rem
+);
+
+@each $name, $value in $border-width {
+	.border#{ $name } {
+		border-width: $value;
+	}
+}
+
+@each $side, $position in ( t: top, r: right, b: bottom, l: left ) {
+
+	@each $name, $value in $border-width {
+		.border-#{ $side }#{ $name } {
+			border-#{ $position }-width: $value;
+		}
+	}
+}
+
+$border-style: (
+	border-solid:  solid,
+	border-dashed: dashed,
+	border-dotted: dotted,
+	border-none:   none
+);
+
+@each $name, $value in $border-style {
+	.#{ $name } {
+		border-style: $value;
+	}
+}
+
 $border-radius: (
 	none: $rounded-none,
 	sm:   $rounded-sm,
@@ -13,24 +49,6 @@ $border-radius: (
 	lg:   $rounded-lg,
 	xl:   $rounded-xl
 );
-
-/// Used for small images that are possibly something like a smiley, transparent
-/// PNG, and so on where we don't want borders.
-
-.is-style-borderless,
-.is-style-borderless img {
-	border: none;
-	outline: none;
-	box-shadow: none;
-}
-
-/// Rounded block style.
-///
-/// @deprecated 2.1.0
-
-.is-style-rounded img {
-	border-radius: 9999px;
-}
 
 // Border Radius.
 
@@ -40,4 +58,8 @@ $border-radius: (
 	.wp-block-gallery.rounded-#{ $radius-name } figcaption {
 		border-radius: #{ $radius-value }
 	}
+}
+
+.rounded-full {
+	border-radius: 50%;
 }

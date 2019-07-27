@@ -7,19 +7,27 @@
 ////
 
 .app-header {
-	display:       flex;
-	box-sizing:    border-box;
+	//display:       flex;
+	//height:        4rem;
+	//box-sizing:    border-box;
 	background:    var( --color-header-background );
-	border-bottom: 1px solid var( --color-header-border );
+	//border-bottom: 1px solid var( --color-header-border );
+
+	&,
+	* {
+		border-color: var( --color-header-border );
+	}
+
 
 	// Wrapper around the title and description.
 	&__branding {
-		flex-grow: 1;
-		display:   flex;
-		overflow:  hidden;
-		max-width: 50%;
-		height:    58px;
-		padding:   0 $spacing-global;
+	//	flex-grow: 1;
+	//	display:   flex;
+	//	overflow:  hidden;
+	//	max-width: 50%;
+	//	height:    4rem;
+	//	padding:   0 $spacing-global;
+		background:  var( --color-branding-background );
 	}
 
 	// Custom logo.
@@ -28,7 +36,6 @@
 		// Centers our image no matter what size.
 		margin: auto 0;
 		line-height: 0;
-		background:  var( --color-branding-background );
 	}
 
 	&__logo {
@@ -50,15 +57,14 @@
 	&__title,
 	&__description {
 		white-space: nowrap;
-		margin:      0;
-		line-height: 1;
-		background:  var( --color-branding-background );
+	//	margin:      0;
+	//	line-height: 1;
 	}
 
 	// The site title.
 	&__title {
-		padding:           19px 0;
-		font-size:         20px;
+	//	padding:           19px 0;
+	//	font-size:         20px;
 	}
 
 	.wp-custom-logo &__title {
@@ -66,42 +72,47 @@
 	}
 
 	// The site description.
+	&__sep,
 	&__description {
-		margin-left: 1.5rem;
-		padding:     22px 1.5rem 21px;
-		font-size:   15px;
-		color:       var( --color-header-description );
-		border-left: 1px solid var( --color-header-border );
+		color: var( --color-header-description );
+	}
+
+	&__description {
+	//	margin-left: 1.5rem;
+	//	padding:     22px 1.5rem 21px;
+	//	font-size:   15px;
+	//	border-color: var( --color-header-border );
+	//	border-left: 1px solid var( --color-header-border );
 	}
 
 	// Site title link.
 	&__title-link {
 		color:           var( --color-header-title );
-		text-decoration: none;
+	//	text-decoration: none;
 
 		&:hover,
 		&:focus {
 			color:           var( --color-header-title-hover );
-			text-decoration: underline;
+	//		text-decoration: underline;
 		}
 	}
 
 	@media ( max-width: $width-alignwide ) {
 
-		display: block;
+	//	display: block;
 
 		&__branding {
-			justify-content: center;
-			flex-wrap: wrap;
-			max-width:  unset;
+	//		justify-content: center;
+	//		flex-wrap: wrap;
+	//		max-width:  unset;
 	//		display:    block;
-			text-align: center;
+	//		text-align: center;
 			background: var( --color-branding-background );
 		}
 
 		&__title,
 		&__description {
-			display: inline-block;
+	//		display: inline-block;
 		}
 	}
 }

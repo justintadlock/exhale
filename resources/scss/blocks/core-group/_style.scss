@@ -32,13 +32,13 @@
 			margin-right: auto;
 		}
 	}
+}
 
-	> .wp-block-group__inner-container {
-		margin-left:  auto;
-		margin-right: auto;
+.wp-block-group__inner-container {
+	margin-left:  auto;
+	margin-right: auto;
 
-		@media ( min-width: $content-width-padded ) {
-			max-width: 100%;
-		}
+	@media ( min-width: $content-width-padded ) {
+		max-width: 100%;
 	}
 }

@@ -1,9 +1,5 @@
 // Inline elements that don't have a more-specific folder.
 
-// <center> tag.
-
-center { text-align: center; }
-
 // strong, bold, etc.
 b,
 strong { font-weight: 700; }
@@ -15,7 +11,8 @@ strong { font-weight: 700; }
 i,
 em,
 mark,
-cite { font-style : italic; }
+cite,
+dfn { font-style : italic; }
 
 i i,
 em em { font-style : normal; }
@@ -43,16 +40,18 @@ small,
 sup,
 sub { font-size : 0.8125em; }
 
-sup {
-	vertical-align : baseline;
-	position       : relative;
-	bottom         : 0.3em;
-}
-
+sup,
 sub {
 	vertical-align : baseline;
 	position       : relative;
-	top            : 0.3em;
+}
+
+sup {
+	bottom : 0.3em;
+}
+
+sub {
+	top : 0.3em;
 }
 
 // Deletes, strikes, line-throughs.
@@ -65,12 +64,5 @@ strike {
 
 // Inserts.
 ins {
-	border-bottom:   1px dashed var( --green-400 );
-	text-decoration: none;
-}
-
-// Defintion.
-dfn {
-	font-style:      italic;
-	text-decoration: none;
+	border-bottom: 1px dashed var( --green-400 );
 }

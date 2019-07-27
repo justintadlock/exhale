@@ -1,10 +1,14 @@
 <?php if ( $active_sidebars = Exhale\Template\Footer::activeSidebars() ) : ?>
 
-	<aside <?php Hybrid\Attr\display( 'sidebar', $sidebar ) ?>>
+	<aside <?php Hybrid\Attr\display( 'sidebar', $sidebar, [
+		'class' => 'sidebar sidebar--footer pt-8 px-8 border-0 border-t border-solid'
+	]
+	) ?>>
 
 		<ul <?php Hybrid\Attr\display( 'grid', 'sidebar-footer', [
 			'class' => sprintf(
-				'grid grid--sidebar-footer columns-%s max-w-%s mx-auto',
+				'grid grid--sidebar-footer grid-col-1 sm:grid-col-%s md:grid-col-%s grid-col-gap-8 list-none max-w-%s my-0 mx-auto p-0',
+				2 <= count( $active_sidebars ) ? 2 : 1,
 				esc_attr( count( $active_sidebars ) ),
 				esc_attr( Exhale\Tools\Mod::get( 'sidebar_footer_width' ) )
 			)

@@ -9,7 +9,7 @@
 // Used for the main content.
 
 @mixin typography {
-	font-size:   1.125rem; // 19px
+	font-size:   1.125rem; // 18px
 	line-height: 1.75;
 }
 
@@ -23,7 +23,7 @@
 
 @mixin meta {
 	font-family: var( --font-family-secondary );
-	font-size: 16px;
+	font-size: 1rem;
 	color: var( --color-secondary );
 }
 
@@ -57,7 +57,6 @@
 	line-height:     1;
 	font-family:     var( --font-family-secondary );
 	font-size:       1.125rem;
-	text-decoration: none;
 	color:           var( --color-content-background );
 	background:      var( --color-primary );
 	border:          none;

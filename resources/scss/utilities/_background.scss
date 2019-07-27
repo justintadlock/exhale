@@ -17,11 +17,12 @@
 /// Loops through the theme colors and adds utility classes for them. Primarily,
 /// these are the `.has-{$color}-color` and `.has-{$color}-background-color`
 /// classes added via Gutenberg. However, they are useful elsewhere.
+///
+/// @todo Rename to `.bg-#{ $color }`.
 
 @each $color-name, $color-value in block-colors() {
 
-	.has-#{ $color-name }-background-color,
-	a.has-#{ $color-name }-background-color {
+	.bg-#{ $color-name } {
 		background-color: $color-value;
 	}
 }

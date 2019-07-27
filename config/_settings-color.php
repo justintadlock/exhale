@@ -108,6 +108,39 @@ return [
 		'description'     => __( 'Color used when hovering or focusing a link.', 'exhale' ),
 		'section'         => 'theme_header_colors'
 	],
+	'menu-primary-background-hover' => [
+		'color'           => '',
+		'label'           => __( 'Menu Link Background Hover', 'exhale' ),
+		'description'     => __( 'Background color used when hovering or focusing a link.', 'exhale' ),
+		'section'         => 'theme_header_colors'
+	],
+	'menu-primary-toggle' => [
+		'label'           => __( 'Mobile Menu Button', 'exhale' ),
+		'description'     => __( 'Color for the mobile menu toggle button.', 'exhale' ),
+		'color'           => function() {
+			$color = \Exhale\Tools\Mod::color( 'header-background' );
+			$color = $color ?: \Exhale\Tools\Mod::color( 'header-background' );
+			$color = $color ?: get_background_color();
+			return $color ?: 'ffffff';
+		},
+		'section'         => 'theme_header_colors'
+	],
+	'menu-primary-toggle-background' => [
+		'label'           => __( 'Mobile Menu Button Background', 'exhale' ),
+		'description'     => __( 'Background color for the mobile menu toggle button.', 'exhale' ),
+		'color'           => function() {
+			return \Exhale\Tools\Mod::color( 'header-title' );
+		},
+		'section'         => 'theme_header_colors'
+	],
+	'menu-primary-toggle-background-hover' => [
+		'label'           => __( 'Mobile Menu Button Background Hover', 'exhale' ),
+		'description'     => __( 'Background color for the mobile menu toggle button.', 'exhale' ),
+		'color'           => function() {
+			return \Exhale\Tools\Mod::color( 'header-title-hover' );
+		},
+		'section'         => 'theme_header_colors'
+	],
 	'footer-background' => [
 		'label'           => __( 'Footer: Background', 'exhale' ),
 		'description'     => __( 'Background color for the entire footer section.', 'exhale' ),

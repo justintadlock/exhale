@@ -1,17 +1,29 @@
-<li <?php Hybrid\Attr\display( 'comment' ) ?>>
+<li <?php Hybrid\Attr\display( 'comment', '', [
+	'class' => 1 === $depth ? 'max-w-2xl mx-auto mb-0 sm:mb-8 pt-8 pr-8 pl-8' : ''
+] ) ?>>
 
-	<header class="comment__meta">
+	<header class="comment__meta mb-4 pb-4">
 		<?php Hybrid\Comment\display_parent_link( [
 			// Translators: %s is the parent comment link.
 			'text'   => __( 'In reply to %s', 'exhale' ),
 			'depth'  => 3,
+			'class'  => 'comment__parent-link inline-block mb-2',
 			'after'  => '<br /></div>',
-			'before' => '<div class="comment__parent">' . Exhale\Tools\Svg::render( 'caret-right-solid' )
+			'before' => sprintf(
+				'<div class="comment__parent text-sm">%s',
+				Exhale\Tools\Svg::render( 'caret-right-solid' )
+			)
 		] ) ?>
 
-		<?php echo get_avatar( $data->comment, $data->args['avatar_size'], '', '', [ 'class' => 'comment__avatar' ] ) ?>
+		<?php echo get_avatar( $data->comment, $data->args['avatar_size'], '', '', [
+			'class' => 'comment__avatar mr-4 rounded-full'
+		] ) ?>
 
-		<?php Hybrid\Comment\display_author( [ 'after' => '<br />' ] ) ?>
+		<?php Hybrid\Comment\display_author_link( [
+			'class' => 'comment__author-link font-700 no-underline hover:underline focus:underline',
+			'after' => '<br />',
+		] ) ?>
+
 		<?php Hybrid\Comment\display_permalink( [
 			'text' => Hybrid\Comment\render_date( [
 				'format' => sprintf(

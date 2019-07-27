@@ -65,9 +65,9 @@ class FeaturedImage extends Image {
 		}
 
 		$args['size']    = Loop::imageSize()->name();
-		$args['class']   = 'entry__image aligncenter';
+		$args['class']   = 'entry__image inline-block';
 		$args['post_id'] = $post_id;
-		$args['before']  = sprintf( '<figure class="entry__media alignfull"%s>', $context );
+		$args['before']  = sprintf( '<figure class="entry__media max-w-full mb-4 has-text-align-center"%s>', $context );
 		$args['after']   = '</figure>';
 
 		return parent::carbon( $type, $args );

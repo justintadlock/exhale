@@ -6,9 +6,169 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-// Margins.
+$spacing-unit: 0.25rem;
 
-.mx-auto {
-	margin-left:  auto;
-	margin-right: auto;
+$spacing: (
+	0: 0,
+	1: $spacing-unit * 1,
+	2: $spacing-unit * 2,
+	3: $spacing-unit * 3,
+	4: $spacing-unit * 4,
+	5: $spacing-unit * 5,
+	6: $spacing-unit * 6,
+	8: $spacing-unit * 8,
+//	10: $spacing-unit * 10,
+	12: $spacing-unit * 12,
+	16: $spacing-unit * 16,
+//	20: $spacing-unit * 20,
+//	24: $spacing-unit * 24,
+//	32: $spacing-unit * 32,
+//	40: $spacing-unit * 40,
+//	48: $spacing-unit * 48,
+//	56: $spacing-unit * 56,
+//	64: $spacing-unit * 64,
+	px: 1px
+);
+
+$padding: $spacing;
+
+$margin: map-merge( $spacing, (
+	auto: auto
+) );
+
+@each $name, $value in $padding {
+
+	.p-#{ $name } {
+		padding: $value;
+	}
+
+	.py-#{ $name } {
+		padding-top:    $value;
+		padding-bottom: $value;
+	}
+
+	.px-#{ $name } {
+		padding-left:  $value;
+		padding-right: $value;
+	}
+
+	.pt-#{ $name } {
+		padding-top: $value;
+	}
+
+	.pb-#{ $name } {
+		padding-bottom: $value;
+	}
+
+	.pr-#{ $name } {
+		padding-right: $value;
+	}
+
+	.pl-#{ $name } {
+		padding-left: $value;
+	}
+}
+
+@each $name, $value in $margin {
+
+	.m-#{ $name } {
+		margin: $value;
+	}
+
+	.my-#{ $name } {
+		margin-top:    $value;
+		margin-bottom: $value;
+	}
+
+	.mx-#{ $name } {
+		margin-left:  $value;
+		margin-right: $value;
+	}
+
+	.mt-#{ $name } {
+		margin-top: $value;
+	}
+
+	.mb-#{ $name } {
+		margin-bottom: $value;
+	}
+
+	.mr-#{ $name } {
+		margin-right: $value;
+	}
+
+	.ml-#{ $name } {
+		margin-left: $value;
+	}
+}
+
+@each $prefix, $breakpoint in ( sm: $breakpoint-sm, md: $breakpoint-md ) {
+
+	@media ( min-width: $breakpoint ) {
+		@each $name, $value in $padding {
+
+			.#{ $prefix }\:p-#{ $name } {
+				padding: $value;
+			}
+
+			.#{ $prefix }\:py-#{ $name } {
+				padding-top: $value;
+				padding-bottom: $value;
+			}
+
+			.#{ $prefix }\:px-#{ $name } {
+				padding-left: $value;
+				padding-right: $value;
+			}
+
+			.#{ $prefix }\:pt-#{ $name } {
+				padding-top: $value;
+			}
+
+			.#{ $prefix }\:pb-#{ $name } {
+				padding-bottom: $value;
+			}
+
+			.#{ $prefix }\:pr-#{ $name } {
+				padding-right: $value;
+			}
+
+			.#{ $prefix }\:pl-#{ $name } {
+				padding-left: $value;
+			}
+		}
+
+		@each $name, $value in $margin {
+
+			.#{ $prefix }\:m-#{ $name } {
+				margin: $value;
+			}
+
+			.#{ $prefix }\:my-#{ $name } {
+				margin-top:    $value;
+				margin-bottom: $value;
+			}
+
+			.#{ $prefix }\:mx-#{ $name } {
+				margin-left:  $value;
+				margin-right: $value;
+			}
+
+			.#{ $prefix }\:mt-#{ $name } {
+				margin-top: $value;
+			}
+
+			.#{ $prefix }\:mb-#{ $name } {
+				margin-bottom: $value;
+			}
+
+			.#{ $prefix }\:mr-#{ $name } {
+				margin-right: $value;
+			}
+
+			.#{ $prefix }\:ml-#{ $name } {
+				margin-left: $value;
+			}
+		}
+	}
 }

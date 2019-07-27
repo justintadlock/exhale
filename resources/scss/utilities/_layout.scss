@@ -1,0 +1,231 @@
+
+$displays : (
+	block:        block,
+	inline-block: inline-block,
+	inline:       inline,
+	flex:         flex,
+	grid:         grid,
+	inline-flex:  inline-flex,
+	table:        table,
+	table-row:    table-row,
+	table-cell:   table-cell,
+	hidden:       none
+);
+
+$overflow: (
+	overflow-auto: auto,
+	overflow-hidden: hidden
+);
+
+$overflow-y: (
+	overflow-y-auto:    auto,
+	overflow-y-hidden:  hidden,
+	overflow-y-visible: visible,
+	overflow-y-scroll:  scroll
+);
+
+$overflow-x: (
+	overflow-x-auto:    auto,
+	overflow-x-hidden:  hidden,
+	overflow-x-visible: visible,
+	overflow-x-scroll:  scroll
+);
+
+$positions: (
+	static:   static,
+	fixed:    fixed,
+	absolute: absolute,
+	relative: relative,
+	//sticky: sticky
+);
+
+$visibility: (
+	visible:   visible,
+	invisible: hidden
+);
+
+$z-indices: (
+	z-0:    0,
+	z-10:   10,
+	z-20:   20,
+	z-30:   30,
+	z-40:   40,
+	z-50:   50,
+	z-auto: auto
+);
+
+$placements: (
+	top: (
+		inset,
+		inset-y,
+		top
+	),
+	right: (
+		inset,
+		inset-x,
+		right
+	),
+	bottom: (
+		inset,
+		inset-y,
+		bottom
+	),
+	left: (
+		inset,
+		inset-x,
+		left
+	)
+);
+
+@each $name, $value in $overflow {
+	.#{ $name } {
+		overflow: $value;
+	}
+}
+
+@each $name, $value in $overflow-y {
+	.#{ $name } {
+		overflow-y: $value;
+	}
+}
+
+@each $name, $value in $overflow-x {
+	.#{ $name } {
+		overflow-x: $value;
+	}
+}
+
+@each $display-selector, $display-value in $displays {
+	.#{ $display-selector } {
+		display: $display-value;
+	}
+}
+
+@each $position-selector, $position-value in $positions {
+	.#{ $position-selector } {
+		position: $position-value;
+	}
+}
+
+@each $placement, $placement-types in $placements {
+
+	$placement-zero: null;
+	$placement-auto: null;
+
+	@each $type in $placement-types {
+		$placement-zero: append( $placement-zero, unquote( ".#{ $type }-0"    ), comma );
+		$placement-auto: append( $placement-auto, unquote( ".#{ $type }-auto" ), comma );
+	}
+
+	#{ $placement-zero } {
+		#{ $placement }: 0;
+	}
+
+	#{ $placement-auto } {
+		#{ $placement }: auto;
+	}
+}
+
+@each $visibility-selector, $visibility-value in $visibility {
+	.#{ $visibility-selector } {
+		visibility: $visibility-value;
+	}
+}
+
+@each $index-selector, $index-value in $z-indices {
+	.#{ $index-selector } {
+		z-index: $index-value;
+	}
+}
+
+@media ( min-width: $breakpoint-sm ) {
+
+	@each $display-selector, $display-value in $displays {
+		.sm\:#{ $display-selector } {
+			display: $display-value;
+		}
+	}
+
+	@each $position-selector, $position-value in $positions {
+		.sm\:#{ $position-selector } {
+			position: $position-value;
+		}
+	}
+
+	@each $placement, $placement-types in $placements {
+
+		$placement-zero: null;
+		$placement-auto: null;
+
+		@each $type in $placement-types {
+			$placement-zero: append( $placement-zero, unquote( ".sm\\:#{ $type }-0"    ), comma );
+			$placement-auto: append( $placement-auto, unquote( ".sm\\:#{ $type }-auto" ), comma );
+		}
+
+		#{ $placement-zero } {
+			#{ $placement }: 0;
+		}
+
+		#{ $placement-auto } {
+			#{ $placement }: auto;
+		}
+	}
+
+	@each $visibility-selector, $visibility-value in $visibility {
+		.sm\:#{ $visibility-selector } {
+			visibility: $visibility-value;
+		}
+	}
+
+	@each $index-selector, $index-value in $z-indices {
+		.sm\:#{ $index-selector } {
+			z-index: $index-value;
+		}
+	}
+}
+
+@media ( min-width: $breakpoint-md ) {
+
+	@each $display-selector, $display-value in $displays {
+		.md\:#{ $display-selector } {
+			display: $display-value;
+		}
+	}
+
+	@each $position-selector, $position-value in $positions {
+		.md\:#{ $position-selector } {
+			position: $position-value;
+		}
+	}
+
+	@each $placement, $placement-types in $placements {
+
+		$placement-zero: null;
+		$placement-auto: null;
+
+		@each $type in $placement-types {
+			$placement-zero: append( $placement-zero, unquote( ".md\\:#{ $type }-0"    ), comma );
+			$placement-auto: append( $placement-auto, unquote( ".md\\:#{ $type }-auto" ), comma );
+		}
+
+		#{ $placement-zero } {
+			#{ $placement }: 0;
+		}
+
+		#{ $placement-auto } {
+			#{ $placement }: auto;
+		}
+	}
+
+	@each $visibility-selector, $visibility-value in $visibility {
+		.md\:#{ $visibility-selector } {
+			visibility: $visibility-value;
+		}
+	}
+
+	@each $index-selector, $index-value in $z-indices {
+		.md\:#{ $index-selector } {
+			z-index: $index-value;
+		}
+	}
+}

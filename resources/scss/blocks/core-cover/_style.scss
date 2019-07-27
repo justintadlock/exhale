@@ -17,6 +17,8 @@
 	display:             flex;
 	justify-content:     center;
 	align-items:         center;
+	text-shadow: 1px 1px 2px rgba( 0, 0, 0, 0.5 );
+	color:     var( --white );
 	background-color:    var( --black );
 	box-shadow: 0 1px 3px rgba( 0, 0, 0, 0.12 ),
 	            0 1px 2px rgba( 0, 0, 0, 0.24 );
@@ -33,7 +35,6 @@
 		background-position: 0 0; // This keeps the image from jumping.
 		background-attachment: fixed;
 	}
-
 
 	// Left/Right text content.
 	&.has-left-content {
@@ -74,17 +75,10 @@
 }
 
 .wp-block-cover__inner-container {
-	color:     var( --white );
 	z-index:   1;
 
-	@for $i from 1 through 6 {
-		h#{ $i }:not([class*="-color"]) {
-			color: inherit;
-		}
-	}
-
-	p, h1, h2, h3, h4, h5, h6 {
-		text-shadow: 1px 1px 2px rgba( 0, 0, 0, 0.5 );
+	> *:not([class*="-color"]) {
+		color: inherit;
 	}
 }
 
@@ -92,7 +86,6 @@
 .wp-block-cover-text {
 	font-size:     2.75rem;
 	text-align:    center;
-	text-shadow:   1px 1px 2px rgba( 0, 0, 0, 0.5 );
 
 	@media ( max-width: $content-width ) {
 		font-size: 2.25rem;

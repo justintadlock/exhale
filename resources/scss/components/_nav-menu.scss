@@ -6,83 +6,102 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+.toggle__button {
+	color: var( --color-menu-primary-toggle );
+	background-color: var( --color-menu-primary-toggle-background );
+
+	&:hover,
+	&:focus {
+		background-color: var( --color-menu-primary-toggle-background-hover );
+	}
+}
+
 .menu {
 
 	&__items {
-		list-style: none;
-		margin:     0;
-		padding:    0;
+	//	list-style: none;
+	//	margin:     0;
+	//	padding:    0;
 	}
 
 	&__item,
 	&__link {
-		display: inline-block;
+	//	display: inline-block;
 	}
 
 	// Primary menu.
 
 	&--primary {
-		position:           relative;
-		white-space:        nowrap;
-		overflow-x:         auto;
-		overflow-y:         hidden;
-		scroll-behavior:    smooth;
-		scrollbar-width:    none; // Firefox.
-		-ms-overflow-style: -ms-autohiding-scrollbar;
-		margin-left:        auto; // This aligns the menu to the right.
-		padding-right:      $spacing-global - 1.5rem;
+	//	height:             4rem;
+	//	position:           relative;
+	//	white-space:        nowrap;
+	//	overflow-x:         auto;
+	//	overflow-y:         hidden;
+	//	scroll-behavior:    smooth;
+	//	scrollbar-width:    none; // Firefox.
+	//	-ms-overflow-style: -ms-autohiding-scrollbar;
+	//	margin-left:        auto; // This aligns the menu to the right.
+	//	padding-right:      $spacing-global - 1.5rem;
+
 
 		font-family: var( --font-family-secondary );
-		font-size:   16px;
-		line-height: 1;
+	//	font-size:   16px;
+	//	line-height: 1;
 		color:       var( --color-menu-primary );
 
+		border-top: 1px solid var( --color-header-border );
+
+		@media ( min-width: $breakpoint-md ) {
+			border: none;
+		}
+
 		&::-webkit-scrollbar {
-			display: none;
+		//	display: none;
 		}
 
 		&.menu--scroll {
-			padding-left: 2rem;
+		//	padding-left: 2rem;
 
 			.menu__items {
-				text-align: left;
+		//		text-align: left;
 			}
 		}
 
 		@media ( max-width: $width-alignwide ) {
-			padding: 0;
+		//	padding: 0;
 
-			border-top: 1px solid var( --color-header-border );
+		//	border-top: 1px solid var( --color-header-border );
 
 			.menu__items {
-				text-align: center;
+		//		text-align: center;
 			}
 
 			&.menu--scroll .menu__items {
-				text-align: left;
+		//		text-align: left;
 			}
 		}
 
 		&.menu--scroll::before {
-			content:     "\027f7";
-			position:    absolute;
-			line-height: 58px;
-			left:        1.25rem;
+		//	content:     "\027f7";
+		//	position:    absolute;
+		//	line-height: 58px;
+		//	left:        1.25rem;
 		}
 
 		.menu__item {
-			display: inline;
+		//	display: inline;
 		}
 
 		.menu__link {
-			padding:         21px 1.5rem;
-			text-decoration: none;
+		//	padding:         1.5rem 1.5rem;
+		//	text-decoration: none;
 			color:           inherit;
 
 			&:hover,
 			&:focus {
-				text-decoration: underline;
+		//		text-decoration: underline;
 				color:           var( --color-menu-primary-hover );
+				background-color: var( --color-menu-primary-background-hover );
 			}
 		}
 	}
@@ -90,22 +109,22 @@
 	// Centered menus.
 	&--footer,
 	&--social {
-		text-align:    center;
-		margin-bottom: $spacing-global;
+	//	text-align:    center;
+	//	margin-bottom: $spacing-global;
 	}
 
 	// Footer menu.
 
 	&--footer {
 		.menu__item {
-			margin: 0 $spacing-half;
+	//		margin: 0 $spacing-half;
 		}
 		.menu__link {
-			text-decoration: none;
+	//		text-decoration: none;
 
 			&:hover,
 			&:focus {
-				text-decoration: underline;
+	//			text-decoration: underline;
 			}
 		}
 	}
@@ -115,11 +134,16 @@
 	&--social {
 
 		.menu__link {
-			margin:   0.5rem;
+	//		margin: 0 0.5rem;
 
 			svg {
-				width:  24px;
-				height: 24px;
+				// Aligns the svg to the baseline.
+				position: relative;
+				top: 0.25em;
+				// ---
+
+				width:  20px;
+				height: 20px;
 			}
 		}
 	}

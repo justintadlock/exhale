@@ -9,7 +9,7 @@
 .wp-block-image {
 
 	img {
-		display: block;
+	//	display: block;
 	}
 
 	&.alignfull img {
@@ -41,6 +41,6 @@
 
 	figcaption {
 		// components/_text-secondary.scss
-		text-align: center;
+	//	text-align: center;
 	}
 }

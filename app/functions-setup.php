@@ -68,7 +68,8 @@ add_action( 'after_setup_theme', function() {
 		'flex-height' => true,
 		'header-text' => [
 			'app-header__title',
-			'app-header__description'
+			'app-header__description',
+			'app-header__sep'
 		]
 	] );
 

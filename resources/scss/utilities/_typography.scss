@@ -1,0 +1,156 @@
+////
+/// Text helper classes.
+///
+/// @group  Utilities
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+/// Text decoration.
+
+$text-decoration: (
+	underline:    underline,
+//	line-through: line-through,
+	no-underline: none
+);
+
+@each $name, $value in $text-decoration {
+	.#{ $name },
+	.hover\:#{ $name }:hover,
+	.focus\:#{ $name }:focus {
+		text-decoration: $value;
+	}
+}
+
+/// Font family.
+
+$font-families: (
+	font-primary:   var( --font-family-primary   ),
+	font-secondary: var( --font-family-secondary ),
+	font-headings:  var( --font-family-headings  )
+);
+
+@each $name, $value in $font-families {
+	.#{ $name } {
+		font-family: $value;
+	}
+}
+
+/// Font sizes.
+///
+/// Loops through the editor font sizes and adds utility classes for them. This
+/// handles the `.has-{$size}-font-size` classes added via Gutenberg, which may
+/// be useful elsewhere.
+///
+/// @todo Rename to `.text-#{ $size }`.
+
+@each $font-size-name, $font-size-value in editor-font-sizes() {
+
+	.text-#{ $font-size-name } {
+		font-size: #{ $font-size-value };
+	}
+}
+
+/// Font style.
+
+$font-styles: (
+	italic:     italic,
+	not-italic: normal
+);
+
+@each $font-style-name, $font-style-value in $font-styles {
+
+	.#{ $font-style-name } {
+		font-style: #{ $font-style-value };
+	}
+}
+
+/// Font weight.
+
+$font-weights: (
+	font-100: 100,
+	font-200: 200,
+	font-300: 300,
+	font-400: 400,
+	font-500: 500,
+	font-600: 600,
+	font-700: 700,
+	font-800: 800,
+	font-900: 900
+);
+
+@each $name, $value in $font-weights {
+
+	.#{ $name } {
+		font-weight: #{ $value };
+	}
+}
+
+// Line height.
+
+$line-heights: (
+	leading-none:    1,
+	leading-tight:   1.25,
+	leading-snug:    1.375,
+	leading-normal:  1.5,
+	leading-relaxed: 1.625,
+	leading-loose:   1.75
+);
+
+@each $name, $value in $line-heights {
+
+	.#{ $name } {
+		line-height: #{ $value };
+	}
+}
+
+/// Text alignment (added in Gutenberg 6.0).
+///
+/// @todo Rename to `.text-#{ $align }`.
+
+$text-aligns: (
+	has-text-align-center: center,
+	has-text-align-left:   left,
+	has-text-align-right:  right
+);
+
+@each $name, $value in $text-aligns {
+	.#{ $name } {
+		text-align: $value;
+	}
+}
+
+/// Text colors.
+///
+/// @todo Rename to `.text-#{ $color }`.
+
+/// If we have a text color, let's use that as the link color as well.  There's
+/// no way for us to know if the colors will clash here, so let's keep it simple.
+
+.has-text-color {
+
+	a:not( .wp-block-button__link ) {
+		color: inherit;
+	}
+
+	a:not( .wp-block-button__link ):hover,
+	a:not( .wp-block-button__link ):focus {
+		color:      inherit;
+		background: rgba( 255, 255, 255, 0.2 );
+	}
+}
+
+/// Loops through the theme colors and adds text color classes for them.
+
+@each $color-name, $color-value in block-colors() {
+
+	// We must specifically set `a.has-{$color-name}-color` so that the
+	// various link states keep the same color. This is generally used with
+	// things like buttons.
+
+	.text-#{ $color-name },
+	a.text-#{ $color-name } {
+		color: $color-value;
+	}
+
+}

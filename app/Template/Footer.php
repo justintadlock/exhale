@@ -45,7 +45,7 @@ class Footer {
 	public static function renderCredit( array $args = [] ) {
 
 		$args = wp_parse_args( $args, [
-			'before' => '<p class="app-footer__credit">',
+			'before' => '<p class="app-footer__credit my-4 has-text-align-center">',
 			'after'  => '</p>'
 		] );
 

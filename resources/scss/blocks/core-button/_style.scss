@@ -22,9 +22,10 @@
 }
 
 // Using `a` here to overwrite general link rules.
-a.wp-block-button__link {
+.wp-block-button__link {
 	color:      var( --color-content-background );
 	background: var( --color-primary );
+	text-decoration: none;
 }
 
 .is-style-squared .wp-block-button__link {

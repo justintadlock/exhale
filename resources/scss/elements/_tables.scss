@@ -4,6 +4,7 @@ table {
 	width           : 100%;
 	border-collapse : collapse;
 	border-spacing  : 0;
+	text-align     : left;
 }
 
 caption {
@@ -16,15 +17,14 @@ td {
 	padding        : 10px;
 	box-sizing     : border-box;
 	vertical-align : top;
-	text-align     : left;
 
 	&:empty,
  	&.pad { opacity : 0; }
 }
 
 th {
-	font-size:         16px;
-	text-align:        left;
+//	font-size:         16px;
+//	text-align:        left;
 }
 
 td {

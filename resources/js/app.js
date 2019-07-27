@@ -22,18 +22,18 @@
  */
 (function() {
 
-	let menu = document.querySelector( '.menu--primary' );
+	let menu   = document.querySelector( '.menu--primary' );
+	let toggle = document.querySelector( '.toggle--menu-primary .toggle__button' );
+	let burger = document.querySelector( '.toggle--menu-primary .toggle__hamburger' );
+	let svg_x = document.querySelector( '.toggle--menu-primary .toggle__x' );
 
-	if ( null !== menu ) {
-		if ( menu.scrollWidth > menu.clientWidth ) {
-			menu.classList.add( 'menu--scroll' );
+	if ( null !== menu && null !== toggle ) {
+
+		toggle.onclick = () => {
+			menu.classList.toggle( 'hidden' );
+			burger.classList.toggle( 'hidden' );
+			svg_x.classList.toggle( 'hidden' );
 		}
-
-		window.onresize = function() {
-			menu.scrollWidth > menu.clientWidth
-			    ? menu.classList.add( 'menu--scroll' )
-			    : menu.classList.remove( 'menu--scroll' );
-		};
 	}
 
 	let images = document.querySelectorAll( 'img' );

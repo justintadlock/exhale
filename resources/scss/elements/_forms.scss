@@ -32,9 +32,7 @@ button {
 	border:      1px solid var( --color-border );
 }
 
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
+input[type*="date"],
 input[type="email"],
 input[type="month"],
 input[type="password"],
@@ -66,7 +64,6 @@ button {
 	line-height:     1;
 	font-family:     var( --font-family-secondary );
 	font-size:       1rem;
-	text-decoration: none;
 	border-radius:   3px;
 	white-space:     normal;
 	word-break:      break-all;

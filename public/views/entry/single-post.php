@@ -1,9 +1,9 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
-	<header class="entry__header o-content-width">
-		<?php Hybrid\Post\display_title() ?>
+	<header class="entry__header mb-8 has-text-align-center">
+		<?php Hybrid\Post\display_title( [ 'class' => 'entry__title md:max-w-4xl mx-8 sm:mx-auto my-0' ] ) ?>
 
-		<div class="entry__byline">
+		<div class="entry__byline max-w-2xl mx-8 sm:mx-auto">
 			<?php Hybrid\Post\display_author() ?>
 			<?php Hybrid\Post\display_date( [ 'before' => Exhale\sep() ] ) ?>
 			<?php Hybrid\Post\display_comments_link( [ 'before' => Exhale\sep() ] ) ?>
@@ -15,7 +15,7 @@
 		<?php $engine->display( 'nav/pagination', 'post' ) ?>
 	</div>
 
-	<footer class="entry__footer o-content-width">
+	<footer class="entry__footer max-w-2xl mx-8 sm:mx-auto my-8">
 		<?php Hybrid\Post\display_terms( [
 			// Translators: %s is the category list.
 			'text'     => __( 'Posted in %s', 'exhale' ),

@@ -49,7 +49,7 @@ class Customize extends Customizable {
 
 		$manager->add_setting( 'content_background_fill_opacity', [
 			'default'              => Mod::fallback( 'content_background_fill_opacity' ),
-			'sanitize_callback'    => 'floatval',
+		//	'sanitize_callback'    => 'floatval',
 			'transport'            => 'postMessage'
 		] );
 
