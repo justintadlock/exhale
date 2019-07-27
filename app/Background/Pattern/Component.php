@@ -32,7 +32,10 @@ class Component implements Bootable {
 
 		add_action( 'after_setup_theme', [ $this, 'registerDefaultPatterns' ] );
 
-		add_filter( 'hybrid/attr/app-content', [ $this, 'appContentAttr' ] );
+		add_filter( 'hybrid/attr/app-header',  [ $this, 'appHeaderAttr'  ]        );
+		add_filter( 'hybrid/attr/app-content', [ $this, 'appContentAttr' ]        );
+		add_filter( 'hybrid/attr/app-footer',  [ $this, 'appFooterAttr'  ]        );
+		add_filter( 'hybrid/attr/sidebar',     [ $this, 'sidebarAttr'    ], 10, 2 );
 	}
 
 	public function registerDefaultPatterns() {
@@ -40,6 +43,34 @@ class Component implements Bootable {
 		foreach ( Config::get( 'background-patterns' ) as $name => $pattern ) {
 			$this->patterns->add( $name, $pattern );
 		}
+	}
+
+	public function appHeaderAttr( $attr ) {
+
+		$mod = Mod::get( 'header_background_svg' );
+
+		if ( ! $mod ) {
+			return $attr;
+		}
+
+		$pattern = $this->patterns->get( $mod );
+
+		if ( ! isset( $attr['style'] ) ) {
+			$attr['style'] = '';
+		}
+
+		//$attr['style'] .= sprintf(
+		//	'background-color: #e8eeef;';
+
+		$attr['style'] .= sprintf(
+			'background-image: %s;',
+			$pattern->cssValue(
+				maybe_hash_hex_color( Mod::get( 'color_header_background_fill' ) ),
+				floatval( Mod::get( 'header_background_fill_opacity' ) )
+			)
+		);
+
+		return $attr;
 	}
 
 	public function appContentAttr( $attr ) {
@@ -64,6 +95,66 @@ class Component implements Bootable {
 		 	$pattern->cssValue(
 				maybe_hash_hex_color( Mod::get( 'color_content_background_fill' ) ),
 				floatval( Mod::get( 'content_background_fill_opacity' ) )
+			)
+		);
+
+		return $attr;
+	}
+
+	public function appFooterAttr( $attr ) {
+
+		$mod = Mod::get( 'footer_background_svg' );
+
+		if ( ! $mod ) {
+			return $attr;
+		}
+
+		$pattern = $this->patterns->get( $mod );
+
+		if ( ! isset( $attr['style'] ) ) {
+			$attr['style'] = '';
+		}
+
+		//$attr['style'] .= sprintf(
+		//	'background-color: #e8eeef;';
+
+		$attr['style'] .= sprintf(
+			'background-image: %s;',
+			$pattern->cssValue(
+				maybe_hash_hex_color( Mod::get( 'color_footer_background_fill' ) ),
+				floatval( Mod::get( 'footer_background_fill_opacity' ) )
+			)
+		);
+
+		return $attr;
+	}
+
+	public function sidebarAttr( $attr, $context ) {
+
+		if ( 'footer' !== $context ) {
+			return $attr;
+		}
+
+		$mod = Mod::get( 'sidebar_footer_background_svg' );
+
+		if ( ! $mod ) {
+			return $attr;
+		}
+
+		$pattern = $this->patterns->get( $mod );
+
+		if ( ! isset( $attr['style'] ) ) {
+			$attr['style'] = '';
+		}
+
+		//$attr['style'] .= sprintf(
+		//	'background-color: #e8eeef;';
+
+		$attr['style'] .= sprintf(
+			'background-image: %s;',
+			$pattern->cssValue(
+				maybe_hash_hex_color( Mod::get( 'color_sidebar_footer_background_fill' ) ),
+				floatval( Mod::get( 'sidebar_footer_background_fill_opacity' ) )
 			)
 		);
 

@@ -16,7 +16,10 @@ wp.customize.bind( 'ready', () => {
 	const { backgroundPatterns } = exhaleCustomizeControls;
 
 	let types = [
-		'content'
+		'header',
+		'content',
+		'footer',
+		'sidebar_footer'
 	];
 
 	const backgroundSvgUrl = ( svg, fill, opacity ) => {

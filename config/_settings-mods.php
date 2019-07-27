@@ -17,9 +17,21 @@ return [
 	'layout' => 'wide',
 
 	// Backgrounds.
+	'color_header_background_fill'   => 'a9a9a9',
+	'header_background_fill_opacity' => 0.5,
+	'header_background_svg'          => '',
+
 	'color_content_background_fill'   => 'a9a9a9',
 	'content_background_fill_opacity' => 0.5,
 	'content_background_svg'          => '',
+
+	'color_footer_background_fill'   => 'a9a9a9',
+	'footer_background_fill_opacity' => 0.5,
+	'footer_background_svg'          => '',
+
+	'color_sidebar_footer_background_fill'   => 'a9a9a9',
+	'sidebar_footer_background_fill_opacity' => 0.5,
+	'sidebar_footer_background_svg'          => '',
 
 	// Archive layout.
 	'loop_archive_layout'     => 'list',

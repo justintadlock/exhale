@@ -163,6 +163,12 @@ class Component implements Bootable {
 			'priority' => 15
 		] );
 
+		$manager->add_section( 'theme_header_background', [
+			'panel'     => 'theme_header',
+			'title'     => __( 'Background', 'exhale' ),
+			'priority'  => 15
+		] );
+
 		// Customize the title/tagline section.
 		$title_tagline           = $manager->get_section( 'title_tagline' );
 		$title_tagline->panel    = 'theme_header';
@@ -198,6 +204,18 @@ class Component implements Bootable {
 			'panel'    => 'theme_footer',
 			'title'    => __( 'Colors', 'exhale' ),
 			'priority' => 15
+		] );
+
+		$manager->add_section( 'theme_footer_background', [
+			'panel'     => 'theme_footer',
+			'title'     => __( 'Background: Footer', 'exhale' ),
+			'priority'  => 15
+		] );
+
+		$manager->add_section( 'theme_sidebar_footer_background', [
+			'panel'     => 'theme_footer',
+			'title'     => __( 'Background: Sidebar', 'exhale' ),
+			'priority'  => 15
 		] );
 
 		$manager->add_section( 'theme_footer_sidebar', [

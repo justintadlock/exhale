@@ -13,7 +13,9 @@
 
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'exhale' ) ?></a>
 
-	<header class="app-header flex flex-wrap items-center justify-between h-auto border-b">
+	<header <?php Hybrid\Attr\display( 'app-header', '', [
+		'class' => 'app-header flex flex-wrap items-center justify-between h-auto border-b'
+	] ) ?>>
 
 		<div class="app-header__branding overflow-hidden flex justify-start items-center flex-grow md:flex-grow-0 max-w-full h-16 px-8 has-text-align-center">
 			<?php the_custom_logo() ?>

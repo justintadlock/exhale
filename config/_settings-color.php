@@ -64,7 +64,7 @@ return [
 		'color'           => 'fcfcfc',
 		'label'           => __( 'Header: Background', 'exhale' ),
 		'description'     => __( 'Background color for the entire header block.', 'exhale' ),
-		'section'         => 'theme_header_colors'
+		'section'         => 'theme_header_background'
 	],
 	'header-border' => [
 		'color'           => 'f3f3f3',
@@ -147,7 +147,7 @@ return [
 		'color'           => function() {
 			return \Exhale\Tools\Mod::color( 'header-background' );
 		},
-		'section'         => 'theme_footer_colors'
+		'section'         => 'theme_footer_background'
 	],
 	'footer' => [
 		'label'           => __( 'Footer: Text', 'exhale' ),
@@ -185,7 +185,7 @@ return [
 		'color'           => function() {
 			return \Exhale\Tools\Mod::color( 'footer-background' );
 		},
-		'section'         => 'theme_footer_colors'
+		'section'         => 'theme_sidebar_footer_background'
 	],
 	'sidebar-footer' => [
 		'label'           => __( 'Sidebar Footer: Text', 'exhale' ),

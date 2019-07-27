@@ -40,24 +40,28 @@ class Customize extends Customizable {
 	 */
 	public function registerSettings( WP_Customize_Manager $manager ) {
 
-		$manager->add_setting( 'color_content_background_fill', [
-			'default'              => maybe_hash_hex_color( Mod::fallback( 'color_content_background_fill' ) ),
-			'sanitize_callback'    => 'sanitize_hex_color_no_hash',
-			'sanitize_js_callback' => 'maybe_hash_hex_color',
-			'transport'            => 'postMessage'
-		] );
+		array_map( function( $section ) use ( $manager ) {
 
-		$manager->add_setting( 'content_background_fill_opacity', [
-			'default'              => Mod::fallback( 'content_background_fill_opacity' ),
-		//	'sanitize_callback'    => 'floatval',
-			'transport'            => 'postMessage'
-		] );
+			$manager->add_setting( "color_{$section}_background_fill", [
+				'default'              => maybe_hash_hex_color( Mod::fallback( "color_{$section}_background_fill" ) ),
+				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
+				'sanitize_js_callback' => 'maybe_hash_hex_color',
+				'transport'            => 'postMessage'
+			] );
 
-		$manager->add_setting( 'content_background_svg', [
-			'default'              => Mod::fallback( 'content_background_svg' ),
-			'sanitize_callback'    => 'sanitize_key',
-			'transport'            => 'postMessage'
-		] );
+			$manager->add_setting( "{$section}_background_fill_opacity", [
+				'default'              => Mod::fallback( "{$section}_background_fill_opacity" ),
+			//	'sanitize_callback'    => 'floatval',
+				'transport'            => 'postMessage'
+			] );
+
+			$manager->add_setting( "{$section}_background_svg", [
+				'default'              => Mod::fallback( "{$section}_background_svg" ),
+				'sanitize_callback'    => 'sanitize_key',
+				'transport'            => 'postMessage'
+			] );
+
+		}, [ 'header', 'content', 'footer', 'sidebar_footer' ] );
 	}
 
 	/**
@@ -70,48 +74,52 @@ class Customize extends Customizable {
 	 */
 	public function registerControls( WP_Customize_Manager $manager ) {
 
-		$manager->add_control(
-			new WP_Customize_Color_Control( $manager, 'color_content_background_fill', [
-				'section'     => 'theme_content_background',
-				'label'       => __( 'Foreground Color', 'exhale' ),
-			//	'description' => esc_html( $setting->description() ),
-				'priority'    => 25
-			] )
-		);
+		array_map( function( $section ) use ( $manager ) {
 
-		$manager->add_control( 'content_background_fill_opacity', [
-			'section' => 'theme_content_background',
-			'label'   => __( 'Fill Opacity', 'exhale' ),
-			'priority'    => 25,
-			'type'    => 'number',
-			'input_attrs' => [
-				'min' => '0.1',
-				'max' => '1',
-				'step' => '0.1'
-			]
-		] );
+			$manager->add_control(
+				new WP_Customize_Color_Control( $manager, "color_{$section}_background_fill", [
+					'section'     => "theme_{$section}_background",
+					'label'       => __( 'Foreground Color', 'exhale' ),
+				//	'description' => esc_html( $setting->description() ),
+					'priority'    => 25
+				] )
+			);
 
-		$choices = [];
+			$manager->add_control( "{$section}_background_fill_opacity", [
+				'section' => "theme_{$section}_background",
+				'label'   => __( 'Foreground Opacity', 'exhale' ),
+				'priority'    => 25,
+				'type'    => 'number',
+				'input_attrs' => [
+					'min' => '0.1',
+					'max' => '1',
+					'step' => '0.1'
+				]
+			] );
 
-		foreach ( $this->patterns as $pattern ) {
-			$choices[ $pattern->name() ] = [
-				'label'    => $pattern->label(),
-				'cssValue' => $pattern->cssValue(
-					maybe_hash_hex_color( Mod::get( 'color_content_background_fill' ) ),
-					Mod::get( 'content_background_fill_opacity' )
-				)
-			];
-		}
+			$choices = [];
 
-		$manager->add_control(
-			new BackgroundSvg( $manager, 'content_background_svg', [
-				'section'     => 'theme_content_background',
-				'label'       => __( 'Background Pattern', 'exhale' ),
-				'choices'     => $choices,
-				'background'  => Mod::color( 'content-background' ),
-				'priority'    => 25
-			] )
-		);
+			foreach ( $this->patterns as $pattern ) {
+				$choices[ $pattern->name() ] = [
+					'label'    => $pattern->label(),
+					'cssValue' => $pattern->cssValue(
+						maybe_hash_hex_color( Mod::get( "color_{$section}_background_fill" ) ),
+						Mod::get( "{$section}_background_fill_opacity" )
+					)
+				];
+			}
+
+			$manager->add_control(
+				new BackgroundSvg( $manager, "{$section}_background_svg", [
+					'section'     => "theme_{$section}_background",
+					'label'       => __( 'Background Pattern', 'exhale' ),
+					'choices'     => $choices,
+					'background'  => Mod::color( "{$section}-background" ),
+					'priority'    => 25
+				] )
+			);
+
+		}, [ 'header', 'content', 'footer', 'sidebar_footer' ] );
 	}
 
 	/**

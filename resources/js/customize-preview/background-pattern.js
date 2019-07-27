@@ -2,7 +2,10 @@
 const { backgroundPatterns } = exhaleCustomizePreview;
 
 let types = {
-	content: '.app-content'
+	header:         '.app-header',
+	content:        '.app-content',
+	footer:         '.app-footer',
+	sidebar_footer: '.sidebar--footer'
 };
 
 const backgroundSvgUrl = ( svg, fill, opacity ) => {

@@ -1,4 +1,6 @@
-		<footer class="app-footer overflow-y-hidden font-secondary text-base">
+		<footer <?php Hybrid\Attr\display( 'app-footer', '', [
+			'class' => 'app-footer overflow-y-hidden font-secondary text-base'
+		] ) ?>>
 
 			<?php $engine->display( 'sidebar', 'footer', [ 'sidebar' => 'footer' ] ) ?>
 
