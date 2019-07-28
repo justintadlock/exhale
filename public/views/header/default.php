@@ -9,15 +9,15 @@
 
 <?php wp_body_open() ?>
 
-<div class="app">
+<div class="app relative">
 
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'exhale' ) ?></a>
 
 	<header <?php Hybrid\Attr\display( 'app-header', '', [
-		'class' => 'app-header flex flex-wrap items-center justify-between h-auto border-b'
+		'class' => 'app-header sticky md:static z-40 top-0 flex flex-wrap items-center justify-between w-full h-auto border-b'
 	] ) ?>>
 
-		<div class="app-header__branding overflow-hidden flex justify-start items-center flex-grow md:flex-grow-0 max-w-full h-16 px-8 has-text-align-center">
+		<div class="app-header__branding overflow-hidden flex justify-start items-center md:flex-grow-0 max-w-full h-16 px-8 has-text-align-center">
 			<?php the_custom_logo() ?>
 			<?php Hybrid\Site\display_title( [
 				'class'      => 'app-header__title m-0 mr-2 leading-none text-xl',

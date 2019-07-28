@@ -138,7 +138,7 @@ add_filter( 'nav_menu_css_class', function( $classes, $items, $args, $depth ) {
 add_filter( 'nav_menu_link_attributes', function( $attr, $item, $args, $depth ) {
 
 	if ( 'primary' === $args->theme_location ) {
-		$attr['class'] .= ' block md:inline-block px-8 py-4 md:p-6 no-underline hover:underline focus:underline';
+		$attr['class'] .= ' block md:inline-block px-8 py-4 md:p-6 md:h-full no-underline hover:underline focus:underline';
 	} elseif ( 'footer' === $args->theme_location ) {
 		$attr['class'] .= ' no-underline hover:underline focus:underline';
 	} elseif ( 'social' === $args->theme_location ) {

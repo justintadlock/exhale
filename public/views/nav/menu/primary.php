@@ -25,7 +25,7 @@
 			'depth'          => 1,
 			'container'      => '',
 			'menu_id'        => '',
-			'menu_class'     => 'menu__items list-none m-0 p-0',
+			'menu_class'     => 'menu__items list-none md:h-full m-0 p-0',
 			'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
 			'item_spacing'   => 'discard'
 		] ) ?>
