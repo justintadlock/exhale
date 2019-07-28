@@ -23,7 +23,9 @@
 				'class'      => 'app-header__title m-0 mr-2 leading-none text-xl',
 				'link_class' => 'app-header__title-link no-underline hover:underline focus:underline'
 			] ) ?>
-			<span class="app-header__sep hidden sm:block mx-3 leading-none">&middot;</span>
+			<?php if ( $sep = Exhale\Tools\Mod::get( 'branding_sep' ) ) : ?>
+				<span class="app-header__sep hidden sm:block mx-3 leading-none" aria-hidden="true"><?= esc_html( $sep ) ?></span>
+			<?php endif ?>
 			<?php Hybrid\Site\display_description( [ 'class' => 'app-header__description hidden sm:block m-0 ml-2 leading-none text-sm' ] ) ?>
 		</div>
 

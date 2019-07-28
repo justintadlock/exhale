@@ -24,3 +24,10 @@ wp.customize( 'blogdescription', value => {
 		document.querySelector( '.app-header__description' ).textContent = to;
 	} );
 } );
+
+// Branding separator.
+wp.customize( 'branding_sep', value => {
+	value.bind( to => {
+		document.querySelector( '.app-header__sep' ).innerHTML = to;
+	} );
+} );

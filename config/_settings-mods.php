@@ -87,6 +87,9 @@ return [
 	'image_default_filter_amount'   => 0,
 	'image_hover_filter_amount'     => 100,
 
+	// Branding separator.
+	'branding_sep' => '&#183;',
+
 	// Set the default footer credit.
 	'powered_by'    => true,
 	'footer_credit' => function() {

@@ -115,6 +115,7 @@ var sassConfig = {
 mix.sass( `${devPath}/scss/screen.scss`,             'css', sassConfig )
    .sass( `${devPath}/scss/screen-classic.scss`,     'css', sassConfig )
    .sass( `${devPath}/scss/editor.scss`,             'css', sassConfig )
+   .sass( `${devPath}/scss/customize-preview.scss`,  'css', sassConfig )
    .sass( `${devPath}/scss/customize-controls.scss`, 'css', sassConfig );
 
 /*

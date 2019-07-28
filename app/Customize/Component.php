@@ -268,6 +268,12 @@ class Component implements Bootable {
 		foreach ( $this->components as $component ) {
 			App::resolve( $component )->registerSettings( $manager );
 		}
+
+		$manager->add_setting( 'branding_sep', [
+			'default'           => \Exhale\Tools\Mod::fallback( 'branding_sep' ),
+			'sanitize_callback' => 'sanitize_text_field',
+			'transport'         => 'postMessage'
+		] );
 	}
 
 	/**
@@ -295,6 +301,21 @@ class Component implements Bootable {
 		foreach ( $this->components as $component ) {
 			App::resolve( $component )->registerControls( $manager );
 		}
+
+		$choices  = [ '' => '' ];
+
+		foreach ( \Exhale\Tools\Config::get( 'character-entities' ) as $entity ) {
+			$choices[ $entity ] = esc_html( $entity );
+		}
+
+		// Sidebar width control.
+		$manager->add_control( 'branding_sep', [
+			'section' => 'title_tagline',
+			'type'    => 'select',
+			'label'   => __( 'Separator', 'exhale' ),
+			'description' => __( 'Character used as a separator between the title and tagline.', 'exhale' ),
+			'choices' => $choices
+		] );
 	}
 
 	/**
@@ -386,6 +407,14 @@ class Component implements Bootable {
 	 * @return void
 	 */
 	public function previewEnqueue() {
+
+		// Enqueue preview style.
+		wp_enqueue_style(
+			'exhale-customize-preview',
+			asset( 'css/customize-preview.css' ),
+			[],
+			null
+		);
 
 		// Enqueue preview script.
 		wp_enqueue_script(

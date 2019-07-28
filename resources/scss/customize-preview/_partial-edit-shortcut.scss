@@ -1,0 +1,20 @@
+////
+/// Partial edit shortcuts.
+///
+/// Adjust the partial edit shortcut buttons where they interfere with the
+/// theme's design.
+///
+/// @group  CustomizeControls
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.customize-partial-edit-shortcut {
+
+	// Moves the description shortcut so that it doesn't cover up the
+	// branding separator.
+	&-blogdescription {
+		margin-left: 1.5rem;
+		margin-top:  1rem;
+	}
+}
