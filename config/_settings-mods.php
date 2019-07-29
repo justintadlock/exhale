@@ -79,16 +79,19 @@ return [
 	'loop_archive_plugin_columns'    => 2,
 	'loop_archive_plugin_image_size' => 'exhale-landscape-medium',
 
-	// Footer sidebar layout.
-	'sidebar_footer_width' => 'full',
-
 	// Set the default image filter mods.
 	'image_default_filter_function' => 'grayscale',
 	'image_default_filter_amount'   => 0,
 	'image_hover_filter_amount'     => 100,
 
+	// Header stickiness.
+	'header_sticky' => false,
+
 	// Branding separator.
 	'branding_sep' => '&#183;',
+
+	// Footer sidebar layout.
+	'sidebar_footer_width' => 'full',
 
 	// Set the default footer credit.
 	'powered_by'    => true,

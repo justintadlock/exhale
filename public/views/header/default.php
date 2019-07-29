@@ -14,7 +14,10 @@
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'exhale' ) ?></a>
 
 	<header <?php Hybrid\Attr\display( 'app-header', '', [
-		'class' => 'app-header sticky md:static z-40 top-0 flex flex-wrap items-center justify-between w-full h-auto border-b'
+		'class' => sprintf(
+			'app-header %s z-40 top-0 flex flex-wrap items-center justify-between w-full h-auto border-b',
+			Exhale\Tools\Mod::get( 'header_sticky' ) ? 'sticky' : 'sticky md:static'
+		)
 	] ) ?>>
 
 		<div class="app-header__branding overflow-hidden flex justify-start items-center md:flex-grow-0 max-w-full h-16 px-8 has-text-align-center">

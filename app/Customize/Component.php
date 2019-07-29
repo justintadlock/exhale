@@ -157,6 +157,12 @@ class Component implements Bootable {
 		// Header sections.
 		// -------------------------------------------------------------
 
+		$manager->add_section( 'theme_header_layout', [
+			'panel'    => 'theme_header',
+			'title'    => __( 'Layout', 'exhale' ),
+			'priority' => 5
+		] );
+
 		$manager->add_section( 'theme_header_colors', [
 			'panel'    => 'theme_header',
 			'title'    => __( 'Colors', 'exhale' ),
@@ -269,6 +275,12 @@ class Component implements Bootable {
 			App::resolve( $component )->registerSettings( $manager );
 		}
 
+		$manager->add_setting( 'header_sticky', [
+			'default'           => \Exhale\Tools\Mod::fallback( 'header_sticky' ),
+			'sanitize_callback' => 'wp_validate_boolean',
+			'transport'         => 'postMessage'
+		] );
+
 		$manager->add_setting( 'branding_sep', [
 			'default'           => \Exhale\Tools\Mod::fallback( 'branding_sep' ),
 			'sanitize_callback' => 'sanitize_text_field',
@@ -302,19 +314,27 @@ class Component implements Bootable {
 			App::resolve( $component )->registerControls( $manager );
 		}
 
+		// Sticky header control.
+		$manager->add_control( 'header_sticky', [
+			'section'     => 'theme_header_layout',
+			'type'        => 'checkbox',
+			'label'       => __( 'Always stick header to top of screen?', 'exhale' ),
+			'description' => __( 'Note: Header is sticky on mobile by default.', 'exhale' )
+		] );
+
 		$choices  = [ '' => '' ];
 
 		foreach ( \Exhale\Tools\Config::get( 'character-entities' ) as $entity ) {
 			$choices[ $entity ] = esc_html( $entity );
 		}
 
-		// Sidebar width control.
+		// Branding separator control.
 		$manager->add_control( 'branding_sep', [
-			'section' => 'title_tagline',
-			'type'    => 'select',
-			'label'   => __( 'Separator', 'exhale' ),
+			'section'     => 'title_tagline',
+			'type'        => 'select',
+			'label'       => __( 'Separator', 'exhale' ),
 			'description' => __( 'Character used as a separator between the title and tagline.', 'exhale' ),
-			'choices' => $choices
+			'choices'     => $choices
 		] );
 	}
 
