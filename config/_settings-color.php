@@ -60,6 +60,49 @@ return [
 		'description'     => __( 'Color used for text headings.', 'exhale' ),
 		'section'         => 'theme_content_colors'
 	],
+	'border' => [
+		'color'           => 'e1e1e1',
+		'label'           => __( 'Border', 'exhale' ),
+		'description'     => __( 'Color used for borders in general.', 'exhale' ),
+		'section'         => 'theme_content_colors'
+	],
+	'pagination' => [
+		'label'           => __( 'Pagination', 'exhale' ),
+		'description'     => __( 'Color used for pagination links.', 'exhale' ),
+		'section'         => 'theme_content_colors',
+		'color'           => function() {
+			$color = \Exhale\Tools\Mod::color( 'content-background' );
+			return $color ?: 'ffffff';
+		}
+	],
+	'pagination-hover' => [
+		'label'           => __( 'Pagination Hover', 'exhale' ),
+		'description'     => __( 'Color used when hovering or focusing a pagination link.', 'exhale' ),
+		'section'         => 'theme_content_colors',
+		'color'           => function() {
+			$color = \Exhale\Tools\Mod::color( 'content-background' );
+			return $color ?: 'ffffff';
+		}
+	],
+	'pagination-background' => [
+		'label'           => __( 'Pagination Background', 'exhale' ),
+		'description'     => __( 'Background color used for pagination links.', 'exhale' ),
+		'section'         => 'theme_content_colors',
+		'color'           => function() {
+			return \Exhale\Tools\Mod::color( 'primary-link' );
+		}
+	],
+	'pagination-background-hover' => [
+		'color'           => 'e1e1e1',
+		'label'           => __( 'Pagination Background Hover', 'exhale' ),
+		'description'     => __( 'Background color used when hovering or focusing a pagination link.', 'exhale' ),
+		'section'         => 'theme_content_colors',
+		'color'           => function() {
+			return \Exhale\Tools\Mod::color( 'primary-link-hover' );
+		}
+	],
+
+
 	'header-background' => [
 		'color'           => 'fcfcfc',
 		'label'           => __( 'Header: Background', 'exhale' ),
@@ -218,11 +261,5 @@ return [
 			return \Exhale\Tools\Mod::color( 'footer-link-hover' );
 		},
 		'section'         => 'theme_footer_colors'
-	],
-	'border' => [
-		'color'           => 'e1e1e1',
-		'label'           => __( 'Border', 'exhale' ),
-		'description'     => __( 'Color used for borders in general.', 'exhale' ),
-		'section'         => 'theme_content_colors'
 	]
 ];
