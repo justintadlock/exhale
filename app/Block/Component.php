@@ -9,11 +9,11 @@ class Component implements Bootable {
 	public function boot() {
 
 		if ( ! is_admin() ) {
-			add_filter( 'render_block', [ $this, 'renderBlock' ], 10, 2 );
+			add_filter( 'the_content', [ $this, 'renderBlock' ], ~PHP_INT_MAX );
 		}
 	}
 
-	public function renderBlock( $content, $block ) {
+	public function renderBlock( $content  ) {
 
 	//	var_dump( $block );
 
