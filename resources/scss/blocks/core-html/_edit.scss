@@ -1,0 +1,15 @@
+////
+/// Heading HTML block.
+///
+/// @group  Editor
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.wp-block[data-type=core\/html] {
+	max-width: 100%;
+
+	.editor-plain-text {
+		tab-size: 4;
+	}
+}
