@@ -9,22 +9,46 @@ class Component implements Bootable {
 	public function boot() {
 
 		if ( ! is_admin() ) {
-			add_filter( 'the_content', [ $this, 'renderBlock' ], ~PHP_INT_MAX );
+			add_filter( 'the_content', [ $this, 'renderBlock' ], PHP_INT_MAX );
 		}
 	}
 
 	public function renderBlock( $content  ) {
 
-	//	var_dump( $block );
+		// If there's no content or if the content doesn't contain HTML,
+		// bail early.
+		if ( ! trim( $content ) || false === strpos( $content, '<' ) ) {
+			return $content;
+		}
 
 		$doc = new \DOMDocument();
 		libxml_use_internal_errors( true );
 		$doc->loadHTML(
-			mb_convert_encoding( $content, 'HTML-ENTITIES', get_bloginfo( 'charset' ) ),
-			LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD
+			sprintf(
+				'<!DOCTYPE html><html><head><meta charset="%s"></head><body>%s</body></html>',
+				esc_attr( get_bloginfo( 'charset' ) ),
+				$content
+			)
 		);
 		libxml_clear_errors();
 
+		// Get the body element.
+		$body = $doc->getElementsByTagName( 'body' )->item( 0 );
+
+		// Remove the body element.
+		$body = $body->parentNode->removeChild( $body );
+
+		// Remove all elements from the doc.
+		while ( $doc->firstChild ) {
+		    $doc->removeChild( $doc->firstChild );
+		}
+
+		// Re-add all children of the body element.
+		while ( $body->firstChild ) {
+		    $doc->appendChild( $body->firstChild );
+		}
+
+		// Now, let's get all elements.
 		$elements = $doc->getElementsByTagName( '*' );
 
 		foreach ( $elements as $element ) {
