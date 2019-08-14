@@ -35,6 +35,15 @@ class Component implements Bootable {
 	protected $colors;
 
 	/**
+	 * Stores non-editor colors to print on the front end.
+	 *
+	 * @since  2.2.0
+	 * @access protected
+	 * @var    Colors
+	 */
+	private $app_colors;
+
+	/**
 	 * CSS custom properties.
 	 *
 	 * @since  2.0.0
@@ -55,6 +64,8 @@ class Component implements Bootable {
 	public function __construct( Colors $colors, CustomProperties $properties ) {
 		$this->colors     = $colors;
 		$this->properties = $properties;
+
+		$this->app_colors = new Colors();
 	}
 
 	/**
@@ -95,6 +106,14 @@ class Component implements Bootable {
 				$this->properties->add( 'editor-color-' . $color->name(), $color );
 			}
 		}
+
+		// Adds each front-end-only color as a custom property.
+		foreach ( $this->app_colors as $color ) {
+
+			if ( ! $color->isThemeMod() ) {
+				$this->properties->add( 'app-color-' . $color->name(), $color );
+			}
+		}
 	}
 
 	/**
@@ -116,6 +135,13 @@ class Component implements Bootable {
 			}
 
 			$colors->add( $name, $options );
+		}
+
+		// Store non-editor colors to print on front end.
+		foreach ( $base as $name => $options ) {
+			if ( ! $colors->has( $name ) ) {
+				$this->app_colors->add( $name, $options );
+			}
 		}
 	}
 }
