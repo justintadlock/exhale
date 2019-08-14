@@ -48,6 +48,11 @@ class Component implements Bootable {
 	 */
 	public function preGetPosts( WP_Query $query ) {
 
+		// Bail if we're in the admin.
+		if ( is_admin() ) {
+			return;
+		}
+
 		if ( $query->is_main_query() && $query->is_archive() ) {
 
 			$query->set( 'posts_per_page', absint( Loop::limit() ) );
