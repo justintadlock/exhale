@@ -25,7 +25,7 @@
 
 	<?php if ( ! comments_open() ) : ?>
 
-		<p class="comments__closed max-w-2xl mx-auto px-8 has-text-align-center">
+		<p class="comments__closed max-w-2xl mx-auto px-8 text-center">
 			<?php esc_html_e( 'Comments are closed.', 'exhale' ) ?>
 		</p>
 

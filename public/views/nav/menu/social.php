@@ -1,7 +1,7 @@
 <?php if ( has_nav_menu( $data->location ) ) : ?>
 
 	<div <?php Hybrid\Attr\display( 'menu', $data->location, [
-		'class' => 'menu menu--social my-4 has-text-align-center'
+		'class' => 'menu menu--social my-4 text-center'
 	] ) ?>>
 
 		<?php wp_nav_menu( [

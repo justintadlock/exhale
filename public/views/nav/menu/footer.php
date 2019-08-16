@@ -1,7 +1,7 @@
 <?php if ( has_nav_menu( $data->location ) ) : ?>
 
 	<nav <?php Hybrid\Attr\display( 'menu', $data->location, [
-		'class' => 'menu menu--footer my-4 has-text-align-center'
+		'class' => 'menu menu--footer my-4 text-center'
 	] ) ?>>
 
 		<h3 class="menu__title screen-reader-text">

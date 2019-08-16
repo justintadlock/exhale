@@ -2,7 +2,7 @@
 
 	<?php Exhale\Template\FeaturedImage::display( 'featured' ) ?>
 
-	<header class="entry__header has-text-align-center">
+	<header class="entry__header text-center">
 		<?php Hybrid\Post\display_title( [
 			'link'  => false,
 			'class' => 'entry__title m-0',

@@ -109,9 +109,9 @@ $line-heights: (
 /// @todo Rename to `.text-#{ $align }`.
 
 $text-aligns: (
-	has-text-align-center: center,
-	has-text-align-left:   left,
-	has-text-align-right:  right
+	text-left:   left,
+	text-center: center,
+	text-right:  right
 );
 
 @each $name, $value in $text-aligns {

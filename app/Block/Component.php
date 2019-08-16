@@ -73,6 +73,10 @@ class Component implements Bootable {
 				$new_classes[] = $trueFontSize;
 			}
 
+			if ( $trueTextAlign = $this->trueTextAlign( $class ) ) {
+				$new_classes[] = $trueTextAlign;
+			}
+
 			if ( $new_classes ) {
 				$element->setAttribute( 'class', sprintf(
 					'%s %s',
@@ -177,7 +181,22 @@ class Component implements Bootable {
 		return false;
 	}
 
+	private function trueTextAlign( $class ) {
 
+		$aligns = [
+			'has-text-align-left'   => 'text-left',
+			'has-text-align-center' => 'text-center',
+			'has-text-align-right'  => 'text-right'
+		];
+
+		foreach ( $aligns as $align => $new_align ) {
+			if ( false !== strpos( $class, $align ) ) {
+				return $new_align;
+			}
+		}
+
+		return false;
+	}
 
 
 

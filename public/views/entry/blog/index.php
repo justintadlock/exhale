@@ -1,6 +1,6 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
-	<header class="entry__header mb-4 has-text-align-center">
+	<header class="entry__header mb-4 text-center">
 		<?php Hybrid\Post\display_title( [
 			'link'  => false,
 			'class' => 'entry__title md:max-w-4xl mx-8 sm:mx-auto my-0',
