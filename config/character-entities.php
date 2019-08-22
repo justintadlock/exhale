@@ -1,4 +1,16 @@
 <?php
+/**
+ * Character Entities Config.
+ *
+ * At the moment, these are simply options for the title/tagline separator, but
+ * we could reuse these elsewhere in the future.
+ *
+ * @package   Exhale
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright 2019 Justin Tadlock
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://themehybrid.com/themes/exhale
+ */
 
 return [
 	'&#183;', // middot
@@ -82,7 +94,6 @@ return [
 	'&#8620;', // rarrhp
 	'&#8621;', // harrw
 
-
 	'&#9733;', // starf
 	'&#9734;', // star,
 	'&#9742;', // phone
@@ -101,15 +112,5 @@ return [
 	'&#10016;', // maltese
 	'&#10038;', // sext
 	'&#10072;', // VerticalSeparator,
-
-
-
-
-
-
-
-
-
-
 
 ];
