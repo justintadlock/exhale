@@ -1,5 +1,11 @@
 # Change Log
 
+## [2.1.2] - 2019-08-22
+
+### Fixed
+
+- Redesign how the branding background works. This gives the background to the actual `.app-heading__branding` element rather than the individual elements within it.
+
 ## [2.1.1] - 2019-07-18
 
 ### Fixed
