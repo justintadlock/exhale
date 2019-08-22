@@ -36,6 +36,30 @@ $height: (
 /// Width.
 
 $width: (
+	w-0:    0,
+	w-1:    $sizing-unit * 1,
+	w-2:    $sizing-unit * 2,
+	w-3:    $sizing-unit * 3,
+	w-4:    $sizing-unit * 4,
+	w-5:    $sizing-unit * 5,
+	w-6:    $sizing-unit * 6,
+	w-8:    $sizing-unit * 8,
+	w-10:   $sizing-unit * 10,
+	w-12:   $sizing-unit * 12,
+	w-16:   $sizing-unit * 16,
+	w-20:   $sizing-unit * 20,
+	w-24:   $sizing-unit * 24,
+	w-32:   $sizing-unit * 32,
+	w-40:   $sizing-unit * 40,
+	w-48:   $sizing-unit * 48,
+	w-56:   $sizing-unit * 56,
+	w-64:   $sizing-unit * 64,
+	w-1\/2: 50%,
+	w-1\/3: 33.333333%,
+	w-2\/3: 66.666667%,
+	w-1\/4: 25%,
+	w-2\/4: 50%,
+	w-3\/4: 75%,
 	w-auto: auto,
 	w-full: 100%
 );
@@ -60,6 +84,7 @@ $max-width: (
 	max-w-4xl:  $max-w-4xl,
 	max-w-5xl:  $max-w-5xl,
 	max-w-6xl:  $max-w-6xl,
+	max-w-7xl:  $max-w-7xl,
 	max-w-full: $max-w-full
 );
 
