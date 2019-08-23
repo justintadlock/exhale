@@ -15,8 +15,23 @@ use Exhale\Tools\Mod;
  */
 class Component implements Bootable {
 
+	/**
+	 * Holds the registered background patterns.
+	 *
+	 * @since  2.2.0
+	 * @access protected
+	 * @var    Patterns
+	 */
 	protected $patterns;
 
+	/**
+	 * Creates the component object.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  Patterns  $patterns
+	 * @return void
+	 */
 	public function __construct( Patterns $patterns ) {
 		$this->patterns = $patterns;
 	}
@@ -38,6 +53,13 @@ class Component implements Bootable {
 		add_filter( 'hybrid/attr/sidebar',     [ $this, 'sidebarAttr'    ], 10, 2 );
 	}
 
+	/**
+	 * Registers the default patterns.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @return void
+	 */
 	public function registerDefaultPatterns() {
 
 		foreach ( Config::get( 'background-patterns' ) as $name => $pattern ) {
@@ -45,6 +67,14 @@ class Component implements Bootable {
 		}
 	}
 
+	/**
+	 * Filters the `app-header` element and adds a background style.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  array  $attr
+	 * @return array
+	 */
 	public function appHeaderAttr( $attr ) {
 
 		$mod = Mod::get( 'header_background_svg' );
@@ -59,9 +89,6 @@ class Component implements Bootable {
 			$attr['style'] = '';
 		}
 
-		//$attr['style'] .= sprintf(
-		//	'background-color: #e8eeef;';
-
 		$attr['style'] .= sprintf(
 			'background-image: %s;',
 			$pattern->cssValue(
@@ -73,6 +100,14 @@ class Component implements Bootable {
 		return $attr;
 	}
 
+	/**
+	 * Filters the `app-content` element and adds a background style.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  array  $attr
+	 * @return array
+	 */
 	public function appContentAttr( $attr ) {
 
 		$mod = Mod::get( 'content_background_svg' );
@@ -87,9 +122,6 @@ class Component implements Bootable {
 			$attr['style'] = '';
 		}
 
-		//$attr['style'] .= sprintf(
-		//	'background-color: #e8eeef;';
-
 		$attr['style'] .= sprintf(
 			'background-image: %s;',
 		 	$pattern->cssValue(
@@ -101,6 +133,14 @@ class Component implements Bootable {
 		return $attr;
 	}
 
+	/**
+	 * Filters the `app-footer` element and adds a background style.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  array  $attr
+	 * @return array
+	 */
 	public function appFooterAttr( $attr ) {
 
 		$mod = Mod::get( 'footer_background_svg' );
@@ -115,9 +155,6 @@ class Component implements Bootable {
 			$attr['style'] = '';
 		}
 
-		//$attr['style'] .= sprintf(
-		//	'background-color: #e8eeef;';
-
 		$attr['style'] .= sprintf(
 			'background-image: %s;',
 			$pattern->cssValue(
@@ -129,6 +166,15 @@ class Component implements Bootable {
 		return $attr;
 	}
 
+	/**
+	 * Filters the `sidebar-footer` element and adds a background style.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  array   $attr
+	 * @param  string  $context
+	 * @return array
+	 */
 	public function sidebarAttr( $attr, $context ) {
 
 		if ( 'footer' !== $context ) {
@@ -146,9 +192,6 @@ class Component implements Bootable {
 		if ( ! isset( $attr['style'] ) ) {
 			$attr['style'] = '';
 		}
-
-		//$attr['style'] .= sprintf(
-		//	'background-color: #e8eeef;';
 
 		$attr['style'] .= sprintf(
 			'background-image: %s;',

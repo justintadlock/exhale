@@ -1,8 +1,8 @@
 <?php
 /**
- * Color customize class.
+ * Background customize class.
  *
- * Adds customizer elements for the color component.
+ * Adds customizer elements for the background component.
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
@@ -21,13 +21,20 @@ use Exhale\Tools\Collection;
 use Exhale\Tools\Mod;
 
 /**
- * Color customize class.
+ * Background customize class.
  *
  * @since  2.2.0
  * @access public
  */
 class Customize extends Customizable {
 
+	/**
+	 * Houses the collection of patterns.
+	 *
+	 * @since  2.2.0
+	 * @access protected
+	 * @var    Pattern\Patterns
+	 */
 	protected $patterns;
 
 	/**
@@ -51,7 +58,7 @@ class Customize extends Customizable {
 
 			$manager->add_setting( "{$section}_background_fill_opacity", [
 				'default'              => Mod::fallback( "{$section}_background_fill_opacity" ),
-			//	'sanitize_callback'    => 'floatval',
+				'sanitize_callback'    => 'sanitize_text_field',
 				'transport'            => 'postMessage'
 			] );
 

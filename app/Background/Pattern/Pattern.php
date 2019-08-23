@@ -24,7 +24,7 @@ use JsonSerializable;
 class Pattern implements JsonSerializable {
 
 	/**
-	 * Setting name.
+	 * Pattern name.
 	 *
 	 * @since  2.2.0
 	 * @access protected
@@ -33,7 +33,7 @@ class Pattern implements JsonSerializable {
 	protected $name;
 
 	/**
-	 * Setting label.
+	 * Pattern label.
 	 *
 	 * @since  2.2.0
 	 * @access protected
@@ -41,6 +41,13 @@ class Pattern implements JsonSerializable {
 	 */
 	protected $label;
 
+	/**
+	 * SVG HTML.
+	 *
+	 * @since  2.2.0
+	 * @access protected
+	 * @var    string
+	 */
 	protected $svg;
 
 	/**
@@ -80,7 +87,7 @@ class Pattern implements JsonSerializable {
 	}
 
 	/**
-	 * Returns the choice name.
+	 * Returns the pattern name.
 	 *
 	 * @since  2.2.0
 	 * @access public
@@ -91,7 +98,7 @@ class Pattern implements JsonSerializable {
 	}
 
 	/**
-	 * Returns the choice label.
+	 * Returns the pattern label.
 	 *
 	 * @since  2.2.0
 	 * @access public
@@ -101,6 +108,15 @@ class Pattern implements JsonSerializable {
 		return $this->label;
 	}
 
+	/**
+	 * Returns the SVG HTML.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  string  $fill
+	 * @param  string  $opacity
+	 * @return string
+	 */
 	public function svg( $fill = '#000', $opacity = '1.0' ) {
 
 		return preg_replace(
@@ -110,6 +126,15 @@ class Pattern implements JsonSerializable {
 		);
 	}
 
+	/**
+	 * Returns the SVG as a CSS background image value.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  string  $fill
+	 * @param  string  $opacity
+	 * @return string
+	 */
 	public function cssValue( $fill = '#000', $opacity = '1.0' ) {
 
 		$svg = $this->svg( $fill, $opacity );
