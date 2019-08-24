@@ -208,6 +208,8 @@ class Customize extends Customizable {
 					'3xl'       => __( 'Large',       'exhale' ),
 					'4xl'       => __( 'Extra Large', 'exhale' ),
 					'5xl'       => __( 'Huge',        'exhale' ),
+					'6xl'       => __( 'Gargantuan',  'exhale' ),
+					'7xl'       => __( 'Titanic',     'exhale' ),
 					'full'      => __( 'Full',        'exhale' )
 				],
 				'active_callback' => function( $control ) use ( $type ) {

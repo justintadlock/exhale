@@ -77,11 +77,13 @@ class Customize extends Customizable {
 			'type'    => 'select',
 			'label'   => __( 'Footer Sidebar: Width', 'exhale' ),
 			'choices' => [
-				'2xl'       => __( 'Huge',       'exhale' ),
-				'3xl'       => __( 'Gargantuan', 'exhale' ),
-				'4xl'       => __( 'Colossal',   'exhale' ),
-				'5xl'       => __( 'Titanic',    'exhale' ),
-				'full'      => __( 'Full',       'exhale' )
+				'2xl'       => __( 'Medium',      'exhale' ),
+				'3xl'       => __( 'Large',       'exhale' ),
+				'4xl'       => __( 'Extra Large', 'exhale' ),
+				'5xl'       => __( 'Huge',        'exhale' ),
+				'6xl'       => __( 'Gargantuan',  'exhale' ),
+				'7xl'       => __( 'Titanic',     'exhale' ),
+				'full'      => __( 'Full',        'exhale' )
 			]
 		] );
 
