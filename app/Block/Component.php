@@ -1,19 +1,51 @@
 <?php
+/**
+ * Block component.
+ *
+ * Handles the block feature.
+ *
+ * @package   Exhale
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright 2019 Justin Tadlock
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
+ * @link      https://themehybrid.com/themes/exhale
+ */
 
 namespace Exhale\Block;
 
 use Hybrid\Contracts\Bootable;
 
+/**
+ * Block component class.
+ *
+ * @since  2.2.0
+ * @access public
+ */
 class Component implements Bootable {
 
+	/**
+	 * Bootstraps the class' actions/filters.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @return void
+	 */
 	public function boot() {
 
 		if ( ! is_admin() ) {
-			add_filter( 'the_content', [ $this, 'renderBlock' ], PHP_INT_MAX );
+			add_filter( 'the_content', [ $this, 'filterBlockClasses' ], PHP_INT_MAX );
 		}
 	}
 
-	public function renderBlock( $content  ) {
+	/**
+	 * Filters block classes to match our CSS classes.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  string  $content
+	 * @return string
+	 */
+	public function filterBlockClasses( $content ) {
 
 		// If there's no content or if the content doesn't contain HTML,
 		// bail early.
@@ -51,30 +83,30 @@ class Component implements Bootable {
 		// Now, let's get all elements.
 		$elements = $doc->getElementsByTagName( '*' );
 
+		// Loop through the elements and update the classes if necessary.
 		foreach ( $elements as $element ) {
 
 			$class = $element->getAttribute( 'class' );
 
+			// Skip if the element doesn't have a class.
 			if ( ! $class ) {
 				continue;
 			}
 
 			$new_classes = [];
 
-			if ( $trueColor = $this->trueColor( $class ) ) {
-				$new_classes[] = $trueColor;
-			}
+			$methods = [
+				'trueFontSize',
+				'trueTextAlign',
+				'trueColor',
+				'trueBackgroundColor'
+			];
 
-			if ( $trueBackgroundColor = $this->trueBackgroundColor( $class ) ) {
-				$new_classes[] = $trueBackgroundColor;
-			}
+			foreach ( $methods as $method ) {
 
-			if ( $trueFontSize = $this->trueFontSize( $class ) ) {
-				$new_classes[] = $trueFontSize;
-			}
-
-			if ( $trueTextAlign = $this->trueTextAlign( $class ) ) {
-				$new_classes[] = $trueTextAlign;
+				if ( $add_class = $this->$method( $class ) ) {
+					$new_classes[] = $add_class;
+				}
 			}
 
 			if ( $new_classes ) {
@@ -91,6 +123,15 @@ class Component implements Bootable {
 		return $content;
 	}
 
+	/**
+	 * Checks if an HTML class contains one of our given font size classes
+	 * and returns a mapped class name to use instead.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  string       $class
+	 * @return string|bool
+	 */
 	private function trueFontSize( $class ) {
 
 		$sizes = [
@@ -116,6 +157,83 @@ class Component implements Bootable {
 		return false;
 	}
 
+	/**
+	 * Checks if an HTML class contains one of our given text align classes
+	 * and returns a mapped class name to use instead.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  string       $class
+	 * @return string|bool
+	 */
+	private function trueTextAlign( $class ) {
+
+		$aligns = [
+			'has-text-align-left'   => 'text-left',
+			'has-text-align-center' => 'text-center',
+			'has-text-align-right'  => 'text-right'
+		];
+
+		foreach ( $aligns as $align => $new_align ) {
+			if ( false !== strpos( $class, $align ) ) {
+				return $new_align;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Checks if an HTML class contains one of our given text color classes
+	 * and returns a mapped class name to use instead.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  string       $class
+	 * @return string|bool
+	 */
+	private function trueColor( $class ) {
+
+		$colors = $this->colors();
+
+		foreach ( $this->colors() as $color => $new_color ) {
+			if ( false !== strpos( $class, "has-{$color}-color" ) ) {
+				return "text-{$new_color}";
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Checks if an HTML class contains one of our given background color classes
+	 * and returns a mapped class name to use instead.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  string       $class
+	 * @return string|bool
+	 */
+	private function trueBackgroundColor( $class ) {
+
+		$colors = $this->colors();
+
+		foreach ( $this->colors() as $color => $new_color ) {
+			if ( false !== strpos( $class, "has-{$color}-background-color" ) ) {
+				return "bg-{$new_color}";
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Returns an array of mapped color classes.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @return array
+	 */
 	private function colors() {
 
 		$colors = [
@@ -154,50 +272,4 @@ class Component implements Bootable {
 
 		return $colors;
 	}
-
-	private function trueColor( $class ) {
-
-		$colors = $this->colors();
-
-		foreach ( $this->colors() as $color => $new_color ) {
-			if ( false !== strpos( $class, "has-{$color}-color" ) ) {
-				return "text-{$new_color}";
-			}
-		}
-
-		return false;
-	}
-
-	private function trueBackgroundColor( $class ) {
-
-		$colors = $this->colors();
-
-		foreach ( $this->colors() as $color => $new_color ) {
-			if ( false !== strpos( $class, "has-{$color}-background-color" ) ) {
-				return "bg-{$new_color}";
-			}
-		}
-
-		return false;
-	}
-
-	private function trueTextAlign( $class ) {
-
-		$aligns = [
-			'has-text-align-left'   => 'text-left',
-			'has-text-align-center' => 'text-center',
-			'has-text-align-right'  => 'text-right'
-		];
-
-		foreach ( $aligns as $align => $new_align ) {
-			if ( false !== strpos( $class, $align ) ) {
-				return $new_align;
-			}
-		}
-
-		return false;
-	}
-
-
-
 }
