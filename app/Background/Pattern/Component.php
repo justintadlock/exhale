@@ -87,28 +87,7 @@ class Component implements Bootable {
 	 * @return array
 	 */
 	public function appHeaderAttr( $attr ) {
-
-		$mod = Mod::get( 'header_background_svg' );
-
-		if ( ! $mod ) {
-			return $attr;
-		}
-
-		$pattern = $this->patterns->get( $mod );
-
-		if ( ! isset( $attr['style'] ) ) {
-			$attr['style'] = '';
-		}
-
-		$attr['style'] .= sprintf(
-			'background-image: %s;',
-			$pattern->cssValue(
-				maybe_hash_hex_color( Mod::get( 'color_header_background_fill' ) ),
-				floatval( Mod::get( 'header_background_fill_opacity' ) )
-			)
-		);
-
-		return $attr;
+		return $this->maybeAddBackground( 'header', $attr );
 	}
 
 	/**
@@ -120,28 +99,7 @@ class Component implements Bootable {
 	 * @return array
 	 */
 	public function appContentAttr( $attr ) {
-
-		$mod = Mod::get( 'content_background_svg' );
-
-		if ( ! $mod ) {
-			return $attr;
-		}
-
-		$pattern = $this->patterns->get( $mod );
-
-		if ( ! isset( $attr['style'] ) ) {
-			$attr['style'] = '';
-		}
-
-		$attr['style'] .= sprintf(
-			'background-image: %s;',
-		 	$pattern->cssValue(
-				maybe_hash_hex_color( Mod::get( 'color_content_background_fill' ) ),
-				floatval( Mod::get( 'content_background_fill_opacity' ) )
-			)
-		);
-
-		return $attr;
+		return $this->maybeAddBackground( 'header', $attr );
 	}
 
 	/**
@@ -153,28 +111,7 @@ class Component implements Bootable {
 	 * @return array
 	 */
 	public function appFooterAttr( $attr ) {
-
-		$mod = Mod::get( 'footer_background_svg' );
-
-		if ( ! $mod ) {
-			return $attr;
-		}
-
-		$pattern = $this->patterns->get( $mod );
-
-		if ( ! isset( $attr['style'] ) ) {
-			$attr['style'] = '';
-		}
-
-		$attr['style'] .= sprintf(
-			'background-image: %s;',
-			$pattern->cssValue(
-				maybe_hash_hex_color( Mod::get( 'color_footer_background_fill' ) ),
-				floatval( Mod::get( 'footer_background_fill_opacity' ) )
-			)
-		);
-
-		return $attr;
+		return $this->maybeAddBackground( 'header', $attr );
 	}
 
 	/**
@@ -187,12 +124,27 @@ class Component implements Bootable {
 	 * @return array
 	 */
 	public function sidebarAttr( $attr, $context ) {
+		return 'footer' === $context
+		       ? $this->maybeAddBackground( 'header', $attr )
+		       : $attr;
+	}
 
-		if ( 'footer' !== $context ) {
+	/**
+	 * Helper method for adding a background style.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  string  $name
+	 * @param  array   $attr
+	 * @return array
+	 */
+	protected function maybeAddBackground( $name, $attr ) {
+
+		if ( 'svg' !== Mod::get( "{$name}_background_type" ) ) {
 			return $attr;
 		}
 
-		$mod = Mod::get( 'sidebar_footer_background_svg' );
+		$mod = Mod::get( "{$name}_background_svg" );
 
 		if ( ! $mod ) {
 			return $attr;
@@ -207,8 +159,8 @@ class Component implements Bootable {
 		$attr['style'] .= sprintf(
 			'background-image: %s;',
 			$pattern->cssValue(
-				maybe_hash_hex_color( Mod::get( 'color_sidebar_footer_background_fill' ) ),
-				floatval( Mod::get( 'sidebar_footer_background_fill_opacity' ) )
+				maybe_hash_hex_color( Mod::get( "color_{$name}_background_fill" ) ),
+				floatval( Mod::get( "{$name}_background_fill_opacity" ) )
 			)
 		);
 

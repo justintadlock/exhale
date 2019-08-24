@@ -49,6 +49,14 @@ class Customize extends Customizable {
 
 		array_map( function( $section ) use ( $manager ) {
 
+			$manager->add_setting( "{$section}_background_type", [
+				'default'              => Mod::fallback( "{$section}_background_type" ),
+				'transport'            => 'postMessage',
+				'sanitize_callback'    => function( $value ) {
+					return in_array( $value, [ 'image', 'svg' ] ) ? $value : '';
+				}
+			] );
+
 			$manager->add_setting( "color_{$section}_background_fill", [
 				'default'              => maybe_hash_hex_color( Mod::fallback( "color_{$section}_background_fill" ) ),
 				'sanitize_callback'    => 'sanitize_hex_color_no_hash',
@@ -83,25 +91,42 @@ class Customize extends Customizable {
 
 		array_map( function( $section ) use ( $manager ) {
 
+			$manager->add_control( "{$section}_background_type", [
+				'section'  => "theme_{$section}_background",
+				'label'    => __( 'Background Type', 'exhale' ),
+				'priority' => 25,
+				'type'     => 'select',
+				'choices'  => [
+					''      => __( 'None',    'exhale' ),
+				//	'image' => __( 'Image',   'exhale' ),
+					'svg'   => __( 'Pattern', 'exhale' )
+				]
+			] );
+
 			$manager->add_control(
 				new WP_Customize_Color_Control( $manager, "color_{$section}_background_fill", [
-					'section'     => "theme_{$section}_background",
-					'label'       => __( 'Foreground Color', 'exhale' ),
-				//	'description' => esc_html( $setting->description() ),
-					'priority'    => 25
+					'section'         => "theme_{$section}_background",
+					'label'           => __( 'Foreground Color', 'exhale' ),
+					'priority'        => 25,
+					'active_callback' => function() use ( $section ) {
+						return 'svg' === Mod::get( "{$section}_background_type" );
+					}
 				] )
 			);
 
 			$manager->add_control( "{$section}_background_fill_opacity", [
-				'section' => "theme_{$section}_background",
-				'label'   => __( 'Foreground Opacity', 'exhale' ),
+				'section'     => "theme_{$section}_background",
+				'label'       => __( 'Foreground Opacity', 'exhale' ),
 				'priority'    => 25,
-				'type'    => 'number',
+				'type'        => 'number',
 				'input_attrs' => [
 					'min' => '0.1',
 					'max' => '1',
 					'step' => '0.1'
-				]
+				],
+				'active_callback' => function() use ( $section ) {
+					return 'svg' === Mod::get( "{$section}_background_type" );
+				}
 			] );
 
 			$choices = [];
@@ -118,11 +143,14 @@ class Customize extends Customizable {
 
 			$manager->add_control(
 				new BackgroundSvg( $manager, "{$section}_background_svg", [
-					'section'     => "theme_{$section}_background",
-					'label'       => __( 'Background Pattern', 'exhale' ),
-					'choices'     => $choices,
-					'background'  => Mod::color( "{$section}-background" ),
-					'priority'    => 25
+					'section'         => "theme_{$section}_background",
+					'label'           => __( 'Background Pattern', 'exhale' ),
+					'choices'         => $choices,
+					'background'      => Mod::color( "{$section}-background" ),
+					'priority'        => 25,
+					'active_callback' => function() use ( $section ) {
+						return 'svg' === Mod::get( "{$section}_background_type" );
+					}
 				] )
 			);
 

@@ -17,18 +17,22 @@ return [
 	'layout' => 'wide',
 
 	// Backgrounds.
+	'header_background_type'         => '',
 	'color_header_background_fill'   => 'a9a9a9',
 	'header_background_fill_opacity' => 0.5,
 	'header_background_svg'          => '',
 
+	'content_background_type'         => '',
 	'color_content_background_fill'   => 'a9a9a9',
 	'content_background_fill_opacity' => 0.5,
 	'content_background_svg'          => '',
 
+	'footer_background_type'         => '',
 	'color_footer_background_fill'   => 'a9a9a9',
 	'footer_background_fill_opacity' => 0.5,
 	'footer_background_svg'          => '',
 
+	'sidebar_footer_background_type'         => '',
 	'color_sidebar_footer_background_fill'   => 'a9a9a9',
 	'sidebar_footer_background_fill_opacity' => 0.5,
 	'sidebar_footer_background_svg'          => '',

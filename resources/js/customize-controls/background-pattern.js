@@ -40,6 +40,25 @@ wp.customize.bind( 'ready', () => {
 	types.forEach( type => {
 
 		let backgroundSvgControl = wp.customize.control( `${type}_background_svg` );
+		let backgroundSvgSetting = backgroundSvgControl.settings.default;
+
+		wp.customize.control( `${type}_background_type`, control => {
+
+			control.setting.bind( bgType => {
+
+				if ( 'svg' === bgType ) {
+					wp.customize.control( `${type}_background_svg`          ).activate();
+					wp.customize.control( `color_${type}_background_fill`   ).activate();
+					wp.customize.control( `${type}_background_fill_opacity` ).activate();
+				} else {
+					backgroundSvgSetting.set( '' );
+
+					wp.customize.control( `${type}_background_svg`          ).deactivate();
+					wp.customize.control( `color_${type}_background_fill`   ).deactivate();
+					wp.customize.control( `${type}_background_fill_opacity` ).deactivate();
+				}
+			} );
+		} );
 
 		wp.customize.control( `color_${type}_background`, control => {
 
