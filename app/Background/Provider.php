@@ -34,8 +34,10 @@ class Provider extends ServiceProvider {
 
 		$this->app->singleton( Pattern\Patterns::class );
 
-		$this->app->singleton( Pattern\Component::class, function() {
-			return new Pattern\Component( $this->app->resolve( Pattern\Patterns::class ) );
+		$this->app->singleton( Component::class, function() {
+			return new Component( [
+				'patterns' => $this->app->resolve( Pattern\Patterns::class )
+			] );
 		} );
 
 		$this->app->singleton( Customize::class, function() {
@@ -53,6 +55,6 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
-		$this->app->resolve( Pattern\Component::class )->boot();
+		$this->app->resolve( Component::class )->boot();
 	}
 }

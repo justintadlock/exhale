@@ -11,9 +11,10 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-namespace Exhale\Background\Pattern;
+namespace Exhale\Background;
 
 use Hybrid\Contracts\Bootable;
+use Exhale\Background\Patterns;
 use Exhale\Settings\Options;
 use Exhale\Tools\Config;
 use Exhale\Tools\Mod;
@@ -42,11 +43,16 @@ class Component implements Bootable {
 	 *
 	 * @since  2.2.0
 	 * @access public
-	 * @param  Patterns  $patterns
+	 * @param  array  $collections
 	 * @return void
 	 */
-	public function __construct( Patterns $patterns ) {
-		$this->patterns = $patterns;
+	public function __construct( array $collections ) {
+
+		foreach ( array_keys( get_object_vars( $this ) ) as $key ) {
+			if ( isset( $collections[ $key ] ) ) {
+				$this->$key = $collections[ $key ];
+			}
+		}
 	}
 
 	/**
