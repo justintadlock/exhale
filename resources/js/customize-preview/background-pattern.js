@@ -33,13 +33,28 @@ Object.keys( types ).forEach( ( type ) => {
 		return;
 	}
 
+	wp.customize( `${type}_background_image`, value => {
+
+		value.bind( to => {
+
+			console.log( to );
+
+			container.style.backgroundImage = '';
+
+			// Add new background image.
+			if ( to ) {
+				container.style.backgroundImage = 'url("' + to + '")';
+			}
+		} );
+	} );
+
 	wp.customize( `${type}_background_svg`, value => {
 
 		value.bind( to => {
 
 			container.style.backgroundImage = '';
 
-			// Add new layout class.
+			// Add new background image.
 			if ( to ) {
 				let pattern = backgroundPatterns[ to ];
 				let color   = wp.customize( `color_${type}_background_fill` ).get();

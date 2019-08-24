@@ -15,6 +15,7 @@ namespace Exhale\Background;
 
 use WP_Customize_Manager;
 use WP_Customize_Color_Control;
+use WP_Customize_Image_Control;
 use Exhale\Customize\Customizable;
 use Exhale\Customize\Controls\BackgroundPosition;
 use Exhale\Customize\Controls\BackgroundSvg;
@@ -74,6 +75,12 @@ class Customize extends Customizable {
 			$manager->add_setting( "{$section}_background_svg", [
 				'default'              => Mod::fallback( "{$section}_background_svg" ),
 				'sanitize_callback'    => 'sanitize_key',
+				'transport'            => 'postMessage'
+			] );
+
+			$manager->add_setting( "{$section}_background_image", [
+				'default'              => Mod::fallback( "{$section}_background_image" ),
+			//	'sanitize_callback'    => 'esc_url_raw',
 				'transport'            => 'postMessage'
 			] );
 
@@ -166,7 +173,7 @@ class Customize extends Customizable {
 				'type'     => 'select',
 				'choices'  => [
 					''      => __( 'None',    'exhale' ),
-				//	'image' => __( 'Image',   'exhale' ),
+					'image' => __( 'Image',   'exhale' ),
 					'svg'   => __( 'Pattern', 'exhale' )
 				]
 			] );
@@ -222,6 +229,17 @@ class Customize extends Customizable {
 				] )
 			);
 
+			$manager->add_control(
+				new WP_Customize_Image_Control( $manager, "{$section}_background_image", [
+					'section'         => "theme_{$section}_background",
+					'label'           => __( 'Background Image', 'exhale' ),
+					'priority'        => 25,
+					'active_callback' => function() use ( $section ) {
+						return 'image' === Mod::get( "{$section}_background_type" );
+					}
+				] )
+			);
+
 			$manager->add_control( "{$section}_background_attachment", [
 				'section'  => "theme_{$section}_background",
 				'label'    => __( 'Background Attachment', 'exhale' ),
@@ -233,7 +251,8 @@ class Customize extends Customizable {
 				//	'local'     => __( 'Local',  'exhale' )
 				],
 				'active_callback' => function() use ( $section ) {
-					return '' !== Mod::get( "{$section}_background_type" );
+					return ( 'svg' === Mod::get( "{$section}_background_type" ) && Mod::get( "{$section}_background_svg" ) ) ||
+					       ( 'image' === Mod::get( "{$section}_background_type" ) && Mod::get( "{$section}_background_image" ) );
 				}
 			] );
 
@@ -248,7 +267,8 @@ class Customize extends Customizable {
 					'contain' => __( 'Contain', 'exhale' )
 				],
 				'active_callback' => function() use ( $section ) {
-					return '' !== Mod::get( "{$section}_background_type" );
+					return ( 'svg' === Mod::get( "{$section}_background_type" ) && Mod::get( "{$section}_background_svg" ) ) ||
+					       ( 'image' === Mod::get( "{$section}_background_type" ) && Mod::get( "{$section}_background_image" ) );
 				}
 			] );
 
@@ -264,7 +284,8 @@ class Customize extends Customizable {
 					'repeat-y'  => __( 'Repeat Vertically',   'exhale' )
 				],
 				'active_callback' => function() use ( $section ) {
-					return '' !== Mod::get( "{$section}_background_type" );
+					return ( 'svg' === Mod::get( "{$section}_background_type" ) && Mod::get( "{$section}_background_svg" ) ) ||
+					       ( 'image' === Mod::get( "{$section}_background_type" ) && Mod::get( "{$section}_background_image" ) );
 				}
 			] );
 
@@ -275,7 +296,8 @@ class Customize extends Customizable {
 					'background'      => Mod::get( "{$section}_background_position" ),
 					'priority'        => 30,
 					'active_callback' => function() use ( $section ) {
-						return '' !== Mod::get( "{$section}_background_type" );
+						return ( 'svg' === Mod::get( "{$section}_background_type" ) && Mod::get( "{$section}_background_svg" ) ) ||
+						       ( 'image' === Mod::get( "{$section}_background_type" ) && Mod::get( "{$section}_background_image" ) );
 					}
 				] )
 			);

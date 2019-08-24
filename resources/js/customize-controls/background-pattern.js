@@ -42,21 +42,53 @@ wp.customize.bind( 'ready', () => {
 		let backgroundSvgControl = wp.customize.control( `${type}_background_svg` );
 		let backgroundSvgSetting = backgroundSvgControl.settings.default;
 
+		let backgroundImageControl = wp.customize.control( `${type}_background_image` );
+		let backgroundImageSetting = backgroundImageControl.settings.default;
+
 		wp.customize.control( `${type}_background_type`, control => {
 
 			control.setting.bind( bgType => {
 
 				if ( 'svg' === bgType ) {
+					backgroundImageSetting.set( '' );
+
+					// Deactivate image controls.
+					wp.customize.control( `${type}_background_image` ).deactivate();
+
+					// Activate SVG controls.
 					wp.customize.control( `${type}_background_svg`          ).activate();
 					wp.customize.control( `color_${type}_background_fill`   ).activate();
 					wp.customize.control( `${type}_background_fill_opacity` ).activate();
-					wp.customize.control( `${type}_background_attachment`   ).activate();
-					wp.customize.control( `${type}_background_size`         ).activate();
-					wp.customize.control( `${type}_background_repeat`       ).activate();
-					wp.customize.control( `${type}_background_position`     ).activate();
-				} else {
+
+					if ( backgroundSvgSetting.get() ) {
+						wp.customize.control( `${type}_background_attachment`   ).activate();
+						wp.customize.control( `${type}_background_size`         ).activate();
+						wp.customize.control( `${type}_background_repeat`       ).activate();
+						wp.customize.control( `${type}_background_position`     ).activate();
+					}
+
+				} else if ( 'image' === bgType ) {
 					backgroundSvgSetting.set( '' );
 
+					// Deactivate SVG controls.
+					wp.customize.control( `${type}_background_svg`          ).deactivate();
+					wp.customize.control( `color_${type}_background_fill`   ).deactivate();
+					wp.customize.control( `${type}_background_fill_opacity` ).deactivate();
+
+					// Activate image controls.
+					wp.customize.control( `${type}_background_image` ).activate();
+
+					if ( backgroundImageSetting.get() ) {
+						wp.customize.control( `${type}_background_attachment`   ).activate();
+						wp.customize.control( `${type}_background_size`         ).activate();
+						wp.customize.control( `${type}_background_repeat`       ).activate();
+						wp.customize.control( `${type}_background_position`     ).activate();
+					}
+				} else {
+					backgroundSvgSetting.set( '' );
+					backgroundImageSetting.set( '' );
+
+					wp.customize.control( `${type}_background_image`        ).deactivate();
 					wp.customize.control( `${type}_background_svg`          ).deactivate();
 					wp.customize.control( `color_${type}_background_fill`   ).deactivate();
 					wp.customize.control( `${type}_background_fill_opacity` ).deactivate();
@@ -140,11 +172,38 @@ wp.customize.bind( 'ready', () => {
 			control.setting.bind( svg => {
 
 				if ( svg ) {
-					wp.customize.control( `color_${type}_background_fill` ).activate();
+					wp.customize.control( `color_${type}_background_fill`   ).activate();
 					wp.customize.control( `${type}_background_fill_opacity` ).activate();
+					wp.customize.control( `${type}_background_attachment`   ).activate();
+					wp.customize.control( `${type}_background_size`         ).activate();
+					wp.customize.control( `${type}_background_repeat`       ).activate();
+					wp.customize.control( `${type}_background_position`     ).activate();
 				} else {
-					wp.customize.control( `color_${type}_background_fill` ).deactivate();
+					wp.customize.control( `color_${type}_background_fill`   ).deactivate();
 					wp.customize.control( `${type}_background_fill_opacity` ).deactivate();
+					wp.customize.control( `${type}_background_attachment`   ).deactivate();
+					wp.customize.control( `${type}_background_size`         ).deactivate();
+					wp.customize.control( `${type}_background_repeat`       ).deactivate();
+					wp.customize.control( `${type}_background_position`     ).deactivate();
+				}
+
+			} );
+		} );
+
+		wp.customize.control( `${type}_background_image`, control => {
+
+			control.setting.bind( image => {
+
+				if ( image ) {
+					wp.customize.control( `${type}_background_attachment`   ).activate();
+					wp.customize.control( `${type}_background_size`         ).activate();
+					wp.customize.control( `${type}_background_repeat`       ).activate();
+					wp.customize.control( `${type}_background_position`     ).activate();
+				} else {
+					wp.customize.control( `${type}_background_attachment`   ).deactivate();
+					wp.customize.control( `${type}_background_size`         ).deactivate();
+					wp.customize.control( `${type}_background_repeat`       ).deactivate();
+					wp.customize.control( `${type}_background_position`     ).deactivate();
 				}
 
 			} );
