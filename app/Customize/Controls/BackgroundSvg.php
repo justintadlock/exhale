@@ -74,25 +74,27 @@ class BackgroundSvg extends WP_Customize_Control {
 
 		<# if ( data.choices ) { #>
 
-			<ul>
-				<li class="svg-background">
-					<label>
-						<input type="radio" value="" name="_customize-{{ data.type }}-{{ data.id }}" {{{ data.link }}} <# if ( ! data.value ) { #> checked="checked" <# } #> />
-						<?php esc_html_e( 'None', 'exhale' ) ?>
-						<div data-svg="" class="svg-background__block" style="background-color: {{ data.background }};"></div>
-					</label>
-				</li>
-
-				<# _.each( data.choices, function( args, choice ) { #>
+			<div class="wp-tab-panel svg-background-panel">
+				<ul>
 					<li class="svg-background">
 						<label>
-							<input type="radio" value="{{ choice }}" name="_customize-{{ data.type }}-{{ data.id }}" {{{ data.link }}} <# if ( choice === data.value ) { #> checked="checked" <# } #> />
-							{{ args.label }}
-							<div data-svg="{{ choice }}" class="svg-background__block" style="background-color: {{ data.background }}; background-image: {{ args.cssValue }};"></div>
+							<input type="radio" value="" name="_customize-{{ data.type }}-{{ data.id }}" {{{ data.link }}} <# if ( ! data.value ) { #> checked="checked" <# } #> />
+							<?php esc_html_e( 'None', 'exhale' ) ?>
+							<div data-svg="" class="svg-background__block" style="background-color: {{ data.background }};"></div>
 						</label>
 					</li>
-				<# } ) #>
-			</ul>
+
+					<# _.each( data.choices, function( args, choice ) { #>
+						<li class="svg-background">
+							<label>
+								<input type="radio" value="{{ choice }}" name="_customize-{{ data.type }}-{{ data.id }}" {{{ data.link }}} <# if ( choice === data.value ) { #> checked="checked" <# } #> />
+								{{ args.label }}
+								<div data-svg="{{ choice }}" class="svg-background__block" style="background-color: {{ data.background }}; background-image: {{ args.cssValue }};"></div>
+							</label>
+						</li>
+					<# } ) #>
+				</ul>
+			</div>
 
 		<# } #>
 
