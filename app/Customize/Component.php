@@ -300,9 +300,10 @@ class Component implements Bootable {
 	public function registerControls( WP_Customize_Manager $manager ) {
 
 		// Register JS control types.
-		$manager->register_control_type( Controls\BackgroundSvg::class );
-		$manager->register_control_type( Controls\ImageFilter::class   );
-		$manager->register_control_type( Controls\Typography::class    );
+		$manager->register_control_type( Controls\BackgroundPosition::class );
+		$manager->register_control_type( Controls\BackgroundSvg::class      );
+		$manager->register_control_type( Controls\ImageFilter::class        );
+		$manager->register_control_type( Controls\Typography::class         );
 
 		// Change background color control labels.
 		$bg_color              = $manager->get_control( 'background_color' );

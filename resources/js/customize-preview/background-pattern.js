@@ -104,4 +104,87 @@ Object.keys( types ).forEach( ( type ) => {
 			}
 		} );
 	} );
+
+	wp.customize( `${type}_background_attachment`, value => {
+
+		value.bind( to => {
+
+			let attachments = [
+				'bg-scroll',
+				'bg-fixed',
+				'bg-local'
+			];
+
+			// Add new attachment class.
+			if ( to ) {
+				container.classList.remove( ...attachments );
+
+				container.classList.add( `bg-${ to }` );
+			}
+		} );
+	} );
+
+	wp.customize( `${type}_background_size`, value => {
+
+		value.bind( to => {
+
+			let sizes = [
+				'bg-auto',
+				'bg-cover',
+				'bg-contain'
+			];
+
+			// Add new size class.
+			if ( to ) {
+				container.classList.remove( ...sizes );
+
+				container.classList.add( `bg-${ to }` );
+			}
+		} );
+	} );
+
+	wp.customize( `${type}_background_repeat`, value => {
+
+		value.bind( to => {
+
+			let repeats = [
+				'bg-no-repeat',
+				'bg-repeat',
+				'bg-repeat-x',
+				'bg-repeat-y'
+			];
+
+			// Add new repeat class.
+			if ( to ) {
+				container.classList.remove( ...repeats );
+
+				container.classList.add( `bg-${ to }` );
+			}
+		} );
+	} );
+
+	wp.customize( `${type}_background_position`, value => {
+
+		value.bind( to => {
+
+			let positions = [
+				'bg-bottom',
+				'bg-center',
+				'bg-left',
+				'bg-left-bottom',
+				'bg-left-top',
+				'bg-right',
+				'bg-right-bottom',
+				'bg-right-top',
+				'bg-top'
+			];
+
+			// Add new position class.
+			if ( to ) {
+				container.classList.remove( ...positions );
+
+				container.classList.add( `bg-${ to }` );
+			}
+		} );
+	} );
 } );

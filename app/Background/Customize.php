@@ -16,6 +16,7 @@ namespace Exhale\Background;
 use WP_Customize_Manager;
 use WP_Customize_Color_Control;
 use Exhale\Customize\Customizable;
+use Exhale\Customize\Controls\BackgroundPosition;
 use Exhale\Customize\Controls\BackgroundSvg;
 use Exhale\Tools\Collection;
 use Exhale\Tools\Mod;
@@ -74,6 +75,73 @@ class Customize extends Customizable {
 				'default'              => Mod::fallback( "{$section}_background_svg" ),
 				'sanitize_callback'    => 'sanitize_key',
 				'transport'            => 'postMessage'
+			] );
+
+			$manager->add_setting( "{$section}_background_attachment", [
+				'default'              => Mod::fallback( "{$section}_background_attachment" ),
+				'transport'            => 'postMessage',
+				'sanitize_callback'    => function( $value ) {
+
+					$attachments = [
+						'scroll',
+						'fixed',
+						'local'
+					];
+
+					return in_array( $value, $attachments ) ? $value : 'scroll';
+				}
+			] );
+
+			$manager->add_setting( "{$section}_background_position", [
+				'default'              => Mod::fallback( "{$section}_background_position" ),
+				'transport'            => 'postMessage',
+				'sanitize_callback'    => function( $value ) {
+
+					$positions = [
+						'bottom',
+						'center',
+						'left',
+						'left-bottom',
+						'left-top',
+						'right',
+						'right-bottom',
+						'right-top',
+						'top'
+					];
+
+					return in_array( $value, $positions ) ? $value : 'top';
+				}
+			] );
+
+			$manager->add_setting( "{$section}_background_size", [
+				'default'              => Mod::fallback( "{$section}_background_size" ),
+				'transport'            => 'postMessage',
+				'sanitize_callback'    => function( $value ) {
+
+					$sizes = [
+						'auto',
+						'cover',
+						'container'
+					];
+
+					return in_array( $value, $sizes ) ? $value : 'auto';
+				}
+			] );
+
+			$manager->add_setting( "{$section}_background_repeat", [
+				'default'              => Mod::fallback( "{$section}_background_repeat" ),
+				'transport'            => 'postMessage',
+				'sanitize_callback'    => function( $value ) {
+
+					$repeats = [
+						'no-repeat',
+						'repeat',
+						'repeat-x',
+						'repeat-y'
+					];
+
+					return in_array( $value, $repeats ) ? $value : 'top';
+				}
 			] );
 
 		}, [ 'header', 'content', 'footer', 'sidebar_footer' ] );
@@ -150,6 +218,64 @@ class Customize extends Customizable {
 					'priority'        => 25,
 					'active_callback' => function() use ( $section ) {
 						return 'svg' === Mod::get( "{$section}_background_type" );
+					}
+				] )
+			);
+
+			$manager->add_control( "{$section}_background_attachment", [
+				'section'  => "theme_{$section}_background",
+				'label'    => __( 'Background Attachment', 'exhale' ),
+				'priority' => 30,
+				'type'     => 'select',
+				'choices'  => [
+					'scroll'    => __( 'Scroll', 'exhale' ),
+					'fixed'     => __( 'Fixed',  'exhale' ),
+				//	'local'     => __( 'Local',  'exhale' )
+				],
+				'active_callback' => function() use ( $section ) {
+					return '' !== Mod::get( "{$section}_background_type" );
+				}
+			] );
+
+			$manager->add_control( "{$section}_background_size", [
+				'section'  => "theme_{$section}_background",
+				'label'    => __( 'Background Size', 'exhale' ),
+				'priority' => 30,
+				'type'     => 'select',
+				'choices'  => [
+					'auto'    => __( 'Auto',    'exhale' ),
+					'cover'   => __( 'Cover',   'exhale' ),
+					'contain' => __( 'Contain', 'exhale' )
+				],
+				'active_callback' => function() use ( $section ) {
+					return '' !== Mod::get( "{$section}_background_type" );
+				}
+			] );
+
+			$manager->add_control( "{$section}_background_repeat", [
+				'section'  => "theme_{$section}_background",
+				'label'    => __( 'Background Repeat', 'exhale' ),
+				'priority' => 30,
+				'type'     => 'select',
+				'choices'  => [
+					'no-repeat' => __( 'No Repeat',           'exhale' ),
+					'repeat'    => __( 'Repeat',              'exhale' ),
+					'repeat-x'  => __( 'Repeat Horizontally', 'exhale' ),
+					'repeat-y'  => __( 'Repeat Vertically',   'exhale' )
+				],
+				'active_callback' => function() use ( $section ) {
+					return '' !== Mod::get( "{$section}_background_type" );
+				}
+			] );
+
+			$manager->add_control(
+				new BackgroundPosition( $manager, "{$section}_background_position", [
+					'section'         => "theme_{$section}_background",
+					'label'           => __( 'Background Position', 'exhale' ),
+					'background'      => Mod::get( "{$section}_background_position" ),
+					'priority'        => 30,
+					'active_callback' => function() use ( $section ) {
+						return '' !== Mod::get( "{$section}_background_type" );
 					}
 				] )
 			);

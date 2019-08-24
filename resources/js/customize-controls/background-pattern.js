@@ -50,12 +50,20 @@ wp.customize.bind( 'ready', () => {
 					wp.customize.control( `${type}_background_svg`          ).activate();
 					wp.customize.control( `color_${type}_background_fill`   ).activate();
 					wp.customize.control( `${type}_background_fill_opacity` ).activate();
+					wp.customize.control( `${type}_background_attachment`   ).activate();
+					wp.customize.control( `${type}_background_size`         ).activate();
+					wp.customize.control( `${type}_background_repeat`       ).activate();
+					wp.customize.control( `${type}_background_position`     ).activate();
 				} else {
 					backgroundSvgSetting.set( '' );
 
 					wp.customize.control( `${type}_background_svg`          ).deactivate();
 					wp.customize.control( `color_${type}_background_fill`   ).deactivate();
 					wp.customize.control( `${type}_background_fill_opacity` ).deactivate();
+					wp.customize.control( `${type}_background_attachment`   ).deactivate();
+					wp.customize.control( `${type}_background_size`         ).deactivate();
+					wp.customize.control( `${type}_background_repeat`       ).deactivate();
+					wp.customize.control( `${type}_background_position`     ).deactivate();
 				}
 			} );
 		} );
