@@ -18,6 +18,8 @@ use Exhale\Settings\Options;
 use Exhale\Tools\Config;
 use Exhale\Tools\Mod;
 
+use function Hybrid\sprintf_theme_uri;
+
 /**
  * Background component class.
  *
@@ -62,6 +64,11 @@ class Component implements Bootable {
 		add_filter( 'hybrid/attr/app-content', [ $this, 'appContentAttr' ]        );
 		add_filter( 'hybrid/attr/app-footer',  [ $this, 'appFooterAttr'  ]        );
 		add_filter( 'hybrid/attr/sidebar',     [ $this, 'sidebarAttr'    ], 10, 2 );
+
+		add_filter( 'hybrid/attr/app-header/class',  [ $this, 'appHeaderClass'  ]        );
+		add_filter( 'hybrid/attr/app-content/class', [ $this, 'appContentClass' ]        );
+		add_filter( 'hybrid/attr/app-footer/class',  [ $this, 'appFooterClass'  ]        );
+		add_filter( 'hybrid/attr/sidebar/class',     [ $this, 'sidebarClass'    ], 10, 2 );
 	}
 
 	/**
@@ -87,7 +94,7 @@ class Component implements Bootable {
 	 * @return array
 	 */
 	public function appHeaderAttr( $attr ) {
-		return $this->maybeAddBackground( 'header', $attr );
+		return $this->maybeAddBackgroundStyle( 'header', $attr );
 	}
 
 	/**
@@ -99,7 +106,7 @@ class Component implements Bootable {
 	 * @return array
 	 */
 	public function appContentAttr( $attr ) {
-		return $this->maybeAddBackground( 'header', $attr );
+		return $this->maybeAddBackgroundStyle( 'content', $attr );
 	}
 
 	/**
@@ -111,7 +118,7 @@ class Component implements Bootable {
 	 * @return array
 	 */
 	public function appFooterAttr( $attr ) {
-		return $this->maybeAddBackground( 'header', $attr );
+		return $this->maybeAddBackgroundStyle( 'footer', $attr );
 	}
 
 	/**
@@ -125,8 +132,58 @@ class Component implements Bootable {
 	 */
 	public function sidebarAttr( $attr, $context ) {
 		return 'footer' === $context
-		       ? $this->maybeAddBackground( 'header', $attr )
+		       ? $this->maybeAddBackgroundStyle( 'sidebar_footer', $attr )
 		       : $attr;
+	}
+
+	/**
+	 * Filters the `app-header` element's classes.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  array  $classes
+	 * @return array
+	 */
+	public function appHeaderClass( $classes ) {
+		return $this->maybeAddBackgroundClass( 'header', $classes );
+	}
+
+	/**
+	 * Filters the `app-content` element's classes.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  array  $classes
+	 * @return array
+	 */
+	public function appContentClass( $classes ) {
+		return $this->maybeAddBackgroundClass( 'content', $classes );
+	}
+
+	/**
+	 * Filters the `app-footer` element's classes.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  array  $classes
+	 * @return array
+	 */
+	public function appFooterClass( $classes ) {
+		return $this->maybeAddBackgroundClass( 'footer', $classes );
+	}
+
+	/**
+	 * Filters the `sidebar-footer` element's classes.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  array  $classes
+	 * @return array
+	 */
+	public function sidebarClass( $classes, $context ) {
+		return 'footer' === $context
+		       ? $this->maybeAddBackgroundClass( 'sidebar_footer', $classes )
+		       : $classes;
 	}
 
 	/**
@@ -138,32 +195,78 @@ class Component implements Bootable {
 	 * @param  array   $attr
 	 * @return array
 	 */
-	protected function maybeAddBackground( $name, $attr ) {
+	protected function maybeAddBackgroundStyle( $name, $attr ) {
 
-		if ( 'svg' !== Mod::get( "{$name}_background_type" ) ) {
+		$type = Mod::get( "{$name}_background_type" );
+
+		if ( ! $type ) {
 			return $attr;
 		}
 
-		$mod = Mod::get( "{$name}_background_svg" );
+		$image = Mod::get( "{$name}_background_image" );
+		$svg   = Mod::get( "{$name}_background_svg"   );
 
-		if ( ! $mod ) {
-			return $attr;
+		if ( 'svg' === $type && $svg ) {
+
+			$pattern = $this->patterns->get( $svg );
+
+			if ( ! isset( $attr['style'] ) ) {
+				$attr['style'] = '';
+			}
+
+			$attr['style'] .= sprintf(
+				'background-image: %s;',
+				$pattern->cssValue(
+					maybe_hash_hex_color( Mod::get( "color_{$name}_background_fill" ) ),
+					floatval( Mod::get( "{$name}_background_fill_opacity" ) )
+				)
+			);
+
+		} elseif ( 'image' === $type && $image ) {
+
+			if ( ! isset( $attr['style'] ) ) {
+				$attr['style'] = '';
+			}
+
+			$attr['style'] .= sprintf(
+				"background-image: url('%s');",
+				esc_url( sprintf_theme_uri( $image ) )
+			);
 		}
-
-		$pattern = $this->patterns->get( $mod );
-
-		if ( ! isset( $attr['style'] ) ) {
-			$attr['style'] = '';
-		}
-
-		$attr['style'] .= sprintf(
-			'background-image: %s;',
-			$pattern->cssValue(
-				maybe_hash_hex_color( Mod::get( "color_{$name}_background_fill" ) ),
-				floatval( Mod::get( "{$name}_background_fill_opacity" ) )
-			)
-		);
 
 		return $attr;
+	}
+
+	protected function maybeAddBackgroundClass( $name, $classes ) {
+
+		$type = Mod::get( "{$name}_background_type" );
+
+		if ( ! $type ) {
+			return $classes;
+		}
+
+		$image = Mod::get( "{$name}_background_image" );
+		$svg   = Mod::get( "{$name}_background_svg"   );
+
+		if ( $image || $svg ) {
+
+			if ( $attachment = Mod::get( "{$name}_background_attachment" ) ) {
+				$classes[] = esc_attr( "bg-{$attachment}" );
+			}
+
+			if ( $size = Mod::get( "{$name}_background_size" ) ) {
+				$classes[] = esc_attr( "bg-{$size}" );
+			}
+
+			if ( $repeat = Mod::get( "{$name}_background_repeat" ) ) {
+				$classes[] = esc_attr( "bg-{$repeat}" );
+			}
+
+			if ( $position = Mod::get( "{$name}_background_position" ) ) {
+				$classes[] = esc_attr( "bg-{$position}" );
+			}
+		}
+
+		return $classes;
 	}
 }
