@@ -163,7 +163,7 @@ return [
 	# Mods dealing with the header layout.
 
 	// Header stickiness.
-	'header_sticky' => true,
+	'header_sticky' => false,
 
 	// Branding separator (see `config/character-entities.php` for options).
 	'branding_sep' => '&#183;',
