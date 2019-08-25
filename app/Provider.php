@@ -48,7 +48,18 @@ class Provider extends ServiceProvider {
 
 		// Bind a single instance of the WP custom background settings.
 		$this->app->singleton( 'exhale/compat/background', function() {
-			return Config::get( 'custom-background' );
+			return array_merge(
+				Config::get( 'custom-background' ),
+				[
+					'default-image'          => '',
+					'default-position-x'     => 'left',
+					'default-position-y'     => 'top',
+					'default-size'           => 'auto',
+					'default-repeat'         => 'repeat',
+					'default-attachment'     => 'scroll',
+					'default-color'          => 'f3f3f3'
+				]
+			);
 		} );
 
 		// Bind the Laravel Mix manifest for cache-busting.
