@@ -5,6 +5,10 @@
  * Defines the default theme mods for the theme. Child themes can overwrite this
  * with a `config/settings-mod.php` file for changing the defaults.
  *
+ * Configs are loaded early in the load process. If a default value requires PHP
+ * code to execute, use a closure. It will be invoked at an appropriate time when
+ * all functions/variables are set up and available for use.
+ *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
  * @copyright 2019 Justin Tadlock
@@ -13,10 +17,25 @@
  */
 
 return [
+
+	# ----------------------------------------------------------------------
+	# Global layout.
+	# ----------------------------------------------------------------------
+	#
+	# Handles the global theme layout mods.
+
 	// Set the default layout.
 	'layout' => 'wide',
 
-	// Backgrounds.
+	# ----------------------------------------------------------------------
+	# Backgrounds.
+	# ----------------------------------------------------------------------
+	#
+	# Adds default mods for individual element's background settings. The
+	# background color is currently handled via `config/settings-color.php`.
+	# The `*_fill` and `*_svg` mods are related to the SVG patterns.
+
+	// Header background.
 	'header_background_type'         => '',
 	'color_header_background_fill'   => 'a9a9a9',
 	'header_background_fill_opacity' => 0.5,
@@ -27,6 +46,7 @@ return [
 	'header_background_repeat'       => 'repeat',
 	'header_background_position'     => 'center',
 
+	// Content background.
 	'content_background_type'         => '',
 	'color_content_background_fill'   => 'a9a9a9',
 	'content_background_fill_opacity' => 0.5,
@@ -37,6 +57,7 @@ return [
 	'content_background_repeat'       => 'repeat',
 	'content_background_position'     => 'center',
 
+	// Footer background.
 	'footer_background_type'         => '',
 	'color_footer_background_fill'   => 'a9a9a9',
 	'footer_background_fill_opacity' => 0.5,
@@ -47,6 +68,7 @@ return [
 	'footer_background_repeat'       => 'repeat',
 	'footer_background_position'     => 'center',
 
+	// Sidebar footer background.
 	'sidebar_footer_background_type'         => '',
 	'color_sidebar_footer_background_fill'   => 'a9a9a9',
 	'sidebar_footer_background_fill_opacity' => 0.5,
@@ -56,6 +78,17 @@ return [
 	'sidebar_footer_background_size'         => 'auto',
 	'sidebar_footer_background_repeat'       => 'repeat',
 	'sidebar_footer_background_position'     => 'center',
+
+	# ----------------------------------------------------------------------
+	# Loop Layouts.
+	# ----------------------------------------------------------------------
+	#
+	# Sets the loop layout mods for archive-type pages. These are pages with
+	# a loop of multiple posts. CPTs and CTs are supported by adding a new
+	# set of mods via the `loop_archive_{$name}_{$mod}` syntax. It can also
+	# inherit via the `loop_archive_{$name}_inherit` mod by setting its value
+	# to `archive_{$name}` of an existing mod or `true` to inherit from the
+	# default archive loop layout.
 
 	// Archive layout.
 	'loop_archive_layout'     => 'list',
@@ -89,39 +122,52 @@ return [
 	'loop_archive_product_cat_inherit' => 'archive_product',
 	'loop_archive_product_tag_inherit' => 'archive_product',
 
-	// Theme archive layouts (Theme Designer plugin).
-	'loop_archive_theme_inherit'    => false,
-	'loop_archive_theme_layout'     => 'grid',
-	'loop_archive_theme_width'      => '4xl',
-	'loop_archive_theme_columns'    => 2,
-	'loop_archive_theme_image_size' => 'exhale-landscape-medium',
-
-	// Plugin archive layouts (Plugin Developer plugin).
-	'loop_archive_plugin_inherit'    => false,
-	'loop_archive_plugin_layout'     => 'grid',
-	'loop_archive_plugin_width'      => '4xl',
-	'loop_archive_plugin_columns'    => 2,
-	'loop_archive_plugin_image_size' => 'exhale-landscape-medium',
+	# ----------------------------------------------------------------------
+	# Image Filters.
+	# ----------------------------------------------------------------------
+	#
+	# Set the default image filter function and default/hover amounts.
 
 	// Set the default image filter mods.
 	'image_default_filter_function' => 'grayscale',
 	'image_default_filter_amount'   => 0,
 	'image_hover_filter_amount'     => 100,
 
+	# ----------------------------------------------------------------------
+	# Header Layout.
+	# ----------------------------------------------------------------------
+	#
+	# Mods dealing with the header layout.
+
 	// Header stickiness.
 	'header_sticky' => false,
 
-	// Branding separator.
+	// Branding separator (see `config/character-entities.php` for options).
 	'branding_sep' => '&#183;',
+
+	# ----------------------------------------------------------------------
+	# Footer.
+	# ----------------------------------------------------------------------
+	#
+	# Handles various footer mods.
 
 	// Footer sidebar layout.
 	'sidebar_footer_width' => 'full',
 
-	// Set the default footer credit.
-	'powered_by'    => true,
+	// Whether to show a random powered by quote by default. If set to `false`,
+	// the `footer_credit` value will be used.
+	'powered_by' => true,
+
+	// Default footer credit text.
 	'footer_credit' => function() {
 		return sprintf( __( 'Powered by %s.', 'exhale' ), \Hybrid\Theme\render_link() );
 	},
+
+	# ----------------------------------------------------------------------
+	# Deprecated mods.
+	# ----------------------------------------------------------------------
+	#
+	# The following mods exist for back-compat only. Do not set.
 
 	// @deprecated 2.1.0
 	'featured_image_size' => 'exhale-landscape-large',
