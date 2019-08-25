@@ -72,6 +72,23 @@ $text-6xl  : 4rem;      // 64px
 	);
 }
 
+@function editor-font-sizes-compat() {
+
+	@return (
+	        fine: $text-3xs,
+	  	diminutive: $text-2xs,
+		tiny        : $text-xs,
+		small       : $text-sm,
+		medium      : $text-base,
+		large       : $text-lg,
+		extra-large : $text-xl,
+		huge        : $text-2xl,
+		gargantuan  : $text-3xl,
+		colossal    : $text-4xl,
+		titanic     : $text-5xl
+	);
+}
+
 /// Returns a single editor font size value by name.
 ///
 /// @since  1.0.0

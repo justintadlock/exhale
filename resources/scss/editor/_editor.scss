@@ -107,3 +107,39 @@
 		padding-left: $spacing-global;
 	}
 }
+
+// Colors and font-sizes compat.
+
+.edit-post-visual-editor {
+
+	@each $color-name, $color-value in block-colors-compat() {
+
+		.has-color-#{ $color-name },
+		a.has-color-#{ $color-name } {
+			color: $color-value;
+		}
+
+		.has-background-#{ $color-name }-color {
+			background-color: $color-value;
+		}
+	}
+
+	@each $font-size-name, $font-size-value in editor-font-sizes-compat() {
+
+		.has-#{ $font-size-name }-font-size {
+			font-size: #{ $font-size-value };
+		}
+	}
+
+	$text-aligns: (
+		has-text-align-left:   left,
+		has-text-align-center: center,
+		has-text-align-right:  right
+	);
+
+	@each $name, $value in $text-aligns {
+		.#{ $name } {
+			text-align: $value;
+		}
+	}
+}
