@@ -4,17 +4,18 @@ ol {
 	padding-left: 2em;
 	margin:       0 0 $spacing-global;
 
-	ul, ol {
-		list-style-type:   inherit;
-		margin:       0;
-		padding-left: $spacing-global;
-	}
-
 	&.aligncenter,
 	&.aligncenter ul {
 		list-style: none;
 	}
 }
+
+li > ul,
+li > ol {
+	margin:       0;
+	padding-left: $spacing-global;
+}
+
 
 // Remove bottom margin from lists that are direct children of a list item.
 li > ul,
