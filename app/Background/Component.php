@@ -66,11 +66,13 @@ class Component implements Bootable {
 
 		add_action( 'after_setup_theme', [ $this, 'registerDefaultPatterns' ] );
 
+		add_filter( 'hybrid/attr/body',        [ $this, 'bodyAttr'  ]             );
 		add_filter( 'hybrid/attr/app-header',  [ $this, 'appHeaderAttr'  ]        );
 		add_filter( 'hybrid/attr/app-content', [ $this, 'appContentAttr' ]        );
 		add_filter( 'hybrid/attr/app-footer',  [ $this, 'appFooterAttr'  ]        );
 		add_filter( 'hybrid/attr/sidebar',     [ $this, 'sidebarAttr'    ], 10, 2 );
 
+		add_filter( 'hybrid/attr/body/class',        [ $this, 'bodyClass'  ]             );
 		add_filter( 'hybrid/attr/app-header/class',  [ $this, 'appHeaderClass'  ]        );
 		add_filter( 'hybrid/attr/app-content/class', [ $this, 'appContentClass' ]        );
 		add_filter( 'hybrid/attr/app-footer/class',  [ $this, 'appFooterClass'  ]        );
@@ -89,6 +91,18 @@ class Component implements Bootable {
 		foreach ( Config::get( 'background-patterns' ) as $name => $pattern ) {
 			$this->patterns->add( $name, $pattern );
 		}
+	}
+
+	/**
+	 * Filters the `body` element and adds a background style.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  array  $attr
+	 * @return array
+	 */
+	public function bodyAttr( $attr ) {
+		return $this->maybeAddBackgroundStyle( 'body', $attr );
 	}
 
 	/**
@@ -140,6 +154,18 @@ class Component implements Bootable {
 		return 'footer' === $context
 		       ? $this->maybeAddBackgroundStyle( 'sidebar_footer', $attr )
 		       : $attr;
+	}
+
+	/**
+	 * Filters the `body` element's classes.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 * @param  array  $classes
+	 * @return array
+	 */
+	public function bodyClass( $classes ) {
+		return $this->maybeAddBackgroundClass( 'body', $classes );
 	}
 
 	/**
@@ -236,7 +262,7 @@ class Component implements Bootable {
 
 			$attr['style'] .= sprintf(
 				"background-image: url('%s');",
-				esc_url( sprintf_theme_uri( $image ) )
+				esc_url( set_url_scheme( sprintf_theme_uri( $image ) ) )
 			);
 		}
 

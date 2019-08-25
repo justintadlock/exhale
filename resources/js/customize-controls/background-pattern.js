@@ -16,6 +16,7 @@ wp.customize.bind( 'ready', () => {
 	const { backgroundPatterns } = exhaleCustomizeControls;
 
 	let types = [
+		'body',
 		'header',
 		'content',
 		'footer',

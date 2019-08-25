@@ -151,7 +151,7 @@ class Customize extends Customizable {
 				}
 			] );
 
-		}, [ 'header', 'content', 'footer', 'sidebar_footer' ] );
+		}, [ 'body', 'header', 'content', 'footer', 'sidebar_footer' ] );
 	}
 
 	/**
@@ -302,7 +302,7 @@ class Customize extends Customizable {
 				] )
 			);
 
-		}, [ 'header', 'content', 'footer', 'sidebar_footer' ] );
+		}, [ 'body', 'header', 'content', 'footer', 'sidebar_footer' ] );
 	}
 
 	/**

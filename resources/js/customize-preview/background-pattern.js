@@ -2,6 +2,7 @@
 const { backgroundPatterns } = exhaleCustomizePreview;
 
 let types = {
+	body:           'body',
 	header:         '.app-header',
 	content:        '.app-content',
 	footer:         '.app-footer',

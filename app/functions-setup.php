@@ -76,25 +76,6 @@ add_action( 'after_setup_theme', function() {
 }, 5 );
 
 /**
- * Adds a custom background if supported. Child themes can pass their custom
- * background arguments via a `config/custom-background.php` file that returns
- * an array.
- *
- * @since  1.2.0
- * @access public
- * @return void
- */
-add_action( 'after_setup_theme', function() {
-
-	$config = Config::get( 'custom-background' );
-
-	if ( is_array( $config ) ) {
-		add_theme_support( 'custom-background', $config );
-	}
-
-}, 15 );
-
-/**
  * Register menus.
  *
  * @since  1.0.0

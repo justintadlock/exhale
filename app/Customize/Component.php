@@ -133,15 +133,17 @@ class Component implements Bootable {
 			'priority' => 10
 		] );
 
-		// Use the core colors section for the global panel.
-		$colors           = $manager->get_section( 'colors' );
-		$colors->panel    = 'theme_global';
-		$colors->priority = 15;
+		$manager->add_section( 'theme_global_colors', [
+			'panel'    => 'theme_global',
+			'title'    => __( 'Colors', 'exhale' ),
+			'priority' => 15
+		] );
 
-		// Move the background image section and set its priority.
-		$bg_image           = $manager->get_section( 'background_image' );
-		$bg_image->panel    = 'theme_global';
-		$bg_image->priority = 20;
+		$manager->add_section( 'theme_body_background', [
+			'panel'     => 'theme_global',
+			'title'     => __( 'Background', 'exhale' ),
+			'priority'  => 15
+		] );
 
 		$manager->add_section( 'theme_global_media', [
 			'panel'    => 'theme_global',

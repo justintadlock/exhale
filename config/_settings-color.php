@@ -12,6 +12,15 @@
  */
 
 return [
+	'body-background' => [
+		'color'       => 'ffffff',
+		'label'       => __( 'Background Color', 'exhale' ),
+		'description' => __( 'Background color used for body of the site.', 'exhale' ),
+		'section'     => 'theme_body_background',
+		'color'       => function() {
+			return \Exhale\body_bg_color_compat();
+		}
+	],
 	'content-background' => [
 		'color'       => 'ffffff',
 		'label'       => __( 'Background Color', 'exhale' ),

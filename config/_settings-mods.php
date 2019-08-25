@@ -35,6 +35,29 @@ return [
 	# background color is currently handled via `config/settings-color.php`.
 	# The `*_fill` and `*_svg` mods are related to the SVG patterns.
 
+	// Body background.
+	'body_background_type'         => function() {
+		return \Exhale\body_bg_image_compat() ? 'image' : '';
+	},
+	'color_body_background_fill'   => 'a9a9a9',
+	'body_background_fill_opacity' => 0.5,
+	'body_background_svg'          => '',
+	'body_background_image'        => function() {
+		return \Exhale\body_bg_image_compat();
+	},
+	'body_background_attachment'   => function() {
+		return \Exhale\body_bg_attachment_compat();
+	},
+	'body_background_size'         => function() {
+		return \Exhale\body_bg_size_compat();
+	},
+	'body_background_repeat'       => function() {
+		return \Exhale\body_bg_repeat_compat();
+	},
+	'body_background_position'     => function() {
+		return \Exhale\body_bg_position_compat();
+	},
+
 	// Header background.
 	'header_background_type'         => '',
 	'color_header_background_fill'   => 'a9a9a9',
@@ -140,7 +163,7 @@ return [
 	# Mods dealing with the header layout.
 
 	// Header stickiness.
-	'header_sticky' => false,
+	'header_sticky' => true,
 
 	// Branding separator (see `config/character-entities.php` for options).
 	'branding_sep' => '&#183;',
