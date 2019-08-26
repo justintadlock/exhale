@@ -6,11 +6,11 @@
 
 	<?php if ( have_comments() ) : ?>
 
-		<h2 class="comments__title max-w-2xl mx-auto px-8"><?php comments_number() ?></h2>
+		<h2 class="comments__title max-w-2xl mx-auto px-8 sm:px-0"><?php comments_number() ?></h2>
 
 		<?php Hybrid\View\display( 'nav/pagination', 'comments' ) ?>
 
-		<ol class="comments__list list-none mb-0 p-0">
+		<ol class="comments__list sm:grid grid-row-gap-8 list-none m-0 p-0">
 
 			<?php wp_list_comments( [
 				'avatar_size' => 60,

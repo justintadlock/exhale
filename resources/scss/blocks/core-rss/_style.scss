@@ -7,6 +7,8 @@
 ////
 
 .wp-block-rss {
+	display: grid;
+	grid-row-gap: $spacing-global;
 
 	&__item-publish-date,
 	&__item-author {
@@ -14,6 +16,6 @@
 	}
 
 	&__item-excerpt {
-		margin:      0 0 $spacing-global;
+	//	margin:      0 0 $spacing-global;
 	}
 }

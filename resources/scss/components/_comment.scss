@@ -41,7 +41,8 @@
 		// Readjust bottom margin for lists.
 		> ul,
 		> ol {
-			margin-bottom: $spacing-global;
+			//margin-bottom: $spacing-global;
+		//	margin-top: $spacing-global;
 		}
 	}
 

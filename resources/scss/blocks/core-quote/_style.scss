@@ -14,8 +14,9 @@
 
 	p {}
 
-	cite {
+	> cite {
 		display:  block;
-		margin-bottom: $spacing-global;
+		//margin-bottom: $spacing-global;
+		margin-top: $spacing-global;
 	}
 }

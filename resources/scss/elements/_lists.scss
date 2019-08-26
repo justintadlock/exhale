@@ -2,7 +2,8 @@
 ul,
 ol {
 	padding-left: 2em;
-	margin:       0 0 $spacing-global;
+	//margin:       0 0 $spacing-global;
+	margin: $spacing-global 0 0;
 
 	&.aligncenter,
 	&.aligncenter ul {
@@ -19,13 +20,22 @@ li > ol {
 
 // Remove bottom margin from lists that are direct children of a list item.
 li > ul,
-li > ol { margin-bottom : 0; }
+li > ol {
+	//margin-bottom : 0;
+	margin-top: 0;
+}
+
+dl {
+	margin-top: $spacing-global;
+}
 
 dd {
 	display: list-item;
-	margin:  0 0 0.5em $spacing-global;
+	//margin:  0 0 0.5em $spacing-global;
+	//margin:  0.5em 0 0 $spacing-global;
+	margin-left: $spacing-global;
 
 	+ dd {
-		margin-top: -0.5em;
+	//	margin-top: -0.5em;
 	}
 }

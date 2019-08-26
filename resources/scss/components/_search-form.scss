@@ -6,6 +6,12 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+.search-form {
+	> .search-submit {
+		margin-top: $spacing-global;
+	}
+}
+
 .search-field {
-	margin-bottom: $spacing-global;
+	//margin-bottom: $spacing-global;
 }

@@ -10,12 +10,12 @@
 		</div>
 	</header>
 
-	<div class="entry__content o-content-width">
+	<div class="entry__content o-content-width flow-root">
 		<?php the_content() ?>
 		<?php $engine->display( 'nav/pagination', 'post' ) ?>
 	</div>
 
-	<footer class="entry__footer max-w-2xl mx-8 sm:mx-auto my-8">
+	<footer class="entry__footer max-w-2xl mx-8 sm:mx-auto mt-8">
 		<?php Hybrid\Post\display_terms( [
 			// Translators: %s is the category list.
 			'text'     => __( 'Posted in %s', 'exhale' ),

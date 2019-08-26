@@ -28,11 +28,11 @@
 
 	&.alignwide,
 	&.alignfull {
-		margin-bottom: 0;
+		//margin-bottom: 0;
 	}
 
 	&.is-style-solid-color {
-		margin-bottom: $spacing-global;
+	//	margin-bottom: $spacing-global;
 	}
 
 	// Inherits from blockquote and its pullquote <figure> wrapper.
@@ -47,11 +47,11 @@
 	}
 
 	&.is-style-default {
-		margin-bottom: 0;
+	//	margin-bottom: 0;
 	}
 
 	&.is-style-default {
-		margin-bottom: 0;
+	//	margin-bottom: 0;
 	}
 
 	&.is-style-solid-color::before {
@@ -76,12 +76,13 @@
 	footer {
 		display:  block;
 		position: relative;
-		margin-bottom: $spacing-global;
+		//margin-bottom: $spacing-global;
+		margin-top: $spacing-global;
 	}
 }
 
 // We need to have this sit alone so that it doesn't mess up alignments.
 
 .is-style-solid-color {
-	padding: $spacing-global $spacing-global 0;
+	padding: $spacing-global;
 }

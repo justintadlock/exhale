@@ -2,7 +2,8 @@
 
 blockquote {
 	box-sizing: border-box;
-	margin:     0;
+	//margin:     0;
+	margin:     $spacing-global 0 0;
 	padding:    0 $spacing-global;
 	font-style: italic;
 	//color:      var( --color-primary );

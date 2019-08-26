@@ -4,6 +4,7 @@ $displays : (
 	inline-block: inline-block,
 	inline:       inline,
 	flex:         flex,
+	flow-root:    flow-root,
 	grid:         grid,
 	inline-flex:  inline-flex,
 	table:        table,
@@ -77,6 +78,11 @@ $placements: (
 	)
 );
 
+$box-sizing: (
+	content-box: content-box,
+	border-box:  border-box
+);
+
 @each $name, $value in $overflow {
 	.#{ $name } {
 		overflow: $value;
@@ -138,6 +144,12 @@ $placements: (
 	}
 }
 
+@each $name, $value in $box-sizing {
+	.#{ $name } {
+		box-sizing: $value;
+	}
+}
+
 @media ( min-width: $breakpoint-sm ) {
 
 	@each $display-selector, $display-value in $displays {
@@ -180,6 +192,12 @@ $placements: (
 	@each $index-selector, $index-value in $z-indices {
 		.sm\:#{ $index-selector } {
 			z-index: $index-value;
+		}
+	}
+
+	@each $name, $value in $box-sizing {
+		.sm\:#{ $name } {
+			box-sizing: $value;
 		}
 	}
 }
@@ -226,6 +244,12 @@ $placements: (
 	@each $index-selector, $index-value in $z-indices {
 		.md\:#{ $index-selector } {
 			z-index: $index-value;
+		}
+	}
+
+	@each $name, $value in $box-sizing {
+		.md\:#{ $name } {
+			box-sizing: $value;
 		}
 	}
 }

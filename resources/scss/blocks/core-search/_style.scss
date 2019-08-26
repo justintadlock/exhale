@@ -9,6 +9,10 @@
 .wp-block-search {
 
 	&__input {
-		margin-bottom: $spacing-global;
+		//margin-bottom: $spacing-global;
+	}
+
+	&__button {
+		margin-top: $spacing-global;
 	}
 }

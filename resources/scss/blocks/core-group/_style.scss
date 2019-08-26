@@ -17,8 +17,9 @@
 	}
 
 	&.has-background {
-		margin-bottom: $spacing-global;
-		padding:       $spacing-global 0 0;
+	//	margin-bottom: $spacing-global;
+		margin-top:    $spacing-global;
+		padding:       $spacing-global;
 	}
 
                            > *,

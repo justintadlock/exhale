@@ -7,12 +7,14 @@
 ////
 
 .wp-block-latest-comments {
+	display: grid;
+	grid-row-gap: $spacing-global;
 	list-style: none;
 	padding: 0;
 
 	&__comment {
 		clear: both;
-		margin-bottom: $spacing-global;
+	//	margin-bottom: $spacing-global;
 	}
 
 	// We need nested selectors here to overwrite the core editor's right
@@ -20,7 +22,8 @@
 	.wp-block-latest-comments__comment-avatar {
 		float:         left;
 		margin-right:  $spacing-half;
-		margin-bottom: $spacing-half;
+	//	margin-bottom: $spacing-half;
+	//	margin-top:    $spacing-half;
 		border-radius: 50%;
 	}
 
@@ -42,7 +45,7 @@
 }
 
 .has-excerpts .wp-block-latest-comments__comment {
-	margin-bottom: 0;
+	//margin-bottom: 0;
 }
 
 .has-dates .wp-block-latest-comments__comment-avatar {

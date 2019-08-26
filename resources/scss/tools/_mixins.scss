@@ -46,7 +46,8 @@
 	line-height   : inherit;
 	border        : 1px solid var( --color-border );
 	box-sizing    : content-box;
-	margin-bottom : $spacing-global;
+	//margin-bottom : $spacing-global;
+	margin-top    : $spacing-global;
 }
 
 @mixin button {

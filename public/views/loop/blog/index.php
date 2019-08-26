@@ -2,7 +2,7 @@
 
 	<div <?php Hybrid\Attr\display( 'loop', 'blog', [
 		'class' => sprintf(
-			'loop loop--blog loop--%s',
+			'loop loop--blog loop--%s grid grid-col-1 grid-row-gap-8',
 			str_replace( '_', '-', Exhale\Template\Loop::type() )
 		),
 		'data-customize-partial-placement-context' => wp_json_encode( [

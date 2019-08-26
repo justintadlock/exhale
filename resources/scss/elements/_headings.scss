@@ -10,7 +10,8 @@ h1, h2, h3, h4, h5, h6, th, dt,
 
 // Headings.
 h1, h2, h3, h4, h5, h6 {
-	margin:            0 0 0.5em;
+	//margin:            0 0 0.5em;
+	margin:            1.414em 0 0.5em;
 	line-height:       1.58;
 	color:             var( --color-headings );
 }
@@ -26,10 +27,8 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-*:not(div) + h2,
-*:not(div) + h3,
-*:not(div) + h4 {
-	margin-top: 1.414em;
+h2, h3, h4 {
+//	margin-top: 1.414em;
 }
 
 h1 {

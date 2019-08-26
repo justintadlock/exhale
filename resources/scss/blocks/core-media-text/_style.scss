@@ -15,6 +15,7 @@
 		"media-text-media media-text-content"
 		"resizer resizer";
 	grid-template-columns: 50% auto;
+	margin-top: $spacing-global;
 
 	&.is-vertically-aligned-top {
 		align-items: start;
@@ -43,8 +44,10 @@
 
 	&[class*=background-color],
 	&[style*=background-color] {
-		margin-bottom: $spacing-global;
-		padding: $spacing-global $spacing-global 0;
+	//	margin-bottom: $spacing-global;
+	//	margin-top: $spacing-global;
+	//	padding: $spacing-global $spacing-global 0;
+		padding: $spacing-global;
 	}
 
 	&.has-media-on-the-right {

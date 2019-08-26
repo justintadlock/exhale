@@ -9,6 +9,7 @@
 .wp-block-columns {
 	display: flex;
 	flex-wrap: nowrap;
+	margin-top: $spacing-global;
 
 	@media ( max-width: $content-width-padded ) {
 		flex-wrap: wrap;
@@ -21,7 +22,7 @@
 
 	&.alignwide,
 	&.alignfull {
-		margin-bottom: 0;
+	//	margin-bottom: 0;
 	}
 
 	@media ( max-width: $width-alignwide + $spacing-2x ) {
@@ -44,13 +45,13 @@
 
 
 .wp-block-column {
-	margin-bottom: $spacing-global;
 	flex-grow: 1;
 
 	@media ( max-width: $content-width-padded ) {
 		// Responsiveness: Show at most one columns on mobile. This must be
 		// important since the Column assigns its own width as an inline style.
 		flex-basis: 100% !important;
+		margin-top: $spacing-global;
 	}
 
 	// Prevent the columns from growing wider than their distributed sizes.
@@ -79,7 +80,7 @@
 	// inconsistent. Removing this margin and handling it on the column
 	// corrects the issue.
 	> *:last-child {
-		margin-bottom: 0;
+	//	margin-bottom: 0;
 	}
 }
 

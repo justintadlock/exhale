@@ -48,12 +48,12 @@
 		}
 	} );
 
-	let paras = document.querySelectorAll( 'p' );
+	//let paras = document.querySelectorAll( 'p' );
 
-	paras.forEach( function( p ) {
-		if ( 0 === p.clientHeight ) {
-			p.classList.add( 'is-collapsed' );
-		}
-	} );
+	//paras.forEach( function( p ) {
+	//	if ( 0 === p.clientHeight ) {
+	//		p.classList.add( 'is-collapsed' );
+	//	}
+	//} );
 
 })();

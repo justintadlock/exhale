@@ -12,7 +12,11 @@
 	flex-wrap:       wrap;
 	list-style-type: none;
 	padding:         0;
-	margin-bottom:   $spacing-half;
+	//margin-bottom:   $spacing-half;
+	//margin-top:      $spacing-half;
+
+	// Offset the bottom margin for gallery items.
+	margin-bottom: -#{ $spacing-half };
 
 	&.is-style-reverse {
 		flex-wrap: wrap-reverse;
@@ -20,7 +24,8 @@
 
 	&.alignfull,
 	&.alignwide {
-		margin-bottom: $spacing-half;
+		//margin-bottom: $spacing-half;
+	//	margin-top: $spacing-half;
 	}
 
 	&.alignfull {
@@ -44,6 +49,7 @@
 	justify-content: center;
 	position:        relative;
 	margin:          0 $spacing-half $spacing-half 0;
+	//margin:          $spacing-half $spacing-half 0 0;
 
 	// Image figure.
 	figure {

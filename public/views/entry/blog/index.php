@@ -1,6 +1,6 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
-	<header class="entry__header mb-4 text-center">
+	<header class="entry__header text-center">
 		<?php Hybrid\Post\display_title( [
 			'link'  => false,
 			'class' => 'entry__title md:max-w-4xl mx-8 sm:mx-auto my-0',
@@ -17,9 +17,11 @@
 		</div>
 	</header>
 
-	<?php Exhale\Template\FeaturedImage::display( 'featured' ) ?>
+	<?php Exhale\Template\FeaturedImage::display( 'featured', [
+		'class' => 'entry__media max-w-full mt-4 text-center'
+	] ) ?>
 
-	<div class="entry__summary o-content-width">
+	<div class="entry__summary o-content-width mt-4">
 		<?php the_excerpt() ?>
 	</div>
 

@@ -14,7 +14,7 @@
 	//	text-align:    center;
 
 		+ .entry__summary {
-			margin-top: calc( -#{ $spacing-global } + #{ $spacing-fourth } );
+		//	margin-top: calc( -#{ $spacing-global } + #{ $spacing-fourth } );
 		}
 	}
 
@@ -87,7 +87,7 @@
 // Remove the bottom margin from the last element on single posts.
 
 .single .entry__content > :last-child {
-	margin-bottom: 0;
+	//margin-bottom: 0;
 }
 
 // Push any full-width items if they are the first child to the top of the page.
@@ -101,6 +101,6 @@
 
 // Post password form.
 
-[name=post_password] {
-	margin-bottom: $spacing-global;
+.post-password-form [type=submit] {
+	margin-top: $spacing-global;
 }

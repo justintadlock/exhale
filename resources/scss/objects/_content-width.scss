@@ -12,7 +12,8 @@
 
 .o-content-width {
 
-	> * {
+	> *,
+	> .mejs-container {
 		margin-left:  $spacing-global;
 		margin-right: $spacing-global;
 

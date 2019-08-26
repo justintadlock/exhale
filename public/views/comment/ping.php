@@ -1,7 +1,13 @@
-<li <?php Hybrid\Attr\display( 'comment' ) ?>>
+<li <?php Hybrid\Attr\display( 'comment', '', [
+	'class' => 1 === $depth ? 'sm:content-box w-full max-w-full sm:max-w-2xl mx-auto p-8' : 'mt-8 max-w-full'
+] ) ?>>
 
-	<div class="comment__meta">
-		<?php Hybrid\Comment\display_author( [ 'after' => '<br />' ] ) ?>
+	<header class="comment__meta pb-4">
+		<?php Hybrid\Comment\display_author_link( [
+			'class' => 'comment__author-link font-700 no-underline hover:underline focus:underline',
+			'after' => '<br />',
+		] ) ?>
+
 		<?php Hybrid\Comment\display_permalink( [
 			'text' => Hybrid\Comment\render_date( [
 				'format' => sprintf(
@@ -13,9 +19,9 @@
 			] )
 		] ) ?>
 		<?php Hybrid\Comment\display_edit_link( [ 'before' => Exhale\sep() ] ) ?>
-	</div>
+	</header>
 
-	<div class="comment__content">
+	<div class="comment__content mt-4">
 
 		<?php if ( ! Hybrid\Comment\is_approved() ) : ?>
 

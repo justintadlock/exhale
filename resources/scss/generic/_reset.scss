@@ -9,6 +9,7 @@
 	border-style    : solid;
 	border-color    : var( --color-border );
 	border-width    : 0;
+	box-sizing      : border-box;
 }
 
 :focus { outline: none; }

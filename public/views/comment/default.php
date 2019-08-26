@@ -1,8 +1,8 @@
 <li <?php Hybrid\Attr\display( 'comment', '', [
-	'class' => 1 === $depth ? 'max-w-2xl mx-auto mb-0 sm:mb-8 pt-8 pr-8 pl-8' : ''
+	'class' => 1 === $depth ? 'sm:content-box w-full max-w-full sm:max-w-2xl mx-auto p-8' : 'mt-8 max-w-full'
 ] ) ?>>
 
-	<header class="comment__meta mb-4 pb-4">
+	<header class="comment__meta pb-4">
 		<?php Hybrid\Comment\display_parent_link( [
 			// Translators: %s is the parent comment link.
 			'text'   => __( 'In reply to %s', 'exhale' ),
@@ -38,7 +38,7 @@
 		<?php Hybrid\Comment\display_reply_link( [ 'before' => Exhale\sep() ] ) ?>
 	</header>
 
-	<div class="comment__content">
+	<div class="comment__content mt-4">
 
 		<?php if ( ! Hybrid\Comment\is_approved() ) : ?>
 

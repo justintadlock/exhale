@@ -14,14 +14,18 @@
 	.entry__content > p.has-background,
 	.entry__content > p.is-style-highlight,
 	.entry__content > p.is-style-shadow {
-		margin-left: 0;
-		margin-right: 0;
+	//	margin-left: 0;
+	//	margin-right: 0;
 	}
 }
 
+p.has-background,
+p.is-style-highlight {
+	box-sizing: content-box;
+}
+
 .wp-block-columns p.has-background,
-.wp-block-columns p.is-style-highlight,
-.wp-block-columns p.is-style-shadow {
+.wp-block-columns p.is-style-highlight {
 	box-sizing: border-box;
 }
 

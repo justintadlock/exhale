@@ -20,7 +20,8 @@
 
 	&--categories .postform,
 	&--archives [name=archive-dropdown] {
-		margin-bottom: $spacing-global;
+	//	margin-bottom: $spacing-global;
+		margin-top: $spacing-global;
 	}
 
 	&--custom-html {}
@@ -38,8 +39,8 @@
 	&--search {}
 	&--tag-cloud {}
 
-	.tagcloud,
-	.search-form {
-		margin-bottom: $spacing-global;
+	.tagcloud {
+	//	margin-bottom: $spacing-global;
+	//	margin-top: $spacing-global;
 	}
 }

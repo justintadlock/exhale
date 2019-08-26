@@ -64,10 +64,17 @@ class FeaturedImage extends Image {
 			$args['attr']['loading'] = 'lazy';
 		}
 
+		// Put the class on the wrapper.
+		$class = isset( $args['class'] ) ? $args['class'] : 'entry__media';
+
 		$args['size']    = Loop::imageSize()->name();
 		$args['class']   = 'entry__image inline-block';
 		$args['post_id'] = $post_id;
-		$args['before']  = sprintf( '<figure class="entry__media max-w-full mb-4 text-center"%s>', $context );
+		$args['before']  = sprintf(
+			'<figure class="%s"%s>',
+			esc_attr( $class ),
+			$context
+		);
 		$args['after']   = '</figure>';
 
 		return parent::carbon( $type, $args );

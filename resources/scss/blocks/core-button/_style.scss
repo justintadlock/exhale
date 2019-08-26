@@ -12,7 +12,8 @@
 }
 
 .wp-block-button {
-	margin-bottom: $spacing-global;
+//	margin-bottom: $spacing-global;
+	margin-top: $spacing-global;
 
 	// See `components/_button.scss`.
 	&__link {}
