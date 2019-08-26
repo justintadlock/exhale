@@ -264,6 +264,7 @@ class Component implements Bootable {
 		];
 
 		foreach ( $medium as $medium ) {
+			$colors[ $medium ] = "{$medium}-500";
 
 			foreach ( $pattern as $shade => $num ) {
 				$colors[ "{$medium}-{$shade}" ] = "{$medium}-{$num}";
