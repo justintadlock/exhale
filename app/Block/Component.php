@@ -262,7 +262,8 @@ class Component implements Bootable {
 			'darkest'  => '900',
 			'800'      => '800',
 			'darker'   => '700',
-			'dark'     => '600'
+			'dark'     => '600',
+			'500'      => '500'
 		];
 
 		foreach ( $medium as $medium ) {
