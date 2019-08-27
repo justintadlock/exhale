@@ -112,7 +112,7 @@
 
 .edit-post-visual-editor {
 
-	@each $color-name, $color-value in block-colors-compat() {
+	@each $color-name, $color-value in block-colors() {
 
 		.has-color-#{ $color-name },
 		a.has-color-#{ $color-name } {

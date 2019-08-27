@@ -256,9 +256,11 @@ class Component implements Bootable {
 
 		$pattern = [
 			'lightest' => '100',
+			'200'      => '200',
 			'lighter'  => '300',
 			'light'    => '400',
 			'darkest'  => '900',
+			'800'      => '800',
 			'darker'   => '700',
 			'dark'     => '600'
 		];
