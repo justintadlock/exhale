@@ -9,6 +9,9 @@
 // Separator block.
 // Override the `theme.css` included in Gutenberg 5.5.0.
 
-.edit-post-visual-editor .wp-block .wp-block-separator {
+.wp-block .wp-block-separator {
 	max-width: 100%;
+
+	// Make sure to override the background color in the editor.
+	background-color: transparent !important;
 }
