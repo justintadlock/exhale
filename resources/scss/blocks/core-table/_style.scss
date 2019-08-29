@@ -15,26 +15,31 @@ $table-bg-colors : (
 
 .wp-block-table {
 
+	table.has-background {
+		background: transparent;
+	}
+
 	&.has-fixed-layout {
 		table-layout: fixed;
 	}
 }
 
-.is-style-stripes tr {
-	background: var( --gray-100 );
+.is-style-stripes tbody tr:nth-child( even ) {
+	//background-color: var( --gray-100 );
+	background-color: transparent;
 }
 
-.is-style-stripes td {
+.is-style-stripes tbody tr {
 	border: none;
 }
 
 @each $color-name, $color-value in $table-bg-colors {
 
-	.has-#{ $color-name }-background-color tr {
+	.has-#{ $color-name }-background-color tbody tr {
 		background-color: $color-value;
 	}
 }
 
-.is-style-stripes tr:nth-child( even ) {
-	background: transparent;
+.is-style-stripes tbody tr:nth-child( even ) {
+	//background: transparent;
 }

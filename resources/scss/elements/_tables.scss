@@ -5,6 +5,7 @@ table {
 	border-collapse : collapse;
 	border-spacing  : 0;
 	text-align     : left;
+	font-size:       $text-base;
 }
 
 caption {
@@ -13,8 +14,27 @@ caption {
 }
 
 th,
+thead,
+tfoot {
+	font-weight: 700;
+}
+
+tr {
+	border-bottom-width: 1px;
+}
+
+tbody tr:last-child,
+tfoot tr {
+	border-bottom-width: 0;
+}
+
+tfoot tr {
+	border-top-width: 1px;
+}
+
+th,
 td {
-	padding        : 10px;
+	padding        : $spacing-half;
 	box-sizing     : border-box;
 	vertical-align : top;
 
@@ -28,5 +48,10 @@ th {
 }
 
 td {
-	border : 1px solid var( --color-border );
+	//border : 1px solid var( --color-border );
+}
+
+thead td,
+tfoot td {
+	//border: none;
 }

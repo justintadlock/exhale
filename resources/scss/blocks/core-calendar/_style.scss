@@ -9,13 +9,26 @@
 .wp-block-calendar,
 .calendar_wrap {
 
+	table {
+		border-collapse: separate;
+		border-spacing:  2px;
+	}
+
+	tr {
+		border-width: 0;
+	}
+
+	tbody td:not(.pad) {
+		border-width: 1px;
+	}
+
 	th,
 	td {
 		text-align: center;
 	}
 
 	tfoot td {
-		border: none;
+	//	border: none;
 	}
 
 	#prev {
