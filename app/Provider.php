@@ -49,7 +49,6 @@ class Provider extends ServiceProvider {
 		// Bind a single instance of the WP custom background settings.
 		$this->app->singleton( 'exhale/compat/background', function() {
 			return array_merge(
-				Config::get( 'custom-background' ),
 				[
 					'default-image'          => '',
 					'default-position-x'     => 'left',
@@ -58,7 +57,8 @@ class Provider extends ServiceProvider {
 					'default-repeat'         => 'repeat',
 					'default-attachment'     => 'scroll',
 					'default-color'          => 'f3f3f3'
-				]
+				],
+				Config::get( 'custom-background' )
 			);
 		} );
 
