@@ -11,6 +11,7 @@
 	position:            relative;
 	background-size:     cover;
 	background-position: 50%;
+	height:              100%; // Necessary for user-selected height.
 	min-height:          430px;
 	//margin:              0 0 $spacing-global;
 	margin-top:          $spacing-global;
