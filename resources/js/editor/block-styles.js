@@ -27,4 +27,9 @@ wp.domReady( () => {
 
 	} );
 
+	// Unregisters the circle-mask style added in Gutenber 6.4.0.  We may
+	// revisit this in the future.
+
+	wp.blocks.unregisterBlockStyle( 'core/image', 'circle-mask' );
+
 } );
