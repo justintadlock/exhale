@@ -92,14 +92,14 @@
 // Overwrite core styles dropped into the footer.
 
 .edit-post-visual-editor .wp-block-paragraph {
-	margin: 0 0 $spacing-global;
+	margin: $spacing-global 0 0;
 }
 
 .edit-post-visual-editor .block-library-list ul,
 .edit-post-visual-editor .block-library-list ol {
 
 	padding-left: 2em;
-	margin:       0 0 $spacing-global;
+	margin:       $spacing-global 0 0;
 
 	ul, ol {
 		list-style-type:   inherit;
