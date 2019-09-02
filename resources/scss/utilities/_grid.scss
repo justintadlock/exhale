@@ -29,6 +29,10 @@ $grid-column-gap: (
 	grid-col-gap-16: $sizing-unit * 16
 );
 
+$grid-auto-rows: (
+	grid-auto-rows-min: min-content
+);
+
 @each $name, $value in $grid-columns {
 	.#{ $name } {
 		grid-template-columns: $value;
@@ -50,6 +54,12 @@ $grid-column-gap: (
 @each $name, $value in $grid-column-gap {
 	.#{ $name } {
 		grid-column-gap: $value;
+	}
+}
+
+@each $name, $value in $grid-auto-rows {
+	.#{ $name } {
+		grid-auto-rows: $value;
 	}
 }
 

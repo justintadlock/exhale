@@ -20,7 +20,7 @@
 
 					<li <?php Hybrid\Attr\display( 'sidebar', "{$sidebar}-{$id}", [
 						'class' => sprintf(
-							'sidebar sidebar--footer-%s grid__item grid grid-col-1 grid-row-gap-8',
+							'sidebar sidebar--footer-%s grid__item grid grid-col-1 grid-row-gap-8 grid-auto-rows-min',
 							esc_attr( $id )
 						)
 					] ) ?>>
