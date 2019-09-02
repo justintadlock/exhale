@@ -11,6 +11,10 @@
 .wp-block-columns {
 	margin-left: 0;
 	margin-right: 0;
+
+	> .editor-inner-blocks {
+		margin-top: $spacing-global;
+	}
 }
 
 [data-align="full"] .wp-block-columns {
