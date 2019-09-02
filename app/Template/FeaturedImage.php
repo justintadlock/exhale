@@ -68,7 +68,8 @@ class FeaturedImage extends Image {
 		$class = isset( $args['class'] ) ? $args['class'] : 'entry__media';
 
 		$args['size']    = Loop::imageSize()->name();
-		$args['class']   = 'entry__image inline-block';
+		$args['link_class'] = 'entry__image-link inline-block align-top';
+		$args['class']   = 'entry__image block mx-auto';
 		$args['post_id'] = $post_id;
 		$args['before']  = sprintf(
 			'<figure class="%s"%s>',
@@ -141,7 +142,7 @@ class FeaturedImage extends Image {
 		}
 
 		$svg = sprintf(
-			'<svg class="entry__image aligncenter" fill="#%1$s" width="%2$s" height="%3$s" viewBox="0 0 %2$s %3$s">
+			'<svg class="entry__image block mx-auto" fill="#%1$s" width="%2$s" height="%3$s" viewBox="0 0 %2$s %3$s">
 				<rect class="svg-shape" width="%2$s" height="%3$s" />
 			</svg>',
 			sanitize_hex_color_no_hash( Mod::color( 'primary-link' ) ),
@@ -151,14 +152,18 @@ class FeaturedImage extends Image {
 
 		if ( ! isset( $args['link'] ) || $args['link'] ) {
 			$svg = sprintf(
-				'<a href="%s">%s</a>',
+				'<a class="entry__image-link inline-block align-top" href="%s">%s</a>',
 				esc_url( get_permalink( $post_id ) ),
 				$svg
 			);
 		}
 
+		// Put the class on the wrapper.
+		$class = isset( $args['class'] ) ? $args['class'] : 'entry__media';
+
 		return sprintf(
-			'<figure class="entry__media alignfull"%s>%s</figure>',
+			'<figure class="%s"%s>%s</figure>',
+			esc_attr( $class ),
 			$context,
 			$svg
 		);

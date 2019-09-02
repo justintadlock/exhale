@@ -120,6 +120,23 @@ $text-aligns: (
 	}
 }
 
+/// Vertical alignment.
+
+$vertical-align: (
+	align-baseline:    baseline,
+	align-top:         top,
+	align-middle:      middle,
+	align-bottom:      bottom,
+	align-text-top:    text-top,
+	align-text-bottom: text-bottom
+);
+
+@each $name, $value in $vertical-align {
+	.#{ $name } {
+		vertical-align: $value;
+	}
+}
+
 /// Text colors.
 ///
 /// @todo Rename to `.text-#{ $color }`.
