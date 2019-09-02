@@ -11,6 +11,11 @@ ol {
 	}
 }
 
+ul[class*=list-] li > ul:not([class*=list-]),
+ol[class*=list-] li > ol:not([class*=list-]) {
+	list-style-type: inherit;
+}
+
 li > ul,
 li > ol {
 	margin:       0;
