@@ -16,6 +16,10 @@
 	margin-left: 0;
 	margin-right: 0;
 
+	&.is-style-solid-color {
+		padding: $spacing-global;
+	}
+
 	// Gutenberg 5.7.
 	blockquote > .block-editor-rich-text p {
 		font-size: inherit;

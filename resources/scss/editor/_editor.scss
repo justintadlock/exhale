@@ -26,6 +26,11 @@
 	//@include typography;
 }
 
+.editor-styles-wrapper [data-block] {
+	margin-top: $spacing-global;
+	margin-bottom: $spacing-global;
+}
+
 .wp-block[data-align="wide"] {
 	max-width: $width-alignwide;
 }
@@ -35,6 +40,14 @@
 }
 
 .edit-post-visual-editor.editor-styles-wrapper {
+
+	.wp-block[data-align=left],
+	.wp-block[data-align=right] {
+		[data-block] {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
 
 	.wp-block[data-align="left"] .editor-block-list__block-edit {
 		margin-right: 1.5em;
