@@ -19,7 +19,7 @@
 	},
         "require": {
                 "php" : ">=5.6",
-                "justintadlock/hybrid-core" : "^5.1",
+                "justintadlock/hybrid-core" : "^5.2",
 		"justintadlock/hybrid-carbon": "^1.0",
 		"justintadlock/hybrid-font": "^1.0"
         }
