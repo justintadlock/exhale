@@ -1,5 +1,38 @@
 # Change Log
 
+## [2.2.0] - 2019-09-03
+
+### Added
+
+- Requirement of the [libxml](https://www.php.net/manual/en/book.libxml.php) PHP extension for use of [DomDocument](https://www.php.net/manual/en/class.domdocument.php) (note that this is fairly standard as it enabled by default).
+- Gutenberg 6.4 support.
+- Custom background color, image, or pattern for the following sections:
+	- Body
+	- Header
+	- Content
+	- Footer
+	- Footer Sidebar
+- New color shades.  Each color now has 9 shades ranging from `{$color}-100` to `{$color}-900`.
+- New mobile hamburger-style menu instead of the horizontal-scrolling menu.
+- Customizer color options for:
+	- Pagination
+	- Primary Menu
+- `max-w-6xl` and `max-w-7xl` width options for loop layouts and the footer sidebar.
+- Sticky header option for allowing the site header to stick to the top of the screen.
+- Branding separator option that splits the title and description (replaces the border).
+- Adds support for defining the content layout for CPT archives via the customizer.
+
+### Changed
+
+- The entire design system moved to utility-based classes.
+	- This changes hard-coded classes throughout the entire code base.
+	- Templates in child themes should be checked.
+- Vertical rhythm now uses `margin-top` instead of `margin-bottom`.
+- Loads of tiny adjustments to styles just to make things smoother.
+- Color system is now numeric for shades (e.g., `red-100` instead of `red-lightest`).
+	- Back-compat is added in both the editor and front end.
+- Support for front-end colors even when child themes don't define them.
+
 ## [2.1.1] - 2019-07-18
 
 ### Fixed
