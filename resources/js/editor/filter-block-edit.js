@@ -44,8 +44,20 @@ const ExhaleBlockEdit = createHigherOrderComponent( ( BlockEdit ) => {
 			props.attributes.backgroundColor = colorMap[ props.attributes.backgroundColor ];
 		}
 
+		if ( props.attributes.overlayColor && props.attributes.overlayColor in colorMap  ) {
+			props.attributes.overlayColor = colorMap[ props.attributes.overlayColor ];
+		}
+
+		if ( props.attributes.mainColor && props.attributes.mainColor in colorMap  ) {
+			props.attributes.mainColor = colorMap[ props.attributes.mainColor ];
+		}
+
 		if ( props.attributes.textColor && props.attributes.textColor in colorMap  ) {
 			props.attributes.textColor = colorMap[ props.attributes.textColor ];
+		}
+
+		if ( props.attributes.color && props.attributes.color in colorMap  ) {
+			props.attributes.color = colorMap[ props.attributes.color ];
 		}
 
 		// \*/ End back-compat.
