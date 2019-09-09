@@ -34,8 +34,11 @@
 }
 
 .is-style-outline .wp-block-button__link {
+	border: 1px solid currentColor;
+}
+
+.is-style-outline .wp-block-button__link:not(.has-background) {
 	background: transparent;
-	border:     1px solid currentColor;
 }
 
 .is-style-outline .wp-block-button__link:not(.has-text-color) {
