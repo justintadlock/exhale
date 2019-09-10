@@ -1,5 +1,11 @@
 # Change Log
 
+## [2.2.1] - 2019-09-10
+
+### Fixed
+
+- Don't add a transparent background to the Button block with the "outline" style if the user has chosen a background color.
+
 ## [2.2.0] - 2019-09-03
 
 ### Added
