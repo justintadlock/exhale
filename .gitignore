@@ -4,3 +4,5 @@
 /phpcs.xml
 /.phpcs.xml
 *.map
+/.idea
+/exhale
