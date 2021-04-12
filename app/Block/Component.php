@@ -33,7 +33,7 @@ class Component implements Bootable {
 	public function boot() {
 
 		if ( ! is_admin() ) {
-			add_filter( 'the_content', [ $this, 'filterBlockClasses' ], PHP_INT_MAX );
+			add_filter( 'render_block', [ $this, 'filterBlockClasses' ], PHP_INT_MAX );
 		}
 	}
 

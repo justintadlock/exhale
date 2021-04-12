@@ -70,6 +70,68 @@ add_action( 'enqueue_block_assets', function() {
 	wp_register_style( 'wp-block-library-theme', '' );
 } );
 
+add_action( 'admin_enqueue_scripts', function() {
+
+	if ( gutenberg_widgets_editor_load_block_editor_scripts_and_styles( false ) ) {
+
+
+			$deps = [
+				'wp-i18n',
+				'wp-blocks',
+				'wp-dom-ready',
+				'wp-edit-post',
+				'wp-element',
+				'wp-token-list'
+			];
+
+			wp_enqueue_script( 'exhale-editor', asset( 'js/editor.js' ), $deps, null, true );
+
+			// For now, we're adding translations via PHP. In the future, when our
+			// tools catch up, we'll internationalize in the JS files.
+			wp_localize_script( 'exhale-editor', 'exhaleEditor', [
+				'labels' => [
+					'default'        => __( 'Default',         'exhale' ),
+					'borderDouble'   => __( 'Double',          'exhale' ),
+					'borderDashed'   => __( 'Dashed',          'exhale' ),
+					'borderRadius'   => __( 'Border Radius',   'exhale' ),
+					'designSettings' => __( 'Design Settings', 'exhale' ),
+					'highlight'      => __( 'Highlight',       'exhale' ),
+					'listType'       => __( 'Bullets',         'exhale' ),
+					'none'           => __( 'None',            'exhale' ),
+					'reverse'        => __( 'Reverse',         'exhale' ),
+					'rounded'        => __( 'Rounded',         'exhale' ),
+					'shadow'         => __( 'Shadow',          'exhale' ),
+
+					// Lists.
+					'lists' => [
+						'disc'   => __( 'Disc',   'exhale' ),
+						'circle' => __( 'Circle', 'exhale' ),
+						'square' => __( 'Square', 'exhale' )
+					],
+
+					// Sizes.
+					'sizes' => [
+						'fine'       => __( 'Fine',        'exhale' ),
+						'diminutive' => __( 'Diminutive',  'exhale' ),
+						'tiny'       => __( 'Tiny',        'exhale' ),
+						'small'      => __( 'Small',       'exhale' ),
+						'medium'     => __( 'Medium',      'exhale' ),
+						'large'      => __( 'Large',       'exhale' ),
+						'extraLarge' => __( 'Extra Large', 'exhale' ),
+						'huge'       => __( 'Huge',        'exhale' ),
+						'gargantuan' => __( 'Gargantuan',  'exhale' ),
+						'colossal'   => __( 'Colossal',    'exhale' )
+					]
+				]
+			] );
+
+			// Enqueue theme editor styles.
+			wp_enqueue_style( 'exhale-editor', asset( 'css/editor.css' ), null, null );
+
+			wp_add_inline_style( 'exhale-editor', App::resolve( CustomProperties::class )->css() );
+	}
+} );
+
 /**
  * Enqueue scripts/styles for the editor.
  *

@@ -32,4 +32,36 @@ wp.domReady( () => {
 
 	wp.blocks.unregisterBlockStyle( 'core/image', 'circle-mask' );
 
+
+	wp.blocks.registerBlockVariation(
+		'core/group',
+		{
+			name:     'widget-group',
+			title:    'Widget Group',
+			category: 'widgets',
+			attributes: {
+				className:       'widget',
+				backgroundColor: 'blue-700',
+				textColor:       'white'
+			},
+			innerBlocks: [
+			    [
+				    'core/heading',
+				    { level: 3, className: 'widget-title' }
+			    ],
+			    [
+				    'core/paragraph',
+				    { placeholder: 'Add widget content' }
+			    ]
+			]
+		}
+	);
+
+
+
+
+
+
+
+
 } );

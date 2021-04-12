@@ -17,7 +17,12 @@
 		background-color: var( --color-sidebar-footer-background );
 		border-color:     var( --color-footer-border );
 
-		h1, h2, h3, h4, h5, h6 {
+		h1:not( .has-text-color ),
+		h2:not( .has-text-color ),
+		h3:not( .has-text-color ),
+		h4:not( .has-text-color ),
+		h5:not( .has-text-color ),
+		h6:not( .has-text-color ) {
 			color: var( --color-sidebar-footer-headings );
 		}
 
