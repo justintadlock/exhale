@@ -123,7 +123,7 @@ $order: (
 
 @each $name, $value in $align-self {
 	.#{ $name } {
-		align-selft: $value;
+		align-self: $value;
 	}
 }
 
@@ -186,7 +186,7 @@ $order: (
 
 		@each $name, $value in $align-self {
 			.#{ $prefix }\:#{ $name } {
-				align-selft: $value;
+				align-self: $value;
 			}
 		}
 

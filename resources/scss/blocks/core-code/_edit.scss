@@ -8,7 +8,6 @@
 
 .wp-block-code {
 	@include code-block;
-	color: var( --color-primary );
 	margin-left: -#{ $spacing-global };
 	margin-right: -#{ $spacing-global };
 

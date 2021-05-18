@@ -14,3 +14,7 @@
 import blockStyles         from './editor/block-styles';
 import filterBlockEdit     from './editor/filter-block-edit';
 import filterBlockRegister from './editor/filter-block-register';
+
+// Import rich text formats.
+import formatFontSizeSmall from './editor/rich-text/format-font-size-small.js';
+import formatUnderline     from './editor/rich-text/format-underline.js';

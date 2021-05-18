@@ -12,11 +12,11 @@
 	flex-wrap:       wrap;
 	list-style-type: none;
 	padding:         0;
-	//margin-bottom:   $spacing-half;
-	//margin-top:      $spacing-half;
+	margin-bottom:   $spacing-half;
+	margin-top:      $spacing-half;
 
 	// Offset the bottom margin for gallery items.
-	margin-bottom: -#{ $spacing-half };
+	//margin-bottom: -#{ $spacing-half };
 
 	&.is-style-reverse {
 		flex-wrap: wrap-reverse;
@@ -29,26 +29,26 @@
 	}
 
 	&.alignfull {
-		padding: 0 $spacing-half;
+	//	padding: 0 $spacing-half;
 	}
 
 	@media ( max-width: $width-alignwide + $spacing-2x ) {
 
 		&.alignfull,
 		&.alignwide {
-			padding: 0 $spacing-global;
+	//		padding: 0 $spacing-global;
 		}
 	}
 }
 
 // The wrapper for individual gallery images/figures.
-.blocks-gallery-item {
+.blocks-gallery-grid .blocks-gallery-item {
 	display:         flex;
 	flex-grow:       1;
 	flex-direction:  column;
 	justify-content: center;
 	position:        relative;
-	margin:          0 $spacing-half $spacing-half 0;
+	margin:          $spacing-half $spacing-half 0 0;
 	//margin:          $spacing-half $spacing-half 0 0;
 
 	// Image figure.

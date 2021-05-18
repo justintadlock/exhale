@@ -7,17 +7,19 @@
 ////
 
 .wp-block-columns {
-	display: flex;
-	flex-wrap: nowrap;
+	//display: flex;
+	//flex-wrap: nowrap;
 	margin-top: $spacing-global;
+	margin-bottom: 0;
 
 	@media ( max-width: $content-width-padded ) {
-		flex-wrap: wrap;
+	//	flex-wrap: wrap;
 	}
 
 	&.alignfull {
-		padding-left:  $spacing-global;
-		padding-right: $spacing-global;
+		margin-top: 0;
+	//	padding-left:  $spacing-global;
+	//	padding-right: $spacing-global;
 	}
 
 	&.alignwide,
@@ -45,31 +47,35 @@
 
 
 .wp-block-column {
-	flex-grow: 1;
+	//flex-grow: 1;
+
+	// Useful for when using a rounded border.
+	// Inner elements w/bgs don't cover it.
+	overflow: hidden;
 
 	@media ( max-width: $content-width-padded ) {
 		// Responsiveness: Show at most one columns on mobile. This must be
 		// important since the Column assigns its own width as an inline style.
-		flex-basis: 100% !important;
-		margin-top: $spacing-global;
+	//	flex-basis: 100% !important;
+	//	margin-top: $spacing-global;
 	}
 
 	// Prevent the columns from growing wider than their distributed sizes.
-	min-width: 0;
+	//min-width: 0;
 
 	// Prevent long unbroken words from overflowing.
-	word-break: break-word; // For back-compat.
-	overflow-wrap: break-word; // New standard.
+	//word-break: break-word; // For back-compat.
+	//overflow-wrap: break-word; // New standard.
 
 	@media ( min-width: $content-width-padded ) {
 
 		// flex-basis: calc(50% - #{$spacing-global});
-		flex-basis: 50%;
-		flex-grow: 0;
+	//	flex-basis: 50%;
+	//	flex-grow: 0;
 
 		// When columns are in a single row, add space before all except the first.
 		&:not(:first-child) {
-			margin-left: $spacing-global;
+	//		margin-left: $spacing-global;
 		}
 	}
 
@@ -84,20 +90,25 @@
 	}
 }
 
+.wp-block-columns.is-style-no-gap .wp-block-column {
+	margin-left: 0;
+	margin-right: 0;
+}
+
 /**
  * All Columns Alignment
  */
 .wp-block-columns {
 	&.are-vertically-aligned-top {
-		align-items: flex-start;
+	//	align-items: flex-start;
 	}
 
 	&.are-vertically-aligned-center {
-		align-items: center;
+	//	align-items: center;
 	}
 
 	&.are-vertically-aligned-bottom {
-		align-items: flex-end;
+	//	align-items: flex-end;
 	}
 }
 
@@ -106,14 +117,14 @@
  */
 .wp-block-column {
 	&.is-vertically-aligned-top {
-		align-self: flex-start;
+	//	align-self: flex-start;
 	}
 
 	&.is-vertically-aligned-center {
-		align-self: center;
+	//	align-self: center;
 	}
 
 	&.is-vertically-aligned-bottom {
-		align-self: flex-end;
+	//	align-self: flex-end;
 	}
 }

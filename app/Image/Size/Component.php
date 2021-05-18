@@ -18,8 +18,6 @@ use WP_Customize_Manager;
 use Hybrid\App;
 use Hybrid\Contracts\Bootable;
 use Exhale\Tools\Config;
-use Exhale\Tools\Mod;
-use Exhale\Template\FeaturedImage;
 
 /**
  * Image size component class.

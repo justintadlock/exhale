@@ -1,0 +1,67 @@
+<!-- wp:template-part {
+	"slug":"header/index",
+	"align":"full"
+} /-->
+
+<!-- wp:group {
+	"tagName"   : "div",
+	"align"     : "full",
+	"className" : "app-content",
+	"style"     : {
+		"spacing" : {
+			"padding" : {"top":"48px"}
+		}
+	}
+} -->
+<div class="wp-block-group app-content alignfull" style="padding-top:48px">
+
+	<!-- wp:group {
+		"tagName"   : "main",
+		"align"     : "full",
+		"className" : "app-main mx-auto mb-12 text-xl leading-loose"
+	} -->
+	<main class="wp-block-group app-main mx-auto mb-12 text-xl leading-loose alignfull">
+
+		<!-- wp:group {
+			"tagName":"div",
+			"align":"full",
+			"className":"entry entry--error"
+		} -->
+		<div class="wp-block-group alignfull entry entry--error">
+
+			<!-- wp:group {
+				"tagName":"header",
+				"className":"entry__header o-content-width"
+			} -->
+			<header class="wp-block-group entry__header o-content-width">
+				<!-- wp:heading {"level":1,"className":"entry__title"} -->
+				<h1 class="entry__title">Error 404: Nothing Found</h1>
+				<!-- /wp:heading -->
+			</header>
+			<!-- /wp:group -->
+
+			<!-- wp:group {
+				"className":"entry__content o-content-width mt-4",
+				"layout":{"inherit":true}
+			} -->
+			<div class="wp-block-group entry__content o-content-width mt-4">
+				<!-- wp:paragraph -->
+				<p>It looks like you stumbled upon a page that does not exist. Perhaps rolling the dice with a search might help.</p>
+				<!-- /wp:paragraph -->
+
+				<!-- wp:search {"label":"Search","buttonText":"Search"} /-->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:group -->
+
+	</main>
+	<!-- /wp:group -->
+
+</div>
+<!-- /wp:group -->
+
+<!-- wp:template-part {
+	"slug":"footer/index",
+	"align":"full"
+} /-->

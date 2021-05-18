@@ -1,0 +1,25 @@
+/// Grid utilities.
+
+$sizing-unit: 0.25rem;
+
+$gap: (
+	gap-0:  0px,
+	gap-4:  $sizing-unit * 4,
+	gap-8:  $sizing-unit * 8,
+	gap-12: $sizing-unit * 12,
+	gap-16: $sizing-unit * 16
+);
+
+@each $name, $value in $gap {
+	.#{ $name } {
+		gap: $value;
+	}
+
+	.row-#{ $name } {
+		row-gap: $value;
+	}
+
+	.col-#{ $name } {
+		column-gap: $value;
+	}
+}

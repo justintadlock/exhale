@@ -16,8 +16,10 @@ return [
 	// Landscape sizes.
 	'post-thumbnail' => [
 		'label'            => __( 'Landscape: Thumbnail', 'exhale' ),
-		'width'            => 178,
-		'height'           => 100,
+	//	'width'            => 178,
+	//	'height'           => 100,
+	'width'  => 1366,
+	'height' => 768,
 		'is_featured_size' => false
 	],
 	'exhale-landscape-medium' => [

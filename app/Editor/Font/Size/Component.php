@@ -82,7 +82,7 @@ class Component implements Bootable {
 			];
 		}
 
-		add_theme_support( 'editor-font-sizes', $_sizes );
+	//	add_theme_support( 'editor-font-sizes', $_sizes );
 	}
 
 	/**

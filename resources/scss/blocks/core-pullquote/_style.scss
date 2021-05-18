@@ -7,6 +7,10 @@
 ////
 
 .wp-block-pullquote {
+	margin-top: $spacing-global;
+	margin-bottom: 0;
+	padding: 0;
+
 	text-align: center;
 
 	// We must define a default border color here so that `blockquote::before`
@@ -61,7 +65,11 @@
 	blockquote {
 		overflow:     hidden;
 		padding:      0;
-		font-size:    1.25em;
+	}
+
+	blockquote p {
+		font-size:    1.75em;
+		line-height:  1.5;
 		font-style:   italic;
 	}
 

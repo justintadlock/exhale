@@ -7,8 +7,21 @@
 ////
 
 .wp-block-separator {
+	opacity: 0.5;
+	border: none;
+	height: 1px;
+
+	&.is-style-default {
+		height: 1px;
+	}
+}
+
+/*
+.wp-block-separator {
 	color: var( --color-border );
 	border-color: currentColor;
+	border-top-width: 1px;
+	border-bottom: none;
 
 	&.has-background {
 		background-color: transparent;
@@ -19,14 +32,15 @@
 	}
 
 	&.is-style-dashed {
-		border-top: 4px dashed currentColor;
+		border-top: 1px dashed currentColor;
 	}
 
 	&.is-style-dots {
-		border-top: 4px dotted currentColor;
+		border-top: 2px dotted currentColor;
 	}
 
 	&.is-style-double {
-		border-top: 6px double currentColor;
+		border-top: 3px double currentColor;
 	}
 }
+*/

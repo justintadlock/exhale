@@ -8,6 +8,7 @@
 
 .wp-block-image {
 	margin-top: $spacing-global;
+	margin-bottom: 0;
 
 	img {
 	//	display: block;
@@ -25,22 +26,23 @@
 	}
 
 	&.is-resized {
-		width: min-content;
+	//	width: min-content;
 
 		// Emulate min-content for Edge and IE11
-		display: -ms-inline-grid;
-		-ms-grid-columns: min-content;
+	//	display: -ms-inline-grid;
+	//	-ms-grid-columns: min-content;
 
 		figcaption {
-			-ms-grid-row: 2;
+	//		-ms-grid-row: 2;
 		}
 
 		img {
-			max-width: none;
+	//		max-width: none;
 		}
 	}
 
 	figcaption {
+		margin: $spacing-fourth 0 0 0;
 		// components/_text-secondary.scss
 	//	text-align: center;
 	}

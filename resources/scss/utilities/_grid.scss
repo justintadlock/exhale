@@ -1,5 +1,9 @@
 /// Grid utilities.
 
+.grid > * {
+	margin-top: 0;
+}
+
 $grid-columns: (
 	grid-col-1: repeat( 1, 1fr ),
 	grid-col-2: repeat( 2, 1fr ),

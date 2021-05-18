@@ -416,6 +416,13 @@ return [
 		'google' => 'Cousine',
 		'styles' => [ '400', '400i', '700', '700i' ]
 	],
+	'crimson-pro' => [
+		// Translators: Font family label.
+		'label'  => __( 'Crimson Pro', 'exhale' ),
+		'stack'  => '"Crimson Pro", serif',
+		'google' => 'Crimson+Pro',
+		'styles' => [ '200', '200i', '300', '300i', '400', '400i', '500', '500i', '700', '700i', '800', '800i', '900', '900i' ]
+	],
 	'crimson-text' => [
 		// Translators: Font family label.
 		'label'  => __( 'Crimson Text', 'exhale' ),
@@ -777,6 +784,13 @@ return [
 		'stack'  => 'Neuton, serif',
 		'google' => 'Neuton',
 		'styles' => [ '200', '300', '400', '400i', '700', '800' ]
+	],
+	'newsreader' => [
+		// Translators: Font family label.
+		'label'  => __( 'Newsreader', 'exhale' ),
+		'stack'  => 'Newsreader, serif',
+		'google' => 'Newsreader',
+		'styles' => [ '200', '200i', '300', '300i', '400', '400i', '500', '500i', '700', '700i', '800', '800i' ]
 	],
 	'nobile' => [
 		// Translators: Font family label.

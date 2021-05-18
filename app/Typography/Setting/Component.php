@@ -141,7 +141,25 @@ class Component implements Bootable {
 
 		// Enqueue fonts.
 		add_action( 'wp_enqueue_scripts',          [ $this, 'enqueue' ], 5 );
-		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue' ], 5 );
+	//	add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue' ], -5 );
+		add_action( 'after_setup_theme', function() {
+
+
+			$fonts = $this->googleFonts();
+
+
+			if ( $fonts ) {
+				add_editor_style( [
+					\Hybrid\Font\url( 'exhale', [
+						'family' => $fonts,
+						'subset' => [
+							'latin',
+							'latin-ext'
+						]
+					] )
+				] );
+			}
+		} );
 	}
 
 	/**
@@ -171,6 +189,7 @@ class Component implements Bootable {
 	 * @return void
 	 */
 	public function registerDefaultSettings( Settings $settings ) {
+
 
 		// Base configuration.
 		$base   = Config::get( '_settings-typography' );
@@ -238,6 +257,8 @@ class Component implements Bootable {
 
 			$font_styles = [ '400', '400i', '700', '700i' ];
 
+			$font_styles = $family->styles();
+/*
 			if ( is_customize_preview() ) {
 
 				$font_styles = $family->styles();
@@ -269,6 +290,7 @@ class Component implements Bootable {
 
 				$font_styles = array_unique( $font_styles );
 			}
+			*/
 
 			if ( $family->isGoogleFont() && ! isset( $fonts[ $family->name() ] ) ) {
 				$fonts[ $family->name() ] = sprintf(

@@ -121,34 +121,10 @@ class Component implements Bootable {
 		// Global sections.
 		// -------------------------------------------------------------
 
-		$manager->add_section( 'theme_global_layout', [
-			'panel'    => 'theme_global',
-			'title'    => __( 'Layout', 'exhale' ),
-			'priority' => 5
-		] );
-
 		$manager->add_section( 'theme_global_typography', [
 			'panel'    => 'theme_global',
 			'title'    => __( 'Typography', 'exhale' ),
 			'priority' => 10
-		] );
-
-		$manager->add_section( 'theme_global_colors', [
-			'panel'    => 'theme_global',
-			'title'    => __( 'Colors', 'exhale' ),
-			'priority' => 15
-		] );
-
-		$manager->add_section( 'theme_body_background', [
-			'panel'     => 'theme_global',
-			'title'     => __( 'Background', 'exhale' ),
-			'priority'  => 15
-		] );
-
-		$manager->add_section( 'theme_global_media', [
-			'panel'    => 'theme_global',
-			'title'    => __( 'Media', 'exhale' ),
-			'priority' => 25
 		] );
 
 		// Move the additional CSS section.
@@ -158,24 +134,6 @@ class Component implements Bootable {
 		// -------------------------------------------------------------
 		// Header sections.
 		// -------------------------------------------------------------
-
-		$manager->add_section( 'theme_header_layout', [
-			'panel'    => 'theme_header',
-			'title'    => __( 'Layout', 'exhale' ),
-			'priority' => 5
-		] );
-
-		$manager->add_section( 'theme_header_colors', [
-			'panel'    => 'theme_header',
-			'title'    => __( 'Colors', 'exhale' ),
-			'priority' => 15
-		] );
-
-		$manager->add_section( 'theme_header_background', [
-			'panel'     => 'theme_header',
-			'title'     => __( 'Background', 'exhale' ),
-			'priority'  => 15
-		] );
 
 		// Customize the title/tagline section.
 		$title_tagline           = $manager->get_section( 'title_tagline' );
@@ -187,18 +145,6 @@ class Component implements Bootable {
 		// Content sections.
 		// -------------------------------------------------------------
 
-		$manager->add_section( 'theme_content_colors', [
-			'panel'    => 'theme_content',
-			'title'    => __( 'Colors', 'exhale' ),
-			'priority' => 15
-		] );
-
-		$manager->add_section( 'theme_content_background', [
-			'panel'     => 'theme_content',
-			'title'     => __( 'Background', 'exhale' ),
-			'priority'  => 15
-		] );
-
 		// Customize the static front page section.
 		$static_front           = $manager->get_section( 'static_front_page' );
 		$static_front->panel    = 'theme_content';
@@ -207,40 +153,6 @@ class Component implements Bootable {
 		// -------------------------------------------------------------
 		// Footer sections.
 		// -------------------------------------------------------------
-
-		$manager->add_section( 'theme_footer_colors', [
-			'panel'    => 'theme_footer',
-			'title'    => __( 'Colors', 'exhale' ),
-			'priority' => 15
-		] );
-
-		$manager->add_section( 'theme_footer_background', [
-			'panel'     => 'theme_footer',
-			'title'     => __( 'Background: Footer', 'exhale' ),
-			'priority'  => 15
-		] );
-
-		$manager->add_section( 'theme_sidebar_footer_background', [
-			'panel'     => 'theme_footer',
-			'title'     => __( 'Background: Sidebar', 'exhale' ),
-			'priority'  => 15
-		] );
-
-		$manager->add_section( 'theme_footer_sidebar', [
-			'panel'    => 'theme_footer',
-			'title'    => __( 'Sidebar', 'exhale' ),
-			'description' => sprintf(
-				'<a class="button button-secondary" href="javascript:wp.customize.panel( \'widgets\' ).focus();">%s</a>',
-				__( 'Add Footer Widgets &rarr;', 'exhale' )
-			),
-			'priority' => 20
-		] );
-
-		$manager->add_section( 'theme_footer_credit', [
-			'panel'    => 'theme_footer',
-			'title'    => __( 'Credit', 'exhale' ),
-			'priority' => 25
-		] );
 
 		// -------------------------------------------------------------
 		// Component sections.
@@ -276,18 +188,6 @@ class Component implements Bootable {
 		foreach ( $this->components as $component ) {
 			App::resolve( $component )->registerSettings( $manager );
 		}
-
-		$manager->add_setting( 'header_sticky', [
-			'default'           => \Exhale\Tools\Mod::fallback( 'header_sticky' ),
-			'sanitize_callback' => 'wp_validate_boolean',
-			'transport'         => 'postMessage'
-		] );
-
-		$manager->add_setting( 'branding_sep', [
-			'default'           => \Exhale\Tools\Mod::fallback( 'branding_sep' ),
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage'
-		] );
 	}
 
 	/**
@@ -302,9 +202,6 @@ class Component implements Bootable {
 	public function registerControls( WP_Customize_Manager $manager ) {
 
 		// Register JS control types.
-		$manager->register_control_type( Controls\BackgroundPosition::class );
-		$manager->register_control_type( Controls\BackgroundSvg::class      );
-		$manager->register_control_type( Controls\ImageFilter::class        );
 		$manager->register_control_type( Controls\Typography::class         );
 
 		// Change background color control labels.
@@ -316,29 +213,6 @@ class Component implements Bootable {
 		foreach ( $this->components as $component ) {
 			App::resolve( $component )->registerControls( $manager );
 		}
-
-		// Sticky header control.
-		$manager->add_control( 'header_sticky', [
-			'section'     => 'theme_header_layout',
-			'type'        => 'checkbox',
-			'label'       => __( 'Always stick header to top of screen?', 'exhale' ),
-			'description' => __( 'Note: Header is sticky on mobile by default.', 'exhale' )
-		] );
-
-		$choices  = [ '' => '' ];
-
-		foreach ( \Exhale\Tools\Config::get( 'character-entities' ) as $entity ) {
-			$choices[ $entity ] = esc_html( $entity );
-		}
-
-		// Branding separator control.
-		$manager->add_control( 'branding_sep', [
-			'section'     => 'title_tagline',
-			'type'        => 'select',
-			'label'       => __( 'Separator', 'exhale' ),
-			'description' => __( 'Character used as a separator between the title and tagline.', 'exhale' ),
-			'choices'     => $choices
-		] );
 	}
 
 	/**
@@ -397,6 +271,7 @@ class Component implements Bootable {
 			null
 		);
 
+		/*
 		// Enqueue controls script.
 		wp_enqueue_script(
 			'exhale-customize-controls',
@@ -420,6 +295,7 @@ class Component implements Bootable {
 			'exhaleCustomizeControls',
 			$json
 		);
+		*/
 	}
 
 	/**

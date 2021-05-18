@@ -17,10 +17,9 @@ svg {
 
 img,
 .entry__image {
-	box-shadow:    $shadow-sm;
-	border-radius: 3px;
+	//box-shadow:    $shadow-sm;
+	//border-radius: 3px;
 	box-sizing:    border-box;
-	filter:        var( --image-default-filter );
 }
 
 a img,
@@ -29,10 +28,8 @@ a .entry__image {
 }
 
 a:hover img,
-a:focus img,
-a:hover .entry__image,
-a:focus .entry__image {
-	filter: var( --image-hover-filter );
+a:focus img {
+	filter: grayscale( 75% );
 }
 
 // Embeds.

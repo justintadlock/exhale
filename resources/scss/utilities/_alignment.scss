@@ -9,20 +9,36 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+@media ( max-width: $content-width-padded ) {
+
+	[class^="wp-container-"][class*="wp-block"] > * {
+		margin-left: $spacing-global;
+		margin-right: $spacing-global;
+	}
+
+	[class^="wp-container-"][class*="wp-block"] > .alignwide,
+	[class^="wp-container-"][class*="wp-block"] > .alignfull {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 100%;
+	}
+}
+
 // Left alignment.
 .alignleft {
 	float:  left;
-	margin-right:  1.5em;
+	margin-right:  1.5em !important;
 	margin-bottom: 0.25em;
 }
 
 // Right alignment.
 .alignright {
 	float:  right;
-	margin-left: 1.5em;
+	margin-left: 1.5em !important;
 	margin-bottom: 0.25em;
 }
 
+/*
 .alignleft > img,
 .alignright > img {
 	display: block;
@@ -81,6 +97,7 @@
 		margin-right: auto;
 	}
 }
+*/
 
 // Align full and wide classes.
 .alignwide,
@@ -114,6 +131,23 @@ p [class*=align] {
 /// Gutenberg not adding a `.has-background` class to blocks with a background.
 ///
 /// @link https://github.com/WordPress/gutenberg/issues/11172
+
+.alignfull {
+	margin-top: 0;
+}
+
+p:not(.alignfull) + .alignfull,
+ul:not(.alignfull) + .alignfull,
+ol:not(.alignfull) + .alignfull,
+dl:not(.alignfull) + .alignfull,
+figure:not(.alignfull) + .alignfull,
+blockquote:not(.alignfull) + .alignfull,
+form:not(.alignfull) + .alignfull,
+hr:not(.alignfull) + .alignfull,
+pre:not(.alignfull) + .alignfull,
+table:not(.alignfull) + .alignfull {
+	margin-top: $spacing-global;
+}
 
 .alignfull[style*=background-color] + .alignfull[style*=background-color],
 .alignfull[style*=background-color] + .alignfull[class*=background-color],

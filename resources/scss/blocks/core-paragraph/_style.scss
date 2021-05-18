@@ -1,6 +1,6 @@
 
 
-.has-drop-cap::first-letter {
+.has-drop-cap:not(:focus)::first-letter {
 	float: left;
 	line-height: 1;
 	font-size: calc( 2em * 1.73 );

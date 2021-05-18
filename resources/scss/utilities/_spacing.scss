@@ -100,6 +100,38 @@ $margin: map-merge( $spacing, (
 	.ml-#{ $name } {
 		margin-left: $value;
 	}
+
+	@if $name != 'px' and $name != 'auto' {
+		.-m-#{ $name } {
+			margin: -#{ $value };
+		}
+
+		.-my-#{ $name } {
+			margin-top:    -#{ $value };
+			margin-bottom: -#{ $value };
+		}
+
+		.-mx-#{ $name } {
+			margin-left:  -#{ $value };
+			margin-right: -#{ $value };
+		}
+
+		.-mt-#{ $name } {
+			margin-top: -#{ $value };
+		}
+
+		.-mb-#{ $name } {
+			margin-bottom: -#{ $value };
+		}
+
+		.-mr-#{ $name } {
+			margin-right: -#{ $value };
+		}
+
+		.-ml-#{ $name } {
+			margin-left: -#{ $value };
+		}
+	}
 }
 
 @each $prefix, $breakpoint in ( sm: $breakpoint-sm, md: $breakpoint-md ) {

@@ -58,7 +58,7 @@ class Options {
 			'disable_emoji'        => true,
 			'disable_toolbar'      => false,
 			'disable_wp_embed'     => false,
-			'error_page'           => 0
+		//	'error_page'           => 0      // @removed 3.0.0
 		] );
 	}
 }

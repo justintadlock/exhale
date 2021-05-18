@@ -11,26 +11,53 @@
 	@include button;
 }
 
-.wp-block-button {
-//	margin-bottom: $spacing-global;
+.wp-block-button,{
 	margin-top: $spacing-global;
+}
 
-	// See `components/_button.scss`.
-	&__link {}
+.wp-block-buttons .wp-block-button:first-child {
+	margin-top: $spacing-half;
+}
 
-	&__link:hover,
-	&__link:focus {}
+.wp-block-buttons .wp-block-button {
+	margin-top: $spacing-half;
+	margin-bottom: 0;
+	margin-right: $spacing-half;
+}
+
+.is-content-justification-right > .wp-block-button {
+	margin-left: $spacing-half;
+	margin-right: 0;
+}
+
+.is-style-no-gap .wp-block-button {
+	margin-left: 0;
+	margin-right: 0;
+
+	&.wp-block-button__width-50 {
+		width: 50%;
+	}
+
+	&.wp-block-button__width-25 {
+		width: 25%;
+	}
+}
+
+.is-vertical.is-style-no-gap .wp-block-button + .wp-block-button {
+	margin-top: 0;
 }
 
 // Using `a` here to overwrite general link rules.
 .wp-block-button__link {
-	color:      var( --color-content-background );
-	background: var( --color-primary );
 	text-decoration: none;
 }
 
-.is-style-squared .wp-block-button__link {
-	border-radius: 0;
+.wp-block-button__link {
+	padding: calc( 1rem + 1px ) calc( 2rem + 1px );
+}
+
+.is-style-outline .wp-block-button__link {
+	padding: 1rem 2rem;
 }
 
 .is-style-outline .wp-block-button__link {

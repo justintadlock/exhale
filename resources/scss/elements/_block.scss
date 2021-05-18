@@ -5,8 +5,8 @@ hr,
 address,
 table,
 figure {
-	//margin-bottom: $spacing-global;
 	margin-top: $spacing-global;
+	margin-bottom: 0;
 }
 
 // Paragraphs.
@@ -17,8 +17,8 @@ p {
 }
 
 // Horizontal rules.
-hr {
+hr:not(.wp-block-separator) {
 	height:     0;
 	border:     none;
-	border-top: 2px solid var( --color-border );
+	border-top: 1px solid var( --color-border );
 }

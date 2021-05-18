@@ -1,0 +1,31 @@
+
+.wp-block-social-links {
+	margin-top: $spacing-half;
+	margin-bottom: 0;
+
+	// need to triple selector to override GB.
+	.wp-social-link.wp-social-link.wp-block-social-link {
+		margin: $spacing-half $spacing-fourth 0;
+	}
+
+	&.items-justified-left .wp-social-link.wp-block-social-link {
+		margin: $spacing-half $spacing-half 0 0;
+	}
+
+	&.items-justified-right .wp-social-link.wp-block-social-link {
+		margin: $spacing-half 0 0 $spacing-half;
+	}
+
+	&.is-style-logos-only {
+
+		.wp-social-link.wp-block-social-link {
+			padding: 0;
+		}
+
+		.wp-block-social-link {
+			.wp-block-social-link-anchor {
+				padding: 0;
+			}
+		}
+	}
+}

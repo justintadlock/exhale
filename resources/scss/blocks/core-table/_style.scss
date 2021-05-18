@@ -6,40 +6,21 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-$table-bg-colors : (
-	// subtle-light-gray: var( --gray-100 ), // default
-	subtle-pale-green: var( --green-100 ),
-	subtle-pale-blue:  var( --blue-100 ),
-	subtle-pale-pink:  var( --pink-100 )
-);
-
 .wp-block-table {
-
-	table.has-background {
-		background: transparent;
-	}
 
 	&.has-fixed-layout {
 		table-layout: fixed;
 	}
-}
 
-.is-style-stripes tbody tr:nth-child( even ) {
-	//background-color: var( --gray-100 );
-	background-color: transparent;
-}
-
-.is-style-stripes tbody tr {
-	border: none;
-}
-
-@each $color-name, $color-value in $table-bg-colors {
-
-	.has-#{ $color-name }-background-color tbody tr {
-		background-color: $color-value;
+	&.is-style-stripes tbody tr:nth-child( odd ) {
+		background-color: rgba( 255, 255, 255, 0.125 );
 	}
-}
 
-.is-style-stripes tbody tr:nth-child( even ) {
-	//background: transparent;
+	&.is-style-stripes tbody tr:nth-child( even ) {
+		background-color: transparent;
+	}
+
+	&.is-style-stripes tbody tr {
+		border: none;
+	}
 }

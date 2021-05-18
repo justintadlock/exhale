@@ -8,5 +8,11 @@
 
 // Make sure inner blocks span the full width of the container.
 .wp-block-cover__inner-container .wp-block {
-	max-width: 100%;
+	//max-width: 100%;
+}
+
+[data-align="right"] .wp-block-cover,
+[data-align="left"] .wp-block-cover {
+	width: $content-width;
+	max-width: $content-width;
 }

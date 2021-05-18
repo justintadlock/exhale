@@ -9,6 +9,9 @@
 // Bump out width via negative margins for paragraph block.
 
 .wp-block-paragraph {
+	font-size: inherit;
+	line-height: inherit;
+
 	&.is-style-highlight,
 	&.is-style-shadow,
 	&.has-background {

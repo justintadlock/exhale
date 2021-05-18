@@ -6,13 +6,18 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+.wp-block-template-part {
+	position: relative;
+}
+
 .app-header {
 	//display:       flex;
 	//height:        4rem;
 	//box-sizing:    border-box;
-	background:    var( --color-header-background );
+	//background:    var( --color-header-background );
 	//border-bottom: 1px solid var( --color-header-border );
 
+/*
 	.admin-bar &.sticky {
 		top: 32px;
 
@@ -24,10 +29,11 @@
 			top: 0;
 		}
 	}
+	*/
 
 	&,
 	* {
-		border-color: var( --color-header-border );
+	//	border-color: var( --color-header-border );
 	}
 
 
@@ -39,7 +45,7 @@
 	//	max-width: 50%;
 	//	height:    4rem;
 	//	padding:   0 $spacing-global;
-		background:  var( --color-branding-background );
+	//	background:  var( --color-branding-background );
 	}
 
 	// Custom logo.
@@ -86,7 +92,7 @@
 	// The site description.
 	&__sep,
 	&__description {
-		color: var( --color-header-description );
+	//	color: var( --color-header-description );
 	}
 
 	&__description {
@@ -99,12 +105,12 @@
 
 	// Site title link.
 	&__title-link {
-		color:           var( --color-header-title );
+	//	color:           var( --color-header-title );
 	//	text-decoration: none;
 
 		&:hover,
 		&:focus {
-			color:           var( --color-header-title-hover );
+	//		color:           var( --color-header-title-hover );
 	//		text-decoration: underline;
 		}
 	}
@@ -119,7 +125,7 @@
 	//		max-width:  unset;
 	//		display:    block;
 	//		text-align: center;
-			background: var( --color-branding-background );
+	//		background: var( --color-branding-background );
 		}
 
 		&__title,

@@ -13,6 +13,7 @@
 // Import block controls.
 import ControlBorderRadius from './control-border-radius';
 import ControlBoxShadow    from './control-box-shadow';
+import ControlGap          from './control-gap';
 import ControlListType     from './control-list-type';
 
 export default [
@@ -33,6 +34,7 @@ export default [
 		blocks:  [
 			'core/image',
 			'core/gallery',
+			'core/group',
 			'core/media-text',
 			'core/paragraph'
 		]
@@ -43,10 +45,21 @@ export default [
 		default: '',
 		control: ControlBoxShadow,
 		blocks:  [
+			'core/column',
+			'core/group',
 			'core/image',
 			'core/gallery',
 			'core/media-text',
 			'core/paragraph'
+		]
+	},
+	{
+		name:    'gap',
+		type:    'string',
+		default: '',
+		control: ControlGap,
+		blocks:  [
+			'core/query-loop'
 		]
 	}
 ];

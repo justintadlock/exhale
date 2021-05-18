@@ -32,15 +32,7 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
-		$this->app->singleton( Filter\Filters::class );
 		$this->app->singleton( Size\Sizes::class   );
-
-		$this->app->singleton( Filter\Component::class, function() {
-			return new Filter\Component(
-				$this->app->resolve( Filter\Filters::class   ),
-				$this->app->resolve( CustomProperties::class )
-			);
-		} );
 
 		$this->app->singleton( Size\Component::class, function() {
 			return new Size\Component(
@@ -48,13 +40,6 @@ class Provider extends ServiceProvider {
 			);
 		} );
 
-		$this->app->singleton( Customize::class, function() {
-			return new Customize( [
-				'filters' => $this->app->resolve( Filter\Filters::class )
-			] );
-		} );
-
-		$this->app->alias( Filter\Filters::class, 'image/filters' );
 		$this->app->alias( Size\Sizes::class,     'image/sizes'   );
 	}
 
@@ -66,7 +51,6 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
-		$this->app->resolve( Filter\Component::class )->boot();
 		$this->app->resolve( Size\Component::class   )->boot();
 	}
 }

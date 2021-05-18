@@ -96,7 +96,7 @@ class General extends View {
 		$settings['disable_wp_embed'] = ! empty( $settings['disable_wp_embed'] );
 
 		// Integers.
-		$settings['error_page'] = absint( $settings['error_page']           );
+		//$settings['error_page'] = absint( $settings['error_page']           );
 
 		// Return the validated/sanitized settings.
 		return $settings;
@@ -115,10 +115,6 @@ class General extends View {
 			'editor' => [
 				'label'    => __( 'Editor', 'exhale' ),
 				'callback' => 'sectionEditor'
-			],
-			'reading' => [
-				'label'    => __( 'Reading', 'exhale' ),
-				'callback' => 'sectionReading'
 			],
 			'clean_wp' => [
 				'label'    => __( 'Clean WordPress', 'exhale' ),
@@ -153,13 +149,6 @@ class General extends View {
 				'label'    => __( 'Classic Editor', 'exhale' ),
 				'callback' => 'fieldClassicStyle',
 				'section'  => 'editor'
-			],
-
-			// Reading fields.
-			'error_page' => [
-				'label'    => __( '404 Page', 'exhale' ),
-				'callback' => 'fieldErrorPage',
-				'section'  => 'reading'
 			],
 
 			// Clean WP fields.
@@ -228,21 +217,6 @@ class General extends View {
 	}
 
 	/**
-	 * Displays the reading section.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function sectionReading() { ?>
-
-		<p>
-			<?php esc_html_e( 'Alter the output for specific views on the front end.', 'exhale' ) ?>
-		</p>
-
-	<?php }
-
-	/**
 	 * Displays the clean WP section.
 	 *
 	 * @since  1.0.0
@@ -275,52 +249,6 @@ class General extends View {
 
 		<p class="description">
 			<?php esc_html_e( 'Loads a smaller stylesheet if you are using the classic WordPress editor instead of the block editor.', 'exhale' ) ?>
-		</p>
-
-	<?php }
-
-	/**
-	 * Displays the 404 error page field.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function fieldErrorPage() {
-
-		$dropdown = wp_dropdown_pages( [
-			'name'              => 'exhale_settings[error_page]',
-			'show_option_none'  => '-',
-			'option_none_value' => 0,
-			'selected'          => Options::get( 'error_page' ),
-			'post_status'       => [ 'private' ],
-			'echo'              => false
-		] ); ?>
-
-		<p>
-			<label>
-				<?php if ( $dropdown ) : ?>
-
-					<?= $dropdown ?>
-
-				<?php else : ?>
-
-					<select name="exhale_settings[error_page]">
-						<option value="0" selected="selected"><?php esc_html_e( 'No Private Pages', 'exhale' ) ?></option>
-					</select>
-
-					<?php if ( current_user_can( 'publish_pages' ) ) : ?>
-
-						<a href="<?= esc_url( add_query_arg( 'post_type', 'page', admin_url( 'post-new.php' ) ) ) ?>"><?php esc_html_e( 'Add New Page', 'exhale' ) ?></a>
-
-					<?php endif ?>
-
-				<?php endif ?>
-			</label>
-		</p>
-
-		<p class="description">
-			<?php esc_html_e( 'Select a page to display when a user visits a 404 error page on your site. The page must be set to private so that it will not appear on the front end.', 'exhale' ) ?>
 		</p>
 
 	<?php }

@@ -39,27 +39,7 @@ class Provider extends ServiceProvider {
 
 		// Bind a single instance of theme mod defaults.
 		$this->app->singleton( 'exhale/mods', function() {
-
-			return array_merge(
-				Config::get( '_settings-mods' ),
-				Config::get( 'settings-mods'  )
-			);
-		} );
-
-		// Bind a single instance of the WP custom background settings.
-		$this->app->singleton( 'exhale/compat/background', function() {
-			return array_merge(
-				[
-					'default-image'          => '',
-					'default-position-x'     => 'left',
-					'default-position-y'     => 'top',
-					'default-size'           => 'auto',
-					'default-repeat'         => 'repeat',
-					'default-attachment'     => 'scroll',
-					'default-color'          => 'f3f3f3'
-				],
-				Config::get( 'custom-background' )
-			);
+			return [];
 		} );
 
 		// Bind the Laravel Mix manifest for cache-busting.

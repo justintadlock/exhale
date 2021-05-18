@@ -6,4 +6,7 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-.wp-block-audio {}
+.wp-block-audio {
+	margin-top: $spacing-global;
+	margin-bottom: 0;
+}

@@ -24,7 +24,7 @@
 	> .editor-inner-blocks,
 	> .wp-block-group__inner-container,
 	.wp-block-group__inner-container > .editor-inner-blocks {
-		max-width: 100%;
+	//	max-width: 100%;
 	}
 }
 
@@ -39,6 +39,6 @@
 	> .editor-block-list__layout
 	> .wp-block[data-align=full]
 {
-	margin-left: 0;
-	max-width:   100%;
+	//margin-left: 0;
+	//max-width:   100%;
 }

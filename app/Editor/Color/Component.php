@@ -97,7 +97,7 @@ class Component implements Bootable {
 		do_action( 'exhale/editor/color/register', $this->colors );
 
 		// Adds a color palette to the block editor.
-		add_theme_support( 'editor-color-palette', $this->colors->palette() );
+	//	add_theme_support( 'editor-color-palette', $this->colors->palette() );
 
 		// Adds each color as a custom property.
 		foreach ( $this->colors as $color ) {

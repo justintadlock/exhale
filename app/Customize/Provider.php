@@ -42,11 +42,6 @@ class Provider extends ServiceProvider {
 
 		$this->app->singleton( Component::class, function() {
 			return new Component( [
-				Background\Customize::class,
-				Color\Customize::class,
-				Image\Customize::class,
-				Layout\Customize::class,
-				Footer\Customize::class,
 				Typography\Customize::class
 			] );
 		} );

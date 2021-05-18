@@ -10,6 +10,11 @@
 	margin-top: 0;
 }
 
+// hide separator if it's last child.
+.sep:last-child {
+	display: none;
+}
+
 h1 + *,
 h2 + *,
 h3 + *,

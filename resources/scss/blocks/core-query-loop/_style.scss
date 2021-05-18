@@ -1,0 +1,17 @@
+////
+/// Pullquote block.
+///
+/// @group  Blocks
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.wp-block-query-loop {
+	//gap: $spacing-global;
+
+	&.is-flex-container > li {
+		display: flex;
+
+	//	margin: 0;
+	}
+}

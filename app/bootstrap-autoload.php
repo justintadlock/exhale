@@ -39,8 +39,6 @@ array_map( function( $file ) {
 }, [
 	'functions-assets',
 	'functions-filters',
-	'functions-helpers',
 	'functions-setup',
 	'functions-template',
-	'functions-woocommerce'
 ] );

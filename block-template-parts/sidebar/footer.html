@@ -1,0 +1,61 @@
+<!-- wp:group {
+	"tagName"   : "aside",
+	"align"     : "full",
+	"className" : "sidebar sidebar--footer",
+	"layout":{
+		"inherit"     : false,
+		"contentSize" : "100%"
+	},
+	"style"     : {
+		"spacing" : {
+			"padding" : {"top":"32px","right":"32px","bottom":"32px","left":"32px"}
+		}
+	}
+} -->
+<aside class="wp-block-group alignfull sidebar sidebar--footer" style="padding-top:32px;padding-right:32px;padding-bottom:32px;padding-left:32px">
+
+	<!-- wp:columns {"verticalAlignment":"top"} -->
+	<div class="wp-block-columns are-vertically-aligned-top">
+
+		<!-- wp:column {"verticalAlignment":"top"} -->
+		<div class="wp-block-column is-vertically-aligned-top">
+			<!-- wp:group {"tagName":"section","className":"widget"} -->
+			<section class="wp-block-group widget">
+				<!-- wp:heading {"level":3,"className":"widget__title"} -->
+				<h3 class="widget__title">Widget #1</h3>
+				<!-- /wp:heading -->
+				<!-- wp:calendar /-->
+			</section>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:column -->
+
+		<!-- wp:column {"verticalAlignment":"top","width":""} -->
+		<div class="wp-block-column is-vertically-aligned-top">
+			<!-- wp:group {"tagName":"section","className":"widget"} -->
+			<section class="wp-block-group widget">
+				<!-- wp:heading {"level":3,"className":"widget__title"} -->
+				<h3 class="widget__title">Widget #2</h3>
+				<!-- /wp:heading -->
+				<!-- wp:tag-cloud /-->
+			</section>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:column -->
+
+		<!-- wp:column {"verticalAlignment":"top","width":""} -->
+		<div class="wp-block-column is-vertically-aligned-top">
+			<!-- wp:group {"tagName":"section","className":"widget"} -->
+			<section class="wp-block-group widget">
+				<!-- wp:heading {"level":3,"className":"widget__title"} -->
+				<h3 class="widget__title">Widget #3</h3>
+				<!-- /wp:heading -->
+				<!-- wp:latest-posts /-->
+			</section>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:column -->
+	</div>
+	<!-- /wp:columns -->
+</aside>
+<!-- /wp:group -->

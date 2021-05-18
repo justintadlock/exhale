@@ -7,6 +7,8 @@
 ////
 
 .wp-block-group {
+	//max-width: 100%;
+	margin-top: 0;
 
 	&::after {
 		content:    ".";
@@ -18,10 +20,11 @@
 
 	&.has-background {
 	//	margin-bottom: $spacing-global;
-		margin-top:    $spacing-global;
-		padding:       $spacing-global;
+	//	margin-top:    $spacing-global;
+	//	padding:       $spacing-global;
 	}
 
+	/*
                            > *,
 	&__inner-container > * {
 		margin-left:  $spacing-global;
@@ -33,13 +36,14 @@
 			margin-right: auto;
 		}
 	}
+	*/
 }
 
 .wp-block-group__inner-container {
-	margin-left:  auto;
-	margin-right: auto;
+	//margin-left:  auto;
+	//margin-right: auto;
 
 	@media ( min-width: $content-width-padded ) {
-		max-width: 100%;
+	//	max-width: 100%;
 	}
 }

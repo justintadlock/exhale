@@ -22,7 +22,6 @@ $shadows : (
 @each $shadow-name, $shadow-value in $shadows {
 
 	.shadow-#{ $shadow-name },
-	.wp-block-media-text.shadow-#{ $shadow-name } img,
 	.wp-block-image.shadow-#{ $shadow-name } img,
 	.wp-block-gallery.shadow-#{ $shadow-name } img {
 		box-shadow: #{ $shadow-value }

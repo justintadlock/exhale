@@ -32,6 +32,14 @@ $overflow-x: (
 	overflow-x-scroll:  scroll
 );
 
+$object-fits: (
+	object-contain: contain,
+	object-cover:   cover,
+	object-fill:    fill,
+	object-none:    none,
+	object-scale-down: scale-down
+);
+
 $positions: (
 	static:   static,
 	fixed:    fixed,
@@ -104,6 +112,12 @@ $box-sizing: (
 @each $display-selector, $display-value in $displays {
 	.#{ $display-selector } {
 		display: $display-value;
+	}
+}
+
+@each $object-fit-selector, $object-fit-value in $object-fits {
+	.#{ $object-fit-selector } {
+		object-fit: $object-fit-value;
 	}
 }
 

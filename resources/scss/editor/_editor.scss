@@ -8,35 +8,81 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-.edit-post-visual-editor.editor-styles-wrapper {
+.editor-styles-wrapper {
+	padding: 0;
+
+	.block-editor-block-list__layout.is-root-container>.wp-block[data-align=full] {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.edit-post-visual-editor .editor-styles-wrapper {
 	font-family: font-family( primary );
 	font-size:   16px;
 	color:       var( --color-primary );
 	background:  var( --color-content-background );
 }
 
-.editor-writing-flow {
+.block-editor-writing-flow {
 	@include typography;
 }
+
+.editor-styles-wrapper {
+	.block-editor-block-list__layout {
+		&.is-root-container.is-outline-mode > * {
+			max-width: 100% !important;
+		}
+	}
+}
+
 
 // The editor should conform to the content width.  We also need to add 30px b/c
 // of the padding and margin in the editor.
 .wp-block {
-	max-width: calc( #{ $content-width } + 30px );
+	//max-width: calc( #{ $content-width } + 30px );
 	//@include typography;
 }
 
+.wp-block {
+//	margin-top: $spacing-global;
+}
+
 .editor-styles-wrapper [data-block] {
-	margin-top: $spacing-global;
-	margin-bottom: $spacing-global;
+	//margin-top: $spacing-global;
+	//margin-bottom: $spacing-global;
 }
 
 .wp-block[data-align="wide"] {
 	max-width: $width-alignwide;
+	margin-top: $spacing-global;
+		margin-left: auto;
+		margin-right: auto;
 }
 
-.wp-block[data-align="full"] {
-	max-width: none;
+p + .wp-block[data-align="full"],
+ul + .wp-block[data-align="full"],
+ol + .wp-block[data-align="full"],
+dl + .wp-block[data-align="full"],
+figure + .wp-block[data-align="full"],
+blockquote + .wp-block[data-align="full"],
+form + .wp-block[data-align="full"],
+hr + .wp-block[data-align="full"],
+pre + .wp-block[data-align="full"],
+table + .wp-block[data-align="full"],
+
+.wp-block[data-align="full"] + .wp-block {
+	margin-top: $spacing-global;
+}
+
+.wp-block.block-list-appender:not(.is-horizontal ) {
+	margin-top: $spacing-global;
+}
+
+.wp-block[data-align="full"],
+.wp-block[data-align="full"] + .wp-block[data-align="full"] {
+	//max-width: none;
+	margin-top: 0;
 }
 
 .edit-post-visual-editor.editor-styles-wrapper {
@@ -63,37 +109,34 @@
 // Editor post title.
 .editor-post-title__block .editor-post-title__input,
 .editor-post-title__block .editor-post-title__input:focus {
-	line-height:       1.58;
-	font-size:         3rem;
+	font-size:         2.5rem;
 	font-family:       var( --font-family-headings );
-	font-weight:       var( --font-weight-headings,       700    );
-	font-style:        var( --font-style-headings,        normal );
-	font-variant-caps: var( --font-variant-caps-headings, normal );
-	text-transform:    var( --text-transform-headings,    none   );
 
 	letter-spacing: 1px;
-	text-align: center;
+	text-align: left;
 
 	@media only screen and ( min-width: #{ $width-alignwide } ) {
-	//	font-size: 2.75rem;
+		line-height:       1.25;
+		font-size:         3rem;
 		max-width    : $width-alignwide;
 	}
 }
 
 // Fix for wide/full align in editor.
-.edit-post-visual-editor.editor-styles-wrapper .alignwide,
+.edit-post-visual-editor.editor-styles-wrapper .alignwide {
+}
 .edit-post-visual-editor.editor-styles-wrapper .alignfull {
-	box-sizing: border-box;
-	margin-left: 0;
-	margin-right: 0;
-	max-width: 100%;
+	//box-sizing: border-box;
+	//margin-left: 0;
+	//margin-right: 0;
+	//max-width: 100%;
 }
 
 .editor-block-list {
-	&__layout &__block[data-align=full] > &__block-edit figure {
-		width: auto;
-		margin-left: 0;
-		margin-right: 0;
+	&__layout &__block[data-align=full] {
+	//	width: auto;
+	//	margin-left: 0;
+	//	margin-right: 0;
 	}
 }
 

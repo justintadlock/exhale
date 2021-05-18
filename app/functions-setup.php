@@ -45,9 +45,6 @@ add_action( 'after_setup_theme', function() {
 	// Adds featured image support.
 	add_theme_support( 'post-thumbnails' );
 
-	// Add selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
-
 	// Wide and full alignment.
 	add_theme_support( 'align-wide' );
 
@@ -93,43 +90,6 @@ add_action( 'init', function() {
 }, 5 );
 
 /**
- * Register sidebars.
- *
- * @since  2.1.0
- * @access public
- * @return void
- */
-add_action( 'widgets_init', function() {
-
-	$args = [
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget__title">',
-		'after_title'   => '</h3>'
-	];
-
-	foreach ( range( 1, 4 ) as $num ) {
-
-		register_sidebar( [
-			'id'   => "footer-{$num}",
-			'name' => sprintf( __( 'Footer %d', 'exhale' ), $num )
-		] + $args );
-	}
-
-}, 5 );
-
-/**
- * Changes the theme template path to the `public/views` folder.
- *
- * @since  1.0.0
- * @access public
- * @return string
- */
-add_filter( 'hybrid/template/path', function() {
-	return 'public/views';
-} );
-
-/**
  * Registers custom templates with WordPress.
  *
  * @since  1.0.0
@@ -139,20 +99,16 @@ add_filter( 'hybrid/template/path', function() {
  */
 add_action( 'hybrid/templates/register', function( $templates ) {
 
-	$templates->add( 'template-canvas.php', [
-		'label' => __( 'Content Canvas', 'exhale' )
+	$templates->add( 'template-canvas', [
+		'label' => __( 'Canvas', 'exhale' )
 	] );
 
-	$templates->add( 'template-landing.php', [
-		'label' => __( 'Landing', 'exhale' )
+	$templates->add( 'template-canvas-content', [
+		'label' => __( 'Canvas: Content', 'exhale' )
 	] );
 
-	$templates->add( 'template-landing-canvas.php', [
-		'label' => __( 'Landing: Content Canvas', 'exhale' )
+	$templates->add( 'template-canvas-overlay-header', [
+		'label' => __( 'Canvas: Overlay Header', 'exhale' )
 	] );
-
-	//$templates->add( 'template-entry-content-only.php', [
-	//	'label' => __( 'No Post Header/Footer', 'exhale' )
-	//] );
 
 } );

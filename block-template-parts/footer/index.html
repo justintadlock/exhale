@@ -1,0 +1,36 @@
+<!-- wp:group {
+	"tagName"         : "footer",
+	"align"           : "full",
+	"backgroundColor" : "gray-100",
+	"className"       : "overflow-y-hidden"
+} -->
+<footer class="wp-block-group alignfull has-gray-100-background-color has-background overflow-y-hidden">
+
+	<!-- wp:template-part {"slug":"sidebar/footer"} /-->
+
+	<!-- wp:group {
+		"className":"app-footer__meta",
+		"style"     : {
+			"spacing" : {
+				"padding" : {"top":"16px","right":"32px","bottom":"16px","left":"32px"}
+			}
+		}
+	} -->
+	<div class="wp-block-group app-footer__meta" style="padding-top:16px;padding-right:32px;padding-bottom:16px;padding-left:32px">
+
+		<!-- wp:template-part {"slug":"nav/menu/footer"} /-->
+
+		<!-- wp:paragraph {
+			"align"     : "center",
+			"className" : "app-footer__credit my-4"
+		} -->
+		<p class="app-footer__credit my-4 has-text-align-center">Powered by the code of a maniac.</p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:template-part {"slug":"nav/menu/social"} /-->
+
+	</div>
+	<!-- /wp:group -->
+
+</footer>
+<!-- /wp:group -->

@@ -1,0 +1,33 @@
+////
+/// Pullquote block.
+///
+/// @group  Blocks
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.wp-block-post-author {
+
+	&__avatar .avatar,
+	// gb editor doesn't have .avatar class.
+	&__avatar img {
+		border-radius: 50%;
+	}
+
+	&__content {}
+
+	&__byline {
+		font-size: 0.75em; // gb
+		line-height: 1.25;
+	}
+
+	&__name {
+		font-weight: inherit; // gb
+	}
+
+	&__bio {
+		font-size: inherit; // gb
+		margin-bottom: 0;   // gb
+	}
+
+}
