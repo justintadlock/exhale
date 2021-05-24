@@ -1,20 +1,17 @@
 <!-- wp:group {
-	"align":"full",
-	"className":"loop"
+	"align":"full"
 } -->
-<div class="wp-block-group alignfull loop">
+<div class="wp-block-group alignfull">
 
 	<!-- wp:group {
 		"tagName":"article",
-		"align":"full",
-		"className":"entry"
+		"align":"full"
 	} -->
-	<article class="wp-block-group alignfull entry">
+	<article class="wp-block-group alignfull">
 
 		<!-- wp:group {
 			"tagName":"header",
 			"align":"full",
-			"className":"entry__header",
 			"layout":{"inherit":true},
 			"style":{
 				"spacing":{
@@ -22,41 +19,83 @@
 				}
 			}
 		} -->
-		<header class="wp-block-group alignfull entry__header" style="padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem">
+		<header class="wp-block-group alignfull" style="padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem">
 			<!-- wp:post-title {
 				"level":1,
-				"className":"entry__title my-0"
+				"style":{
+					"spacing":{
+						"margin":{"top":"0rem","bottom":"0rem"}
+					}
+				}
 			} /-->
 
 			<!-- wp:group {
-				"className":"entry__byline mt-2"
+				"style":{
+					"typography":{
+						"fontFamily":"var:preset|font-family|secondary"
+					},
+					"spacing":{
+						"margin":{"top":"8px"}
+					},
+					"color":{
+						"link":"var:preset|color|gray-600"}
+					}
+				}
+				"textColor":"gray-600",
+				"fontSize":"medium"
 			} -->
-			<div class="wp-block-group entry__byline mt-2">
+			<div class="wp-block-group has-gray-600-color has-text-color has-link-color has-medium-font-size" style="--wp--style--color--link:var(--wp--preset--color--gray-600);font-family:var(--wp--preset--font-family--secondary);margin-top:8px">
 
 				<!-- wp:post-author {
 					"showAvatar":false,
-					"className":"entry__author inline-block"
+					"className":"inline-block",
+					"style":{
+						"spacing":{
+							"margin":{"top":"0rem"}
+						}
+					}
 				} /-->
 
 				<!-- wp:paragraph {
-					"className":"sep inline-block mx-2"
+					"className":"sep inline-block",
+					"style":{
+						"spacing":{
+							"margin":{"top":"0rem","right":"8px","left":"8px"}
+						}
+					}
 				} -->
-				<p class="sep inline-block mx-2 my-0">&middot;</p>
+				<p class="sep inline-block" style="margin-top:0rem;margin-right:8px;margin-left:8px;">·</p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:post-date {
-					"className":"entry__published inline-block"
+					"className":"inline-block",
+					"style":{
+						"spacing":{
+							"margin":{"top":"0rem"}
+						}
+					}
 				} /-->
 
 				<!-- wp:paragraph {
-					"className":"sep inline-block mx-2"
+					"className":"sep inline-block",
+					"style":{
+						"spacing":{
+							"margin":{"top":"0rem","right":"8px","left":"8px"}
+						}
+					}
 				} -->
-				<p class="sep inline-block mx-2 my-0">&middot;</p>
+				<p class="sep inline-block" style="margin-top:0rem;margin-right:8px;margin-left:8px;">·</p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:post-comments-link {
-					"className":"entry__comments inline-block"
+					"className":"inline-block",
+					"style":{
+						"spacing":{
+							"margin":{"top":"0rem"}
+						}
+					}
 				} /-->
+
 			</div>
 			<!-- /wp:group -->
 
@@ -64,19 +103,25 @@
 		<!-- /wp:group -->
 
 		<!-- wp:post-content {
-			"layout":{"inherit":true},
-			"className":"entry__content"
+			"layout":{"inherit":true}
 		} /-->
 
 		<!-- wp:group {
 			"tagName":"footer",
-			"className":"entry__footer mt-8",
-			"layout":{"inherit":true}
+			"align":"full",
+			"layout":{"inherit":true},
+			"style":{
+				"spacing":{
+					"margin":{"top":"2rem"}
+				},
+				"color":{"link":"var:preset|color|gray-600"},
+				"typography":{"fontFamily":"var:preset|font-family|secondary"}
+			},
+			"textColor":"gray-600",
+			"fontSize":"medium"
 		} -->
-		<footer class="wp-block-group entry__footer mt-8">
-			<!-- wp:post-terms {
-				"term":"category"
-			} /-->
+		<footer class="wp-block-group alignfull has-gray-600-color has-text-color has-link-color has-medium-font-size" style="--wp--style--color--link:var(--wp--preset--color--gray-600);font-family:var(--wp--preset--font-family--secondary);margin-top:2rem">
+			<!-- wp:post-terms {"term":"category"} /-->
 		</footer>
 		<!-- /wp:group -->
 

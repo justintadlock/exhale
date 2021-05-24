@@ -16,7 +16,6 @@ namespace Exhale;
 
 use Hybrid\App;
 use Exhale\Tools\CustomProperties;
-use Exhale\Settings\Options;
 
 /**
  * Enqueue scripts/styles for the front end.
@@ -41,22 +40,13 @@ add_action( 'wp_enqueue_scripts', function() {
 	// Enqueue theme styles.
 	wp_enqueue_style(
 		'exhale-screen',
-		asset( Options::get( 'classic_style' ) ? 'css/screen-classic.css' : 'css/screen.css' ),
+		asset( 'css/screen.css' ),
 		null,
 		null
 	);
 
 	wp_add_inline_style( 'exhale-screen', App::resolve( CustomProperties::class )->css() );
 
-} );
-
-add_action( 'wp_print_styles', function() {
-
-	printf(
-		"<style id='%s-inline-css'>\n%s\n</style>\n",
-		'exhale-vars',
-		App::resolve( CustomProperties::class )->css()
-	);
 } );
 
 /**
@@ -77,6 +67,10 @@ add_action( 'enqueue_block_assets', function() {
 	// necessary to get styles set up correctly.
 	//wp_register_style( 'wp-block-library', '' );
 	wp_register_style( 'wp-block-library-theme', '' );
+} );
+
+add_action( 'admin_init', function() {
+	add_editor_style( [ asset( 'css/editor.css' ) ] );
 } );
 
 /**
@@ -106,7 +100,7 @@ add_action( 'enqueue_block_editor_assets', function() {
 	] );
 
 	// Enqueue theme editor styles.
-	wp_enqueue_style( 'exhale-editor', asset( 'css/editor.css' ), null, null );
+	//wp_enqueue_style( 'exhale-editor', asset( 'css/editor.css' ), null, null );
 
 	wp_add_inline_style( 'wp-block-library', App::resolve( CustomProperties::class )->css() );
 } );

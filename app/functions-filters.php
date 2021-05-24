@@ -14,11 +14,14 @@
 namespace Exhale;
 
 use Hybrid\App;
-use Exhale\Settings\Options;
 use Exhale\Tools\Config;
 use Exhale\Tools\Svg;
 use Exhale\Template\ErrorPage;
 use Exhale\Template\BlockHierarchy;
+
+add_filter( 'post_thumbnail_size', function( $size ) {
+	return 'exhale-landscape-extra-large';
+} );
 
 
 add_filter( 'block_type_metadata', function( $meta ) {
@@ -26,11 +29,17 @@ add_filter( 'block_type_metadata', function( $meta ) {
 	//var_dump( $meta );
 
 	if ( in_array( $meta['name'], [
-		'core/paragraph',
-		'core/heading',
 		'core/button',
+		'core/code',
+		'core/column',
+		'core/columns',
+		'core/gallery',
+		'core/group',
+		'core/heading',
+		'core/image',
 		'core/list',
 		'core/quote',
+		'core/paragraph',
 		'core/post-comments-link',
 		'core/post-author',
 		'core/post-date',
@@ -39,11 +48,17 @@ add_filter( 'block_type_metadata', function( $meta ) {
 		'core/post-title',
 		'core/term-description'
 	] ) ) {
+		$meta['supports']['fontSize'] = true;
+		$meta['supports']['__experimentalFontStyle'] = true;
+		$meta['supports']['lineHeight'] = true;
 		$meta['supports']['__experimentalFontFamily'] = true;
 		$meta['supports']['__experimentalFontWeight'] = true;
 		$meta['supports']['__experimentalTextTransform'] = true;
 		$meta['supports']['__experimentalTextDecoration'] = true;
-	//	var_dump( $meta );
+	}
+
+	if ( 'core/heading' === $meta['name'] ) {
+		$meta['supports']['__experimentalLetterSpacing'] = true;
 	}
 
 
@@ -57,6 +72,7 @@ add_filter( 'block_type_metadata', function( $meta ) {
 	}
 
 	if ( in_array( $meta['name'], [
+		'core/code',
 		'core/cover',
 		'core/columns',
 		'core/column',
@@ -66,19 +82,34 @@ add_filter( 'block_type_metadata', function( $meta ) {
 	}
 
 	if ( in_array( $meta['name'], [
+		'core/post-content',
+		'core/post-excerpt',
+		'core/post-featured-image',
 		'core/post-title',
 		'core/columns',
 		'core/group',
+		'core/heading',
+		'core/code',
 		'core/cover',
+		'core/list',
+		'core/navigation',
+		'core/paragraph',
+		'core/separator',
+		'core/social-links',
 		'core/site-title'
 	] ) ) {
 		$meta['supports']['spacing']['margin'] = true;
 	}
 
 	if ( in_array( $meta['name'], [
+		'core/code',
 		'core/columns',
 		'core/column',
+		'core/list',
 		'core/media-text',
+		'core/navigaiton',
+		'core/paragraph',
+		'core/post-excerpt',
 		'core/quote',
 		'core/social-links'
 	] ) ) {
@@ -86,12 +117,26 @@ add_filter( 'block_type_metadata', function( $meta ) {
 	}
 
 	if ( in_array( $meta['name'], [
+		'core/code',
 		'core/column',
 		'core/quote'
 	] ) ) {
 		$meta['supports']['color']['text'] = true;
+		$meta['supports']['color']['link'] = true;
 		$meta['supports']['color']['background'] = true;
 		$meta['supports']['color']['gradients'] = true;
+	}
+
+	if ( in_array( $meta['name'], [
+		'core/image'
+	] ) ) {
+		$meta['supports']['color']['text'] = true;
+		$meta['supports']['color']['link'] = true;
+		$meta['supports']['color']['background'] = true;
+		$meta['supports']['color']['gradients'] = true;
+
+		$meta['supports']['spacing']['margin'] = true;
+		$meta['supports']['spacing']['padding'] = true;
 	}
 
 

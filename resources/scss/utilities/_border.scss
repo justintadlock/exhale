@@ -6,6 +6,12 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+[style*="border-radius"] {
+	// Useful for when using a rounded border.
+	// Inner elements w/bgs don't cover it.
+	overflow: hidden;
+}
+
 .border-current {
 	border-color: currentColor;
 }

@@ -11,25 +11,37 @@
 	position:            relative;
 	background-size:     cover;
 	background-position: 50%;
-	height:              100%; // Necessary for user-selected height.
-	min-height:          200px;
+	//height:              100%; // Necessary for user-selected height.
+	min-height:          240px;
 	height:              auto;
-	//margin:              0 0 $spacing-global;
-	margin-top:          $spacing-global;
-	padding:             $spacing-global;
-//	display:             flex;
-//	justify-content:     center;
-//	align-items:         center;
-	//text-shadow: 1px 1px 2px rgba( 0, 0, 0, 0.5 );
-	color:     var( --white );
-	//background-color:    var( --black );
-	//box-shadow: 0 1px 3px rgba( 0, 0, 0, 0.12 ),
-	//            0 1px 2px rgba( 0, 0, 0, 0.24 );
-//	border-radius: 3px;
+	//margin-top:          $spacing-global;
+	//padding:             $spacing-global;
 	box-sizing: border-box;
 
-	&.alignfull {
-		border-radius: 0;
+	&.is-style-mosaic {
+		position: relative;
+
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		background-image:
+			linear-gradient( var( --wp--preset--color--white ), var( --wp--preset--color--white ) ),
+			linear-gradient(var( --wp--preset--color--white ), var( --wp--preset--color--white )),
+			linear-gradient(var( --wp--preset--color--white ), var( --wp--preset--color--white ));
+		background-size:
+			100% 1rem,
+			1rem 100%,
+			1rem calc( 33.33% + 0.67rem );
+		background-position:
+			0 calc( 66.67% - 1rem ),
+			calc( 33.33% - 1rem ) 0,
+			calc( 66.67% - 1rem ) bottom;
+		background-repeat: no-repeat;
+
+		}
 	}
 
 	&.alignright,
@@ -38,38 +50,13 @@
 		max-width: $content-width;
 	}
 
-
-	// Parallax images should have a fixed background so that the image
-	// stays in place while everything else scrolls.
-	&.has-parallax {
-	//	background-position: 0 0; // This keeps the image from jumping.
-	//	background-attachment: fixed;
-	}
-
-	// Left/Right text content.
-	&.has-left-content {
-	//	justify-content: flex-start;
-	}
-
-	&.has-right-content {
-	//	justify-content: flex-end;
-	}
-
-/*
-	&__video-background {
-		position:   absolute;
-		width:      100%;
-		height:     100%;
-		top:        50%;
-		left:       50%;
-		object-fit: fill;
-		transform:  translateX(-50%) translateY(-50%);
-		z-index:    1;
-	}
-	*/
-
 	&.is-style-square {
 		aspect-ratio: 1 / 1;
+	}
+
+	a:hover,
+	a:focus {
+		background-color: rgba( 255, 255, 255, 0.15 );
 	}
 }
 
@@ -77,49 +64,4 @@
 .wp-block-cover-image.has-custom-content-position.has-custom-content-position .wp-block-cover__inner-container,
 .wp-block-cover.has-custom-content-position.has-custom-content-position .wp-block-cover__inner-container {
 	width: 100%;
-}
-
-.wp-block-cover__inner-container,
-.wp-block-cover-text {
-	//z-index: 2;
-	//max-width: $width-alignwide;
-	color: var( --white );
-
-	a:not(.wp-block-button__link) {
-		color: inherit;
-	}
-
-	a:not(.wp-block-button__link):hover,
-	a:not(.wp-block-button__link):focus {
-		color:      var( --white );
-		background: rgba( 255, 255, 255, 0.2 );
-	}
-}
-
-.wp-block-cover__inner-container {
-	//z-index:   1;
-
-	> *:not([class*="-color"]) {
-		color: inherit;
-	}
-}
-
-// Paragraph of text shown within the cover image element.
-.wp-block-cover-text {
-	font-size:     2.75rem;
-	text-align:    center;
-
-	@media ( max-width: $content-width ) {
-		font-size: 2.25rem;
-	}
-}
-
-// Left-aligned text.
-.has-left-content .wp-block-cover-text {
-	text-align: left;
-}
-
-// Right-aligned text.
-.has-right-content .wp-block-cover-text {
-	text-align: right;
 }

@@ -6,9 +6,6 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-:first-child {
-	margin-top: 0;
-}
 
 // hide separator if it's last child.
 .sep:last-child {
@@ -35,13 +32,6 @@ h6 + * {
 p.has-background,
 p.is-style-highlight {
 	padding: $spacing-global;
-}
-
-.wp-block-image,
-.wp-block-media-text,
-.wp-block-gallery {
-	box-shadow: none;
-	border-radius: 0;
 }
 
 /// Used for paragraphs that only contain an image. These have no height. We use

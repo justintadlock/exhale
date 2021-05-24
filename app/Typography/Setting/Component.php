@@ -141,12 +141,11 @@ class Component implements Bootable {
 
 		// Enqueue fonts.
 		add_action( 'wp_enqueue_scripts',          [ $this, 'enqueue' ], 5 );
-	//	add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue' ], -5 );
+		//add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue' ], 5 );
 		add_action( 'after_setup_theme', function() {
 
-
+add_theme_support( 'editor-styles' );
 			$fonts = $this->googleFonts();
-
 
 			if ( $fonts ) {
 				add_editor_style( [
@@ -295,7 +294,7 @@ class Component implements Bootable {
 			if ( $family->isGoogleFont() && ! isset( $fonts[ $family->name() ] ) ) {
 				$fonts[ $family->name() ] = sprintf(
 					'%s:%s',
-					$family->googleName(),
+					str_replace( '+', ' ', $family->googleName() ),
 					join( ',', $font_styles )
 				);
 			}

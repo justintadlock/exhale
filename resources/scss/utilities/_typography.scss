@@ -22,34 +22,6 @@ $text-decoration: (
 	}
 }
 
-/// Font family.
-
-$font-families: (
-	font-primary:   var( --font-family-primary   ),
-	font-secondary: var( --font-family-secondary ),
-	font-headings:  var( --font-family-headings  )
-);
-
-@each $name, $value in $font-families {
-	.#{ $name } {
-		font-family: $value;
-	}
-}
-
-/// Font sizes.
-///
-/// Loops through the editor font sizes and adds utility classes for them. This
-/// handles the `.has-{$size}-font-size` classes added via Gutenberg, which may
-/// be useful elsewhere.
-///
-/// @todo Rename to `.text-#{ $size }`.
-
-@each $font-size-name, $font-size-value in editor-font-sizes() {
-
-	.text-#{ $font-size-name } {
-		font-size: #{ $font-size-value };
-	}
-}
 
 /// Font style.
 
@@ -144,7 +116,7 @@ $vertical-align: (
 /// If we have a text color, let's use that as the link color as well.  There's
 /// no way for us to know if the colors will clash here, so let's keep it simple.
 
-.has-text-color {
+.has-text-color:not(.has-link-color) {
 
 	a:not( .wp-block-button__link ) {
 		color: inherit;

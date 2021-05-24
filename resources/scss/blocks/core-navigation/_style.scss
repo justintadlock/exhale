@@ -1,0 +1,52 @@
+.wp-block-navigation {
+
+	.wp-block-navigation-link__content:hover,
+	.wp-block-navigation-link__content:focus,
+	.wp-block-home-link__content:hover,
+	.wp-block-home-link__content:focus {
+		text-decoration: underline;
+	}
+}
+
+header .wp-block-navigation {
+
+	// WTF Gutenberg?
+	&.wp-block-navigation .wp-block-navigation__container > .wp-block-navigation-link {
+		margin: 0;
+	}
+
+	// Home Link block doesn't have the same
+	// .wp-block-navigation-link class.
+	.wp-block-home-link {
+		margin: 0;
+	}
+
+	.wp-block-navigation-link {
+		// Let's see how many selectors we can chain together.
+		// I'm not even mad anymore at this point.
+		// A little sad? Yeah, maybe. :)
+		.wp-block-navigation-link__content.wp-block-navigation-link__content.wp-block-navigation-link__content {
+			padding: 1.5rem;
+			line-height: 1;
+		}
+	}
+
+	//.wp-block-navigation-link__content,
+	.wp-block-home-link__content {
+		padding: 1.5rem;
+		line-height: 1;
+	}
+
+	.wp-block-navigation__responsive-container.is-menu-open {
+		padding: 0;
+	}
+
+	.is-menu-open {
+		.wp-block-navigation-link__content.wp-block-navigation-link__content.wp-block-navigation-link__content,
+		.wp-block-home-link__content {
+			padding: 1rem 2rem;
+		}
+	}
+
+
+}

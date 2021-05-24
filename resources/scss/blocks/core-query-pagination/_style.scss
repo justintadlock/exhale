@@ -1,0 +1,60 @@
+
+.wp-block-query-pagination {
+	margin: 0 auto;
+
+	display: flex;
+	justify-content: center;
+	//gap: $spacing-fourth;
+	line-height: var( --wp--custom--leading--none );
+	font-weight: 600;
+
+	font-size:  0px; // Get rid of whitespace between inline-block elements.
+
+
+
+	// Longer class names to overwrite GB.
+	> .wp-block-query-pagination-numbers,
+	> .wp-block-query-pagination-previous,
+	> .wp-block-query-pagination-next {
+		margin: 0;
+		display: block;
+	}
+
+	&-numbers > *,
+	&-next,
+	&-previous {
+		border-top: 1px solid var( --wp--preset--color--gray-300 );
+		border-bottom: 1px solid var( --wp--preset--color--gray-300 );
+	}
+
+	&-numbers > *,
+	&-previous {
+		border-left: 1px solid var( --wp--preset--color--gray-300 );
+	}
+
+	&-numbers > :last-child,
+	&-next {
+		border-right: 1px solid var( --wp--preset--color--gray-300 );
+	}
+
+	&-numbers > *,
+	&-previous,
+	&-next {
+		font-size: var( --wp--preset--font-size--small );
+		font-family: var( --wp--preset--font-family--secondary );
+	}
+
+	a,
+	.page-numbers {
+		display: inline-block;
+		padding: 1rem 1.25rem;
+		background-color: var( --wp--preset--color--white );
+		text-decoration: none;
+	}
+
+	a:hover,
+	a:focus {
+		color: var( --wp--preset--color--white );
+		background-color: var( --wp--preset--color--gray-900 );
+	}
+}

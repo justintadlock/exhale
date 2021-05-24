@@ -36,6 +36,8 @@ add_action( 'after_setup_theme', function() {
 	// Load theme translations.
 	load_theme_textdomain( 'exhale', get_parent_theme_file_path( 'public/lang' ) );
 
+	add_theme_support( 'core-block-patterns' );
+
 	// Automatically add the `<title>` tag.
 	add_theme_support( 'title-tag' );
 
@@ -68,23 +70,6 @@ add_action( 'after_setup_theme', function() {
 			'app-header__description',
 			'app-header__sep'
 		]
-	] );
-
-}, 5 );
-
-/**
- * Register menus.
- *
- * @since  1.0.0
- * @access public
- * @return void
- */
-add_action( 'init', function() {
-
-	register_nav_menus( [
-		'primary' => esc_html_x( 'Primary', 'nav menu location', 'exhale' ),
-		'footer'  => esc_html_x( 'Footer',  'nav menu location', 'exhale' ),
-		'social'  => esc_html_x( 'Social',  'nav menu location', 'exhale' )
 	] );
 
 }, 5 );

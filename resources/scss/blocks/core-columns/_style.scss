@@ -16,6 +16,11 @@
 	//	flex-wrap: wrap;
 	}
 
+	// Cancel out GB.
+	&.has-background {
+		padding: 0;
+	}
+
 	&.alignfull {
 		margin-top: 0;
 	//	padding-left:  $spacing-global;
@@ -48,10 +53,6 @@
 
 .wp-block-column {
 	//flex-grow: 1;
-
-	// Useful for when using a rounded border.
-	// Inner elements w/bgs don't cover it.
-	overflow: hidden;
 
 	@media ( max-width: $content-width-padded ) {
 		// Responsiveness: Show at most one columns on mobile. This must be

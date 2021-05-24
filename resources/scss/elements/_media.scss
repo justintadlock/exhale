@@ -9,6 +9,10 @@ figcaption {
 // Images.
 // Note that `.entry__image` is an SVG, but we don't want to target all SVGs.
 
+img {
+	vertical-align: bottom;
+}
+
 img,
 svg {
 	max-width: 100%;
@@ -29,7 +33,7 @@ a .entry__image {
 
 a:hover img,
 a:focus img {
-	filter: grayscale( 75% );
+	filter: grayscale( 70% );
 }
 
 // Embeds.

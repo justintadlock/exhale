@@ -1,12 +1,6 @@
 // Links.
 a {
-	color:               var( --wp--style--color--link, var( --color-primary-link ) );
 	text-decoration:     underline;
 	transition:          color 0.5s ease-in-out;
 	transition-property: color, background, border;
-
-	&:hover,
-	&:focus {
-		color: var( --color-primary-link-hover );
-	}
 }

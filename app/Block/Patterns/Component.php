@@ -31,7 +31,7 @@ class Component implements Bootable {
 	 * @return void
 	 */
 	public function boot() {
-		add_action( 'init', [ $this, 'registerPatterns' ] );
+		add_action( 'init', [ $this, 'registerPatterns' ], 15 );
 	}
 
 	protected function locate( $slug ) {
@@ -48,10 +48,11 @@ class Component implements Bootable {
 			'viewportWidth' => 1520
 		] );
 
-		register_block_pattern( "exhale/{$slug}", $args );
+		return register_block_pattern( "exhale/{$slug}", $args );
 	}
 
 	public function registerPatterns() {
+
 
 		$width_alignwide = 1024;
 

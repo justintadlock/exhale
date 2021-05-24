@@ -7,15 +7,31 @@
 ////
 
 .wp-block-image {
+	display: table;
 	margin-top: $spacing-global;
 	margin-bottom: 0;
 
-	img {
-	//	display: block;
+	figcaption {
+		display: block;
+		margin-top: $spacing-fourth;
+		margin-bottom: 0;
 	}
 
-	&.alignfull img {
-		border-radius: 0;
+	&.is-style-caption-top {
+		 figcaption {
+			display: table-caption;
+			caption-side: top;
+			margin-top: 0;
+			margin-bottom: $spacing-fourth;
+		}
+	}
+
+	&.is-style-flip-horizontal img {
+		transform: scaleX(-1);
+	}
+
+	&.is-style-flip-vertical img {
+		transform: scaleY(-1);
 	}
 
 	&.alignfull img,
@@ -24,26 +40,36 @@
 		margin-right: auto;
 		display:      block;
 	}
+}
 
-	&.is-resized {
-	//	width: min-content;
+.wp-block-image.is-style-polaroid-tilt-right {
+	transform: scale(0.99, 0.99) rotate(2deg);
+}
 
-		// Emulate min-content for Edge and IE11
-	//	display: -ms-inline-grid;
-	//	-ms-grid-columns: min-content;
 
-		figcaption {
-	//		-ms-grid-row: 2;
-		}
+.wp-block-image.is-style-polaroid-tilt-left {
+	transform: scale(0.99, 0.99) rotate(-2deg);
+}
 
-		img {
-	//		max-width: none;
-		}
+.wp-block-image.is-style-polaroid,
+.wp-block-gallery.is-style-polaroid figure,
+.wp-block-image.is-style-polaroid-tilt-right,
+.wp-block-image.is-style-polaroid-tilt-left {
+	padding:    $spacing-half;
+	background-color: var( --wp--preset--color--white );
+	box-shadow: $shadow-md;
+	transition: all 0.5s ease-in-out;
+
+	&:hover {
+		transform: scale( 1, 1 ) rotate( 0 );
 	}
 
 	figcaption {
-		margin: $spacing-fourth 0 0 0;
-		// components/_text-secondary.scss
-	//	text-align: center;
+		margin-top: $spacing-half;
 	}
+}
+
+.wp-block-gallery:not(.is-classic).is-style-polaroid figcaption {
+	bottom: 1rem;
+	width: calc( 100% - #{ $spacing-global } );
 }

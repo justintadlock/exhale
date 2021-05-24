@@ -9,6 +9,16 @@
 // Image block.  Adds left/right margin because a white block covers the editor
 // when using an unaligned image inside of the columns block with wide alignment.
 
+// overwrite GB.
+figure.wp-block-image:not(.wp-block) {
+	margin-top: $spacing-global;
+}
+
 .block-core-columns [data-type="core/image"]:not([data-align]) .wp-block-image {
-	display: table;
+//	display: table;
+}
+
+// GB sets img to block, which creates gap below image.
+.wp-block-image .components-resizable-box__container img {
+	display: inline-block;
 }

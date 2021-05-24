@@ -37,163 +37,131 @@
 @import 'tools/mixins';
 @import 'tools/extends';
 
-/// Prefixes imported styles with `.edit-post-visual-editor` to add an extra
-/// layer of specificity in the block editor.
-///
-/// @since  1.0.0
+// ---------------------------------------------------------------------
+// Import element styles.
+// ---------------------------------------------------------------------
+//
+// Elements are (or should be) class-less designs for the base HTML elements.
+// The styles in this folder should only handle the defaults. More specific
+// styles should be handled later in the cascade.
 
-.editor-styles-wrapper {
+@import 'elements/defaults';
+@import 'elements/block';
+@import 'elements/code';
+//@import 'elements/forms';
+@import 'elements/headings';
+@import 'elements/inline';
+@import 'elements/links';
+@import 'elements/lists';
+@import 'elements/media.scss';
+@import 'elements/quotes.scss';
+@import 'elements/tables.scss';
 
-	// ---------------------------------------------------------------------
-	// Import element styles.
-	// ---------------------------------------------------------------------
-	//
-	// Elements are (or should be) class-less designs for the base HTML elements.
-	// The styles in this folder should only handle the defaults. More specific
-	// styles should be handled later in the cascade.
+// -----------------------------------------------------------------------------
+// Import component styles.
+// -----------------------------------------------------------------------------
+//
+// This is the first point that real CSS is output. Resets, normalization,
+// fonts, etc. are best handled here. These are the base styles that other
+// styles will build upon.
 
-	@import 'elements/defaults';
-	@import 'elements/block';
-	@import 'elements/code';
-	//@import 'elements/forms';
-	@import 'elements/headings';
-	@import 'elements/inline';
-	@import 'elements/links';
-	@import 'elements/lists';
-	@import 'elements/media.scss';
-	@import 'elements/quotes.scss';
-	@import 'elements/tables.scss';
+@import 'components/comments';
+@import 'components/comment';
+@import 'components/comment-respond';
+@import 'components/entry';
+@import 'components/media-meta';
+@import 'components/text-secondary';
 
-	// -----------------------------------------------------------------------------
-	// Import object styles.
-	// -----------------------------------------------------------------------------
-	//
-	// Undecorated design patterns.
+// ---------------------------------------------------------------------
+// Import block styles.
+// ---------------------------------------------------------------------
+//
+// Imports global block styles.
 
-	@import 'objects/content-width';
+@import 'blocks/core-audio/style';
+@import 'blocks/core-button/style';
+@import 'blocks/core-buttons/style';
+@import 'blocks/core-calendar/style';
+@import 'blocks/core-categories/style';
+@import 'blocks/core-code/style';
+@import 'blocks/core-columns/style';
+@import 'blocks/core-cover/style';
+@import 'blocks/core-embed/style';
+@import 'blocks/core-file/style';
+@import 'blocks/core-gallery/style';
+@import 'blocks/core-group/style';
+@import 'blocks/core-heading/style';
+@import 'blocks/core-image/style';
+@import 'blocks/core-latest-comments/style';
+@import 'blocks/core-latest-posts/style';
+@import 'blocks/core-media-text/style';
+@import 'blocks/core-navigation/style';
+@import 'blocks/core-paragraph/style';
+@import 'blocks/core-post-author/style';
+@import 'blocks/core-post-content/style';
+@import 'blocks/core-post-excerpt/style';
+@import 'blocks/core-post-title/style';
+@import 'blocks/core-preformatted/style';
+@import 'blocks/core-pullquote/style';
+@import 'blocks/core-query-loop/style';
+@import 'blocks/core-query-pagination/style';
+@import 'blocks/core-quote/style';
+@import 'blocks/core-rss/style';
+@import 'blocks/core-search/style';
+@import 'blocks/core-separator/style';
+@import 'blocks/core-social-links/style';
+@import 'blocks/core-site-title/style';
+@import 'blocks/core-spacer/style';
+@import 'blocks/core-table/style';
+@import 'blocks/core-template-part/style';
+@import 'blocks/core-verse/style';
+@import 'blocks/core-video/style';
 
-	// -----------------------------------------------------------------------------
-	// Import component styles.
-	// -----------------------------------------------------------------------------
-	//
-	// This is the first point that real CSS is output. Resets, normalization,
-	// fonts, etc. are best handled here. These are the base styles that other
-	// styles will build upon.
+// ---------------------------------------------------------------------
+// Import block editor styles.
+// ---------------------------------------------------------------------
+//
+// Imports block styles for the editor.
 
-	@import 'components/app';
-	@import 'components/app-header';
-	@import 'components/app-content';
-	@import 'components/app-main';
-	@import 'components/app-footer';
-	@import 'components/archive-header';
-	@import 'components/caption';
-	@import 'components/comments';
-	@import 'components/comment';
-	@import 'components/comment-respond';
-	@import 'components/custom-header';
-	@import 'components/entry';
-	@import 'components/entry-list';
-	@import 'components/grid';
-	@import 'components/loop';
-	@import 'components/media-meta';
-	@import 'components/mejs';
-	@import 'components/nav-menu';
-	@import 'components/nav-pagination';
-	@import 'components/search-form';
-	@import 'components/sidebar';
-	@import 'components/text-secondary';
-	@import 'components/widget';
+@import 'blocks/core-button/edit';
+@import 'blocks/core-code/edit';
+@import 'blocks/core-columns/edit';
+@import 'blocks/core-cover/edit';
+@import 'blocks/core-gallery/edit';
+@import 'blocks/core-group/edit';
+@import 'blocks/core-heading/edit';
+@import 'blocks/core-image/edit';
+@import 'blocks/core-media-text/edit';
+@import 'blocks/core-paragraph/edit';
+@import 'blocks/core-pullquote/edit';
+@import 'blocks/core-quote/edit';
+@import 'blocks/core-separator/edit';
 
-	// ---------------------------------------------------------------------
-	// Import block styles.
-	// ---------------------------------------------------------------------
-	//
-	// Imports global block styles.
+// ---------------------------------------------------------------------
+// Import utility styles.
+// ---------------------------------------------------------------------
+//
+// Utilities are helper classes and overrides. This gets loaded last. If
+// necessary, this is the only place where `!important` rules should go,
+// but only if necessary.
 
-	@import 'blocks/core-audio/style';
-	@import 'blocks/core-button/style';
-	@import 'blocks/core-buttons/style';
-	@import 'blocks/core-calendar/style';
-	@import 'blocks/core-categories/style';
-	@import 'blocks/core-code/style';
-	@import 'blocks/core-columns/style';
-	@import 'blocks/core-cover/style';
-	@import 'blocks/core-embed/style';
-	@import 'blocks/core-file/style';
-	@import 'blocks/core-gallery/style';
-	@import 'blocks/core-group/style';
-	@import 'blocks/core-heading/style';
-	@import 'blocks/core-image/style';
-	@import 'blocks/core-latest-comments/style';
-	@import 'blocks/core-latest-posts/style';
-	@import 'blocks/core-media-text/style';
-	@import 'blocks/core-paragraph/style';
-	@import 'blocks/core-post-author/style';
-	@import 'blocks/core-post-content/style';
-	@import 'blocks/core-post-excerpt/style';
-	@import 'blocks/core-post-title/style';
-	@import 'blocks/core-preformatted/style';
-	@import 'blocks/core-pullquote/style';
-	@import 'blocks/core-query-loop/style';
-	@import 'blocks/core-quote/style';
-	@import 'blocks/core-rss/style';
-	@import 'blocks/core-search/style';
-	@import 'blocks/core-separator/style';
-	@import 'blocks/core-social-links/style';
-	@import 'blocks/core-site-title/style';
-	@import 'blocks/core-spacer/style';
-	@import 'blocks/core-table/style';
-	@import 'blocks/core-verse/style';
-	@import 'blocks/core-video/style';
-
-	// ---------------------------------------------------------------------
-	// Import block editor styles.
-	// ---------------------------------------------------------------------
-	//
-	// Imports block styles for the editor.
-
-	@import 'blocks/core-button/edit';
-	@import 'blocks/core-code/edit';
-	@import 'blocks/core-columns/edit';
-	@import 'blocks/core-cover/edit';
-	@import 'blocks/core-gallery/edit';
-	@import 'blocks/core-group/edit';
-	@import 'blocks/core-heading/edit';
-	@import 'blocks/core-html/edit';
-	@import 'blocks/core-image/edit';
-	@import 'blocks/core-media-text/edit';
-	@import 'blocks/core-paragraph/edit';
-	@import 'blocks/core-pullquote/edit';
-	@import 'blocks/core-quote/edit';
-	@import 'blocks/core-separator/edit';
-}
-
-.editor-styles-wrapper.editor-styles-wrapper {
-	// ---------------------------------------------------------------------
-	// Import utility styles.
-	// ---------------------------------------------------------------------
-	//
-	// Utilities are helper classes and overrides. This gets loaded last. If
-	// necessary, this is the only place where `!important` rules should go,
-	// but only if necessary.
-
-	@import 'utilities/a11y';
-	@import 'utilities/alignment';
-	@import 'utilities/background';
-	@import 'utilities/border';
-	@import 'utilities/effects';
-	@import 'utilities/flexbox';
-	@import 'utilities/gap';
-	@import 'utilities/grid';
-	@import 'utilities/helpers';
-	@import 'utilities/layout';
-	@import 'utilities/list.scss';
-	@import 'utilities/media';
-	@import 'utilities/sizing';
-	@import 'utilities/spacing';
-	@import 'utilities/text';
-	@import 'utilities/typography';
-}
+@import 'utilities/a11y';
+@import 'utilities/alignment';
+@import 'utilities/background';
+@import 'utilities/border';
+@import 'utilities/effects';
+@import 'utilities/first-child/edit';
+@import 'utilities/flexbox';
+@import 'utilities/gap';
+@import 'utilities/grid';
+@import 'utilities/helpers';
+@import 'utilities/layout';
+@import 'utilities/list.scss';
+@import 'utilities/media';
+@import 'utilities/sizing';
+@import 'utilities/spacing';
+@import 'utilities/text';
+@import 'utilities/typography';
 
 // Import editor overrides.
 @import 'editor/editor';

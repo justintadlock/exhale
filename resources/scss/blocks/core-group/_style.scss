@@ -18,25 +18,16 @@
 		visibility: hidden;
 	}
 
-	&.has-background {
-	//	margin-bottom: $spacing-global;
-	//	margin-top:    $spacing-global;
-	//	padding:       $spacing-global;
-	}
+	&.is-style-inline-children {
+		width: 100%;
+		display: flex;
+		gap: 1rem;
 
-	/*
-                           > *,
-	&__inner-container > * {
-		margin-left:  $spacing-global;
-		margin-right: $spacing-global;
-
-		@media ( min-width: $content-width-padded ) {
-			max-width:    $content-width;
-			margin-left:  auto;
-			margin-right: auto;
+		> * {
+			margin-top: 0;
 		}
 	}
-	*/
+
 }
 
 .wp-block-group__inner-container {

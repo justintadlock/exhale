@@ -1,3 +1,14 @@
 .wp-block-buttons {
-	margin-top: $spacing-half;
+	//margin-top: $spacing-global;
+	column-gap: $spacing-half;
+	row-gap:    $spacing-half;
+
+	&.is-vertical {
+	//	row-gap: $spacing-half;
+	}
+
+	&.is-style-no-gap {
+		column-gap: 0;
+		row-gap: 0;
+	}
 }

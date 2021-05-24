@@ -9,14 +9,3 @@
 html, body {
 	width: 100%;
 }
-
-html {
-	font-size:   16px;
-	font-family: var( --font-family-primary );
-	line-height: 1.75;
-	color:       var( --color-primary );
-}
-
-body {
-	background-color: var( --color-body-background, transparent );
-}

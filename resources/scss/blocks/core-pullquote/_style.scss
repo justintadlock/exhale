@@ -8,89 +8,51 @@
 
 .wp-block-pullquote {
 	margin-top: $spacing-global;
-	margin-bottom: 0;
-	padding: 0;
 
-	text-align: center;
+	padding: 2rem 0; // overwrite GB.
 
-	// We must define a default border color here so that `blockquote::before`
-	// can eventually inherit this color. The border color can be overwritten
-	// via the editor ("main" color).
-	border-color: var( --color-border );
-
-	&.alignfull {
-		padding-left: $spacing-global;
-		padding-right: $spacing-global;
-	}
-
-	@media only screen and ( max-width: #{ $width-alignwide } ) {
-		&.alignwide {
-			padding-left: $spacing-global;
-			padding-right: $spacing-global;
-		}
-	}
-
-	&.alignwide,
-	&.alignfull {
-		//margin-bottom: 0;
-	}
+	border-top:    4px solid currentColor;
+	border-bottom: 4px solid currentColor;
 
 	&.is-style-solid-color {
-	//	margin-bottom: $spacing-global;
-	}
-
-	// Inherits from blockquote and its pullquote <figure> wrapper.
-	&::before {
-		content: " ";
-		display: block;
-		width: 25%;
-		margin: 0 auto;
-		padding: 0 0 $spacing-global;
-		border-top: 2px solid;
-		border-color: inherit;
-	}
-
-	&.is-style-default {
-	//	margin-bottom: 0;
-	}
-
-	&.is-style-default {
-	//	margin-bottom: 0;
-	}
-
-	&.is-style-solid-color::before {
-		content: none;
+		border: none;
 	}
 
 	blockquote {
-		overflow:     hidden;
-		padding:      0;
-	}
-
-	blockquote p {
-		font-size:    1.75em;
-		line-height:  1.5;
-		font-style:   italic;
-	}
-
-	&.alignfull.is-style-solid-color blockquote {
-		width:        100%;
-		max-width:    $width-alignwide;
-		margin-left:  auto;
-		margin-right: auto;
+		max-width: var( --wp--custom--layout--wide );
+		margin: 0 auto;
+		font-size: var( --wp--preset--font-size--gargantuan );
+		line-height: 1.5;
 	}
 
 	cite,
-	footer {
-		display:  block;
-		position: relative;
-		//margin-bottom: $spacing-global;
-		margin-top: $spacing-global;
+	&__citation { // __citation class for editor.
+		display: inline-block;
+		margin-top: 1rem;
+		font-size: 0.75em;
+
+		// overwrite GB.
+		font-style: normal;
+		font-variant: small-caps;
+
+		&::before {
+			content: "\2014\000A0";
+		}
 	}
-}
 
-// We need to have this sit alone so that it doesn't mess up alignments.
+	// overwrite GB.
+	p {
+		font-size:   inherit;
+    		line-height: inherit;
+	}
 
-.is-style-solid-color {
-	padding: $spacing-global;
+	// Overwriting GB.
+	&.is-style-solid-color blockquote {
+		text-align: initial;
+		max-width:  100%;
+
+		p {
+			font-size: inherit;
+		}
+	}
 }

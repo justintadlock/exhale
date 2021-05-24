@@ -1,19 +1,28 @@
 
 .wp-block-social-links {
-	margin-top: $spacing-half;
+	margin-top: $spacing-global;
 	margin-bottom: 0;
+	column-gap: $spacing-half;
+	row-gap: $spacing-half;
 
 	// need to triple selector to override GB.
 	.wp-social-link.wp-social-link.wp-block-social-link {
-		margin: $spacing-half $spacing-fourth 0;
+	//	margin: $spacing-half $spacing-fourth 0;
+		margin: 0;
 	}
 
 	&.items-justified-left .wp-social-link.wp-block-social-link {
-		margin: $spacing-half $spacing-half 0 0;
+	//	margin: $spacing-half $spacing-half 0 0;
 	}
 
 	&.items-justified-right .wp-social-link.wp-block-social-link {
-		margin: $spacing-half 0 0 $spacing-half;
+	//	margin: $spacing-half 0 0 $spacing-half;
+	}
+
+	.wp-block-social-link {
+		.wp-block-social-link-anchor {
+			border-radius: 50%;
+		}
 	}
 
 	&.is-style-logos-only {

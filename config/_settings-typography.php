@@ -15,19 +15,25 @@ return [
 	'headings' => [
 		'label'           => _x( 'Headings', 'font family setting', 'exhale' ),
 		'description'     => __( 'Font used for text headings.', 'exhale' ),
-		'family'          => 'work-sans',//'roboto',//'system-ui',
+		'family'          => 'roboto-condensed',//'roboto',//'system-ui',
 		'options'         => [ 'family' ]
 	],
 	'primary' => [
 		'label'           => _x( 'Primary', 'font family setting', 'exhale' ),
 		'description'     => __( 'Font used for most of the text on the site.', 'exhale' ),
-		'family'          => 'crimson-pro',//'pt-serif',
+		'family'          => 'cabin',//'crimson-pro',//'pt-serif',
 		'options'         => [ 'family' ]
 	],
 	'secondary' => [
 		'label'           => _x( 'Secondary', 'font family setting', 'exhale' ),
 		'description'     => __( 'Font used for secondary, less important text.', 'exhale' ),
-		'family'          => 'work-sans',//'roboto',//'system-ui',
+		'family'          => 'roboto-condensed',//'roboto',//'system-ui',
 		'options'         => [ 'family' ]
+	],
+	'cursive' => [
+		'label' => 'Cursive',
+		'description' => '',
+		'family' => 'indie-flower',
+		'options' => [ 'family' ]
 	]
 ];

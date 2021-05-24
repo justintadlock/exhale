@@ -8,39 +8,10 @@
 
 .wp-block-separator {
 	opacity: 0.5;
-	border: none;
-	height: 1px;
+	border-bottom-width: 0;
 
-	&.is-style-default {
-		height: 1px;
+	&.is-style-default,
+	&:not( [class*="is-style-"] ) {
+	//	width: 8rem;
 	}
 }
-
-/*
-.wp-block-separator {
-	color: var( --color-border );
-	border-color: currentColor;
-	border-top-width: 1px;
-	border-bottom: none;
-
-	&.has-background {
-		background-color: transparent;
-	}
-
-	&.is-style-wide {
-		border-top-width: 4px;
-	}
-
-	&.is-style-dashed {
-		border-top: 1px dashed currentColor;
-	}
-
-	&.is-style-dots {
-		border-top: 2px dotted currentColor;
-	}
-
-	&.is-style-double {
-		border-top: 3px double currentColor;
-	}
-}
-*/

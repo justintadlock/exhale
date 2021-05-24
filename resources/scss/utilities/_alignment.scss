@@ -24,6 +24,29 @@
 	}
 }
 
+
+.alignfull {
+
+	// Stack full-aligned elements with no whitespace in
+	// between by default.
+	//
+	// The Group block (maybe others) sometimes has a <style>
+	// element that follows, so we want to skip that. The Duotone
+	// Image/Cover filter outputs a hidden <svg>, so we're
+	// skipping that too. By targeting the "hidden" style, we
+	// can cover some other possible use cases.
+
+	+ .alignfull,
+	+ [style*=hidden] + .alignfull,
+	+ style + .alignfull,
+	+ style + [style*=hidden] + .alignfull,
+	+ [style*=hidden] + svg .alignfull {
+		margin-top: 0;
+	}
+}
+
+
+
 // Left alignment.
 .alignleft {
 	float:  left;
@@ -38,74 +61,12 @@
 	margin-bottom: 0.25em;
 }
 
-/*
-.alignleft > img,
-.alignright > img {
-	display: block;
-}
-
-.alignleft:not(.is-resized),
-.alignright:not(.is-resized) {
-	max-width: 50%;
-}
-
-@media( min-width: $content-width ) {
-	.entry__content > .alignleft:not(.is-resized),
-	.entry__content > .alignright:not(.is-resized),
-	.wp-block-group > .alignleft:not(.is-resized),
-	.wp-block-group > .alignright:not(.is-resized),
-	.wp-block-group__inner-container > .alignleft:not(.is-resized),
-	.wp-block-group__inner-container > .alignright:not(.is-resized) {
-		max-width: calc( #{ $content-width } / 2 );
-	}
-}
-
-@media ( min-width: $content-width-padded ) {
-
-	.entry__content > .alignleft,
-	.entry__content .wp-block-group > .alignleft,
-	.entry__content .wp-block-group__inner-container > .alignleft {
-		margin-left: calc( ( 100% - #{ $content-width } ) / 2 );
-	}
-
-	.entry__content > .alignright,
-	.entry__content .wp-block-group > .alignright,
-	.entry__content .wp-block-group__inner-container > .alignright {
-		margin-right: calc( ( 100% - #{ $content-width } ) / 2 );
-	}
-}
-
-@media( max-width: break( 'mobile' ) ) {
-	.alignleft:not(.is-small),
-	.alignright:not(.is-small ) {
-		float:   none;
-		display: block;
-	//	margin:  0 0 $spacing-global;
-		margin: $spacing-global 0 0;
-	}
-}
-
-// Center alignment.
-.aligncenter {
-	display:      block;
-	margin-left:  auto;
-	margin-right: auto;
-	text-align:   center;
-
-	> img {
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
-*/
 
 // Align full and wide classes.
 .alignwide,
 .alignfull,
 .aligncenter {
-	clear:         both;
-	//margin-bottom: $spacing-global;
-	//margin-top: $spacing-global;
+	clear: both;
 }
 
 p [class*=align] {
@@ -131,33 +92,3 @@ p [class*=align] {
 /// Gutenberg not adding a `.has-background` class to blocks with a background.
 ///
 /// @link https://github.com/WordPress/gutenberg/issues/11172
-
-.alignfull {
-	margin-top: 0;
-}
-
-p:not(.alignfull) + .alignfull,
-ul:not(.alignfull) + .alignfull,
-ol:not(.alignfull) + .alignfull,
-dl:not(.alignfull) + .alignfull,
-figure:not(.alignfull) + .alignfull,
-blockquote:not(.alignfull) + .alignfull,
-form:not(.alignfull) + .alignfull,
-hr:not(.alignfull) + .alignfull,
-pre:not(.alignfull) + .alignfull,
-table:not(.alignfull) + .alignfull {
-	margin-top: $spacing-global;
-}
-
-.alignfull[style*=background-color] + .alignfull[style*=background-color],
-.alignfull[style*=background-color] + .alignfull[class*=background-color],
-.alignfull[style*=background-color] + .alignfull.wp-block-cover,
-.alignfull[class*=background-color] + .alignfull[class*=background-color],
-.alignfull[class*=background-color] + .alignfull[style*=background-color],
-.alignfull[class*=background-color] + .alignfull.wp-block-cover,
-.alignfull.wp-block-cover + .alignfull.wp-block-cover,
-.alignfull.wp-block-cover + .alignfull[style*=background-cover],
-.alignfull.wp-block-cover + .alignfull[class*=background-cover] {
-	//margin-top: -#{ $spacing-global };
-	margin-top: 0;
-}

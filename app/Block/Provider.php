@@ -32,6 +32,7 @@ class Provider extends ServiceProvider {
 	 */
 	public function register() {
 		$this->app->singleton( Patterns\Component::class );
+		$this->app->singleton( Styles\Component::class );
 	}
 
 	/**
@@ -43,5 +44,6 @@ class Provider extends ServiceProvider {
 	 */
 	public function boot() {
 		$this->app->resolve( Patterns\Component::class )->boot();
+		$this->app->resolve( Styles\Component::class )->boot();
 	}
 }

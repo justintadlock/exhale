@@ -8,13 +8,12 @@
 .comment-respond__notes,
 .comment-respond__logged-in-as,
 .comments__closed,
-label,
-figcaption {
+label {
 	@include meta;
 }
 
 .comment__meta,
-.entry__byline,
+//.entry__byline,
 .entry__footer {
 	@include meta;
 	@include meta-links;

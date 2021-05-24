@@ -11,13 +11,6 @@
 .wp-block-paragraph {
 	font-size: inherit;
 	line-height: inherit;
-
-	&.is-style-highlight,
-	&.is-style-shadow,
-	&.has-background {
-		margin-left:  -#{ $spacing-global };
-		margin-right: -#{ $spacing-global };
-	}
 }
 
 .wp-block-columns .wp-block-paragraph {

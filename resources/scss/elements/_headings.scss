@@ -1,16 +1,8 @@
-// All headings.
-h1, h2, h3, h4, h5, h6, dt,
-.app-header__title {
-	font-family:       var( --font-family-headings );
-}
 
 // Headings.
 h1, h2, h3, h4, h5, h6 {
-	//margin:            0 0 0.5em;
 	margin:            1.414em 0 0.5em;
 	line-height: 1.5;
-	//line-height:       1.58;
-	//color:             var( --color-headings );
 }
 
 :is( h1, h2, h3, h4, h5, h6 ) {

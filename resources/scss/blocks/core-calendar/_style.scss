@@ -23,6 +23,11 @@
 		border-width: 1px;
 	}
 
+	// overwrite GB.
+	table th {
+		background-color: var( --wp--preset--color--gray-100 );
+	}
+
 	th,
 	td {
 		text-align: center;
@@ -31,12 +36,9 @@
 	tfoot td {
 	//	border: none;
 	}
+}
 
-	#prev {
-		text-align: left;
-	}
-
-	#next {
-		text-align: right;
-	}
+.wp-calendar-nav {
+	display: flex;
+	justify-content: space-between;
 }
