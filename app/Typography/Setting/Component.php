@@ -19,11 +19,7 @@ use Hybrid\App;
 use Hybrid\Contracts\Bootable;
 use Exhale\Customize\Controls\Typography as CustomizeControlTypography;
 use Exhale\Typography\Font\Family\Families;
-use Exhale\Typography\Font\Style\Styles;
-use Exhale\Typography\Font\VariantCaps\Caps;
-use Exhale\Typography\Text\Transform\Transforms;
 use Exhale\Tools\Config;
-use Exhale\Tools\CustomProperties;
 
 use function Hybrid\Font\enqueue as enqueue_font;
 
@@ -45,15 +41,6 @@ class Component implements Bootable {
 	protected $settings;
 
 	/**
-	 * CSS custom properties.
-	 *
-	 * @since  2.0.0
-	 * @access protected
-	 * @var    CustomProperties
-	 */
-	protected $properties;
-
-	/**
 	 * Stores the array of collections.
 	 *
 	 * @since  2.0.0
@@ -72,43 +59,15 @@ class Component implements Bootable {
 	protected $families;
 
 	/**
-	 * Stores the font styles object.
-	 *
-	 * @since  2.0.0
-	 * @access protected
-	 * @var    Families
-	 */
-	protected $styles;
-
-	/**
-	 * Stores the font variant caps object.
-	 *
-	 * @since  2.0.0
-	 * @access protected
-	 * @var    Caps
-	 */
-	protected $caps;
-
-	/**
-	 * Stores the text transforms object.
-	 *
-	 * @since  2.0.0
-	 * @access protected
-	 * @var    Transforms
-	 */
-	protected $transforms;
-
-	/**
 	 * Creates the component object.
 	 *
 	 * @since  2.0.0
 	 * @access public
 	 * @param  Settings          $settings
-	 * @param  CustomProperties  $settings
 	 * @param  array             $collections
 	 * @return void
 	 */
-	public function __construct( Settings $settings, CustomProperties $properties, array $collections = [] ) {
+	public function __construct( Settings $settings, array $collections = [] ) {
 
 		foreach ( array_keys( get_object_vars( $this ) ) as $key ) {
 			if ( isset( $collections[ $key ] ) ) {
@@ -117,7 +76,6 @@ class Component implements Bootable {
 		}
 
 		$this->settings    = $settings;
-		$this->properties  = $properties;
 		$this->collections = $collections;
 	}
 
@@ -172,11 +130,6 @@ add_theme_support( 'editor-styles' );
 
 		// Hook for registering settings.
 		do_action( 'exhale/typography/setting/register', $this->settings );
-
-		// Adds each font setting as a custom property.
-		foreach ( $this->settings as $setting ) {
-			$this->properties->add( 'typography-' . $setting->name(), $setting );
-		}
 	}
 
 	/**

@@ -89,9 +89,8 @@ mix.version();
  *
  * @link https://laravel.com/docs/5.6/mix#working-with-scripts
  */
-mix.js( `${devPath}/js/app.js`,                'js' )
-   .js( `${devPath}/js/customize-controls.js`, 'js' )
-   .js( `${devPath}/js/customize-preview.js`,  'js' );
+mix.js( `${devPath}/js/app.js`,               'js' )
+   .js( `${devPath}/js/customize-preview.js`, 'js' );
 
 mix.react( `${devPath}/js/editor.js`, 'js' );
 
@@ -113,9 +112,7 @@ var sassConfig = {
 
 // Compile SASS/CSS.
 mix.sass( `${devPath}/scss/screen.scss`,             'css', sassConfig )
-   .sass( `${devPath}/scss/screen-classic.scss`,     'css', sassConfig )
    .sass( `${devPath}/scss/editor.scss`,             'css', sassConfig )
-   .sass( `${devPath}/scss/customize-preview.scss`,  'css', sassConfig )
    .sass( `${devPath}/scss/customize-controls.scss`, 'css', sassConfig );
 
 /*

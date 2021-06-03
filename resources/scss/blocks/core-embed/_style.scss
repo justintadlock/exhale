@@ -7,13 +7,29 @@
 ////
 
 .wp-block-embed {
+	margin-top: $spacing-global;
+	margin-bottom: 0;
 
-	// Caption below embedded content.
-	figcaption {}
+	figcaption {
+		margin-top: $spacing-fourth;
+		margin-bottom: 0;
+	}
+
+	iframe {
+		// Removes space at the bottom of inline elements.
+		vertical-align: top;
+	}
+
+	.twitter-tweet {
+		// Need to overwrite inline styles.
+		margin-top:    0 !important;
+		margin-bottom: 0 !important;
+	}
 }
 
 .is-type-video {
 
+/*
 	.wp-block-embed__wrapper {
 		display:        block;
 		position:       relative;
@@ -34,4 +50,5 @@
 			height:    100%;
 		}
 	}
+	*/
 }

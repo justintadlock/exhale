@@ -17,7 +17,6 @@ namespace Exhale;
 
 use Hybrid\Tools\ServiceProvider;
 use Exhale\Tools\Config;
-use Exhale\Tools\CustomProperties;
 
 /**
  * App service provider.
@@ -61,8 +60,5 @@ class Provider extends ServiceProvider {
 
 			return $contents;
 		} );
-
-		// Bind a single instance of the custom properties class.
-		$this->app->singleton( CustomProperties::class );
 	}
 }

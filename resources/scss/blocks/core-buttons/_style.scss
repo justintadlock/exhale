@@ -3,6 +3,11 @@
 	column-gap: $spacing-half;
 	row-gap:    $spacing-half;
 
+	// Halve the margin between Buttons blocks if they are stacked.
+	+ .wp-block-buttons:not([style*=margin-top]) {
+		margin-top: $spacing-half;
+	}
+
 	&.is-vertical {
 	//	row-gap: $spacing-half;
 	}

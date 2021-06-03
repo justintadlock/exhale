@@ -15,7 +15,6 @@ namespace Exhale\Editor\Color;
 
 use Hybrid\Contracts\Bootable;
 use Exhale\Tools\Config;
-use Exhale\Tools\CustomProperties;
 
 /**
  * Color component class.
@@ -44,28 +43,15 @@ class Component implements Bootable {
 	private $app_colors;
 
 	/**
-	 * CSS custom properties.
-	 *
-	 * @since  2.0.0
-	 * @access protected
-	 * @var    CustomProperties
-	 */
-	protected $properties;
-
-	/**
 	 * Creates the component object.
 	 *
 	 * @since  2.0.0
 	 * @access public
 	 * @param  Colors           $editor
-	 * @param  CustomProperties $properties
 	 * @return void
 	 */
-	public function __construct( Colors $colors, CustomProperties $properties ) {
-		$this->colors     = $colors;
-		$this->properties = $properties;
-
-		$this->app_colors = new Colors();
+	public function __construct( Colors $colors ) {
+		$this->colors = $colors;
 	}
 
 	/**
@@ -98,22 +84,6 @@ class Component implements Bootable {
 
 		// Adds a color palette to the block editor.
 	//	add_theme_support( 'editor-color-palette', $this->colors->palette() );
-
-		// Adds each color as a custom property.
-		foreach ( $this->colors as $color ) {
-
-			if ( ! $color->isThemeMod() ) {
-				$this->properties->add( 'editor-color-' . $color->name(), $color );
-			}
-		}
-
-		// Adds each front-end-only color as a custom property.
-		foreach ( $this->app_colors as $color ) {
-
-			if ( ! $color->isThemeMod() ) {
-				$this->properties->add( 'app-color-' . $color->name(), $color );
-			}
-		}
 	}
 
 	/**
@@ -137,13 +107,6 @@ class Component implements Bootable {
 			}
 
 			$colors->add( $name, $options );
-		}
-
-		// Store non-editor colors to print on front end.
-		foreach ( $base as $name => $options ) {
-			if ( ! $colors->has( $name ) ) {
-				$this->app_colors->add( $name, $options );
-			}
 		}
 	}
 

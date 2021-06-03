@@ -4,8 +4,8 @@
 <h1 class="has-text-align-center my-0 has-planetary-font-size" style="font-weight:100;line-height:1.25">Lorem ipsum dolor sit amet</h1>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|secondary"}},"className":"my-4","fontSize":"medium"} -->
-<p class="has-text-align-center my-4 has-medium-font-size" style="font-family:var(--wp--preset--font-family--secondary)">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|secondary"}},"className":"my-4","fontSize":"base"} -->
+<p class="has-text-align-center my-4 has-base-font-size" style="font-family:var(--wp--preset--font-family--secondary)">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"contentJustification":"center","className":"mt-12"} -->

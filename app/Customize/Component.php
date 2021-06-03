@@ -270,32 +270,6 @@ class Component implements Bootable {
 			[],
 			null
 		);
-
-		/*
-		// Enqueue controls script.
-		wp_enqueue_script(
-			'exhale-customize-controls',
-			asset( 'js/customize-controls.js' ),
-			[ 'customize-controls' ],
-			null,
-			true
-		);
-
-		// Set up a new collection to store our JSON.
-		$json = new Collection();
-
-		// Register component controls JSON.
-		foreach ( $this->components as $component ) {
-			App::resolve( $component )->controlsJson( $json );
-		}
-
-		// Pass JSON to the controls script.
-		wp_localize_script(
-			'exhale-customize-controls',
-			'exhaleCustomizeControls',
-			$json
-		);
-		*/
 	}
 
 	/**
@@ -306,14 +280,6 @@ class Component implements Bootable {
 	 * @return void
 	 */
 	public function previewEnqueue() {
-
-		// Enqueue preview style.
-		wp_enqueue_style(
-			'exhale-customize-preview',
-			asset( 'css/customize-preview.css' ),
-			[],
-			null
-		);
 
 		// Enqueue preview script.
 		wp_enqueue_script(

@@ -15,7 +15,6 @@
 namespace Exhale;
 
 use Hybrid\App;
-use Exhale\Tools\CustomProperties;
 
 /**
  * Enqueue scripts/styles for the front end.
@@ -44,8 +43,6 @@ add_action( 'wp_enqueue_scripts', function() {
 		null,
 		null
 	);
-
-	wp_add_inline_style( 'exhale-screen', App::resolve( CustomProperties::class )->css() );
 
 } );
 
@@ -102,7 +99,6 @@ add_action( 'enqueue_block_editor_assets', function() {
 	// Enqueue theme editor styles.
 	//wp_enqueue_style( 'exhale-editor', asset( 'css/editor.css' ), null, null );
 
-	wp_add_inline_style( 'wp-block-library', App::resolve( CustomProperties::class )->css() );
 } );
 
 function editor_script_labels() {

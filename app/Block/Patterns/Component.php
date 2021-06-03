@@ -42,69 +42,120 @@ class Component implements Bootable {
 
 	protected function registerPattern( $slug, array $args ) {
 
+//wp_die( var_dump( str_replace( [ "\n", "\r", "\t" ], '', $this->locate( $slug ) ) ) );
 		$args = wp_parse_args( $args, [
-			'categories'    => [ 'exhale' ],
-			'content'       => $this->locate( $slug ),
+			'categories'    => [],
+			'content'       => str_replace( [ "\n", "\r", "\t" ], '', $this->locate( $slug ) ),
 			'viewportWidth' => 1520
 		] );
+
+		if ( empty( $args['categories'] ) ) {
+			$args['categories'][] = 'exhale';
+		}
 
 		return register_block_pattern( "exhale/{$slug}", $args );
 	}
 
 	public function registerPatterns() {
 
+		$categories_registry = \WP_Block_Pattern_Categories_Registry::get_instance();
 
+		$width_content   = 624;
 		$width_alignwide = 1024;
 
-		register_block_pattern_category( 'exhale', [
-			'label' => __( 'Exhale' )
-		] );
+		// Pattern categories.
+
+		$categories = [
+			'cover'       => __( 'Covers' ),
+			'exhale'      => __( 'Exhale' ),
+			'magazine'    => __( 'Magazine' ),
+			'portfolio'   => __( 'Portfolio' ),
+			'post-header' => __( 'Post Header' ),
+			'query'       => __( 'Query' ),
+			'recipe'      => __( 'Recipe' )
+		];
+
+		foreach ( $categories as $name => $label ) {
+			if ( ! $categories_registry->is_registered( $name ) ) {
+				register_block_pattern_category( $name, [
+					'label' => $label
+				] );
+			}
+		}
+
+		// Patterns.
 
 		$this->registerPattern( 'about-me-columns', [
-			'title' => __( 'About Me: Columns' )
+			'title' => __( 'About Me: Columns' ),
+			'categories' => [ 'columns' ]
 		] );
 
 		$this->registerPattern( 'audio-cover', [
 			'title' => __( 'Audio: Cover' ),
+			'categories' => [ 'cover' ],
 			'viewportWidth' => $width_alignwide
 		] );
 
 		$this->registerPattern( 'audio-cover-dj', [
-			'title' => __( 'Audio: Cover DJ' )
+			'title' => __( 'Audio: Cover DJ' ),
+			'categories' => [ 'cover' ]
 		] );
 
 		$this->registerPattern( 'cards-framed', [
 			'title' => __( 'Cards: Framed' ),
+			'categories' => [ 'columns' ],
 			'viewportWidth' => $width_alignwide + 64
 		] );
 
+		$this->registerPattern( 'columns-movie-posters', [
+			'title' => __( 'Columns: Movie Posters' ),
+			'categories' => [ 'columns' ]
+		] );
+
+		$this->registerPattern( 'columns-square-image-text-boxes', [
+			'title' => __( 'Columns: Square Image Text Boxes' ),
+			'categories' => [ 'columns' ]
+		] );
+
 		$this->registerPattern( 'cover-inner-border', [
-			'title' => __( 'Cover: Inner Border' )
+			'title' => __( 'Cover: Inner Border' ),
+			'categories' => [ 'cover' ]
+		] );
+
+		$this->registerPattern( 'cover-splash-social', [
+			'title' => __( 'Cover: Splash Social' ),
+			'categories' => [ 'cover' ]
 		] );
 
 		$this->registerPattern( 'gallery-text-grid', [
 			'title' => __( 'Gallery: Text Grid' ),
-			'viewportWidth' => $width_alignwide + 64
+			'viewportWidth' => $width_alignwide + 64,
+			'categories' => [ 'gallery' ]
 		] );
 
 		$this->registerPattern( 'hero-adventure', [
-			'title' => __( 'Hero: Adventure' )
+			'title' => __( 'Hero: Adventure' ),
+			'categories' => [ 'cover' ]
 		] );
 
 		$this->registerPattern( 'hero-camping', [
-			'title' => __( 'Hero: Camping' )
+			'title' => __( 'Hero: Camping' ),
+			'categories' => [ 'cover' ]
 		] );
 
 		$this->registerPattern( 'hero-header-with-data', [
-			'title' => __( 'Hero: Header with Data' )
+			'title' => __( 'Hero: Header with Data' ),
+			'categories' => [ 'cover' ]
 		] );
 
 		$this->registerPattern( 'hero-intro-portfolio', [
-			'title' => __( 'Hero: Intro Portfolio' )
+			'title' => __( 'Hero: Intro Portfolio' ),
+			'categories' => [ 'cover' ]
 		] );
 
 		$this->registerPattern( 'hero-video-space', [
-			'title' => __( 'Hero: Video Space' )
+			'title' => __( 'Hero: Video Space' ),
+			'categories' => [ 'cover' ]
 		] );
 
 		$this->registerPattern( 'media-text-post-header', [
@@ -129,11 +180,13 @@ class Component implements Bootable {
 
 		$this->registerPattern( 'pricing-three-columns', [
 			'title' => __( 'Pricing: 3 Columns' ),
+			'categories' => [ 'columns' ],
 			'viewportWidth' => $width_alignwide
 		] );
 
 		$this->registerPattern( 'query-cards', [
 			'title' => __( 'Query: Cards' ),
+			'categories' => [ 'query' ],
 			'blockTypes' => [ 'core/query' ]
 		] );
 
@@ -142,16 +195,37 @@ class Component implements Bootable {
 			'viewportWidth' => $width_alignwide + 64
 		] );
 
+		$this->registerPattern( 'recipe-card-hero', [
+			'title' => __( 'Recipe Card: Hero' ),
+			'categories' => [ 'recipe' ],
+			'viewportWidth' => $width_content
+		] );
+
+		$this->registerPattern( 'recipe-card-circle', [
+			'title' => __( 'Recipe Card: Circle' ),
+			'categories' => [ 'recipe' ],
+			'viewportWidth' => $width_content
+		] );
+
+		$this->registerPattern( 'recipe-card-cover', [
+			'title' => __( 'Recipe Card: Cover' ),
+			'categories' => [ 'recipe' ],
+			'viewportWidth' => $width_content
+		] );
+
 		$this->registerPattern( 'shop-columns-category-covers', [
-			'title' => __( 'Shop: Columns Category Covers' )
+			'title' => __( 'Shop: Columns Category Covers' ),
+			'categories' => [ 'columns' ]
 		] );
 
 		$this->registerPattern( 'shop-hero-just-arrived', [
-			'title' => __( 'Shop: Hero - Just Arrived' )
+			'title' => __( 'Shop: Hero - Just Arrived' ),
+			'categories' => [ 'cover' ]
 		] );
 
 		$this->registerPattern( 'shop-hero-video', [
-			'title' => __( 'Shop: Hero Video' )
+			'title' => __( 'Shop: Hero Video' ),
+			'categories' => [ 'cover' ]
 		] );
 
 		$this->registerPattern( 'shop-trending-boxes', [
@@ -160,21 +234,25 @@ class Component implements Bootable {
 
 		$this->registerPattern( 'team-cards-bio-avatar', [
 			'title' => __( 'Team: Cards Bio Avatar' ),
+			'categories' => [ 'columns' ],
 			'viewportWidth' => $width_alignwide + 64
 		] );
 
 		$this->registerPattern( 'team-cards-bio-wide', [
 			'title' => __( 'Team: Cards Bio Wide' ),
+			'categories' => [ 'columns' ],
 			'viewportWidth' => $width_alignwide + 64
 		] );
 
 		$this->registerPattern( 'team-cards-simple', [
 			'title' => __( 'Team: Cards Simple' ),
+			'categories' => [ 'columns' ],
 			'viewportWidth' => $width_alignwide + 64
 		] );
 
 		$this->registerPattern( 'template-story-retro', [
-			'title' => __( 'Template: Story - Retro' )
+			'title' => __( 'Template: Story - Retro' ),
+			'categories' => [ 'magazine' ]
 		] );
 	}
 

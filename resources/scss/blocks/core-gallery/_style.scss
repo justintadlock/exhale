@@ -6,11 +6,22 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+.wp-block-gallery,
+.blocks-gallery-grid {
+	--gallery-flex-gap: #{ $spacing-half };
+
+	column-gap: var( --gallery-flex-gap );
+	row-gap:    var( --gallery-flex-gap );
+}
+
+.wp-block-gallery.is-style-no-gap,
+.wp-block-gallery.is-style-no-gap > .blocks-gallery-grid {
+	--gallery-flex-gap: 0rem;
+}
 
 // The wrapper element for the entire gallery.
 .wp-block-gallery {
-	margin-bottom: $spacing-half;
-	margin-top:    $spacing-half;
+	margin-top: $spacing-global;
 
 	// For figcaptions. Setting it on the block so that
 	// core typography styles can overwrite.
@@ -20,23 +31,21 @@
 		margin-top: 0;
 	}
 
-	// @todo solve width and X margin issue.
-	// @todo classes may change with nested Image blocks.
-	&.is-style-reverse > .blocks-gallery-grid {
-		flex-direction: row-reverse;
+	.blocks-gallery-grid figcaption {
+		font-size: inherit; 	// Overwrite GB.
+		font-family: inherit;
 	}
 
 	.blocks-gallery-item {
-		margin-top: $spacing-half;
+		flex: auto;
 
 		figcaption {
-			padding-left: $spacing-half;
-			padding-right: $spacing-half;
+			padding-left:   $spacing-half;
+			padding-right:  $spacing-half;
 			padding-bottom: $spacing-fourth;
 		}
 	}
 
-	&.is-style-classic,
 	&.is-classic {
 		.blocks-gallery-item {
 			justify-content: start;
@@ -56,8 +65,72 @@
 			padding-top:    0;
 			padding-bottom: 0;
 			margin-top:     $spacing-fourth;
-			color:          var( --wp--preset--color--gray-600 );
+			color:          var( --wp--preset--color--neutral-600 );
 			background:     unset;
+		}
+	}
+}
+
+// Fallback to 2 columns.
+.wp-block-gallery .blocks-gallery-item {
+	width: calc( 50% - var( --gallery-flex-gap ) / 2 );
+	margin: 0;
+}
+
+.wp-block-gallery {
+
+	&[class*=columns-] .blocks-gallery-item {
+		margin: 0;
+	}
+
+	&.columns-1 .blocks-gallery-item {
+		width: 100%;
+	}
+
+	@media ( min-width: 600px ) {
+
+		&.columns-3 .blocks-gallery-item,
+		&.columns-5 .blocks-gallery-item,
+		&.columns-6 .blocks-gallery-item {
+			width: calc( 100% / 3 - var( --gallery-flex-gap ) * 2 / 3 );
+		}
+
+		&.columns-4 .blocks-gallery-item,
+		&.columns-7 .blocks-gallery-item
+		&.columns-8 .blocks-gallery-item {
+			width: calc( 100% / 4 - var( --gallery-flex-gap ) * 3 / 4 );
+		}
+	}
+
+	@media ( min-width: $screen-md ) {
+
+		&.columns-5 .blocks-gallery-item,
+		&.columns-6 .blocks-gallery-item {
+			width: calc( 100% / 3 - var( --gallery-flex-gap ) * 2 / 3 );
+		}
+
+		&.columns-7 .blocks-gallery-item,
+		&.columns-8 .blocks-gallery-item {
+			width: calc( 100% / 4 - var( --gallery-flex-gap ) * 3 / 4 );
+		}
+	}
+
+	@media ( min-width: $screen-lg ) {
+
+		&.columns-5 .blocks-gallery-item {
+			width: calc( 100% / 5 - var( --gallery-flex-gap ) * 4 / 5  );
+		}
+
+		&.columns-6 .blocks-gallery-item {
+			width: calc( 100% / 6 - var( --gallery-flex-gap ) * 5 / 6 );
+		}
+
+		&.columns-7 .blocks-gallery-item {
+			width: calc( 100% / 7 - var( --gallery-flex-gap ) * 6 / 7 );
+		}
+
+		&.columns-8 .blocks-gallery-item {
+			width: calc( 100% / 8 - var( --gallery-flex-gap ) * 7 );
 		}
 	}
 }

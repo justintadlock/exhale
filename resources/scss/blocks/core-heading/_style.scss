@@ -9,3 +9,13 @@ h6 {
 		padding: $spacing-global;
 	}
 }
+
+.is-style-subheading {
+	margin-top: var( --wp--custom--spacing--1 );
+	font-size:  var( --wp--preset--font-size--extra-lg );
+	color:      var( --wp--preset--color--neutral-700 );
+}
+
+.is-style-text-shadow-sm { text-shadow: var( --wp--custom--typography--shadow--sm ); }
+.is-style-text-shadow-md { text-shadow: var( --wp--custom--typography--shadow--md ); }
+.is-style-text-shadow-lg { text-shadow: var( --wp--custom--typography--shadow--lg ); }

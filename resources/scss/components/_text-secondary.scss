@@ -12,9 +12,7 @@ label {
 	@include meta;
 }
 
-.comment__meta,
-//.entry__byline,
-.entry__footer {
+.comment__meta {
 	@include meta;
 	@include meta-links;
 }

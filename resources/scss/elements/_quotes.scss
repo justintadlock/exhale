@@ -2,22 +2,17 @@
 
 blockquote {
 	box-sizing: border-box;
-	//margin:     0;
 	margin:     $spacing-global 0 0;
 	padding:    0 $spacing-global;
 	font-style: italic;
-	//color:      var( --color-primary );
 
-	i,
-	em,
-	cite { font-style : normal; }
+	p i,
+	p em { font-style : normal; }
 }
 
 // Cite.
 cite {
-	font-size:    0.875em;
 	font-style:   normal;
-	font-variant: small-caps;
 }
 
 // Inline quotes.

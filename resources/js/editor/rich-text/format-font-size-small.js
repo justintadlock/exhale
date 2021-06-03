@@ -10,7 +10,7 @@ const FormatFontSizeSmallButton = ( props ) => {
 			onClick={ () => {
 				props.onChange(
 					toggleFormat( props.value, {
-						type: 'exhale/font-size-small'
+						type: 'exhale/font-size-sm'
 					} )
 				);
 			} }
@@ -19,9 +19,9 @@ const FormatFontSizeSmallButton = ( props ) => {
 	);
 };
 
-registerFormatType( 'exhale/font-size-small', {
+registerFormatType( 'exhale/font-size-sm', {
 	title: 'Small',
 	tagName: 'span',
-	className: 'has-small-font-size',
+	className: 'has-sm-font-size',
 	edit: FormatFontSizeSmallButton
 } );

@@ -23,12 +23,9 @@
 // Settings handle the configuration and variables.
 
 @import 'settings/spacing';
-@import 'settings/breaks';
 @import 'settings/border';
-@import 'settings/colors';
 @import 'settings/dimensions';
 @import 'settings/effects';
-@import 'settings/fonts';
 @import 'settings/sizing';
 
 // -----------------------------------------------------------------------------
@@ -51,7 +48,7 @@
 // fonts, etc. are best handled here. These are the base styles that other
 // styles will build upon.
 
-//@import 'var';
+@import 'generic/var';
 @import 'generic/reset';
 
 // -----------------------------------------------------------------------------
@@ -111,6 +108,7 @@
 @import 'blocks/core-image/style';
 @import 'blocks/core-latest-comments/style';
 @import 'blocks/core-latest-posts/style';
+@import 'blocks/core-list/style';
 @import 'blocks/core-media-text/style';
 @import 'blocks/core-navigation/style';
 @import 'blocks/core-paragraph/style';
@@ -120,6 +118,7 @@
 @import 'blocks/core-post-title/style';
 @import 'blocks/core-preformatted/style';
 @import 'blocks/core-pullquote/style';
+@import 'blocks/core-query/style';
 @import 'blocks/core-query-loop/style';
 @import 'blocks/core-query-pagination/style';
 @import 'blocks/core-quote/style';

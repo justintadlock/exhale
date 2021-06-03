@@ -17,12 +17,9 @@
 // Settings handle the configuration and variables.
 
 @import 'settings/spacing';
-@import 'settings/breaks';
 @import 'settings/border';
-@import 'settings/colors';
 @import 'settings/dimensions';
 @import 'settings/effects';
-@import 'settings/fonts';
 @import 'settings/sizing';
 
 // -----------------------------------------------------------------------------
@@ -36,6 +33,17 @@
 @import 'tools/functions';
 @import 'tools/mixins';
 @import 'tools/extends';
+
+// -----------------------------------------------------------------------------
+// Import generic styles.
+// -----------------------------------------------------------------------------
+//
+// This is the first point that real CSS is output. Resets, normalization,
+// fonts, etc. are best handled here. These are the base styles that other
+// styles will build upon.
+
+@import 'generic/var';
+//@import 'generic/reset';
 
 // ---------------------------------------------------------------------
 // Import element styles.
@@ -94,6 +102,7 @@
 @import 'blocks/core-image/style';
 @import 'blocks/core-latest-comments/style';
 @import 'blocks/core-latest-posts/style';
+@import 'blocks/core-list/style';
 @import 'blocks/core-media-text/style';
 @import 'blocks/core-navigation/style';
 @import 'blocks/core-paragraph/style';
@@ -103,6 +112,7 @@
 @import 'blocks/core-post-title/style';
 @import 'blocks/core-preformatted/style';
 @import 'blocks/core-pullquote/style';
+@import 'blocks/core-query/style';
 @import 'blocks/core-query-loop/style';
 @import 'blocks/core-query-pagination/style';
 @import 'blocks/core-quote/style';
@@ -127,13 +137,12 @@
 @import 'blocks/core-code/edit';
 @import 'blocks/core-columns/edit';
 @import 'blocks/core-cover/edit';
+@import 'blocks/core-file/edit';
 @import 'blocks/core-gallery/edit';
 @import 'blocks/core-group/edit';
 @import 'blocks/core-heading/edit';
 @import 'blocks/core-image/edit';
 @import 'blocks/core-media-text/edit';
-@import 'blocks/core-paragraph/edit';
-@import 'blocks/core-pullquote/edit';
 @import 'blocks/core-quote/edit';
 @import 'blocks/core-separator/edit';
 

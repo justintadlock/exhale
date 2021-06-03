@@ -1,16 +1,16 @@
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"32px","right":"32px","bottom":"32px","left":"32px"}}},"backgroundColor":"gray-100"} -->
-<div class="wp-block-group alignfull has-gray-100-background-color has-background" style="padding-top:32px;padding-right:32px;padding-bottom:32px;padding-left:32px"><!-- wp:group {"align":"wide","layout":{"contentSize":"","wideSize":""}} -->
-<div class="wp-block-group alignwide"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontWeight":"100","lineHeight":"1","textTransform":"uppercase"}},"textColor":"gray-900","fontSize":"medium"} -->
-<h2 class="has-text-align-center has-gray-900-color has-text-color has-medium-font-size" style="font-weight:100;line-height:1;text-transform:uppercase">John Doe</h2>
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"32px","right":"32px","bottom":"32px","left":"32px"}}},"backgroundColor":"neutral-100"} -->
+<div class="wp-block-group alignfull has-neutral-100-background-color has-background" style="padding-top:32px;padding-right:32px;padding-bottom:32px;padding-left:32px"><!-- wp:group {"align":"wide","layout":{"contentSize":"","wideSize":""}} -->
+<div class="wp-block-group alignwide"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontWeight":"100","lineHeight":"1","textTransform":"uppercase"}},"textColor":"neutral-900","fontSize":"base"} -->
+<h2 class="has-text-align-center has-neutral-900-color has-text-color has-base-font-size" style="font-weight:100;line-height:1;text-transform:uppercase">John Doe</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.5"}},"textColor":"gray-900","className":"my-0","fontSize":"titanic"} -->
-<p class="has-text-align-center my-0 has-gray-900-color has-text-color has-titanic-font-size" style="line-height:1.5">Professional Photographer</p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.5"}},"textColor":"neutral-900","className":"my-0","fontSize":"titanic"} -->
+<p class="has-text-align-center my-0 has-neutral-900-color has-text-color has-titanic-font-size" style="line-height:1.5">Professional Photographer</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"layout":{"inherit":true}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|headings"}},"textColor":"gray-800","className":"my-0","fontSize":"medium"} -->
-<p class="has-text-align-center my-0 has-gray-800-color has-text-color has-medium-font-size" style="font-family:var(--wp--preset--font-family--headings)">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<div class="wp-block-group"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|headings"}},"textColor":"neutral-800","className":"my-0","fontSize":"base"} -->
+<p class="has-text-align-center my-0 has-neutral-800-color has-text-color has-base-font-size" style="font-family:var(--wp--preset--font-family--headings)">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:separator -->

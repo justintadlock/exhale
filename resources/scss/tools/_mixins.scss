@@ -8,10 +8,7 @@
 
 // Used for the main content.
 
-@mixin typography {
-	font-size:   $text-xl;//1.125rem; // 18px
-	line-height: 1.75;
-}
+@mixin typography {}
 
 @mixin heading-primary {
 	text-align: center;
@@ -42,8 +39,6 @@
 	line-height:     1;
 	font-family:     var( --wp--preset--font-family--secondary );
 	font-size:       1.125rem;
-	//color:           var( --color-content-background );
-	//background:      var( --color-primary );
 	border:          none;
 	border-radius:   0;
 	white-space:     normal;

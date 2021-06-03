@@ -37,6 +37,33 @@ class Component implements Bootable {
 	protected $sizes;
 
 	/**
+	 * Default image size inserted into the editor.
+	 *
+	 * @since  3.0.0
+	 * @access protected
+	 * @var    string
+	 */
+	protected $default_size = 'full';
+
+	/**
+	 * Featured image size if not otherwise defined.
+	 *
+	 * @since  3.0.0
+	 * @access protected
+	 * @var    string
+	 */
+	protected $featured_size = 'full';
+
+	/**
+	 * Width size to scale large images down to.
+	 *
+	 * @since  3.0.0
+	 * @access protected
+	 * @var    int
+	 */
+	protected $threshold_width = 3480;
+
+	/**
 	 * Creates the component object.
 	 *
 	 * @since  1.0.0
@@ -66,8 +93,14 @@ class Component implements Bootable {
 		// Filter the image size names in the editor.
 		add_filter( 'image_size_names_choose', [ $this, 'imageSizeNamesChoose' ] );
 
-		// Add customizer settings and controls.
-	//	add_action( 'customize_register', [ $this, 'customizeRegister'] );
+		// Filter the default featured image size.
+		add_filter( 'post_thumbnail_size', [ $this, 'featuredSize' ] );
+
+		// Filter the default image size inserted in the editor.
+		add_filter( 'pre_option_image_default_size', [ $this, 'defaultSize' ] );
+
+		// Limit the big image threshold to our largest image.
+		add_filter( 'big_image_size_threshold', [ $this, 'bigImageSizeThreshold' ], 5 );
 	}
 
 	/**
@@ -83,7 +116,7 @@ class Component implements Bootable {
 		do_action( 'exhale/image/size/register', $this->sizes );
 
 		// Registers image sizes with WordPress.  Note that the
-		// `post-thumbnail` size should be properly register with the
+		// `post-thumbnail` size should be properly registered with the
 		// `set_post_thumbnail_size()` function.
 		foreach ( $this->sizes->all() as $size ) {
 
@@ -91,6 +124,21 @@ class Component implements Bootable {
 				set_post_thumbnail_size( $size->width(), $size->height(), $size->crop() );
 			} else {
 				add_image_size( $size->name(), $size->width(), $size->height(), $size->crop() );
+			}
+
+			// Make the threshold as large as our largest size.
+			if ( $size->width() > $this->threshold ) {
+				$this->threshold_width = $size->width();
+			}
+
+			// Set the featured image size.
+			if ( $size->isFeatured() ) {
+				$this->featured_size = $size->name();
+			}
+
+			// Set the default image size.
+			if ( $size->isDefault() ) {
+				$this->default_size = $size->name();
 			}
 		}
 	}
@@ -131,13 +179,45 @@ class Component implements Bootable {
 	}
 
 	/**
-	 * Customize register callback.
+	 * Set the default image size if not already defined.
 	 *
-	 * @since  1.0.0
+	 * @since  3.0.0
 	 * @access public
-	 * @param  WP_Customize_Manager  $manager
-	 * @return void
+	 * @param  string  $size
+	 * @return string
 	 */
-	public function customizeRegister( WP_Customize_Manager $manager ) {
+	public function defaultSize( $size ) {
+		return $size ? $size : $this->default_size;
+	}
+
+	/**
+	 * Set the featured image size if not already defined.
+	 *
+	 * @since  3.0.0
+	 * @access public
+	 * @param  string  $size
+	 * @return string
+	 */
+	public function featuredSize( $size ) {
+		return ! $size || 'post-thumbnail' === $size
+		       ? $this->featured_size
+		       : $size;
+	}
+
+	/**
+	 * Limit the big image threshold to our largest image.
+	 *
+	 * @since  3.0.0
+	 * @access public
+	 * @param  int    $threshold
+	 * @return int
+	 */
+	public function bigSizeThreshold( $threshold ) {
+
+		if ( $this->threshold_width > $threshold ) {
+			return $this->threshold_width;
+		}
+
+		return $threshold;
 	}
 }

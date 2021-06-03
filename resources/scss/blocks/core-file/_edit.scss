@@ -1,0 +1,10 @@
+
+.wp-block-file {
+
+	// Wrapper in editor.
+	.components-resizable-box__container,
+	// Different name than the front-end `__embed`
+	.wp-block-file__preview {
+		margin: 0;
+	}
+}

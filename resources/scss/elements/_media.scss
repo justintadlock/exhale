@@ -1,16 +1,19 @@
 // Figures.
 figcaption {
-	// components/_text-secondary.scss
-	text-align: center;
-	margin-top: $spacing-fourth;
-	padding:    0 $spacing-global;
+	display:       block;
+	margin-top:    $spacing-fourth;
+	margin-bottom: 0;
+	text-align:    center;
+	padding:       0 $spacing-global;
+	color:         var( --wp--preset--color--neutral-600 );
+	font-family:   var( --wp--preset--font-family--secondary );
+	font-size:     var( --wp--preset--font-size--base );
 }
 
 // Images.
-// Note that `.entry__image` is an SVG, but we don't want to target all SVGs.
-
 img {
 	vertical-align: bottom;
+	box-sizing:    border-box;
 }
 
 img,
@@ -19,15 +22,7 @@ svg {
 	height:    auto;
 }
 
-img,
-.entry__image {
-	//box-shadow:    $shadow-sm;
-	//border-radius: 3px;
-	box-sizing:    border-box;
-}
-
-a img,
-a .entry__image {
+a img {
 	transition: all 0.5s ease-in-out;
 }
 

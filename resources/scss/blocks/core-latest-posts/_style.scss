@@ -20,7 +20,7 @@
 		}
 	}
 
-	@media ( min-width: break( small ) ) {
+	@media ( min-width: $content-width ) {
 
 		@for $i from 2 through 6 {
 
@@ -30,12 +30,27 @@
 		}
 	}
 
+	// Post title. Doesn't have a class.
+	&__featured-image + a {
+		display: table; // lets us clear this without making it a block.
+		margin-top: $spacing-half;
+	}
+
+	&__post-author,
+	&__post-date {
+		display: inline-block;
+		margin-right: $spacing-half;
+		font-size: 1rem;
+		color: inherit;
+	}
+
+	&__post-excerpt {
+		margin-top: $spacing-half;
+	//	margin-bottom: 0; // fix later.
+	}
+
 	&__list {
 		padding-left: 0;
 		padding-right: 0;
-	}
-
-	&__post-date {
-		display: block;
 	}
 }

@@ -7,6 +7,15 @@
 ////
 
 .wp-block-button__link {
+	// Make sure buttons are always tall enough for touch browsing.
+	// @link https://www.w3.org/WAI/WCAG21/Understanding/target-size.html
+	min-height: 44px;
+
+	// Using inline-block adds a weird space below buttons with
+	// rounded borders. Block is fine here because it has a wrapper
+	// element of .wp-block-button.
+	display: block;
+
 	text-decoration: none;
 
 	&:hover,
@@ -15,15 +24,49 @@
 	}
 }
 
+:not(.is-style-outline) > .wp-block-button__link:not(.has-background) {
+	&:hover,
+	&:focus {
+		background-color: var( --wp--preset--color--primary-800 );
+	}
+}
+
+@mixin buttons_hover( $from, $to ) {
+	:root a.has-#{ $from }-background-color:hover,
+	:root a.has-#{ $from }-background-color:focus {
+		background-color: var( --wp--preset--color--#{ $to } ) !important;
+	}
+}
+
+	@include buttons_hover( primary-800, primary-900);
+	@include buttons_hover( primary-700, primary-800);
+	@include buttons_hover( primary-600, primary-700);
+	@include buttons_hover( primary-500, primary-600);
+	@include buttons_hover( primary-400, primary-500);
+	@include buttons_hover( primary-300, primary-400);
+	@include buttons_hover( primary-200, primary-300);
+	@include buttons_hover( primary-100, primary-200);
+
+	@include buttons_hover( secondary-800, secondary-900);
+	@include buttons_hover( secondary-700, secondary-800);
+	@include buttons_hover( secondary-600, secondary-700);
+	@include buttons_hover( secondary-500, secondary-600);
+	@include buttons_hover( secondary-400, secondary-500);
+	@include buttons_hover( secondary-300, secondary-400);
+	@include buttons_hover( secondary-200, secondary-300);
+	@include buttons_hover( secondary-100, secondary-200);
+
+
 // Need to overwrite GB.
 .wp-block-buttons > .wp-block-button {
 	margin: 0;
 }
 
 .wp-block-buttons .wp-block-button {
-	&.wp-block-button__width-25 { width: calc( 25% - #{ $spacing-fourth } ); }
+	&.wp-block-button__width-25 { width: calc( 25% - #{ $spacing-half * 3 / 4 } ); }
 	&.wp-block-button__width-50 { width: calc( 50% - #{ $spacing-fourth } ); }
-	&.wp-block-button__width-75 { width: calc( 75% - #{ $spacing-fourth } ); }
+	&.wp-block-button__width-75 { width: calc( 75% - #{ $spacing-fourth / 2 } ); }
+	&.wp-block-button__width-100 { width: 100%; }
 }
 
 .is-style-no-gap .wp-block-button {
@@ -32,19 +75,34 @@
 	&.wp-block-button__width-75 { width: 75%; }
 }
 
+@media ( max-width: $screen-sm ) {
+	.wp-block-buttons .wp-block-button {
+		&.wp-block-button__width-25 { width: 50%; }
+		&.wp-block-button__width-50 { width: 100%; }
+		&.wp-block-button__width-75 { width: 100%; }
+	}
+}
+
 
 .is-style-outline .wp-block-button__link {
 	padding: 1rem 2rem;
-}
-
-.is-style-outline .wp-block-button__link {
+	color: currentColor;
+	background-color: transparent;
 	border: 1px solid currentColor;
 }
 
-.is-style-outline .wp-block-button__link:not(.has-background) {
-	background: transparent;
+.is-style-overline .wp-block-button__link {
+	box-shadow: inset 0 4px 0 0 rgba( 0, 0, 0, 0.25 );
 }
 
-.is-style-outline .wp-block-button__link:not(.has-text-color) {
-	color: inherit;
+.is-style-tilt-right .wp-block-button__link {
+	transform: skewX( -16deg );
+}
+
+.is-style-tilt-left .wp-block-button__link {
+	transform: skewX( 16deg );
+}
+
+.is-style-underline .wp-block-button__link {
+	box-shadow: inset 0 -4px 0 0 rgba( 0, 0, 0, 0.25 );
 }

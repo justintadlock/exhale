@@ -32,7 +32,6 @@ $exhale = new \Hybrid\Core\Application();
 
 $exhale->provider( \Exhale\Provider::class            );
 $exhale->provider( \Exhale\Block\Provider::class      );
-$exhale->provider( \Exhale\Color\Provider::class      );
 $exhale->provider( \Exhale\Customize\Provider::class  );
 $exhale->provider( \Exhale\Editor\Provider::class     );
 $exhale->provider( \Exhale\Image\Provider::class      );

@@ -8,12 +8,30 @@
 
 .wp-block-table {
 
-	&.has-fixed-layout {
+	// Adding this to theme.json puts the spacing on to the "> table".
+	margin-top: $spacing-global;
+
+	figcaption {
+		margin-top: $spacing-fourth;
+		color: var( --wp--preset--color--neutral-600 );
+		font-family: var( --wp--preset--font-family--secondary );
+		font-size: var( --wp--preset--font-size--base );
+	}
+
+	.has-fixed-layout {
 		table-layout: fixed;
 	}
 
+	&.is-style-stripes {
+		border: none; // GB puts a bottom border here for some reason.
+
+		table {
+			background-color: var( --wp--preset--color--primary-200 );
+		}
+	}
+
 	&.is-style-stripes tbody tr:nth-child( odd ) {
-		background-color: rgba( 255, 255, 255, 0.125 );
+		background-color: rgba( 255, 255, 255, 0.5 );
 	}
 
 	&.is-style-stripes tbody tr:nth-child( even ) {

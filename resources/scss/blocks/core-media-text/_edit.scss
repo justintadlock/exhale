@@ -5,17 +5,3 @@
 /// @author Justin Tadlock <justintadlock@gmail.com>
 /// @link   https://themehybrid.com/themes/exhale
 ////
-
-.wp-block-media-text {
-//	grid-gap: 0 #{ 2 * $spacing-global };
-}
-
-// Add appropriate padding to left/right.
-[data-align="full"] .wp-block-media-text {
-	//padding-left:  $spacing-global;
-	//padding-right: $spacing-global;
-}
-
-.wp-block-media-text .editor-inner-blocks {
-	padding: 0;
-}

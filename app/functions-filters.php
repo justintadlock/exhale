@@ -19,10 +19,39 @@ use Exhale\Tools\Svg;
 use Exhale\Template\ErrorPage;
 use Exhale\Template\BlockHierarchy;
 
-add_filter( 'post_thumbnail_size', function( $size ) {
-	return 'exhale-landscape-extra-large';
-} );
+//add_filter( 'should_load_separate_core_block_assets', '__return_false' );
 
+// apply_filters( 'default_template_types', $default_template_types );
+
+add_filter( 'default_template_types', function( $types ) {
+
+	$types['single-page'] = [
+		'title'       => __( 'Single Page' ),
+		'description' => __( 'Template used to display individual pages.' ),
+	];
+
+	$types['single-attachment'] = [
+		'title'       => __( 'Single Attachment (Media)' ),
+		'description' => __( 'Template used to display individual media items or attachments.' ),
+	];
+
+	$types['single-attachment-image'] = [
+		'title'       => __( 'Single Image Attachment' ),
+		'description' => __( 'Template used to display individual images or attachments.' ),
+	];
+
+	$types['single-attachment-audio'] = [
+		'title'       => __( 'Single Audio Attachment' ),
+		'description' => __( 'Template used to display individual audio files or attachments.' ),
+	];
+
+	$types['single-attachment-video'] = [
+		'title'       => __( 'Single Video Attachment' ),
+		'description' => __( 'Template used to display individual videos or attachments.' ),
+	];
+
+	return $types;
+} );
 
 add_filter( 'block_type_metadata', function( $meta ) {
 
@@ -46,6 +75,7 @@ add_filter( 'block_type_metadata', function( $meta ) {
 		'core/post-excerpt',
 		'core/post-terms',
 		'core/post-title',
+		'core/pullquote',
 		'core/term-description'
 	] ) ) {
 		$meta['supports']['fontSize'] = true;
@@ -83,6 +113,7 @@ add_filter( 'block_type_metadata', function( $meta ) {
 
 	if ( in_array( $meta['name'], [
 		'core/post-content',
+		'core/post-date',
 		'core/post-excerpt',
 		'core/post-featured-image',
 		'core/post-title',
@@ -139,6 +170,12 @@ add_filter( 'block_type_metadata', function( $meta ) {
 		$meta['supports']['spacing']['padding'] = true;
 	}
 
+	if ( in_array( $meta['name'], [
+		'core/heading',
+	] ) ) {
+		$meta['supports']['__experimentalLetterSpacing'] = true;
+	}
+
 
 	return $meta;
 } );
@@ -165,6 +202,54 @@ add_filter( 'default_wp_template_part_areas', function( $areas ) {
 } );
 
 remove_action( 'admin_menu', 'gutenberg_remove_legacy_pages' );
+
+add_filter( 'the_content', function( $content ) {
+	$post = get_post();
+
+	if ( empty( $post->post_type ) || 'attachment' !== $post->post_type || ! is_attachment( $post->ID ) ) {
+		return $content;
+	}
+
+	$allowed_types = [
+		'image',
+		'audio',
+		'pdf',
+		'video'
+	];
+
+	foreach ( $allowed_types as $type ) {
+
+		if ( wp_attachment_is( $type, $post ) ) {
+
+			$media = locate_template( "block-template-parts-php/attachment-{$type}-media.php" );
+			$meta  = locate_template( "block-template-parts-php/attachment-{$type}-meta.php"  );
+
+			if ( $media ) {
+				ob_start();
+				include $media;
+				$content = ob_get_clean() . wpautop( $content );
+			}
+
+			if ( $meta ) {
+				ob_start();
+				include $meta;
+				$content .= ob_get_clean();
+			}
+
+			return $content;
+		}
+	}
+
+	$media = locate_template( "block-template-parts-php/attachment-media.php" );
+
+	if ( $media ) {
+		ob_start();
+		include $media;
+		$content = ob_get_clean() . wpautop( $content );
+	}
+
+	return $content;
+}, 5 );
 
 /**
  * Filters the excerpt more link.

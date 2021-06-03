@@ -23,13 +23,12 @@ select,
 textarea,
 button {
 	box-sizing:  border-box;
-	padding:     0.5rem;
+	padding:     var( --wp--custom--spacing--3 ) $spacing-half;
 	line-height: 1;
 	font-family: var( --wp--preset--font-family--primary );
 	font-size:   1em;
 	color:       currentColor;
 	background:  transparent;
-	//border:      1px solid var( --color-border );
 }
 
 input[type*="date"],
@@ -46,7 +45,8 @@ textarea,
 select {
 	width:     100%;
 	display:   block;
-	font-size: 1.0625rem;
+	//font-size: 1.0625rem;
+	border: 1px solid currentColor;
 }
 
 textarea {
@@ -60,14 +60,14 @@ button {
 	cursor:          pointer;
 	display:         inline-block;
 	margin:          0;
-	padding:         0.75rem $spacing-global;
+	padding:         var( --wp--custom--spacing--4 ) var( --wp--custom--spacing--8 );
 	line-height:     1;
 	font-family:     var( --wp--preset--font-family--secondary );
-	font-size:       1rem;
-	border-radius:   3px;
+	//font-size:       1rem;
 	white-space:     normal;
 	word-break:      break-all;
 	transition:      all 0.5s ease-in-out;
+	border:          1px solid currentColor;
 
 	&:hover,
 	&:focus {

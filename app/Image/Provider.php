@@ -14,7 +14,6 @@
 namespace Exhale\Image;
 
 use Hybrid\Tools\ServiceProvider;
-use Exhale\Tools\CustomProperties;
 
 /**
  * Image service provider class.

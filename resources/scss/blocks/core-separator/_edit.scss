@@ -6,17 +6,7 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-// Separator block.
-// Override the `theme.css` included in Gutenberg 5.5.0.
-
-.wp-block-separator {
-	width: 100% !important;
-
-	&.is-style-default {
-		height: 1px !important;
-	}
-	//max-width: 100%;
-
-	// Make sure to override the background color in the editor.
-	//background-color: transparent !important;
+// GB adds bottom/top padding in the editor.
+.block-editor-block-list__block[data-type="core/separator"] {
+	padding: 0;
 }

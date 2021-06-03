@@ -9,8 +9,4 @@
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
-:root {
-	@each $color-name, $color-value in block-colors() {
-		--color-#{ $color-name }: #{ $color-value };
-	}
-}
+:root {}

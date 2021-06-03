@@ -1,19 +1,19 @@
-<!-- wp:columns {"align":"full","style":{"spacing":{"padding":{"top":"32px","right":"32px","bottom":"32px","left":"32px"}}}} -->
-<div class="wp-block-columns alignfull" style="padding-top:32px;padding-right:32px;padding-bottom:32px;padding-left:32px"><!-- wp:column {"style":{"spacing":{"padding":{"top":"32px","right":"32px","bottom":"32px","left":"32px"}}},"backgroundColor":"pink-100"} -->
-<div class="wp-block-column has-pink-100-background-color has-background" style="padding-top:32px;padding-right:32px;padding-bottom:32px;padding-left:32px"><!-- wp:spacer {"height":32} -->
+<!-- wp:columns {"align":"full","style":{"spacing":{"padding":{"top":"2rem","right":"2rem","bottom":"2rem","left":"2rem"}}}} -->
+<div class="wp-block-columns alignfull" style="padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:column {"style":{"spacing":{"padding":{"top":"2rem","right":"2rem","bottom":"2rem","left":"2rem"}}},"backgroundColor":"primary-100"} -->
+<div class="wp-block-column has-primary-100-background-color has-background" style="padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:spacer {"height":32} -->
 <div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"textTransform":"uppercase","fontFamily":"var:preset|font-family|headings"}},"textColor":"gray-900","className":"my-0","fontSize":"tiny"} -->
-<p class="has-text-align-center my-0 has-gray-900-color has-text-color has-tiny-font-size" style="font-family:var(--wp--preset--font-family--headings);text-transform:uppercase">My Story</p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"textTransform":"uppercase","fontFamily":"var:preset|font-family|headings"}},"textColor":"neutral-900","className":"my-0","fontSize":"xs"} -->
+<p class="has-text-align-center my-0 has-neutral-900-color has-text-color has-xs-font-size" style="font-family:var(--wp--preset--font-family--headings);text-transform:uppercase">My Story</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"textAlign":"center","style":{"typography":{"fontWeight":"100"}},"textColor":"gray-900","className":"my-0"} -->
-<h2 class="has-text-align-center my-0 has-gray-900-color has-text-color" style="font-weight:100">About Me</h2>
+<!-- wp:heading {"textAlign":"center","style":{"typography":{"fontWeight":"100"}},"textColor":"neutral-900","className":"my-0"} -->
+<h2 class="has-text-align-center my-0 has-neutral-900-color has-text-color" style="font-weight:100">About Me</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","textColor":"gray-600","className":"my-0","fontSize":"medium"} -->
-<p class="has-text-align-center my-0 has-gray-600-color has-text-color has-medium-font-size">Sagittis id consectetur purus ut faucibus.&nbsp;Et leo duis ut diam quam nulla porttitor massa.</p>
+<!-- wp:paragraph {"align":"center","textColor":"neutral-600","className":"my-0","fontSize":"base"} -->
+<p class="has-text-align-center my-0 has-neutral-600-color has-text-color has-base-font-size">Sagittis id consectetur purus ut faucibus.&nbsp;Et leo duis ut diam quam nulla porttitor massa.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"align":"center","id":3795,"width":160,"height":160,"sizeSlug":"exhale-square-medium","linkDestination":"custom","className":"is-style-rounded"} -->
@@ -25,21 +25,21 @@
 <!-- /wp:spacer --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"style":{"spacing":{"padding":{"top":"32px","right":"32px","bottom":"32px","left":"32px"}}},"backgroundColor":"teal-100"} -->
-<div class="wp-block-column has-teal-100-background-color has-background" style="padding-top:32px;padding-right:32px;padding-bottom:32px;padding-left:32px"><!-- wp:spacer {"height":32} -->
+<!-- wp:column {"style":{"spacing":{"padding":{"top":"2rem","right":"2rem","bottom":"2rem","left":"2rem"}}},"backgroundColor":"primary-100"} -->
+<div class="wp-block-column has-primary-100-background-color has-background" style="padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:spacer {"height":32} -->
 <div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"textTransform":"uppercase","fontFamily":"var:preset|font-family|headings"}},"textColor":"gray-900","className":"my-0","fontSize":"tiny"} -->
-<p class="has-text-align-center my-0 has-gray-900-color has-text-color has-tiny-font-size" style="font-family:var(--wp--preset--font-family--headings);text-transform:uppercase">Email</p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"textTransform":"uppercase","fontFamily":"var:preset|font-family|headings"}},"textColor":"neutral-900","className":"my-0","fontSize":"xs"} -->
+<p class="has-text-align-center my-0 has-neutral-900-color has-text-color has-xs-font-size" style="font-family:var(--wp--preset--font-family--headings);text-transform:uppercase">Email</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"textAlign":"center","style":{"typography":{"fontWeight":"100"}},"textColor":"gray-900","className":"my-0"} -->
-<h2 class="has-text-align-center my-0 has-gray-900-color has-text-color" style="font-weight:100">Contact Me</h2>
+<!-- wp:heading {"textAlign":"center","style":{"typography":{"fontWeight":"100"}},"textColor":"neutral-900","className":"my-0"} -->
+<h2 class="has-text-align-center my-0 has-neutral-900-color has-text-color" style="font-weight:100">Contact Me</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","textColor":"gray-600","className":"my-0","fontSize":"medium"} -->
-<p class="has-text-align-center my-0 has-gray-600-color has-text-color has-medium-font-size">Sagittis id consectetur purus ut faucibus.&nbsp;Et leo duis ut diam quam nulla porttitor massa.</p>
+<!-- wp:paragraph {"align":"center","textColor":"neutral-600","className":"my-0","fontSize":"base"} -->
+<p class="has-text-align-center my-0 has-neutral-600-color has-text-color has-base-font-size">Sagittis id consectetur purus ut faucibus.&nbsp;Et leo duis ut diam quam nulla porttitor massa.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"align":"center","id":3796,"width":160,"height":160,"sizeSlug":"exhale-square-medium","linkDestination":"custom","className":"is-style-rounded"} -->
@@ -51,21 +51,21 @@
 <!-- /wp:spacer --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"style":{"spacing":{"padding":{"top":"32px","right":"32px","bottom":"32px","left":"32px"}}},"backgroundColor":"purple-100"} -->
-<div class="wp-block-column has-purple-100-background-color has-background" style="padding-top:32px;padding-right:32px;padding-bottom:32px;padding-left:32px"><!-- wp:spacer {"height":32} -->
+<!-- wp:column {"style":{"spacing":{"padding":{"top":"2rem","right":"2rem","bottom":"2rem","left":"2rem"}}},"backgroundColor":"primary-100"} -->
+<div class="wp-block-column has-primary-100-background-color has-background" style="padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:spacer {"height":32} -->
 <div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"textTransform":"uppercase","fontFamily":"var:preset|font-family|headings"}},"textColor":"gray-900","className":"my-0","fontSize":"tiny"} -->
-<p class="has-text-align-center my-0 has-gray-900-color has-text-color has-tiny-font-size" style="font-family:var(--wp--preset--font-family--headings);text-transform:uppercase">Instagram</p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"textTransform":"uppercase","fontFamily":"var:preset|font-family|headings"}},"textColor":"neutral-900","className":"my-0","fontSize":"xs"} -->
+<p class="has-text-align-center my-0 has-neutral-900-color has-text-color has-xs-font-size" style="font-family:var(--wp--preset--font-family--headings);text-transform:uppercase">Instagram</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"textAlign":"center","style":{"typography":{"fontWeight":"100"}},"textColor":"gray-900","className":"my-0"} -->
-<h2 class="has-text-align-center my-0 has-gray-900-color has-text-color" style="font-weight:100">Follow Me</h2>
+<!-- wp:heading {"textAlign":"center","style":{"typography":{"fontWeight":"100"}},"textColor":"neutral-900","className":"my-0"} -->
+<h2 class="has-text-align-center my-0 has-neutral-900-color has-text-color" style="font-weight:100">Follow Me</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","textColor":"gray-600","className":"my-0","fontSize":"medium"} -->
-<p class="has-text-align-center my-0 has-gray-600-color has-text-color has-medium-font-size">Sagittis id consectetur purus ut faucibus.&nbsp;Et leo duis ut diam quam nulla porttitor massa.</p>
+<!-- wp:paragraph {"align":"center","textColor":"neutral-600","className":"my-0","fontSize":"base"} -->
+<p class="has-text-align-center my-0 has-neutral-600-color has-text-color has-base-font-size">Sagittis id consectetur purus ut faucibus.&nbsp;Et leo duis ut diam quam nulla porttitor massa.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"align":"center","id":3797,"width":160,"height":160,"sizeSlug":"exhale-square-medium","linkDestination":"custom","className":"is-style-rounded"} -->

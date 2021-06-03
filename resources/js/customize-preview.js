@@ -11,12 +11,5 @@
  * @link      https://themehybrid.com/themes/exhale
  */
 
-//import { backgroundPattern } from './customize-preview/background-pattern';
-//import { color }             from './customize-preview/color';
-//import { contentLayout}      from './customize-preview/content-layout';
-import { customHeader }      from './customize-preview/custom-header';
-//import { headerSticky }      from './customize-preview/header-sticky';
-//import { imageFilters }      from './customize-preview/image-filters';
-//import { layouts }           from './customize-preview/layout';
-//import { sidebarFooter }     from './customize-preview/sidebar-footer';
-import { typography }        from './customize-preview/typography';
+import { customHeader } from './customize-preview/custom-header';
+import { typography   } from './customize-preview/typography';

@@ -14,7 +14,6 @@
 namespace Exhale\Typography;
 
 use Hybrid\Tools\ServiceProvider;
-use Exhale\Tools\CustomProperties;
 
 use Exhale\Typography\Font\Family;
 use Exhale\Typography\Font\Style;
@@ -54,9 +53,8 @@ class Provider extends ServiceProvider {
 		$this->app->singleton( Setting\Component::class, function() {
 			return new Setting\Component(
 				$this->app->resolve( Setting\Settings::class ),
-				$this->app->resolve( CustomProperties::class ),
 				[
-					'families'   => $this->app->resolve( Family\Families::class )
+					'families' => $this->app->resolve( Family\Families::class )
 				]
 			);
 		} );

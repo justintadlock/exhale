@@ -6,14 +6,16 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+
 .wp-block-verse {
 	margin-top:  $spacing-global;
-	padding:     0;
+	padding:     var( --wp--custom--spacing--8 );
 	line-height: inherit;
 	font-family: inherit;
 	font-size:   inherit;
-	background:  inherit;
 	color:       inherit;
-	border:      none;
+	background-color: var( --wp--preset--color--neutral-100 );
+	border-left:      4px solid var( --wp--preset--color--primary-500 );
 	box-shadow:  none;
+	box-sizing: content-box;
 }

@@ -1,8 +1,8 @@
 <?php
 
 register_block_style( 'core/image', [
-	'name'  => 'caption-top',
-	'label' => __( 'Caption Top' )
+	'name'  => 'caption-overlay',
+	'label' => __( 'Caption: Overlay' )
 ] );
 
 register_block_style( 'core/image', [
@@ -13,11 +13,6 @@ register_block_style( 'core/image', [
 register_block_style( 'core/image', [
 	'name'  => 'flip-vertical',
 	'label' => __( 'Flip: Vertical' )
-] );
-
-register_block_style( 'core/cover', [
-	'name'  => 'mosaic',
-	'label' => __( 'Mosaic' )
 ] );
 
 register_block_style( 'core/image', [

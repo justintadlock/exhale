@@ -12,13 +12,18 @@
 	display: none;
 }
 
-h1 + *,
-h2 + *,
-h3 + *,
-h4 + *,
-h5 + *,
-h6 + * {
-	margin-top: 0;
+:is( h1, h2, h3, h4, h5, h6 ) {
+	+ *:not([style*=margin-top]) {
+		margin-top: $spacing-half;
+	}
+
+	+ :is( h2, h3, h4, h5 ):not([style*=margin-top]) {
+		margin-top: $spacing-fourth / 2;
+	}
+}
+
+hr + :is( h1, h2, h3, h4, h5, h6 ) {
+	margin-top: $spacing-global;
 }
 
 /// Clear floats.

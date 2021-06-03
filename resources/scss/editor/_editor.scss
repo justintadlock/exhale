@@ -9,7 +9,7 @@
 ////
 
 .is-root-container {
-	overflow-x: hidden;
+	//overflow-x: hidden;
 }
 
 .block-editor-block-list__layout.is-root-container {
@@ -31,17 +31,38 @@
 	margin-right: auto;
 }
 
-[class*="wp-block-"]:first-child:not(.wp-block[data-align]):not( [style*="margin-top:"] ) {
-	//margin-top: 0;
-}
-
-.wp-block[data-align] > [class*="wp-block"]:not( [style*="margin-top:"] ) {
+.wp-block[data-align] > [class*="wp-block"]:not( [style*="margin-top:"] ):not( [style*="margin:"] ) {
 	margin-top: $spacing-global;
 }
 
-:not( .wp-block[data-align] ) > .wp-block:first-child:not( [style*="margin-top:"] ),
-.wp-block:first-of-type > [class*="wp-block-"]:first-of-type:not(.wp-block):not( [style*="margin-top:"] ),
-.wp-block[data-align]:first-child > :first-child:not( [style*="margin-top:"] ) {
+[data-align=full] + [data-align=full] > :first-child:not( [style*="margin-top:"] ):not( [style*="margin:"] ),
+.wp-block[data-align=full] + style + .wp-block[data-align=full] > :first-child:not( [style*="margin-top:"] ),
+.wp-block[data-align=full] + style + style + .wp-block[data-align=full] > :first-child:not( [style*="margin-top:"] ),
+.wp-block style:first-child + [data-align] > :first-child:not( [style*="margin-top:"] ),
+:not( .wp-block[data-align] ) > .wp-block:first-child:not( [style*="margin-top:"] ):not( [style*="margin:"] ),
+.wp-block:first-of-type > [class*="wp-block-"]:first-of-type:not(.wp-block):not( [style*="margin-top:"] ):not( [style*="margin:"] ),
+.wp-block[data-align]:first-child > :first-child:not( [style*="margin-top:"] ):not( [style*="margin:"] ) {
+	margin-top: 0;
+}
+
+:first-child,
+[style*=hidden]:first-child + .wp-block,
+style:first-child + .wp-block,
+style:first-child + [style*=hidden] + .wp-block,
+[style*=hidden]:first-child + style .wp-block,
+[style*=hidden]:first-child + style + [data-align] :first-child:not( [style*="margin-top:"] ):not( [style*="margin:"] ),
+style:first-child ~ .wp-block:first-of-type {
+	margin-top: 0;
+}
+
+// see /utilities/_alignments.scss.
+.wp-block-spacer + .wp-block[data-align] > :not([style*=margin-top]):not( [style*="margin:"] ) {
+	margin-top: 0;
+}
+
+// Template parts should never have top margin unless specified.
+.wp-block[data-align] > .wp-block-template-part:not( [style*="margin-top:"] ):not( [style*="margin:"] ),
+.wp-block-template-part:not( [style*="margin-top:"] ):not( [style*="margin:"] ) {
 	margin-top: 0;
 }
 
@@ -61,25 +82,15 @@ table {
 }
 
 
-/*
-:not( .wp-block[data-align] ) {
-	> :first-child:not( [style*="margin-top:"] ) {
-		margin-top: 0;
-	}
-}
 
-[data-align="full"] {
-	margin-top: 0;
-
-	> :first-child:not([style*="margin-top:"]),
-	+ [data-align="full"] > :first-child:not([style*="margin-top:"]) {
-		margin-top: 0;
-	}
+// Fixes misalignment of image in editor.
+[data-align="full"] .wp-block-image,
+[data-align="wide"] .wp-block-image {
+	display: block;
 }
-*/
 
 .wp-block.block-list-appender:not(.is-horizontal ) {
-	margin-top: $spacing-global;
+//	margin-top: $spacing-global;
 }
 
 .is-root-container {

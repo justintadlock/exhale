@@ -38,25 +38,25 @@
 						"margin":{"top":"8px"}
 					},
 					"color":{
-						"link":"var:preset|color|gray-600"
+						"link":"var:preset|color|neutral-600"
 					}
 				},
-				"textColor":"gray-600",
-				"fontSize":"medium",
+				"textColor":"neutral-600",
+				"fontSize":"base",
 				"className":"is-style-inline-children"
 			} -->
-			<div class="wp-block-group has-gray-600-color has-text-color has-link-color has-medium-font-size is-style-inline-children" style="--wp--style--color--link:var(--wp--preset--color--gray-600);font-family:var(--wp--preset--font-family--secondary);margin-top:8px;">
+			<div class="wp-block-group has-neutral-600-color has-text-color has-link-color has-base-font-size is-style-inline-children" style="--wp--style--color--link:var(--wp--preset--color--neutral-600);font-family:var(--wp--preset--font-family--secondary);margin-top:8px;">
 
 				<!-- wp:post-author { "showAvatar":false } /-->
 
-				<!-- wp:paragraph -->
-				<p>·</p>
+				<!-- wp:paragraph {"className":"sep"} -->
+				<p class="sep">·</p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:post-date /-->
 
-				<!-- wp:paragraph -->
-				<p>·</p>
+				<!-- wp:paragraph {"className":"sep"} -->
+				<p class="sep">·</p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:post-comments-link /-->
@@ -102,8 +102,8 @@
 		"layout":{"inherit":true}
 	} -->
 	<nav class="wp-block-group" style="margin-top:3rem;margin-bottom:1rem">
-		<!-- wp:query-pagination -->
-		<div class="wp-block-query-pagination">
+		<!-- wp:query-pagination {"align":"wide"} -->
+		<div class="wp-block-query-pagination alignwide">
 			<!-- wp:query-pagination-previous {"label":"← Previous"} /-->
 			<!-- wp:query-pagination-numbers /-->
 			<!-- wp:query-pagination-next {"label":"Next →"} /-->

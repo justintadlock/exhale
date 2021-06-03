@@ -37,14 +37,20 @@ class Component implements Bootable {
 	public function registerStyles() {
 
 		$styles = [
+			'button',
 			'buttons',
 			'columns',
 			'cover',
 			'gallery',
 			'group',
+			'heading',
 			'image',
+			'list',
 			'paragraph',
-			'separator'
+			'query',
+			'quote',
+			'separator',
+			'social-links'
 		];
 
 		foreach ( $styles as $style ) {

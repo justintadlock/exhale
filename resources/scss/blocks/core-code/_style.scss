@@ -17,7 +17,7 @@
 	}
 
 	&.is-style-striped-light {
-		background-color: var( --wp--preset--color--blue-100 );
+		background-color: var( --wp--preset--color--primary-100 );
 		background-image: linear-gradient(
 			rgba( 255, 255, 255, 0.5 ) 50%,
 			transparent 50%, transparent
@@ -25,8 +25,8 @@
 	}
 
 	&.is-style-striped-dark {
-		color: var( --wp--preset--color--blue-100 );
-		background-color: var( --wp--preset--color--blue-900 );
+		color: var( --wp--preset--color--primary-100 );
+		background-color: var( --wp--preset--color--primary-900 );
 		background-image: linear-gradient(
 			rgba( 0, 0, 0, 0.05 ) 50%,
 			transparent 50%, transparent

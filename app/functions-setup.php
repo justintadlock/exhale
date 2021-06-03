@@ -36,7 +36,10 @@ add_action( 'after_setup_theme', function() {
 	// Load theme translations.
 	load_theme_textdomain( 'exhale', get_parent_theme_file_path( 'public/lang' ) );
 
-	add_theme_support( 'core-block-patterns' );
+	// Remove core block patterns.
+	remove_theme_support( 'core-block-patterns' );
+
+	add_theme_support( 'responsive-embeds' );
 
 	// Automatically add the `<title>` tag.
 	add_theme_support( 'title-tag' );

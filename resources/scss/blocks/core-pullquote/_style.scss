@@ -11,6 +11,8 @@
 
 	padding: 2rem 0; // overwrite GB.
 
+	font-size: var( --wp--preset--font-size--gargantuan );
+	line-height: 1.5;
 	border-top:    4px solid currentColor;
 	border-bottom: 4px solid currentColor;
 
@@ -21,8 +23,8 @@
 	blockquote {
 		max-width: var( --wp--custom--layout--wide );
 		margin: 0 auto;
-		font-size: var( --wp--preset--font-size--gargantuan );
-		line-height: 1.5;
+		font-size: inherit;
+		line-height: inherit;
 	}
 
 	cite,
@@ -55,4 +57,74 @@
 			font-size: inherit;
 		}
 	}
+
+	&.is-style-double-quote {
+		position: relative;
+		border: none;
+		padding: 0;
+
+		blockquote { padding: 0; }
+
+		p {
+			position: relative;
+			padding: 0 4rem;
+
+			&:first-of-type::before {
+			    content: '\201C';
+			    color: currentColor;
+			    font-size: 7.5rem;
+			    line-height: 1;
+			    font-weight: 700;
+			    position: absolute;
+			    top:  -0.05em;
+			    left: 0;
+			}
+
+			&:last-of-type::after {
+			    content: '\201E';
+			    color: currentColor;
+			    font-size: 7.5rem;
+			    line-height: 1;
+			    font-weight: 700;
+			    position: absolute;
+			    bottom: 0.05em;
+			    right: 0;
+			}
+		}
+	}
+
+	&.is-style-mark-top {
+		border: none;
+		padding: 0;
+
+		blockquote {
+			position: relative;
+			padding: 4rem 0 0;
+
+			&::before {
+			    content: '\201C';
+			    color: currentColor;
+			    font-size: 7.5rem;
+			    line-height: 1;
+			    font-weight: 700;
+			    position: absolute;
+			    top:  0;
+			    left: 50%;
+			    transform: translateX( -50% );
+			}
+		}
+	}
+
+	&.is-style-text-overline {
+		border: none;
+		padding: 0;
+
+		p {
+			display: inline;
+			background: none repeat scroll 0 0 rgba( 0,0,0, 0.025 );
+			border-top: 2px solid currentColor;
+			padding: 2px;
+		}
+	}
+
 }

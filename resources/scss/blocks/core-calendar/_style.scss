@@ -7,7 +7,6 @@
 ////
 
 .wp-block-calendar {
-
 	margin-top: $spacing-global;
 
 	table {
@@ -25,7 +24,7 @@
 
 	// overwrite GB.
 	table th {
-		background-color: var( --wp--preset--color--gray-100 );
+		background-color: var( --wp--preset--color--neutral-100 );
 	}
 
 	th,
@@ -33,9 +32,7 @@
 		text-align: center;
 	}
 
-	tfoot td {
-	//	border: none;
-	}
+	tfoot td {}
 }
 
 .wp-calendar-nav {

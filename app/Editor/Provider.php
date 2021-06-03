@@ -14,7 +14,6 @@
 namespace Exhale\Editor;
 
 use Hybrid\Tools\ServiceProvider;
-use Exhale\Tools\CustomProperties;
 use Exhale\Editor\Color;
 use Exhale\Editor\Font;
 
@@ -40,8 +39,7 @@ class Provider extends ServiceProvider {
 
 		$this->app->singleton( Color\Component::class, function() {
 			return new Color\Component(
-				$this->app->resolve( Color\Colors::class ),
-				$this->app->resolve( CustomProperties::class )
+				$this->app->resolve( Color\Colors::class )
 			);
 		} );
 

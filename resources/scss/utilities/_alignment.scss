@@ -11,9 +11,13 @@
 
 @media ( max-width: $content-width-padded ) {
 
-	[class^="wp-container-"][class*="wp-block"] > * {
-		margin-left: $spacing-global;
-		margin-right: $spacing-global;
+	// Adds the correct left/right margins once we get smaller
+	// than the content width. GB cancels out these margins
+	// using `auto`, which means everything butts against the
+	// side of the screen.
+	[class^="wp-container-"][class*="wp-block"] > :not(.alignwide):not(.alignfull) {
+		margin-left: $spacing-global !important;
+		margin-right: $spacing-global !important;
 	}
 
 	[class^="wp-container-"][class*="wp-block"] > .alignwide,
@@ -23,6 +27,7 @@
 		max-width: 100%;
 	}
 }
+
 
 
 .alignfull {
@@ -39,13 +44,35 @@
 	+ .alignfull,
 	+ [style*=hidden] + .alignfull,
 	+ style + .alignfull,
+	+ style + style + .alignfull,
 	+ style + [style*=hidden] + .alignfull,
 	+ [style*=hidden] + svg .alignfull {
 		margin-top: 0;
 	}
 }
 
+// If a user is putting a spacer before a block, let's
+// assume they want to control the spacing here.
+.wp-block-spacer + :not([style*=margin-top]),
+.wp-block-spacer + style + :not([style*=margin-top]) {
+	margin-top: 0;
+}
 
+// Make stacked images and galleries appear as if
+// they were in a single gallery.
+.wp-block-image + .wp-block-gallery:not([style*=margin-top]),
+.wp-block-image + style + [style*=hidden] + .wp-block-gallery:not([style*=margin-top]),
+.wp-block-gallery + .wp-block-gallery:not([style*=margin-top]),
+.wp-block-gallery + .wp-block-image:not([style*=margin-top]) {
+	margin-top: $spacing-half;
+}
+
+.wp-block-image + .wp-block-gallery.is-style-no-gap:not([style*=margin-top]),
+.wp-block-image + style + [style*=hidden] + .wp-block-gallery.is-style-no-gap:not([style*=margin-top]),
+.wp-block-gallery.is-style-no-gap + .wp-block-gallery.is-style-no-gap:not([style*=margin-top]),
+.wp-block-gallery.is-style-no-gap + .wp-block-image:not([style*=margin-top]) {
+	margin-top: 0;
+}
 
 // Left alignment.
 .alignleft {
@@ -61,16 +88,11 @@
 	margin-bottom: 0.25em;
 }
 
-
 // Align full and wide classes.
 .alignwide,
 .alignfull,
 .aligncenter {
 	clear: both;
-}
-
-p [class*=align] {
-	//margin-bottom: 0;
 }
 
 .alignfull,
@@ -80,15 +102,6 @@ p [class*=align] {
 	margin-right: auto;
 }
 
-@media( min-width: #{ $width-alignwide } ) {
-
-	.alignwide {
-		max-width: $width-alignwide;
-	}
+.alignwide {
+	max-width: var( --wp--custom--layout--wide );
 }
-
-/// Removes the whitespace between full-width elements so that they're stacked
-/// directly on top of one another.  All the ridiculous CSS wrangling is due to
-/// Gutenberg not adding a `.has-background` class to blocks with a background.
-///
-/// @link https://github.com/WordPress/gutenberg/issues/11172

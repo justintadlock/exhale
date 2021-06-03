@@ -14,7 +14,7 @@
 	margin:       $spacing-global auto 0;
 //	margin-bottom: $spacing-global;
 	padding:       $spacing-global;
-	border:        1px solid var( --color-border );
+	border:        1px solid var( --wp--preset--color--neutral-300 );
 
 	@media only screen and ( max-width: $content-width-padded ) {
 	//	margin-bottom: 0;
@@ -57,7 +57,7 @@
 
 	.required {
 		font-weight: bold;
-		color:       var( --color-primary-link );
+		color:       var( --wp--preset--color--primary-700 );
 	}
 
 	// The wrapping element around individual form fields.

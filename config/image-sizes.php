@@ -13,60 +13,138 @@
 
 return [
 
-	// Landscape sizes.
-	'post-thumbnail' => [
-		'label'            => __( 'Landscape: Thumbnail', 'exhale' ),
-	//	'width'            => 178,
-	//	'height'           => 100,
-	'width'  => 1366,
-	'height' => 768,
-		'is_featured_size' => false
-	],
-	'exhale-landscape-medium' => [
-		'label'  => __( 'Landscape: Medium', 'exhale' ),
-		'width'  => 640,
-		'height' => 360
-	],
-	'exhale-landscape-large' => [
-		'label'  => __( 'Landscape: Large', 'exhale' ),
-		'width'  => 896,
-		'height' => 504
-	],
-	'exhale-landscape-extra-large' => [
-		'label'  => __( 'Landscape: Extra Large', 'exhale' ),
-		'width'  => 1366,
-		'height' => 768
-	],
-	'exhale-landscape-huge' => [
-		'label'  => __( 'Landscape: Huge', 'exhale' ),
-		'width'  => 1920,
-		'height' => 1080
+	// ---------------------------------------------------------------------
+	// Landscape Orientation
+	// ---------------------------------------------------------------------
+
+	// 16:9
+
+	'exhale-16x9-1k' => [
+		'label'  => __( 'Landscape: 16:9 (1K)', 'exhale' ),
+		'width'  => 1024,
+		'height' => 576
 	],
 
-	// Portrait Sizes.
-	'exhale-portrait-small' => [
-		'label'  => __( 'Portrait: Small', 'exhale' ),
-		'width'  => 320,
-		'height' => 426
+	'exhale-16x9-2k' => [
+		'label'       => __( 'Landscape: 16:9 (2K)', 'exhale' ),
+		'width'       => 2048,
+		'height'      => 1152,
+		'is_default'  => true,
+		'is_featured' => true
 	],
 
-	'exhale-portrait-medium' => [
-		'label'  => __( 'Portrait: Medium', 'exhale' ),
-		'width'  => 640,
-		'height' => 853
+	'exhale-16x9-4k' => [
+		'label'  => __( 'Landscape: 16:9 (4K)', 'exhale' ),
+		'width'  => 3840,
+		'height' => 2160
 	],
 
-	// Square Sizes.
-	'exhale-square-small' => [
-		'label'  => __( 'Square: Small', 'exhale' ),
-		'width'  => 320,
-		'height' => 320
+	// 21:9
+
+	'exhale-21x9-1k' => [
+		'label'  => __( 'Landscape: 21:9 (1K)', 'exhale' ),
+		'width'  => 1024,
+		'height' => 432
 	],
 
-	'exhale-square-medium' => [
-		'label'  => __( 'Square: Medium', 'exhale' ),
-		'width'  => 640,
-		'height' => 640
+	'exhale-21x9-2k' => [
+		'label'  => __( 'Landscape: 21:9 (2K)', 'exhale' ),
+		'width'  => 2048,
+		'height' => 864
+	],
+
+	'exhale-21x9-4k' => [
+		'label'  => __( 'Landscape: 21:9 (4K)', 'exhale' ),
+		'width'  => 3840,
+		'height' => 1620
+	],
+
+	// 18:5
+
+	'exhale-18x5-1k' => [
+		'label'  => __( 'Landscape: 18:5 (1K)', 'exhale' ),
+		'width'  => 1024,
+		'height' => 284
+	],
+
+	'exhale-18x5-2k' => [
+		'label'  => __( 'Landscape: 18:5 (2K)', 'exhale' ),
+		'width'  => 2048,
+		'height' => 569
+	],
+
+	'exhale-18x5-4k' => [
+		'label'  => __( 'Landscape: 18:5 (4K)', 'exhale' ),
+		'width'  => 3840,
+		'height' => 1067
+	],
+
+	// ---------------------------------------------------------------------
+	// Portrait Orientation
+	// ---------------------------------------------------------------------
+
+	// 9:16
+
+	'exhale-9x16-1k' => [
+		'label'  => __( 'Portrait: 9:16 (1K)', 'exhale' ),
+		'width'  => 576,
+		'height' => 1024
+	],
+
+	'exhale-9x16-2k' => [
+		'label'  => __( 'Portrait: 9:16 (2K)', 'exhale' ),
+		'width'  => 1152,
+		'height' => 2048
+	],
+
+	'exhale-9x16-4k' => [
+		'label'  => __( 'Portrait: 9:16 (4K)', 'exhale' ),
+		'width'  => 2340,
+		'height' => 3840
+	],
+
+	// 2:3
+
+	'exhale-2x3-1k' => [
+		'label'  => __( 'Portrait: 2:3 (1K)', 'exhale' ),
+		'width'  => 1024,
+		'height' => 1536
+	],
+
+	'exhale-2x3-2k' => [
+		'label'  => __( 'Portrait: 2:3 (2K)', 'exhale' ),
+		'width'  => 2048,
+		'height' => 3072
+	],
+
+	'exhale-2x3-4k' => [
+		'label'  => __( 'Portrait: 2:3 (4K)', 'exhale' ),
+		'width'  => 3840,
+		'height' => 5760
+	],
+
+	// ---------------------------------------------------------------------
+	// Square Orientation
+	// ---------------------------------------------------------------------
+
+	// 1:1
+
+	'exhale-1x1-1k' => [
+		'label'  => __( 'Square: 1:1 (1K)', 'exhale' ),
+		'width'  => 1024,
+		'height' => 1024
+	],
+
+	'exhale-1x1-2k' => [
+		'label'  => __( 'Square: 1:1 (2K)', 'exhale' ),
+		'width'  => 2048,
+		'height' => 2048
+	],
+
+	'exhale-1x1-4k' => [
+		'label'  => __( 'Square: 1:1 (4K)', 'exhale' ),
+		'width'  => 3840,
+		'height' => 3840
 	]
 
 ];

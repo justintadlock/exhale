@@ -14,9 +14,6 @@
 let WebFont     = require( 'webfontloader' );
 let settings    = exhaleCustomizePreview.typographySettings;
 let families    = exhaleCustomizePreview.fontFamilies;
-//let styles      = exhaleCustomizePreview.fontStyles;
-//let caps        = exhaleCustomizePreview.fontVariantCaps;
-//let transforms  = exhaleCustomizePreview.textTransforms;
 let loadedFonts = [];
 
 Object.keys( settings ).forEach( key => {
@@ -50,8 +47,8 @@ Object.keys( settings ).forEach( key => {
 			}
 
 			// Update the custom CSS property.
-			document.documentElement.style.setProperty(
-				'--font-family-' + setting.name,
+			document.body.style.setProperty(
+				'--wp--preset--font-family--' + setting.name,
 				family.stack
 			);
 		} );

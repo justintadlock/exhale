@@ -2,6 +2,43 @@ export default {
 	block      : 'core/group',
 	variations : [
 		{
+			name: 'default',
+			title: 'Group: Default',
+			scope: [
+				'block',
+				'inserter',
+				'transform'
+			],
+			isDefault: true
+		},
+		{
+			name: 'padded',
+			title: 'Group: Padded',
+			scope: [
+				'block',
+				'inserter',
+				'transform'
+			],
+			isDefault: true,
+			attributes: {
+				style: {
+					spacing: {
+						padding: {
+							top: "2rem",
+							bottom: "2rem",
+							left: "2rem",
+							right: "2rem"
+						}
+					}
+				},
+				backgroundColor: 'neutral-100',
+				className: 'is-var-padded'
+			},
+			innerBlocks: 	[
+				[ 'core/paragraph', { align: 'center' } ]
+			]
+		},
+		{
 			name: 'site-branding',
 			title: 'Site Branding',
 			scope: [
@@ -41,7 +78,7 @@ export default {
 						}
 					},
 					className:"hidden sm:block",
-					fontSize:"small"
+					fontSize:"sm"
 				} ]
 			]
 		}

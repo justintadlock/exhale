@@ -6,6 +6,6 @@ register_block_style( 'core/gallery', [
 ] );
 
 register_block_style( 'core/gallery', [
-	'name'  => 'reverse',
-	'label' => __( 'Reverse' )
+	'name'  => 'no-gap',
+	'label' => __( 'No Gap' )
 ] );

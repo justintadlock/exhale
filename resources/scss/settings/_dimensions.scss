@@ -6,7 +6,13 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-$width-alignwide : 72rem;//64rem;
+$screen-sm  : 640px;
+$screen-md  : 768px;
+$screen-lg  : 1024px;
+$screen-xl  : 1280px;
+$screen-2xl : 1536px;
+
+$width-alignwide : 64rem;
 $width-alignfull : 100vw;
 
 $content-width: 40rem;
@@ -17,14 +23,3 @@ $alignwide-padded : $width-alignwide + ( $spacing-global * 2 );
 
 $breakpoint-sm: $content-width + ( $spacing-global * 2 );
 $breakpoint-md: $width-alignwide + ( $spacing-global * 2 );
-
-/// Defines the content width. This should match the theme's `$content_width`
-/// setting in `app/functions-setup.php`.
-///
-/// @since  1.0.0
-/// @access public
-/// @return {number}  The content width in pixels.
-
-@function content-width() {
-	@return $content-width;
-}

@@ -7,22 +7,41 @@
 ////
 
 .wp-block-image {
-	display: table;
+	//display: table;
 	margin-top: $spacing-global;
 	margin-bottom: 0;
 
-	figcaption {
+	&.alignwide,
+	&.alignfull {
 		display: block;
+	}
+
+	figcaption {
+		color: inherit;
+		font-size: inherit;
+		font-family: inherit;
 		margin-top: $spacing-fourth;
 		margin-bottom: 0;
 	}
 
-	&.is-style-caption-top {
-		 figcaption {
-			display: table-caption;
-			caption-side: top;
-			margin-top: 0;
-			margin-bottom: $spacing-fourth;
+	&.is-style-caption-overlay {
+		position: relative;
+		figcaption {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			max-height: 100%;
+			overflow: auto;
+			margin: 0;
+			padding: 3em .77em .7em;
+			color: var( --wp--preset--color--white );
+			background: linear-gradient(
+				0deg,
+				rgba(0,0,0,.7),
+				rgba(0,0,0,.3) 70%,
+				transparent
+			);
+			box-sizing: border-box;
 		}
 	}
 

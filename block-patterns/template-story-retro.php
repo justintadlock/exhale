@@ -9,8 +9,8 @@
 <p class="has-huge-font-size">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat velit scelerisque in dictum non consectetur a erat nam.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|headings","fontWeight":"100"}},"fontSize":"large"} -->
-<p class="has-large-font-size" style="font-family:var(--wp--preset--font-family--headings);font-weight:100">-- Justin Tadlock, May 1, 2021</p>
+<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|headings","fontWeight":"100"}},"fontSize":"lg"} -->
+<p class="has-lg-font-size" style="font-family:var(--wp--preset--font-family--headings);font-weight:100">-- Justin Tadlock, May 1, 2021</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -21,14 +21,14 @@
 <!-- wp:column {"verticalAlignment":"center","width":"30%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:30%"><!-- wp:group {"style":{"border":{"style":"solid","width":2}}} -->
 <div class="wp-block-group" style="border-style:solid;border-width:2px"><!-- wp:cover {"url":"http://localhost/wp-content/uploads/2021/05/pexels-christiane-2565214-1366x768.jpg","id":3817,"dimRatio":0,"minHeight":150} -->
-<div class="wp-block-cover" style="min-height:150px"><img class="wp-block-cover__image-background wp-image-3817" alt="" src="http://localhost/wp-content/uploads/2021/05/pexels-christiane-2565214-1366x768.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"fontSize":"large"} -->
-<p class="has-large-font-size"></p>
+<div class="wp-block-cover" style="min-height:150px"><img class="wp-block-cover__image-background wp-image-3817" alt="" src="http://localhost/wp-content/uploads/2021/05/pexels-christiane-2565214-1366x768.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"fontSize":"lg"} -->
+<p class="has-lg-font-size"></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"16px","right":"16px","bottom":"16px","left":"16px"}}}} -->
-<div class="wp-block-group" style="padding-top:16px;padding-right:16px;padding-bottom:16px;padding-left:16px"><!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|headings","fontWeight":"700"},"color":{}},"fontSize":"medium"} -->
-<p class="has-medium-font-size" style="font-family:var(--wp--preset--font-family--headings);font-weight:700">Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="#chapter-1"><em>Jump To Chapter 1 →</em></a></p>
+<div class="wp-block-group" style="padding-top:16px;padding-right:16px;padding-bottom:16px;padding-left:16px"><!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|headings","fontWeight":"700"},"color":{}},"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-family:var(--wp--preset--font-family--headings);font-weight:700">Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="#chapter-1"><em>Jump To Chapter 1 →</em></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -39,14 +39,14 @@
 
 <!-- wp:group {"style":{"border":{"style":"solid","width":2}}} -->
 <div class="wp-block-group" style="border-style:solid;border-width:2px"><!-- wp:cover {"url":"http://localhost/wp-content/uploads/2021/05/pexels-pixabay-46244-scaled.jpg","id":3816,"dimRatio":0,"minHeight":150} -->
-<div class="wp-block-cover" style="min-height:150px"><img class="wp-block-cover__image-background wp-image-3816" alt="" src="http://localhost/wp-content/uploads/2021/05/pexels-pixabay-46244-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"fontSize":"large"} -->
-<p class="has-large-font-size"></p>
+<div class="wp-block-cover" style="min-height:150px"><img class="wp-block-cover__image-background wp-image-3816" alt="" src="http://localhost/wp-content/uploads/2021/05/pexels-pixabay-46244-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"fontSize":"lg"} -->
+<p class="has-lg-font-size"></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"16px","right":"16px","bottom":"16px","left":"16px"}}}} -->
-<div class="wp-block-group" style="padding-top:16px;padding-right:16px;padding-bottom:16px;padding-left:16px"><!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|headings","fontWeight":"700"}},"fontSize":"medium"} -->
-<p class="has-medium-font-size" style="font-family:var(--wp--preset--font-family--headings);font-weight:700">Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="#chapter-2"><em>Jump To Chapter 2 →</em></a> </p>
+<div class="wp-block-group" style="padding-top:16px;padding-right:16px;padding-bottom:16px;padding-left:16px"><!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|headings","fontWeight":"700"}},"fontSize":"base"} -->
+<p class="has-base-font-size" style="font-family:var(--wp--preset--font-family--headings);font-weight:700">Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="#chapter-2"><em>Jump To Chapter 2 →</em></a> </p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -54,8 +54,8 @@
 <!-- /wp:columns --></div></div>
 <!-- /wp:cover -->
 
-<!-- wp:pullquote {"customMainColor":"#319795","textColor":"gray-600","align":"wide"} -->
-<figure class="wp-block-pullquote alignwide" style="border-color:#319795"><blockquote class="has-text-color has-gray-600-color"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat velit scelerisque in dictum non consectetur a erat nam.</p><cite>-- John Doe</cite></blockquote></figure>
+<!-- wp:pullquote {"customMainColor":"#319795","textColor":"neutral-600","align":"wide"} -->
+<figure class="wp-block-pullquote alignwide" style="border-color:#319795"><blockquote class="has-text-color has-neutral-600-color"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat velit scelerisque in dictum non consectetur a erat nam.</p><cite>-- John Doe</cite></blockquote></figure>
 <!-- /wp:pullquote -->
 
 <!-- wp:paragraph {"dropCap":true} -->

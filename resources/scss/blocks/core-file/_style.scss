@@ -6,29 +6,49 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-.wp-block-file {
-	//margin-bottom: $spacing-global;
-	margin-top: $spacing-global;
-
-	&.aligncenter {
-		text-align: center;
-	}
-
-	&.alignright {
-		text-align: right;
-	}
-
-	// See `components/_button.scss`.
-	&__button {}
-
-	&__button:hover,
-	&__button:focus {
-		color:  var( --color-content-background );
-	}
+.wp-block-file,
+.wp-block-file__content-wrapper { // Editor style.
+	display: flex;
+	flex-wrap: wrap;
+	gap: var( --wp--custom--spacing--8 );
+	justify-content: space-between;
+	align-items: center;
 }
 
-// Give the file block button some spacing to the left if there's another element
-// preceding it.
-* + .wp-block-file__button {
-	margin-left: 0.75em;
+.wp-block-file {
+	margin-top: $spacing-global;
+
+	padding: var( --wp--custom--spacing--8 );
+	background: var( --wp--preset--color--neutral-100 );
+	border: 1px solid var( --wp--preset--color--neutral-300 );
+
+	.wp-block-file__embed {
+		margin: 0; // gb
+	}
+
+	.wp-block-file__button {
+		border-radius: 0;
+		font-size: inherit;
+		line-height: 1;
+		margin: 0; // gb
+		padding: calc( var( --wp--custom--spacing--4 ) + 1px )
+		         calc( var( --wp--custom--spacing--8 ) + 1px );
+		min-height: 44px;
+		color: var( --wp--preset--color--white );
+		background: var( --wp--preset--color--primary-700 );
+
+		&:hover,
+		&:focus {
+			opacity: 1; // gb
+			background: var( --wp--preset--color--primary-800 );
+		}
+	}
+
+	// Need to target `a.$class` to overwrite gb.
+	a.wp-block-file__button {
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
 }

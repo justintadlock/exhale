@@ -25,7 +25,7 @@ time[title] { cursor: help; }
 
 abbr,
 acronym {
-	border-bottom : 1px dotted var( --color-border );
+	border-bottom : 1px dotted var( --wp--preset--color--neutral-300 );
 }
 
 acronym { text-transform: uppercase; }
@@ -59,10 +59,10 @@ del,
 s,
 strike {
 	text-decoration:       line-through;
-	text-decoration-color: var( --red-500 );
+	text-decoration-color: var( --wp--preset--color--primary-500 );
 }
 
 // Inserts.
 ins {
-	border-bottom: 1px dashed var( --green-400 );
+	border-bottom: 1px dashed var( --wp--preset--color--primary-500 );
 }

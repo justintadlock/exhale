@@ -7,11 +7,40 @@
 ////
 
 .wp-block-query-loop {
-	//gap: $spacing-global;
+	display: grid;
+	gap: var( --wp--custom--spacing--8 );
+	grid-template-columns: repeat( 1, 1fr );
 
-	&.is-flex-container > li {
-		display: flex;
 
-	//	margin: 0;
+	&.is-flex-container {
+		display: grid; // Re-add this to overwrite GB.
+		grid-template-columns: repeat( 1, 1fr );
+
+		@media ( min-width: $screen-md ) {
+			grid-template-columns: repeat( 2, 1fr );
+			&.columns-2 { grid-template-columns: repeat( 2, 1fr ); }
+		}
+
+		@media ( min-width: $screen-lg ) {
+			grid-template-columns: repeat( 4, 1fr );
+			&.columns-3 { grid-template-columns: repeat( 3, 1fr ); }
+			&.columns-4 { grid-template-columns: repeat( 4, 1fr ); }
+		}
+
+		@media ( min-width: $screen-xl ) {
+			&.columns-5 { grid-template-columns: repeat( 5, 1fr ); }
+			&.columns-6 { grid-template-columns: repeat( 6, 1fr ); }
+		}
 	}
+
+	// Kill GB's flex stuff.
+	&.wp-block-query-loop.is-flex-container[class*=columns] > li {
+		display: block;
+		width:   100%;
+		margin:  0;
+	}
+}
+
+.is-style-no-gap .wp-block-query-loop {
+	gap: 0;
 }

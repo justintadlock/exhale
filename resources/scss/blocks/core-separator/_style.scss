@@ -10,8 +10,31 @@
 	opacity: 0.5;
 	border-bottom-width: 0;
 
-	&.is-style-default,
-	&:not( [class*="is-style-"] ) {
-	//	width: 8rem;
+	&.is-style-short {
+		width: 8rem;
+	}
+
+	&.is-style-dashed,
+	&.is-style-dotted,
+	&.is-style-thick {
+		background-color: transparent;
+		border-top-width: 2px;
+	}
+
+	&.is-style-thick {
+		border-bottom-width: 2px;
+	}
+
+	&.is-style-dashed {
+		border-top-style: dashed;
+	}
+
+	&.is-style-dotted {
+		border-top-style: dotted;
+	}
+
+	&.is-style-double {
+		border-top: 3px double;
+		background-color: transparent !important;
 	}
 }

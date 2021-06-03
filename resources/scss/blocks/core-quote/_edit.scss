@@ -10,4 +10,8 @@
 // developers to output a black border next to the quote in default styles.
 .wp-block-quote {
 	border: none;
+
+	&__citation {
+		margin-top: $spacing-global !important;
+	}
 }

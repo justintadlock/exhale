@@ -46,14 +46,6 @@
  */
 
 return [
-	'primary' => [
-		'label'        => __( 'Primary', 'exhale' ),
-		'is_theme_mod' => true
-	],
-	'secondary' => [
-		'label'        => __( 'Secondary', 'exhale' ),
-		'is_theme_mod' => true
-	],
 	'black' => [
 		'color' => '22292f',
 		'label' => __( 'Black', 'exhale' )

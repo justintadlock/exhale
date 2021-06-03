@@ -53,6 +53,13 @@
 					"mono": "\"Source Code Pro\", Monaco, Consolas, \"Andale Mono WT\", \"Andale Mono\", \"Lucida Console\", \"Lucida Sans Typewriter\", \"DejaVu Sans Mono\", \"Bitstream Vera Sans Mono\", \"Liberation Mono\", \"Nimbus Mono L\", \"Courier New\", Courier, monospace",
 					"cursive": "\"Indie Flower\", cursive",
 					"fantasy": "fantasy"
+				},
+				"typography": {
+					"shadow" : {
+						"sm": "1px 1px 2px rgba( 0, 0, 0, 0.5 )",
+						"md": "0 4px 8px rgba( 0,0,0,0.12 ), 1px 1px 2px rgba( 0, 0, 0, 0.25 )",
+						"lg": "0 15px 30px rgba(0,0,0,0.12), 1px 1px 2px rgba( 0, 0, 0, 0.25 )"
+					}
 				}
 			},
 			"layout": {
@@ -60,9 +67,291 @@
 				"wideSize": "var( --wp--custom--layout--wide )"
 			},
 			"color": {
-				"duotone": [],
-				"gradients": [ ],
+				"custom": true,
 				"link": true,
+				"duotone": [],
+				"gradients": [
+					{
+					        "name":"To Bottom: From Transparent To Black",
+					        "slug":"to-b-transparent-black",
+					        "gradient":"linear-gradient( to bottom, var( --wp--preset--color--transparent ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Bottom: From Transparent To Primary 500",
+					        "slug":"to-b-transparent-p500",
+					        "gradient":"linear-gradient( to bottom, var( --wp--preset--color--transparent ), var( --wp--preset--color--primary-500 ) )"
+					},
+					{
+					        "name":"To Bottom: From Transparent To Secondary 500",
+					        "slug":"to-b-transparent-s500",
+					        "gradient":"linear-gradient( to bottom, var( --wp--preset--color--transparent ), var( --wp--preset--color--secondary-500 ) )"
+					},
+					{
+					        "name":"To Bottom: From Transparent To Primary 900",
+					        "slug":"to-b-transparent-p900",
+					        "gradient":"linear-gradient( to bottom, var( --wp--preset--color--transparent ), var( --wp--preset--color--primary-900 ) )"
+					},
+					{
+					        "name":"To Bottom: From Transparent To Secondary 900",
+					        "slug":"to-b-transparent-s900",
+					        "gradient":"linear-gradient( to bottom, var( --wp--preset--color--transparent ), var( --wp--preset--color--secondary-900 ) )"
+					},
+					{
+					        "name":"To Bottom: From Primary 500 To Black",
+					        "slug":"to-b-p500-black",
+					        "gradient":"linear-gradient( to bottom, var( --wp--preset--color--primary-500 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Bottom: From Secondary 500 To Black",
+					        "slug":"to-b-s500-black",
+					        "gradient":"linear-gradient( to bottom, var( --wp--preset--color--secondary-500 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Bottom: From Primary 900 To Black",
+					        "slug":"to-b-p900-black",
+					        "gradient":"linear-gradient( to bottom, var( --wp--preset--color--primary-900 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Bottom: From Secondary 900 To Black",
+					        "slug":"to-b-s900-black",
+					        "gradient":"linear-gradient( to bottom, var( --wp--preset--color--secondary-900 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Bottom: From Primary 500 to Primary 900",
+					        "slug":"to-b-p500-p900",
+					        "gradient":"linear-gradient( to bottom, var( --wp--preset--color--primary-500 ), var( --wp--preset--color--primary-900 ) )"
+					},
+					{
+					        "name":"To Bottom: From Secondary 500 to Secondary 900",
+					        "slug":"to-b-s500-s900",
+					        "gradient":"linear-gradient( to bottom, var( --wp--preset--color--secondary-500 ), var( --wp--preset--color--secondary-900 ) )"
+					},
+					{
+					        "name":"To Bottom: From Primary 300 to Primary 700",
+					        "slug":"to-b-p300-p700",
+					        "gradient":"linear-gradient( to bottom, var( --wp--preset--color--primary-300 ), var( --wp--preset--color--primary-700 ) )"
+					},
+					{
+					        "name":"To Bottom: From Secondary 300 to Secondary 700",
+					        "slug":"to-b-s300-s700",
+					        "gradient":"linear-gradient( to bottom, var( --wp--preset--color--secondary-300 ), var( --wp--preset--color--secondary-700 ) )"
+					},
+					{
+					        "name":"To Bottom: From Primary 500 Via Secondary 500 To Black",
+					        "slug":"to-b-p500-s500-black",
+					        "gradient":"linear-gradient( to bottom, var( --wp--preset--color--primary-500 ), var( --wp--preset--color--secondary-500 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Top: From Transparent To Black",
+					        "slug":"to-t-transparent-black",
+					        "gradient":"linear-gradient( to top, var( --wp--preset--color--transparent ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Top: From Transparent To Primary 500",
+					        "slug":"to-t-transparent-p500",
+					        "gradient":"linear-gradient( to top, var( --wp--preset--color--transparent ), var( --wp--preset--color--primary-500 ) )"
+					},
+					{
+					        "name":"To Top: From Transparent To Secondary 500",
+					        "slug":"to-t-transparent-s500",
+					        "gradient":"linear-gradient( to top, var( --wp--preset--color--transparent ), var( --wp--preset--color--secondary-500 ) )"
+					},
+					{
+					        "name":"To Top: From Transparent To Primary 900",
+					        "slug":"to-t-transparent-p900",
+					        "gradient":"linear-gradient( to top, var( --wp--preset--color--transparent ), var( --wp--preset--color--primary-900 ) )"
+					},
+					{
+					        "name":"To Top: From Transparent To Secondary 900",
+					        "slug":"to-t-transparent-s900",
+					        "gradient":"linear-gradient( to top, var( --wp--preset--color--transparent ), var( --wp--preset--color--secondary-900 ) )"
+					},
+					{
+					        "name":"To Top: From Primary 500 To Black",
+					        "slug":"to-t-p500-black",
+					        "gradient":"linear-gradient( to top, var( --wp--preset--color--primary-500 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Top: From Secondary 500 To Black",
+					        "slug":"to-t-s500-black",
+					        "gradient":"linear-gradient( to top, var( --wp--preset--color--secondary-500 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Top: From Primary 900 To Black",
+					        "slug":"to-t-p900-black",
+					        "gradient":"linear-gradient( to top, var( --wp--preset--color--primary-900 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Top: From Secondary 900 To Black",
+					        "slug":"to-t-s900-black",
+					        "gradient":"linear-gradient( to top, var( --wp--preset--color--secondary-900 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Top: From Primary 500 to Primary 900",
+					        "slug":"to-t-p500-p900",
+					        "gradient":"linear-gradient( to top, var( --wp--preset--color--primary-500 ), var( --wp--preset--color--primary-900 ) )"
+					},
+					{
+					        "name":"To Top: From Secondary 500 to Secondary 900",
+					        "slug":"to-t-s500-s900",
+					        "gradient":"linear-gradient( to top, var( --wp--preset--color--secondary-500 ), var( --wp--preset--color--secondary-900 ) )"
+					},
+					{
+					        "name":"To Top: From Primary 300 to Primary 700",
+					        "slug":"to-t-p300-p700",
+					        "gradient":"linear-gradient( to top, var( --wp--preset--color--primary-300 ), var( --wp--preset--color--primary-700 ) )"
+					},
+					{
+					        "name":"To Top: From Secondary 300 to Secondary 700",
+					        "slug":"to-t-s300-s700",
+					        "gradient":"linear-gradient( to top, var( --wp--preset--color--secondary-300 ), var( --wp--preset--color--secondary-700 ) )"
+					},
+					{
+					        "name":"To Top: From Primary 500 Via Secondary 500 To Black",
+					        "slug":"to-t-p500-s500-black",
+					        "gradient":"linear-gradient( to top, var( --wp--preset--color--primary-500 ), var( --wp--preset--color--secondary-500 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Right: From Transparent To Black",
+					        "slug":"to-r-transparent-black",
+					        "gradient":"linear-gradient( to right, var( --wp--preset--color--transparent ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Right: From Transparent To Primary 500",
+					        "slug":"to-r-transparent-p500",
+					        "gradient":"linear-gradient( to right, var( --wp--preset--color--transparent ), var( --wp--preset--color--primary-500 ) )"
+					},
+					{
+					        "name":"To Right: From Transparent To Secondary 500",
+					        "slug":"to-r-transparent-s500",
+					        "gradient":"linear-gradient( to right, var( --wp--preset--color--transparent ), var( --wp--preset--color--secondary-500 ) )"
+					},
+					{
+					        "name":"To Right: From Transparent To Primary 900",
+					        "slug":"to-r-transparent-p900",
+					        "gradient":"linear-gradient( to right, var( --wp--preset--color--transparent ), var( --wp--preset--color--primary-900 ) )"
+					},
+					{
+					        "name":"To Right: From Transparent To Secondary 900",
+					        "slug":"to-r-transparent-s900",
+					        "gradient":"linear-gradient( to right, var( --wp--preset--color--transparent ), var( --wp--preset--color--secondary-900 ) )"
+					},
+					{
+					        "name":"To Right: From Primary 500 To Black",
+					        "slug":"to-r-p500-black",
+					        "gradient":"linear-gradient( to right, var( --wp--preset--color--primary-500 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Right: From Secondary 500 To Black",
+					        "slug":"to-r-s500-black",
+					        "gradient":"linear-gradient( to right, var( --wp--preset--color--secondary-500 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Right: From Primary 900 To Black",
+					        "slug":"to-r-p900-black",
+					        "gradient":"linear-gradient( to right, var( --wp--preset--color--primary-900 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Right: From Secondary 900 To Black",
+					        "slug":"to-r-s900-black",
+					        "gradient":"linear-gradient( to right, var( --wp--preset--color--secondary-900 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Right: From Primary 500 to Primary 900",
+					        "slug":"to-r-p500-p900",
+					        "gradient":"linear-gradient( to right, var( --wp--preset--color--primary-500 ), var( --wp--preset--color--primary-900 ) )"
+					},
+					{
+					        "name":"To Right: From Secondary 500 to Secondary 900",
+					        "slug":"to-r-s500-s900",
+					        "gradient":"linear-gradient( to right, var( --wp--preset--color--secondary-500 ), var( --wp--preset--color--secondary-900 ) )"
+					},
+					{
+					        "name":"To Right: From Primary 300 to Primary 700",
+					        "slug":"to-r-p300-p700",
+					        "gradient":"linear-gradient( to right, var( --wp--preset--color--primary-300 ), var( --wp--preset--color--primary-700 ) )"
+					},
+					{
+					        "name":"To Right: From Secondary 300 to Secondary 700",
+					        "slug":"to-r-s300-s700",
+					        "gradient":"linear-gradient( to right, var( --wp--preset--color--secondary-300 ), var( --wp--preset--color--secondary-700 ) )"
+					},
+					{
+					        "name":"To Right: From Primary 500 Via Secondary 500 To Black",
+					        "slug":"to-r-p500-s500-black",
+					        "gradient":"linear-gradient( to right, var( --wp--preset--color--primary-500 ), var( --wp--preset--color--secondary-500 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Left: From Transparent To Black",
+					        "slug":"to-l-transparent-black",
+					        "gradient":"linear-gradient( to left, var( --wp--preset--color--transparent ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Left: From Transparent To Primary 500",
+					        "slug":"to-l-transparent-p500",
+					        "gradient":"linear-gradient( to left, var( --wp--preset--color--transparent ), var( --wp--preset--color--primary-500 ) )"
+					},
+					{
+					        "name":"To Left: From Transparent To Secondary 500",
+					        "slug":"to-l-transparent-s500",
+					        "gradient":"linear-gradient( to left, var( --wp--preset--color--transparent ), var( --wp--preset--color--secondary-500 ) )"
+					},
+					{
+					        "name":"To Left: From Transparent To Primary 900",
+					        "slug":"to-l-transparent-p900",
+					        "gradient":"linear-gradient( to left, var( --wp--preset--color--transparent ), var( --wp--preset--color--primary-900 ) )"
+					},
+					{
+					        "name":"To Left: From Transparent To Secondary 900",
+					        "slug":"to-l-transparent-s900",
+					        "gradient":"linear-gradient( to left, var( --wp--preset--color--transparent ), var( --wp--preset--color--secondary-900 ) )"
+					},
+					{
+					        "name":"To Left: From Primary 500 To Black",
+					        "slug":"to-l-p500-black",
+					        "gradient":"linear-gradient( to left, var( --wp--preset--color--primary-500 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Left: From Secondary 500 To Black",
+					        "slug":"to-l-s500-black",
+					        "gradient":"linear-gradient( to left, var( --wp--preset--color--secondary-500 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Left: From Primary 900 To Black",
+					        "slug":"to-l-p900-black",
+					        "gradient":"linear-gradient( to left, var( --wp--preset--color--primary-900 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Left: From Secondary 900 To Black",
+					        "slug":"to-l-s900-black",
+					        "gradient":"linear-gradient( to left, var( --wp--preset--color--secondary-900 ), var( --wp--preset--color--black ) )"
+					},
+					{
+					        "name":"To Left: From Primary 500 to Primary 900",
+					        "slug":"to-l-p500-p900",
+					        "gradient":"linear-gradient( to left, var( --wp--preset--color--primary-500 ), var( --wp--preset--color--primary-900 ) )"
+					},
+					{
+					        "name":"To Left: From Secondary 500 to Secondary 900",
+					        "slug":"to-l-s500-s900",
+					        "gradient":"linear-gradient( to left, var( --wp--preset--color--secondary-500 ), var( --wp--preset--color--secondary-900 ) )"
+					},
+					{
+					        "name":"To Left: From Primary 300 to Primary 700",
+					        "slug":"to-l-p300-p700",
+					        "gradient":"linear-gradient( to left, var( --wp--preset--color--primary-300 ), var( --wp--preset--color--primary-700 ) )"
+					},
+					{
+					        "name":"To Left: From Secondary 300 to Secondary 700",
+					        "slug":"to-l-s300-s700",
+					        "gradient":"linear-gradient( to left, var( --wp--preset--color--secondary-300 ), var( --wp--preset--color--secondary-700 ) )"
+					},
+					{
+					        "name":"To Left: From Primary 500 Via Secondary 500 To Black",
+					        "slug":"to-l-p500-s500-black",
+					        "gradient":"linear-gradient( to left, var( --wp--preset--color--primary-500 ), var( --wp--preset--color--secondary-500 ), var( --wp--preset--color--black ) )"
+					}
+				],
 				"palette": [
 					{
 						"slug": "transparent",
@@ -80,459 +369,149 @@
 					        "name" : "White"
 					},
 					{
-						"slug" : "gray-900",
+						"slug" : "neutral-900",
 					        "color" : "#1a202c",
-					        "name" : "Gray: 900"
+					        "name" : "Neutral: 900"
 					},
 					{
-						"slug" : "gray-800",
+						"slug" : "neutral-800",
 					        "color" : "#2d3748",
-					        "name" : "Gray: 800"
+					        "name" : "Neutral: 800"
 					},
 					{
-						"slug" : "gray-700",
+						"slug" : "neutral-700",
 					        "color" : "#4a5568",
-					        "name" : "Gray: 700"
+					        "name" : "Neutral: 700"
 					},
 					{
-						"slug" : "gray-600",
+						"slug" : "neutral-600",
 					        "color" : "#718096",
-					        "name" : "Gray: 600"
+					        "name" : "Neutral: 600"
 					},
 					{
-						"slug" : "gray-500",
+						"slug" : "neutral-500",
 					        "color" : "#a0aec0",
-					        "name" : "Gray: 500"
+					        "name" : "Neutral: 500"
 					},
 					{
-						"slug" : "gray-400",
+						"slug" : "neutral-400",
 					        "color" : "#cbd5e0",
-					        "name" : "Gray: 400"
+					        "name" : "Neutral: 400"
 					},
 					{
-						"slug" : "gray-300",
+						"slug" : "neutral-300",
 					        "color" : "#e2e8f0",
-					        "name" : "Gray: 300"
+					        "name" : "Neutral: 300"
 					},
 					{
-						"slug" : "gray-200",
+						"slug" : "neutral-200",
 					        "color" : "#edf2f7",
-					        "name" : "Gray: 200"
+					        "name" : "Neutral: 200"
 					},
 					{
-						"slug" : "gray-100",
+						"slug" : "neutral-100",
 					        "color" : "#f7fafc",
-					        "name" : "Gray: 100"
+					        "name" : "Neutral: 100"
 					},
 					{
-						"slug" : "red-900",
-					        "color" : "#742a2a",
-					        "name" : "Red: 900"
-					},
-					{
-						"slug" : "red-800",
-					        "color" : "#9b2c2c",
-					        "name" : "Red: 800"
-					},
-					{
-						"slug" : "red-700",
-					        "color" : "#c53030",
-					        "name" : "Red: 700"
-					},
-					{
-						"slug" : "red-600",
-					        "color" : "#e53e3e",
-					        "name" : "Red: 600"
-					},
-					{
-						"slug" : "red-500",
-					        "color" : "#f56565",
-					        "name" : "Red: 500"
-					},
-					{
-						"slug" : "red-400",
-					        "color" : "#fc8181",
-					        "name" : "Red: 400"
-					},
-					{
-						"slug" : "red-300",
-					        "color" : "#feb2b2",
-					        "name" : "Red: 300"
-					},
-					{
-						"slug" : "red-200",
-					        "color" : "#fed7d7",
-					        "name" : "Red: 200"
-					},
-					{
-						"slug" : "red-100",
-					        "color" : "#fff5f5",
-					        "name" : "Red: 100"
-					},
-					{
-						"slug" : "orange-900",
-					        "color" : "#7b341e",
-					        "name" : "Orange: 900"
-					},
-					{
-						"slug" : "orange-800",
-					        "color" : "#9c4221",
-					        "name" : "Orange: 800"
-					},
-					{
-						"slug" : "orange-700",
-					        "color" : "#c05621",
-					        "name" : "Orange: 700"
-					},
-					{
-						"slug" : "orange-600",
-					        "color" : "#dd6b20",
-					        "name" : "Orange: 600"
-					},
-					{
-						"slug" : "orange-500",
-					        "color" : "#ed8936",
-					        "name" : "Orange: 500"
-					},
-					{
-						"slug" : "orange-400",
-					        "color" : "#f6ad55",
-					        "name" : "Orange: 400"
-					},
-					{
-						"slug" : "orange-300",
-					        "color" : "#fbd38d",
-					        "name" : "Orange: 300"
-					},
-					{
-						"slug" : "orange-200",
-					        "color" : "#feebc8",
-					        "name" : "Orange: 200"
-					},
-					{
-						"slug" : "orange-100",
-					        "color" : "#fffaf0",
-					        "name" : "Orange: 100"
-					},
-					{
-						"slug" : "yellow-900",
-					        "color" : "#744210",
-					        "name" : "Yellow: 900"
-					},
-					{
-						"slug" : "yellow-800",
-					        "color" : "#975a16",
-					        "name" : "Yellow: 800"
-					},
-					{
-						"slug" : "yellow-700",
-					        "color" : "#b7791f",
-					        "name" : "Yellow: 700"
-					},
-					{
-						"slug" : "yellow-600",
-					        "color" : "#d69e2e",
-					        "name" : "Yellow: 600"
-					},
-					{
-						"slug" : "yellow-500",
-					        "color" : "#ecc94b",
-					        "name" : "Yellow: 500"
-					},
-					{
-						"slug" : "yellow-400",
-					        "color" : "#f6e05e",
-					        "name" : "Yellow: 400"
-					},
-					{
-						"slug" : "yellow-300",
-					        "color" : "#faf089",
-					        "name" : "Yellow: 300"
-					},
-					{
-						"slug" : "yellow-200",
-					        "color" : "#fefcbf",
-					        "name" : "Yellow: 200"
-					},
-					{
-						"slug" : "yellow-100",
-					        "color" : "#fffff0",
-					        "name" : "Yellow: 100"
-					},
-					{
-						"slug" : "green-900",
-					        "color" : "#22543d",
-					        "name" : "Green: 900"
-					},
-					{
-						"slug" : "green-800",
-					        "color" : "#276749",
-					        "name" : "Green: 800"
-					},
-					{
-						"slug" : "green-700",
-					        "color" : "#2f855a",
-					        "name" : "Green: 700"
-					},
-					{
-						"slug" : "green-600",
-					        "color" : "#38a169",
-					        "name" : "Green: 600"
-					},
-					{
-						"slug" : "green-500",
-					        "color" : "#48bb78",
-					        "name" : "Green: 500"
-					},
-					{
-						"slug" : "green-400",
-					        "color" : "#68d391",
-					        "name" : "Green: 400"
-					},
-					{
-						"slug" : "green-300",
-					        "color" : "#9ae6b4",
-					        "name" : "Green: 300"
-					},
-					{
-						"slug" : "green-200",
-					        "color" : "#c6f6d5",
-					        "name" : "Green: 200"
-					},
-					{
-						"slug" : "green-100",
-					        "color" : "#f0fff4",
-					        "name" : "Green: 100"
-					},
-					{
-						"slug" : "teal-900",
-					        "color" : "#234e52",
-					        "name" : "Teal: 900"
-					},
-					{
-						"slug" : "teal-800",
-					        "color" : "#285e61",
-					        "name" : "Teal: 800"
-					},
-					{
-						"slug" : "teal-700",
-					        "color" : "#2c7a7b",
-					        "name" : "Teal: 700"
-					},
-					{
-						"slug" : "teal-600",
-					        "color" : "#319795",
-					        "name" : "Teal: 600"
-					},
-					{
-						"slug" : "teal-500",
-					        "color" : "#38b2ac",
-					        "name" : "Teal: 500"
-					},
-					{
-						"slug" : "teal-400",
-					        "color" : "#4fd1c5",
-					        "name" : "Teal: 400"
-					},
-					{
-						"slug" : "teal-300",
-					        "color" : "#81e6d9",
-					        "name" : "Teal: 300"
-					},
-					{
-						"slug" : "teal-200",
-					        "color" : "#b2f5ea",
-					        "name" : "Teal: 200"
-					},
-					{
-						"slug" : "teal-100",
-					        "color" : "#e6fffa",
-					        "name" : "Teal: 100"
-					},
-					{
-						"slug" : "blue-900",
+						"slug" : "primary-900",
 					        "color" : "#2a4365",
-					        "name" : "Blue: 900"
+					        "name" : "Primary: 900"
 					},
 					{
-						"slug" : "blue-800",
+						"slug" : "primary-800",
 					        "color" : "#2c5282",
-					        "name" : "Blue: 800"
+					        "name" : "Primary: 800"
 					},
 					{
-						"slug" : "blue-700",
+						"slug" : "primary-700",
 					        "color" : "#2b6cb0",
-					        "name" : "Blue: 700"
+					        "name" : "Primary: 700"
 					},
 					{
-						"slug" : "blue-600",
+						"slug" : "primary-600",
 					        "color" : "#3182ce",
-					        "name" : "Blue: 600"
+					        "name" : "Primary: 600"
 					},
 					{
-						"slug" : "blue-500",
+						"slug" : "primary-500",
 					        "color" : "#4299e1",
-					        "name" : "Blue: 500"
+					        "name" : "Primary: 500"
 					},
 					{
-						"slug" : "blue-400",
+						"slug" : "primary-400",
 					        "color" : "#63b3ed",
-					        "name" : "Blue: 400"
+					        "name" : "Primary: 400"
 					},
 					{
-						"slug" : "blue-300",
+						"slug" : "primary-300",
 					        "color" : "#90cdf4",
-					        "name" : "Blue: 300"
+					        "name" : "Primary: 300"
 					},
 					{
-						"slug" : "blue-200",
+						"slug" : "primary-200",
 					        "color" : "#bee3f8",
-					        "name" : "Blue: 200"
+					        "name" : "Primary: 200"
 					},
 					{
-						"slug" : "blue-100",
+						"slug" : "primary-100",
 					        "color" : "#ebf8ff",
-					        "name" : "Blue: 100"
+					        "name" : "Primary: 100"
 					},
 					{
-						"slug" : "indigo-900",
-					        "color" : "#3c366b",
-					        "name" : "Indigo: 900"
-					},
-					{
-						"slug" : "indigo-800",
-					        "color" : "#434190",
-					        "name" : "Indigo: 800"
-					},
-					{
-						"slug" : "indigo-700",
-					        "color" : "#4c51bf",
-					        "name" : "Indigo: 700"
-					},
-					{
-						"slug" : "indigo-600",
-					        "color" : "#5a67d8",
-					        "name" : "Indigo: 600"
-					},
-					{
-						"slug" : "indigo-500",
-					        "color" : "#667eea",
-					        "name" : "Indigo: 500"
-					},
-					{
-						"slug" : "indigo-400",
-					        "color" : "#7f9cf5",
-					        "name" : "Indigo: 400"
-					},
-					{
-						"slug" : "indigo-300",
-					        "color" : "#a3bffa",
-					        "name" : "Indigo: 300"
-					},
-					{
-						"slug" : "indigo-200",
-					        "color" : "#c3dafe",
-					        "name" : "Indigo: 200"
-					},
-					{
-						"slug" : "indigo-100",
-					        "color" : "#ebf4ff",
-					        "name" : "Indigo: 100"
-					},
-					{
-						"slug" : "purple-900",
+						"slug" : "secondary-900",
 					        "color" : "#44337a",
-					        "name" : "Purple: 900"
+					        "name" : "Secondary: 900"
 					},
 					{
-						"slug" : "purple-800",
+						"slug" : "secondary-800",
 					        "color" : "#553c9a",
-					        "name" : "Purple: 800"
+					        "name" : "Secondary: 800"
 					},
 					{
-						"slug" : "purple-700",
+						"slug" : "secondary-700",
 					        "color" : "#6b46c1",
-					        "name" : "Purple: 700"
+					        "name" : "Secondary: 700"
 					},
 					{
-						"slug" : "purple-600",
+						"slug" : "secondary-600",
 					        "color" : "#805ad5",
-					        "name" : "Purple: 600"
+					        "name" : "Secondary: 600"
 					},
 					{
-						"slug" : "purple-500",
+						"slug" : "secondary-500",
 					        "color" : "#9f7aea",
-					        "name" : "Purple: 500"
+					        "name" : "Secondary: 500"
 					},
 					{
-						"slug" : "purple-400",
+						"slug" : "secondary-400",
 					        "color" : "#b794f4",
-					        "name" : "Purple: 400"
+					        "name" : "Secondary: 400"
 					},
 					{
-						"slug" : "purple-300",
+						"slug" : "secondary-300",
 					        "color" : "#d6bcfa",
-					        "name" : "Purple: 300"
+					        "name" : "Secondary: 300"
 					},
 					{
-						"slug" : "purple-200",
+						"slug" : "secondary-200",
 					        "color" : "#e9d8fd",
-					        "name" : "Purple: 200"
+					        "name" : "Secondary: 200"
 					},
 					{
-						"slug" : "purple-100",
+						"slug" : "secondary-100",
 					        "color" : "#faf5ff",
-					        "name" : "Purple: 100"
-					},
-					{
-						"slug" : "pink-900",
-					        "color" : "#702459",
-					        "name" : "Pink: 900"
-					},
-					{
-						"slug" : "pink-800",
-					        "color" : "#97266d",
-					        "name" : "Pink: 800"
-					},
-					{
-						"slug" : "pink-700",
-					        "color" : "#b83280",
-					        "name" : "Pink: 700"
-					},
-					{
-						"slug" : "pink-600",
-					        "color" : "#d53f8c",
-					        "name" : "Pink: 600"
-					},
-					{
-						"slug" : "pink-500",
-					        "color" : "#ed64a6",
-					        "name" : "Pink: 500"
-					},
-					{
-						"slug" : "pink-400",
-					        "color" : "#f687b3",
-					        "name" : "Pink: 400"
-					},
-					{
-						"slug" : "pink-300",
-					        "color" : "#fbb6ce",
-					        "name" : "Pink: 300"
-					},
-					{
-						"slug" : "pink-200",
-					        "color" : "#fed7e2",
-					        "name" : "Pink: 200"
-					},
-					{
-						"slug" : "pink-100",
-					        "color" : "#fff5f7",
-					        "name" : "Pink: 100"
+					        "name" : "Secondary: 100"
 					}
 				]
 			},
 			"spacing": {
-				"customMargin": true,
+				"customMargin": {
+					"top":true,
+					"bottom":true,
+					"left":false,
+					"right":false
+				},
 				"customPadding": true,
 				"units": [ "rem", "em", "%", "vh", "vw", "px" ]
 			},
@@ -589,59 +568,49 @@
 				],
 				"fontSizes": [
 					{
-						"slug" : "fine",
-						"name" : "Fine",
-						"size" : "12px"
+						"slug" : "xs",
+						"name" : "Extra Small",
+						"size" : "0.875rem"
 					},
 					{
-						"slug" : "diminutive",
-						"name" : "Diminutive",
-						"size" : "13px"
-					},
-					{
-						"slug" : "tiny",
-						"name" : "Tiny",
-						"size" : "14px"
-					},
-					{
-						"slug" : "small",
+						"slug" : "sm",
 						"name" : "Small",
-						"size" : "15px"
+						"size" : "0.9375rem"
 					},
 					{
-						"slug" : "medium",
-						"name" : "Medium",
-						"size" : "16px"
+						"slug" : "base",
+						"name" : "Base",
+						"size" : "1rem"
 					},
 					{
-						"slug" : "large",
+						"slug" : "lg",
 						"name" : "Large",
-						"size" : "18px"
+						"size" : "1.125rem"
 					},
 					{
-						"slug" : "extra-large",
+						"slug" : "xl",
 						"name" : "Extra Large",
-						"size" : "20px"
+						"size" : "1.25rem"
 					},
 					{
 						"slug" : "huge",
 						"name" : "Huge",
-						"size" : "24px"
+						"size" : "1.5rem"
 					},
 					{
 						"slug" : "gargantuan",
 						"name" : "Gargantuan",
-						"size" : "30px"
+						"size" : "1.875rem"
 					},
 					{
 						"slug" : "colossal",
 						"name" : "Colossal",
-						"size" : "36px"
+						"size" : "2.25rem"
 					},
 					{
 						"slug" : "titanic",
 						"name" : "Titanic",
-						"size" : "48px"
+						"size" : "3rem"
 					},
 					{
 						"slug" : "olympic",
@@ -717,13 +686,13 @@
 	"styles": {
 		"root": {
 			"color": {
-				"text": "var( --wp--preset--color--gray-900 )",
-				"link": "var( --wp--preset--color--blue-600 )",
+				"text": "var( --wp--preset--color--neutral-900 )",
+				"link": "var( --wp--preset--color--primary-600 )",
 				"background": "var( --wp--preset--color--white )"
 			},
 			"typography": {
 				"fontFamily": "var( --wp--preset--font-family--primary )",
-				"fontSize": "var( --wp--preset--font-size--large )",
+				"fontSize": "var( --wp--preset--font-size--lg )",
 				"lineHeight": "var( --wp--custom--leading--loose )"
 			},
 			"spacing": {
@@ -746,7 +715,7 @@
 		"core/button":{
 			"typography": {
 				"fontFamily": "var( --wp--preset--font-family--secondary )",
-				"fontSize": "var( --wp--preset--font-size--large )",
+				"fontSize": "var( --wp--preset--font-size--lg )",
 				"lineHeight": "var( --wp--custom--leading--none )"
 			},
 			"spacing": {
@@ -760,12 +729,12 @@
 					"top":"calc( var( --wp--custom--spacing--4 ) + 1px )",
 					"bottom":"calc( var( --wp--custom--spacing--4 ) + 1px )",
 					"left":"calc( var( --wp--custom--spacing--8 ) + 1px )",
-					"left":"calc( var( --wp--custom--spacing--8 ) + 1px )"
+					"right":"calc( var( --wp--custom--spacing--8 ) + 1px )"
 				}
 			},
 			"color":{
 				"text":"var( --wp--preset--color--white )",
-				"background":"var( --wp--preset--color--blue-700 )"
+				"background":"var( --wp--preset--color--primary-700 )"
 			},
 			"border":{
 				"radius":"0px"
@@ -781,15 +750,15 @@
 		"core/code": {
 			"typography":{
 				"fontFamily": "var( --wp--preset--font-family--mono )",
-				"fontSize": "var( --wp--preset--font-size--large )"
+				"fontSize": "var( --wp--preset--font-size--lg )"
 			},
 			"color":{
-				"text": "var( --wp--preset--color--blue-700 )"
+				"text": "var( --wp--preset--color--primary-700 )"
 			},
 			"border":{
 				"style":"solid",
 				"width":"1px",
-				"color":"var( --wp--preset--color--gray-300 )"
+				"color":"var( --wp--preset--color--neutral-300 )"
 			},
 			"spacing": {
 				"padding": {
@@ -825,16 +794,25 @@
 				"fontFamily": "var( --wp--preset--font-family--headings )"
 			},
 			"color": {
-				"link": "var( --wp--preset--color--gray-900 )"
+				"link": "var( --wp--preset--color--neutral-900 )"
 			}
 		},
 		"core/image": {
 			"typography":{
 				"fontFamily": "var( --wp--preset--font-family--secondary )",
-				"fontSize": "var( --wp--preset--font-size--medium )"
+				"fontSize": "var( --wp--preset--font-size--base )"
 			},
 			"color":{
-				"text": "var( --wp--preset--color--gray-600 )"
+				"text": "var( --wp--preset--color--neutral-600 )"
+			}
+		},
+		"core/gallery": {
+			"typography":{
+				"fontFamily": "var( --wp--preset--font-family--secondary )",
+				"fontSize": "var( --wp--preset--font-size--base )"
+			},
+			"color":{
+				"text": "var( --wp--preset--color--white )"
 			}
 		},
 		"core/navigation": {
@@ -852,8 +830,8 @@
 		},
 		"core/separator": {
 			"color": {
-				"text": "var( --wp--preset--color--gray-500 )",
-				"background": "var( --wp--preset--color--gray-500 )"
+				"text": "var( --wp--preset--color--neutral-500 )",
+				"background": "var( --wp--preset--color--neutral-500 )"
 			}
 		},
 		"core/site-title": {

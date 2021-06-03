@@ -13,10 +13,8 @@
 
 namespace Exhale\Editor\Color;
 
-use Exhale\Contracts\CssCustomProperty;
 use Exhale\Tools\Mod;
 use function Hybrid\hex_to_rgb;
-
 
 /**
  * Editor color class.
@@ -24,7 +22,7 @@ use function Hybrid\hex_to_rgb;
  * @since  2.0.0
  * @access public
  */
-class Color implements CssCustomProperty {
+class Color {
 
 	/**
 	 * Color name.
@@ -154,64 +152,6 @@ class Color implements CssCustomProperty {
 	}
 
 	/**
-	 * Returns a valid CSS selector for the property.
-	 *
-	 * @since  1.1.0
-	 * @access public
-	 * @return string
-	 */
-	public function cssSelector() {
-		return ':root';
-	}
-
-	/**
-	 * Returns the CSS property.
-	 *
-	 * @since  1.1.0
-	 * @access public
-	 * @return string
-	 */
-	public function cssProperty() {
-
-		$medium = [
-			'gray',
-			'red',
-			'orange',
-			'yellow',
-			'green',
-			'teal',
-			'blue',
-			'indigo',
-			'purple',
-			'pink'
-		];
-
-		if ( in_array( $this->name(), $medium ) ) {
-			return sprintf( '--%s-500', $this->name() );
-		}
-
-		$pattern = [
-			'lightest',
-			'lighter',
-			'light',
-			'darkest',
-			'darker',
-			'dark'
-		];
-
-		$replace = [
-			'100',
-			'300',
-			'400',
-			'900',
-			'700',
-			'600'
-		];
-
-		return sprintf( '--%s', str_replace( $pattern, $replace, $this->name() ) );
-	}
-
-	/**
 	 * Returns the CSS property value.
 	 *
 	 * @since  1.1.0
@@ -220,17 +160,5 @@ class Color implements CssCustomProperty {
 	 */
 	public function cssValue() {
 		return $this->hex() ?: 'transparent';
-	}
-
-	/**
-	 * Returns the CSS custom property selector for the color.
-	 *
-	 * @since      2.0.0
-	 * @deprecated 1.1.0
-	 * @access     public
-	 * @return     string
-	 */
-	public function property() {
-		return $this->cssProperty();
 	}
 }

@@ -7,36 +7,65 @@
 ////
 
 .wp-block-columns {
-	//display: flex;
-	//flex-wrap: nowrap;
-	margin-top: $spacing-global;
-	margin-bottom: 0;
+	--columns-flex-gap: #{ $spacing-global };
 
-	@media ( max-width: $content-width-padded ) {
-	//	flex-wrap: wrap;
+	&.is-style-no-gap {
+		--columns-flex-gap: 0rem;
 	}
+}
+
+.wp-block-columns {
+	margin-top:    $spacing-global;
+	margin-bottom: 0;
+	gap: var( --columns-flex-gap );
 
 	// Cancel out GB.
 	&.has-background {
 		padding: 0;
 	}
 
-	&.alignfull {
-		margin-top: 0;
-	//	padding-left:  $spacing-global;
-	//	padding-right: $spacing-global;
-	}
-
-	&.alignwide,
-	&.alignfull {
-	//	margin-bottom: 0;
-	}
-
 	@media ( max-width: $width-alignwide + $spacing-2x ) {
 
 		&.alignwide {
-			padding-left:  $spacing-global;
-			padding-right: $spacing-global;
+		//	padding-left:  $spacing-global;
+		//	padding-right: $spacing-global;
+		}
+	}
+
+	> .wp-block-column {
+		margin-left:  0 !important;
+		margin-right: 0 !important;
+	}
+
+	//@media ( min-width: #{ $screen-md } ) and ( max-width: #{ $screen-lg } )
+
+	// Overwriting GB's breakpoint.
+	@media (min-width: 600px) and (max-width: 781px) {
+		.wp-block-column:not(:only-child) {
+			flex-basis: calc( 50% - var( --columns-flex-gap ) / 2 ) !important;
+			flex-grow:  1;
+		}
+	}
+
+	@media ( min-width: 782px ) and ( max-width: $screen-lg ) {
+		flex-wrap: wrap;
+
+		// Three and Four Columns.
+		.wp-block-column:first-child:nth-last-child(3),
+		.wp-block-column:first-child:nth-last-child(3) ~ .wp-block-column,
+		.wp-block-column:first-child:nth-last-child(4),
+		.wp-block-column:first-child:nth-last-child(4) ~ .wp-block-column {
+			flex-basis: calc( 50% - var( --columns-flex-gap ) / 2 ) !important;
+			flex-grow:  1;
+		}
+
+		// Five and Six Columns.
+		.wp-block-column:first-child:nth-last-child(5),
+		.wp-block-column:first-child:nth-last-child(5) ~ .wp-block-column,
+		.wp-block-column:first-child:nth-last-child(6),
+		.wp-block-column:first-child:nth-last-child(6) ~ .wp-block-column {
+			flex-basis: calc( calc( 100% / 3 ) - var( --columns-flex-gap ) * 2 / 3 ) !important;
+			flex-grow:  0;
 		}
 	}
 }
@@ -47,85 +76,5 @@
 	.wp-block-group.has-background .wp-block-columns {
 		margin-left: 0;
 		margin-right: 0;
-	}
-}
-
-
-.wp-block-column {
-	//flex-grow: 1;
-
-	@media ( max-width: $content-width-padded ) {
-		// Responsiveness: Show at most one columns on mobile. This must be
-		// important since the Column assigns its own width as an inline style.
-	//	flex-basis: 100% !important;
-	//	margin-top: $spacing-global;
-	}
-
-	// Prevent the columns from growing wider than their distributed sizes.
-	//min-width: 0;
-
-	// Prevent long unbroken words from overflowing.
-	//word-break: break-word; // For back-compat.
-	//overflow-wrap: break-word; // New standard.
-
-	@media ( min-width: $content-width-padded ) {
-
-		// flex-basis: calc(50% - #{$spacing-global});
-	//	flex-basis: 50%;
-	//	flex-grow: 0;
-
-		// When columns are in a single row, add space before all except the first.
-		&:not(:first-child) {
-	//		margin-left: $spacing-global;
-		}
-	}
-
-	// We're giving a bottom margin to the entire column, so we want to
-	// remove it from the last child. This is to make sure that we're always
-	// consistent. Floated images and other items where there's a difference
-	// in bottom margin than, say, something like a paragraph can make this
-	// inconsistent. Removing this margin and handling it on the column
-	// corrects the issue.
-	> *:last-child {
-	//	margin-bottom: 0;
-	}
-}
-
-.wp-block-columns.is-style-no-gap .wp-block-column {
-	margin-left: 0;
-	margin-right: 0;
-}
-
-/**
- * All Columns Alignment
- */
-.wp-block-columns {
-	&.are-vertically-aligned-top {
-	//	align-items: flex-start;
-	}
-
-	&.are-vertically-aligned-center {
-	//	align-items: center;
-	}
-
-	&.are-vertically-aligned-bottom {
-	//	align-items: flex-end;
-	}
-}
-
-/**
- * Individual Column Alignment
- */
-.wp-block-column {
-	&.is-vertically-aligned-top {
-	//	align-self: flex-start;
-	}
-
-	&.is-vertically-aligned-center {
-	//	align-self: center;
-	}
-
-	&.is-vertically-aligned-bottom {
-	//	align-self: flex-end;
 	}
 }

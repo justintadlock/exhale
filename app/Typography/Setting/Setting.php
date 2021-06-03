@@ -15,7 +15,6 @@ namespace Exhale\Typography\Setting;
 
 use JsonSerializable;
 use Exhale\Typography\Font\Family\Families;
-use Exhale\Tools\CustomProperty;
 
 /**
  * Font setting class.
@@ -239,27 +238,5 @@ class Setting implements JsonSerializable {
 	 */
 	public function requiredStyles() {
 		return $this->required_styles;
-	}
-
-	/**
-	 * Returns the array of custom CSS properties.
-	 *
-	 * @since  2.0.0
-	 * @access public
-	 * @return array
-	 */
-	public function cssCustomProperties() {
-
-		$properties = [];
-
-		$family = $this->collections['families']->get( $this->mod( 'family' ) );
-
-		$properties[ 'font-family-' . $this->name() ] = new CustomProperty(
-			':root, body',
-			sprintf( '--font-family-%s', $this->name() ),
-			$family->stack()
-		);
-
-		return $properties;
 	}
 }

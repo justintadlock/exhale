@@ -68,7 +68,8 @@ class Size implements JsonSerializable {
 	 */
 	protected $crop = true;
 
-	protected $is_featured_size = true;
+	protected $is_default = false;
+	protected $is_featured = false;
 
 	/**
 	 * Set up the object properties.
@@ -189,7 +190,11 @@ class Size implements JsonSerializable {
 		return (bool) $this->crop;
 	}
 
-	public function isFeaturedSize() {
-		return (bool) $this->is_featured_size;
+	public function isDefault() {
+		return (bool) $this->is_default;
+	}
+
+	public function isFeatured() {
+		return (bool) $this->is_featured;
 	}
 }

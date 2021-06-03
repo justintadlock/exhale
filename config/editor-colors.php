@@ -13,8 +13,6 @@
  */
 
 return [
-	'primary'         => [],
-	'secondary'       => [],
 	'black'           => [],
 	'white'           => [],
 	'gray-darkest'    => [],

@@ -16,11 +16,6 @@ namespace Exhale\Customize;
 use Hybrid\Tools\Collection;
 use Hybrid\Tools\ServiceProvider;
 
-use Exhale\Background;
-use Exhale\Color;
-use Exhale\Image;
-use Exhale\Layout;
-use Exhale\Footer;
 use Exhale\Typography;
 
 /**

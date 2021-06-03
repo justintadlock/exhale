@@ -1,7 +1,7 @@
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"left":"0px","right":"0px","top":"32px","bottom":"32px"}}},"backgroundColor":"gray-100"} -->
-<div class="wp-block-group alignfull has-gray-100-background-color has-background" style="padding-top:32px;padding-right:0px;padding-bottom:32px;padding-left:0px"><!-- wp:group {"layout":{"inherit":true}} -->
-<div class="wp-block-group"><!-- wp:heading {"style":{"typography":{"textTransform":"uppercase"}},"textColor":"gray-900","className":"my-0","fontSize":"extra-large"} -->
-<h2 class="my-0 has-gray-900-color has-text-color has-extra-large-font-size" style="text-transform:uppercase">Project Name</h2>
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"left":"0px","right":"0px","top":"32px","bottom":"32px"}}},"backgroundColor":"neutral-100"} -->
+<div class="wp-block-group alignfull has-neutral-100-background-color has-background" style="padding-top:32px;padding-right:0px;padding-bottom:32px;padding-left:0px"><!-- wp:group {"layout":{"inherit":true}} -->
+<div class="wp-block-group"><!-- wp:heading {"style":{"typography":{"textTransform":"uppercase"}},"textColor":"neutral-900","className":"my-0","fontSize":"xl"} -->
+<h2 class="my-0 has-neutral-900-color has-text-color has-xl-font-size" style="text-transform:uppercase">Project Name</h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 

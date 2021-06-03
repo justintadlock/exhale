@@ -17,7 +17,6 @@ use WP_Customize_Manager;
 
 use Hybrid\Contracts\Bootable;
 use Exhale\Tools\Config;
-use Exhale\Tools\CustomProperties;
 
 /**
  * Font component class.

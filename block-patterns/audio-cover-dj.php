@@ -8,8 +8,8 @@
 <h1 class="has-text-align-center my-0 has-planetary-font-size"><strong>A New Sound</strong></h1>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","className":"my-0","fontSize":"extra-large"} -->
-<p class="has-text-align-center my-0 has-extra-large-font-size">From the streets of Pleasantville, something you haven't heard before.</p>
+<!-- wp:paragraph {"align":"center","className":"my-0","fontSize":"xl"} -->
+<p class="has-text-align-center my-0 has-xl-font-size">From the streets of Pleasantville, something you haven't heard before.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":32} -->

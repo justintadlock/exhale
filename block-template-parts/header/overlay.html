@@ -1,31 +1,62 @@
 <!-- wp:group {
-"tagName":"header","align":"full",
-"className":"app-header relative z-40 top-0 -mb-16 flex flex-wrap items-center justify-between w-full h-auto","layout":{"inherit":false,"contentSize":"100%"}} -->
-<header class="wp-block-group alignfull app-header relative z-40 top-0 -mb-16 flex flex-wrap items-center justify-between w-full h-auto"><!-- wp:group {"className":"app-header__branding overflow-hidden flex justify-start items-center md:flex-grow-0 max-w-full h-16 px-8 text-center"} -->
-<div class="wp-block-group app-header__branding overflow-hidden flex justify-start items-center md:flex-grow-0 max-w-full h-16 px-8 text-center">
+	"tagName":"header",
+	"align":"full",
+	"className":"app-header sticky md:static z-40 top-0 flex flex-wrap items-center justify-between w-full h-auto -mb-16",
+	"layout":{"inherit":false,"contentSize":"100%"}
+} -->
+<header class="wp-block-group alignfull app-header sticky md:static z-40 top-0 flex flex-wrap items-center justify-between w-full h-auto -mb-16">
 
-<!-- wp:site-title {"style":{"color":{"link":"var:preset|color|white"}},"className":"app-header__title m-0 mr-2 leading-none","fontSize":"extra-large"} /-->
+	<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"0rem","right":"2rem","bottom":"0rem","left":"2rem"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"className":"overflow-hidden flex justify-start items-center md:flex-grow-0 h-16"} -->
+	<div class="wp-block-group alignfull overflow-hidden flex justify-start items-center md:flex-grow-0 h-16" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0rem;padding-right:2rem;padding-bottom:0rem;padding-left:2rem">
 
-<!-- wp:site-tagline {"textColor":"white","className":"app-header__description hidden sm:block m-0 ml-2 leading-none","fontSize":"small"} /-->
+	<!-- wp:site-title {
+		"style":{
+			"typography":{"lineHeight":"1"},
+			"spacing":{
+				"margin":{"top":"0px","right":"8px","bottom":"0px","left":"0px"}
+			},
+			"elements":{
+				"link":{
+					"color":{"text":"var:preset|color|white"}
+				}
+			}
+		},
+		"fontSize":"xl"
+	} /-->
 
-</div>
-<!-- /wp:group -->
+	<!-- wp:site-tagline {
+		"style":{
+			"typography":{"fontFamily":"var:preset|font-family|secondary","lineHeight":"1"},"spacing":{"margin":{"top":"0px","right":"0px","bottom":"0px","left":"8px"}
+			}},
+		"className":"hidden sm:block",
+		"fontSize":"sm",
+		"textColor":"white"
+	} /--></div>
+	<!-- /wp:group -->
 
-<!-- wp:buttons {"className":"toggle toggle--menu-primary block md:hidden h-16 px-8 flex items-center my-0"} -->
-<div class="wp-block-buttons toggle toggle--menu-primary block md:hidden h-16 px-8 flex items-center my-0">
-	<!-- wp:button {"className":"toggle__button flex items-center px-3 py-2 rounded-sm border-0 my-0"} -->
-<div class="wp-block-button toggle__button flex items-center px-3 py-2 rounded-sm border-0 my-0"><a class="wp-block-button__link">Menu</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons -->
 
-<!-- wp:navigation {"orientation":"horizontal","textColor":"white","className":"menu menu\u002d\u002dprimary hidden md:block w-full mt-0 md:h-16 flex-grow md:flex md:items-center md:justify-end md:w-auto ml-auto md:pr-2 leading-none","fontSize":"small",
-"typography":{
-	"fontFamily":"var:preset|font-family|secondary"
-}} -->
-<!-- wp:navigation-link {"label":"Home","url":"#"} /-->
-<!-- wp:navigation-link {"label":"About","url":"#"} /-->
-<!-- wp:navigation-link {"label":"Blog","url":"#"} /-->
+<!-- wp:navigation {
+	"orientation":"horizontal",
+	"isResponsive":true,
+	"style":{
+		"typography":{
+			"lineHeight":"1",
+			"textTransform":"uppercase"
+		},
+		"spacing":{
+			"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}
+		}
+	},
+	"fontSize":"xs",
+	"textColor":"white",
+	"className":"menu menu--primary h-16 flex-grow flex items-center justify-end w-auto ml-auto pr-2"
+} -->
+<!-- wp:home-link {"label":"Home"} /-->
+<!-- wp:navigation-link {"label":"About","url":"/about","kind":"custom"} /-->
+<!-- wp:navigation-link {"label":"Blog","url":"/blog","kind":"custom"} /-->
 <!-- /wp:navigation -->
+
+
 
 </header>
 <!-- /wp:group -->
