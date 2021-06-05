@@ -7,7 +7,6 @@
 ////
 
 .wp-block-image {
-	//display: table;
 	margin-top: $spacing-global;
 	margin-bottom: 0;
 
@@ -24,7 +23,7 @@
 		margin-bottom: 0;
 	}
 
-	&.is-style-caption-overlay {
+	&.is-var-overlay {
 		position: relative;
 		figcaption {
 			position: absolute;
@@ -88,7 +87,8 @@
 	}
 }
 
-.wp-block-gallery:not(.is-classic).is-style-polaroid figcaption {
+.wp-block-gallery:not(.is-classic).is-style-polaroid figcaption,
+.wp-block-image.is-var-overlay[class*=is-style-polaroid] figcaption {
 	bottom: 1rem;
 	width: calc( 100% - #{ $spacing-global } );
 }

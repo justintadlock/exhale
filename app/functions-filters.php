@@ -19,6 +19,27 @@ use Exhale\Tools\Svg;
 use Exhale\Template\ErrorPage;
 use Exhale\Template\BlockHierarchy;
 
+// apply_filters( 'render_block', string $block_content, array $block )
+
+add_filter( 'render_block', function( $content, $block ) {
+	return $content;
+
+	if (
+		'core/navigation' === $block['blockName'] &&
+		'primary-horizontal' === $block['attrs']['orientation'] &&
+		true === $block['attrs']['isResponsive']
+	) {
+		$content = preg_replace(
+			'/<button.*?>.*?<\/button>/',
+			'',
+			$content
+		);
+	}
+
+	return $content;
+}, PHP_INT_MAX, 2 );
+
+
 //add_filter( 'should_load_separate_core_block_assets', '__return_false' );
 
 // apply_filters( 'default_template_types', $default_template_types );
@@ -176,6 +197,13 @@ add_filter( 'block_type_metadata', function( $meta ) {
 		$meta['supports']['__experimentalLetterSpacing'] = true;
 	}
 
+	if ( in_array( $meta['name'], [
+		'core/cover',
+		'core/group'
+	] ) ) {
+		//$meta['supports'] = 'align';
+		$meta['supports']['lightBlockWrapper'] = true;
+	}
 
 	return $meta;
 } );

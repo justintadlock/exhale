@@ -58,12 +58,12 @@ add_action( 'enqueue_block_assets', function() {
 
 	// Unregister core block and theme styles.
 	//wp_deregister_style( 'wp-block-library' );
-	wp_deregister_style( 'wp-block-library-theme' );
+	//wp_deregister_style( 'wp-block-library-theme' );
 
 	// Re-register core block and theme styles with an empty string. This is
 	// necessary to get styles set up correctly.
 	//wp_register_style( 'wp-block-library', '' );
-	wp_register_style( 'wp-block-library-theme', '' );
+	//wp_register_style( 'wp-block-library-theme', '' );
 } );
 
 add_action( 'admin_init', function() {

@@ -2,17 +2,23 @@ export default {
 	block      : 'core/navigation',
 	variations : [
 		{
-			name: 'exhale-navigation-horizontal',
-			title: 'Exhale: Navigation (horizontal)',
+			name: 'primary',
+			title: 'Navigation: Primary',
 			scope: [
 				'block',
 				'inserter',
 				'transform'
 			],
 			attributes: {
-				orientation: 'horizontal',
-				className: 'exhale-navigation-horizonal'
-			}
+				orientation: 'primary-horizontal',
+				isResponsive: true,
+				className: 'menu--primary'
+			},
+			innerBlocks: [
+				[ 'core/home-link', { label: 'Home' } ],
+				[ 'core/navigation-link', { label: 'About', url: '/about', kind: 'custom' } ],
+				[ 'core/navigation-link', { label: 'Blog', url: '/blog', kind: 'custom' } ]
+			]
 		}
 	]
 };

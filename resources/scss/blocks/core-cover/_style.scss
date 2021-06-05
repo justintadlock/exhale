@@ -11,11 +11,8 @@
 	position:            relative;
 	background-size:     cover;
 	background-position: 50%;
-	//height:              100%; // Necessary for user-selected height.
 	min-height:          240px;
 	height:              auto;
-	//margin-top:          $spacing-global;
-	//padding:             $spacing-global;
 	box-sizing: border-box;
 
 	&.alignright,
@@ -26,6 +23,20 @@
 
 	&.is-style-square {
 		aspect-ratio: 1 / 1;
+	}
+
+	@media ( min-width: $screen-md ) {
+		&.is-style-content-width-25 .wp-block-cover__inner-container {
+			flex: 0 0 25%;
+		}
+
+		&.is-style-content-width-50 .wp-block-cover__inner-container {
+			flex: 0 0 50%;
+		}
+
+		&.is-style-content-width-75 .wp-block-cover__inner-container {
+			flex: 0 0 75%;
+		}
 	}
 
 	&[class*=is-style-polygon] {
@@ -126,4 +137,5 @@
 .wp-block-cover-image.has-custom-content-position.has-custom-content-position .wp-block-cover__inner-container,
 .wp-block-cover.has-custom-content-position.has-custom-content-position .wp-block-cover__inner-container {
 	width: 100%;
+	max-width: 100%;
 }

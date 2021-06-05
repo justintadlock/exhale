@@ -112,7 +112,11 @@ add_theme_support( 'editor-styles' );
 						'subset' => [
 							'latin',
 							'latin-ext'
-						]
+						],
+						'display' => [],
+						'text'    => '',
+						'effect'  => [],
+						'src'     => ''
 					] )
 				] );
 			}

@@ -1,9 +1,16 @@
 <?php
 
+/*
 register_block_style( 'core/image', [
 	'name'  => 'caption-overlay',
 	'label' => __( 'Caption: Overlay' )
 ] );
+
+register_block_style( 'core/image', [
+	'name'  => 'classic',
+	'label' => __( 'Classic' )
+] );
+*/
 
 register_block_style( 'core/image', [
 	'name'  => 'flip-horizontal',

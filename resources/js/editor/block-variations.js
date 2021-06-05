@@ -6,8 +6,8 @@ wp.domReady( () => {
 
 		blockVariations[ block ].variations.forEach( options => {
 
-			console.log( options );
-			console.log( blockVariations[ block ].block );
+		//	console.log( options );
+		//	console.log( blockVariations[ block ].block );
 
 			wp.blocks.registerBlockVariation(
 				blockVariations[ block ].block,

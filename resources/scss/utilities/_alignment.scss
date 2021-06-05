@@ -18,6 +18,7 @@
 	[class^="wp-container-"][class*="wp-block"] > :not(.alignwide):not(.alignfull) {
 		margin-left: $spacing-global !important;
 		margin-right: $spacing-global !important;
+		max-width: calc( 100% - #{ $spacing-global * 2 } );
 	}
 
 	[class^="wp-container-"][class*="wp-block"] > .alignwide,
@@ -67,6 +68,7 @@
 	margin-top: $spacing-half;
 }
 
+.wp-block-cover.alignwide + .wp-block-cover.alignwide:not([style*=margin-top]),
 .wp-block-image + .wp-block-gallery.is-style-no-gap:not([style*=margin-top]),
 .wp-block-image + style + [style*=hidden] + .wp-block-gallery.is-style-no-gap:not([style*=margin-top]),
 .wp-block-gallery.is-style-no-gap + .wp-block-gallery.is-style-no-gap:not([style*=margin-top]),

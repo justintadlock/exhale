@@ -127,7 +127,7 @@ class Component implements Bootable {
 			}
 
 			// Make the threshold as large as our largest size.
-			if ( $size->width() > $this->threshold ) {
+			if ( $size->width() > $this->threshold_width ) {
 				$this->threshold_width = $size->width();
 			}
 
