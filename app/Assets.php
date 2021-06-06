@@ -12,6 +12,7 @@
 namespace Exhale;
 
 use Hybrid\Contracts\Bootable;
+use WP_Theme_JSON_Resolver_Gutenberg as ThemeJsonResolver;
 
 /**
  * Assets class.
@@ -20,6 +21,8 @@ use Hybrid\Contracts\Bootable;
  * @access public
  */
 class Assets implements Bootable {
+
+	protected $mix = [];
 
 	/**
 	 * Bootstraps the class' actions/filters.
@@ -41,6 +44,54 @@ class Assets implements Bootable {
 		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueueEditorAssets' ] );
 	}
 
+	protected function mix() {
+
+		if ( $this->mix ) {
+			return $this->mix;
+		}
+
+		$file     = get_parent_theme_file_path( 'public/mix-manifest.json' );
+		$this->mix = (array) json_decode( file_get_contents( $file ), true );
+
+		if ( is_child_theme() ) {
+			$child = get_stylesheet_directory() . '/public/mix-manifest.json';
+
+			if ( file_exists( $child ) ) {
+				$this->mix = array_merge(
+					$this->mix,
+					(array) json_decode( file_get_contents( $file ), true )
+				);
+			}
+		}
+
+		return $this->mix;
+	}
+
+	/**
+	 * Helper function for outputting an asset URL in the theme. This integrates
+	 * with Laravel Mix for handling cache busting. If used when you enqueue a script
+	 * or style, it'll append an ID to the filename.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string  $path  A relative path/file to append to the `public` folder.
+	 * @return string
+	 */
+	public function asset( $path ) {
+
+		// Get the Laravel Mix manifest.
+		$manifest = $this->mix();
+
+		// Make sure to trim any slashes from the front of the path.
+		$path = '/' . ltrim( $path, '/' );
+
+		if ( $manifest && isset( $manifest[ $path ] ) ) {
+			$path = $manifest[ $path ];
+		}
+
+		return get_theme_file_uri( 'public' . $path );
+	}
+
 	/**
 	 * Enqueue scripts/styles for the front end.
 	 *
@@ -56,11 +107,11 @@ class Assets implements Bootable {
 		}
 
 		// Enqueue theme scripts.
-		wp_enqueue_script( 'exhale-app', asset( 'js/app.js' ), null, null, true );
+		wp_enqueue_script( 'exhale-app', $this->asset( 'js/app.js' ), null, null, true );
 
 		// Enqueue theme styles.
-		wp_enqueue_style( 'exhale-fonts',  fonts_url(), null, null );
-		wp_enqueue_style( 'exhale-screen', asset( 'css/screen.css' ), null, null );
+		wp_enqueue_style( 'exhale-fonts',  $this->fontsUrl(), null, null );
+		wp_enqueue_style( 'exhale-screen', $this->asset( 'css/screen.css' ), null, null );
 	}
 
 	/**
@@ -91,8 +142,8 @@ class Assets implements Bootable {
 	public function addEditorStyles() {
 
 		add_editor_style( [
-			fonts_url(),
-			asset( 'css/editor.css' )
+			$this->fontsUrl(),
+			$this->asset( 'css/editor.css' )
 		] );
 	}
 
@@ -153,9 +204,40 @@ class Assets implements Bootable {
 		];
 
 		// Enqueue scripts.
-		wp_enqueue_script( 'exhale-editor', asset( 'js/editor.js' ), $deps, null, true );
+		wp_enqueue_script( 'exhale-editor', $this->asset( 'js/editor.js' ), $deps, null, true );
 
 		// Pass variables to JavaScript.
 		wp_localize_script( 'exhale-editor', 'exhaleEditor', [ 'labels' => $labels ] );
+	}
+
+	/**
+	 * Returns the stylesheet URL for loading fonts.
+	 *
+	 * @since  3.0.0
+	 * @access public
+	 * @return void
+	 */
+	protected function fontsUrl() {
+		$url = '';
+
+		if ( ! class_exists( ThemeJsonResolver::class ) ) {
+			return $url;
+		}
+
+		$data = ThemeJsonResolver::get_merged_data()->get_settings();
+
+		if ( ! empty( $data['custom'] && isset( $data['custom']['googleFonts'] ) ) ) {
+
+			$fonts = $data['custom']['googleFonts'];
+
+			$url = ! $fonts ?: esc_url_raw(
+				sprintf(
+					'https://fonts.googleapis.com/css2?%s',
+					implode( '&', (array) $fonts )
+				)
+			);
+		}
+
+		return apply_filters( 'exhale/assets/fonts/url', $url );
 	}
 }

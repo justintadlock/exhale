@@ -33,4 +33,4 @@ if ( file_exists( get_parent_theme_file_path( 'vendor/autoload.php' ) ) ) {
 #
 # Load any functions-files from the `/app` folder that are needed.
 
-require_once get_parent_theme_file_path( 'app/functions-helpers.php' );
+// No functions files to load.
