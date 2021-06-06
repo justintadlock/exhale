@@ -54,7 +54,7 @@ class Component implements Bootable {
 		];
 
 		foreach ( $styles as $style ) {
-			include( get_theme_file_path( "block-styles/{$style}.php" ) );
+			include get_theme_file_path( "lib/block-styles/{$style}.php" );
 		}
 	}
 }

@@ -9,10 +9,7 @@
 			'depth'  => 3,
 			'class'  => 'comment__parent-link inline-block mb-2',
 			'after'  => '<br /></div>',
-			'before' => sprintf(
-				'<div class="comment__parent text-sm">%s',
-				Exhale\Tools\Svg::render( 'caret-right-solid' )
-			)
+			'before' => '<div class="comment__parent text-sm">'
 		] ) ?>
 
 		<?php echo get_avatar( $data->comment, $data->args['avatar_size'], '', '', [
@@ -34,8 +31,8 @@
 				)
 			] )
 		] ) ?>
-		<?php Hybrid\Comment\display_edit_link( [ 'before' => Exhale\sep() ] ) ?>
-		<?php Hybrid\Comment\display_reply_link( [ 'before' => Exhale\sep() ] ) ?>
+		<?php Hybrid\Comment\display_edit_link( [ 'before' => ' <span class="sep mx-2">&middot;</span> ' ] ) ?>
+		<?php Hybrid\Comment\display_reply_link( [ 'before' => ' <span class="sep mx-2">&middot;</span> ' ] ) ?>
 	</header>
 
 	<div class="comment__content mt-4">

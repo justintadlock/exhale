@@ -18,68 +18,19 @@
 namespace Exhale\Template;
 
 use WP_User;
-use Hybrid\Contracts\Template\Hierarchy as TemplateHierarchy;
 
 /**
  * Overwrites the core WP template hierarchy.
  *
- * @since  5.0.0
+ * @since  3.0.0
  * @access public
  */
-class BlockHierarchy implements TemplateHierarchy {
-
-	/**
-	 * Array of template types in core WP.
-	 *
-	 * @link   https://developer.wordpress.org/reference/hooks/type_template_hierarchy/
-	 * @since  5.0.0
-	 * @access protected
-	 * @var    array
-	 */
-	protected $types = [
-	       'index',
-	       '404',
-	       'archive',
-	       'author',
-	       'category',
-	       'tag',
-	       'taxonomy',
-	       'date',
-	       'embed',
-	       'home',
-	       'frontpage',
-	       'page',
-	       'paged',
-	       'search',
-	       'single',
-	       'singular',
-	       'attachment'
-	];
-
-	/**
-	 * Copy of the located template found when running through the
-	 * template hierarchy.
-	 *
-	 * @since  5.0.0
-	 * @access protected
-	 * @var    string
-	 */
-	protected $located = '';
-
-	/**
-	 * An array of the entire template hierarchy for the current page view.
-	 * This hierarchy does not have the `.html` file name extension.
-	 *
-	 * @since  5.0.0
-	 * @access protected
-	 * @var    array
-	 */
-	protected $hierarchy = [];
+class Hierarchy {
 
 	/**
 	 * Sets up template hierarchy filters.
 	 *
-	 * @since  5.0.0
+	 * @since  3.0.0
 	 * @access public
 	 * @return void
 	 */
@@ -103,31 +54,6 @@ class BlockHierarchy implements TemplateHierarchy {
 
 		// Filter the date template.
 		add_filter( 'date_template_hierarchy', [ $this, 'date' ], 5 );
-
-		// System for capturing the template hierarchy.
-		//foreach ( $this->types as $type ) {
-
-			// Capture the template hierarchy for each type.
-		//	add_filter( "{$type}_template_hierarchy", [ $this, 'templateHierarchy' ], PHP_INT_MAX );
-
-			// Capture the located template.
-		//	add_filter( "{$type}_template", [ $this, 'template' ], PHP_INT_MAX );
-		//}
-
-		// Re-add the located template.
-		//add_filter( 'template_include', [ $this, 'templateInclude' ], PHP_INT_MAX );
-	}
-
-	/**
-	 * Returns the full template hierarchy for the current page load.
-	 *
-	 * @since  5.0.0
-	 * @access public
-	 * @return array
-	 */
-	public function hierarchy() {
-
-		return $this->hierarchy;
 	}
 
 	/**
@@ -144,7 +70,7 @@ class BlockHierarchy implements TemplateHierarchy {
 	 * via the standard page template.  User choice should always trump
 	 * developer choice.
 	 *
-	 * @since  5.0.0
+	 * @since  3.0.0
 	 * @access public
 	 * @param  array   $templates
 	 * @return array
@@ -172,7 +98,7 @@ class BlockHierarchy implements TemplateHierarchy {
 	 * Overrides the default single (singular post) template for all post
 	 * types, including pages and attachments.
 	 *
-	 * @since  5.0.0
+	 * @since  3.0.0
 	 * @access public
 	 * @param  array   $templates
 	 * @return array
@@ -240,7 +166,7 @@ class BlockHierarchy implements TemplateHierarchy {
 	 * allows better organization of taxonomy template files by making
 	 * categories and post tags work the same way as other taxonomies.
 	 *
-	 * @since  5.0.0
+	 * @since  3.0.0
 	 * @access public
 	 * @param  array   $templates
 	 * @return array
@@ -276,7 +202,7 @@ class BlockHierarchy implements TemplateHierarchy {
 	 * abstraction of templates than `is_author()` allows by allowing themes
 	 * to specify templates for a specific author.
 	 *
-	 * @since  5.0.0
+	 * @since  3.0.0
 	 * @access public
 	 * @param  array   $templates
 	 * @return array
@@ -315,7 +241,7 @@ class BlockHierarchy implements TemplateHierarchy {
 	 * abstraction of templates than `is_date()` allows by checking for the
 	 * year, month, week, day, hour, and minute.
 	 *
-	 * @since  5.0.0
+	 * @since  3.0.0
 	 * @access public
 	 * @param  array   $templates
 	 * @return array
@@ -365,109 +291,5 @@ class BlockHierarchy implements TemplateHierarchy {
 
 		// Return the template hierarchy.
 		return $templates;
-	}
-
-	/**
-	 * Filters a queried template hierarchy for each type of template and
-	 * looks templates within `resources/views`.
-	 *
-	 * @since  5.0.0
-	 * @access public
-	 * @return array
-	 */
-	public function templateHierarchy( $templates ) {
-
-		// WooCommerce kind of does its own thing on `template_include`.
-		// It's top-level `woocommerce.html` template isn't added to the
-		// hierarchy until then. So, we're going prepend it to the
-		// hierarchy here to make the `woocommerce.html` template available.
-		if ( function_exists( 'is_woocommerce' ) && is_woocommerce() && ! in_array( 'woocommerce', $this->hierarchy ) ) {
-			$templates = [ 'woocommerce.html' ] + $templates;
-		}
-
-		// Merge the current template's hierarchy with the overall
-		// hierarchy array.
-		$this->hierarchy = array_merge(
-			$this->hierarchy,
-			array_map( function( $template ) {
-
-				// Strip extension from file name.
-				return substr(
-					$template,
-					0,
-					strlen( $template ) - strlen( strrchr( $template, '.' ) )
-				);
-
-			}, $templates )
-		);
-
-		// Make sure there are no duplicates in the hierarchy.
-		$this->hierarchy = array_unique( $this->hierarchy );
-
-	//	var_dump( $templates );
-
-		$path = 'block-templates';
-
-	//	array_walk( $templates, function( &$template, $key ) use ( $path ) {
-
-	//		$template = ltrim( str_replace( $path, '', $template ), '/' );
-
-	//		$template = "{$path}/{$template}";
-	//	} );
-
-	//	var_dump( $templates );
-
-		return $templates;
-
-	//	return filter_templates( $templates );
-	}
-
-	/**
-	 * Filters the template for each type of template in the hierarchy. If
-	 * `$template` exists, it means we've located a template. So, we're going
-	 * to store that template for later use and return an empty string so
-	 * that the template hierarchy continues processing. That way, we can
-	 * capture the entire hierarchy.
-	 *
-	 * @since  5.0.0
-	 * @access public
-	 * @param  string  $template
-	 * @return string
-	 */
-	public function template( $template ) {
-
-	//	var_dump( $this->located );
-
-		if ( ! $this->located && $template ) {
-			$this->located = $template;
-		}
-
-		return '';
-	}
-
-	/**
-	 * Filter on `template_include` to make sure we fall back to our
-	 * located template from earlier.
-	 *
-	 * @since  5.0.0
-	 * @access public
-	 * @param  string  $template
-	 * @return string
-	 */
-	public function templateInclude( $template ) {
-
-		// If the template is not a string at this point, it either
-		// doesn't exist or a plugin is telling us it's doing
-		// something custom.
-		if ( ! is_string( $template ) ) {
-
-			return $template;
-		}
-
-	//	var_dump( $this->located );
-
-		// If there's a template, return it. Otherwise, return our
-		// located template from earlier.
-		return $template ?: $this->located;
 	}
 }

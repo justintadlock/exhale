@@ -18,7 +18,7 @@
 				)
 			] )
 		] ) ?>
-		<?php Hybrid\Comment\display_edit_link( [ 'before' => Exhale\sep() ] ) ?>
+		<?php Hybrid\Comment\display_edit_link( [ 'before' => ' <span class="sep mx-2">&middot;</span> ' ] ) ?>
 	</header>
 
 	<div class="comment__content mt-4">

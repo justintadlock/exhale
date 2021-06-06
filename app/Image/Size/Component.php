@@ -15,9 +15,7 @@ namespace Exhale\Image\Size;
 
 use WP_Customize_Manager;
 
-use Hybrid\App;
 use Hybrid\Contracts\Bootable;
-use Exhale\Tools\Config;
 
 /**
  * Image size component class.
@@ -173,7 +171,9 @@ class Component implements Bootable {
 	 */
 	public function registerDefaultSizes( Sizes $sizes ) {
 
-		foreach ( Config::get( 'image-sizes' ) as $name => $options ) {
+		$config = include get_theme_file_path( 'lib/image-sizes.php' );
+
+		foreach ( (array) $config as $name => $options ) {
 			$sizes->add( $name, $options );
 		}
 	}

@@ -13,15 +13,13 @@
 
 namespace Exhale\Image\Size;
 
-use JsonSerializable;
-
 /**
  * Image size class.
  *
  * @since  1.0.0
  * @access public
  */
-class Size implements JsonSerializable {
+class Size {
 
 	/**
 	 * Image size name.
@@ -89,24 +87,6 @@ class Size implements JsonSerializable {
 		}
 
 		$this->name = $name;
-	}
-
-	/**
-	 * Returns the image sizes in a format necessary for JSON serialization.
-	 *
-	 * @since  2.1.0
-	 * @access public
-	 * @return array
-	 */
-	public function jsonSerialize() {
-
-		return [
-			'name'        => $this->name(),
-			'label'       => $this->label(),
-			'width'       => $this->width(),
-			'height'      => $this->height(),
-			'orientation' => $this->orientation()
-		];
 	}
 
 	/**

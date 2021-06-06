@@ -30,14 +30,10 @@ $exhale = new \Hybrid\Core\Application();
 # for running the theme. Service providers are essentially the backbone of the
 # bootstrapping process.
 
-$exhale->provider( \Exhale\Provider::class            );
-$exhale->provider( \Exhale\Block\Provider::class      );
-$exhale->provider( \Exhale\Customize\Provider::class  );
-$exhale->provider( \Exhale\Editor\Provider::class     );
-$exhale->provider( \Exhale\Image\Provider::class      );
-$exhale->provider( \Exhale\Typography\Provider::class );
-
-$exhale->provider( \Exhale\Template\BlockHierarchyServiceProvider::class );
+$exhale->provider( \Exhale\Provider::class          );
+$exhale->provider( \Exhale\Block\Provider::class    );
+$exhale->provider( \Exhale\Image\Provider::class    );
+$exhale->provider( \Exhale\Template\Provider::class );
 
 # ------------------------------------------------------------------------------
 # Perform bootstrap actions.

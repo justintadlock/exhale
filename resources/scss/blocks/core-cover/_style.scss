@@ -15,6 +15,10 @@
 	height:              auto;
 	box-sizing: border-box;
 
+	// Need this because navigation dropdown will
+	// be covered by the Cover block.
+	z-index: 0;
+
 	&.alignright,
 	&.alignleft {
 		width: 100%;

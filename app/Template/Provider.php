@@ -14,41 +14,36 @@
 
 namespace Exhale\Template;
 
-use Hybrid\Contracts\Template\Hierarchy as TemplateHierarchy;
 use Hybrid\Tools\ServiceProvider;
 
 /**
  * Template hierarchy provider class.
  *
- * @since  5.0.0
+ * @since  3.0.0
  * @access public
  */
-class BlockHierarchyServiceProvider extends ServiceProvider {
+class Provider extends ServiceProvider {
 
 	/**
 	 * Registration callback that adds a single instance of the template
 	 * hierarchy to the container.
 	 *
-	 * @since  5.0.0
+	 * @since  3.0.0
 	 * @access public
 	 * @return void
 	 */
 	public function register() {
-
-		$this->app->singleton( BlockHierarchy::class );
-
-	//	$this->app->alias( BlockHierarchy::class, 'template/hierarchy' );
+		$this->app->singleton( Hierarchy::class );
 	}
 
 	/**
 	 * Boots the hierarchy by firing its hooks in the `boot()` method.
 	 *
-	 * @since  5.0.0
+	 * @since  3.0.0
 	 * @access public
 	 * @return void
 	 */
 	public function boot() {
-
-		$this->app->resolve( BlockHierarchy::class )->boot();
+		$this->app->resolve( Hierarchy::class )->boot();
 	}
 }

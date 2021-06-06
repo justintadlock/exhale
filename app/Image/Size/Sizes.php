@@ -13,7 +13,7 @@
 
 namespace Exhale\Image\Size;
 
-use Exhale\Tools\Collection;
+use Hybrid\Tools\Collection;
 
 /**
  * Image sizes class.

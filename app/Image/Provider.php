@@ -38,8 +38,6 @@ class Provider extends ServiceProvider {
 				$this->app->resolve( Size\Sizes::class )
 			);
 		} );
-
-		$this->app->alias( Size\Sizes::class,     'image/sizes'   );
 	}
 
 	/**
@@ -50,6 +48,6 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
-		$this->app->resolve( Size\Component::class   )->boot();
+		$this->app->resolve( Size\Component::class )->boot();
 	}
 }

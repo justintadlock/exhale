@@ -16,7 +16,6 @@
 namespace Exhale;
 
 use Hybrid\Tools\ServiceProvider;
-use Exhale\Tools\Config;
 
 /**
  * App service provider.
@@ -36,10 +35,8 @@ class Provider extends ServiceProvider {
 	 */
 	public function register() {
 
-		// Bind a single instance of theme mod defaults.
-		$this->app->singleton( 'exhale/mods', function() {
-			return [];
-		} );
+		$this->app->singleton( Setup::class );
+		$this->app->singleton( Assets::class );
 
 		// Bind the Laravel Mix manifest for cache-busting.
 		$this->app->singleton( 'exhale/mix', function() {
@@ -60,5 +57,17 @@ class Provider extends ServiceProvider {
 
 			return $contents;
 		} );
+	}
+
+	/**
+	 * Bootstrap bindings.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function boot() {
+		$this->app->resolve( Setup::class )->boot();
+		$this->app->resolve( Assets::class )->boot();
 	}
 }

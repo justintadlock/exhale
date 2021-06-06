@@ -89,8 +89,7 @@ mix.version();
  *
  * @link https://laravel.com/docs/5.6/mix#working-with-scripts
  */
-mix.js( `${devPath}/js/app.js`,               'js' )
-   .js( `${devPath}/js/customize-preview.js`, 'js' );
+mix.js( `${devPath}/js/app.js`, 'js' );
 
 mix.react( `${devPath}/js/editor.js`, 'js' );
 
@@ -111,9 +110,8 @@ var sassConfig = {
 };
 
 // Compile SASS/CSS.
-mix.sass( `${devPath}/scss/screen.scss`,             'css', sassConfig )
-   .sass( `${devPath}/scss/editor.scss`,             'css', sassConfig )
-   .sass( `${devPath}/scss/customize-controls.scss`, 'css', sassConfig );
+mix.sass( `${devPath}/scss/screen.scss`, 'css', sassConfig )
+   .sass( `${devPath}/scss/editor.scss`, 'css', sassConfig );
 
 /*
  * Add custom Webpack configuration.
@@ -130,13 +128,6 @@ mix.webpackConfig( {
 	devtool     : mix.inProduction() ? false : 'source-map',
 	performance : { hints  : false    },
 	externals   : { jquery : 'jQuery' },
-	resolve     : {
-		alias : {
-			// Alias for Hybrid Customize assets.
-			// Import from `hybrid-customize/js` or `~hybrid-customize/scss`.
-			'hybrid-customize' : path.resolve( __dirname, 'vendor/justintadlock/hybrid-customize/resources/' )
-		}
-	},
 	plugins     : [
 		// @link https://github.com/webpack-contrib/copy-webpack-plugin
 		new CopyWebpackPlugin( [

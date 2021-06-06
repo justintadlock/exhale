@@ -36,7 +36,7 @@ class Component implements Bootable {
 
 	protected function locate( $slug ) {
 		ob_start();
-		include get_theme_file_path( 'block-patterns/' . $slug . '.php' );
+		include get_theme_file_path( "lib/block-patterns/{$slug}.php" );
 		return ob_get_clean();
 	}
 
