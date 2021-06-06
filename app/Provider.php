@@ -35,8 +35,27 @@ class Provider extends ServiceProvider {
 	 */
 	public function register() {
 
+		// Bind primary theme components.
 		$this->app->singleton( Setup::class );
 		$this->app->singleton( Assets::class );
+
+		// Bind block components.
+		$this->app->singleton( Block\Patterns\Component::class  );
+		$this->app->singleton( Block\Styles\Component::class    );
+		$this->app->singleton( Block\Supports\Component::class  );
+		$this->app->singleton( Block\Templates\Component::class );
+
+		// bind image components.
+		$this->app->singleton( Image\Size\Sizes::class   );
+
+		$this->app->singleton( Image\Size\Component::class, function() {
+			return new Image\Size\Component(
+				$this->app->resolve( Image\Size\Sizes::class )
+			);
+		} );
+
+		// Bind template components.
+		$this->app->singleton( Template\Hierarchy::class );
 
 		// Bind the Laravel Mix manifest for cache-busting.
 		$this->app->singleton( 'exhale/mix', function() {
@@ -67,7 +86,21 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
+
+		// Boot primary theme components.
 		$this->app->resolve( Setup::class )->boot();
 		$this->app->resolve( Assets::class )->boot();
+
+		// Boot block components.
+		$this->app->resolve( Block\Patterns\Component::class  )->boot();
+		$this->app->resolve( Block\Styles\Component::class    )->boot();
+		$this->app->resolve( Block\Supports\Component::class  )->boot();
+		$this->app->resolve( Block\Templates\Component::class )->boot();
+
+		// Boot image components.
+		$this->app->resolve( Image\Size\Component::class )->boot();
+
+		// Boot template components.
+		$this->app->resolve( Template\Hierarchy::class )->boot();
 	}
 }
