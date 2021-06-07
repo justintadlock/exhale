@@ -56,26 +56,6 @@ class Provider extends ServiceProvider {
 
 		// Bind template components.
 		$this->app->singleton( Template\Hierarchy::class );
-
-		// Bind the Laravel Mix manifest for cache-busting.
-		$this->app->singleton( 'exhale/mix', function() {
-
-			$file     = get_parent_theme_file_path( 'public/mix-manifest.json' );
-			$contents = (array) json_decode( file_get_contents( $file ), true );
-
-			if ( is_child_theme() ) {
-				$child = get_stylesheet_directory() . '/public/mix-manifest.json';
-
-				if ( file_exists( $child ) ) {
-					$contents = array_merge(
-						$contents,
-						(array) json_decode( file_get_contents( $file ), true )
-					);
-				}
-			}
-
-			return $contents;
-		} );
 	}
 
 	/**
