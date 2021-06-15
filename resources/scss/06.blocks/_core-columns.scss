@@ -7,6 +7,9 @@
 ////
 
 .wp-block-columns {
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
+
 	--columns-flex-gap: #{ $spacing-global };
 
 	&.is-style-no-gap {
@@ -15,8 +18,6 @@
 }
 
 .wp-block-columns {
-	margin-top:    $spacing-global;
-	margin-bottom: 0;
 	gap: var( --columns-flex-gap );
 
 	// Cancel out GB.
@@ -24,20 +25,10 @@
 		padding: 0;
 	}
 
-	@media ( max-width: $width-alignwide + $spacing-2x ) {
-
-		&.alignwide {
-		//	padding-left:  $spacing-global;
-		//	padding-right: $spacing-global;
-		}
-	}
-
 	> .wp-block-column {
 		margin-left:  0 !important;
 		margin-right: 0 !important;
 	}
-
-	//@media ( min-width: #{ $screen-md } ) and ( max-width: #{ $screen-lg } )
 
 	// Overwriting GB's breakpoint.
 	@media (min-width: 600px) and (max-width: 781px) {
@@ -51,6 +42,8 @@
 		flex-wrap: wrap;
 
 		// Three and Four Columns.
+		.wp-block-column:first-child:nth-last-child(2),
+		.wp-block-column:first-child:nth-last-child(2) ~ .wp-block-column,
 		.wp-block-column:first-child:nth-last-child(3),
 		.wp-block-column:first-child:nth-last-child(3) ~ .wp-block-column,
 		.wp-block-column:first-child:nth-last-child(4),

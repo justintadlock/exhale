@@ -7,6 +7,9 @@
 ////
 
 .wp-block-query-loop {
+	margin-top: 0;
+	margin-bottom: 0;
+
 	display: grid;
 	gap: var( --wp--custom--spacing--8 );
 	grid-template-columns: repeat( 1, 1fr );

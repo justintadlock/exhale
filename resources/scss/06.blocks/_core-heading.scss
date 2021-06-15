@@ -5,6 +5,8 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: var( --wp--preset--font-family--headings );
+
 	&.has-background {
 		padding: $spacing-global;
 	}

@@ -1,6 +1,21 @@
 <?php
 
 register_block_style( 'core/paragraph', [
+	'name'  => 'info',
+	'label' => __( 'Info' )
+] );
+
+register_block_style( 'core/paragraph', [
+	'name'  => 'error',
+	'label' => __( 'Error' )
+] );
+
+register_block_style( 'core/paragraph', [
+	'name'  => 'warning',
+	'label' => __( 'Warning' )
+] );
+
+register_block_style( 'core/paragraph', [
 	'name'  => 'highlight',
 	'label' => __( 'Highlight' )
 ] );

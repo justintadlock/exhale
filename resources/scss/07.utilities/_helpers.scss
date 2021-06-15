@@ -7,6 +7,34 @@
 ////
 
 
+:not([data-align]) > :first-child {
+//	margin-top: 0;
+}
+
+header > :first-child,
+footer > :first-child,
+main > :first-child,
+article > :first-child,
+aside > :first-child,
+section > :first-child,
+blockquote > :first-child,
+figure > :first-child,
+div:not([class*=wp-block]) > :first-child,
+form > :first-child,
+.wp-block-column > :first-child,
+.wp-block-group > :first-child,
+.wp-block-column > .wp-block-group,
+.wp-block-template-part > :first-child,
+.wp-block-post-content > :first-child,
+.wp-block-post-excerpt > :first-child,
+.wp-block-media-text__media > :first-child,
+.wp-block-media-text__content > :first-child,
+.wp-block-cover > :first-child,
+.wp-block-cover__inner-container > :first-child
+{
+	margin-top: 0;
+}
+
 // hide separator if it's last child.
 .sep:last-child {
 	display: none;
@@ -37,12 +65,4 @@ hr + :is( h1, h2, h3, h4, h5, h6 ) {
 p.has-background,
 p.is-style-highlight {
 	padding: $spacing-global;
-}
-
-/// Used for paragraphs that only contain an image. These have no height. We use
-/// JS to add the `.is-collapsed` class and remove any margins and paddings.
-
-.is-collapsed {
-//	margin-bottom: 0;
-//	margin-top: 0;
 }

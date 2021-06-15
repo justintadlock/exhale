@@ -8,6 +8,8 @@
 
 // The cover media `<div>` element. The media is added as a background.
 .wp-block-cover {
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
 	position:            relative;
 	background-size:     cover;
 	background-position: 50%;
@@ -18,6 +20,12 @@
 	// Need this because navigation dropdown will
 	// be covered by the Cover block.
 	z-index: 0;
+
+	color: var( --wp--preset--color--white );
+
+	a {
+		color: var( --wp--preset--color--white );
+	}
 
 	&.alignright,
 	&.alignleft {
@@ -30,16 +38,24 @@
 	}
 
 	@media ( min-width: $screen-md ) {
-		&.is-style-content-width-25 .wp-block-cover__inner-container {
-			flex: 0 0 25%;
-		}
-
+		&.is-style-content-width-25 .wp-block-cover__inner-container,
+		&.is-style-content-width-40 .wp-block-cover__inner-container,
 		&.is-style-content-width-50 .wp-block-cover__inner-container {
 			flex: 0 0 50%;
 		}
 
 		&.is-style-content-width-75 .wp-block-cover__inner-container {
 			flex: 0 0 75%;
+		}
+	}
+
+	@media ( min-width: $screen-lg ) {
+		&.is-style-content-width-25 .wp-block-cover__inner-container {
+			flex: 0 0 25%;
+		}
+
+		&.is-style-content-width-40 .wp-block-cover__inner-container {
+			flex: 0 0 40%;
 		}
 	}
 

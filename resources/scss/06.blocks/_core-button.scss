@@ -6,6 +6,10 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+.wp-block-button {
+	font-family: var( --wp--preset--font-family--secondary );
+}
+
 .wp-block-button__link {
 	// Make sure buttons are always tall enough for touch browsing.
 	// @link https://www.w3.org/WAI/WCAG21/Understanding/target-size.html
@@ -17,6 +21,7 @@
 	display: block;
 
 	text-decoration: none;
+	border-radius: 0; // override gb default.
 
 	&:hover,
 	&:focus {
@@ -24,7 +29,7 @@
 	}
 }
 
-:not(.is-style-outline) > .wp-block-button__link:not(.has-background) {
+:not(.is-style-outline) > .wp-block-button__link {
 	&:hover,
 	&:focus {
 		background-color: var( --wp--preset--color--primary-800 );
@@ -38,23 +43,51 @@
 	}
 }
 
-	@include buttons_hover( primary-800, primary-900);
-	@include buttons_hover( primary-700, primary-800);
-	@include buttons_hover( primary-600, primary-700);
-	@include buttons_hover( primary-500, primary-600);
-	@include buttons_hover( primary-400, primary-500);
-	@include buttons_hover( primary-300, primary-400);
-	@include buttons_hover( primary-200, primary-300);
-	@include buttons_hover( primary-100, primary-200);
+@include buttons_hover( primary-800, primary-900 );
+@include buttons_hover( primary-700, primary-800 );
+@include buttons_hover( primary-600, primary-700 );
+@include buttons_hover( primary-500, primary-600 );
+@include buttons_hover( primary-400, primary-500 );
+@include buttons_hover( primary-300, primary-400 );
+@include buttons_hover( primary-200, primary-300 );
+@include buttons_hover( primary-100, primary-200 );
 
-	@include buttons_hover( secondary-800, secondary-900);
-	@include buttons_hover( secondary-700, secondary-800);
-	@include buttons_hover( secondary-600, secondary-700);
-	@include buttons_hover( secondary-500, secondary-600);
-	@include buttons_hover( secondary-400, secondary-500);
-	@include buttons_hover( secondary-300, secondary-400);
-	@include buttons_hover( secondary-200, secondary-300);
-	@include buttons_hover( secondary-100, secondary-200);
+@include buttons_hover( secondary-800, secondary-900 );
+@include buttons_hover( secondary-700, secondary-800 );
+@include buttons_hover( secondary-600, secondary-700 );
+@include buttons_hover( secondary-500, secondary-600 );
+@include buttons_hover( secondary-400, secondary-500 );
+@include buttons_hover( secondary-300, secondary-400 );
+@include buttons_hover( secondary-200, secondary-300 );
+@include buttons_hover( secondary-100, secondary-200 );
+@include buttons_hover( "transparent", rgba( 255, 255, 255, 0.2 ) );
+@include buttons_hover( white, rgba( 255, 255, 255, 0.2 ) );
+
+
+@mixin buttons_hover_text( $from, $to ) {
+	:root a.has-#{ $from }-color:hover,
+	:root a.has-#{ $from }-color:focus {
+		color: var( --wp--preset--color--#{ $to } ) !important;
+	}
+}
+
+@include buttons_hover_text( primary-800, primary-900 );
+@include buttons_hover_text( primary-700, primary-900 );
+@include buttons_hover_text( primary-600, primary-800 );
+@include buttons_hover_text( primary-500, primary-700 );
+@include buttons_hover_text( primary-400, primary-600 );
+@include buttons_hover_text( primary-300, primary-500 );
+@include buttons_hover_text( primary-200, primary-400 );
+@include buttons_hover_text( primary-100, primary-300 );
+
+@include buttons_hover_text( secondary-800, secondary-900 );
+@include buttons_hover_text( secondary-700, secondary-900 );
+@include buttons_hover_text( secondary-600, secondary-800 );
+@include buttons_hover_text( secondary-500, secondary-700 );
+@include buttons_hover_text( secondary-400, secondary-600 );
+@include buttons_hover_text( secondary-300, secondary-500 );
+@include buttons_hover_text( secondary-200, secondary-400 );
+@include buttons_hover_text( secondary-100, secondary-300 );
 
 
 // Need to overwrite GB.
@@ -83,6 +116,19 @@
 	}
 }
 
+.is-style-link .wp-block-button__link {
+	min-height: 0;
+	margin-top: 0.75rem;
+	padding: 0.25rem 0;
+	background: transparent;
+	border-bottom: 3px solid currentColor;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		background-color: rgba( 255, 255, 255, 0.2 );
+	}
+}
 
 .is-style-outline .wp-block-button__link {
 	padding: 1rem 2rem;

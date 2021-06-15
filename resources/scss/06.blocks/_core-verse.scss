@@ -8,7 +8,9 @@
 
 
 .wp-block-verse {
-	margin-top:  $spacing-global;
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
+
 	padding:     var( --wp--custom--spacing--8 );
 	line-height: inherit;
 	font-family: inherit;

@@ -7,7 +7,8 @@
 ////
 
 .wp-block-group {
-	margin-top: $spacing-global;
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
 
 	&::after {
 		content:    ".";
@@ -21,20 +22,21 @@
 	//	padding: var( --wp--custom--spacing--8 );
 	}
 
-	&.is-style-inline-children {
-		width: 100%;
+	&.is-style-flex {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 1rem;
+		align-items: start;
 
-		> * {
-			margin-top: 0;
-		}
+		> * { margin-top: 0; }
 	}
+}
 
-	@media ( min-width: $screen-md ) {
-		&.is-style-text-columns-2 {
-			columns: 2 auto;
-			column-gap: 4rem;
-		}
-	}
+header.wp-block-group,
+footer.wp-block-group,
+main.wp-block-group,
+section.wp-block-group,
+article.wp-block-group,
+aside.wp-block-group {
+	margin-top: 0;
 }

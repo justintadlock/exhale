@@ -9,7 +9,7 @@
 			'depth'  => 3,
 			'class'  => 'comment__parent-link inline-block mb-2',
 			'after'  => '<br /></div>',
-			'before' => '<div class="comment__parent text-sm">'
+			'before' => '<div class="comment__parent text-sm">&#9666; '
 		] ) ?>
 
 		<?php echo get_avatar( $data->comment, $data->args['avatar_size'], '', '', [

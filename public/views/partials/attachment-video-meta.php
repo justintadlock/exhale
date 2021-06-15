@@ -25,12 +25,12 @@
 		"listType":"none"
 	} -->
 	<ul class="media-meta__items list-none has-base-font-size" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
-		<?php Hybrid\Media\display_meta( 'length_formatted', [ 'tag' => 'li', 'class' => 'media-meta__item p-2 sm:flex border-0 border-b border-solid', 'data_class' => 'media-meta__data flex-1 text-right', 'label' => __( 'Run Time:', 'exhale' )   ] ) ?>
-		<?php Hybrid\Media\display_meta( 'dimensions',       [ 'tag' => 'li', 'class' => 'media-meta__item p-2 sm:flex border-0 border-b border-solid', 'data_class' => 'media-meta__data flex-1 text-right', 'label' => __( 'Dimensions:', 'exhale' ) ] ) ?>
-		<?php Hybrid\Media\display_meta( 'file_name',        [ 'tag' => 'li', 'class' => 'media-meta__item p-2 sm:flex border-0 border-b border-solid', 'data_class' => 'media-meta__data flex-1 text-right', 'label' => __( 'Name:', 'exhale' )       ] ) ?>
-		<?php Hybrid\Media\display_meta( 'mime_type',        [ 'tag' => 'li', 'class' => 'media-meta__item p-2 sm:flex border-0 border-b border-solid', 'data_class' => 'media-meta__data flex-1 text-right', 'label' => __( 'Mime Type:', 'exhale' )  ] ) ?>
-		<?php Hybrid\Media\display_meta( 'file_type',        [ 'tag' => 'li', 'class' => 'media-meta__item p-2 sm:flex border-0 border-b border-solid', 'data_class' => 'media-meta__data flex-1 text-right', 'label' => __( 'Type:', 'exhale' )       ] ) ?>
-		<?php Hybrid\Media\display_meta( 'file_size',        [ 'tag' => 'li', 'class' => 'media-meta__item p-2 sm:flex border-0 border-b border-solid', 'data_class' => 'media-meta__data flex-1 text-right', 'label' => __( 'Size:', 'exhale' )       ] ) ?>
+		<?php Hybrid\Media\display_meta( 'length_formatted', [ 'tag' => 'li', 'class' => 'media-meta__item', 'data_class' => 'media-meta__data', 'label' => __( 'Run Time:', 'exhale' )   ] ) ?>
+		<?php Hybrid\Media\display_meta( 'dimensions',       [ 'tag' => 'li', 'class' => 'media-meta__item', 'data_class' => 'media-meta__data', 'label' => __( 'Dimensions:', 'exhale' ) ] ) ?>
+		<?php Hybrid\Media\display_meta( 'file_name',        [ 'tag' => 'li', 'class' => 'media-meta__item', 'data_class' => 'media-meta__data', 'label' => __( 'Name:', 'exhale' )       ] ) ?>
+		<?php Hybrid\Media\display_meta( 'mime_type',        [ 'tag' => 'li', 'class' => 'media-meta__item', 'data_class' => 'media-meta__data', 'label' => __( 'Mime Type:', 'exhale' )  ] ) ?>
+		<?php Hybrid\Media\display_meta( 'file_type',        [ 'tag' => 'li', 'class' => 'media-meta__item', 'data_class' => 'media-meta__data', 'label' => __( 'Type:', 'exhale' )       ] ) ?>
+		<?php Hybrid\Media\display_meta( 'file_size',        [ 'tag' => 'li', 'class' => 'media-meta__item', 'data_class' => 'media-meta__data', 'label' => __( 'Size:', 'exhale' )       ] ) ?>
 	</ul>
 	<!-- /wp:list -->
 

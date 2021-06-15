@@ -8,6 +8,8 @@
 
 .wp-block-file,
 .wp-block-file__content-wrapper { // Editor style.
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
 	display: flex;
 	flex-wrap: wrap;
 	gap: var( --wp--custom--spacing--8 );
@@ -16,7 +18,6 @@
 }
 
 .wp-block-file {
-	margin-top: $spacing-global;
 
 	padding: var( --wp--custom--spacing--8 );
 	background: var( --wp--preset--color--neutral-100 );

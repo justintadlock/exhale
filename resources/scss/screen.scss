@@ -92,6 +92,7 @@
 //
 // Imports global block styles.
 
+@import '06.blocks/core-archives';
 @import '06.blocks/core-audio';
 @import '06.blocks/core-button';
 @import '06.blocks/core-buttons';
@@ -113,8 +114,11 @@
 @import '06.blocks/core-navigation';
 @import '06.blocks/core-paragraph';
 @import '06.blocks/core-post-author';
+@import '06.blocks/core-post-comments-link';
 @import '06.blocks/core-post-content';
+@import '06.blocks/core-post-date';
 @import '06.blocks/core-post-excerpt';
+@import '06.blocks/core-post-terms';
 @import '06.blocks/core-post-title';
 @import '06.blocks/core-preformatted';
 @import '06.blocks/core-pullquote';
@@ -130,6 +134,7 @@
 @import '06.blocks/core-social-links';
 @import '06.blocks/core-spacer';
 @import '06.blocks/core-table';
+@import '06.blocks/core-tag-cloud';
 @import '06.blocks/core-template-part';
 @import '06.blocks/core-verse';
 @import '06.blocks/core-video';
@@ -148,7 +153,6 @@
 @import '07.utilities/background';
 @import '07.utilities/border';
 @import '07.utilities/effects';
-@import '07.utilities/first-child/style';
 @import '07.utilities/flexbox';
 @import '07.utilities/gap';
 @import '07.utilities/grid';

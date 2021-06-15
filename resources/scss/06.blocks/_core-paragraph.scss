@@ -24,6 +24,43 @@ p {
 		border-left-color: var( --wp--preset--color--secondary-700 );
 		border-right-color: var( --wp--preset--color--secondary-700 );
 	}
+
+	&.is-style-info,
+	&.is-style-error,
+	&.is-style-warning {
+		display: flex;
+		gap: 1rem;
+
+		&::before {
+			content: "i";
+			font-family: var( --wp--preset--font-family--mono );
+			font-style: italic;
+				font-size: 1rem;
+				width: 2rem;
+				height: 2rem;
+			//	margin: 1em 0 0;
+		    border-radius: 50%;
+		    color: currentColor;
+		    background: rgba( 255, 255, 255, 0.1 );
+		    border: 1px solid currentColor;
+		    flex: 0 0 2rem;
+		    display: flex;
+		    justify-content: center;
+		align-items: center;
+		}
+	}
+
+	&.is-style-error::before {
+		content: "\00D7";
+		font-style: normal;
+		font-weight: bold;
+	}
+
+	&.is-style-warning::before {
+		content: "!";
+		font-style: normal;
+		font-weight: bold;
+	}
 }
 
 p.has-background,

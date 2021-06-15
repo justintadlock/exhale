@@ -109,6 +109,16 @@ class Component implements Bootable {
 
 	public function templateTypes( $types ) {
 
+		$types['single'] = [
+			'title'       => __( 'Single' ),
+			'description' => __( 'Template used for displaying single views of the content. This template is a fallback for the post, page, and custom post type templates, which take precedence when they exist.' ),
+		];
+
+		$types['single-post'] = [
+			'title'       => __( 'Single Post' ),
+			'description' => __( 'Template used to display individual posts.' ),
+		];
+
 		$types['single-page'] = [
 			'title'       => __( 'Single Page' ),
 			'description' => __( 'Template used to display individual pages.' ),
@@ -143,7 +153,7 @@ class Component implements Bootable {
 			'area'        => 'content',
 			'label'       => __( 'Content', 'exhale' ),
 			'description' => '',
-			'icon'        => 'content',
+			'icon'        => 'layout',
 			'area_tag'    => 'div'
 		];
 
@@ -151,7 +161,7 @@ class Component implements Bootable {
 			'area'        => 'loop',
 			'label'       => __( 'Loop', 'exhale' ),
 			'description' => '',
-			'icon'        => 'loop',
+			'icon'        => 'layout',
 			'area_tag'    => 'div'
 		];
 

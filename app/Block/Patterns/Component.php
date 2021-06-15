@@ -14,6 +14,7 @@
 namespace Exhale\Block\Patterns;
 
 use Hybrid\Contracts\Bootable;
+use WP_Block_Pattern_Categories_Registry as CategoriesRegistry;
 
 /**
  * Block component class.
@@ -42,7 +43,6 @@ class Component implements Bootable {
 
 	protected function registerPattern( $slug, array $args ) {
 
-//wp_die( var_dump( str_replace( [ "\n", "\r", "\t" ], '', $this->locate( $slug ) ) ) );
 		$args = wp_parse_args( $args, [
 			'categories'    => [],
 			'content'       => str_replace( [ "\n", "\r", "\t" ], '', $this->locate( $slug ) ),
@@ -58,7 +58,7 @@ class Component implements Bootable {
 
 	public function registerPatterns() {
 
-		$categories_registry = \WP_Block_Pattern_Categories_Registry::get_instance();
+		$categories_registry = CategoriesRegistry::get_instance();
 
 		$width_content   = 624;
 		$width_alignwide = 1024;
@@ -66,13 +66,17 @@ class Component implements Bootable {
 		// Pattern categories.
 
 		$categories = [
+			'book'        => __( 'Book' ),
 			'cover'       => __( 'Covers' ),
 			'exhale'      => __( 'Exhale' ),
 			'magazine'    => __( 'Magazine' ),
 			'portfolio'   => __( 'Portfolio' ),
 			'post-header' => __( 'Post Header' ),
+			'profile'     => __( 'Profile / Bio' ),
 			'query'       => __( 'Query' ),
-			'recipe'      => __( 'Recipe' )
+			'quote'       => __( 'Quotes' ),
+			'recipe'      => __( 'Recipe' ),
+			'team'        => __( 'Team' )
 		];
 
 		foreach ( $categories as $name => $label ) {
@@ -85,11 +89,6 @@ class Component implements Bootable {
 
 		// Patterns.
 
-		$this->registerPattern( 'about-me-columns', [
-			'title' => __( 'About Me: Columns' ),
-			'categories' => [ 'columns' ]
-		] );
-
 		$this->registerPattern( 'audio-cover', [
 			'title' => __( 'Audio: Cover' ),
 			'categories' => [ 'cover' ],
@@ -101,10 +100,42 @@ class Component implements Bootable {
 			'categories' => [ 'cover' ]
 		] );
 
-		$this->registerPattern( 'cards-framed', [
-			'title' => __( 'Cards: Framed' ),
-			'categories' => [ 'columns' ],
-			'viewportWidth' => $width_alignwide + 64
+		$this->registerPattern( 'author-intro', [
+			'title' => __( 'Author Intro' ),
+			'categories' => [ 'book', 'cover' ]
+		] );
+
+		$this->registerPattern( 'book-card', [
+			'title' => __( 'Book Card' ),
+			'categories' => [ 'book' ],
+			'viewportWidth' => $width_alignwide
+		] );
+
+		$this->registerPattern( 'book-card-emoji', [
+			'title' => __( 'Book Card (Emoji)' ),
+			'categories' => [ 'book' ],
+			'viewportWidth' => $width_alignwide
+		] );
+
+		$this->registerPattern( 'book-card-intro', [
+			'title' => __( 'Book Card Intro' ),
+			'categories' => [ 'book' ],
+			'viewportWidth' => $width_alignwide
+		] );
+
+		$this->registerPattern( 'columns-connect-boxes', [
+			'title' => __( 'Columns: Connect Boxes' ),
+			'categories' => [ 'columns', 'profile' ]
+		] );
+
+		$this->registerPattern( 'columns-cards', [
+			'title' => __( 'Columns: Cards' ),
+			'categories' => [ 'columns' ]
+		] );
+
+		$this->registerPattern( 'columns-cards-horizontal', [
+			'title' => __( 'Columns: Cards Horizontal' ),
+			'categories' => [ 'columns' ]
 		] );
 
 		$this->registerPattern( 'columns-movie-posters', [
@@ -117,9 +148,19 @@ class Component implements Bootable {
 			'categories' => [ 'columns' ]
 		] );
 
+		$this->registerPattern( 'columns-team-portraits', [
+			'title' => __( 'Columns: Team Portraits' ),
+			'categories' => [ 'columns', 'team' ]
+		] );
+
 		$this->registerPattern( 'cover-inner-border', [
 			'title' => __( 'Cover: Inner Border' ),
 			'categories' => [ 'cover' ]
+		] );
+
+		$this->registerPattern( 'cover-quote', [
+			'title' => __( 'Cover: Quote' ),
+			'categories' => [ 'cover', 'quote' ]
 		] );
 
 		$this->registerPattern( 'cover-splash-social', [
@@ -201,6 +242,12 @@ class Component implements Bootable {
 			'viewportWidth' => $width_content
 		] );
 
+		$this->registerPattern( 'recipe-card-hero-alt', [
+			'title' => __( 'Recipe Card: Hero Alt' ),
+			'categories' => [ 'recipe' ],
+			'viewportWidth' => $width_content
+		] );
+
 		$this->registerPattern( 'recipe-card-circle', [
 			'title' => __( 'Recipe Card: Circle' ),
 			'categories' => [ 'recipe' ],
@@ -211,6 +258,18 @@ class Component implements Bootable {
 			'title' => __( 'Recipe Card: Cover' ),
 			'categories' => [ 'recipe' ],
 			'viewportWidth' => $width_content
+		] );
+
+		$this->registerPattern( 'recipe-card-cursive-mono', [
+			'title' => __( 'Recipe Card: Cursive Monospace' ),
+			'categories' => [ 'recipe' ],
+			'viewportWidth' => $width_content
+		] );
+
+		$this->registerPattern( 'recipe-card-split', [
+			'title' => __( 'Recipe Card: Split' ),
+			'categories' => [ 'recipe' ],
+			'viewportWidth' => $width_alignwide
 		] );
 
 		$this->registerPattern( 'shop-columns-category-covers', [

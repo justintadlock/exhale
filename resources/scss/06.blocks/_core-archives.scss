@@ -1,0 +1,4 @@
+
+.wp-block-archives-dropdown > label {
+	@include screen-reader-text;
+}

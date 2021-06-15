@@ -1,4 +1,5 @@
 <!-- wp:query {
+	"query":{"inherit":true},
 	"displayLayout":{"type":"list"},
 	"layout":{"inherit":true},
 	"alignfull"
@@ -34,33 +35,25 @@
 					"typography":{
 						"fontFamily":"var:preset|font-family|secondary"
 					},
+					"elements":{
+						"link":{
+							"color":{
+								"text":"var:preset|color|neutral-600"
+							}
+						}
+					},
 					"spacing":{
 						"margin":{"top":"8px"}
-					},
-					"color":{
-						"link":"var:preset|color|neutral-600"
 					}
 				},
 				"textColor":"neutral-600",
-				"fontSize":"base",
-				"className":"is-style-inline-children"
+				"className":"is-style-flex",
+				"fontSize":"base"
 			} -->
-			<div class="wp-block-group has-neutral-600-color has-text-color has-link-color has-base-font-size is-style-inline-children" style="--wp--style--color--link:var(--wp--preset--color--neutral-600);font-family:var(--wp--preset--font-family--secondary);margin-top:8px;">
-
-				<!-- wp:post-author { "showAvatar":false } /-->
-
-				<!-- wp:paragraph {"className":"sep"} -->
-				<p class="sep">·</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:post-date /-->
-
-				<!-- wp:paragraph {"className":"sep"} -->
-				<p class="sep">·</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:post-comments-link /-->
-
+			<div class="wp-block-group is-style-flex has-neutral-600-color has-text-color has-link-color has-base-font-size" style="font-family:var(--wp--preset--font-family--secondary);margin-top:8px">
+				<!-- wp:post-author {"showAvatar":false} /-->
+				<!-- wp:post-date {"className":"is-style-middot"} /-->
+				<!-- wp:post-comments-link {"className":"is-style-middot"} /-->
 			</div>
 			<!-- /wp:group -->
 
@@ -96,12 +89,12 @@
 		"tagName":"nav",
 		"style":{
 			"spacing":{
-				"margin":{"top":"3rem","bottom":"1rem"}
+				"margin":{"top":"3rem"}
 			}
 		},
 		"layout":{"inherit":true}
 	} -->
-	<nav class="wp-block-group" style="margin-top:3rem;margin-bottom:1rem">
+	<nav class="wp-block-group" style="margin-top:3rem">
 		<!-- wp:query-pagination {"align":"wide"} -->
 		<div class="wp-block-query-pagination alignwide">
 			<!-- wp:query-pagination-previous {"label":"← Previous"} /-->

@@ -22,3 +22,82 @@ hr:not(.wp-block-separator) {
 	border:     none;
 	border-top: 1px solid var( --wp--preset--color--neutral-300 );
 }
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-1.25em);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+details {
+	margin-top: var( --wp--custom--spacing--8 );
+	border: 1px solid var( --wp--preset--color--neutral-300 );
+
+	&[open] summary ~ * {
+		animation-name: fadeInDown;
+		animation-duration: 0.5s;
+	}
+
+	+ details {
+		margin-top: 0;
+		border-top-width: 0;
+	}
+
+	> summary {
+		position: relative;
+		z-index: 1;
+		transition: all 0.5s ease-in-out;
+		display: flex;
+		justify-content: space-between;
+		padding: 0.75rem 2rem;
+
+		&:hover,
+		&:focus {
+			cursor: pointer;
+			background-color: var( --wp--preset--color--neutral-100 );
+
+			&::after {
+				opacity: 1;
+			}
+		}
+
+		&::marker {
+			content: "";
+			display: none;
+		}
+
+		&::after {
+			opacity: 0.75;
+			font-weight: bold;
+			display: inline-block;
+			content: "\203A";
+		}
+	}
+
+	&[open] > summary::after {
+		transform: rotate( 90deg );
+	}
+
+	&[open] {
+		padding-bottom: 2rem;
+	}
+
+	&[open] > summary {
+		margin-bottom: 2rem;
+		border-bottom: 1px solid var( --wp--preset--color--neutral-300 );
+	}
+
+	:first-child {
+		margin-top: 0;
+	}
+
+	> * {
+		padding-left: var( --wp--custom--spacing--8 );
+		padding-right: var( --wp--custom--spacing--8 );
+	}
+}

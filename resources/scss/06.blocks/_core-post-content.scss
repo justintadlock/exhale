@@ -7,9 +7,6 @@
 ////
 
 .wp-block-post-content {
-
-	> :last-child:not( .alignfull ) {
-		margin-bottom: $spacing-global;
-	}
-
+	margin-top: 0;
+	margin-bottom: 0;
 }

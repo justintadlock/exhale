@@ -1,6 +1,11 @@
 <?php
 
 register_block_style( 'core/button', [
+	'name'  => 'link',
+	'label' => __( 'Link' )
+] );
+
+register_block_style( 'core/button', [
 	'name'  => 'overline',
 	'label' => __( 'Overline' )
 ] );

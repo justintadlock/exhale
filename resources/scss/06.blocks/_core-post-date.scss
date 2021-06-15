@@ -1,0 +1,32 @@
+////
+/// Pullquote block.
+///
+/// @group  Blocks
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.wp-block-post-date {
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
+
+	&[class*=is-style-emoji-],
+	&.is-style-middot,
+	&.is-style-slash {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
+
+	&.is-style-middot,
+	&.is-style-slash {
+		gap: 1rem;
+	}
+
+	&.is-style-emoji-calendar::before          { content: "📅"; }
+	&.is-style-emoji-spiral-calendar::before   { content: "🗓️"; }
+	&.is-style-emoji-tear-off-calendar::before { content: "📆"; }
+	&.is-style-middot::before                  { content: "\00B7"; }
+	&.is-style-slash::before                   { content: "\2215"; }
+}

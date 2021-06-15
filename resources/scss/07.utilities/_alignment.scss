@@ -15,7 +15,7 @@
 	// than the content width. GB cancels out these margins
 	// using `auto`, which means everything butts against the
 	// side of the screen.
-	[class^="wp-container-"][class*="wp-block"] > :not(.alignwide):not(.alignfull) {
+	[class^="wp-container-"][class*="wp-block"]:not([style*=padding-left]):not([style*=padding-right]) > :not(.alignwide):not(.alignfull) {
 		margin-left: $spacing-global !important;
 		margin-right: $spacing-global !important;
 		max-width: calc( 100% - #{ $spacing-global * 2 } );
@@ -23,33 +23,20 @@
 
 	[class^="wp-container-"][class*="wp-block"] > .alignwide,
 	[class^="wp-container-"][class*="wp-block"] > .alignfull {
-		margin-left: auto;
-		margin-right: auto;
+		margin-left: auto !important;
+		margin-right: auto !important;
 		max-width: 100%;
 	}
 }
 
-
-
-.alignfull {
-
-	// Stack full-aligned elements with no whitespace in
-	// between by default.
-	//
-	// The Group block (maybe others) sometimes has a <style>
-	// element that follows, so we want to skip that. The Duotone
-	// Image/Cover filter outputs a hidden <svg>, so we're
-	// skipping that too. By targeting the "hidden" style, we
-	// can cover some other possible use cases.
-
-	+ .alignfull,
-	+ [style*=hidden] + .alignfull,
-	+ style + .alignfull,
-	+ style + style + .alignfull,
-	+ style + [style*=hidden] + .alignfull,
-	+ [style*=hidden] + svg .alignfull {
-		margin-top: 0;
-	}
+.alignfull + .alignfull,
+.alignfull + [style*=hidden] + .alignfull,
+.alignfull + [style*=hidden] + style + .alignfull,
+.alignfull + style + .alignfull,
+.alignfull + style + style + .alignfull,
+.alignfull + style + [style*=hidden] + .alignfull,
+.alignfull + style + [style*=hidden] + style + [style*=hidden] + .alignfull {
+	margin-top: 0;
 }
 
 // If a user is putting a spacer before a block, let's
@@ -59,35 +46,18 @@
 	margin-top: 0;
 }
 
-// Make stacked images and galleries appear as if
-// they were in a single gallery.
-.wp-block-image + .wp-block-gallery:not([style*=margin-top]),
-.wp-block-image + style + [style*=hidden] + .wp-block-gallery:not([style*=margin-top]),
-.wp-block-gallery + .wp-block-gallery:not([style*=margin-top]),
-.wp-block-gallery + .wp-block-image:not([style*=margin-top]) {
-	margin-top: $spacing-half;
-}
-
-.wp-block-cover.alignwide + .wp-block-cover.alignwide:not([style*=margin-top]),
-.wp-block-image + .wp-block-gallery.is-style-no-gap:not([style*=margin-top]),
-.wp-block-image + style + [style*=hidden] + .wp-block-gallery.is-style-no-gap:not([style*=margin-top]),
-.wp-block-gallery.is-style-no-gap + .wp-block-gallery.is-style-no-gap:not([style*=margin-top]),
-.wp-block-gallery.is-style-no-gap + .wp-block-image:not([style*=margin-top]) {
-	margin-top: 0;
-}
-
 // Left alignment.
 .alignleft {
 	float:  left;
-	margin-right:  1.5em !important;
-	margin-bottom: 0.25em;
+	margin-right:  1.5rem !important;
+	margin-bottom: 0.25rem;
 }
 
 // Right alignment.
 .alignright {
 	float:  right;
-	margin-left: 1.5em !important;
-	margin-bottom: 0.25em;
+	margin-left: 1.5rem !important;
+	margin-bottom: 0.25rem;
 }
 
 // Align full and wide classes.

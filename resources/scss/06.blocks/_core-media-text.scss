@@ -7,8 +7,10 @@
 ////
 
 .wp-block-media-text {
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
+
 	grid-gap:   var( --wp--custom--spacing--8 );
-	margin-top: $spacing-global;
 
 	+ .wp-block-media-text {
 		margin-top: 0;
@@ -16,6 +18,16 @@
 
 	.wp-block-media-text__content {
 		padding: var( --wp--custom--spacing--8 );
+		padding-left: 0;
+	}
+
+	.wp-block-media-text__media:not(.is-image-fill) {
+		padding: var( --wp--custom--spacing--8 );
+		padding-right: 0;
+	}
+
+	&.has-media-on-the-right.has-background:not(.is-image-fill) .wp-block-media-text__media {
+		padding-right: var( --wp--custom--spacing--8 );
 		padding-left: 0;
 	}
 
@@ -34,11 +46,17 @@
 
 	@media ( max-width: $screen-md ) {
 		&.is-stacked-on-mobile {
-			grid-template-columns: 100%;
+			// Need !important here to override inline styles.
+			grid-template-columns: 100% !important;
 
 			.wp-block-media-text__media {
 				grid-column: 1;
 				grid-row: 1;
+			}
+
+			.wp-block-media-text__media:not(.is-image-fill) {
+				padding: var( --wp--custom--spacing--8 );
+				padding-bottom: 0;
 			}
 
 			.wp-block-media-text__content {

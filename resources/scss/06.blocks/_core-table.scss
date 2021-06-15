@@ -7,9 +7,8 @@
 ////
 
 .wp-block-table {
-
-	// Adding this to theme.json puts the spacing on to the "> table".
-	margin-top: $spacing-global;
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
 
 	figcaption {
 		margin-top: $spacing-fourth;

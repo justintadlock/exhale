@@ -1,4 +1,8 @@
 .wp-block-navigation {
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
+
+	font-family: var( --wp--preset--font-family--secondary );
 
 	&__container {
 		gap: 1rem;
@@ -50,7 +54,7 @@
 	//	max-width: 400px;
 		left: 0 !important;
 
-		font-size: var( --wp--preset--font-size--base );
+	//	font-size: var( --wp--preset--font-size--base );
 	}
 
 	.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-link {
@@ -128,9 +132,9 @@ header .wp-block-navigation {
 	}
 
 	&-link__submenu-icon {
-		padding-right: 1rem;
-		margin-left: -1rem;
-		margin-top: 0.25em;
+	//	padding-right: 1rem;
+	//	margin-left: -1rem;
+	//	margin-top: 0.25em;
 	}
 
 	//.wp-block-navigation-link__content,

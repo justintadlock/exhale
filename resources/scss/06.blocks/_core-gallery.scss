@@ -21,7 +21,8 @@
 
 // The wrapper element for the entire gallery.
 .wp-block-gallery {
-	margin-top: $spacing-global;
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
 
 	// For figcaptions. Setting it on the block so that
 	// core typography styles can overwrite.

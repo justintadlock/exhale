@@ -7,6 +7,8 @@
 ////
 
 .wp-block-post-author {
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
 
 	&__avatar .avatar,
 	// gb editor doesn't have .avatar class.
@@ -28,6 +30,39 @@
 	&__bio {
 		font-size: inherit; // gb
 		margin-bottom: 0;   // gb
+	}
+
+	&[class*=is-style-emoji-] {
+		.wp-block-post-author__name {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			flex-wrap: wrap;
+		}
+	}
+
+	&.is-style-emoji-black-nib .wp-block-post-author__name::before {
+		content: "✒️";
+	}
+
+	&.is-style-emoji-fountain-pen .wp-block-post-author__name::before {
+		content: "🖋️";
+	}
+
+	&.is-style-emoji-pencil .wp-block-post-author__name::before {
+		content: "✏️";
+	}
+
+	&.is-style-emoji-memo .wp-block-post-author__name::before {
+		content: "📝";
+	}
+
+	&.is-style-middot .wp-block-post-author__name::before {
+		content: "\00B7";
+	}
+
+	&.is-style-slash .wp-block-post-author__name::before {
+		content: "\2215";
 	}
 
 }

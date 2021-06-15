@@ -7,6 +7,8 @@
 ////
 
 .wp-block-latest-posts {
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
 
 	&.is-grid {
 		display:    flex;

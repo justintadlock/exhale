@@ -14,6 +14,7 @@
 namespace Exhale\Block\Styles;
 
 use Hybrid\Contracts\Bootable;
+use WP_Block_Type_Registry;
 
 /**
  * Block component class.
@@ -37,24 +38,47 @@ class Component implements Bootable {
 	public function registerStyles() {
 
 		$styles = [
-			'button',
-			'buttons',
-			'columns',
-			'cover',
-			'gallery',
-			'group',
-			'heading',
-			'image',
-			'list',
-			'paragraph',
-			'query',
-			'quote',
-			'separator',
-			'social-links'
+			'core-button',
+			'core-buttons',
+			'core-columns',
+			'core-cover',
+			'core-gallery',
+			'core-group',
+			'core-heading',
+			'core-image',
+			'core-list',
+			'core-paragraph',
+			'core-post-author',
+			'core-post-comments-link',
+			'core-post-date',
+			'core-post-terms',
+			'core-query',
+			'core-quote',
+			'core-separator',
+			'core-social-links',
+			'core-tag-cloud'
 		];
 
 		foreach ( $styles as $style ) {
 			include get_theme_file_path( "lib/block-styles/{$style}.php" );
+		}
+
+		$plugin_styles = [
+			'jvm/details-summary',
+			'tiles/progress'
+		];
+
+		$registry = WP_Block_Type_Registry::get_instance();
+
+		foreach ( $plugin_styles as $style ) {
+			if ( $registry->is_registered( $style ) ) {
+				include get_theme_file_path(
+					sprintf(
+						'lib/block-styles/%s.php',
+						str_replace( '/', '-', $style )
+					)
+				);
+			}
 		}
 	}
 }

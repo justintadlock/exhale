@@ -1,5 +1,6 @@
 .wp-block-buttons {
-	//margin-top: $spacing-global;
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
 	column-gap: $spacing-half;
 	row-gap:    $spacing-half;
 

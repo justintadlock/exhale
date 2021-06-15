@@ -7,8 +7,9 @@
 ////
 
 .wp-block-image {
-	margin-top: $spacing-global;
+	margin-top: var( --wp--custom--spacing--8 );
 	margin-bottom: 0;
+	font-family: var( --wp--preset--font-family--secondary );
 
 	&.alignwide,
 	&.alignfull {

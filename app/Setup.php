@@ -46,7 +46,7 @@ class Setup implements Bootable {
 		load_theme_textdomain( 'exhale', get_parent_theme_file_path( 'public/lang' ) );
 
 		// Remove core block patterns.
-		remove_theme_support( 'core-block-patterns' );
+		//remove_theme_support( 'core-block-patterns' );
 
 		// Let core handle responsive embed wrappers.
 		add_theme_support( 'responsive-embeds' );

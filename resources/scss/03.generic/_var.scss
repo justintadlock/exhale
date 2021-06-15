@@ -9,4 +9,15 @@
 /// @link   https://themehybrid.com/themes/mythic
 ////
 
-:root {}
+:root,
+body,
+html {
+	--wp--preset--font-family--headings:  var( --wp--custom--font-family--headings );
+	--wp--preset--font-family--primary:   var( --wp--custom--font-family--primary );
+	--wp--preset--font-family--secondary: var( --wp--custom--font-family--secondary );
+	--wp--preset--font-family--serif:     var( --wp--custom--font-family--serif );
+	--wp--preset--font-family--sans:      var( --wp--custom--font-family--sans );
+	--wp--preset--font-family--mono:      var( --wp--custom--font-family--mono );
+	--wp--preset--font-family--cursive:   var( --wp--custom--font-family--cursive );
+	--wp--preset--font-family--fantasy:   var( --wp--custom--font-family--fantasy );
+}

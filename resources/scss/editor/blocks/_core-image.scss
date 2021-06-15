@@ -11,7 +11,12 @@
 
 // overwrite GB.
 figure.wp-block-image:not(.wp-block) {
-	margin-top: $spacing-global;
+	margin-top: var( --wp--custom--spacing--8 );
+}
+
+// GB makes this a display: caption, which messes up the text.
+.wp-block[data-align] > .wp-block-image > figcaption {
+	display: block;
 }
 
 .block-core-columns [data-type="core/image"]:not([data-align]) .wp-block-image {

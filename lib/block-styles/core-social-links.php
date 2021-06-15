@@ -11,6 +11,16 @@ register_block_style( 'core/social-links', [
 ] );
 
 register_block_style( 'core/social-links', [
+	'name'  => 'rectangle',
+	'label' => __( 'Rectangle' )
+] );
+
+register_block_style( 'core/social-links', [
+	'name'  => 'rectangle-ringed',
+	'label' => __( 'Rectangle Ringed' )
+] );
+
+register_block_style( 'core/social-links', [
 	'name'  => 'square',
 	'label' => __( 'Square' )
 ] );

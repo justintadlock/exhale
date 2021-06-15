@@ -7,6 +7,9 @@
 ////
 
 .wp-block-rss {
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
+
 	display: grid;
 	grid-row-gap: $spacing-global;
 

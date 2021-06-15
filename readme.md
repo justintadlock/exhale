@@ -31,6 +31,13 @@ The theme uses the following third-party images within the screenshot, which are
 - https://www.pexels.com/photo/background-beautiful-blossom-calm-waters-268533/
 - https://www.pexels.com/photo/background-blur-bokeh-bright-220067/
 
+### Pattern Images
+
+- `columns-connect-boxes`: https://www.rawpixel.com/image/3282329/free-photo-image-paint-colors-colour-brush-brush-paint-brushes
+- `columns-cards`: https://www.rawpixel.com/image/3285418/free-photo-image-astronomy-cc0-creative-commons
+- `columns-cards-horizontal`: https://www.rawpixel.com/image/3282488/free-photo-image-space-night-sky-landscape
+- `recipe-card-*`: https://www.pexels.com/photo/two-tomatoes-373019/
+
 ## Copyright and License
 
 Exhale is licensed under the [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.

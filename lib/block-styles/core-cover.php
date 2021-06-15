@@ -6,6 +6,11 @@ register_block_style( 'core/cover', [
 ] );
 
 register_block_style( 'core/cover', [
+	'name'  => 'content-width-40',
+	'label' => __( 'Content Width: 40%' )
+] );
+
+register_block_style( 'core/cover', [
 	'name'  => 'content-width-50',
 	'label' => __( 'Content Width: 50%' )
 ] );

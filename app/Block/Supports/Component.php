@@ -57,13 +57,13 @@ class Component implements Bootable {
 			'core/pullquote',
 			'core/term-description'
 		] ) ) {
-			$meta['supports']['fontSize'] = true;
-			$meta['supports']['__experimentalFontStyle'] = true;
-			$meta['supports']['lineHeight'] = true;
-			$meta['supports']['__experimentalFontFamily'] = true;
-			$meta['supports']['__experimentalFontWeight'] = true;
-			$meta['supports']['__experimentalTextTransform'] = true;
-			$meta['supports']['__experimentalTextDecoration'] = true;
+			$meta['supports']['typography']['fontSize'] = true;
+			$meta['supports']['typography']['__experimentalFontStyle'] = true;
+			$meta['supports']['typography']['lineHeight'] = true;
+			$meta['supports']['typography']['__experimentalFontFamily'] = true;
+			$meta['supports']['typography']['__experimentalFontWeight'] = true;
+			$meta['supports']['typography']['__experimentalTextTransform'] = true;
+			$meta['supports']['typography']['__experimentalTextDecoration'] = true;
 		}
 
 		if ( 'core/heading' === $meta['name'] ) {
@@ -72,8 +72,8 @@ class Component implements Bootable {
 
 
 		if ( 'core/quote' === $meta['name'] ) {
-			$meta['supports']['fontSize'] = true;
-			$meta['supports']['lineHeight'] = true;
+			$meta['supports']['typography']['fontSize'] = true;
+			$meta['supports']['typography']['lineHeight'] = true;
 		}
 
 		if ( 'core/image' === $meta['name'] ) {

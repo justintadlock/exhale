@@ -2,7 +2,7 @@
 	return;
 } ?>
 
-<section id="comments" class="comments my-8">
+<section id="comments" class="comments mt-8">
 
 	<?php if ( have_comments() ) : ?>
 

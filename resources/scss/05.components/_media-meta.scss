@@ -19,11 +19,22 @@
 
 	// Individual meta items.
 	&__item {
-		border-color: var( --wp--preset--color--neutral-300 );
+		padding: var( --wp--custom--spacing--3 ) 0;
+
+		+ .media-meta__item {
+			border-top: 1px solid var( --wp--preset--color--neutral-300 );
+		}
 	}
 
-	&__item:last-of-type {
-		border: none;
+	@media ( min-width: $screen-sm ) {
+		&__item {
+			display: flex;
+		}
+
+		&__data {
+			flex: 1 1 0%;
+			text-align: right;
+		}
 	}
 
 	// Textual label.

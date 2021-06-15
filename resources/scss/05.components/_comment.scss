@@ -8,12 +8,21 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-.wp-block-post-comments .commentlist .comment {
-	padding: var( --wp--custom--spacing--8 );
-	box-sizing: content-box;
+.comments__list .children {
+    list-style: none;
+    padding: 0;
+}
+
+.comment--depth-1 > .children {
+    padding-left: 2rem;
+}
+
+.wp-block-post-comments .comments__list .comment {
 
 	&--depth-1 {
-		border:        1px solid var( --wp--preset--color--neutral-300 );
+		padding: var( --wp--custom--spacing--8 );
+		box-sizing: content-box;
+		border: 1px solid var( --wp--preset--color--neutral-300 );
 
 		@media only screen and ( max-width: $content-width-padded ) {
 			border-width:  0 0 1px;

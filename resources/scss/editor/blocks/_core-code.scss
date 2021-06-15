@@ -8,8 +8,8 @@
 
 .wp-block-code {
 	@include code-block;
-	margin-left: -#{ $spacing-global };
-	margin-right: -#{ $spacing-global };
+	//margin-left: -#{ $spacing-global };
+	//margin-right: -#{ $spacing-global };
 
 	.editor-plain-text,
 	.editor-plain-text:focus {

@@ -7,5 +7,6 @@
 ////
 
 .wp-block-post-excerpt {
-	margin-top: $spacing-global;
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
 }

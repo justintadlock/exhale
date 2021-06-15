@@ -41,6 +41,7 @@ class Provider extends ServiceProvider {
 
 		// Bind block components.
 		$this->app->singleton( Block\Patterns\Component::class  );
+		$this->app->singleton( Block\Plugins\Component::class   );
 		$this->app->singleton( Block\Styles\Component::class    );
 		$this->app->singleton( Block\Supports\Component::class  );
 		$this->app->singleton( Block\Templates\Component::class );
@@ -73,6 +74,7 @@ class Provider extends ServiceProvider {
 
 		// Boot block components.
 		$this->app->resolve( Block\Patterns\Component::class  )->boot();
+		$this->app->resolve( Block\Plugins\Component::class   )->boot();
 		$this->app->resolve( Block\Styles\Component::class    )->boot();
 		$this->app->resolve( Block\Supports\Component::class  )->boot();
 		$this->app->resolve( Block\Templates\Component::class )->boot();

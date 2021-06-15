@@ -20,3 +20,8 @@ $list-style-types: (
 		list-style-type: $value;
 	}
 }
+
+.list-none {
+	padding-left: 0;
+	padding-right: 0;
+}

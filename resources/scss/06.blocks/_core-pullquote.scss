@@ -7,10 +7,12 @@
 ////
 
 .wp-block-pullquote {
-	margin-top: $spacing-global;
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
 
 	padding: 2rem 0; // overwrite GB.
 
+	font-style: italic;
 	font-size: var( --wp--preset--font-size--gargantuan );
 	line-height: 1.5;
 	border-top:    4px solid currentColor;
@@ -24,14 +26,16 @@
 		max-width: var( --wp--custom--layout--wide );
 		margin: 0 auto;
 		font-size: inherit;
+		font-style:  inherit;
 		line-height: inherit;
 	}
 
 	cite,
 	&__citation { // __citation class for editor.
-		display: inline-block;
+		display: block;
 		margin-top: 1rem;
 		font-size: 0.75em;
+		font-weight: 400;
 
 		// overwrite GB.
 		font-style: normal;
