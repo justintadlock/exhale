@@ -1,7 +1,7 @@
 <!-- wp:cover {"url":"http://localhost/wp-content/uploads/2021/05/pexels-simon-berger-1323550-scaled.jpg","id":5446,"minHeight":100,"minHeightUnit":"vh","align":"full"} -->
 <div class="wp-block-cover alignfull has-background-dim" style="min-height:100vh"><img class="wp-block-cover__image-background wp-image-5446" alt="" src="http://localhost/wp-content/uploads/2021/05/pexels-simon-berger-1323550-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:buttons {"contentJustification":"center"} -->
-<div class="wp-block-buttons is-content-justification-center"><!-- wp:button {"width":25,"style":{"typography":{"fontStyle":"normal","fontWeight":"300","textTransform":"uppercase"}},"className":"is-style-outline","fontSize":"huge"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-25 has-custom-font-size is-style-outline has-huge-font-size" style="font-style:normal;font-weight:300;text-transform:uppercase"><a class="wp-block-button__link">Enter</a></div>
+<div class="wp-block-buttons is-content-justification-center"><!-- wp:button {"width":25,"style":{"typography":{"fontStyle":"normal","fontWeight":"300","textTransform":"uppercase"}},"className":"is-style-outline","fontSize":"2xl"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-25 has-custom-font-size is-style-outline has-2xl-font-size" style="font-style:normal;font-weight:300;text-transform:uppercase"><a class="wp-block-button__link">Enter</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 

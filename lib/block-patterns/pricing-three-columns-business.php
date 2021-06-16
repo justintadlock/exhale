@@ -10,8 +10,8 @@
 <hr class="wp-block-separator has-text-color has-background has-neutral-300-background-color has-neutral-300-color is-style-wide" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"/>
 <!-- /wp:separator -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|secondary"}},"className":"is-style-no-vertical-margin","fontSize":"titanic"} -->
-<p class="has-text-align-center is-style-no-vertical-margin has-titanic-font-size" style="font-family:var(--wp--preset--font-family--secondary)"><strong>$49</strong><span class="has-sm-font-size"><span style="color:#718096" class="has-inline-color"> </span></span><span class="has-sm-font-size"><span style="color:#718096" class="has-inline-color">/ month</span></span></p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|secondary"}},"className":"is-style-no-vertical-margin","fontSize":"5xl"} -->
+<p class="has-text-align-center is-style-no-vertical-margin has-5xl-font-size" style="font-family:var(--wp--preset--font-family--secondary)"><strong>$49</strong><span class="has-sm-font-size"><span style="color:#718096" class="has-inline-color"> </span></span><span class="has-sm-font-size"><span style="color:#718096" class="has-inline-color">/ month</span></span></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"top":"0rem","right":"0rem","bottom":"0rem","left":"0rem"}},"typography":{"fontFamily":"var:preset|font-family|secondary"}},"className":"is-style-no-vertical-margin","fontSize":"base"} -->
@@ -52,8 +52,8 @@
 <hr class="wp-block-separator has-text-color has-background has-neutral-300-background-color has-neutral-300-color is-style-wide" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"/>
 <!-- /wp:separator -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|secondary"}},"className":"is-style-no-vertical-margin","fontSize":"titanic"} -->
-<p class="has-text-align-center is-style-no-vertical-margin has-titanic-font-size" style="font-family:var(--wp--preset--font-family--secondary)"><strong>$49</strong><span class="has-sm-font-size"><span style="color:#718096" class="has-inline-color"> </span></span><span class="has-sm-font-size"><span style="color:#718096" class="has-inline-color">/ month</span></span></p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|secondary"}},"className":"is-style-no-vertical-margin","fontSize":"5xl"} -->
+<p class="has-text-align-center is-style-no-vertical-margin has-5xl-font-size" style="font-family:var(--wp--preset--font-family--secondary)"><strong>$49</strong><span class="has-sm-font-size"><span style="color:#718096" class="has-inline-color"> </span></span><span class="has-sm-font-size"><span style="color:#718096" class="has-inline-color">/ month</span></span></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"top":"0rem","right":"0rem","bottom":"0rem","left":"0rem"}},"typography":{"fontFamily":"var:preset|font-family|secondary"}},"className":"is-style-no-vertical-margin","fontSize":"base"} -->
@@ -94,8 +94,8 @@
 <hr class="wp-block-separator has-text-color has-background has-neutral-300-background-color has-neutral-300-color is-style-wide" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"/>
 <!-- /wp:separator -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|secondary"}},"className":"is-style-no-vertical-margin","fontSize":"titanic"} -->
-<p class="has-text-align-center is-style-no-vertical-margin has-titanic-font-size" style="font-family:var(--wp--preset--font-family--secondary)"><strong>$79</strong><span class="has-sm-font-size"><span style="color:#718096" class="has-inline-color"> </span></span><span class="has-sm-font-size"><span style="color:#718096" class="has-inline-color">/ month</span></span></p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|secondary"}},"className":"is-style-no-vertical-margin","fontSize":"5xl"} -->
+<p class="has-text-align-center is-style-no-vertical-margin has-5xl-font-size" style="font-family:var(--wp--preset--font-family--secondary)"><strong>$79</strong><span class="has-sm-font-size"><span style="color:#718096" class="has-inline-color"> </span></span><span class="has-sm-font-size"><span style="color:#718096" class="has-inline-color">/ month</span></span></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"top":"0rem","right":"0rem","bottom":"0rem","left":"0rem"}},"typography":{"fontFamily":"var:preset|font-family|secondary"}},"className":"is-style-no-vertical-margin","fontSize":"base"} -->

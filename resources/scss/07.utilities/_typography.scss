@@ -25,21 +25,21 @@ $font-sizes: (
 	9xl  : $sizing-unit * 64 // 8rem
 );
 
-.has-universal-font-size,
-.has-galactic-font-size,
-.has-planetary-font-size,
-.has-olympic-font-size {
+.has-9xl-font-size,
+.has-8xl-font-size,
+.has-7xl-font-size,
+.has-6xl-font-size {
 	line-height: 1;
 }
 
-.has-titanic-font-size,
+.has-5xl-font-size,
 h1 { line-height: 3.25rem; }
 
-.has-colossal-font-size,
+.has-4xl-font-size,
 h2 { line-height: 2.53125rem; } // 2.5
 
-.has-gargantuan-font-size { line-height: 2.25rem; } // 2.25
-.has-huge-font-size { line-height: 2rem; } // 2
+.has-3xl-font-size { line-height: 2.25rem; } // 2.25
+.has-2xl-font-size { line-height: 2rem; } // 2
 
 .has-xl-font-size,
 .has-lg-font-size { line-height: 1.75rem; } // 1.75
@@ -50,24 +50,24 @@ h2 { line-height: 2.53125rem; } // 2.5
 .has-xs-font-size { line-height: 1.25rem; }
 
 @media ( max-width: $screen-xl ) {
-	.has-universal-font-size { font-size: $sizing-unit * 56 !important; }
-	.has-galactic-font-size { font-size: $sizing-unit * 40 !important; }
+	.has-9xl-font-size { font-size: $sizing-unit * 56 !important; }
+	.has-8xl-font-size { font-size: $sizing-unit * 40 !important; }
 }
 
 @media ( max-width: $screen-lg ) {
-	.has-universal-font-size { font-size: 6rem   !important; }
-	.has-galactic-font-size  { font-size: 4.5rem !important; }
-	.has-planetary-font-size { font-size: 4rem   !important; }
-	.has-olympic-font-size   { font-size: 3.5rem !important; }
+	.has-9xl-font-size { font-size: 6rem   !important; }
+	.has-8xl-font-size  { font-size: 4.5rem !important; }
+	.has-7xl-font-size { font-size: 4rem   !important; }
+	.has-6xl-font-size   { font-size: 3.5rem !important; }
 }
 
 @media ( max-width: $screen-md ) {
-	.has-universal-font-size { font-size: 4.5rem !important; }
-	.has-galactic-font-size  { font-size: 4rem   !important; }
-	.has-planetary-font-size { font-size: 3.5rem !important; }
-	.has-olympic-font-size   { font-size: 3rem   !important; }
+	.has-9xl-font-size { font-size: 4.5rem !important; }
+	.has-8xl-font-size  { font-size: 4rem   !important; }
+	.has-7xl-font-size { font-size: 3.5rem !important; }
+	.has-6xl-font-size   { font-size: 3rem   !important; }
 
-	.has-titanic-font-size,
+	.has-5xl-font-size,
 	h1 {
 		font-size: 2.5rem !important;
 		line-height: 2.75rem;
@@ -76,44 +76,44 @@ h2 { line-height: 2.53125rem; } // 2.5
 
 @media ( max-width: $screen-sm ) {
 
-	.has-universal-font-size {
+	.has-9xl-font-size {
 		font-size: 2.75rem !important;
 		line-height: 3rem;
 	}
 
-	.has-galactic-font-size {
+	.has-8xl-font-size {
 		font-size: 2.5rem !important;
 		line-height: 2.75rem;
 	}
 
-	.has-planetary-font-size {
+	.has-7xl-font-size {
 		font-size: 2.25rem !important;
 		line-height: 2.5rem;
 	}
 
-	.has-olympic-font-size {
+	.has-6xl-font-size {
 		font-size: 2rem !important;
 	}
 
-	.has-titanic-font-size,
+	.has-5xl-font-size,
 	h1 {
 		font-size: 1.75rem !important;
 		line-height: 2rem;
 	}
 
-	.has-colossal-font-size,
+	.has-4xl-font-size,
 	h2 {
 		font-size: 1.5rem !important;
 		line-height: 2rem;
 	}
 
-	.has-gargantuan-font-size,
+	.has-3xl-font-size,
 	h3 {
 		font-size: 1.375rem !important;
 		line-height: 1.75rem;
 	}
 
-	.has-huge-font-size,
+	.has-2xl-font-size,
 	h4 {
 		font-size: 1.25rem !important;
 		line-height: 1.75rem;
@@ -121,7 +121,7 @@ h2 { line-height: 2.53125rem; } // 2.5
 
 	.has-xl-font-size,
 	h5 {
-		font-size: 1.125rem !important;
+		font-size: 1.1875rem !important;
 		line-height: 1.75rem;
 	}
 }

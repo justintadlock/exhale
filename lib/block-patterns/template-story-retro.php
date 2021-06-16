@@ -1,12 +1,12 @@
 <!-- wp:cover {"url":"http://localhost/wp-content/uploads/2021/05/pexels-elviss-railijs-bitans-1389429.jpg","id":3842,"dimRatio":70,"overlayColor":"black","minHeight":100,"minHeightUnit":"vh","align":"full","style":{"spacing":{"padding":{"top":"64px","right":"64px","bottom":"64px","left":"64px"}}}} -->
 <div class="wp-block-cover alignfull has-background-dim-70 has-black-background-color has-background-dim" style="padding-top:64px;padding-right:64px;padding-bottom:64px;padding-left:64px;min-height:100vh"><img class="wp-block-cover__image-background wp-image-3842" alt="" src="http://localhost/wp-content/uploads/2021/05/pexels-elviss-railijs-bitans-1389429.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:columns {"verticalAlignment":"center"} -->
 <div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"60%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:60%"><!-- wp:heading {"style":{"typography":{"fontWeight":"900","lineHeight":"1.25","textTransform":"uppercase"}},"fontSize":"olympic"} -->
-<h2 class="has-olympic-font-size" style="font-weight:900;line-height:1.25;text-transform:uppercase">Lorem ipsum dolor sit amet, sit amet dictum sit amet justo donec</h2>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:60%"><!-- wp:heading {"style":{"typography":{"fontWeight":"900","lineHeight":"1.25","textTransform":"uppercase"}},"fontSize":"6xl"} -->
+<h2 class="has-6xl-font-size" style="font-weight:900;line-height:1.25;text-transform:uppercase">Lorem ipsum dolor sit amet, sit amet dictum sit amet justo donec</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"fontSize":"huge"} -->
-<p class="has-huge-font-size">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat velit scelerisque in dictum non consectetur a erat nam.</p>
+<!-- wp:paragraph {"fontSize":"2xl"} -->
+<p class="has-2xl-font-size">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat velit scelerisque in dictum non consectetur a erat nam.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|headings","fontWeight":"100"}},"fontSize":"lg"} -->
@@ -71,12 +71,12 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:cover {"url":"http://localhost/wp-content/uploads/2021/05/pexels-christiane-2565214.jpg","id":3817,"dimRatio":60,"overlayColor":"black","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-<div class="wp-block-cover alignfull has-background-dim-60 has-black-background-color has-background-dim" style="min-height:100vh" id="chapter-1"><img class="wp-block-cover__image-background wp-image-3817" alt="" src="http://localhost/wp-content/uploads/2021/05/pexels-christiane-2565214.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontWeight":"900","lineHeight":"1","textTransform":"uppercase"}},"className":"mx-0","fontSize":"olympic"} -->
-<h2 class="has-text-align-center mx-0 has-olympic-font-size" style="font-weight:900;line-height:1;text-transform:uppercase">Chapter 1</h2>
+<div class="wp-block-cover alignfull has-background-dim-60 has-black-background-color has-background-dim" style="min-height:100vh" id="chapter-1"><img class="wp-block-cover__image-background wp-image-3817" alt="" src="http://localhost/wp-content/uploads/2021/05/pexels-christiane-2565214.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontWeight":"900","lineHeight":"1","textTransform":"uppercase"}},"className":"mx-0","fontSize":"6xl"} -->
+<h2 class="has-text-align-center mx-0 has-6xl-font-size" style="font-weight:900;line-height:1;text-transform:uppercase">Chapter 1</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|headings","lineHeight":"1","fontWeight":"100"}},"className":"mx-0","fontSize":"colossal"} -->
-<p class="has-text-align-center mx-0 has-colossal-font-size" style="font-family:var(--wp--preset--font-family--headings);font-weight:100;line-height:1">Lorem Ipsum Dolor Sit</p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|headings","lineHeight":"1","fontWeight":"100"}},"className":"mx-0","fontSize":"4xl-"} -->
+<p class="has-text-align-center mx-0 has-4xl--font-size" style="font-family:var(--wp--preset--font-family--headings);font-weight:100;line-height:1">Lorem Ipsum Dolor Sit</p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover -->
 
@@ -101,12 +101,12 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:cover {"url":"http://localhost/wp-content/uploads/2021/05/pexels-pixabay-46244-scaled.jpg","id":3816,"dimRatio":60,"overlayColor":"black","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-<div class="wp-block-cover alignfull has-background-dim-60 has-black-background-color has-background-dim" style="min-height:100vh" id="chapter-2"><img class="wp-block-cover__image-background wp-image-3816" alt="" src="http://localhost/wp-content/uploads/2021/05/pexels-pixabay-46244-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontWeight":"900","lineHeight":"1","textTransform":"uppercase"}},"className":"mx-0","fontSize":"olympic"} -->
-<h2 class="has-text-align-center mx-0 has-olympic-font-size" style="font-weight:900;line-height:1;text-transform:uppercase">Chapter 2</h2>
+<div class="wp-block-cover alignfull has-background-dim-60 has-black-background-color has-background-dim" style="min-height:100vh" id="chapter-2"><img class="wp-block-cover__image-background wp-image-3816" alt="" src="http://localhost/wp-content/uploads/2021/05/pexels-pixabay-46244-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontWeight":"900","lineHeight":"1","textTransform":"uppercase"}},"className":"mx-0","fontSize":"6xl"} -->
+<h2 class="has-text-align-center mx-0 has-6xl-font-size" style="font-weight:900;line-height:1;text-transform:uppercase">Chapter 2</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|headings","lineHeight":"1","fontWeight":"100"}},"className":"mx-0","fontSize":"colossal"} -->
-<p class="has-text-align-center mx-0 has-colossal-font-size" style="font-family:var(--wp--preset--font-family--headings);font-weight:100;line-height:1">Lorem Ipsum Dolor Sit</p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|headings","lineHeight":"1","fontWeight":"100"}},"className":"mx-0","fontSize":"4xl-"} -->
+<p class="has-text-align-center mx-0 has-4xl--font-size" style="font-family:var(--wp--preset--font-family--headings);font-weight:100;line-height:1">Lorem Ipsum Dolor Sit</p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover -->
 

@@ -6,8 +6,8 @@
 <h4 class="my-0" style="font-weight:100">Trending</h4>
 <!-- /wp:heading -->
 
-<!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700","lineHeight":"1.25"}},"className":"my-0","fontSize":"huge"} -->
-<h3 class="my-0 has-huge-font-size" style="font-weight:700;line-height:1.25">This Season's<br>Most Wanted</h3>
+<!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700","lineHeight":"1.25"}},"className":"my-0","fontSize":"2xl"} -->
+<h3 class="my-0 has-2xl-font-size" style="font-weight:700;line-height:1.25">This Season's<br>Most Wanted</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|headings","fontWeight":"100","textTransform":"uppercase"}},"className":"mt-8"} -->

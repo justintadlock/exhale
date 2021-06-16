@@ -3,8 +3,8 @@
 <div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:heading {"textAlign":"center","level":1,"align":"wide","style":{"typography":{"fontStyle":"normal","fontWeight":"900","textTransform":"uppercase","fontFamily":"var:preset|font-family|primary"}},"className":"is-style-text-shadow-sm","fontSize":"olympic"} -->
-<h1 class="alignwide has-text-align-center is-style-text-shadow-sm has-olympic-font-size" style="font-family:var(--wp--preset--font-family--primary);font-style:normal;font-weight:900;text-transform:uppercase">A Summer of Blockbusters</h1>
+<!-- wp:heading {"textAlign":"center","level":1,"align":"wide","style":{"typography":{"fontStyle":"normal","fontWeight":"900","textTransform":"uppercase","fontFamily":"var:preset|font-family|primary"}},"className":"is-style-text-shadow-sm","fontSize":"6xl"} -->
+<h1 class="alignwide has-text-align-center is-style-text-shadow-sm has-6xl-font-size" style="font-family:var(--wp--preset--font-family--primary);font-style:normal;font-weight:900;text-transform:uppercase">A Summer of Blockbusters</h1>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":48} -->

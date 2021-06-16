@@ -7,8 +7,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center"><!-- wp:quote {"style":{"typography":{"fontWeight":"700","lineHeight":"1.5"},"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"fontSize":"gargantuan"} -->
-<blockquote class="wp-block-quote has-gargantuan-font-size" style="font-weight:700;line-height:1.5;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><cite>-- Jane Doe / <a href="#">Website Name</a></cite></blockquote>
+<div class="wp-block-column is-vertically-aligned-center"><!-- wp:quote {"style":{"typography":{"fontWeight":"700","lineHeight":"1.5"},"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"fontSize":"3xl"} -->
+<blockquote class="wp-block-quote has-3xl-font-size" style="font-weight:700;line-height:1.5;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><cite>-- Jane Doe / <a href="#">Website Name</a></cite></blockquote>
 <!-- /wp:quote --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div></div>

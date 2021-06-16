@@ -4,8 +4,8 @@
 <div style="height:64px" aria-hidden="true" class="wp-block-spacer r:h-8"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:heading {"level":1,"className":"is-style-default","fontSize":"galactic"} -->
-<h1 class="is-style-default has-galactic-font-size">Hello,<br>I'm <span class="has-inline-color has-primary-700-color">Justin</span></h1>
+<!-- wp:heading {"level":1,"className":"is-style-default","fontSize":"8xl"} -->
+<h1 class="is-style-default has-8xl-font-size">Hello,<br>I'm <span class="has-inline-color has-primary-700-color">Justin</span></h1>
 <!-- /wp:heading -->
 
 <!-- wp:heading {"style":{"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"300"}},"fontSize":"lg"} -->

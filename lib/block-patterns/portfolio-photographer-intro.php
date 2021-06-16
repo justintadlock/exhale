@@ -4,8 +4,8 @@
 <h2 class="has-text-align-center has-neutral-900-color has-text-color has-base-font-size" style="font-weight:100;line-height:1;text-transform:uppercase">John Doe</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.5"}},"textColor":"neutral-900","className":"my-0","fontSize":"titanic"} -->
-<p class="has-text-align-center my-0 has-neutral-900-color has-text-color has-titanic-font-size" style="line-height:1.5">Professional Photographer</p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.5"}},"textColor":"neutral-900","className":"my-0","fontSize":"5xl"} -->
+<p class="has-text-align-center my-0 has-neutral-900-color has-text-color has-5xl-font-size" style="line-height:1.5">Professional Photographer</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"layout":{"inherit":true}} -->

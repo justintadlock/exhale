@@ -6,8 +6,8 @@
 <div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:heading {"level":1,"style":{"typography":{"fontWeight":"900"}},"className":"mt-0","fontSize":"planetary"} -->
-<h1 class="mt-0 has-planetary-font-size" style="font-weight:900">Adventure Awaits for Those Who Want It</h1>
+<!-- wp:heading {"level":1,"style":{"typography":{"fontWeight":"900"}},"className":"mt-0","fontSize":"7xl"} -->
+<h1 class="mt-0 has-7xl-font-size" style="font-weight:900">Adventure Awaits for Those Who Want It</h1>
 <!-- /wp:heading -->
 
 <!-- wp:columns -->
@@ -20,7 +20,7 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:post-excerpt {"style":{"typography":{"lineHeight":"1.6"}},"fontSize":"huge"} /--></div>
+<!-- wp:post-excerpt {"style":{"typography":{"lineHeight":"1.6"}},"fontSize":"2xl"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 

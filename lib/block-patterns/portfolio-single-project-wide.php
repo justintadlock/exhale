@@ -7,8 +7,8 @@
 <p class="has-text-align-center has-sm-font-size" style="font-family:var(--wp--preset--font-family--headings);text-transform:uppercase">Under the Sea</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"textAlign":"center","style":{"typography":{"fontFamily":"var:preset|font-family|primary","fontWeight":"400"}},"className":"my-4","fontSize":"olympic"} -->
-<h2 class="has-text-align-center my-4 has-olympic-font-size" style="font-family:var(--wp--preset--font-family--primary);font-weight:400">Exploring the World of Sea Turtles</h2>
+<!-- wp:heading {"textAlign":"center","style":{"typography":{"fontFamily":"var:preset|font-family|primary","fontWeight":"400"}},"className":"my-4","fontSize":"6xl"} -->
+<h2 class="has-text-align-center my-4 has-6xl-font-size" style="font-family:var(--wp--preset--font-family--primary);font-weight:400">Exploring the World of Sea Turtles</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|headings","textTransform":"uppercase"}},"fontSize":"sm"} -->

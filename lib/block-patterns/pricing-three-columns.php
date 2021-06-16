@@ -5,8 +5,8 @@
 <!-- /wp:heading -->
 
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"2rem","right":"2rem","bottom":"2rem","left":"2rem"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"backgroundColor":"neutral-100"} -->
-<div class="wp-block-group alignfull has-neutral-100-background-color has-background" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|headings","fontWeight":"300"}},"className":"flex items-center justify-center","fontSize":"titanic"} -->
-<p class="has-text-align-center flex items-center justify-center has-titanic-font-size" style="font-family:var(--wp--preset--font-family--headings);font-weight:300"><span class="has-sm-font-size">$</span>49.99<span class="has-sm-font-size"> / year</span></p>
+<div class="wp-block-group alignfull has-neutral-100-background-color has-background" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|headings","fontWeight":"300"}},"className":"flex items-center justify-center","fontSize":"5xl"} -->
+<p class="has-text-align-center flex items-center justify-center has-5xl-font-size" style="font-family:var(--wp--preset--font-family--headings);font-weight:300"><span class="has-sm-font-size">$</span>49.99<span class="has-sm-font-size"> / year</span></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -41,8 +41,8 @@
 <!-- /wp:heading -->
 
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"2rem","right":"2rem","bottom":"2rem","left":"2rem"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"backgroundColor":"neutral-100"} -->
-<div class="wp-block-group alignfull has-neutral-100-background-color has-background" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|headings","fontWeight":"300"}},"className":"flex items-center justify-center","fontSize":"titanic"} -->
-<p class="has-text-align-center flex items-center justify-center has-titanic-font-size" style="font-family:var(--wp--preset--font-family--headings);font-weight:300"><span class="has-sm-font-size">$</span>49.99<span class="has-sm-font-size"> / year</span></p>
+<div class="wp-block-group alignfull has-neutral-100-background-color has-background" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|headings","fontWeight":"300"}},"className":"flex items-center justify-center","fontSize":"5xl"} -->
+<p class="has-text-align-center flex items-center justify-center has-5xl-font-size" style="font-family:var(--wp--preset--font-family--headings);font-weight:300"><span class="has-sm-font-size">$</span>49.99<span class="has-sm-font-size"> / year</span></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -77,8 +77,8 @@
 <!-- /wp:heading -->
 
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"2rem","right":"2rem","bottom":"2rem","left":"2rem"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"backgroundColor":"neutral-100"} -->
-<div class="wp-block-group alignfull has-neutral-100-background-color has-background" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|headings","fontWeight":"300"}},"className":"flex items-center justify-center","fontSize":"titanic"} -->
-<p class="has-text-align-center flex items-center justify-center has-titanic-font-size" style="font-family:var(--wp--preset--font-family--headings);font-weight:300"><span class="has-sm-font-size">$</span>79.99<span class="has-sm-font-size"> / year</span></p>
+<div class="wp-block-group alignfull has-neutral-100-background-color has-background" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontFamily":"var:preset|font-family|headings","fontWeight":"300"}},"className":"flex items-center justify-center","fontSize":"5xl"} -->
+<p class="has-text-align-center flex items-center justify-center has-5xl-font-size" style="font-family:var(--wp--preset--font-family--headings);font-weight:300"><span class="has-sm-font-size">$</span>79.99<span class="has-sm-font-size"> / year</span></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

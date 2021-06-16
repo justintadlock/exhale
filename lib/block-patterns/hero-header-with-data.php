@@ -9,8 +9,8 @@
 <h3 class="has-neutral-300-color has-text-color has-xl-font-size">Climate Change</h3>
 <!-- /wp:heading -->
 
-<!-- wp:heading {"style":{"typography":{"lineHeight":"1.25"}},"className":"my-0","fontSize":"titanic"} -->
-<h2 class="my-0 has-titanic-font-size" style="line-height:1.25">Warming Oceans Affecting Sea Life</h2>
+<!-- wp:heading {"style":{"typography":{"lineHeight":"1.25"}},"className":"my-0","fontSize":"5xl"} -->
+<h2 class="my-0 has-5xl-font-size" style="line-height:1.25">Warming Oceans Affecting Sea Life</h2>
 <!-- /wp:heading --></div>
 <!-- /wp:column -->
 

@@ -5,8 +5,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"50%"} -->
-<div class="wp-block-column" style="flex-basis:50%"><!-- wp:heading {"style":{"typography":{"lineHeight":"1"}},"textColor":"black","fontSize":"galactic"} -->
-<h2 class="has-black-color has-text-color has-galactic-font-size" style="line-height:1">The Art of Adventure</h2>
+<div class="wp-block-column" style="flex-basis:50%"><!-- wp:heading {"style":{"typography":{"lineHeight":"1"}},"textColor":"black","fontSize":"8xl"} -->
+<h2 class="has-black-color has-text-color has-8xl-font-size" style="line-height:1">The Art of Adventure</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"black"} -->

@@ -4,8 +4,8 @@
 <div style="height:272px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:heading {"textAlign":"center","level":1,"className":"my-0","fontSize":"planetary"} -->
-<h1 class="has-text-align-center my-0 has-planetary-font-size"><strong>A New Sound</strong></h1>
+<!-- wp:heading {"textAlign":"center","level":1,"className":"my-0","fontSize":"7xl"} -->
+<h1 class="has-text-align-center my-0 has-7xl-font-size"><strong>A New Sound</strong></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","className":"my-0","fontSize":"xl"} -->

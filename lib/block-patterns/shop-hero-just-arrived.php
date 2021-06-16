@@ -5,8 +5,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"50%"} -->
-<div class="wp-block-column" style="flex-basis:50%"><!-- wp:heading {"style":{"typography":{"fontWeight":"100","lineHeight":"1.25"}},"className":"my-0","fontSize":"titanic"} -->
-<h2 class="my-0 has-titanic-font-size" style="font-weight:100;line-height:1.25">Just Arrived</h2>
+<div class="wp-block-column" style="flex-basis:50%"><!-- wp:heading {"style":{"typography":{"fontWeight":"100","lineHeight":"1.25"}},"className":"my-0","fontSize":"5xl"} -->
+<h2 class="my-0 has-5xl-font-size" style="font-weight:100;line-height:1.25">Just Arrived</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|headings"}},"className":"my-0"} -->

@@ -8,8 +8,8 @@
 <h2 class="has-text-align-center has-xs-font-size" style="font-style:normal;font-weight:400;text-transform:uppercase">My Story</h2>
 <!-- /wp:heading -->
 
-<!-- wp:heading {"textAlign":"center","level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"colossal"} -->
-<h3 class="has-text-align-center has-colossal-font-size" style="font-style:normal;font-weight:300">About Me</h3>
+<!-- wp:heading {"textAlign":"center","level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"4xl-"} -->
+<h3 class="has-text-align-center has-4xl--font-size" style="font-style:normal;font-weight:300">About Me</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"neutral-600","fontSize":"base"} -->
@@ -34,8 +34,8 @@
 <h2 class="has-text-align-center has-xs-font-size" style="font-style:normal;font-weight:400;text-transform:uppercase">My Email</h2>
 <!-- /wp:heading -->
 
-<!-- wp:heading {"textAlign":"center","level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"colossal"} -->
-<h3 class="has-text-align-center has-colossal-font-size" style="font-style:normal;font-weight:300">Contact Me</h3>
+<!-- wp:heading {"textAlign":"center","level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"4xl-"} -->
+<h3 class="has-text-align-center has-4xl--font-size" style="font-style:normal;font-weight:300">Contact Me</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"neutral-600","fontSize":"base"} -->
@@ -60,8 +60,8 @@
 <h2 class="has-text-align-center has-xs-font-size" style="font-style:normal;font-weight:400;text-transform:uppercase">My Social</h2>
 <!-- /wp:heading -->
 
-<!-- wp:heading {"textAlign":"center","level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"colossal"} -->
-<h3 class="has-text-align-center has-colossal-font-size" style="font-style:normal;font-weight:300">Follow Me</h3>
+<!-- wp:heading {"textAlign":"center","level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"4xl-"} -->
+<h3 class="has-text-align-center has-4xl--font-size" style="font-style:normal;font-weight:300">Follow Me</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"neutral-600","fontSize":"base"} -->

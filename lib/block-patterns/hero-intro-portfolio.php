@@ -5,12 +5,12 @@
 <p class="has-text-align-left has-lg-font-size" style="font-family:var(--wp--preset--font-family--headings)">Welcome to My Portfolio</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":1,"style":{"typography":{"lineHeight":"1.25"}},"className":"my-0","fontSize":"olympic"} -->
-<h1 class="my-0 has-olympic-font-size" style="line-height:1.25"><strong>Hello, I'm John Doe</strong></h1>
+<!-- wp:heading {"level":1,"style":{"typography":{"lineHeight":"1.25"}},"className":"my-0","fontSize":"6xl"} -->
+<h1 class="my-0 has-6xl-font-size" style="line-height:1.25"><strong>Hello, I'm John Doe</strong></h1>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|headings"}},"className":"my-0","fontSize":"gargantuan"} -->
-<p class="my-0 has-gargantuan-font-size" style="font-family:var(--wp--preset--font-family--headings)">Photographer -- Designer</p>
+<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|headings"}},"className":"my-0","fontSize":"3xl"} -->
+<p class="my-0 has-3xl-font-size" style="font-family:var(--wp--preset--font-family--headings)">Photographer -- Designer</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"mt-4"} -->

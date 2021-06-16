@@ -583,43 +583,43 @@
 						"size" : "1.25rem"
 					},
 					{
-						"slug" : "huge",
-						"name" : "Huge",
+						"slug" : "2xl",
+						"name" : "Huge (2xl)",
 						"size" : "1.5rem"
 					},
 					{
-						"slug" : "gargantuan",
-						"name" : "Gargantuan",
+						"slug" : "3xl",
+						"name" : "Gargantuan (3xl)",
 						"size" : "1.875rem"
 					},
 					{
-						"slug" : "colossal",
-						"name" : "Colossal",
+						"slug" : "4xl",
+						"name" : "Colossal (4xl)",
 						"size" : "2.25rem"
 					},
 					{
-						"slug" : "titanic",
-						"name" : "Titanic",
+						"slug" : "5xl",
+						"name" : "Titanic (5xl)",
 						"size" : "3rem"
 					},
 					{
-						"slug" : "olympic",
-						"name" : "Olympic",
+						"slug" : "6xl",
+						"name" : "Olympic (6xl)",
 						"size" : "4rem"
 					},
 					{
-						"slug" : "planetary",
-						"name" : "Planetary",
+						"slug" : "7xl",
+						"name" : "Planetary (7xl)",
 						"size" : "4.5rem"
 					},
 					{
-						"slug" : "galactic",
-						"name" : "Galactic",
+						"slug" : "8xl",
+						"name" : "Galactic (8xl)",
 						"size" : "6rem"
 					},
 					{
-						"slug" : "universal",
-						"name" : "Universal",
+						"slug" : "9xl",
+						"name" : "Universal (9xl)",
 						"size" : "8rem"
 					}
 				],
