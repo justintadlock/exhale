@@ -1,7 +1,9 @@
 
 
 label {
-	// components/_text-secondary.scss
+	font-family: var( --wp--preset--font-family--secondary );
+	font-size: var( --wp--preset--font-size--base );
+	color: var( --wp--preset--color--neutral-700 );
 }
 
 input {

@@ -2,22 +2,11 @@
 .wp-block-social-links {
 	margin-top: var( --wp--custom--spacing--8 );
 	margin-bottom: 0;
-
-	column-gap: $spacing-half;
-	row-gap: $spacing-half;
+	gap: $spacing-half;
 
 	// need to triple selector to override GB.
 	.wp-social-link.wp-social-link.wp-block-social-link {
-	//	margin: $spacing-half $spacing-fourth 0;
 		margin: 0;
-	}
-
-	&.items-justified-left .wp-social-link.wp-block-social-link {
-	//	margin: $spacing-half $spacing-half 0 0;
-	}
-
-	&.items-justified-right .wp-social-link.wp-block-social-link {
-	//	margin: $spacing-half 0 0 $spacing-half;
 	}
 
 	.wp-block-social-link {
@@ -43,7 +32,6 @@
 	&.is-style-pill-ringed .wp-block-social-link,
 	&.is-style-rectangle-ringed .wp-block-social-link,
 	&.is-style-square-ringed .wp-block-social-link {
-
 		border: 1px solid currentColor;
 
 		svg {

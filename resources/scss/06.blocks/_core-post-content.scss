@@ -10,3 +10,7 @@
 	margin-top: 0;
 	margin-bottom: 0;
 }
+
+.post-password-form [type=submit] {
+	margin-top: $spacing-global;
+}

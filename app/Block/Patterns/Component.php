@@ -69,6 +69,7 @@ class Component implements Bootable {
 			'book'        => __( 'Book' ),
 			'cover'       => __( 'Covers' ),
 			'exhale'      => __( 'Exhale' ),
+			'forms'       => __( 'Forms' ),
 			'magazine'    => __( 'Magazine' ),
 			'portfolio'   => __( 'Portfolio' ),
 			'post-header' => __( 'Post Header' ),
@@ -163,6 +164,11 @@ class Component implements Bootable {
 			'categories' => [ 'cover', 'quote' ]
 		] );
 
+		$this->registerPattern( 'cover-search', [
+			'title' => __( 'Cover: Search' ),
+			'categories' => [ 'cover', 'forms' ]
+		] );
+
 		$this->registerPattern( 'cover-splash-social', [
 			'title' => __( 'Cover: Splash Social' ),
 			'categories' => [ 'cover' ]
@@ -192,6 +198,11 @@ class Component implements Bootable {
 		$this->registerPattern( 'hero-intro-portfolio', [
 			'title' => __( 'Hero: Intro Portfolio' ),
 			'categories' => [ 'cover' ]
+		] );
+
+		$this->registerPattern( 'hero-search', [
+			'title' => __( 'Hero: Search' ),
+			'categories' => [ 'forms' ]
 		] );
 
 		$this->registerPattern( 'hero-video-space', [

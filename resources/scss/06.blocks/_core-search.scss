@@ -6,15 +6,91 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
+
 .wp-block-search {
 	margin-top: var( --wp--custom--spacing--8 );
 	margin-bottom: 0;
 
-	&__input {
-		//margin-bottom: $spacing-global;
+	.wp-block-search__inside-wrapper {
+		gap: 1rem;
 	}
 
-	&__button {
-		margin-top: $spacing-global;
+	&.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+		gap: 0;
+	}
+
+	&.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+		padding: 0; // gb;
+		border: 1px solid var( --wp--preset--color--neutral-300 );
+	}
+
+	.wp-block-search__label {
+		padding: 0 1rem;
+		font-family: var( --wp--preset--font-family--secondary );
+		font-size: var( --wp--preset--font-size--base );
+		color: var( --wp--preset--color--neutral-700 );
+	}
+
+	.wp-block-search__input {
+		line-height: 1;
+		width: auto;
+		//min-width: unset; // gb.
+		padding: 1rem;
+		border: 1px solid var( --wp--preset--color--neutral-300 );
+
+		&::placeholder {
+			color: currentColor;
+			opacity: 0.7;
+		}
+	}
+
+	&.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
+		padding: 1rem 1rem; // gb
+	}
+
+	// The fuck, Gutenberg?
+	// Triple selector in the editor.
+	// Only need single selector on front-end.
+	.wp-block-search__button.wp-block-search__button.wp-block-search__button {
+		padding: 1rem 2rem;
+	}
+
+	.wp-block-search__button.wp-block-search__button.has-icon {
+		padding: 1rem;
+	}
+
+	.wp-block-search__button {
+		margin: 0;
+		line-height: 1;
+		color: var( --wp--preset--color--white );
+		background-color: var( --wp--preset--color--primary-700 );
+		//border: 2px solid var( --wp--preset--color--neutral-300 );
+		border: none;
+
+		&:hover,
+		&:focus {
+			background-color: var( --wp--preset--color--primary-900 );
+		}
+	}
+
+	&.wp-block-search__button-inside .wp-block-search__button {
+		border-radius: 0 !important;
+	}
+
+	.search-icon {
+		color: currentColor;
+		fill: currentColor;
+	}
+
+}
+
+.has-text-color .wp-block-search {
+	&.wp-block-search__button-inside .wp-block-search__inside-wrapper,
+	.wp-block-search__input {
+		border-color: currentColor;
+	}
+	.wp-block-search__label,
+	.wp-block-search__input {
+		color: currentColor;
 	}
 }
