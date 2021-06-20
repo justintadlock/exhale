@@ -2,5 +2,5 @@
 
 register_block_style( 'core/group', [
 	'name'  => 'flex',
-	'label' => __( 'Flex' )
+	'label' => __( 'Flex', 'exhale' )
 ] );

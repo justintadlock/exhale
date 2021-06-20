@@ -1,0 +1,106 @@
+////
+/// Quote block.
+///
+/// @group  Blocks
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.wp-block-quote {
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
+
+	&.has-background {
+		padding: $spacing-global;
+	}
+
+	&.is-style-large {
+		font-size: 1.25em;
+	}
+
+	> cite,
+	&__citation { // __citation class for the editor.
+		display:  block;
+		margin-top: $spacing-global;
+
+		&::before {
+			content: "\2014\000A0";
+		}
+	}
+
+	&.is-style-background-mark {
+		position: relative;
+
+		&::before {
+		    content: '\201C';
+		    color: var( --wp--preset--color--primary-200 );
+		    font-size: 7.5em;
+		    line-height: 1;
+		    font-weight: 700;
+		    opacity: 0.25;
+		    position: absolute;
+		    top:  -0.05em;
+		    left: 0;
+		    text-shadow: none;
+		}
+	}
+
+	&.is-style-box-primary,
+	&.is-style-box-secondary {
+		padding: 2rem;
+		background-color: var( --wp--preset--color--neutral-100 );
+		border-left: 15px solid var( --wp--preset--color--primary-700 );
+		border-right: 2px solid var( --wp--preset--color--primary-700 );
+		box-shadow: $shadow-md;
+	}
+
+	&.is-style-box-secondary {
+		border-left-color: var( --wp--preset--color--secondary-700 );
+		border-right-color: var( --wp--preset--color--secondary-700 );
+	}
+
+	&.is-style-line-classic {
+		border-left: 1px solid currentColor;
+	}
+
+	&.is-style-line-mark {
+		position: relative;
+		z-index: 0;
+		color: #4a5568;
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: -3px;
+			background-color: var(--wp--preset--color--primary-200);
+			width: 3px;
+			height: calc( 100% - 2.5rem );
+		}
+
+		&::after {
+			content: "\201D";
+			position: absolute;
+			top: 0;
+			left: -40px;
+			font-style: normal;
+			font-size: 80px;
+			line-height: 0.9;
+			text-align: center;
+			text-indent: -2px;
+			width: 1em;
+			color: var( --wp--preset--color--primary-700 );
+		}
+	}
+
+	&.is-style-text-overline {
+
+		p {
+			display: inline;
+			font-size: var( --wp--preset--font-size--huge );
+			background: none repeat scroll 0 0 rgba( 0,0,0, 0.025 );
+			border-top: 2px solid currentColor;
+			padding: 2px;
+		}
+	}
+}

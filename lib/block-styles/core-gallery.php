@@ -2,10 +2,10 @@
 
 register_block_style( 'core/gallery', [
 	'name'  => 'polaroid',
-	'label' => __( 'Polaroid' )
+	'label' => __( 'Polaroid', 'exhale' )
 ] );
 
 register_block_style( 'core/gallery', [
 	'name'  => 'no-gap',
-	'label' => __( 'No Gap' )
+	'label' => __( 'No Gap', 'exhale' )
 ] );

@@ -65,71 +65,67 @@
 @import '04.elements/quotes.scss';
 @import '04.elements/tables.scss';
 
-// -----------------------------------------------------------------------------
-// Import component styles.
-// -----------------------------------------------------------------------------
-//
-// This is the first point that real CSS is output. Resets, normalization,
-// fonts, etc. are best handled here. These are the base styles that other
-// styles will build upon.
-
-@import '05.components/comments';
-@import '05.components/comment';
-@import '05.components/comment-respond';
-@import '05.components/media-meta';
-@import '05.components/text-secondary';
-
 // ---------------------------------------------------------------------
 // Import block styles.
 // ---------------------------------------------------------------------
 //
 // Imports global block styles.
 
-@import '06.blocks/core-archives';
-@import '06.blocks/core-audio';
-@import '06.blocks/core-button';
-@import '06.blocks/core-buttons';
-@import '06.blocks/core-calendar';
-@import '06.blocks/core-categories';
-@import '06.blocks/core-code';
-@import '06.blocks/core-columns';
-@import '06.blocks/core-cover';
-@import '06.blocks/core-embed';
-@import '06.blocks/core-file';
-@import '06.blocks/core-gallery';
-@import '06.blocks/core-group';
-@import '06.blocks/core-heading';
-@import '06.blocks/core-image';
-@import '06.blocks/core-latest-comments';
-@import '06.blocks/core-latest-posts';
-@import '06.blocks/core-list';
-@import '06.blocks/core-media-text';
-@import '06.blocks/core-navigation';
-@import '06.blocks/core-paragraph';
-@import '06.blocks/core-post-author';
-@import '06.blocks/core-post-comments-link';
-@import '06.blocks/core-post-content';
-@import '06.blocks/core-post-date';
-@import '06.blocks/core-post-excerpt';
-@import '06.blocks/core-post-terms';
-@import '06.blocks/core-post-title';
-@import '06.blocks/core-preformatted';
-@import '06.blocks/core-pullquote';
-@import '06.blocks/core-query';
-@import '06.blocks/core-query-loop';
-@import '06.blocks/core-query-pagination';
-@import '06.blocks/core-quote';
-@import '06.blocks/core-rss';
-@import '06.blocks/core-search';
-@import '06.blocks/core-separator';
-@import '06.blocks/core-social-links';
-@import '06.blocks/core-site-title';
-@import '06.blocks/core-spacer';
-@import '06.blocks/core-table';
-@import '06.blocks/core-tag-cloud';
-@import '06.blocks/core-template-part';
-@import '06.blocks/core-verse';
-@import '06.blocks/core-video';
+@import '05.blocks/core-archives';
+@import '05.blocks/core-audio';
+@import '05.blocks/core-button';
+@import '05.blocks/core-buttons';
+@import '05.blocks/core-calendar';
+@import '05.blocks/core-categories';
+@import '05.blocks/core-code';
+@import '05.blocks/core-columns';
+@import '05.blocks/core-comment-author';
+@import '05.blocks/core-comment-avatar';
+@import '05.blocks/core-comment-content';
+@import '05.blocks/core-comment-date';
+@import '05.blocks/core-comment-edit-link';
+@import '05.blocks/core-comment-reply-link';
+@import '05.blocks/core-comments';
+@import '05.blocks/core-cover';
+@import '05.blocks/core-embed';
+@import '05.blocks/core-file';
+@import '05.blocks/core-gallery';
+@import '05.blocks/core-group';
+@import '05.blocks/core-heading';
+@import '05.blocks/core-image';
+@import '05.blocks/core-latest-comments';
+@import '05.blocks/core-latest-posts';
+@import '05.blocks/core-list';
+@import '05.blocks/core-media-text';
+@import '05.blocks/core-navigation';
+@import '05.blocks/core-paragraph';
+@import '05.blocks/core-post-author';
+@import '05.blocks/core-post-comments-form';
+@import '05.blocks/core-post-comments-link';
+@import '05.blocks/core-post-content';
+@import '05.blocks/core-post-date';
+@import '05.blocks/core-post-excerpt';
+@import '05.blocks/core-post-terms';
+@import '05.blocks/core-post-title';
+@import '05.blocks/core-preformatted';
+@import '05.blocks/core-pullquote';
+@import '05.blocks/core-query';
+@import '05.blocks/core-query-loop';
+@import '05.blocks/core-query-pagination';
+@import '05.blocks/core-quote';
+@import '05.blocks/core-rss';
+@import '05.blocks/core-search';
+@import '05.blocks/core-separator';
+@import '05.blocks/core-social-links';
+@import '05.blocks/core-site-title';
+@import '05.blocks/core-spacer';
+@import '05.blocks/core-table';
+@import '05.blocks/core-tag-cloud';
+@import '05.blocks/core-template-part';
+@import '05.blocks/core-verse';
+@import '05.blocks/core-video';
+@import '05.blocks/shared';
+@import '05.blocks/theme-media-meta';
 
 // ---------------------------------------------------------------------
 // Import block editor styles.
@@ -154,22 +150,22 @@
 // necessary, this is the only place where `!important` rules should go,
 // but only if necessary.
 
-@import '07.utilities/a11y';
-@import '07.utilities/alignment';
-@import '07.utilities/background';
-@import '07.utilities/border';
-@import '07.utilities/effects';
-@import '07.utilities/flexbox';
-@import '07.utilities/gap';
-@import '07.utilities/grid';
-@import '07.utilities/helpers';
-@import '07.utilities/layout';
-@import '07.utilities/list.scss';
-@import '07.utilities/media';
-@import '07.utilities/sizing';
-@import '07.utilities/spacing';
-@import '07.utilities/text';
-@import '07.utilities/typography';
+@import '06.utilities/a11y';
+@import '06.utilities/alignment';
+@import '06.utilities/background';
+@import '06.utilities/border';
+@import '06.utilities/effects';
+@import '06.utilities/flexbox';
+@import '06.utilities/gap';
+@import '06.utilities/grid';
+@import '06.utilities/helpers';
+@import '06.utilities/layout';
+@import '06.utilities/list.scss';
+@import '06.utilities/media';
+@import '06.utilities/sizing';
+@import '06.utilities/spacing';
+@import '06.utilities/text';
+@import '06.utilities/typography';
 
 // Import editor overrides.
 @import 'editor/editor';

@@ -81,7 +81,7 @@ export default {
 		{
 			name: 'spacing-24',
 			title: 'Theme Spacer: 24 (6rem)',
-			scope: [ 'block' ],
+			scope: [ 'transform' ],
 			attributes: { height: 96 },
 			isActive: ( block, variation ) => block.height === variation.height
 		},

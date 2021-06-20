@@ -1,21 +1,11 @@
 <?php
 
 register_block_style( 'core/heading', [
-	'name'  => 'subheading',
-	'label' => __( 'Subheading' )
+	'name'  => 'inline-text',
+	'label' => __( 'Inline Text', 'exhale' )
 ] );
 
 register_block_style( 'core/heading', [
 	'name'  => 'text-shadow-sm',
-	'label' => __( 'Text Shadow: Small' )
-] );
-
-register_block_style( 'core/heading', [
-	'name'  => 'text-shadow-md',
-	'label' => __( 'Text Shadow: Medium' )
-] );
-
-register_block_style( 'core/heading', [
-	'name'  => 'text-shadow-lg',
-	'label' => __( 'Text Shadow: Large' )
+	'label' => __( 'Text Shadow', 'exhale' )
 ] );

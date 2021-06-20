@@ -1,0 +1,115 @@
+////
+/// Pullquote block.
+///
+/// @group  Blocks
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.wp-block-post-terms {
+	margin-top: var( --wp--custom--spacing--8 );
+	font-size: var( --wp--preset--font-size--base );
+
+	&[class*=is-style-emoji-],
+	&.is-style-hashtag,
+	&.is-style-rectangle-neutral,
+	&.is-style-rectangle-primary,
+	&.is-style-rectangle-secondary,
+	&[class*=is-style-tag-] {
+		// Needed to hide the hardcoded separator.
+		color: transparent !important;
+
+		display: flex;
+		gap: 0.25rem;
+		row-gap: 0.5rem;
+		flex-wrap: wrap;
+
+		a {
+			display: inline-block;
+			text-decoration: none;
+			padding: 0.25rem 1rem;
+		}
+	}
+
+	&[class*=is-style-emoji-] {
+		align-items: center;
+	}
+
+	&[class*=is-style-emoji-] a,
+	&.is-style-hashtag a {
+		padding: 0;
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	&[class*=is-style-emoji-]::before {
+		color: initial;
+		margin-right: 0.25rem;
+	}
+
+	&.is-style-emoji-label::before       { content: "🏷️"; }
+	&.is-style-emoji-bookmark::before    { content: "🔖"; }
+	&.is-style-emoji-file-folder::before { content: "📁"; }
+
+	&.is-style-hashtag a::before {
+		content: "#";
+	}
+
+	&.is-style-rectangle-neutral a,
+	&.is-style-tag-neutral a {
+		color: var( --wp--preset--color--neutral-900 );
+		background-color: var( --wp--preset--color--neutral-200 );
+
+		&:hover,
+		&:focus {
+			background-color: var( --wp--preset--color--neutral-400 );
+		}
+	}
+
+	&.is-style-rectangle-primary a,
+	&.is-style-tag-primary a {
+		color: var( --wp--preset--color--white );
+		background-color: var( --wp--preset--color--primary-700 );
+
+		&:hover,
+		&:focus {
+			background-color: var( --wp--preset--color--primary-900 );
+		}
+	}
+
+	&.is-style-rectangle-secondary a,
+	&.is-style-tag-secondary a {
+		color: var( --wp--preset--color--white );
+		background-color: var( --wp--preset--color--secondary-700 );
+
+		&:hover,
+		&:focus {
+			background-color: var( --wp--preset--color--secondary-900 );
+		}
+	}
+
+	&[class*=is-style-tag-] a {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding-left: 0.75rem;
+		clip-path: polygon(100% 0, 100% 100%, 14px 100%, 0 50%, 14px 0);
+
+		&::before {
+			content: '';
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background-color: transparent;
+			border: 1px solid currentColor;
+			box-shadow: inset 0 2px rgba( 0, 0, 0, 0.25 );
+		}
+	}
+
+	&.is-style-tag-primary a::before,
+	&.is-style-tag-secondary a::before {
+		box-shadow: inset 0 1px rgba( 255, 255, 255, 0.5 );
+	}
+}

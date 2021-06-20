@@ -11,7 +11,6 @@
  */
 
 // Import block controls.
-import ControlBorderRadius from './control-border-radius';
 import ControlBoxShadow    from './control-box-shadow';
 import ControlGap          from './control-gap';
 import ControlListType     from './control-list-type';

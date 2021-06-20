@@ -110,38 +110,38 @@ class Component implements Bootable {
 	public function templateTypes( $types ) {
 
 		$types['single'] = [
-			'title'       => __( 'Single' ),
-			'description' => __( 'Template used for displaying single views of the content. This template is a fallback for the post, page, and custom post type templates, which take precedence when they exist.' ),
+			'title'       => __( 'Single', 'exhale' ),
+			'description' => __( 'Template used for displaying single views of the content. This template is a fallback for the post, page, and custom post type templates, which take precedence when they exist.', 'exhale' ),
 		];
 
 		$types['single-post'] = [
-			'title'       => __( 'Single Post' ),
-			'description' => __( 'Template used to display individual posts.' ),
+			'title'       => __( 'Single Post', 'exhale' ),
+			'description' => __( 'Template used to display individual posts.', 'exhale' ),
 		];
 
 		$types['single-page'] = [
-			'title'       => __( 'Single Page' ),
-			'description' => __( 'Template used to display individual pages.' ),
+			'title'       => __( 'Single Page', 'exhale' ),
+			'description' => __( 'Template used to display individual pages.', 'exhale' ),
 		];
 
 		$types['single-attachment'] = [
-			'title'       => __( 'Single Attachment (Media)' ),
-			'description' => __( 'Template used to display individual media items or attachments.' ),
+			'title'       => __( 'Single Attachment (Media)', 'exhale' ),
+			'description' => __( 'Template used to display individual media items or attachments.', 'exhale' ),
 		];
 
 		$types['single-attachment-image'] = [
-			'title'       => __( 'Single Image Attachment' ),
-			'description' => __( 'Template used to display individual images or attachments.' ),
+			'title'       => __( 'Single Image Attachment', 'exhale' ),
+			'description' => __( 'Template used to display individual images or attachments.', 'exhale' ),
 		];
 
 		$types['single-attachment-audio'] = [
-			'title'       => __( 'Single Audio Attachment' ),
-			'description' => __( 'Template used to display individual audio files or attachments.' ),
+			'title'       => __( 'Single Audio Attachment', 'exhale' ),
+			'description' => __( 'Template used to display individual audio files or attachments.', 'exhale' ),
 		];
 
 		$types['single-attachment-video'] = [
-			'title'       => __( 'Single Video Attachment' ),
-			'description' => __( 'Template used to display individual videos or attachments.' ),
+			'title'       => __( 'Single Video Attachment', 'exhale' ),
+			'description' => __( 'Template used to display individual videos or attachments.', 'exhale' ),
 		];
 
 		return $types;

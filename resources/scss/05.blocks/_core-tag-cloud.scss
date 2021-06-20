@@ -1,0 +1,95 @@
+////
+/// Button block.
+///
+/// @group  Blocks
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.wp-block-tag-cloud {
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
+
+	&.is-style-pill-outline,
+	&.is-style-rectangle-outline,
+	&[class*=is-style-tag-] {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+
+		.tag-cloud-link {
+			text-decoration: none;
+			font-size: var( --wp--preset--font-size--base ) !important;
+			padding: 0.25rem 0.5rem;
+			border: 1px solid currentColor;
+
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&[class*=is-style-tag-] {
+		gap: 0.75rem;
+	}
+
+	&.is-style-pill-outline .tag-cloud-link {
+		border-radius: 9999px;
+	}
+
+	&[class*=is-style-tag-] .tag-cloud-link {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+		clip-path: polygon(100% 0, 100% 100%, 14px 100%, 0 50%, 14px 0);
+		border: none;
+
+		&::before {
+			content: '';
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background-color: transparent;
+			border: 1px solid currentColor;
+			box-shadow: inset 0 2px rgba( 0, 0, 0, 0.25 );
+		}
+	}
+
+	&.is-style-tag-neutral a {
+		color: var( --wp--preset--color--neutral-900 );
+		background-color: var( --wp--preset--color--neutral-200 );
+
+		&:hover,
+		&:focus {
+			background-color: var( --wp--preset--color--neutral-400 );
+		}
+	}
+
+	&.is-style-tag-primary a {
+		color: var( --wp--preset--color--white );
+		background-color: var( --wp--preset--color--primary-700 );
+
+		&:hover,
+		&:focus {
+			background-color: var( --wp--preset--color--primary-900 );
+		}
+	}
+
+	&.is-style-tag-secondary a {
+		color: var( --wp--preset--color--white );
+		background-color: var( --wp--preset--color--secondary-700 );
+
+		&:hover,
+		&:focus {
+			background-color: var( --wp--preset--color--secondary-900 );
+		}
+	}
+
+	&.is-style-tag-primary a::before,
+	&.is-style-tag-secondary a::before {
+		box-shadow: inset 0 1px rgba( 255, 255, 255, 0.5 );
+	}
+}

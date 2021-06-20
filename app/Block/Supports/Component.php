@@ -32,6 +32,16 @@ class Component implements Bootable {
 	 */
 	public function boot() {
 		add_filter( 'block_type_metadata', [ $this, 'supports'] );
+
+		// apply_filters( 'render_block', string $block_content, array $block )
+
+		add_filter( 'render_block', function( $content ) {
+			return preg_replace(
+				"/(class=['\"].*?)has-(\d)-xl-font-size(.*?['\"])/i",
+				"$1has-$2xl-font-size$3",
+				$content
+			);
+		});
 	}
 
 	public function supports( $meta ) {
@@ -140,6 +150,12 @@ class Component implements Bootable {
 			$meta['supports']['color']['text'] = true;
 			$meta['supports']['color']['link'] = true;
 			$meta['supports']['color']['background'] = true;
+			$meta['supports']['color']['gradients'] = true;
+		}
+
+		if ( in_array( $meta['name'], [
+			'core/heading'
+		] ) ) {
 			$meta['supports']['color']['gradients'] = true;
 		}
 

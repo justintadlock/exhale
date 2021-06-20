@@ -2,20 +2,20 @@
 
 register_block_style( 'core/post-comments-link', [
 	'name'  => 'emoji-speech-balloon',
-	'label' => __( 'Emoji: Speech Balloon' )
+	'label' => __( 'Emoji: Speech Balloon', 'exhale' )
 ] );
 
 register_block_style( 'core/post-comments-link', [
 	'name'  => 'emoji-speech-bubble',
-	'label' => __( 'Emoji: Speech Bubble' )
+	'label' => __( 'Emoji: Speech Bubble', 'exhale' )
 ] );
 
 register_block_style( 'core/post-comments-link', [
 	'name'  => 'middot',
-	'label' => __( 'Middle Dot' )
+	'label' => __( 'Middle Dot', 'exhale' )
 ] );
 
 register_block_style( 'core/post-comments-link', [
 	'name'  => 'slash',
-	'label' => __( 'Slash' )
+	'label' => __( 'Slash', 'exhale' )
 ] );

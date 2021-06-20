@@ -1,0 +1,57 @@
+////
+/// Latest posts block.
+///
+/// @group  Blocks
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.wp-block-latest-posts {
+	margin-top: var( --wp--custom--spacing--8 );
+	margin-bottom: 0;
+
+	&.is-grid {
+		display:    flex;
+		flex-wrap:  wrap;
+		padding:    0;
+		list-style: none;
+
+		li {
+			margin: 0 1em 1em 0;
+			width:  100%;
+		}
+	}
+
+	@media ( min-width: $content-width ) {
+
+		@for $i from 2 through 6 {
+
+			&.columns-#{ $i } li {
+				width: calc( ( 100% / #{ $i } ) - 1em );
+			}
+		}
+	}
+
+	// Post title. Doesn't have a class.
+	&__featured-image + a {
+		display: table; // lets us clear this without making it a block.
+		margin-top: $spacing-half;
+	}
+
+	&__post-author,
+	&__post-date {
+		display: inline-block;
+		margin-right: $spacing-half;
+		font-size: 1rem;
+		color: inherit;
+	}
+
+	&__post-excerpt {
+		margin-top: $spacing-half;
+	}
+
+	&__list {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

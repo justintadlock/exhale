@@ -1,0 +1,58 @@
+.comments {
+	//&__list,
+	&__list .children {
+		list-style: none;
+		padding:    0;
+	}
+
+	// Comments closed message.
+	&__closed {
+		// components/_text-secondary.scss
+	}
+}
+
+.comment--depth-1 > .children {
+	padding-left: $spacing-global;
+}
+
+.comments__list .children {
+    list-style: none;
+    padding: 0;
+}
+
+.comment--depth-1 > .children {
+    padding-left: 2rem;
+}
+
+.wp-block-post-comments .comments__list .comment {
+
+	&--depth-1 {
+		padding: var( --wp--custom--spacing--8 );
+		box-sizing: content-box;
+		border: 1px solid var( --wp--preset--color--neutral-300 );
+
+		@media only screen and ( max-width: $content-width-padded ) {
+			border-width:  0 0 1px;
+
+			&:first-child {
+				border-width: 1px 0;
+			}
+		}
+	}
+
+	// Type of comment.
+	&--type-comment {}
+
+	&--type-ping {}
+
+	// Comment status.
+	&--status-unapproved {}
+
+	// Comment under moderation message.
+	&__moderation {}
+
+	// Metadata wrapper.
+	&__meta {
+		border-bottom: 1px solid var( --wp--preset--color--neutral-300 );
+	}
+}

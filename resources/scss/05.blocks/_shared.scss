@@ -1,0 +1,32 @@
+
+// Heading, Paragraph
+.is-style-inline-text {
+	display: inline;
+
+	&.has-background {
+		padding: 0.125rem 0;
+		line-height: 1.375;
+	}
+}
+
+.is-style-text-shadow-sm {
+	text-shadow: var( --wp--custom--typography--shadow--sm );
+}
+
+
+.text-secondary,
+.wp-block-latest-comments__comment-meta,
+.wp-block-latest-posts__post-date,
+.wp-block-rss__item-publish-date,
+.wp-block-rss__item-author,
+//.archive-header__description,
+.comment-respond__notes,
+.comment-respond__logged-in-as,
+.comments__closed {
+	@include meta;
+}
+
+.comment__meta {
+	@include meta;
+	@include meta-links;
+}

@@ -772,76 +772,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/editor/block-controls/control-border-radius.js":
-/*!*********************************************************************!*\
-  !*** ./resources/js/editor/block-controls/control-border-radius.js ***!
-  \*********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _util_update_class__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../util/update-class */ "./resources/js/editor/util/update-class.js");
-/**
- * Border Radius Control.
- *
- * Outputs a select dropdown control for handling the border-radius.
- *
- * @package   Exhale
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2019 Justin Tadlock
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- * @link      https://themehybrid.com/themes/exhale
- */
-// Import the class update utility.
- // Get the core WP select control.
-
-var SelectControl = wp.components.SelectControl; // Global set via `wp_localize_script()`.
-
-var _exhaleEditor = exhaleEditor,
-    labels = _exhaleEditor.labels;
-/* harmony default export */ __webpack_exports__["default"] = (function (props) {
-  var options = [{
-    label: labels.default,
-    value: ''
-  }, {
-    label: labels.none,
-    value: 'none'
-  }, {
-    label: labels.sizes.small,
-    value: 'sm'
-  }, {
-    label: labels.sizes.medium,
-    value: 'md'
-  }, {
-    label: labels.sizes.large,
-    value: 'lg'
-  }, {
-    label: labels.sizes.extraLarge,
-    value: 'xl'
-  }]; // Get the border-radius attribute.
-
-  var borderRadius = props.attributes.borderRadius;
-  return React.createElement(SelectControl, {
-    key: "borderRadius",
-    label: labels.borderRadius,
-    value: borderRadius,
-    options: options,
-    onChange: function onChange(selected) {
-      props.setAttributes({
-        borderRadius: selected,
-        className: Object(_util_update_class__WEBPACK_IMPORTED_MODULE_0__["default"])(props.attributes.className, selected ? 'rounded-' + selected : '', options.filter(function (opt) {
-          return opt.value;
-        }).map(function (opt) {
-          return 'rounded-' + opt.value;
-        }))
-      });
-    }
-  });
-});
-
-/***/ }),
-
 /***/ "./resources/js/editor/block-controls/control-box-shadow.js":
 /*!******************************************************************!*\
   !*** ./resources/js/editor/block-controls/control-box-shadow.js ***!
@@ -1058,10 +988,9 @@ var _exhaleEditor = exhaleEditor,
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _control_border_radius__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./control-border-radius */ "./resources/js/editor/block-controls/control-border-radius.js");
-/* harmony import */ var _control_box_shadow__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./control-box-shadow */ "./resources/js/editor/block-controls/control-box-shadow.js");
-/* harmony import */ var _control_gap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./control-gap */ "./resources/js/editor/block-controls/control-gap.js");
-/* harmony import */ var _control_list_type__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./control-list-type */ "./resources/js/editor/block-controls/control-list-type.js");
+/* harmony import */ var _control_box_shadow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./control-box-shadow */ "./resources/js/editor/block-controls/control-box-shadow.js");
+/* harmony import */ var _control_gap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./control-gap */ "./resources/js/editor/block-controls/control-gap.js");
+/* harmony import */ var _control_list_type__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./control-list-type */ "./resources/js/editor/block-controls/control-list-type.js");
 /**
  * Block Design Setting Fields.
  *
@@ -1077,30 +1006,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 /* harmony default export */ __webpack_exports__["default"] = ([{
   name: 'listType',
   type: 'string',
   default: '',
-  control: _control_list_type__WEBPACK_IMPORTED_MODULE_3__["default"],
+  control: _control_list_type__WEBPACK_IMPORTED_MODULE_2__["default"],
   blocks: ['core/list']
 }, {
   name: 'borderRadius',
   type: 'string',
   default: '',
-  control: _control_border_radius__WEBPACK_IMPORTED_MODULE_0__["default"],
+  control: ControlBorderRadius,
   blocks: ['core/image', 'core/gallery', 'core/group', 'core/media-text', 'core/paragraph']
 }, {
   name: 'boxShadow',
   type: 'string',
   default: '',
-  control: _control_box_shadow__WEBPACK_IMPORTED_MODULE_1__["default"],
+  control: _control_box_shadow__WEBPACK_IMPORTED_MODULE_0__["default"],
   blocks: ['core/column', 'core/group', 'core/image', 'core/gallery', 'core/media-text', 'core/paragraph']
 }, {
   name: 'gap',
   type: 'string',
   default: '',
-  control: _control_gap__WEBPACK_IMPORTED_MODULE_2__["default"],
+  control: _control_gap__WEBPACK_IMPORTED_MODULE_1__["default"],
   blocks: ['core/query-loop']
 }]);
 
@@ -1156,8 +1084,6 @@ __webpack_require__.r(__webpack_exports__);
 wp.domReady(function () {
   Object.keys(_block_variations_index__WEBPACK_IMPORTED_MODULE_0__).forEach(function (block) {
     _block_variations_index__WEBPACK_IMPORTED_MODULE_0__[block].variations.forEach(function (options) {
-      //	console.log( options );
-      //	console.log( blockVariations[ block ].block );
       wp.blocks.registerBlockVariation(_block_variations_index__WEBPACK_IMPORTED_MODULE_0__[block].block, options);
     });
   });
@@ -1520,7 +1446,7 @@ __webpack_require__.r(__webpack_exports__);
   }, {
     name: 'spacing-24',
     title: 'Theme Spacer: 24 (6rem)',
-    scope: ['block'],
+    scope: ['transform'],
     attributes: {
       height: 96
     },

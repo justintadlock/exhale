@@ -1,0 +1,160 @@
+////
+/// Text helper classes.
+///
+/// @group  Utilities
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://themehybrid.com/themes/exhale
+////
+
+.has-9xl-font-size,
+.has-9-xl-font-size,
+.has-8xl-font-size,
+.has-8-xl-font-size,
+.has-7xl-font-size,
+.has-7-xl-font-size,
+.has-6xl-font-size,
+.has-6-xl-font-size {
+	line-height: 1;
+}
+
+.has-5xl-font-size,
+.has-5-xl-font-size,
+h1 { line-height: 3.25rem; }
+
+.has-4xl-font-size,
+.has-4-xl-font-size,
+h2 { line-height: 2.53125rem; }
+
+.has-3xl-font-size,
+.has-3-xl-font-size { line-height: 2.25rem; }
+
+.has-2xl-font-size,
+.has-2-xl-font-size { line-height: 2rem; }
+
+.has-xl-font-size,
+.has-lg-font-size { line-height: 1.75rem; }
+
+.has-base-font-size,
+.has-sm-font-size { line-height: 1.5rem; }
+
+.has-xs-font-size { line-height: 1.25rem; }
+
+@media ( max-width: $screen-xl ) {
+	.has-9xl-font-size,
+	.has-9-xl-font-size { font-size: 7rem !important; }
+
+	.has-8xl-font-size,
+	.has-8-xl-font-size { font-size: 5rem !important; }
+}
+
+@media ( max-width: $screen-lg ) {
+	.has-9xl-font-size,
+	.has-9-xl-font-size { font-size: 6rem   !important; }
+
+	.has-8xl-font-size,
+	.has-8-xl-font-size  { font-size: 4.5rem !important; }
+
+	.has-7xl-font-size,
+	.has-7-xl-font-size { font-size: 4rem   !important; }
+
+	.has-6xl-font-size,
+	.has-6-xl-font-size   { font-size: 3.5rem !important; }
+}
+
+@media ( max-width: $screen-md ) {
+	.has-9xl-font-size,
+	.has-9-xl-font-size { font-size: 4.5rem !important; }
+	.has-8xl-font-size,
+	.has-8-xl-font-size  { font-size: 4rem   !important; }
+	.has-7xl-font-size,
+	.has-7-xl-font-size { font-size: 3.5rem !important; }
+	.has-6xl-font-size,
+	.has-6-xl-font-size   { font-size: 3rem   !important; }
+
+	.has-5xl-font-size,
+	.has-5-xl-font-size,
+	h1 {
+		font-size: 2.5rem !important;
+		line-height: 2.75rem;
+	}
+}
+
+@media ( max-width: $screen-sm ) {
+
+	.has-9xl-font-size,
+	.has-9-xl-font-size {
+		font-size: 2.75rem !important;
+		line-height: 3rem;
+	}
+
+	.has-8xl-font-size,
+	.has-8-xl-font-size {
+		font-size: 2.5rem !important;
+		line-height: 2.75rem;
+	}
+
+	.has-7xl-font-size,
+	.has-7-xl-font-size {
+		font-size: 2.25rem !important;
+		line-height: 2.5rem;
+	}
+
+	.has-6xl-font-size,
+	.has-6-xl-font-size {
+		font-size: 2rem !important;
+	}
+
+	.has-5xl-font-size,
+	.has-5-xl-font-size,
+	h1 {
+		font-size: 1.75rem !important;
+		line-height: 2rem;
+	}
+
+	.has-4xl-font-size,
+	.has-4-xl-font-size,
+	h2 {
+		font-size: 1.5rem !important;
+		line-height: 2rem;
+	}
+
+	.has-3xl-font-size,
+	.has-3-xl-font-size,
+	h3 {
+		font-size: 1.375rem !important;
+		line-height: 1.75rem;
+	}
+
+	.has-2xl-font-size,
+	.has-2-xl-font-size,
+	h4 {
+		font-size: 1.25rem !important;
+		line-height: 1.75rem;
+	}
+
+	.has-xl-font-size,
+	h5 {
+		font-size: 1.1875rem !important;
+		line-height: 1.75rem;
+	}
+}
+
+/// Text colors.
+///
+/// @todo Rename to `.text-#{ $color }`.
+
+/// If we have a text color, let's use that as the link color as well.  There's
+/// no way for us to know if the colors will clash here, so let's keep it simple.
+
+.has-text-color:not(.has-link-color) {
+
+	a:not( .wp-block-button__link ) {
+		color: inherit;
+	}
+
+	a:not( .wp-block-button__link ):hover,
+	a:not( .wp-block-button__link ):focus {
+		color:      inherit;
+		background: rgba( 255, 255, 255, 0.2 );
+	}
+}

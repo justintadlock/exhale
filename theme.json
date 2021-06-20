@@ -59,7 +59,83 @@
 		"color": {
 			"custom": true,
 			"link": true,
-			"duotone": [],
+			"duotone": [
+				{
+					"colors": [ "#0f172a", "#f8fafc" ],
+					"slug": "blue-gray-scale",
+					"name": "Blue Gray Scale"
+				},
+				{
+					"colors": [ "#7f1d1d", "#fef2f2" ],
+					"slug": "red-scale",
+					"name": "Red Scale"
+				},
+				{
+					"colors": [ "#7c2d12", "#fff7ed"],
+					"slug": "orange-scale",
+					"name": "Orange Scale"
+				},
+				{
+					"colors": [ "#78350f", "#fffbeb"],
+					"slug": "amber-scale",
+					"name": "Amber Scale"
+				},
+				{
+					"colors": [ "#713f12", "#fefce8"],
+					"slug": "yellow-scale",
+					"name": "Yellow Scale"
+				},
+				{
+					"colors": [ "#365314", "#f7fee7"],
+					"slug": "lime-scale",
+					"name": "Lime Scale"
+				},
+				{
+					"colors": [ "#14532d", "#f0fdf4"],
+					"slug": "green-scale",
+					"name": "Green Scale"
+				},
+				{
+					"colors": [ "#064e3b", "#ecfdf5"],
+					"slug": "emerald-scale",
+					"name": "Emerald Scale"
+				},
+				{
+					"colors": [ "#134e4a", "#f0fdfa"],
+					"slug": "teal-scale",
+					"name": "Teal Scale"
+				},
+				{
+					"colors": [ "#164e63", "#ecfeff"],
+					"slug": "cyan-scale",
+					"name": "Cyan Scale"
+				},
+				{
+					"colors": [ "#0c4a6e", "#f0f9ff"],
+					"slug": "sky-scale",
+					"name": "Sky Scale"
+				},
+				{
+					"colors": [ "#2a4365", "#ebf8ff"],
+					"slug": "blue-scale",
+					"name": "Blue Scale"
+				},
+				{
+					"colors": [ "#312e81", "#eef2ff"],
+					"slug": "indigo-scale",
+					"name": "Indigo Scale"
+				},
+				{
+					"colors": [ "#44337a", "#faf5ff"],
+					"slug": "purple-scale",
+					"name": "Purple Scale"
+				},
+				{
+					"colors": [ "#4c1d95", "#f5f3ff"],
+					"slug": "violet-scale",
+					"name": "Violet Scale"
+				}
+			],
 			"gradients": [
 					{
 					        "name":"To Bottom: From Transparent To Black",
