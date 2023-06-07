@@ -1,26 +1,28 @@
 {
-	"name"        : "justintadlock/exhale",
-	"type"        : "wordpress-theme",
-	"description" : "Exhale is a clean and modern theme.",
-	"keywords"    : ["wordpress"],
-	"homepage"    : "https://themehybrid.com/themes/exhale",
-	"license"     : "GPL-2.0-or-later",
-	"authors"     : [
+	"name": "justintadlock/exhale",
+	"description": "Exhale is a clean and modern theme.",
+	"license": "GPL-2.0-or-later",
+	"type": "wordpress-theme",
+	"keywords": [
+		"wordpress"
+	],
+	"authors": [
 		{
-			"name"    : "Justin Tadlock",
-			"email"   : "justintadlock@gmail.com",
+			"name": "Justin Tadlock",
+			"email": "justintadlock@gmail.com",
 			"homepage": "https://themehybrid.com"
 		}
 	],
-	"autoload"    : {
-		"psr-4" : {
-			"Exhale\\" : "app/"
-		}
-	},
-        "require": {
-                "php" : ">=7.4",
-                "justintadlock/hybrid-core" : "^5.2",
+	"homepage": "https://themehybrid.com/themes/exhale",
+	"require": {
+		"php": ">=7.4",
 		"justintadlock/hybrid-carbon": "^1.0",
+		"justintadlock/hybrid-core": "^5.2",
 		"justintadlock/hybrid-font": "^1.0"
-        }
+	},
+	"autoload": {
+		"psr-4": {
+			"Exhale\\": "app/"
+		}
+	}
 }
