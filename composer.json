@@ -16,13 +16,35 @@
 	"homepage": "https://themehybrid.com/themes/exhale",
 	"require": {
 		"php": ">=7.4",
-		"justintadlock/hybrid-carbon": "^1.0",
-		"justintadlock/hybrid-core": "^5.2",
-		"justintadlock/hybrid-font": "^1.0"
+		"themehybrid/hybrid-core": "7.0.0-alpha.3",
+		"themehybrid/hybrid-attr": "^1.0",
+		"themehybrid/hybrid-lang": "^1.0",
+		"themehybrid/hybrid-pagination": "^1.0",
+		"themehybrid/hybrid-theme": "2.0.0-beta.3",
+		"themehybrid/hybrid-media-meta": "^1.0",
+		"themehybrid/hybrid-template": "^1.0",
+		"themehybrid/hybrid-template-hierarchy": "^1.0",
+		"themehybrid/hybrid-template-manager": "^1.0",
+		"vlucas/phpdotenv": "^5.5"
 	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/themehybrid/hybrid-events"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/themehybrid/hybrid-filesystem"
+		}
+	],
+	"minimum-stability": "dev",
+	"prefer-stable": true,
 	"autoload": {
 		"psr-4": {
 			"Exhale\\": "app/"
 		}
+	},
+	"platform": {
+		"php": "7.4"
 	}
 }
