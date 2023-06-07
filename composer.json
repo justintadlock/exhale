@@ -24,8 +24,7 @@
 		"themehybrid/hybrid-media-meta": "^1.0",
 		"themehybrid/hybrid-template": "^1.0",
 		"themehybrid/hybrid-template-hierarchy": "^1.0",
-		"themehybrid/hybrid-template-manager": "^1.0",
-		"vlucas/phpdotenv": "^5.5"
+		"themehybrid/hybrid-template-manager": "^1.0"
 	},
 	"repositories": [
 		{

@@ -20,7 +20,7 @@
 # this instance via the `\Hybrid\app()` function or `\Hybrid\App` static class
 # after the application has booted.
 
-$exhale = new \Hybrid\Core\Application();
+$exhale = \Hybrid\booted() ? \Hybrid\app() : new \Hybrid\Core\Application();
 
 # ------------------------------------------------------------------------------
 # Register service providers with the application.
@@ -30,19 +30,27 @@ $exhale = new \Hybrid\Core\Application();
 # for running the theme. Service providers are essentially the backbone of the
 # bootstrapping process.
 
-$exhale->provider( \Exhale\Provider::class            );
 $exhale->provider( \Exhale\Background\Provider::class );
-$exhale->provider( \Exhale\Block\Provider::class      );
-$exhale->provider( \Exhale\CleanWP\Provider::class    );
-$exhale->provider( \Exhale\Color\Provider::class      );
-$exhale->provider( \Exhale\Customize\Provider::class  );
-$exhale->provider( \Exhale\Editor\Provider::class     );
-$exhale->provider( \Exhale\Gallery\Provider::class    );
-$exhale->provider( \Exhale\Image\Provider::class      );
-$exhale->provider( \Exhale\Layout\Provider::class     );
-$exhale->provider( \Exhale\Query\Provider::class      );
-$exhale->provider( \Exhale\Settings\Provider::class   );
+$exhale->provider( \Exhale\Block\Provider::class );
+$exhale->provider( \Exhale\CleanWP\Provider::class );
+$exhale->provider( \Exhale\Color\Provider::class );
+$exhale->provider( \Exhale\Customize\Provider::class );
+$exhale->provider( \Exhale\Editor\Provider::class );
+$exhale->provider( \Exhale\Gallery\Provider::class );
+$exhale->provider( \Exhale\Image\Provider::class );
+$exhale->provider( \Exhale\Layout\Provider::class );
+$exhale->provider( \Exhale\Query\Provider::class );
+$exhale->provider( \Exhale\Settings\Provider::class );
 $exhale->provider( \Exhale\Typography\Provider::class );
+$exhale->provider( \Hybrid\Attr\Provider::class );
+$exhale->provider( \Hybrid\Lang\Provider::class );
+$exhale->provider( \Hybrid\Media\Meta\Provider::class );
+$exhale->provider( \Hybrid\Pagination\Provider::class );
+$exhale->provider( \Hybrid\Template\Hierarchy\Provider::class );
+$exhale->provider( \Hybrid\Template\Manager\Provider::class );
+$exhale->provider( \Hybrid\Theme\View\Legacy\Provider::class );
+$exhale->provider( \Hybrid\Theme\Provider::class );
+$exhale->provider( \Exhale\Provider::class );
 
 # ------------------------------------------------------------------------------
 # Perform bootstrap actions.

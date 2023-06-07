@@ -13,7 +13,7 @@
 
 namespace Exhale\CleanWP;
 
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
 
 /**
  * CleanWP service provider class.

@@ -13,7 +13,7 @@
 
 namespace Exhale\Footer;
 
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
 
 /**
  * Footer service provider class.

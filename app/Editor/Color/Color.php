@@ -15,7 +15,7 @@ namespace Exhale\Editor\Color;
 
 use Exhale\Contracts\CssCustomProperty;
 use Exhale\Tools\Mod;
-use function Hybrid\hex_to_rgb;
+use function Hybrid\Theme\hex_to_rgb;
 
 
 /**

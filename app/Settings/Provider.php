@@ -13,7 +13,7 @@
 
 namespace Exhale\Settings;
 
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
 use Exhale\Settings\Admin\OptionsPage;
 use Exhale\Settings\Admin\Views\Views;
 

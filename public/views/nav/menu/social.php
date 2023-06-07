@@ -1,11 +1,11 @@
-<?php if ( has_nav_menu( $data->location ) ) : ?>
+<?php if ( has_nav_menu( $data->get( 'location' ) ) ) : ?>
 
-	<div <?php Hybrid\Attr\display( 'menu', $data->location, [
+	<div <?php Hybrid\Attr\display( 'menu', $data->get( 'location' ), [
 		'class' => 'menu menu--social my-4 text-center'
 	] ) ?>>
 
 		<?php wp_nav_menu( [
-			'theme_location' => $data->location,
+			'theme_location' => $data->get( 'location' ),
 			'depth'          => 1,
 			'container'      => '',
 			'menu_id'        => '',

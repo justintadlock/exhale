@@ -13,7 +13,7 @@
 
 namespace Exhale\Block;
 
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
 
 /**
  * Block service provider class.

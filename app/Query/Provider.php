@@ -13,7 +13,7 @@
 
 namespace Exhale\Query;
 
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
 
 /**
  * Query service provider class.

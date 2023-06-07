@@ -1,7 +1,7 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 
 	<header class="entry__header o-content-width">
-		<?php Hybrid\Post\display_title() ?>
+		<?php Hybrid\Theme\Post\display_title() ?>
 	</header>
 
 	<?php Exhale\Template\FeaturedImage::display( 'featured' ) ?>

@@ -15,9 +15,11 @@
 
 namespace Exhale;
 
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
 use Exhale\Tools\Config;
 use Exhale\Tools\CustomProperties;
+use Hybrid\Theme\View\Legacy\Contracts\Engine as EngineContract;
+use Hybrid\Theme\View\Legacy\Contracts\View as ViewContract;
 
 /**
  * App service provider.
@@ -36,6 +38,10 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
+
+        // Create aliases for the view and engine.
+        $this->app->alias( ViewContract::class, 'view' );
+        $this->app->alias( EngineContract::class, 'view/engine' );
 
 		// Bind a single instance of theme mod defaults.
 		$this->app->singleton( 'exhale/mods', function() {

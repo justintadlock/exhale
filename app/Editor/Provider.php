@@ -13,7 +13,7 @@
 
 namespace Exhale\Editor;
 
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
 use Exhale\Tools\CustomProperties;
 use Exhale\Editor\Color;
 use Exhale\Editor\Font;

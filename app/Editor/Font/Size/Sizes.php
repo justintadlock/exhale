@@ -13,7 +13,7 @@
 
 namespace Exhale\Editor\Font\Size;
 
-use Hybrid\Tools\Collection;
+use Exhale\Tools\Collection;
 
 /**
  * Font sizes class.

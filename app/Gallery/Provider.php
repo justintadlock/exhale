@@ -13,7 +13,7 @@
 
 namespace Exhale\Gallery;
 
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
 
 /**
  * Gallery service provider class.

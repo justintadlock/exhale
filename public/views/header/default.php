@@ -22,14 +22,14 @@
 
 		<div class="app-header__branding overflow-hidden flex justify-start items-center md:flex-grow-0 max-w-full h-16 px-8 text-center">
 			<?php the_custom_logo() ?>
-			<?php Hybrid\Site\display_title( [
+			<?php Hybrid\Theme\Site\display_title( [
 				'class'      => 'app-header__title m-0 mr-2 leading-none text-xl',
 				'link_class' => 'app-header__title-link no-underline hover:underline focus:underline'
 			] ) ?>
 			<?php if ( $sep = Exhale\Tools\Mod::get( 'branding_sep' ) ) : ?>
 				<span class="app-header__sep hidden sm:block mx-3 leading-none" aria-hidden="true"><?= esc_html( $sep ) ?></span>
 			<?php endif ?>
-			<?php Hybrid\Site\display_description( [ 'class' => 'app-header__description hidden sm:block m-0 ml-2 leading-none text-sm' ] ) ?>
+			<?php Hybrid\Theme\Site\display_description( [ 'class' => 'app-header__description hidden sm:block m-0 ml-2 leading-none text-sm' ] ) ?>
 		</div>
 
 		<?php the_custom_header_markup() ?>

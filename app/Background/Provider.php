@@ -13,7 +13,7 @@
 
 namespace Exhale\Background;
 
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
 
 /**
  * Background service provider class.

@@ -13,8 +13,8 @@
 
 namespace Exhale\Customize;
 
-use Hybrid\Tools\Collection;
-use Hybrid\Tools\ServiceProvider;
+use Exhale\Tools\Collection;
+use Hybrid\Core\ServiceProvider;
 
 use Exhale\Background;
 use Exhale\Color;

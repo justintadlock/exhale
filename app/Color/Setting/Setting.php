@@ -16,7 +16,7 @@ namespace Exhale\Color\Setting;
 use Closure;
 use JsonSerializable;
 use Exhale\Contracts\CssCustomProperty;
-use function Hybrid\hex_to_rgb;
+use function Hybrid\Theme\hex_to_rgb;
 
 /**
  * Customize color class.

@@ -13,7 +13,7 @@
 
 namespace Exhale\Typography;
 
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
 use Exhale\Tools\CustomProperties;
 
 use Exhale\Typography\Font\Family;

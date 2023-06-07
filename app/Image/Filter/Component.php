@@ -16,7 +16,7 @@ namespace Exhale\Image\Filter;
 use WP_Customize_Manager;
 
 use Hybrid\Contracts\Bootable;
-use Hybrid\Tools\Collection;
+use Exhale\Tools\Collection;
 use Exhale\Tools\Config;
 use Exhale\Tools\CustomProperties;
 use Exhale\Tools\CustomProperty;

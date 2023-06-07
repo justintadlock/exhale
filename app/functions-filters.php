@@ -27,8 +27,8 @@ add_filter( 'walker_nav_menu_start_el', __NAMESPACE__ . '\nav_menu_social_icons'
  *
  * @since  1.0.0
  * @access public
- * @param  \Hybrid\Tools\Collection  $data
- * @return \Hybrid\Tools\Collection
+ * @param  \Exhale\Tools\Collection  $data
+ * @return \Exhale\Tools\Collection
  */
 add_filter( 'hybrid/view/content/data', function( $data ) {
 

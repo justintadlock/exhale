@@ -13,7 +13,7 @@
 
 namespace Exhale\Settings\Admin\Views;
 
-use Hybrid\Tools\Collection;
+use Exhale\Tools\Collection;
 
 /**
  * Views class.

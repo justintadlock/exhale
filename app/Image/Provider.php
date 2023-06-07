@@ -13,7 +13,7 @@
 
 namespace Exhale\Image;
 
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
 use Exhale\Tools\CustomProperties;
 
 /**
