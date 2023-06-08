@@ -35,4 +35,4 @@ The theme uses the following third-party images within the screenshot, which are
 
 Exhale is licensed under the [GNU GPL](https://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
 
-2019 &copy; Justin Tadlock.
+2023 &copy; Justin Tadlock.

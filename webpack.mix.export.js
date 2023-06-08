@@ -7,7 +7,7 @@
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2018 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @link      https://themehybrid.com/themes/exhale
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
