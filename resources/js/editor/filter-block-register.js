@@ -37,8 +37,8 @@ addFilter( 'blocks.registerBlockType', 'exhale/block/register', ( settings, name
 		if ( field.blocks.includes( name ) ) {
 
 			settings.attributes = assign( settings.attributes, {
-				[ field.name ] : {
-					type:    field.type,
+				[ field.name ]: {
+					type: field.type,
 					default: field.default
 				}
 			} );

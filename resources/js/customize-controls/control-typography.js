@@ -12,7 +12,7 @@
 
 wp.customize.controlConstructor['exhale-typography'] = wp.customize.Control.extend( {
 
-	ready : function() {
+	ready: function() {
 
 		// Globals set via `wp_localize_script()`.
 		let families = exhaleCustomizeControls.fontFamilies;
@@ -40,7 +40,7 @@ wp.customize.controlConstructor['exhale-typography'] = wp.customize.Control.exte
 
 			// Remove all options from the select. We're going to
 			// rebuild it below.
-			for ( let i = select.options.length; i >= 0 ; i-- ) {
+			for ( let i = select.options.length; 0 <= i ; i-- ) {
 				select.remove( i );
 			}
 
@@ -50,7 +50,7 @@ wp.customize.controlConstructor['exhale-typography'] = wp.customize.Control.exte
 
 			let selectedOption = family.styles[0];
 
-			if ( family.styles.indexOf( styleSetting.get() ) !== -1 ) {
+			if ( -1 !== family.styles.indexOf( styleSetting.get() ) ) {
 				selectedOption = styleSetting.get();
 			}
 

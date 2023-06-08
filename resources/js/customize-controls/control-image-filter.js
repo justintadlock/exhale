@@ -12,7 +12,7 @@
 
 wp.customize.controlConstructor['exhale-image-filter'] = wp.customize.Control.extend( {
 
-	ready : function() {
+	ready: function() {
 
 		// Global set via `wp_localize_script()`.
 		let filters = exhaleCustomizeControls.imageFilters;
@@ -48,9 +48,9 @@ wp.customize.controlConstructor['exhale-image-filter'] = wp.customize.Control.ex
 			// Otherwise, display them.
 			amountContainers.forEach( container => {
 				container.style.display =
-					! value || 'none' === value
-					? 'none'
-					: 'block';
+					! value || 'none' === value ?
+					'none' :
+					'block';
 			} );
 
 			// Loop through the amount controls and set their min

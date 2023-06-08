@@ -38,8 +38,8 @@ Object.keys( settings ).forEach( key => {
 			// Loader to load it up.
 			if ( -1 === loadedFonts.indexOf( family.name ) && family.googleName ) {
 				WebFont.load( {
-					google : {
-						families : [
+					google: {
+						families: [
 							family.googleName + ':' + family.styles.join( ',' )
 						]
 					}

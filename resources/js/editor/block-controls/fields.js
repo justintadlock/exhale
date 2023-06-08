@@ -17,20 +17,20 @@ import ControlListType     from './control-list-type';
 
 export default [
 	{
-		name:    'listType',
-		type:    'string',
+		name: 'listType',
+		type: 'string',
 		default: '',
 		control: ControlListType,
-		blocks:  [
+		blocks: [
 			'core/list'
 		]
 	},
 	{
-		name:    'borderRadius',
-		type:    'string',
+		name: 'borderRadius',
+		type: 'string',
 		default: '',
 		control: ControlBorderRadius,
-		blocks:  [
+		blocks: [
 			'core/image',
 			'core/gallery',
 			'core/media-text',
@@ -38,11 +38,11 @@ export default [
 		]
 	},
 	{
-		name:    'boxShadow',
-		type:    'string',
+		name: 'boxShadow',
+		type: 'string',
 		default: '',
 		control: ControlBoxShadow,
-		blocks:  [
+		blocks: [
 			'core/image',
 			'core/gallery',
 			'core/media-text',

@@ -13,16 +13,16 @@
 let labels = exhaleEditor.labels;
 
 export default {
-	name  : 'core/paragraph',
-	styles : [
+	name: 'core/paragraph',
+	styles: [
 		{
-			name      : 'default',
-			label     : labels.default,
-			isDefault : true
+			name: 'default',
+			label: labels.default,
+			isDefault: true
 		},
 		{
-			name  : 'highlight',
-			label : labels.highlight
+			name: 'highlight',
+			label: labels.highlight
 		}
 	]
 };

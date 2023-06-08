@@ -33,7 +33,7 @@
 			menu.classList.toggle( 'hidden' );
 			burger.classList.toggle( 'hidden' );
 			svg_x.classList.toggle( 'hidden' );
-		}
+		};
 	}
 
 	let images = document.querySelectorAll( 'img' );
@@ -45,7 +45,7 @@
 			if ( ( classes.contains( 'alignleft' ) || classes.contains( 'alignright' ) ) && 300 >= image.naturalWidth ) {
 				classes.add( 'is-small' );
 			}
-		}
+		};
 	} );
 
 	//let paras = document.querySelectorAll( 'p' );

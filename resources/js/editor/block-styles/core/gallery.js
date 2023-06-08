@@ -13,16 +13,16 @@
 let labels = exhaleEditor.labels;
 
 export default {
-	name   : 'core/gallery',
-	styles : [
+	name: 'core/gallery',
+	styles: [
 		{
-			name      : 'default',
-			label     : labels.default,
-			isDefault : true
+			name: 'default',
+			label: labels.default,
+			isDefault: true
 		},
 		{
-			name  : 'reverse',
-			label : labels.reverse,
+			name: 'reverse',
+			label: labels.reverse
 		}
 	]
 };

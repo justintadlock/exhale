@@ -13,15 +13,15 @@
 let labels = exhaleEditor.labels;
 
 export default {
-	name  : 'core/separator',
-	styles : [
+	name: 'core/separator',
+	styles: [
 		{
-			name  : 'dashed',
-			label : labels.borderDashed
+			name: 'dashed',
+			label: labels.borderDashed
 		},
 		{
-			name  : 'double',
-			label : labels.borderDouble
+			name: 'double',
+			label: labels.borderDouble
 		}
 	]
 };
