@@ -1,34 +1,49 @@
 // All headings.
-h1, h2, h3, h4, h5, h6, dt,
+h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ dt,
 .app-header__title {
 	font-family:       var( --font-family-headings );
-	font-weight:       var( --font-weight-headings,       400    );
-	font-style:        var( --font-style-headings,        normal );
+	font-weight:       var( --font-weight-headings, 400    );
+	font-style:        var( --font-style-headings, normal );
 	font-variant-caps: var( --font-variant-caps-headings, normal );
-	text-transform:    var( --text-transform-headings,    none   );
+	text-transform:    var( --text-transform-headings, none   );
 }
 
 // Headings.
-h1, h2, h3, h4, h5, h6 {
+h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
 	//margin:            0 0 0.5em;
 	margin:            1.414em 0 0.5em;
 	line-height:       1.58;
 	color:             var( --color-headings );
 }
 
-:is( h1, h2, h3, h4, h5, h6 ) {
+:is(h1, h2, h3, h4, h5, h6) {
 
-	em, i {
+	em,
+ i {
 		font-style: var( --font-style-headings-italic, italic );
 	}
 
-	strong, b {
+	strong,
+ b {
 		font-weight: var( --font-weight-headings-bold, 700 );
 	}
 }
 
-h2, h3, h4 {
-//	margin-top: 1.414em;
+h2,
+ h3,
+ h4 {
+	//	margin-top: 1.414em;
 }
 
 h1 {

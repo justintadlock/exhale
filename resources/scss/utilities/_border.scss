@@ -15,7 +15,7 @@ $border-width: (
 	'-0': 0,
 	'-2': 0.125rem,
 	'-4': 0.25rem,
-//	-8: 0.5rem
+/*	-8: 0.5rem*/
 );
 
 @each $name, $value in $border-width {
@@ -61,7 +61,7 @@ $border-radius: (
 	.wp-block-media-text.rounded-#{ $radius-name } img,
 	.wp-block-image.rounded-#{ $radius-name } img,
 	.wp-block-gallery.rounded-#{ $radius-name } figcaption {
-		border-radius: #{ $radius-value }
+		border-radius: #{ $radius-value };
 	}
 }
 

@@ -66,16 +66,16 @@
 	line-height:       1.58;
 	font-size:         3rem;
 	font-family:       var( --font-family-headings );
-	font-weight:       var( --font-weight-headings,       700    );
-	font-style:        var( --font-style-headings,        normal );
+	font-weight:       var( --font-weight-headings, 700    );
+	font-style:        var( --font-style-headings, normal );
 	font-variant-caps: var( --font-variant-caps-headings, normal );
-	text-transform:    var( --text-transform-headings,    none   );
+	text-transform:    var( --text-transform-headings, none   );
 
 	letter-spacing: 1px;
 	text-align: center;
 
 	@media only screen and ( min-width: #{ $width-alignwide } ) {
-	//	font-size: 2.75rem;
+		//	font-size: 2.75rem;
 		max-width    : $width-alignwide;
 	}
 }
@@ -114,8 +114,9 @@
 	padding-left: 2em;
 	margin:       $spacing-global 0 0;
 
-	ul, ol {
-	//	list-style-type:   inherit;
+	ul,
+ ol {
+		//	list-style-type:   inherit;
 		margin:       0;
 		padding-left: $spacing-global;
 	}

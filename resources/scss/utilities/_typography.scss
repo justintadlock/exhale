@@ -10,7 +10,7 @@
 
 $text-decoration: (
 	underline:    underline,
-//	line-through: line-through,
+/*	line-through: line-through,*/
 	no-underline: none
 );
 
@@ -146,12 +146,12 @@ $vertical-align: (
 
 .has-text-color {
 
-	a:not( .wp-block-button__link ) {
+	a:not(.wp-block-button__link) {
 		color: inherit;
 	}
 
-	a:not( .wp-block-button__link ):hover,
-	a:not( .wp-block-button__link ):focus {
+	a:not(.wp-block-button__link):hover,
+	a:not(.wp-block-button__link):focus {
 		color:      inherit;
 		background: rgba( 255, 255, 255, 0.2 );
 	}

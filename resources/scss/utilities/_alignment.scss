@@ -33,7 +33,7 @@
 	max-width: 50%;
 }
 
-@media( min-width: $content-width ) {
+@media ( min-width: $content-width ) {
 	.entry__content > .alignleft:not(.is-resized),
 	.entry__content > .alignright:not(.is-resized),
 	.wp-block-group > .alignleft:not(.is-resized),
@@ -59,12 +59,12 @@
 	}
 }
 
-@media( max-width: break( 'mobile' ) ) {
+@media ( max-width: break( 'mobile' ) ) {
 	.alignleft:not(.is-small),
-	.alignright:not(.is-small ) {
+	.alignright:not(.is-small) {
 		float:   none;
 		display: block;
-	//	margin:  0 0 $spacing-global;
+		//	margin:  0 0 $spacing-global;
 		margin: $spacing-global 0 0;
 	}
 }
@@ -102,7 +102,7 @@ p [class*=align] {
 	margin-right: auto;
 }
 
-@media( min-width: #{ $width-alignwide } ) {
+@media ( min-width: #{ $width-alignwide } ) {
 
 	.alignwide {
 		max-width: $width-alignwide;

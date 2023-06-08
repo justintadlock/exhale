@@ -12,12 +12,12 @@
 	max-width:    $content-width;
 	//margin:       0 auto $spacing-global;
 	margin:       $spacing-global auto 0;
-//	margin-bottom: $spacing-global;
+	//	margin-bottom: $spacing-global;
 	padding:       $spacing-global;
 	border:        1px solid var( --color-border );
 
 	@media only screen and ( max-width: $content-width-padded ) {
-	//	margin-bottom: 0;
+		//	margin-bottom: 0;
 		margin-top:    0;
 		border-width:  0 0 1px;
 	}
@@ -37,7 +37,7 @@
 
 		// Cancel reply link is wrapped in `<small>` element.
 		small {
-			font-size: .6125em;
+			font-size: 0.6125em;
 		}
 	}
 

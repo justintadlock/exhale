@@ -23,7 +23,12 @@ h6 {
 .wp-block-heading {
 
 	// Copied from `elements/_headings.scss`.
-	h1, h2, h3, h4, h5, h6 {
+	h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
 		margin:            0 0 0.5em;
 		line-height:       1.58;
 	}

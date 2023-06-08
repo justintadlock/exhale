@@ -14,7 +14,7 @@
 
 	&__comment {
 		clear: both;
-	//	margin-bottom: $spacing-global;
+		//	margin-bottom: $spacing-global;
 	}
 
 	// We need nested selectors here to overwrite the core editor's right
@@ -22,8 +22,8 @@
 	.wp-block-latest-comments__comment-avatar {
 		float:         left;
 		margin-right:  $spacing-half;
-	//	margin-bottom: $spacing-half;
-	//	margin-top:    $spacing-half;
+		//	margin-bottom: $spacing-half;
+		//	margin-top:    $spacing-half;
 		border-radius: 50%;
 	}
 

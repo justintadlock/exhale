@@ -16,6 +16,7 @@
 		"export": "cross-env export=1 NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"lint": "npm run lint:styles && npm run lint:scripts",
 		"lint:styles": "cross-env stylelint './resources/scss/**/*.scss' --syntax scss",
+		"lint:styles:fix": "cross-env stylelint './resources/scss/**/*.scss' --syntax scss --fix",
 		"lint:scripts": "cross-env eslint './resources/js/**/*.js'",
 		"i18n": "npm run i18n:textdomain && npm run i18n:pot",
 		"i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules,exhale",

@@ -12,15 +12,15 @@
 	//margin: $spacing-global 0;
 
 	> * {
-	//	max-width:    $content-width;
-	//	margin-left:  auto;
-	//	margin-right: auto;
+		//	max-width:    $content-width;
+		//	margin-left:  auto;
+		//	margin-right: auto;
 	}
 
 	&__title,
 	&__closed {
-	//	padding-left:  $spacing-global;
-	//	padding-right: $spacing-global;
+		//	padding-left:  $spacing-global;
+		//	padding-right: $spacing-global;
 	}
 
 	// Header/title for the comments section.
@@ -33,7 +33,7 @@
 	// @link https://core.trac.wordpress.org/ticket/44923
 
 	&__list {
-	//	max-width: $content-width-padded;
+		//	max-width: $content-width-padded;
 	}
 
 	//&__list,
@@ -46,7 +46,7 @@
 	// Comments closed message.
 	&__closed {
 		// components/_text-secondary.scss
-	//	text-align: center;
+		//	text-align: center;
 	}
 }
 

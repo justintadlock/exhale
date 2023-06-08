@@ -14,8 +14,8 @@
 	.entry__content > p.has-background,
 	.entry__content > p.is-style-highlight,
 	.entry__content > p.is-style-shadow {
-	//	margin-left: 0;
-	//	margin-right: 0;
+		//	margin-left: 0;
+		//	margin-right: 0;
 	}
 }
 
@@ -31,5 +31,5 @@ p.is-style-highlight {
 
 .is-style-highlight {
 	background:       var( --gray-100 );
-	background-image: linear-gradient( rgba(0,0,0,0.25) 8px, 8px, transparent 100% );
+	background-image: linear-gradient( rgba(0, 0, 0, 0.25) 8px, 8px, transparent 100% );
 }

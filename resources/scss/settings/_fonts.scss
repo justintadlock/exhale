@@ -58,7 +58,7 @@ $text-6xl  : 4rem;      // 64px
 @function editor-font-sizes() {
 
 	@return (
-	        3xs: $text-3xs,
+		3xs: $text-3xs,
 		2xs  : $text-2xs,
 		xs        : $text-xs,
 		sm       : $text-sm,
@@ -75,7 +75,7 @@ $text-6xl  : 4rem;      // 64px
 @function editor-font-sizes-compat() {
 
 	@return (
-	        fine: $text-3xs,
+		fine: $text-3xs,
 	  	diminutive: $text-2xs,
 		tiny        : $text-xs,
 		small       : $text-sm,
