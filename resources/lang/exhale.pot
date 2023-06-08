@@ -1,477 +1,423 @@
-# <!=Copyright (C) 2019 Justin Tadlock
+# <!=Copyright (C) 2023 Justin Tadlock
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Exhale 2.2.0-beta-20190903a\n"
+"Project-Id-Version: Exhale 2.2.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/exhale\n"
-"POT-Creation-Date: 2019-09-03 16:35:18+00:00\n"
+"POT-Creation-Date: 2023-06-08 08:40:46+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: node-wp-i18n 1.2.3\n"
 
-#: app/Background/Customize.php:171 exhale/app/Background/Customize.php:171
+#: app/Background/Customize.php:171
 msgid "Background Type"
 msgstr ""
 
 #: app/Background/Customize.php:175 app/Customize/Controls/BackgroundSvg.php:82
 #: app/functions-assets.php:104 config/image-filters.php:17
-#: config/text-transforms.php:16 exhale/app/Background/Customize.php:175
-#: exhale/app/Customize/Controls/BackgroundSvg.php:82
-#: exhale/app/functions-assets.php:104 exhale/config/image-filters.php:17
-#: exhale/config/text-transforms.php:16
+#: config/text-transforms.php:16
 msgid "None"
 msgstr ""
 
-#: app/Background/Customize.php:176 exhale/app/Background/Customize.php:176
+#: app/Background/Customize.php:176
 msgid "Image"
 msgstr ""
 
-#: app/Background/Customize.php:177 exhale/app/Background/Customize.php:177
+#: app/Background/Customize.php:177
 msgid "Pattern"
 msgstr ""
 
-#: app/Background/Customize.php:184 exhale/app/Background/Customize.php:184
+#: app/Background/Customize.php:184
 msgid "Foreground Color"
 msgstr ""
 
-#: app/Background/Customize.php:194 exhale/app/Background/Customize.php:194
+#: app/Background/Customize.php:194
 msgid "Foreground Opacity"
 msgstr ""
 
-#: app/Background/Customize.php:222 exhale/app/Background/Customize.php:222
+#: app/Background/Customize.php:222
 msgid "Background Pattern"
 msgstr ""
 
-#: app/Background/Customize.php:235 exhale/app/Background/Customize.php:235
+#: app/Background/Customize.php:235
 msgid "Background Image"
 msgstr ""
 
-#: app/Background/Customize.php:245 exhale/app/Background/Customize.php:245
+#: app/Background/Customize.php:245
 msgid "Background Attachment"
 msgstr ""
 
-#: app/Background/Customize.php:249 exhale/app/Background/Customize.php:249
+#: app/Background/Customize.php:249
 msgid "Scroll"
 msgstr ""
 
-#: app/Background/Customize.php:250 exhale/app/Background/Customize.php:250
+#: app/Background/Customize.php:250
 msgid "Fixed"
 msgstr ""
 
-#: app/Background/Customize.php:261 exhale/app/Background/Customize.php:261
+#: app/Background/Customize.php:261
 msgid "Background Size"
 msgstr ""
 
-#: app/Background/Customize.php:265 exhale/app/Background/Customize.php:265
+#: app/Background/Customize.php:265
 msgid "Auto"
 msgstr ""
 
-#: app/Background/Customize.php:266 exhale/app/Background/Customize.php:266
+#: app/Background/Customize.php:266
 msgid "Cover"
 msgstr ""
 
-#: app/Background/Customize.php:267 exhale/app/Background/Customize.php:267
+#: app/Background/Customize.php:267
 msgid "Contain"
 msgstr ""
 
-#: app/Background/Customize.php:277 exhale/app/Background/Customize.php:277
+#: app/Background/Customize.php:277
 msgid "Background Repeat"
 msgstr ""
 
-#: app/Background/Customize.php:281 exhale/app/Background/Customize.php:281
+#: app/Background/Customize.php:281
 msgid "No Repeat"
 msgstr ""
 
-#: app/Background/Customize.php:282 exhale/app/Background/Customize.php:282
+#: app/Background/Customize.php:282
 msgid "Repeat"
 msgstr ""
 
-#: app/Background/Customize.php:283 exhale/app/Background/Customize.php:283
+#: app/Background/Customize.php:283
 msgid "Repeat Horizontally"
 msgstr ""
 
-#: app/Background/Customize.php:284 exhale/app/Background/Customize.php:284
+#: app/Background/Customize.php:284
 msgid "Repeat Vertically"
 msgstr ""
 
-#: app/Background/Customize.php:295 exhale/app/Background/Customize.php:295
+#: app/Background/Customize.php:295
 msgid "Background Position"
 msgstr ""
 
-#: app/Customize/Component.php:90 exhale/app/Customize/Component.php:90
+#: app/Customize/Component.php:90
 msgid "Theme: Global"
 msgstr ""
 
-#: app/Customize/Component.php:91 exhale/app/Customize/Component.php:91
+#: app/Customize/Component.php:91
 msgid "Theme: Header"
 msgstr ""
 
-#: app/Customize/Component.php:92 exhale/app/Customize/Component.php:92
+#: app/Customize/Component.php:92
 msgid "Theme: Content"
 msgstr ""
 
-#: app/Customize/Component.php:93 exhale/app/Customize/Component.php:93
+#: app/Customize/Component.php:93
 msgid "Theme: Footer"
 msgstr ""
 
 #: app/Customize/Component.php:126 app/Customize/Component.php:164
-#: app/Layout/Customize.php:183 exhale/app/Customize/Component.php:126
-#: exhale/app/Customize/Component.php:164 exhale/app/Layout/Customize.php:183
+#: app/Layout/Customize.php:183
 msgid "Layout"
 msgstr ""
 
-#: app/Customize/Component.php:132 exhale/app/Customize/Component.php:132
+#: app/Customize/Component.php:132
 msgid "Typography"
 msgstr ""
 
 #: app/Customize/Component.php:138 app/Customize/Component.php:170
 #: app/Customize/Component.php:192 app/Customize/Component.php:213
-#: exhale/app/Customize/Component.php:138
-#: exhale/app/Customize/Component.php:170
-#: exhale/app/Customize/Component.php:192
-#: exhale/app/Customize/Component.php:213
 msgid "Colors"
 msgstr ""
 
 #: app/Customize/Component.php:144 app/Customize/Component.php:176
 #: app/Customize/Component.php:198 app/Customize/Component.php:312
-#: exhale/app/Customize/Component.php:144
-#: exhale/app/Customize/Component.php:176
-#: exhale/app/Customize/Component.php:198
-#: exhale/app/Customize/Component.php:312
 msgid "Background"
 msgstr ""
 
-#: app/Customize/Component.php:150 exhale/app/Customize/Component.php:150
+#: app/Customize/Component.php:150
 msgid "Media"
 msgstr ""
 
-#: app/Customize/Component.php:183 exhale/app/Customize/Component.php:183
+#: app/Customize/Component.php:183
 msgid "Branding"
 msgstr ""
 
-#: app/Customize/Component.php:219 exhale/app/Customize/Component.php:219
+#: app/Customize/Component.php:219
 msgid "Background: Footer"
 msgstr ""
 
-#: app/Customize/Component.php:225 exhale/app/Customize/Component.php:225
+#: app/Customize/Component.php:225
 msgid "Background: Sidebar"
 msgstr ""
 
-#: app/Customize/Component.php:231 exhale/app/Customize/Component.php:231
+#: app/Customize/Component.php:231
 msgid "Sidebar"
 msgstr ""
 
-#: app/Customize/Component.php:234 exhale/app/Customize/Component.php:234
+#: app/Customize/Component.php:234
 msgid "Add Footer Widgets &rarr;"
 msgstr ""
 
-#: app/Customize/Component.php:241 exhale/app/Customize/Component.php:241
+#: app/Customize/Component.php:241
 msgid "Credit"
 msgstr ""
 
-#: app/Customize/Component.php:313 exhale/app/Customize/Component.php:313
+#: app/Customize/Component.php:313
 msgid "Background color used for the site."
 msgstr ""
 
-#: app/Customize/Component.php:324 exhale/app/Customize/Component.php:324
+#: app/Customize/Component.php:324
 msgid "Always stick header to top of screen?"
 msgstr ""
 
-#: app/Customize/Component.php:325 exhale/app/Customize/Component.php:325
+#: app/Customize/Component.php:325
 msgid "Note: Header is sticky on mobile by default."
 msgstr ""
 
-#: app/Customize/Component.php:338 exhale/app/Customize/Component.php:338
+#: app/Customize/Component.php:338
 msgid "Separator"
 msgstr ""
 
-#: app/Customize/Component.php:339 exhale/app/Customize/Component.php:339
+#: app/Customize/Component.php:339
 msgid "Character used as a separator between the title and tagline."
 msgstr ""
 
 #: app/Customize/Controls/BackgroundPosition.php:53
-#: exhale/app/Customize/Controls/BackgroundPosition.php:53
 msgid "Top Left"
 msgstr ""
 
 #: app/Customize/Controls/BackgroundPosition.php:57
-#: exhale/app/Customize/Controls/BackgroundPosition.php:57
 msgid "Top"
 msgstr ""
 
 #: app/Customize/Controls/BackgroundPosition.php:61
-#: exhale/app/Customize/Controls/BackgroundPosition.php:61
 msgid "Top Right"
 msgstr ""
 
 #: app/Customize/Controls/BackgroundPosition.php:67
-#: exhale/app/Customize/Controls/BackgroundPosition.php:67
 msgid "Left"
 msgstr ""
 
 #: app/Customize/Controls/BackgroundPosition.php:71
-#: exhale/app/Customize/Controls/BackgroundPosition.php:71
 msgid "Center"
 msgstr ""
 
 #: app/Customize/Controls/BackgroundPosition.php:75
-#: exhale/app/Customize/Controls/BackgroundPosition.php:75
 msgid "Right"
 msgstr ""
 
 #: app/Customize/Controls/BackgroundPosition.php:81
-#: exhale/app/Customize/Controls/BackgroundPosition.php:81
 msgid "Bottom Left"
 msgstr ""
 
 #: app/Customize/Controls/BackgroundPosition.php:85
-#: exhale/app/Customize/Controls/BackgroundPosition.php:85
 msgid "Bottom"
 msgstr ""
 
 #: app/Customize/Controls/BackgroundPosition.php:89
-#: exhale/app/Customize/Controls/BackgroundPosition.php:89
 msgid "Bottom Right"
 msgstr ""
 
 #: app/Customize/Controls/Typography.php:87
-#: exhale/app/Customize/Controls/Typography.php:87
 msgid "Font Family"
 msgstr ""
 
 #: app/Customize/Controls/Typography.php:96
-#: exhale/app/Customize/Controls/Typography.php:96
 msgid "Font Style"
 msgstr ""
 
 #: app/Customize/Controls/Typography.php:105
-#: exhale/app/Customize/Controls/Typography.php:105
 msgid "Font Variant: Caps"
 msgstr ""
 
 #: app/Customize/Controls/Typography.php:114
-#: exhale/app/Customize/Controls/Typography.php:114
 msgid "Text Transform"
 msgstr ""
 
-#: app/Footer/Customize.php:78 exhale/app/Footer/Customize.php:78
+#: app/Footer/Customize.php:78
 #. Translators: %s is the theme link.
 msgid "Footer Sidebar: Width"
 msgstr ""
 
 #: app/Footer/Customize.php:80 app/Layout/Customize.php:207
 #: app/functions-assets.php:122 config/editor-font-sizes.php:37
-#: config/font-styles.php:45 exhale/app/Footer/Customize.php:80
-#: exhale/app/Layout/Customize.php:207 exhale/app/functions-assets.php:122
-#: exhale/config/editor-font-sizes.php:37 exhale/config/font-styles.php:45
+#: config/font-styles.php:45
 #. Translators: Font size label.
 msgid "Medium"
 msgstr ""
 
 #: app/Footer/Customize.php:81 app/Layout/Customize.php:208
 #: app/functions-assets.php:123 config/editor-font-sizes.php:42
-#: exhale/app/Footer/Customize.php:81 exhale/app/Layout/Customize.php:208
-#: exhale/app/functions-assets.php:123 exhale/config/editor-font-sizes.php:42
 #. Translators: Font size label.
 msgid "Large"
 msgstr ""
 
 #: app/Footer/Customize.php:82 app/Layout/Customize.php:209
 #: app/functions-assets.php:124 config/editor-font-sizes.php:47
-#: exhale/app/Footer/Customize.php:82 exhale/app/Layout/Customize.php:209
-#: exhale/app/functions-assets.php:124 exhale/config/editor-font-sizes.php:47
 #. Translators: Font size label.
 msgid "Extra Large"
 msgstr ""
 
 #: app/Footer/Customize.php:83 app/Layout/Customize.php:210
 #: app/functions-assets.php:125 config/editor-font-sizes.php:52
-#: exhale/app/Footer/Customize.php:83 exhale/app/Layout/Customize.php:210
-#: exhale/app/functions-assets.php:125 exhale/config/editor-font-sizes.php:52
 #. Translators: Font size label.
 msgid "Huge"
 msgstr ""
 
 #: app/Footer/Customize.php:84 app/Layout/Customize.php:211
 #: app/functions-assets.php:126 config/editor-font-sizes.php:57
-#: exhale/app/Footer/Customize.php:84 exhale/app/Layout/Customize.php:211
-#: exhale/app/functions-assets.php:126 exhale/config/editor-font-sizes.php:57
 #. Translators: Font size label.
 msgid "Gargantuan"
 msgstr ""
 
 #: app/Footer/Customize.php:85 app/Layout/Customize.php:212
-#: config/editor-font-sizes.php:67 exhale/app/Footer/Customize.php:85
-#: exhale/app/Layout/Customize.php:212 exhale/config/editor-font-sizes.php:67
+#: config/editor-font-sizes.php:67
 #. Translators: Font size label.
 msgid "Titanic"
 msgstr ""
 
 #: app/Footer/Customize.php:86 app/Layout/Customize.php:213
-#: exhale/app/Footer/Customize.php:86 exhale/app/Layout/Customize.php:213
 msgid "Full"
 msgstr ""
 
-#: app/Footer/Customize.php:94 exhale/app/Footer/Customize.php:94
+#: app/Footer/Customize.php:94
 msgid "Show random \"powered by\" credit text."
 msgstr ""
 
-#: app/Footer/Customize.php:101 exhale/app/Footer/Customize.php:101
+#: app/Footer/Customize.php:101
 msgid "Custom Footer Text"
 msgstr ""
 
-#: app/Image/Customize.php:87 exhale/app/Image/Customize.php:87
+#: app/Image/Customize.php:87
 msgid "Image Filter"
 msgstr ""
 
-#: app/Image/Customize.php:88 exhale/app/Image/Customize.php:88
+#: app/Image/Customize.php:88
 msgid "CSS filter function to apply to images."
 msgstr ""
 
-#: app/Image/Customize.php:91 exhale/app/Image/Customize.php:91
+#: app/Image/Customize.php:91
 msgid "Default Filter Amount"
 msgstr ""
 
-#: app/Image/Customize.php:92 exhale/app/Image/Customize.php:92
+#: app/Image/Customize.php:92
 msgid "Filter amount applied to all images."
 msgstr ""
 
-#: app/Image/Customize.php:95 exhale/app/Image/Customize.php:95
+#: app/Image/Customize.php:95
 msgid "Hover Filter  Amount"
 msgstr ""
 
-#: app/Image/Customize.php:96 exhale/app/Image/Customize.php:96
+#: app/Image/Customize.php:96
 msgid "Filter amount applied to linked images when they are hovered or focused."
 msgstr ""
 
 #: app/Layout/Customize.php:69 config/layouts-loop.php:16
-#: exhale/app/Layout/Customize.php:69 exhale/config/layouts-loop.php:16
 msgid "Blog"
 msgstr ""
 
-#: app/Layout/Customize.php:70 exhale/app/Layout/Customize.php:70
-#: exhale/vendor/justintadlock/hybrid-core/src/Util/Title.php:97
-#: vendor/justintadlock/hybrid-core/src/Util/Title.php:97
+#: app/Layout/Customize.php:70
 msgid "Archives"
 msgstr ""
 
-#: app/Layout/Customize.php:77 exhale/app/Layout/Customize.php:77
+#: app/Layout/Customize.php:77
 msgid "Archive: %s"
 msgstr ""
 
-#: app/Layout/Customize.php:166 exhale/app/Layout/Customize.php:166
+#: app/Layout/Customize.php:166
 msgid "Global Layout"
 msgstr ""
 
-#: app/Layout/Customize.php:167 exhale/app/Layout/Customize.php:167
+#: app/Layout/Customize.php:167
 msgid "Select the layout used across the site."
 msgstr ""
 
-#: app/Layout/Customize.php:184 exhale/app/Layout/Customize.php:184
+#: app/Layout/Customize.php:184
 msgid "Layout style for the content area."
 msgstr ""
 
-#: app/Layout/Customize.php:191 exhale/app/Layout/Customize.php:191
+#: app/Layout/Customize.php:191
 msgid "Posts Per Page"
 msgstr ""
 
-#: app/Layout/Customize.php:192 exhale/app/Layout/Customize.php:192
+#: app/Layout/Customize.php:192
 msgid "Number of posts to display."
 msgstr ""
 
-#: app/Layout/Customize.php:201 exhale/app/Layout/Customize.php:201
+#: app/Layout/Customize.php:201
 msgid "Width"
 msgstr ""
 
-#: app/Layout/Customize.php:202 exhale/app/Layout/Customize.php:202
+#: app/Layout/Customize.php:202
 msgid "Width for the content area container."
 msgstr ""
 
-#: app/Layout/Customize.php:228 exhale/app/Layout/Customize.php:228
+#: app/Layout/Customize.php:228
 msgid "Columns"
 msgstr ""
 
-#: app/Layout/Customize.php:229 exhale/app/Layout/Customize.php:229
+#: app/Layout/Customize.php:229
 msgid "Number of columns to organize posts."
 msgstr ""
 
-#: app/Layout/Customize.php:250 exhale/app/Layout/Customize.php:250
+#: app/Layout/Customize.php:250
 msgid "Featured Image Size"
 msgstr ""
 
-#: app/Layout/Customize.php:253 exhale/app/Layout/Customize.php:253
+#: app/Layout/Customize.php:253
 #. Translators: %s is a plugin link.
 msgid "For images to be sized correctly, regenerate them using the %s plugin."
 msgstr ""
 
-#: app/Layout/Customize.php:254 exhale/app/Layout/Customize.php:254
+#: app/Layout/Customize.php:254
 msgid "Regnerate Thumbnails"
 msgstr ""
 
 #: app/Settings/Admin/OptionsPage.php:198 app/ThemeManager/Theme.php:276
-#: exhale/app/Settings/Admin/OptionsPage.php:198
-#: exhale/app/ThemeManager/Theme.php:276
 msgid "Customize"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:46
-#: exhale/app/Settings/Admin/Views/General.php:46
 msgid "General"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:116
-#: exhale/app/Settings/Admin/Views/General.php:116
 msgid "Editor"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:120
-#: exhale/app/Settings/Admin/Views/General.php:120
 msgid "Reading"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:124
-#: exhale/app/Settings/Admin/Views/General.php:124
 msgid "Clean WordPress"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:153
-#: exhale/app/Settings/Admin/Views/General.php:153
 msgid "Classic Editor"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:160 app/functions-filters.php:56
-#: exhale/app/Settings/Admin/Views/General.php:160
-#: exhale/app/functions-filters.php:56
 msgid "404 Page"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:167
-#: exhale/app/Settings/Admin/Views/General.php:167
 msgid "Emoji"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:172
-#: exhale/app/Settings/Admin/Views/General.php:172
 msgid "Toolbar"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:177
-#: exhale/app/Settings/Admin/Views/General.php:177
 msgid "Embeds"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:206
-#: exhale/app/Settings/Admin/Views/General.php:206
 msgid "Settings based on which WordPress editor that you prefer to use."
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:221
-#: exhale/app/Settings/Admin/Views/General.php:221
 #. Translators: 1 is WordPress version, 2 is Gutenberg link, 3 is Gutenberg
 #. version.
 msgid ""
@@ -480,58 +426,48 @@ msgid ""
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:223
-#: exhale/app/Settings/Admin/Views/General.php:223
 msgid "Gutenberg"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:240
-#: exhale/app/Settings/Admin/Views/General.php:240
 msgid "Alter the output for specific views on the front end."
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:255
-#: exhale/app/Settings/Admin/Views/General.php:255
 msgid ""
 "Clean up unnecessary items on the front end of your site for speed "
 "improvements."
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:272
-#: exhale/app/Settings/Admin/Views/General.php:272
 msgid "Use Classic Editor Stylesheet"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:277
-#: exhale/app/Settings/Admin/Views/General.php:277
 msgid ""
 "Loads a smaller stylesheet if you are using the classic WordPress editor "
 "instead of the block editor."
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:309
-#: exhale/app/Settings/Admin/Views/General.php:309
 msgid "No Private Pages"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:314
-#: exhale/app/Settings/Admin/Views/General.php:314
 msgid "Add New Page"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:323
-#: exhale/app/Settings/Admin/Views/General.php:323
 msgid ""
 "Select a page to display when a user visits a 404 error page on your site. "
 "The page must be set to private so that it will not appear on the front end."
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:340
-#: exhale/app/Settings/Admin/Views/General.php:340
 msgid "Disable Emoji Scripts"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:345
-#: exhale/app/Settings/Admin/Views/General.php:345
 msgid ""
 "All modern browsers support emoji natively. Disabling emoji scripts removes "
 "the JavaScript loaded on every page of your site for a small percentage of "
@@ -539,128 +475,118 @@ msgid ""
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:362
-#: exhale/app/Settings/Admin/Views/General.php:362
 msgid "Disable Toolbar"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:366
-#: exhale/app/Settings/Admin/Views/General.php:366
 msgid ""
 "Disables the toolbar on the front end of the site, which loads additional "
 "JavaScript and CSS on every page load."
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:383
-#: exhale/app/Settings/Admin/Views/General.php:383
 msgid "Disable WordPress Embeds"
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:388
-#: exhale/app/Settings/Admin/Views/General.php:388
 msgid "Removes the JavaScript that allows other sites to embed your posts."
 msgstr ""
 
 #: app/Settings/Admin/Views/General.php:405
-#: exhale/app/Settings/Admin/Views/General.php:405
 msgid "Update Settings"
 msgstr ""
 
 #: app/Settings/Admin/Views/Themes.php:55
-#: exhale/app/Settings/Admin/Views/Themes.php:55
 msgid "Themes"
 msgstr ""
 
-#: app/Settings/Provider.php:45 exhale/app/Settings/Provider.php:45
+#: app/Settings/Provider.php:45
 msgid "Exhale Settings"
 msgstr ""
 
-#: app/Template/ErrorPage.php:117 exhale/app/Template/ErrorPage.php:117
-#: exhale/vendor/justintadlock/hybrid-core/src/Util/Title.php:164
-#: vendor/justintadlock/hybrid-core/src/Util/Title.php:164
+#: app/Template/ErrorPage.php:117
 msgid "404 Not Found"
 msgstr ""
 
-#: app/Template/ErrorPage.php:136 exhale/app/Template/ErrorPage.php:136
+#: app/Template/ErrorPage.php:136
 msgid ""
 "It looks like you stumbled upon a page that does not exist. Perhaps rolling "
 "the dice with a search might help."
 msgstr ""
 
-#: app/ThemeManager/Theme.php:240 exhale/app/ThemeManager/Theme.php:240
+#: app/ThemeManager/Theme.php:240
 msgid "Active:"
 msgstr ""
 
-#: app/ThemeManager/Theme.php:285 exhale/app/ThemeManager/Theme.php:285
+#: app/ThemeManager/Theme.php:285
 msgid "Activate %s"
 msgstr ""
 
-#: app/ThemeManager/Theme.php:286 exhale/app/ThemeManager/Theme.php:286
+#: app/ThemeManager/Theme.php:286
 msgid "Activate"
 msgstr ""
 
-#: app/ThemeManager/Theme.php:295 exhale/app/ThemeManager/Theme.php:295
+#: app/ThemeManager/Theme.php:295
 msgid "Live Preview"
 msgstr ""
 
-#: app/ThemeManager/Theme.php:304 exhale/app/ThemeManager/Theme.php:304
+#: app/ThemeManager/Theme.php:304
 msgid "Download"
 msgstr ""
 
-#: app/Tools/PoweredBy.php:35 exhale/app/Tools/PoweredBy.php:35
+#: app/Tools/PoweredBy.php:35
 msgid "Powered by heart and soul."
 msgstr ""
 
-#: app/Tools/PoweredBy.php:36 exhale/app/Tools/PoweredBy.php:36
+#: app/Tools/PoweredBy.php:36
 msgid "Powered by crazy ideas and passion."
 msgstr ""
 
-#: app/Tools/PoweredBy.php:37 exhale/app/Tools/PoweredBy.php:37
+#: app/Tools/PoweredBy.php:37
 msgid "Powered by the thing that holds all things together in the universe."
 msgstr ""
 
-#: app/Tools/PoweredBy.php:38 exhale/app/Tools/PoweredBy.php:38
+#: app/Tools/PoweredBy.php:38
 msgid "Powered by love."
 msgstr ""
 
-#: app/Tools/PoweredBy.php:39 exhale/app/Tools/PoweredBy.php:39
+#: app/Tools/PoweredBy.php:39
 msgid "Powered by the vast and endless void."
 msgstr ""
 
-#: app/Tools/PoweredBy.php:40 exhale/app/Tools/PoweredBy.php:40
+#: app/Tools/PoweredBy.php:40
 msgid "Powered by the code of a maniac."
 msgstr ""
 
-#: app/Tools/PoweredBy.php:41 exhale/app/Tools/PoweredBy.php:41
+#: app/Tools/PoweredBy.php:41
 msgid "Powered by peace and understanding."
 msgstr ""
 
-#: app/Tools/PoweredBy.php:42 exhale/app/Tools/PoweredBy.php:42
+#: app/Tools/PoweredBy.php:42
 msgid "Powered by coffee."
 msgstr ""
 
-#: app/Tools/PoweredBy.php:43 exhale/app/Tools/PoweredBy.php:43
+#: app/Tools/PoweredBy.php:43
 msgid "Powered by sleepness nights."
 msgstr ""
 
-#: app/Tools/PoweredBy.php:44 exhale/app/Tools/PoweredBy.php:44
+#: app/Tools/PoweredBy.php:44
 msgid "Powered by the love of all things."
 msgstr ""
 
-#: app/Tools/PoweredBy.php:45 exhale/app/Tools/PoweredBy.php:45
+#: app/Tools/PoweredBy.php:45
 msgid "Powered by something greater than myself."
 msgstr ""
 
 #: app/Typography/Font/Family/Families.php:52
-#: exhale/app/Typography/Font/Family/Families.php:52
 msgid "System Fonts"
 msgstr ""
 
 #: app/Typography/Font/Family/Families.php:56
-#: exhale/app/Typography/Font/Family/Families.php:56
 msgid "Google Fonts"
 msgstr ""
 
-#: app/bootstrap-compat.php:37 exhale/app/bootstrap-compat.php:37
+#: app/bootstrap-compat.php:37
 #. Translators: 1 is the required WordPress version and 2 is the user's current
 #. version.
 msgid ""
@@ -668,7 +594,7 @@ msgid ""
 "%2$s. Please upgrade and try again."
 msgstr ""
 
-#: app/bootstrap-compat.php:46 exhale/app/bootstrap-compat.php:46
+#: app/bootstrap-compat.php:46
 #. Translators: 1 is the required PHP version and 2 is the user's current
 #. version.
 msgid ""
@@ -676,2518 +602,2395 @@ msgid ""
 "Please upgrade and try again."
 msgstr ""
 
-#: app/functions-assets.php:97 exhale/app/functions-assets.php:97
+#: app/functions-assets.php:97
 msgid "Default"
 msgstr ""
 
-#: app/functions-assets.php:98 exhale/app/functions-assets.php:98
+#: app/functions-assets.php:98
 msgid "Double"
 msgstr ""
 
-#: app/functions-assets.php:99 exhale/app/functions-assets.php:99
+#: app/functions-assets.php:99
 msgid "Dashed"
 msgstr ""
 
-#: app/functions-assets.php:100 exhale/app/functions-assets.php:100
+#: app/functions-assets.php:100
 msgid "Border Radius"
 msgstr ""
 
-#: app/functions-assets.php:101 exhale/app/functions-assets.php:101
+#: app/functions-assets.php:101
 msgid "Design Settings"
 msgstr ""
 
-#: app/functions-assets.php:102 exhale/app/functions-assets.php:102
+#: app/functions-assets.php:102
 msgid "Highlight"
 msgstr ""
 
-#: app/functions-assets.php:103 exhale/app/functions-assets.php:103
+#: app/functions-assets.php:103
 msgid "Bullets"
 msgstr ""
 
-#: app/functions-assets.php:105 exhale/app/functions-assets.php:105
+#: app/functions-assets.php:105
 msgid "Reverse"
 msgstr ""
 
-#: app/functions-assets.php:106 exhale/app/functions-assets.php:106
+#: app/functions-assets.php:106
 msgid "Rounded"
 msgstr ""
 
-#: app/functions-assets.php:107 exhale/app/functions-assets.php:107
+#: app/functions-assets.php:107
 msgid "Shadow"
 msgstr ""
 
-#: app/functions-assets.php:111 exhale/app/functions-assets.php:111
+#: app/functions-assets.php:111
 msgid "Disc"
 msgstr ""
 
-#: app/functions-assets.php:112 exhale/app/functions-assets.php:112
+#: app/functions-assets.php:112
 msgid "Circle"
 msgstr ""
 
-#: app/functions-assets.php:113 exhale/app/functions-assets.php:113
+#: app/functions-assets.php:113
 msgid "Square"
 msgstr ""
 
 #: app/functions-assets.php:118 config/editor-font-sizes.php:17
-#: exhale/app/functions-assets.php:118 exhale/config/editor-font-sizes.php:17
 #. Translators: Font size label.
 msgid "Fine"
 msgstr ""
 
 #: app/functions-assets.php:119 config/editor-font-sizes.php:22
-#: exhale/app/functions-assets.php:119 exhale/config/editor-font-sizes.php:22
 #. Translators: Font size label.
 msgid "Diminutive"
 msgstr ""
 
 #: app/functions-assets.php:120 config/editor-font-sizes.php:27
-#: exhale/app/functions-assets.php:120 exhale/config/editor-font-sizes.php:27
 #. Translators: Font size label.
 msgid "Tiny"
 msgstr ""
 
 #: app/functions-assets.php:121 config/editor-font-sizes.php:32
-#: exhale/app/functions-assets.php:121 exhale/config/editor-font-sizes.php:32
 #. Translators: Font size label.
 msgid "Small"
 msgstr ""
 
 #: app/functions-assets.php:127 config/editor-font-sizes.php:62
-#: exhale/app/functions-assets.php:127 exhale/config/editor-font-sizes.php:62
 #. Translators: Font size label.
 msgid "Colossal"
 msgstr ""
 
-#: app/functions-filters.php:88 exhale/app/functions-filters.php:88
+#: app/functions-filters.php:88
 #. Translators: %s is the post title for screen readers.
 msgid "Continue reading&nbsp;%s&nbsp;&rarr;"
 msgstr ""
 
-#: app/functions-setup.php:115 exhale/app/functions-setup.php:115
+#: app/functions-setup.php:115
 msgid "Footer %d"
 msgstr ""
 
-#: app/functions-setup.php:143 exhale/app/functions-setup.php:143
+#: app/functions-setup.php:143
 msgid "Content Canvas"
 msgstr ""
 
-#: app/functions-setup.php:147 exhale/app/functions-setup.php:147
+#: app/functions-setup.php:147
 msgid "Landing"
 msgstr ""
 
-#: app/functions-setup.php:151 exhale/app/functions-setup.php:151
+#: app/functions-setup.php:151
 msgid "Landing: Content Canvas"
 msgstr ""
 
-#: config/_editor-colors.php:50 exhale/config/_editor-colors.php:50
+#: config/_editor-colors.php:50
 msgid "Primary"
 msgstr ""
 
-#: config/_editor-colors.php:54 exhale/config/_editor-colors.php:54
+#: config/_editor-colors.php:54
 msgid "Secondary"
 msgstr ""
 
-#: config/_editor-colors.php:59 exhale/config/_editor-colors.php:59
+#: config/_editor-colors.php:59
 msgid "Black"
 msgstr ""
 
-#: config/_editor-colors.php:63 exhale/config/_editor-colors.php:63
+#: config/_editor-colors.php:63
 msgid "White"
 msgstr ""
 
-#: config/_editor-colors.php:67 exhale/config/_editor-colors.php:67
+#: config/_editor-colors.php:67
 msgid "Gray: 900"
 msgstr ""
 
-#: config/_editor-colors.php:71 exhale/config/_editor-colors.php:71
+#: config/_editor-colors.php:71
 msgid "Gray: 800"
 msgstr ""
 
-#: config/_editor-colors.php:75 exhale/config/_editor-colors.php:75
+#: config/_editor-colors.php:75
 msgid "Gray: 700"
 msgstr ""
 
-#: config/_editor-colors.php:79 exhale/config/_editor-colors.php:79
+#: config/_editor-colors.php:79
 msgid "Gray: 600"
 msgstr ""
 
-#: config/_editor-colors.php:83 exhale/config/_editor-colors.php:83
+#: config/_editor-colors.php:83
 msgid "Gray: 500"
 msgstr ""
 
-#: config/_editor-colors.php:87 exhale/config/_editor-colors.php:87
+#: config/_editor-colors.php:87
 msgid "Gray: 400"
 msgstr ""
 
-#: config/_editor-colors.php:91 exhale/config/_editor-colors.php:91
+#: config/_editor-colors.php:91
 msgid "Gray: 300"
 msgstr ""
 
-#: config/_editor-colors.php:95 exhale/config/_editor-colors.php:95
+#: config/_editor-colors.php:95
 msgid "Gray: 200"
 msgstr ""
 
-#: config/_editor-colors.php:99 exhale/config/_editor-colors.php:99
+#: config/_editor-colors.php:99
 msgid "Gray: 100"
 msgstr ""
 
-#: config/_editor-colors.php:103 exhale/config/_editor-colors.php:103
+#: config/_editor-colors.php:103
 msgid "Red: 900"
 msgstr ""
 
-#: config/_editor-colors.php:107 exhale/config/_editor-colors.php:107
+#: config/_editor-colors.php:107
 msgid "Red: 800"
 msgstr ""
 
-#: config/_editor-colors.php:111 exhale/config/_editor-colors.php:111
+#: config/_editor-colors.php:111
 msgid "Red: 700"
 msgstr ""
 
-#: config/_editor-colors.php:115 exhale/config/_editor-colors.php:115
+#: config/_editor-colors.php:115
 msgid "Red: 600"
 msgstr ""
 
-#: config/_editor-colors.php:119 exhale/config/_editor-colors.php:119
+#: config/_editor-colors.php:119
 msgid "Red: 500"
 msgstr ""
 
-#: config/_editor-colors.php:123 exhale/config/_editor-colors.php:123
+#: config/_editor-colors.php:123
 msgid "Red: 400"
 msgstr ""
 
-#: config/_editor-colors.php:127 exhale/config/_editor-colors.php:127
+#: config/_editor-colors.php:127
 msgid "Red: 300"
 msgstr ""
 
-#: config/_editor-colors.php:131 exhale/config/_editor-colors.php:131
+#: config/_editor-colors.php:131
 msgid "Red: 200"
 msgstr ""
 
-#: config/_editor-colors.php:135 exhale/config/_editor-colors.php:135
+#: config/_editor-colors.php:135
 msgid "Red: 100"
 msgstr ""
 
-#: config/_editor-colors.php:139 exhale/config/_editor-colors.php:139
+#: config/_editor-colors.php:139
 msgid "Orange: 900"
 msgstr ""
 
-#: config/_editor-colors.php:143 exhale/config/_editor-colors.php:143
+#: config/_editor-colors.php:143
 msgid "Orange: 800"
 msgstr ""
 
-#: config/_editor-colors.php:147 exhale/config/_editor-colors.php:147
+#: config/_editor-colors.php:147
 msgid "Orange: 700"
 msgstr ""
 
-#: config/_editor-colors.php:151 exhale/config/_editor-colors.php:151
+#: config/_editor-colors.php:151
 msgid "Orange: 600"
 msgstr ""
 
-#: config/_editor-colors.php:155 exhale/config/_editor-colors.php:155
+#: config/_editor-colors.php:155
 msgid "Orange: 500"
 msgstr ""
 
-#: config/_editor-colors.php:159 exhale/config/_editor-colors.php:159
+#: config/_editor-colors.php:159
 msgid "Orange: 400"
 msgstr ""
 
-#: config/_editor-colors.php:163 exhale/config/_editor-colors.php:163
+#: config/_editor-colors.php:163
 msgid "Orange: 300"
 msgstr ""
 
-#: config/_editor-colors.php:167 exhale/config/_editor-colors.php:167
+#: config/_editor-colors.php:167
 msgid "Orange: 200"
 msgstr ""
 
-#: config/_editor-colors.php:171 exhale/config/_editor-colors.php:171
+#: config/_editor-colors.php:171
 msgid "Orange: 100"
 msgstr ""
 
-#: config/_editor-colors.php:175 exhale/config/_editor-colors.php:175
+#: config/_editor-colors.php:175
 msgid "Yellow: 900"
 msgstr ""
 
-#: config/_editor-colors.php:179 exhale/config/_editor-colors.php:179
+#: config/_editor-colors.php:179
 msgid "Yellow: 800"
 msgstr ""
 
-#: config/_editor-colors.php:183 exhale/config/_editor-colors.php:183
+#: config/_editor-colors.php:183
 msgid "Yellow: 700"
 msgstr ""
 
-#: config/_editor-colors.php:187 exhale/config/_editor-colors.php:187
+#: config/_editor-colors.php:187
 msgid "Yellow: 600"
 msgstr ""
 
-#: config/_editor-colors.php:191 exhale/config/_editor-colors.php:191
+#: config/_editor-colors.php:191
 msgid "Yellow: 500"
 msgstr ""
 
-#: config/_editor-colors.php:195 exhale/config/_editor-colors.php:195
+#: config/_editor-colors.php:195
 msgid "Yellow: 400"
 msgstr ""
 
-#: config/_editor-colors.php:199 exhale/config/_editor-colors.php:199
+#: config/_editor-colors.php:199
 msgid "Yellow: 300"
 msgstr ""
 
-#: config/_editor-colors.php:203 exhale/config/_editor-colors.php:203
+#: config/_editor-colors.php:203
 msgid "Yellow: 200"
 msgstr ""
 
-#: config/_editor-colors.php:207 exhale/config/_editor-colors.php:207
+#: config/_editor-colors.php:207
 msgid "Yellow: 100"
 msgstr ""
 
-#: config/_editor-colors.php:211 exhale/config/_editor-colors.php:211
+#: config/_editor-colors.php:211
 msgid "Green: 900"
 msgstr ""
 
-#: config/_editor-colors.php:215 exhale/config/_editor-colors.php:215
+#: config/_editor-colors.php:215
 msgid "Green: 800"
 msgstr ""
 
-#: config/_editor-colors.php:219 exhale/config/_editor-colors.php:219
+#: config/_editor-colors.php:219
 msgid "Green: 700"
 msgstr ""
 
-#: config/_editor-colors.php:223 exhale/config/_editor-colors.php:223
+#: config/_editor-colors.php:223
 msgid "Green: 600"
 msgstr ""
 
-#: config/_editor-colors.php:227 exhale/config/_editor-colors.php:227
+#: config/_editor-colors.php:227
 msgid "Green: 500"
 msgstr ""
 
-#: config/_editor-colors.php:231 exhale/config/_editor-colors.php:231
+#: config/_editor-colors.php:231
 msgid "Green: 400"
 msgstr ""
 
-#: config/_editor-colors.php:235 exhale/config/_editor-colors.php:235
+#: config/_editor-colors.php:235
 msgid "Green: 300"
 msgstr ""
 
-#: config/_editor-colors.php:239 exhale/config/_editor-colors.php:239
+#: config/_editor-colors.php:239
 msgid "Green: 200"
 msgstr ""
 
-#: config/_editor-colors.php:243 exhale/config/_editor-colors.php:243
+#: config/_editor-colors.php:243
 msgid "Green: 100"
 msgstr ""
 
-#: config/_editor-colors.php:247 exhale/config/_editor-colors.php:247
+#: config/_editor-colors.php:247
 msgid "Teal: 900"
 msgstr ""
 
-#: config/_editor-colors.php:251 exhale/config/_editor-colors.php:251
+#: config/_editor-colors.php:251
 msgid "Teal: 800"
 msgstr ""
 
-#: config/_editor-colors.php:255 exhale/config/_editor-colors.php:255
+#: config/_editor-colors.php:255
 msgid "Teal: 700"
 msgstr ""
 
-#: config/_editor-colors.php:259 exhale/config/_editor-colors.php:259
+#: config/_editor-colors.php:259
 msgid "Teal: 600"
 msgstr ""
 
-#: config/_editor-colors.php:263 exhale/config/_editor-colors.php:263
+#: config/_editor-colors.php:263
 msgid "Teal: 500"
 msgstr ""
 
-#: config/_editor-colors.php:267 exhale/config/_editor-colors.php:267
+#: config/_editor-colors.php:267
 msgid "Teal: 400"
 msgstr ""
 
-#: config/_editor-colors.php:271 exhale/config/_editor-colors.php:271
+#: config/_editor-colors.php:271
 msgid "Teal: 300"
 msgstr ""
 
-#: config/_editor-colors.php:275 exhale/config/_editor-colors.php:275
+#: config/_editor-colors.php:275
 msgid "Teal: 200"
 msgstr ""
 
-#: config/_editor-colors.php:279 exhale/config/_editor-colors.php:279
+#: config/_editor-colors.php:279
 msgid "Teal: 100"
 msgstr ""
 
-#: config/_editor-colors.php:283 exhale/config/_editor-colors.php:283
+#: config/_editor-colors.php:283
 msgid "Blue: 900"
 msgstr ""
 
-#: config/_editor-colors.php:287 exhale/config/_editor-colors.php:287
+#: config/_editor-colors.php:287
 msgid "Blue: 800"
 msgstr ""
 
-#: config/_editor-colors.php:291 exhale/config/_editor-colors.php:291
+#: config/_editor-colors.php:291
 msgid "Blue: 700"
 msgstr ""
 
-#: config/_editor-colors.php:295 exhale/config/_editor-colors.php:295
+#: config/_editor-colors.php:295
 msgid "Blue: 600"
 msgstr ""
 
-#: config/_editor-colors.php:299 exhale/config/_editor-colors.php:299
+#: config/_editor-colors.php:299
 msgid "Blue: 500"
 msgstr ""
 
-#: config/_editor-colors.php:303 exhale/config/_editor-colors.php:303
+#: config/_editor-colors.php:303
 msgid "Blue: 400"
 msgstr ""
 
-#: config/_editor-colors.php:307 exhale/config/_editor-colors.php:307
+#: config/_editor-colors.php:307
 msgid "Blue: 300"
 msgstr ""
 
-#: config/_editor-colors.php:311 exhale/config/_editor-colors.php:311
+#: config/_editor-colors.php:311
 msgid "Blue: 200"
 msgstr ""
 
-#: config/_editor-colors.php:315 exhale/config/_editor-colors.php:315
+#: config/_editor-colors.php:315
 msgid "Blue: 100"
 msgstr ""
 
-#: config/_editor-colors.php:319 exhale/config/_editor-colors.php:319
+#: config/_editor-colors.php:319
 msgid "Indigo: 900"
 msgstr ""
 
-#: config/_editor-colors.php:323 exhale/config/_editor-colors.php:323
+#: config/_editor-colors.php:323
 msgid "Indigo: 800"
 msgstr ""
 
-#: config/_editor-colors.php:327 exhale/config/_editor-colors.php:327
+#: config/_editor-colors.php:327
 msgid "Indigo: 700"
 msgstr ""
 
-#: config/_editor-colors.php:331 exhale/config/_editor-colors.php:331
+#: config/_editor-colors.php:331
 msgid "Indigo: 600"
 msgstr ""
 
-#: config/_editor-colors.php:335 exhale/config/_editor-colors.php:335
+#: config/_editor-colors.php:335
 msgid "Indigo: 500"
 msgstr ""
 
-#: config/_editor-colors.php:339 exhale/config/_editor-colors.php:339
+#: config/_editor-colors.php:339
 msgid "Indigo: 400"
 msgstr ""
 
-#: config/_editor-colors.php:343 exhale/config/_editor-colors.php:343
+#: config/_editor-colors.php:343
 msgid "Indigo: 300"
 msgstr ""
 
-#: config/_editor-colors.php:347 exhale/config/_editor-colors.php:347
+#: config/_editor-colors.php:347
 msgid "Indigo: 200"
 msgstr ""
 
-#: config/_editor-colors.php:351 exhale/config/_editor-colors.php:351
+#: config/_editor-colors.php:351
 msgid "Indigo: 100"
 msgstr ""
 
-#: config/_editor-colors.php:355 exhale/config/_editor-colors.php:355
+#: config/_editor-colors.php:355
 msgid "Purple: 900"
 msgstr ""
 
-#: config/_editor-colors.php:359 exhale/config/_editor-colors.php:359
+#: config/_editor-colors.php:359
 msgid "Purple: 800"
 msgstr ""
 
-#: config/_editor-colors.php:363 exhale/config/_editor-colors.php:363
+#: config/_editor-colors.php:363
 msgid "Purple: 700"
 msgstr ""
 
-#: config/_editor-colors.php:367 exhale/config/_editor-colors.php:367
+#: config/_editor-colors.php:367
 msgid "Purple: 600"
 msgstr ""
 
-#: config/_editor-colors.php:371 exhale/config/_editor-colors.php:371
+#: config/_editor-colors.php:371
 msgid "Purple: 500"
 msgstr ""
 
-#: config/_editor-colors.php:375 exhale/config/_editor-colors.php:375
+#: config/_editor-colors.php:375
 msgid "Purple: 400"
 msgstr ""
 
-#: config/_editor-colors.php:379 exhale/config/_editor-colors.php:379
+#: config/_editor-colors.php:379
 msgid "Purple: 300"
 msgstr ""
 
-#: config/_editor-colors.php:383 exhale/config/_editor-colors.php:383
+#: config/_editor-colors.php:383
 msgid "Purple: 200"
 msgstr ""
 
-#: config/_editor-colors.php:387 exhale/config/_editor-colors.php:387
+#: config/_editor-colors.php:387
 msgid "Purple: 100"
 msgstr ""
 
-#: config/_editor-colors.php:391 exhale/config/_editor-colors.php:391
+#: config/_editor-colors.php:391
 msgid "Pink: 900"
 msgstr ""
 
-#: config/_editor-colors.php:395 exhale/config/_editor-colors.php:395
+#: config/_editor-colors.php:395
 msgid "Pink: 800"
 msgstr ""
 
-#: config/_editor-colors.php:399 exhale/config/_editor-colors.php:399
+#: config/_editor-colors.php:399
 msgid "Pink: 700"
 msgstr ""
 
-#: config/_editor-colors.php:403 exhale/config/_editor-colors.php:403
+#: config/_editor-colors.php:403
 msgid "Pink: 600"
 msgstr ""
 
-#: config/_editor-colors.php:407 exhale/config/_editor-colors.php:407
+#: config/_editor-colors.php:407
 msgid "Pink: 500"
 msgstr ""
 
-#: config/_editor-colors.php:411 exhale/config/_editor-colors.php:411
+#: config/_editor-colors.php:411
 msgid "Pink: 400"
 msgstr ""
 
-#: config/_editor-colors.php:415 exhale/config/_editor-colors.php:415
+#: config/_editor-colors.php:415
 msgid "Pink: 300"
 msgstr ""
 
-#: config/_editor-colors.php:419 exhale/config/_editor-colors.php:419
+#: config/_editor-colors.php:419
 msgid "Pink: 200"
 msgstr ""
 
-#: config/_editor-colors.php:423 exhale/config/_editor-colors.php:423
+#: config/_editor-colors.php:423
 msgid "Pink: 100"
 msgstr ""
 
 #: config/_settings-color.php:17 config/_settings-color.php:26
-#: exhale/config/_settings-color.php:17 exhale/config/_settings-color.php:26
 msgid "Background Color"
 msgstr ""
 
-#: config/_settings-color.php:18 exhale/config/_settings-color.php:18
+#: config/_settings-color.php:18
 msgid "Background color used for body of the site."
 msgstr ""
 
-#: config/_settings-color.php:27 exhale/config/_settings-color.php:27
+#: config/_settings-color.php:27
 msgid "Background color used for content of the site."
 msgstr ""
 
-#: config/_settings-color.php:32 exhale/config/_settings-color.php:32
+#: config/_settings-color.php:32
 msgid "Primary: Text"
 msgstr ""
 
-#: config/_settings-color.php:33 exhale/config/_settings-color.php:33
+#: config/_settings-color.php:33
 msgid "Color used for most text on the site."
 msgstr ""
 
-#: config/_settings-color.php:38 exhale/config/_settings-color.php:38
+#: config/_settings-color.php:38
 msgid "Primary: Link"
 msgstr ""
 
-#: config/_settings-color.php:39 exhale/config/_settings-color.php:39
+#: config/_settings-color.php:39
 msgid "Color used for links in primary text."
 msgstr ""
 
-#: config/_settings-color.php:44 exhale/config/_settings-color.php:44
+#: config/_settings-color.php:44
 msgid "Primary: Link Hover"
 msgstr ""
 
 #: config/_settings-color.php:45 config/_settings-color.php:63
 #: config/_settings-color.php:142 config/_settings-color.php:160
 #: config/_settings-color.php:228 config/_settings-color.php:268
-#: exhale/config/_settings-color.php:45 exhale/config/_settings-color.php:63
-#: exhale/config/_settings-color.php:142 exhale/config/_settings-color.php:160
-#: exhale/config/_settings-color.php:228 exhale/config/_settings-color.php:268
 msgid "Color used when hovering or focusing a link."
 msgstr ""
 
-#: config/_settings-color.php:50 exhale/config/_settings-color.php:50
+#: config/_settings-color.php:50
 msgid "Secondary: Text"
 msgstr ""
 
-#: config/_settings-color.php:51 exhale/config/_settings-color.php:51
+#: config/_settings-color.php:51
 msgid "Color used for secondary text."
 msgstr ""
 
-#: config/_settings-color.php:56 exhale/config/_settings-color.php:56
+#: config/_settings-color.php:56
 msgid "Secondary: Link"
 msgstr ""
 
-#: config/_settings-color.php:57 exhale/config/_settings-color.php:57
+#: config/_settings-color.php:57
 msgid "Color used for links in secondary text."
 msgstr ""
 
-#: config/_settings-color.php:62 exhale/config/_settings-color.php:62
+#: config/_settings-color.php:62
 msgid "Secondary: Link Hover"
 msgstr ""
 
-#: config/_settings-color.php:68 exhale/config/_settings-color.php:68
+#: config/_settings-color.php:68
 msgid "Headings"
 msgstr ""
 
-#: config/_settings-color.php:69 exhale/config/_settings-color.php:69
+#: config/_settings-color.php:69
 msgid "Color used for text headings."
 msgstr ""
 
-#: config/_settings-color.php:74 exhale/config/_settings-color.php:74
+#: config/_settings-color.php:74
 msgid "Border"
 msgstr ""
 
-#: config/_settings-color.php:75 exhale/config/_settings-color.php:75
+#: config/_settings-color.php:75
 msgid "Color used for borders in general."
 msgstr ""
 
-#: config/_settings-color.php:79 exhale/config/_settings-color.php:79
+#: config/_settings-color.php:79
 msgid "Pagination"
 msgstr ""
 
-#: config/_settings-color.php:80 exhale/config/_settings-color.php:80
+#: config/_settings-color.php:80
 msgid "Color used for pagination links."
 msgstr ""
 
-#: config/_settings-color.php:88 exhale/config/_settings-color.php:88
+#: config/_settings-color.php:88
 msgid "Pagination Hover"
 msgstr ""
 
-#: config/_settings-color.php:89 exhale/config/_settings-color.php:89
+#: config/_settings-color.php:89
 msgid "Color used when hovering or focusing a pagination link."
 msgstr ""
 
-#: config/_settings-color.php:97 exhale/config/_settings-color.php:97
+#: config/_settings-color.php:97
 msgid "Pagination Background"
 msgstr ""
 
-#: config/_settings-color.php:98 exhale/config/_settings-color.php:98
+#: config/_settings-color.php:98
 msgid "Background color used for pagination links."
 msgstr ""
 
-#: config/_settings-color.php:106 exhale/config/_settings-color.php:106
+#: config/_settings-color.php:106
 msgid "Pagination Background Hover"
 msgstr ""
 
-#: config/_settings-color.php:107 exhale/config/_settings-color.php:107
+#: config/_settings-color.php:107
 msgid "Background color used when hovering or focusing a pagination link."
 msgstr ""
 
-#: config/_settings-color.php:117 exhale/config/_settings-color.php:117
+#: config/_settings-color.php:117
 msgid "Header: Background"
 msgstr ""
 
-#: config/_settings-color.php:118 exhale/config/_settings-color.php:118
+#: config/_settings-color.php:118
 msgid "Background color for the entire header block."
 msgstr ""
 
-#: config/_settings-color.php:123 exhale/config/_settings-color.php:123
+#: config/_settings-color.php:123
 msgid "Header: Border"
 msgstr ""
 
-#: config/_settings-color.php:124 exhale/config/_settings-color.php:124
+#: config/_settings-color.php:124
 msgid "Color used for borders in the header."
 msgstr ""
 
-#: config/_settings-color.php:129 exhale/config/_settings-color.php:129
+#: config/_settings-color.php:129
 msgid "Header: Branding Background"
 msgstr ""
 
-#: config/_settings-color.php:130 exhale/config/_settings-color.php:130
+#: config/_settings-color.php:130
 msgid "Background color for the branding area."
 msgstr ""
 
-#: config/_settings-color.php:135 exhale/config/_settings-color.php:135
+#: config/_settings-color.php:135
 msgid "Header: Title Text"
 msgstr ""
 
-#: config/_settings-color.php:136 exhale/config/_settings-color.php:136
+#: config/_settings-color.php:136
 msgid "Color for the branding title text."
 msgstr ""
 
-#: config/_settings-color.php:141 exhale/config/_settings-color.php:141
+#: config/_settings-color.php:141
 msgid "Header: Title Text Hover"
 msgstr ""
 
-#: config/_settings-color.php:147 exhale/config/_settings-color.php:147
+#: config/_settings-color.php:147
 msgid "Header: Tagline Text"
 msgstr ""
 
-#: config/_settings-color.php:148 exhale/config/_settings-color.php:148
+#: config/_settings-color.php:148
 msgid "Color used for the branding tagline text."
 msgstr ""
 
-#: config/_settings-color.php:153 exhale/config/_settings-color.php:153
+#: config/_settings-color.php:153
 msgid "Header: Menu Link"
 msgstr ""
 
-#: config/_settings-color.php:154 exhale/config/_settings-color.php:154
+#: config/_settings-color.php:154
 msgid "Color for the primary menu links."
 msgstr ""
 
-#: config/_settings-color.php:159 exhale/config/_settings-color.php:159
+#: config/_settings-color.php:159
 msgid "Header: Menu Link Hover"
 msgstr ""
 
-#: config/_settings-color.php:165 exhale/config/_settings-color.php:165
+#: config/_settings-color.php:165
 msgid "Menu Link Background Hover"
 msgstr ""
 
-#: config/_settings-color.php:166 exhale/config/_settings-color.php:166
+#: config/_settings-color.php:166
 msgid "Background color used when hovering or focusing a link."
 msgstr ""
 
-#: config/_settings-color.php:170 exhale/config/_settings-color.php:170
+#: config/_settings-color.php:170
 msgid "Mobile Menu Button"
 msgstr ""
 
-#: config/_settings-color.php:171 exhale/config/_settings-color.php:171
+#: config/_settings-color.php:171
 msgid "Color for the mobile menu toggle button."
 msgstr ""
 
-#: config/_settings-color.php:181 exhale/config/_settings-color.php:181
+#: config/_settings-color.php:181
 msgid "Mobile Menu Button Background"
 msgstr ""
 
 #: config/_settings-color.php:182 config/_settings-color.php:190
-#: exhale/config/_settings-color.php:182 exhale/config/_settings-color.php:190
 msgid "Background color for the mobile menu toggle button."
 msgstr ""
 
-#: config/_settings-color.php:189 exhale/config/_settings-color.php:189
+#: config/_settings-color.php:189
 msgid "Mobile Menu Button Background Hover"
 msgstr ""
 
-#: config/_settings-color.php:197 exhale/config/_settings-color.php:197
+#: config/_settings-color.php:197
 msgid "Footer: Background"
 msgstr ""
 
 #: config/_settings-color.php:198 config/_settings-color.php:236
-#: exhale/config/_settings-color.php:198 exhale/config/_settings-color.php:236
 msgid "Background color for the entire footer section."
 msgstr ""
 
-#: config/_settings-color.php:205 exhale/config/_settings-color.php:205
+#: config/_settings-color.php:205
 msgid "Footer: Text"
 msgstr ""
 
 #: config/_settings-color.php:206 config/_settings-color.php:244
-#: config/_settings-color.php:252 exhale/config/_settings-color.php:206
-#: exhale/config/_settings-color.php:244 exhale/config/_settings-color.php:252
+#: config/_settings-color.php:252
 msgid "Color used for most text in the footer."
 msgstr ""
 
-#: config/_settings-color.php:214 exhale/config/_settings-color.php:214
+#: config/_settings-color.php:214
 msgid "Footer: Border"
 msgstr ""
 
-#: config/_settings-color.php:215 exhale/config/_settings-color.php:215
+#: config/_settings-color.php:215
 msgid "Color used for borders in the footer."
 msgstr ""
 
-#: config/_settings-color.php:219 exhale/config/_settings-color.php:219
+#: config/_settings-color.php:219
 msgid "Footer: Link"
 msgstr ""
 
 #: config/_settings-color.php:220 config/_settings-color.php:260
-#: exhale/config/_settings-color.php:220 exhale/config/_settings-color.php:260
 msgid "Color for the links in the footer."
 msgstr ""
 
-#: config/_settings-color.php:227 exhale/config/_settings-color.php:227
+#: config/_settings-color.php:227
 msgid "Footer: Link Hover"
 msgstr ""
 
-#: config/_settings-color.php:235 exhale/config/_settings-color.php:235
+#: config/_settings-color.php:235
 msgid "Sidebar Footer: Background"
 msgstr ""
 
-#: config/_settings-color.php:243 exhale/config/_settings-color.php:243
+#: config/_settings-color.php:243
 msgid "Sidebar Footer: Text"
 msgstr ""
 
-#: config/_settings-color.php:251 exhale/config/_settings-color.php:251
+#: config/_settings-color.php:251
 msgid "Sidebar Footer: Headings"
 msgstr ""
 
-#: config/_settings-color.php:259 exhale/config/_settings-color.php:259
+#: config/_settings-color.php:259
 msgid "Sidebar Footer: Link"
 msgstr ""
 
-#: config/_settings-color.php:267 exhale/config/_settings-color.php:267
+#: config/_settings-color.php:267
 msgid "Sidebar Footer: Link Hover"
 msgstr ""
 
-#: config/_settings-mods.php:186 exhale/config/_settings-mods.php:186
+#: config/_settings-mods.php:186
 msgid "Powered by %s."
 msgstr ""
 
-#: config/_settings-typography.php:17 exhale/config/_settings-typography.php:17
+#: config/_settings-typography.php:17
 msgid "Font used for text headings."
 msgstr ""
 
-#: config/_settings-typography.php:26 exhale/config/_settings-typography.php:26
+#: config/_settings-typography.php:26
 msgid "Font used for most of the text on the site."
 msgstr ""
 
-#: config/_settings-typography.php:33 exhale/config/_settings-typography.php:33
+#: config/_settings-typography.php:33
 msgid "Font used for secondary, less important text."
 msgstr ""
 
-#: config/background-patterns.php:19 exhale/config/background-patterns.php:19
+#: config/background-patterns.php:19
 msgid "4 Point Stars"
 msgstr ""
 
-#: config/background-patterns.php:23 exhale/config/background-patterns.php:23
+#: config/background-patterns.php:23
 msgid "Anchors Away"
 msgstr ""
 
-#: config/background-patterns.php:27 exhale/config/background-patterns.php:27
+#: config/background-patterns.php:27
 msgid "Architect"
 msgstr ""
 
-#: config/background-patterns.php:31 exhale/config/background-patterns.php:31
+#: config/background-patterns.php:31
 msgid "Autumn"
 msgstr ""
 
-#: config/background-patterns.php:35 exhale/config/background-patterns.php:35
+#: config/background-patterns.php:35
 msgid "Aztec"
 msgstr ""
 
-#: config/background-patterns.php:39 exhale/config/background-patterns.php:39
+#: config/background-patterns.php:39
 msgid "Bamboo"
 msgstr ""
 
-#: config/background-patterns.php:43 exhale/config/background-patterns.php:43
+#: config/background-patterns.php:43
 msgid "Bank Note"
 msgstr ""
 
-#: config/background-patterns.php:47 exhale/config/background-patterns.php:47
+#: config/background-patterns.php:47
 msgid "Bathroom Floor"
 msgstr ""
 
-#: config/background-patterns.php:51 exhale/config/background-patterns.php:51
+#: config/background-patterns.php:51
 msgid "Bevel Circle"
 msgstr ""
 
-#: config/background-patterns.php:55 exhale/config/background-patterns.php:55
+#: config/background-patterns.php:55
 msgid "Boxes"
 msgstr ""
 
-#: config/background-patterns.php:59 exhale/config/background-patterns.php:59
+#: config/background-patterns.php:59
 msgid "Brick Wall"
 msgstr ""
 
-#: config/background-patterns.php:63 exhale/config/background-patterns.php:63
+#: config/background-patterns.php:63
 msgid "Bubbles"
 msgstr ""
 
-#: config/background-patterns.php:67 exhale/config/background-patterns.php:67
+#: config/background-patterns.php:67
 msgid "Cage"
 msgstr ""
 
-#: config/background-patterns.php:71 exhale/config/background-patterns.php:71
+#: config/background-patterns.php:71
 msgid "Charlie Brown"
 msgstr ""
 
-#: config/background-patterns.php:75 exhale/config/background-patterns.php:75
+#: config/background-patterns.php:75
 msgid "Church on Sunday"
 msgstr ""
 
-#: config/background-patterns.php:79 exhale/config/background-patterns.php:79
+#: config/background-patterns.php:79
 msgid "Circles & Squares"
 msgstr ""
 
-#: config/background-patterns.php:83 exhale/config/background-patterns.php:83
+#: config/background-patterns.php:83
 msgid "Circuit Board"
 msgstr ""
 
-#: config/background-patterns.php:87 exhale/config/background-patterns.php:87
+#: config/background-patterns.php:87
 msgid "Connections"
 msgstr ""
 
-#: config/background-patterns.php:91 exhale/config/background-patterns.php:91
+#: config/background-patterns.php:91
 msgid "Cork Screw"
 msgstr ""
 
-#: config/background-patterns.php:95 exhale/config/background-patterns.php:95
+#: config/background-patterns.php:95
 msgid "Current"
 msgstr ""
 
-#: config/background-patterns.php:99 exhale/config/background-patterns.php:99
+#: config/background-patterns.php:99
 msgid "Curtain"
 msgstr ""
 
-#: config/background-patterns.php:103 exhale/config/background-patterns.php:103
+#: config/background-patterns.php:103
 msgid "Cutout"
 msgstr ""
 
-#: config/background-patterns.php:107 exhale/config/background-patterns.php:107
+#: config/background-patterns.php:107
 msgid "Death Star"
 msgstr ""
 
-#: config/background-patterns.php:111 exhale/config/background-patterns.php:111
+#: config/background-patterns.php:111
 msgid "Diagonal Lines"
 msgstr ""
 
-#: config/background-patterns.php:115 exhale/config/background-patterns.php:115
+#: config/background-patterns.php:115
 msgid "Diagonal Stripes"
 msgstr ""
 
-#: config/background-patterns.php:119 exhale/config/background-patterns.php:119
+#: config/background-patterns.php:119
 msgid "Dominos"
 msgstr ""
 
-#: config/background-patterns.php:123 exhale/config/background-patterns.php:123
+#: config/background-patterns.php:123
 msgid "Endless Clouds"
 msgstr ""
 
-#: config/background-patterns.php:127 exhale/config/background-patterns.php:127
+#: config/background-patterns.php:127
 msgid "Eyes"
 msgstr ""
 
-#: config/background-patterns.php:131 exhale/config/background-patterns.php:131
+#: config/background-patterns.php:131
 msgid "Falling Triangles"
 msgstr ""
 
-#: config/background-patterns.php:135 exhale/config/background-patterns.php:135
+#: config/background-patterns.php:135
 msgid "Fancy Rectangles"
 msgstr ""
 
-#: config/background-patterns.php:139 exhale/config/background-patterns.php:139
+#: config/background-patterns.php:139
 msgid "Flipped Diamonds"
 msgstr ""
 
-#: config/background-patterns.php:143 exhale/config/background-patterns.php:143
+#: config/background-patterns.php:143
 msgid "Floating Cogs"
 msgstr ""
 
-#: config/background-patterns.php:147 exhale/config/background-patterns.php:147
+#: config/background-patterns.php:147
 msgid "Floor Tile"
 msgstr ""
 
-#: config/background-patterns.php:151 exhale/config/background-patterns.php:151
+#: config/background-patterns.php:151
 msgid "Formal Invitation"
 msgstr ""
 
-#: config/background-patterns.php:155 exhale/config/background-patterns.php:155
+#: config/background-patterns.php:155
 msgid "Glamorous"
 msgstr ""
 
-#: config/background-patterns.php:159 exhale/config/background-patterns.php:159
+#: config/background-patterns.php:159
 msgid "Graph Paper"
 msgstr ""
 
-#: config/background-patterns.php:163 exhale/config/background-patterns.php:163
+#: config/background-patterns.php:163
 msgid "Groovy"
 msgstr ""
 
-#: config/background-patterns.php:167 exhale/config/background-patterns.php:167
+#: config/background-patterns.php:167
 msgid "Happy Intersection"
 msgstr ""
 
-#: config/background-patterns.php:171 exhale/config/background-patterns.php:171
+#: config/background-patterns.php:171
 msgid "Heavy Rain"
 msgstr ""
 
-#: config/background-patterns.php:175 exhale/config/background-patterns.php:175
+#: config/background-patterns.php:175
 msgid "Hexagons"
 msgstr ""
 
-#: config/background-patterns.php:179 exhale/config/background-patterns.php:179
+#: config/background-patterns.php:179
 msgid "Hideout"
 msgstr ""
 
-#: config/background-patterns.php:183 exhale/config/background-patterns.php:183
+#: config/background-patterns.php:183
 msgid "Houndstooth"
 msgstr ""
 
-#: config/background-patterns.php:187 exhale/config/background-patterns.php:187
+#: config/background-patterns.php:187
 msgid "I Like Food"
 msgstr ""
 
-#: config/background-patterns.php:191 exhale/config/background-patterns.php:191
+#: config/background-patterns.php:191
 msgid "Intersecting Circles"
 msgstr ""
 
-#: config/background-patterns.php:195 exhale/config/background-patterns.php:195
+#: config/background-patterns.php:195
 msgid "Jigsaw"
 msgstr ""
 
-#: config/background-patterns.php:199 exhale/config/background-patterns.php:199
+#: config/background-patterns.php:199
 msgid "Jupiter"
 msgstr ""
 
-#: config/background-patterns.php:203 exhale/config/background-patterns.php:203
+#: config/background-patterns.php:203
 msgid "Kiwi"
 msgstr ""
 
-#: config/background-patterns.php:207 exhale/config/background-patterns.php:207
+#: config/background-patterns.php:207
 msgid "Leaf"
 msgstr ""
 
-#: config/background-patterns.php:211 exhale/config/background-patterns.php:211
+#: config/background-patterns.php:211
 msgid "Lines in Motion"
 msgstr ""
 
-#: config/background-patterns.php:215 exhale/config/background-patterns.php:215
+#: config/background-patterns.php:215
 msgid "Lips"
 msgstr ""
 
-#: config/background-patterns.php:219 exhale/config/background-patterns.php:219
+#: config/background-patterns.php:219
 msgid "Lisbon"
 msgstr ""
 
-#: config/background-patterns.php:223 exhale/config/background-patterns.php:223
+#: config/background-patterns.php:223
 msgid "Melt"
 msgstr ""
 
-#: config/background-patterns.php:227 exhale/config/background-patterns.php:227
+#: config/background-patterns.php:227
 msgid "Moroccan"
 msgstr ""
 
-#: config/background-patterns.php:231 exhale/config/background-patterns.php:231
+#: config/background-patterns.php:231
 msgid "Morphing Diamonds"
 msgstr ""
 
-#: config/background-patterns.php:235 exhale/config/background-patterns.php:235
+#: config/background-patterns.php:235
 msgid "Overcast"
 msgstr ""
 
-#: config/background-patterns.php:239 exhale/config/background-patterns.php:239
+#: config/background-patterns.php:239
 msgid "Overlapping Circles"
 msgstr ""
 
-#: config/background-patterns.php:243 exhale/config/background-patterns.php:243
+#: config/background-patterns.php:243
 msgid "Overlapping Diamonds"
 msgstr ""
 
-#: config/background-patterns.php:247 exhale/config/background-patterns.php:247
+#: config/background-patterns.php:247
 msgid "Overlapping Hexagons"
 msgstr ""
 
-#: config/background-patterns.php:251 exhale/config/background-patterns.php:251
+#: config/background-patterns.php:251
 msgid "Parkay Floor"
 msgstr ""
 
-#: config/background-patterns.php:255 exhale/config/background-patterns.php:255
+#: config/background-patterns.php:255
 msgid "Piano Man"
 msgstr ""
 
-#: config/background-patterns.php:259 exhale/config/background-patterns.php:259
+#: config/background-patterns.php:259
 msgid "Pie Factory"
 msgstr ""
 
-#: config/background-patterns.php:263 exhale/config/background-patterns.php:263
+#: config/background-patterns.php:263
 msgid "Pixel Dots"
 msgstr ""
 
-#: config/background-patterns.php:267 exhale/config/background-patterns.php:267
+#: config/background-patterns.php:267
 msgid "Plus"
 msgstr ""
 
-#: config/background-patterns.php:271 exhale/config/background-patterns.php:271
+#: config/background-patterns.php:271
 msgid "Polka Dots"
 msgstr ""
 
-#: config/background-patterns.php:275 exhale/config/background-patterns.php:275
+#: config/background-patterns.php:275
 msgid "Rails"
 msgstr ""
 
-#: config/background-patterns.php:279 exhale/config/background-patterns.php:279
+#: config/background-patterns.php:279
 msgid "Rain"
 msgstr ""
 
-#: config/background-patterns.php:283 exhale/config/background-patterns.php:283
+#: config/background-patterns.php:283
 msgid "Random Shapes"
 msgstr ""
 
-#: config/background-patterns.php:287 exhale/config/background-patterns.php:287
+#: config/background-patterns.php:287
 msgid "Rounded Plus Connected"
 msgstr ""
 
-#: config/background-patterns.php:291 exhale/config/background-patterns.php:291
+#: config/background-patterns.php:291
 msgid "Signal"
 msgstr ""
 
-#: config/background-patterns.php:295 exhale/config/background-patterns.php:295
+#: config/background-patterns.php:295
 msgid "Skulls"
 msgstr ""
 
-#: config/background-patterns.php:299 exhale/config/background-patterns.php:299
+#: config/background-patterns.php:299
 msgid "Slanted Stars"
 msgstr ""
 
-#: config/background-patterns.php:303 exhale/config/background-patterns.php:303
+#: config/background-patterns.php:303
 msgid "Squares"
 msgstr ""
 
-#: config/background-patterns.php:307 exhale/config/background-patterns.php:307
+#: config/background-patterns.php:307
 msgid "Squares in Squares"
 msgstr ""
 
-#: config/background-patterns.php:311 exhale/config/background-patterns.php:311
+#: config/background-patterns.php:311
 msgid "Stamp Collection"
 msgstr ""
 
-#: config/background-patterns.php:315 exhale/config/background-patterns.php:315
+#: config/background-patterns.php:315
 msgid "Steel Beams"
 msgstr ""
 
-#: config/background-patterns.php:319 exhale/config/background-patterns.php:319
+#: config/background-patterns.php:319
 msgid "Stripes"
 msgstr ""
 
-#: config/background-patterns.php:323 exhale/config/background-patterns.php:323
+#: config/background-patterns.php:323
 msgid "Temple"
 msgstr ""
 
-#: config/background-patterns.php:327 exhale/config/background-patterns.php:327
+#: config/background-patterns.php:327
 msgid "Texture"
 msgstr ""
 
-#: config/background-patterns.php:331 exhale/config/background-patterns.php:331
+#: config/background-patterns.php:331
 msgid "Tic Tac Toe"
 msgstr ""
 
-#: config/background-patterns.php:335 exhale/config/background-patterns.php:335
+#: config/background-patterns.php:335
 msgid "Tiny Checkers"
 msgstr ""
 
-#: config/background-patterns.php:339 exhale/config/background-patterns.php:339
+#: config/background-patterns.php:339
 msgid "Topography"
 msgstr ""
 
-#: config/background-patterns.php:343 exhale/config/background-patterns.php:343
+#: config/background-patterns.php:343
 msgid "Volcano Lamp"
 msgstr ""
 
-#: config/background-patterns.php:347 exhale/config/background-patterns.php:347
+#: config/background-patterns.php:347
 msgid "Wallpaper"
 msgstr ""
 
-#: config/background-patterns.php:351 exhale/config/background-patterns.php:351
+#: config/background-patterns.php:351
 msgid "Wiggle"
 msgstr ""
 
-#: config/background-patterns.php:355 exhale/config/background-patterns.php:355
+#: config/background-patterns.php:355
 msgid "X Equals"
 msgstr ""
 
-#: config/background-patterns.php:359 exhale/config/background-patterns.php:359
+#: config/background-patterns.php:359
 msgid "YYY"
 msgstr ""
 
-#: config/background-patterns.php:363 exhale/config/background-patterns.php:363
+#: config/background-patterns.php:363
 msgid "Zig Zag"
 msgstr ""
 
-#: config/font-families.php:17 exhale/config/font-families.php:17
+#: config/font-families.php:17
 #. Translators: Font family label.
 msgid "System UI"
 msgstr ""
 
-#: config/font-families.php:23 exhale/config/font-families.php:23
+#: config/font-families.php:23
 #. Translators: Font family label.
 msgid "Abril Fatface"
 msgstr ""
 
-#: config/font-families.php:30 exhale/config/font-families.php:30
+#: config/font-families.php:30
 #. Translators: Font family label.
 msgid "Aguafina Script"
 msgstr ""
 
-#: config/font-families.php:37 exhale/config/font-families.php:37
+#: config/font-families.php:37
 #. Translators: Font family label.
 msgid "Alegreya"
 msgstr ""
 
-#: config/font-families.php:44 exhale/config/font-families.php:44
+#: config/font-families.php:44
 #. Translators: Font family label.
 msgid "Alegreya Sans"
 msgstr ""
 
-#: config/font-families.php:51 exhale/config/font-families.php:51
+#: config/font-families.php:51
 #. Translators: Font family label.
 msgid "Alfa Slab One"
 msgstr ""
 
-#: config/font-families.php:58 exhale/config/font-families.php:58
+#: config/font-families.php:58
 #. Translators: Font family label.
 msgid "Almendra"
 msgstr ""
 
-#: config/font-families.php:65 exhale/config/font-families.php:65
+#: config/font-families.php:65
 #. Translators: Font family label.
 msgid "Almendra Display"
 msgstr ""
 
-#: config/font-families.php:72 exhale/config/font-families.php:72
+#: config/font-families.php:72
 #. Translators: Font family label.
 msgid "Almendra Small Caps"
 msgstr ""
 
-#: config/font-families.php:79 exhale/config/font-families.php:79
+#: config/font-families.php:79
 #. Translators: Font family label.
 msgid "Amaranth"
 msgstr ""
 
-#: config/font-families.php:86 exhale/config/font-families.php:86
+#: config/font-families.php:86
 #. Translators: Font family label.
 msgid "Amiri"
 msgstr ""
 
-#: config/font-families.php:93 exhale/config/font-families.php:93
+#: config/font-families.php:93
 #. Translators: Font family label.
 msgid "Andale Mono"
 msgstr ""
 
-#: config/font-families.php:98 exhale/config/font-families.php:98
+#: config/font-families.php:98
 #. Translators: Font family label.
 msgid "Anonymous Pro"
 msgstr ""
 
-#: config/font-families.php:105 exhale/config/font-families.php:105
+#: config/font-families.php:105
 #. Translators: Font family label.
 msgid "Archivo"
 msgstr ""
 
-#: config/font-families.php:112 exhale/config/font-families.php:112
+#: config/font-families.php:112
 #. Translators: Font family label.
 msgid "Archivo Black"
 msgstr ""
 
-#: config/font-families.php:119 exhale/config/font-families.php:119
+#: config/font-families.php:119
 #. Translators: Font family label.
 msgid "Archivo Narrow"
 msgstr ""
 
-#: config/font-families.php:126 exhale/config/font-families.php:126
+#: config/font-families.php:126
 #. Translators: Font family label.
 msgid "Arial"
 msgstr ""
 
-#: config/font-families.php:131 exhale/config/font-families.php:131
+#: config/font-families.php:131
 #. Translators: Font family label.
 msgid "Arial Black"
 msgstr ""
 
-#: config/font-families.php:137 exhale/config/font-families.php:137
+#: config/font-families.php:137
 #. Translators: Font family label.
 msgid "Arial Narrow"
 msgstr ""
 
-#: config/font-families.php:142 exhale/config/font-families.php:142
+#: config/font-families.php:142
 #. Translators: Font family label.
 msgid "Arimo"
 msgstr ""
 
-#: config/font-families.php:149 exhale/config/font-families.php:149
+#: config/font-families.php:149
 #. Translators: Font family label.
 msgid "Arizonia"
 msgstr ""
 
-#: config/font-families.php:156 exhale/config/font-families.php:156
+#: config/font-families.php:156
 #. Translators: Font family label.
 msgid "Arsenal"
 msgstr ""
 
-#: config/font-families.php:163 exhale/config/font-families.php:163
+#: config/font-families.php:163
 #. Translators: Font family label.
 msgid "Arvo"
 msgstr ""
 
-#: config/font-families.php:170 exhale/config/font-families.php:170
+#: config/font-families.php:170
 #. Translators: Font family label.
 msgid "Asap"
 msgstr ""
 
-#: config/font-families.php:177 exhale/config/font-families.php:177
+#: config/font-families.php:177
 #. Translators: Font family label.
 msgid "Asap Condensed"
 msgstr ""
 
-#: config/font-families.php:184 exhale/config/font-families.php:184
+#: config/font-families.php:184
 #. Translators: Font family label.
 msgid "Averia Libre"
 msgstr ""
 
-#: config/font-families.php:191 exhale/config/font-families.php:191
+#: config/font-families.php:191
 #. Translators: Font family label.
 msgid "Averia Gruesa Libre"
 msgstr ""
 
-#: config/font-families.php:198 exhale/config/font-families.php:198
+#: config/font-families.php:198
 #. Translators: Font family label.
 msgid "Averia Sans Libre"
 msgstr ""
 
-#: config/font-families.php:205 exhale/config/font-families.php:205
+#: config/font-families.php:205
 #. Translators: Font family label.
 msgid "Averia Serif Libre"
 msgstr ""
 
-#: config/font-families.php:212 exhale/config/font-families.php:212
+#: config/font-families.php:212
 #. Translators: Font family label.
 msgid "Bangers"
 msgstr ""
 
-#: config/font-families.php:219 exhale/config/font-families.php:219
+#: config/font-families.php:219
 #. Translators: Font family label.
 msgid "Barlow"
 msgstr ""
 
-#: config/font-families.php:226 exhale/config/font-families.php:226
+#: config/font-families.php:226
 #. Translators: Font family label.
 msgid "Barlow Condensed"
 msgstr ""
 
-#: config/font-families.php:233 exhale/config/font-families.php:233
+#: config/font-families.php:233
 #. Translators: Font family label.
 msgid "Barlow Semi Condensed"
 msgstr ""
 
-#: config/font-families.php:240 exhale/config/font-families.php:240
+#: config/font-families.php:240
 #. Translators: Font family label.
 msgid "Baskerville"
 msgstr ""
 
-#: config/font-families.php:245 exhale/config/font-families.php:245
+#: config/font-families.php:245
 #. Translators: Font family label.
 msgid "Berkshire Swash"
 msgstr ""
 
-#: config/font-families.php:252 exhale/config/font-families.php:252
+#: config/font-families.php:252
 #. Translators: Font family label.
 msgid "Bitter"
 msgstr ""
 
-#: config/font-families.php:259 exhale/config/font-families.php:259
+#: config/font-families.php:259
 #. Translators: Font family label.
 msgid "Bree Serif"
 msgstr ""
 
-#: config/font-families.php:266 exhale/config/font-families.php:266
+#: config/font-families.php:266
 #. Translators: Font family label.
 msgid "Brush Script MT"
 msgstr ""
 
-#: config/font-families.php:271 exhale/config/font-families.php:271
+#: config/font-families.php:271
 #. Translators: Font family label.
 msgid "Cabin"
 msgstr ""
 
-#: config/font-families.php:278 exhale/config/font-families.php:278
+#: config/font-families.php:278
 #. Translators: Font family label.
 msgid "Cabin Condensed"
 msgstr ""
 
-#: config/font-families.php:285 exhale/config/font-families.php:285
+#: config/font-families.php:285
 #. Translators: Font family label.
 msgid "Cabin Sketch"
 msgstr ""
 
-#: config/font-families.php:292 exhale/config/font-families.php:292
+#: config/font-families.php:292
 #. Translators: Font family label.
 msgid "Cambay"
 msgstr ""
 
-#: config/font-families.php:299 exhale/config/font-families.php:299
+#: config/font-families.php:299
 #. Translators: Font family label.
 msgid "Cantarell"
 msgstr ""
 
-#: config/font-families.php:306 exhale/config/font-families.php:306
+#: config/font-families.php:306
 #. Translators: Font family label.
 msgid "Cardo"
 msgstr ""
 
-#: config/font-families.php:313 exhale/config/font-families.php:313
+#: config/font-families.php:313
 #. Translators: Font family label.
 msgid "Caudex"
 msgstr ""
 
-#: config/font-families.php:320 exhale/config/font-families.php:320
+#: config/font-families.php:320
 #. Translators: Font family label.
 msgid "Caveat"
 msgstr ""
 
-#: config/font-families.php:327 exhale/config/font-families.php:327
+#: config/font-families.php:327
 #. Translators: Font family label.
 msgid "Caveat Brush"
 msgstr ""
 
-#: config/font-families.php:334 exhale/config/font-families.php:334
+#: config/font-families.php:334
 #. Translators: Font family label.
 msgid "Cherry Swash"
 msgstr ""
 
-#: config/font-families.php:341 exhale/config/font-families.php:341
+#: config/font-families.php:341
 #. Translators: Font family label.
 msgid "Chivo"
 msgstr ""
 
-#: config/font-families.php:348 exhale/config/font-families.php:348
+#: config/font-families.php:348
 #. Translators: Font family label.
 msgid "Comfortaa"
 msgstr ""
 
-#: config/font-families.php:355 exhale/config/font-families.php:355
+#: config/font-families.php:355
 #. Translators: Font family label.
 msgid "Comic Sans"
 msgstr ""
 
-#: config/font-families.php:360 exhale/config/font-families.php:360
+#: config/font-families.php:360
 #. Translators: Font family label.
 msgid "Cookie"
 msgstr ""
 
-#: config/font-families.php:367 exhale/config/font-families.php:367
+#: config/font-families.php:367
 #. Translators: Font family label.
 msgid "Cormorant"
 msgstr ""
 
-#: config/font-families.php:374 exhale/config/font-families.php:374
+#: config/font-families.php:374
 #. Translators: Font family label.
 msgid "Cormorant Garamond"
 msgstr ""
 
-#: config/font-families.php:381 exhale/config/font-families.php:381
+#: config/font-families.php:381
 #. Translators: Font family label.
 msgid "Cormorant Infant"
 msgstr ""
 
-#: config/font-families.php:388 exhale/config/font-families.php:388
+#: config/font-families.php:388
 #. Translators: Font family label.
 msgid "Cormorant Small Caps"
 msgstr ""
 
-#: config/font-families.php:395 exhale/config/font-families.php:395
+#: config/font-families.php:395
 #. Translators: Font family label.
 msgid "Cormorant Upright"
 msgstr ""
 
-#: config/font-families.php:402 exhale/config/font-families.php:402
+#: config/font-families.php:402
 #. Translators: Font family label.
 msgid "Cormorant Unicase"
 msgstr ""
 
-#: config/font-families.php:409 exhale/config/font-families.php:409
+#: config/font-families.php:409
 #. Translators: Font family label.
 msgid "Courier New"
 msgstr ""
 
-#: config/font-families.php:414 exhale/config/font-families.php:414
+#: config/font-families.php:414
 #. Translators: Font family label.
 msgid "Cousine"
 msgstr ""
 
-#: config/font-families.php:421 exhale/config/font-families.php:421
+#: config/font-families.php:421
 #. Translators: Font family label.
 msgid "Crimson Text"
 msgstr ""
 
-#: config/font-families.php:428 exhale/config/font-families.php:428
+#: config/font-families.php:428
 #. Translators: Font family label.
 msgid "Cuprum"
 msgstr ""
 
-#: config/font-families.php:435 exhale/config/font-families.php:435
+#: config/font-families.php:435
 #. Translators: Font family label.
 msgid "Dancing Script"
 msgstr ""
 
-#: config/font-families.php:442 exhale/config/font-families.php:442
+#: config/font-families.php:442
 #. Translators: Font family label.
 msgid "EB Garamond"
 msgstr ""
 
-#: config/font-families.php:449 exhale/config/font-families.php:449
+#: config/font-families.php:449
 #. Translators: Font family label.
 msgid "Economica"
 msgstr ""
 
-#: config/font-families.php:456 exhale/config/font-families.php:456
+#: config/font-families.php:456
 #. Translators: Font family label.
 msgid "Elsie"
 msgstr ""
 
-#: config/font-families.php:463 exhale/config/font-families.php:463
+#: config/font-families.php:463
 #. Translators: Font family label.
 msgid "Elsie Swash Caps"
 msgstr ""
 
-#: config/font-families.php:470 exhale/config/font-families.php:470
+#: config/font-families.php:470
 #. Translators: Font family label.
 msgid "Exo"
 msgstr ""
 
-#: config/font-families.php:477 exhale/config/font-families.php:477
+#: config/font-families.php:477
 #. Translators: Font family label.
 msgid "Exo 2"
 msgstr ""
 
-#: config/font-families.php:484 exhale/config/font-families.php:484
+#: config/font-families.php:484
 #. Translators: Font family label.
 msgid "Expletus Sans"
 msgstr ""
 
-#: config/font-families.php:491 exhale/config/font-families.php:491
+#: config/font-families.php:491
 #. Translators: Font family label.
 msgid "Faustina"
 msgstr ""
 
-#: config/font-families.php:498 exhale/config/font-families.php:498
+#: config/font-families.php:498
 #. Translators: Font family label.
 msgid "Fira Mono"
 msgstr ""
 
-#: config/font-families.php:505 exhale/config/font-families.php:505
+#: config/font-families.php:505
 #. Translators: Font family label.
 msgid "Fira Sans"
 msgstr ""
 
-#: config/font-families.php:512 exhale/config/font-families.php:512
+#: config/font-families.php:512
 #. Translators: Font family label.
 msgid "Fira Sans Condensed"
 msgstr ""
 
-#: config/font-families.php:519 exhale/config/font-families.php:519
+#: config/font-families.php:519
 #. Translators: Font family label.
 msgid "Fira Sans Extra Condensed"
 msgstr ""
 
-#: config/font-families.php:526 exhale/config/font-families.php:526
+#: config/font-families.php:526
 #. Translators: Font family label.
 msgid "Gentium Basic"
 msgstr ""
 
-#: config/font-families.php:533 exhale/config/font-families.php:533
+#: config/font-families.php:533
 #. Translators: Font family label.
 msgid "Gentium Book Basic"
 msgstr ""
 
-#: config/font-families.php:540 exhale/config/font-families.php:540
+#: config/font-families.php:540
 #. Translators: Font family label.
 msgid "Georgia"
 msgstr ""
 
-#: config/font-families.php:545 exhale/config/font-families.php:545
+#: config/font-families.php:545
 #. Translators: Font family label.
 msgid "Gill Sans"
 msgstr ""
 
-#: config/font-families.php:550 exhale/config/font-families.php:550
+#: config/font-families.php:550
 #. Translators: Font family label.
 msgid "Give You Glory"
 msgstr ""
 
-#: config/font-families.php:557 exhale/config/font-families.php:557
+#: config/font-families.php:557
 #. Translators: Font family label.
 msgid "Gloria Hallelujah"
 msgstr ""
 
-#: config/font-families.php:564 exhale/config/font-families.php:564
+#: config/font-families.php:564
 #. Translators: Font family label.
 msgid "Great Vibes"
 msgstr ""
 
-#: config/font-families.php:571 exhale/config/font-families.php:571
+#: config/font-families.php:571
 #. Translators: Font family label.
 msgid "Handlee"
 msgstr ""
 
-#: config/font-families.php:578 exhale/config/font-families.php:578
+#: config/font-families.php:578
 #. Translators: Font family label.
 msgid "Helvetica"
 msgstr ""
 
-#: config/font-families.php:583 exhale/config/font-families.php:583
+#: config/font-families.php:583
 #. Translators: Font family label.
 msgid "Henny Penny"
 msgstr ""
 
-#: config/font-families.php:590 exhale/config/font-families.php:590
+#: config/font-families.php:590
 #. Translators: Font family label.
 msgid "Hoefler Text"
 msgstr ""
 
-#: config/font-families.php:595 exhale/config/font-families.php:595
+#: config/font-families.php:595
 #. Translators: Font family label.
 msgid "IBM Plex Mono"
 msgstr ""
 
-#: config/font-families.php:602 exhale/config/font-families.php:602
+#: config/font-families.php:602
 #. Translators: Font family label.
 msgid "IBM Plex Sans"
 msgstr ""
 
-#: config/font-families.php:609 exhale/config/font-families.php:609
+#: config/font-families.php:609
 #. Translators: Font family label.
 msgid "IBM Plex Sans Condensed"
 msgstr ""
 
-#: config/font-families.php:616 exhale/config/font-families.php:616
+#: config/font-families.php:616
 #. Translators: Font family label.
 msgid "IBM Plex Serif"
 msgstr ""
 
-#: config/font-families.php:623 exhale/config/font-families.php:623
+#: config/font-families.php:623
 #. Translators: Font family label.
 msgid "Impact"
 msgstr ""
 
-#: config/font-families.php:628 exhale/config/font-families.php:628
+#: config/font-families.php:628
 #. Translators: Font family label.
 msgid "Indie Flower"
 msgstr ""
 
-#: config/font-families.php:635 exhale/config/font-families.php:635
+#: config/font-families.php:635
 #. Translators: Font family label.
 msgid "Istok Web"
 msgstr ""
 
-#: config/font-families.php:642 exhale/config/font-families.php:642
+#: config/font-families.php:642
 #. Translators: Font family label.
 msgid "Josefin Sans"
 msgstr ""
 
-#: config/font-families.php:649 exhale/config/font-families.php:649
+#: config/font-families.php:649
 #. Translators: Font family label.
 msgid "Josefin Slab"
 msgstr ""
 
-#: config/font-families.php:656 exhale/config/font-families.php:656
+#: config/font-families.php:656
 #. Translators: Font family label.
 msgid "Kanit"
 msgstr ""
 
-#: config/font-families.php:663 exhale/config/font-families.php:663
+#: config/font-families.php:663
 #. Translators: Font family label.
 msgid "Karla"
 msgstr ""
 
-#: config/font-families.php:670 exhale/config/font-families.php:670
+#: config/font-families.php:670
 #. Translators: Font family label.
 msgid "Lato"
 msgstr ""
 
-#: config/font-families.php:677 exhale/config/font-families.php:677
+#: config/font-families.php:677
 #. Translators: Font family label.
 msgid "Libre Baskerville"
 msgstr ""
 
-#: config/font-families.php:684 exhale/config/font-families.php:684
+#: config/font-families.php:684
 #. Translators: Font family label.
 msgid "Libre Franklin"
 msgstr ""
 
-#: config/font-families.php:691 exhale/config/font-families.php:691
+#: config/font-families.php:691
 #. Translators: Font family label.
 msgid "Lobster Two"
 msgstr ""
 
-#: config/font-families.php:698 exhale/config/font-families.php:698
+#: config/font-families.php:698
 #. Translators: Font family label.
 msgid "Lora"
 msgstr ""
 
-#: config/font-families.php:705 exhale/config/font-families.php:705
+#: config/font-families.php:705
 #. Translators: Font family label.
 msgid "Lucida Grande"
 msgstr ""
 
-#: config/font-families.php:710 exhale/config/font-families.php:710
+#: config/font-families.php:710
 #. Translators: Font family label.
 msgid "Mali"
 msgstr ""
 
-#: config/font-families.php:717 exhale/config/font-families.php:717
+#: config/font-families.php:717
 #. Translators: Font family label.
 msgid "Manuale"
 msgstr ""
 
-#: config/font-families.php:724 exhale/config/font-families.php:724
+#: config/font-families.php:724
 #. Translators: Font family label.
 msgid "Marvel"
 msgstr ""
 
-#: config/font-families.php:731 exhale/config/font-families.php:731
+#: config/font-families.php:731
 #. Translators: Font family label.
 msgid "Menlo"
 msgstr ""
 
-#: config/font-families.php:736 exhale/config/font-families.php:736
+#: config/font-families.php:736
 #. Translators: Font family label.
 msgid "Merriweather"
 msgstr ""
 
-#: config/font-families.php:743 exhale/config/font-families.php:743
+#: config/font-families.php:743
 #. Translators: Font family label.
 msgid "Merriweather Sans"
 msgstr ""
 
-#: config/font-families.php:750 exhale/config/font-families.php:750
+#: config/font-families.php:750
 #. Translators: Font family label.
 msgid "Montserrat"
 msgstr ""
 
-#: config/font-families.php:757 exhale/config/font-families.php:757
+#: config/font-families.php:757
 #. Translators: Font family label.
 msgid "Montserrat Alternates"
 msgstr ""
 
-#: config/font-families.php:764 exhale/config/font-families.php:764
+#: config/font-families.php:764
 #. Translators: Font family label.
 msgid "Monaco"
 msgstr ""
 
-#: config/font-families.php:769 exhale/config/font-families.php:769
+#: config/font-families.php:769
 #. Translators: Font family label.
 msgid "Muli"
 msgstr ""
 
-#: config/font-families.php:776 exhale/config/font-families.php:776
+#: config/font-families.php:776
 #. Translators: Font family label.
 msgid "Neuton"
 msgstr ""
 
-#: config/font-families.php:783 exhale/config/font-families.php:783
+#: config/font-families.php:783
 #. Translators: Font family label.
 msgid "Nobile"
 msgstr ""
 
-#: config/font-families.php:790 exhale/config/font-families.php:790
+#: config/font-families.php:790
 #. Translators: Font family label.
 msgid "Nothing You Could Do"
 msgstr ""
 
-#: config/font-families.php:797 exhale/config/font-families.php:797
+#: config/font-families.php:797
 #. Translators: Font family label.
 msgid "Noticia Text"
 msgstr ""
 
-#: config/font-families.php:804 exhale/config/font-families.php:804
+#: config/font-families.php:804
 #. Translators: Font family label.
 msgid "Noto Sans"
 msgstr ""
 
-#: config/font-families.php:811 exhale/config/font-families.php:811
+#: config/font-families.php:811
 #. Translators: Font family label.
 msgid "Noto Serif"
 msgstr ""
 
-#: config/font-families.php:818 exhale/config/font-families.php:818
+#: config/font-families.php:818
 #. Translators: Font family label.
 msgid "Nunito"
 msgstr ""
 
-#: config/font-families.php:825 exhale/config/font-families.php:825
+#: config/font-families.php:825
 #. Translators: Font family label.
 msgid "Nunito Sans"
 msgstr ""
 
-#: config/font-families.php:832 exhale/config/font-families.php:832
+#: config/font-families.php:832
 #. Translators: Font family label.
 msgid "Palatino"
 msgstr ""
 
-#: config/font-families.php:837 exhale/config/font-families.php:837
+#: config/font-families.php:837
 #. Translators: Font family label.
 msgid "Oleo Script"
 msgstr ""
 
-#: config/font-families.php:844 exhale/config/font-families.php:844
+#: config/font-families.php:844
 #. Translators: Font family label.
 msgid "Oleo Script Swash Caps"
 msgstr ""
 
-#: config/font-families.php:851 exhale/config/font-families.php:851
+#: config/font-families.php:851
 #. Translators: Font family label.
 msgid "Open Sans"
 msgstr ""
 
-#: config/font-families.php:858 exhale/config/font-families.php:858
+#: config/font-families.php:858
 #. Translators: Font family label.
 msgid "Open Sans Condensed"
 msgstr ""
 
-#: config/font-families.php:865 exhale/config/font-families.php:865
+#: config/font-families.php:865
 #. Translators: Font family label.
 msgid "Oswald"
 msgstr ""
 
-#: config/font-families.php:872 exhale/config/font-families.php:872
+#: config/font-families.php:872
 #. Translators: Font family label.
 msgid "Overlock"
 msgstr ""
 
-#: config/font-families.php:879 exhale/config/font-families.php:879
+#: config/font-families.php:879
 #. Translators: Font family label.
 msgid "Overlock Small Caps"
 msgstr ""
 
-#: config/font-families.php:886 exhale/config/font-families.php:886
+#: config/font-families.php:886
 #. Translators: Font family label.
 msgid "Overpass"
 msgstr ""
 
-#: config/font-families.php:893 exhale/config/font-families.php:893
+#: config/font-families.php:893
 #. Translators: Font family label.
 msgid "Overpass Mono"
 msgstr ""
 
-#: config/font-families.php:900 exhale/config/font-families.php:900
+#: config/font-families.php:900
 #. Translators: Font family label.
 msgid "Pacifico"
 msgstr ""
 
-#: config/font-families.php:907 exhale/config/font-families.php:907
+#: config/font-families.php:907
 #. Translators: Font family label.
 msgid "Patua One"
 msgstr ""
 
-#: config/font-families.php:914 exhale/config/font-families.php:914
+#: config/font-families.php:914
 #. Translators: Font family label.
 msgid "Philosopher"
 msgstr ""
 
-#: config/font-families.php:921 exhale/config/font-families.php:921
+#: config/font-families.php:921
 #. Translators: Font family label.
 msgid "Playball"
 msgstr ""
 
-#: config/font-families.php:928 exhale/config/font-families.php:928
+#: config/font-families.php:928
 #. Translators: Font family label.
 msgid "Playfair Display"
 msgstr ""
 
-#: config/font-families.php:935 exhale/config/font-families.php:935
+#: config/font-families.php:935
 #. Translators: Font family label.
 msgid "Playfair Display Small Caps"
 msgstr ""
 
-#: config/font-families.php:942 exhale/config/font-families.php:942
+#: config/font-families.php:942
 #. Translators: Font family label.
 msgid "Poppins"
 msgstr ""
 
-#: config/font-families.php:949 exhale/config/font-families.php:949
+#: config/font-families.php:949
 #. Translators: Font family label.
 msgid "Prata"
 msgstr ""
 
-#: config/font-families.php:956 exhale/config/font-families.php:956
+#: config/font-families.php:956
 #. Translators: Font family label.
 msgid "Prompt"
 msgstr ""
 
-#: config/font-families.php:963 exhale/config/font-families.php:963
+#: config/font-families.php:963
 #. Translators: Font family label.
 msgid "Proza Libre"
 msgstr ""
 
-#: config/font-families.php:970 exhale/config/font-families.php:970
+#: config/font-families.php:970
 #. Translators: Font family label.
 msgid "PT Sans"
 msgstr ""
 
-#: config/font-families.php:977 exhale/config/font-families.php:977
+#: config/font-families.php:977
 #. Translators: Font family label.
 msgid "PT Sans Caption"
 msgstr ""
 
-#: config/font-families.php:984 exhale/config/font-families.php:984
+#: config/font-families.php:984
 #. Translators: Font family label.
 msgid "PT Sans Narrow"
 msgstr ""
 
-#: config/font-families.php:991 exhale/config/font-families.php:991
+#: config/font-families.php:991
 #. Translators: Font family label.
 msgid "PT Serif"
 msgstr ""
 
-#: config/font-families.php:998 exhale/config/font-families.php:998
+#: config/font-families.php:998
 #. Translators: Font family label.
 msgid "PT Serif Caption"
 msgstr ""
 
-#: config/font-families.php:1005 exhale/config/font-families.php:1005
+#: config/font-families.php:1005
 #. Translators: Font family label.
 msgid "Puritan"
 msgstr ""
 
-#: config/font-families.php:1012 exhale/config/font-families.php:1012
+#: config/font-families.php:1012
 #. Translators: Font family label.
 msgid "Quantico"
 msgstr ""
 
-#: config/font-families.php:1019 exhale/config/font-families.php:1019
+#: config/font-families.php:1019
 #. Translators: Font family label.
 msgid "Quattrocento"
 msgstr ""
 
-#: config/font-families.php:1026 exhale/config/font-families.php:1026
+#: config/font-families.php:1026
 #. Translators: Font family label.
 msgid "Quattrocento Sans"
 msgstr ""
 
-#: config/font-families.php:1033 exhale/config/font-families.php:1033
+#: config/font-families.php:1033
 #. Translators: Font family label.
 msgid "Quicksand"
 msgstr ""
 
-#: config/font-families.php:1040 exhale/config/font-families.php:1040
+#: config/font-families.php:1040
 #. Translators: Font family label.
 msgid "Raleway"
 msgstr ""
 
-#: config/font-families.php:1047 exhale/config/font-families.php:1047
+#: config/font-families.php:1047
 #. Translators: Font family label.
 msgid "Rambla"
 msgstr ""
 
-#: config/font-families.php:1054 exhale/config/font-families.php:1054
+#: config/font-families.php:1054
 #. Translators: Font family label.
 msgid "Righteous"
 msgstr ""
 
-#: config/font-families.php:1061 exhale/config/font-families.php:1061
+#: config/font-families.php:1061
 #. Translators: Font family label.
 msgid "Roboto"
 msgstr ""
 
-#: config/font-families.php:1068 exhale/config/font-families.php:1068
+#: config/font-families.php:1068
 #. Translators: Font family label.
 msgid "Roboto Condensed"
 msgstr ""
 
-#: config/font-families.php:1075 exhale/config/font-families.php:1075
+#: config/font-families.php:1075
 #. Translators: Font family label.
 msgid "Roboto Mono"
 msgstr ""
 
-#: config/font-families.php:1082 exhale/config/font-families.php:1082
+#: config/font-families.php:1082
 #. Translators: Font family label.
 msgid "Roboto Slab"
 msgstr ""
 
-#: config/font-families.php:1089 exhale/config/font-families.php:1089
+#: config/font-families.php:1089
 #. Translators: Font family label.
 msgid "Rosario"
 msgstr ""
 
-#: config/font-families.php:1096 exhale/config/font-families.php:1096
+#: config/font-families.php:1096
 #. Translators: Font family label.
 msgid "Rouge Script"
 msgstr ""
 
-#: config/font-families.php:1103 exhale/config/font-families.php:1103
+#: config/font-families.php:1103
 #. Translators: Font family label.
 msgid "Rubik"
 msgstr ""
 
-#: config/font-families.php:1110 exhale/config/font-families.php:1110
+#: config/font-families.php:1110
 #. Translators: Font family label.
 msgid "Sacramento"
 msgstr ""
 
-#: config/font-families.php:1117 exhale/config/font-families.php:1117
+#: config/font-families.php:1117
 #. Translators: Font family label.
 msgid "Sansita"
 msgstr ""
 
-#: config/font-families.php:1124 exhale/config/font-families.php:1124
+#: config/font-families.php:1124
 #. Translators: Font family label.
 msgid "Satisfy"
 msgstr ""
 
-#: config/font-families.php:1131 exhale/config/font-families.php:1131
+#: config/font-families.php:1131
 #. Translators: Font family label.
 msgid "Scada"
 msgstr ""
 
-#: config/font-families.php:1138 exhale/config/font-families.php:1138
+#: config/font-families.php:1138
 #. Translators: Font family label.
 msgid "Shadows Into Light"
 msgstr ""
 
-#: config/font-families.php:1145 exhale/config/font-families.php:1145
+#: config/font-families.php:1145
 #. Translators: Font family label.
 msgid "Shadows Into Light Two"
 msgstr ""
 
-#: config/font-families.php:1152 exhale/config/font-families.php:1152
+#: config/font-families.php:1152
 #. Translators: Font family label.
 msgid "Share"
 msgstr ""
 
-#: config/font-families.php:1159 exhale/config/font-families.php:1159
+#: config/font-families.php:1159
 #. Translators: Font family label.
 msgid "Slabo 27px"
 msgstr ""
 
-#: config/font-families.php:1166 exhale/config/font-families.php:1166
+#: config/font-families.php:1166
 #. Translators: Font family label.
 msgid "Source Code Pro"
 msgstr ""
 
-#: config/font-families.php:1173 exhale/config/font-families.php:1173
+#: config/font-families.php:1173
 #. Translators: Font family label.
 msgid "Source Sans Pro"
 msgstr ""
 
-#: config/font-families.php:1180 exhale/config/font-families.php:1180
+#: config/font-families.php:1180
 #. Translators: Font family label.
 msgid "Source Serif Pro"
 msgstr ""
 
-#: config/font-families.php:1187 exhale/config/font-families.php:1187
+#: config/font-families.php:1187
 #. Translators: Font family label.
 msgid "Space Mono"
 msgstr ""
 
-#: config/font-families.php:1194 exhale/config/font-families.php:1194
+#: config/font-families.php:1194
 #. Translators: Font family label.
 msgid "Spectral"
 msgstr ""
 
-#: config/font-families.php:1201 exhale/config/font-families.php:1201
+#: config/font-families.php:1201
 #. Translators: Font family label.
 msgid "Spectral Small Caps"
 msgstr ""
 
-#: config/font-families.php:1208 exhale/config/font-families.php:1208
+#: config/font-families.php:1208
 #. Translators: Font family label.
 msgid "Tahoma"
 msgstr ""
 
-#: config/font-families.php:1213 exhale/config/font-families.php:1213
+#: config/font-families.php:1213
 #. Translators: Font family label.
 msgid "Tangerine"
 msgstr ""
 
-#: config/font-families.php:1220 exhale/config/font-families.php:1220
+#: config/font-families.php:1220
 #. Translators: Font family label.
 msgid "Taviraj"
 msgstr ""
 
-#: config/font-families.php:1227 exhale/config/font-families.php:1227
+#: config/font-families.php:1227
 #. Translators: Font family label.
 msgid "Times New Roman"
 msgstr ""
 
-#: config/font-families.php:1232 exhale/config/font-families.php:1232
+#: config/font-families.php:1232
 #. Translators: Font family label.
 msgid "Tinos"
 msgstr ""
 
-#: config/font-families.php:1239 exhale/config/font-families.php:1239
+#: config/font-families.php:1239
 #. Translators: Font family label.
 msgid "Titillium Web"
 msgstr ""
 
-#: config/font-families.php:1246 exhale/config/font-families.php:1246
+#: config/font-families.php:1246
 #. Translators: Font family label.
 msgid "Trebuchet MS"
 msgstr ""
 
-#: config/font-families.php:1251 exhale/config/font-families.php:1251
+#: config/font-families.php:1251
 #. Translators: Font family label.
 msgid "Trirong"
 msgstr ""
 
-#: config/font-families.php:1258 exhale/config/font-families.php:1258
+#: config/font-families.php:1258
 #. Translators: Font family label.
 msgid "Ubuntu"
 msgstr ""
 
-#: config/font-families.php:1265 exhale/config/font-families.php:1265
+#: config/font-families.php:1265
 #. Translators: Font family label.
 msgid "Ubuntu Condensed"
 msgstr ""
 
-#: config/font-families.php:1272 exhale/config/font-families.php:1272
+#: config/font-families.php:1272
 #. Translators: Font family label.
 msgid "Ubuntu Mono"
 msgstr ""
 
-#: config/font-families.php:1279 exhale/config/font-families.php:1279
+#: config/font-families.php:1279
 #. Translators: Font family label.
 msgid "Ultra"
 msgstr ""
 
-#: config/font-families.php:1286 exhale/config/font-families.php:1286
+#: config/font-families.php:1286
 #. Translators: Font family label.
 msgid "Unna"
 msgstr ""
 
-#: config/font-families.php:1293 exhale/config/font-families.php:1293
+#: config/font-families.php:1293
 #. Translators: Font family label.
 msgid "Verdana"
 msgstr ""
 
-#: config/font-families.php:1298 exhale/config/font-families.php:1298
+#: config/font-families.php:1298
 #. Translators: Font family label.
 msgid "Volkhov"
 msgstr ""
 
-#: config/font-families.php:1305 exhale/config/font-families.php:1305
+#: config/font-families.php:1305
 #. Translators: Font family label.
 msgid "Vollkorn"
 msgstr ""
 
-#: config/font-families.php:1312 exhale/config/font-families.php:1312
+#: config/font-families.php:1312
 #. Translators: Font family label.
 msgid "Work Sans"
 msgstr ""
 
-#: config/font-families.php:1319 exhale/config/font-families.php:1319
+#: config/font-families.php:1319
 #. Translators: Font family label.
 msgid "Yellowtail"
 msgstr ""
 
-#: config/font-families.php:1326 exhale/config/font-families.php:1326
+#: config/font-families.php:1326
 #. Translators: Font family label.
 msgid "Zilla Slab"
 msgstr ""
 
-#: config/font-styles.php:5 exhale/config/font-styles.php:5
+#: config/font-styles.php:5
 msgid "Thin (Hairline)"
 msgstr ""
 
-#: config/font-styles.php:10 exhale/config/font-styles.php:10
+#: config/font-styles.php:10
 msgid "Thin (Hairline) Italic"
 msgstr ""
 
-#: config/font-styles.php:15 exhale/config/font-styles.php:15
+#: config/font-styles.php:15
 msgid "Extra-Light"
 msgstr ""
 
-#: config/font-styles.php:20 exhale/config/font-styles.php:20
+#: config/font-styles.php:20
 msgid "Extra-Light Italic"
 msgstr ""
 
-#: config/font-styles.php:25 exhale/config/font-styles.php:25
+#: config/font-styles.php:25
 msgid "Light"
 msgstr ""
 
-#: config/font-styles.php:30 exhale/config/font-styles.php:30
+#: config/font-styles.php:30
 msgid "Light Italic"
 msgstr ""
 
 #: config/font-styles.php:35 config/font-variant-caps.php:16
-#: exhale/config/font-styles.php:35 exhale/config/font-variant-caps.php:16
 msgid "Normal"
 msgstr ""
 
-#: config/font-styles.php:40 exhale/config/font-styles.php:40
+#: config/font-styles.php:40
 msgid "Normal Italic"
 msgstr ""
 
-#: config/font-styles.php:50 exhale/config/font-styles.php:50
+#: config/font-styles.php:50
 msgid "Medium Italic"
 msgstr ""
 
-#: config/font-styles.php:55 exhale/config/font-styles.php:55
+#: config/font-styles.php:55
 msgid "Semi-Bold"
 msgstr ""
 
-#: config/font-styles.php:60 exhale/config/font-styles.php:60
+#: config/font-styles.php:60
 msgid "Semi-Bold Italic"
 msgstr ""
 
-#: config/font-styles.php:65 exhale/config/font-styles.php:65
+#: config/font-styles.php:65
 msgid "Bold"
 msgstr ""
 
-#: config/font-styles.php:70 exhale/config/font-styles.php:70
+#: config/font-styles.php:70
 msgid "Bold Italic"
 msgstr ""
 
-#: config/font-styles.php:75 exhale/config/font-styles.php:75
+#: config/font-styles.php:75
 msgid "Extra-Bold"
 msgstr ""
 
-#: config/font-styles.php:80 exhale/config/font-styles.php:80
+#: config/font-styles.php:80
 msgid "Extra-Bold Italic"
 msgstr ""
 
-#: config/font-styles.php:85 exhale/config/font-styles.php:85
+#: config/font-styles.php:85
 msgid "Black (Heavy)"
 msgstr ""
 
-#: config/font-styles.php:90 exhale/config/font-styles.php:90
+#: config/font-styles.php:90
 msgid "Black (Heavy) Italic"
 msgstr ""
 
-#: config/font-variant-caps.php:19 exhale/config/font-variant-caps.php:19
+#: config/font-variant-caps.php:19
 msgid "Small Caps"
 msgstr ""
 
-#: config/font-variant-caps.php:22 exhale/config/font-variant-caps.php:22
+#: config/font-variant-caps.php:22
 msgid "All Small Caps"
 msgstr ""
 
-#: config/font-variant-caps.php:25 exhale/config/font-variant-caps.php:25
+#: config/font-variant-caps.php:25
 msgid "Petite Caps"
 msgstr ""
 
-#: config/font-variant-caps.php:28 exhale/config/font-variant-caps.php:28
+#: config/font-variant-caps.php:28
 msgid "All Petite Caps"
 msgstr ""
 
-#: config/font-variant-caps.php:31 exhale/config/font-variant-caps.php:31
+#: config/font-variant-caps.php:31
 msgid "Titling Caps"
 msgstr ""
 
-#: config/font-variant-caps.php:34 exhale/config/font-variant-caps.php:34
+#: config/font-variant-caps.php:34
 msgid "Unicase"
 msgstr ""
 
-#: config/image-filters.php:20 exhale/config/image-filters.php:20
+#: config/image-filters.php:20
 msgid "Brightness"
 msgstr ""
 
-#: config/image-filters.php:26 exhale/config/image-filters.php:26
+#: config/image-filters.php:26
 msgid "Contrast"
 msgstr ""
 
-#: config/image-filters.php:32 exhale/config/image-filters.php:32
+#: config/image-filters.php:32
 msgid "Grayscale"
 msgstr ""
 
-#: config/image-filters.php:38 exhale/config/image-filters.php:38
+#: config/image-filters.php:38
 msgid "Invert"
 msgstr ""
 
-#: config/image-filters.php:44 exhale/config/image-filters.php:44
+#: config/image-filters.php:44
 msgid "Opacity"
 msgstr ""
 
-#: config/image-filters.php:50 exhale/config/image-filters.php:50
+#: config/image-filters.php:50
 msgid "Saturate"
 msgstr ""
 
-#: config/image-filters.php:56 exhale/config/image-filters.php:56
+#: config/image-filters.php:56
 msgid "Sepia"
 msgstr ""
 
-#: config/image-sizes.php:18 exhale/config/image-sizes.php:18
+#: config/image-sizes.php:18
 msgid "Landscape: Thumbnail"
 msgstr ""
 
-#: config/image-sizes.php:24 exhale/config/image-sizes.php:24
+#: config/image-sizes.php:24
 msgid "Landscape: Medium"
 msgstr ""
 
-#: config/image-sizes.php:29 exhale/config/image-sizes.php:29
+#: config/image-sizes.php:29
 msgid "Landscape: Large"
 msgstr ""
 
-#: config/image-sizes.php:34 exhale/config/image-sizes.php:34
+#: config/image-sizes.php:34
 msgid "Landscape: Extra Large"
 msgstr ""
 
-#: config/image-sizes.php:39 exhale/config/image-sizes.php:39
+#: config/image-sizes.php:39
 msgid "Landscape: Huge"
 msgstr ""
 
-#: config/image-sizes.php:46 exhale/config/image-sizes.php:46
+#: config/image-sizes.php:46
 msgid "Portrait: Small"
 msgstr ""
 
-#: config/image-sizes.php:52 exhale/config/image-sizes.php:52
+#: config/image-sizes.php:52
 msgid "Portrait: Medium"
 msgstr ""
 
-#: config/image-sizes.php:59 exhale/config/image-sizes.php:59
+#: config/image-sizes.php:59
 msgid "Square: Small"
 msgstr ""
 
-#: config/image-sizes.php:65 exhale/config/image-sizes.php:65
+#: config/image-sizes.php:65
 msgid "Square: Medium"
 msgstr ""
 
-#: config/layouts-loop.php:26 exhale/config/layouts-loop.php:26
+#: config/layouts-loop.php:26
 msgid "Grid"
 msgstr ""
 
-#: config/layouts-loop.php:38 exhale/config/layouts-loop.php:38
+#: config/layouts-loop.php:38
 msgid "List"
 msgstr ""
 
-#: config/layouts.php:16 exhale/config/layouts.php:16
+#: config/layouts.php:16
 msgid "Wide"
 msgstr ""
 
-#: config/layouts.php:19 exhale/config/layouts.php:19
+#: config/layouts.php:19
 msgid "Boxed"
 msgstr ""
 
-#: config/layouts.php:22 exhale/config/layouts.php:22
+#: config/layouts.php:22
 msgid "Boxed Content"
 msgstr ""
 
-#: config/text-transforms.php:19 exhale/config/text-transforms.php:19
+#: config/text-transforms.php:19
 msgid "Capitalize"
 msgstr ""
 
-#: config/text-transforms.php:22 exhale/config/text-transforms.php:22
+#: config/text-transforms.php:22
 msgid "Lowercase"
 msgstr ""
 
-#: config/text-transforms.php:25 exhale/config/text-transforms.php:25
+#: config/text-transforms.php:25
 msgid "Uppercase"
 msgstr ""
 
-#: exhale/public/views/comment/default.php:8 public/views/comment/default.php:8
+#: public/views/comment/default.php:8
 #. Translators: %s is the parent comment link.
 msgid "In reply to %s"
 msgstr ""
 
-#: exhale/public/views/comment/default.php:31
-#: exhale/public/views/comment/ping.php:15 public/views/comment/default.php:31
-#: public/views/comment/ping.php:15
+#: public/views/comment/default.php:31 public/views/comment/ping.php:15
 #. Translators: Comment date + time format.
 msgid "%1$s, %2$s"
 msgstr ""
 
-#: exhale/public/views/comment/default.php:46
-#: exhale/public/views/comment/ping.php:29 public/views/comment/default.php:46
-#: public/views/comment/ping.php:29
+#: public/views/comment/default.php:46 public/views/comment/ping.php:29
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: exhale/public/views/comments/default.php:29
 #: public/views/comments/default.php:29
 msgid "Comments are closed."
 msgstr ""
 
-#: exhale/public/views/entry/attachment-audio.php:17
 #: public/views/entry/attachment-audio.php:17
 msgid "Audio Info"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-audio.php:20
-#: exhale/public/views/entry/attachment-video.php:20
 #: public/views/entry/attachment-audio.php:20
 #: public/views/entry/attachment-video.php:20
 msgid "Run Time:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-audio.php:21
 #: public/views/entry/attachment-audio.php:21
 msgid "Artist:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-audio.php:22
 #: public/views/entry/attachment-audio.php:22
 msgid "Album:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-audio.php:23
 #: public/views/entry/attachment-audio.php:23
 msgid "Track Number:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-audio.php:24
 #: public/views/entry/attachment-audio.php:24
 msgid "Year:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-audio.php:25
 #: public/views/entry/attachment-audio.php:25
 msgid "Genre:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-audio.php:26
-#: exhale/public/views/entry/attachment-image.php:27
-#: exhale/public/views/entry/attachment-video.php:22
 #: public/views/entry/attachment-audio.php:26
 #: public/views/entry/attachment-image.php:27
 #: public/views/entry/attachment-video.php:22
 msgid "Name:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-audio.php:27
-#: exhale/public/views/entry/attachment-image.php:28
-#: exhale/public/views/entry/attachment-video.php:23
 #: public/views/entry/attachment-audio.php:27
 #: public/views/entry/attachment-image.php:28
 #: public/views/entry/attachment-video.php:23
 msgid "Mime Type:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-audio.php:28
-#: exhale/public/views/entry/attachment-image.php:29
-#: exhale/public/views/entry/attachment-video.php:24
 #: public/views/entry/attachment-audio.php:28
 #: public/views/entry/attachment-image.php:29
 #: public/views/entry/attachment-video.php:24
 msgid "Type:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-audio.php:29
-#: exhale/public/views/entry/attachment-image.php:30
-#: exhale/public/views/entry/attachment-video.php:25
 #: public/views/entry/attachment-audio.php:29
 #: public/views/entry/attachment-image.php:30
 #: public/views/entry/attachment-video.php:25
 msgid "Size:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-image.php:17
 #: public/views/entry/attachment-image.php:17
 msgid "Image Info"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-image.php:20
-#: exhale/public/views/entry/attachment-video.php:21
 #: public/views/entry/attachment-image.php:20
 #: public/views/entry/attachment-video.php:21
 msgid "Dimensions:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-image.php:21
 #: public/views/entry/attachment-image.php:21
 msgid "Date:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-image.php:22
 #: public/views/entry/attachment-image.php:22
 msgid "Camera:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-image.php:23
 #: public/views/entry/attachment-image.php:23
 msgid "Aperture:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-image.php:24
 #: public/views/entry/attachment-image.php:24
 msgid "Focal Length:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-image.php:25
 #: public/views/entry/attachment-image.php:25
 msgid "ISO:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-image.php:26
 #: public/views/entry/attachment-image.php:26
 msgid "Shutter Speed:"
 msgstr ""
 
-#: exhale/public/views/entry/attachment-video.php:17
 #: public/views/entry/attachment-video.php:17
 msgid "Video Info"
 msgstr ""
 
-#: exhale/public/views/entry/single-post.php:21
 #: public/views/entry/single-post.php:21
 #. Translators: %s is the category list.
 msgid "Posted in %s"
 msgstr ""
 
-#: exhale/public/views/entry/single-post.php:26
 #: public/views/entry/single-post.php:26
 #. Translators: %s is the post tags list.
 msgid "Tagged %s"
 msgstr ""
 
-#: exhale/public/views/header/default.php:14 public/views/header/default.php:14
+#: public/views/header/default.php:14
 msgid "Skip to content"
 msgstr ""
 
-#: exhale/public/views/nav/menu/primary.php:5
 #: public/views/nav/menu/primary.php:5
 msgid "Open Menu"
 msgstr ""
 
-#: exhale/public/views/nav/pagination/comments.php:6
-#: exhale/public/views/nav/pagination/posts.php:6
 #: public/views/nav/pagination/comments.php:6
 #: public/views/nav/pagination/posts.php:6
 msgid "&larr; Previous"
 msgstr ""
 
-#: exhale/public/views/nav/pagination/comments.php:7
-#: exhale/public/views/nav/pagination/posts.php:7
 #: public/views/nav/pagination/comments.php:7
 #: public/views/nav/pagination/posts.php:7
 msgid "Next &rarr;"
 msgstr ""
 
-#: exhale/public/views/nav/pagination/comments.php:8
 #: public/views/nav/pagination/comments.php:8
 msgid "Comments Navigation"
 msgstr ""
 
-#: exhale/public/views/nav/pagination/post.php:8
 #: public/views/nav/pagination/post.php:8
 msgid "Pages:"
 msgstr ""
 
-#: exhale/public/views/nav/pagination/posts.php:8
 #: public/views/nav/pagination/posts.php:8
 msgid "Posts Navigation"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Comment/functions-comment.php:229
-#: vendor/justintadlock/hybrid-core/src/Comment/functions-comment.php:229
-msgid "Edit"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Media/Meta.php:179
-#: exhale/vendor/justintadlock/hybrid-core/src/Media/functions-media.php:203
-#: vendor/justintadlock/hybrid-core/src/Media/Meta.php:179
-#: vendor/justintadlock/hybrid-core/src/Media/functions-media.php:203
-#. Translators: Media dimensions - 1 is width and 2 is height.
-msgid "%1$s &#215; %2$s"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Media/Meta.php:272
-#: vendor/justintadlock/hybrid-core/src/Media/Meta.php:272
-#. Translators: %s is the focal length of a camera.
-msgid "%s mm"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Media/Meta.php:364
-#: vendor/justintadlock/hybrid-core/src/Media/Meta.php:364
-#. Translators: %s is the shutter speed of a camera.
-msgid "%s sec"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Pagination/Pagination.php:526
-#: vendor/justintadlock/hybrid-core/src/Pagination/Pagination.php:526
-msgid "&hellip;"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Site/functions-site.php:186
-#: vendor/justintadlock/hybrid-core/src/Site/functions-site.php:186
-msgid "https://wordpress.org"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Site/functions-site.php:187
-#: vendor/justintadlock/hybrid-core/src/Site/functions-site.php:187
-msgid "WordPress"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Util/Title.php:150
-#: vendor/justintadlock/hybrid-core/src/Util/Title.php:150
-#. Translators: %s is the search query.
-msgid "Search results for: %s"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Util/Title.php:238
-#: vendor/justintadlock/hybrid-core/src/Util/Title.php:238
-#. Translators: 1 is the week number and 2 is the year.
-msgid "Week %1$s of %2$s"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Util/Title.php:279
-#: vendor/justintadlock/hybrid-core/src/Util/Title.php:279
-#. Translators: Minute archive title. %s is the minute time format.
-msgid "Minute %s"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/functions-filters.php:209
-#: vendor/justintadlock/hybrid-core/src/functions-filters.php:209
-#. Translators: Used as a placeholder for untitled posts on non-singular views.
-msgid "(Untitled)"
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -3213,82 +3016,37 @@ msgstr ""
 msgid "https://themehybrid.com"
 msgstr ""
 
-#: app/functions-setup.php:88 exhale/app/functions-setup.php:88
+#: app/functions-setup.php:88
 msgctxt "nav menu location"
 msgid "Primary"
 msgstr ""
 
-#: app/functions-setup.php:89 exhale/app/functions-setup.php:89
+#: app/functions-setup.php:89
 msgctxt "nav menu location"
 msgid "Footer"
 msgstr ""
 
-#: app/functions-setup.php:90 exhale/app/functions-setup.php:90
+#: app/functions-setup.php:90
 msgctxt "nav menu location"
 msgid "Social"
 msgstr ""
 
-#: app/functions-template.php:31 exhale/app/functions-template.php:31
+#: app/functions-template.php:31
 msgctxt "meta separator"
 msgid "&middot;"
 msgstr ""
 
-#: config/_settings-typography.php:16 exhale/config/_settings-typography.php:16
+#: config/_settings-typography.php:16
 msgctxt "font family setting"
 msgid "Headings"
 msgstr ""
 
-#: config/_settings-typography.php:25 exhale/config/_settings-typography.php:25
+#: config/_settings-typography.php:25
 msgctxt "font family setting"
 msgid "Primary"
 msgstr ""
 
-#: config/_settings-typography.php:32 exhale/config/_settings-typography.php:32
+#: config/_settings-typography.php:32
 msgctxt "font family setting"
 msgid "Secondary"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Post/functions-post.php:334
-#: vendor/justintadlock/hybrid-core/src/Post/functions-post.php:334
-#. Translators: Separates tags, categories, etc. when displaying a post.
-msgctxt "taxonomy terms separator"
-msgid ", "
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Util/Title.php:224
-#: exhale/vendor/justintadlock/hybrid-core/src/Util/Title.php:240
-#: vendor/justintadlock/hybrid-core/src/Util/Title.php:224
-#: vendor/justintadlock/hybrid-core/src/Util/Title.php:240
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Util/Title.php:239
-#: vendor/justintadlock/hybrid-core/src/Util/Title.php:239
-msgctxt "weekly archives date format"
-msgid "W"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Util/Title.php:253
-#: vendor/justintadlock/hybrid-core/src/Util/Title.php:253
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Util/Title.php:265
-#: vendor/justintadlock/hybrid-core/src/Util/Title.php:265
-msgctxt "hour archives time format"
-msgid "g a"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Util/Title.php:280
-#: vendor/justintadlock/hybrid-core/src/Util/Title.php:280
-msgctxt "minute archives time format"
-msgid "i"
-msgstr ""
-
-#: exhale/vendor/justintadlock/hybrid-core/src/Util/Title.php:293
-#: vendor/justintadlock/hybrid-core/src/Util/Title.php:293
-msgctxt "minute and hour archives time format"
-msgid "g:i a"
 msgstr ""
