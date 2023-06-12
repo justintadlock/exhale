@@ -10,7 +10,7 @@ Exhale is a commercial theme.  It is presented repository on GitHub so that othe
 
 There's a few requirements in order to develop a new theme or contribute back to the project:
 
-* PHP 7.4+ (preferably 8+).
+* PHP 8.0+.
 * WordPress 5.2+.
 * Gutenberg 5.6+ or WordPress 5.2+ for Gutenberg block styles.
 

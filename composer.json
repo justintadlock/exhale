@@ -15,25 +15,43 @@
 	],
 	"homepage": "https://themehybrid.com/themes/exhale",
 	"require": {
-		"php": ">=7.4",
-		"themehybrid/hybrid-core": "7.0.0-alpha.3",
+		"php": ">=8.0",
+		"justintadlock/hybrid-carbon": "^1.0",
+		"nette/utils": "3.2.9",
+		"ramsey/uuid": "4.2.3",
+		"symfony/deprecation-contracts": "2.5.2",
+		"symfony/finder": "5.4.21",
+		"symfony/translation": "5.4.24",
 		"themehybrid/hybrid-attr": "^1.0",
+		"themehybrid/hybrid-contracts": "^2.0",
+		"themehybrid/hybrid-core": "^7.0",
+		"themehybrid/hybrid-events": "^1.0",
+		"themehybrid/hybrid-filesystem": "^1.0",
 		"themehybrid/hybrid-lang": "^1.0",
-		"themehybrid/hybrid-pagination": "^1.0",
-		"themehybrid/hybrid-theme": "2.0.0-beta.3",
 		"themehybrid/hybrid-media-meta": "^1.0",
+		"themehybrid/hybrid-pagination": "^1.0",
 		"themehybrid/hybrid-template": "^1.0",
 		"themehybrid/hybrid-template-hierarchy": "^1.0",
-		"themehybrid/hybrid-template-manager": "^1.0"
+		"themehybrid/hybrid-template-manager": "^1.0",
+		"themehybrid/hybrid-theme": "^2.0",
+		"themehybrid/hybrid-tools": "^2.0"
+	},
+	"require-dev": {
+		"themehybrid/hybrid-dev-tools": "dev-main",
+		"themehybrid/hybrid-phpcs-rules": "dev-main"
 	},
 	"repositories": [
 		{
 			"type": "vcs",
-			"url": "https://github.com/themehybrid/hybrid-events"
+			"url": "https://github.com/saas786/hybrid-carbon"
 		},
 		{
 			"type": "vcs",
-			"url": "https://github.com/themehybrid/hybrid-filesystem"
+			"url": "https://github.com/themehybrid/hybrid-dev-tools"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/themehybrid/hybrid-phpcs-rules"
 		}
 	],
 	"minimum-stability": "dev",
@@ -43,7 +61,16 @@
 			"Exhale\\": "app/"
 		}
 	},
-	"platform": {
-		"php": "7.4"
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"scripts": {
+		"analyze": [
+			"@phpcs:analyze"
+		],
+		"phpcs:analyze": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
+		"phpcs:fix": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
 	}
 }

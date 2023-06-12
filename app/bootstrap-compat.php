@@ -39,12 +39,12 @@ function exhale_compat_message() {
 			$GLOBALS['wp_version']
 		);
 
-	} elseif ( version_compare( PHP_VERSION, '7.4', '<' ) ) {
+	} elseif ( version_compare( PHP_VERSION, '8.0', '<' ) ) {
 
 		return sprintf(
 			// Translators: 1 is the required PHP version and 2 is the user's current version.
 			__( 'Exhale requires at least PHP version %1$s. You are running version %2$s. Please upgrade and try again.', 'exhale' ),
-			'7.4',
+			'8.0',
 			PHP_VERSION
 		);
 	}
