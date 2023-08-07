@@ -11,148 +11,146 @@
  * `remove_action()`.
  *
  * @package   Exhale
+ * @link      https://themehybrid.com/themes/exhale
+ *
  * @author    Justin Tadlock <justintadlock@gmail.com>
  * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
- * @link      https://themehybrid.com/themes/exhale
  */
 
 namespace Exhale;
-
-use Exhale\Tools\Config;
 
 /**
  * Set up theme support.  This is where calls to `add_theme_support()` happen.
  *
  * @since  1.0.0
- * @access public
  * @return void
+ *
+ * @access public
  */
-add_action( 'after_setup_theme', function() {
+add_action( 'after_setup_theme', static function() {
 
-	// Sets the theme content width.
-	$GLOBALS['content_width'] = 640;
+    // Sets the theme content width.
+    $GLOBALS['content_width'] = 640;
 
-	// Load theme translations.
-	load_theme_textdomain( 'exhale', get_parent_theme_file_path( 'public/lang' ) );
+    // Load theme translations.
+    load_theme_textdomain( 'exhale', get_parent_theme_file_path( 'public/lang' ) );
 
-	// Automatically add the `<title>` tag.
-	add_theme_support( 'title-tag' );
+    // Automatically add the `<title>` tag.
+    add_theme_support( 'title-tag' );
 
-	// Automatically add feed links to `<head>`.
-	add_theme_support( 'automatic-feed-links' );
+    // Automatically add feed links to `<head>`.
+    add_theme_support( 'automatic-feed-links' );
 
-	// Adds featured image support.
-	add_theme_support( 'post-thumbnails' );
+    // Adds featured image support.
+    add_theme_support( 'post-thumbnails' );
 
-	// Add selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+    // Add selective refresh for widgets.
+    add_theme_support( 'customize-selective-refresh-widgets' );
 
-	// Wide and full alignment.
-	add_theme_support( 'align-wide' );
+    // Wide and full alignment.
+    add_theme_support( 'align-wide' );
 
-	// Outputs HTML5 markup for core features.
-	add_theme_support( 'html5', [
-		'caption',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'search-form'
-	] );
+    // Outputs HTML5 markup for core features.
+    add_theme_support( 'html5', [
+        'caption',
+        'comment-form',
+        'comment-list',
+        'gallery',
+        'search-form',
+    ] );
 
-	// Add custom logo support.
-	add_theme_support( 'custom-logo', [
-		'width'       => null,
-		'height'      => 58,
-		'flex-width'  => true,
-		'flex-height' => true,
-		'header-text' => [
-			'app-header__title',
-			'app-header__description',
-			'app-header__sep'
-		]
-	] );
-
+    // Add custom logo support.
+    add_theme_support( 'custom-logo', [
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => [
+            'app-header__title',
+            'app-header__description',
+            'app-header__sep',
+        ],
+        'height'      => 58,
+        'width'       => null,
+    ] );
 }, 5 );
 
 /**
  * Register menus.
  *
  * @since  1.0.0
- * @access public
  * @return void
+ *
+ * @access public
  */
-add_action( 'init', function() {
+add_action( 'init', static function() {
 
-	register_nav_menus( [
-		'primary' => esc_html_x( 'Primary', 'nav menu location', 'exhale' ),
-		'footer'  => esc_html_x( 'Footer',  'nav menu location', 'exhale' ),
-		'social'  => esc_html_x( 'Social',  'nav menu location', 'exhale' )
-	] );
-
+    register_nav_menus( [
+        'footer'  => esc_html_x( 'Footer', 'nav menu location', 'exhale' ),
+        'primary' => esc_html_x( 'Primary', 'nav menu location', 'exhale' ),
+        'social'  => esc_html_x( 'Social', 'nav menu location', 'exhale' ),
+    ] );
 }, 5 );
 
 /**
  * Register sidebars.
  *
  * @since  2.1.0
- * @access public
  * @return void
+ *
+ * @access public
  */
-add_action( 'widgets_init', function() {
+add_action( 'widgets_init', static function() {
 
-	$args = [
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget__title">',
-		'after_title'   => '</h3>'
-	];
+    $args = [
+        'after_title'   => '</h3>',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3 class="widget__title">',
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    ];
 
-	foreach ( range( 1, 4 ) as $num ) {
+    foreach ( range( 1, 4 ) as $num ) {
 
-		register_sidebar( [
-			'id'   => "footer-{$num}",
-			'name' => sprintf( __( 'Footer %d', 'exhale' ), $num )
-		] + $args );
-	}
-
+        register_sidebar( [
+            'id'   => "footer-{$num}",
+            'name' => sprintf( __( 'Footer %d', 'exhale' ), $num ),
+        ] + $args );
+    }
 }, 5 );
 
 /**
  * Changes the theme template path to the `public/views` folder.
  *
  * @since  1.0.0
- * @access public
  * @return string
+ *
+ * @access public
  */
-add_filter( 'hybrid/template/path', function() {
-	return 'public/views';
-} );
+add_filter( 'hybrid/template/path', static fn() => 'public/views' );
 
 /**
  * Registers custom templates with WordPress.
  *
  * @since  1.0.0
- * @access public
  * @param  object  $templates
  * @return void
+ *
+ * @access public
  */
-add_action( 'hybrid/templates/register', function( $templates ) {
+add_action( 'hybrid/templates/register', static function( $templates ) {
 
-	$templates->add( 'template-canvas.php', [
-		'label' => __( 'Content Canvas', 'exhale' )
-	] );
+    $templates->add( 'template-canvas.php', [
+        'label' => __( 'Content Canvas', 'exhale' ),
+    ] );
 
-	$templates->add( 'template-landing.php', [
-		'label' => __( 'Landing', 'exhale' )
-	] );
+    $templates->add( 'template-landing.php', [
+        'label' => __( 'Landing', 'exhale' ),
+    ] );
 
-	$templates->add( 'template-landing-canvas.php', [
-		'label' => __( 'Landing: Content Canvas', 'exhale' )
-	] );
+    $templates->add( 'template-landing-canvas.php', [
+        'label' => __( 'Landing: Content Canvas', 'exhale' ),
+    ] );
 
-	//$templates->add( 'template-entry-content-only.php', [
-	//	'label' => __( 'No Post Header/Footer', 'exhale' )
-	//] );
-
+    // $templates->add( 'template-entry-content-only.php', [
+    // 'label' => __( 'No Post Header/Footer', 'exhale' )
+    // ] );
 } );

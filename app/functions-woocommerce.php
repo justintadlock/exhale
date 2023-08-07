@@ -5,9 +5,10 @@
  * This file integrates the theme with WooCommerce.
  *
  * @package   Mythic
+ * @link      https://themehybrid.com/themes/mythic
+ *
  * @author    Justin Tadlock <justintadlock@gmail.com>
  * @copyright 2023 Justin Tadlock
- * @link      https://themehybrid.com/themes/mythic
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
@@ -19,12 +20,13 @@ use function Hybrid\Template\path;
  * Adds theme support for the WooCommerce plugin.
  *
  * @since  2.1.0
- * @access public
  * @return void
+ *
+ * @access public
  */
-add_action( 'after_setup_theme', function() {
+add_action( 'after_setup_theme', static function() {
 
-	add_theme_support( 'woocommerce' );
+    add_theme_support( 'woocommerce' );
 } );
 
 /**
@@ -33,72 +35,69 @@ add_action( 'after_setup_theme', function() {
  * template, which falls back to `resources/views/index.php`.
  *
  * @since  2.1.0
- * @access public
  * @param  array  $files
  * @return array
+ *
+ * @access public
  */
-add_filter( 'woocommerce_template_loader_files', function( $files ) {
-
-	return [
-		path( 'woocommerce.php' ),
-		path( 'index.php' )
-	];
-
-}, PHP_INT_MAX );
+add_filter( 'woocommerce_template_loader_files', static fn( $files ) => [
+    path( 'woocommerce.php' ),
+    path( 'index.php' ),
+], PHP_INT_MAX );
 
 /**
  * Filters the path to the `woocommerce` template parts folder.  This filter
  * moves that folder to `resources/views/woocommerce`.
  *
  * @since  2.1.0
- * @access public
  * @param  string  $path
  * @return string
+ *
+ * @access public
  */
-add_filter( 'woocommerce_template_path', function( $path ) {
-
-	return path( $path );
-} );
+add_filter( 'woocommerce_template_path', static fn( $path ) => path( $path ) );
 
 /**
  * Fixes the archive title on the product archive.
  *
  * @since  2.1.0
- * @access public
  * @param  string  $title
  * @return string
+ *
+ * @access public
  */
-add_filter( 'get_the_archive_title', function( $title ) {
+add_filter( 'get_the_archive_title', static function( $title ) {
 
-	if ( is_post_type_archive( 'product' ) && function_exists( 'woocommerce_page_title' ) ) {
-		$title = woocommerce_page_title( false );
-	}
+    if ( is_post_type_archive( 'product' ) && function_exists( 'woocommerce_page_title' ) ) {
+        $title = woocommerce_page_title( false );
+    }
 
-	return $title;
+    return $title;
 } );
 
 /**
  * Fixes the archive description on the product archive.
  *
  * @since  2.1.0
- * @access public
  * @param  string  $desc
  * @return string
+ *
+ * @access public
  */
-add_filter( 'get_the_archive_description', function( $desc ) {
+add_filter( 'get_the_archive_description', static function( $desc ) {
 
-	if ( is_post_type_archive( 'product' ) && function_exists( 'woocommerce_product_archive_description' ) ) {
+    if ( is_post_type_archive( 'product' ) && function_exists( 'woocommerce_product_archive_description' ) ) {
 
-		if ( function_exists( 'wc_get_page_id' ) ) {
-			$shop = wc_get_page_id( 'shop' );
+        if ( function_exists( 'wc_get_page_id' ) ) {
+            $shop = wc_get_page_id( 'shop' );
 
-			if ( $shop ) {
-				$desc = get_post_field( 'post_content', $shop, 'raw' );
-			}
-		}
-	}
+            if ( $shop ) {
+                $desc = get_post_field( 'post_content', $shop, 'raw' );
+            }
+        }
+    }
 
-	return $desc;
+    return $desc;
 } );
 
 /**
@@ -106,15 +105,16 @@ add_filter( 'get_the_archive_description', function( $desc ) {
  * should be removed in favor of a custom template.
  *
  * @since  2.1.0
- * @access public
  * @param  array  $classes
  * @return array
+ *
+ * @access public
  */
-add_filter( 'woocommerce_post_class', function( $classes ) {
+add_filter( 'woocommerce_post_class', static function( $classes ) {
 
-	if ( is_singular( 'product' ) ) {
-		$classes[] = 'o-content-width';
-	}
+    if ( is_singular( 'product' ) ) {
+        $classes[] = 'o-content-width';
+    }
 
-	return $classes;
+    return $classes;
 } );

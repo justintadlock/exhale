@@ -70,7 +70,7 @@
 		"analyze": [
 			"@phpcs:analyze"
 		],
-		"phpcs:analyze": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
-		"phpcs:fix": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
+		"phpcs:analyze": "@php ./vendor/bin/phpcs ./app",
+		"phpcs:fix": "@php ./vendor/bin/phpcbf ./app"
 	}
 }
