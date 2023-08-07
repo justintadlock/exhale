@@ -5,7 +5,7 @@
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2019 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/exhale
  */
@@ -13,15 +13,15 @@
 let labels = exhaleEditor.labels;
 
 export default {
-	name  : 'core/separator',
-	styles : [
+	name: 'core/separator',
+	styles: [
 		{
-			name  : 'dashed',
-			label : labels.borderDashed
+			name: 'dashed',
+			label: labels.borderDashed
 		},
 		{
-			name  : 'double',
-			label : labels.borderDouble
+			name: 'double',
+			label: labels.borderDouble
 		}
 	]
 };

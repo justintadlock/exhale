@@ -14,13 +14,13 @@ Object.values( loopQueries ).forEach( type => {
 			let widthControl   = wp.customize.control( `loop_${type}_width`   );
 			let columnsControl = wp.customize.control( `loop_${type}_columns` );
 
-			loopLayouts[ layout ].supportsWidth
-				? widthControl.activate()
-				: widthControl.deactivate();
+			loopLayouts[ layout ].supportsWidth ?
+				widthControl.activate() :
+				widthControl.deactivate();
 
-			loopLayouts[ layout ].supportsColumns
-				? columnsControl.activate()
-				: columnsControl.deactivate();
+			loopLayouts[ layout ].supportsColumns ?
+				columnsControl.activate() :
+				columnsControl.deactivate();
 
 			// Activate/Deactivate the featured image control, depending on
 			// whether the layout supports them.  If the layout does support
@@ -42,7 +42,7 @@ Object.values( loopQueries ).forEach( type => {
 
 				// Remove all options from the select. We're going to
 				// rebuild it below.
-				for ( let i = select.options.length; i >= 0 ; i-- ) {
+				for ( let i = select.options.length; 0 <= i ; i-- ) {
 					select.remove( i );
 				}
 

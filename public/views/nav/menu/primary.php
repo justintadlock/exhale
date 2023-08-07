@@ -1,4 +1,4 @@
-<?php if ( has_nav_menu( $data->location ) ) : ?>
+<?php if ( has_nav_menu( $data->get( 'theme_location' ) ) ) : ?>
 
 	<div class="toggle toggle--menu-primary block md:hidden h-16 px-8 flex items-center">
 		<button class="toggle__button flex items-center px-3 py-2 rounded-sm border-0">
@@ -12,16 +12,16 @@
 		</button>
 	</div>
 
-	<nav <?php Hybrid\Attr\display( 'menu', $data->location, [
+	<nav <?php Hybrid\Attr\display( 'menu', $data->get( 'theme_location' ), [
 		'class' => 'menu menu--primary hidden md:block w-full md:h-16 flex-grow md:flex md:items-center md:justify-end md:w-auto ml-auto md:pr-2 text-sm leading-none'
 	] ) ?>>
 
 		<h3 class="menu__title screen-reader-text">
-			<?php Hybrid\Menu\display_name( $data->location ) ?>
+			<?php Hybrid\Theme\Menu\display_name( $data->get( 'theme_location' ) ) ?>
 		</h3>
 
 		<?php wp_nav_menu( [
-			'theme_location' => $data->location,
+			'theme_location' => $data->get( 'theme_location' ),
 			'depth'          => 1,
 			'container'      => '',
 			'menu_id'        => '',

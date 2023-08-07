@@ -10,7 +10,9 @@ blockquote {
 
 	i,
 	em,
-	cite { font-style : normal; }
+	cite {
+		font-style : normal;
+	}
 }
 
 // Cite.
@@ -21,4 +23,6 @@ cite {
 }
 
 // Inline quotes.
-q { quotes : '\201C' '\201D' '\2018' '\2019'; }
+q {
+	quotes : '\201C' '\201D' '\2018' '\2019';
+}

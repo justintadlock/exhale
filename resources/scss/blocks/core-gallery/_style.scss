@@ -25,7 +25,7 @@
 	&.alignfull,
 	&.alignwide {
 		//margin-bottom: $spacing-half;
-	//	margin-top: $spacing-half;
+		//	margin-top: $spacing-half;
 	}
 
 	&.alignfull {
@@ -74,15 +74,13 @@
 		width:      100%;
 		max-height: 100%;
 		padding:    40px $spacing-half $spacing-fourth;
-	//	font-size:  1rem;
-	//	text-align: center;
+		//	font-size:  1rem;
+		//	text-align: center;
 		color:      var( --white );
-		background: linear-gradient(
-			0deg,
-			rgba( 0, 0, 0, 0.7 ) 0,
-			rgba( 0, 0, 0, 0.3 ) 60%,
-			transparent
-		);
+		background:
+			linear-gradient(
+				0deg, rgba( 0, 0, 0, 0.7 ) 0, rgba( 0, 0, 0, 0.3 ) 60%, transparent
+			);
 		border-radius: 3px;
 
 		a {
@@ -112,7 +110,7 @@
 .blocks-gallery-item {
 	width: calc( 100% / 2 - #{ $spacing-half } );
 
-	&:nth-of-type( even ) {
+	&:nth-of-type(even) {
 		margin-right: 0;
 	}
 }
@@ -134,13 +132,13 @@
 
 		.columns-#{ $i } > .blocks-gallery-item {
 			width: calc( 100% / #{ $i } - #{ $spacing-half } );
-		//	margin-right: $spacing-half;
+			//	margin-right: $spacing-half;
 		}
 	}
 
 	// Reset margin for last child on each row.
 	@for $i from 1 through 8 {
-		.columns-#{ $i } > .blocks-gallery-item:nth-of-type( #{ $i }n ) {
+		.columns-#{ $i } > .blocks-gallery-item:nth-of-type(#{ $i }n) {
 			margin-right: 0;
 		}
 	}

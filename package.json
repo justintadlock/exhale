@@ -16,10 +16,12 @@
 		"export": "cross-env export=1 NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"lint": "npm run lint:styles && npm run lint:scripts",
 		"lint:styles": "cross-env stylelint './resources/scss/**/*.scss' --syntax scss",
+		"lint:styles:fix": "cross-env stylelint './resources/scss/**/*.scss' --syntax scss --fix",
 		"lint:scripts": "cross-env eslint './resources/js/**/*.js'",
+		"lint:scripts:fix": "cross-env eslint './resources/js/**/*.js' --fix",
 		"i18n": "npm run i18n:textdomain && npm run i18n:pot",
-		"i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules",
-		"i18n:pot": "npx wpi18n makepot --domain-path=/resources/lang"
+		"i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules,exhale",
+		"i18n:pot": "npx wpi18n makepot --domain-path=/resources/lang --exclude=vendor,node_modules,exhale"
 	},
 	"repository": {
 		"type": "git",

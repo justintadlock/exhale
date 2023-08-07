@@ -15,8 +15,8 @@ $shadows : (
 	lg:      $shadow-lg,
 	xl:      $shadow-xl,
 	2xl:     $shadow-2xl,
-	//inner:   $shadow-inner,
-	//outline: $shadow-outline
+	/*inner:   $shadow-inner,*/
+	/*outline: $shadow-outline*/
 );
 
 @each $shadow-name, $shadow-value in $shadows {
@@ -25,6 +25,6 @@ $shadows : (
 	.wp-block-media-text.shadow-#{ $shadow-name } img,
 	.wp-block-image.shadow-#{ $shadow-name } img,
 	.wp-block-gallery.shadow-#{ $shadow-name } img {
-		box-shadow: #{ $shadow-value }
+		box-shadow: #{ $shadow-value };
 	}
 }

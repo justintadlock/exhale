@@ -1,15 +1,15 @@
-<?php if ( has_nav_menu( $data->location ) ) : ?>
+<?php if ( has_nav_menu( $data->get( 'location' ) ) ) : ?>
 
-	<nav <?php Hybrid\Attr\display( 'menu', $data->location, [
+	<nav <?php Hybrid\Attr\display( 'menu', $data->get( 'location' ), [
 		'class' => 'menu menu--footer my-4 text-center'
 	] ) ?>>
 
 		<h3 class="menu__title screen-reader-text">
-			<?php Hybrid\Menu\display_name( $data->location ) ?>
+			<?php Hybrid\Theme\Menu\display_name( $data->get( 'location' ) ) ?>
 		</h3>
 
 		<?php wp_nav_menu( [
-			'theme_location' => $data->location,
+			'theme_location' => $data->get( 'location' ),
 			'depth'          => 1,
 			'container'      => '',
 			'menu_id'        => '',

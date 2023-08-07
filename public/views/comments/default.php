@@ -15,7 +15,7 @@
 			<?php wp_list_comments( [
 				'avatar_size' => 60,
 				'callback'    => function( $comment, $args, $depth ) {
-					Hybrid\View\display( 'comment', Hybrid\Comment\hierarchy(), compact( 'comment', 'args', 'depth' ) );
+					Hybrid\View\display( 'comment', Hybrid\Theme\Comment\hierarchy(), compact( 'comment', 'args', 'depth' ) );
 				}
 			] ) ?>
 

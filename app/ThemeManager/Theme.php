@@ -5,10 +5,11 @@
  * Creates a theme object.
  *
  * @package   Exhale
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2019 Justin Tadlock
- * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/exhale
+ *
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright 2023 Justin Tadlock
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 
 namespace Exhale\ThemeManager;
@@ -19,292 +20,313 @@ use WP_Theme;
  * Theme class.
  *
  * @since  1.2.0
+ *
  * @access public
  */
 class Theme {
 
-	/**
-	 * Theme name.
-	 *
-	 * @since  1.2.0
-	 * @access protected
-	 * @var    string
-	 */
-	protected $name;
+    /**
+     * Theme name.
+     *
+     * @since  1.2.0
+     * @var    string
+     *
+     * @access protected
+     */
+    protected $name;
 
-	/**
-	 * Theme label.
-	 *
-	 * @since  1.2.0
-	 * @access protected
-	 * @var    string
-	 */
-	protected $label;
+    /**
+     * Theme label.
+     *
+     * @since  1.2.0
+     * @var    string
+     *
+     * @access protected
+     */
+    protected $label;
 
-	/**
-	 * Download URL.
-	 *
-	 * @since  1.2.0
-	 * @access protected
-	 * @var    string
-	 */
-	protected $download_url = '';
+    /**
+     * Download URL.
+     *
+     * @since  1.2.0
+     * @var    string
+     *
+     * @access protected
+     */
+    protected $download_url = '';
 
-	/**
-	 * Screenshot URL.
-	 *
-	 * @since  1.2.0
-	 * @access protected
-	 * @var    string
-	 */
-	protected $screenshot = '';
+    /**
+     * Screenshot URL.
+     *
+     * @since  1.2.0
+     * @var    string
+     *
+     * @access protected
+     */
+    protected $screenshot = '';
 
-	/**
-	 * `WP_Theme` object.
-	 *
-	 * @since  1.2.0
-	 * @access protected
-	 * @var    WP_Theme
-	 */
-	protected $wp_theme;
+    /**
+     * `WP_Theme` object.
+     *
+     * @since  1.2.0
+     * @var    \WP_Theme
+     *
+     * @access protected
+     */
+    protected $wp_theme;
 
-	/**
-	 * Set up the object properties.
-	 *
-	 * @since  1.2.0
-	 * @access public
-	 * @param  string  $name
-	 * @param  array   $options
-	 * @return void
-	 */
-	public function __construct( $name, array $options = [] ) {
+    /**
+     * Set up the object properties.
+     *
+     * @since  1.2.0
+     * @param  string $name
+     * @param  array  $options
+     * @return void
+     *
+     * @access public
+     */
+    public function __construct( $name, array $options = [] ) {
 
-		foreach ( array_keys( get_object_vars( $this ) ) as $key ) {
-			if ( isset( $options[ $key ] ) ) {
-				$this->$key = $options[ $key ];
-			}
-		}
+        foreach ( array_keys( get_object_vars( $this ) ) as $key ) {
+            if ( isset( $options[ $key ] ) ) {
+                $this->$key = $options[ $key ];
+            }
+        }
 
-		$this->name = $name;
+        $this->name = $name;
 
-		// If we don't have an instance of the WP theme object, get it.
-		if ( ! $this->wp_theme instanceof WP_Theme ) {
-			$this->wp_theme = wp_get_theme( $this->name );
-		}
-	}
+        // If we don't have an instance of the WP theme object, get it.
+        if ( ! $this->wp_theme instanceof WP_Theme ) {
+            $this->wp_theme = wp_get_theme( $this->name );
+        }
+    }
 
-	/**
-	 * Returns the name.
-	 *
-	 * @since  1.2.0
-	 * @access public
-	 * @return string
-	 */
-	public function name() {
-		return $this->name;
-	}
+    /**
+     * Returns the name.
+     *
+     * @since  1.2.0
+     * @return string
+     *
+     * @access public
+     */
+    public function name() {
+        return $this->name;
+    }
 
-	/**
-	 * Returns the label.
-	 *
-	 * @since  1.2.0
-	 * @access public
-	 * @return string
-	 */
-	public function label() {
-		return $this->installed() ? $this->wp_theme->display( 'Name' ) : $this->label;
-	}
+    /**
+     * Returns the label.
+     *
+     * @since  1.2.0
+     * @return string
+     *
+     * @access public
+     */
+    public function label() {
+        return $this->installed() ? $this->wp_theme->display( 'Name' ) : $this->label;
+    }
 
-	/**
-	 * Conditional to check if theme is installed.
-	 *
-	 * @since  1.2.0
-	 * @access public
-	 * @return bool
-	 */
-	public function installed() {
-		return $this->wp_theme->exists();
-	}
+    /**
+     * Conditional to check if theme is installed.
+     *
+     * @since  1.2.0
+     * @return bool
+     *
+     * @access public
+     */
+    public function installed() {
+        return $this->wp_theme->exists();
+    }
 
-	/**
-	 * Conditional to check if the theme is active.
-	 *
-	 * @since  1.2.0
-	 * @access public
-	 * @return string
-	 */
-	public function active() {
-		return $this->name() === get_stylesheet();
-	}
+    /**
+     * Conditional to check if the theme is active.
+     *
+     * @since  1.2.0
+     * @return string
+     *
+     * @access public
+     */
+    public function active() {
+        return $this->name() === get_stylesheet();
+    }
 
-	/**
-	 * Returns the screenshot URL.
-	 *
-	 * @since  1.2.0
-	 * @access public
-	 * @return string
-	 */
-	public function screenshot() {
+    /**
+     * Returns the screenshot URL.
+     *
+     * @since  1.2.0
+     * @return string
+     *
+     * @access public
+     */
+    public function screenshot() {
 
-		$screenshot = $this->installed() ? $this->wp_theme->get_screenshot() : $this->screenshot;
+        $screenshot = $this->installed() ? $this->wp_theme->get_screenshot() : $this->screenshot;
 
-		$screenshot = sprintf(
-			$screenshot,
-			get_template_directory_uri(),
-			get_stylesheet_directory_uri()
-		);
+        $screenshot = sprintf(
+            $screenshot,
+            get_template_directory_uri(),
+            get_stylesheet_directory_uri()
+        );
 
-		return add_query_arg(
-			'version',
-			wp_get_theme( get_template() )->get( 'Version' ),
-			$screenshot
-		);
-	}
+        return add_query_arg(
+            'version',
+            wp_get_theme( get_template() )->get( 'Version' ),
+            $screenshot
+        );
+    }
 
-	/**
-	 * Returns the download URL.
-	 *
-	 * @since  1.2.0
-	 * @access public
-	 * @return string
-	 */
-	public function downloadUrl() {
-		return $this->download_url;
-	}
+    /**
+     * Returns the download URL.
+     *
+     * @since  1.2.0
+     * @return string
+     *
+     * @access public
+     */
+    public function downloadUrl() {
+        return $this->download_url;
+    }
 
-	/**
-	 * Returns the activation URL.
-	 *
-	 * @since  1.2.0
-	 * @access public
-	 * @return string
-	 */
-	public function activateUrl() {
+    /**
+     * Returns the activation URL.
+     *
+     * @since  1.2.0
+     * @return string
+     *
+     * @access public
+     */
+    public function activateUrl() {
 
-		if ( ! $this->installed() ) {
-			return '';
-		}
+        if ( ! $this->installed() ) {
+            return '';
+        }
 
-		return wp_nonce_url(
-			add_query_arg( [
-				'action'     => 'activate',
-			//	'template'   => urlencode( $this->wp_theme->get_template() ),
-				'stylesheet' => urlencode( $this->wp_theme->get_stylesheet() )
-			], admin_url( 'themes.php' ) ),
-			'switch-theme_' . $this->wp_theme->get_stylesheet()
-		);
-	}
+        return wp_nonce_url(
+            add_query_arg( [
+                'action'         => 'activate',
+                // 'template'   => urlencode( $this->wp_theme->get_template() ),
+                    'stylesheet' => urlencode( $this->wp_theme->get_stylesheet() ),
+            ], admin_url( 'themes.php' ) ),
+            'switch-theme_' . $this->wp_theme->get_stylesheet()
+        );
+    }
 
-	/**
-	 * Returns the customize URL.
-	 *
-	 * @since  1.2.0
-	 * @access public
-	 * @return string
-	 */
-	public function customizeUrl() {
+    /**
+     * Returns the customize URL.
+     *
+     * @since  1.2.0
+     * @return string
+     *
+     * @access public
+     */
+    public function customizeUrl() {
 
-		$url = admin_url( 'customize.php' );
+        $url = admin_url( 'customize.php' );
 
-		if ( ! $this->active() ) {
+        if ( ! $this->active() ) {
 
-			$url = add_query_arg( [
-				'theme' => urlencode( $this->name() )
-			], $url );
-		}
+            $url = add_query_arg( [
+                'theme' => urlencode( $this->name() ),
+            ], $url );
+        }
 
-		return $url;
-	}
+        return $url;
+    }
 
-	/**
-	 * Displays the theme "card".
-	 *
-	 * @since  1.2.0
-	 * @access public
-	 * @return void
-	 */
-	public function displayCard() { ?>
+    /**
+     * Displays the theme "card".
+     *
+     * @since  1.2.0
+     * @return void
+     *
+     * @access public
+     */
+    public function displayCard() { ?>
 
-		<div class="theme<?= $this->active() ? ' active' : '' ?>" aria-describedby="<?= esc_attr( sprintf( '%1$s-action %1$s-name', $this->name() ) ) ?>" data-slug="<?= esc_attr( $this->name() ) ?>">
+        <div class="theme<?php echo $this->active() ? ' active' : ''; ?>" aria-describedby="<?php echo esc_attr( sprintf( '%1$s-action %1$s-name', $this->name() ) ); ?>" data-slug="<?php echo esc_attr( $this->name() ); ?>">
 
-			<div class="theme-screenshot">
-				<img src="<?= esc_url( $this->screenshot() ) ?>" alt="" />
-			</div>
+            <div class="theme-screenshot">
+                <img src="<?php echo esc_url( $this->screenshot() ); ?>" alt="" />
+            </div>
 
-			<div class="theme-id-container">
+            <div class="theme-id-container">
 
-				<h2 class="theme-name" id="<?= esc_attr( sprintf( '%s-name', $this->name() ) ) ?>">
-					<?php if ( $this->active() ) : ?>
-						<?php printf(
-							'<span>%s</span> %s',
-							esc_html__( 'Active:', 'exhale' ),
-							esc_html( $this->label() )
-						) ?>
-					<?php else : ?>
-						<?= esc_html( $this->label() ) ?>
-					<?php endif ?>
-				</h2>
+                <h2 class="theme-name" id="<?php echo esc_attr( sprintf( '%s-name', $this->name() ) ); ?>">
+                    <?php if ( $this->active() ) : ?>
+                        <?php
+                        printf(
+                            '<span>%s</span> %s',
+                            esc_html__( 'Active:', 'exhale' ),
+                            esc_html( $this->label() )
+                        )
+                        ?>
+                    <?php else : ?>
+                        <?php echo esc_html( $this->label() ); ?>
+                    <?php endif ?>
+                </h2>
 
-				<div class="theme-actions">
-					<?php foreach ( $this->themeActions() as $action ) : ?>
-						<?= $action ?>
-					<?php endforeach ?>
-				</div>
-			</div>
+                <div class="theme-actions">
+                    <?php foreach ( $this->themeActions() as $action ) : ?>
+                        <?php echo $action; ?>
+                    <?php endforeach ?>
+                </div>
+            </div>
 
-		</div>
-	<?php }
+        </div>
+        <?php
+    }
 
-	/**
-	 * Returns an array of theme action links.
-	 *
-	 * @since  1.2.0
-	 * @access private
-	 * @return array
-	 */
-	private function themeActions() {
+    /**
+     * Returns an array of theme action links.
+     *
+     * @since  1.2.0
+     * @return array
+     *
+     * @access private
+     */
+    private function themeActions() {
 
-		$actions = [];
+        $actions = [];
 
-		if ( $this->installed() ) {
+        if ( $this->installed() ) {
 
-			if ( $this->active() && current_user_can( 'customize' ) ) {
+            if ( $this->active() && current_user_can( 'customize' ) ) {
 
-				$actions[] = sprintf(
-					'<a class="button button-primary load-customize hide-if-no-customize" href="%s">%s</a>',
-					esc_url( $this->customizeUrl() ),
-					esc_html__( 'Customize', 'exhale' )
-				);
-			}
+                $actions[] = sprintf(
+                    '<a class="button button-primary load-customize hide-if-no-customize" href="%s">%s</a>',
+                    esc_url( $this->customizeUrl() ),
+                    esc_html__( 'Customize', 'exhale' )
+                );
+            }
 
-			if ( ! $this->active() && current_user_can( 'switch_themes' ) ) {
+            if ( ! $this->active() && current_user_can( 'switch_themes' ) ) {
 
-				$actions[] = sprintf(
-					'<a class="button activate" href="%s" aria-label="%s">%s</a>',
-					esc_url( $this->activateUrl() ),
-					esc_attr( sprintf( __( 'Activate %s', 'exhale' ), $this->label() ) ),
-					esc_html__( 'Activate', 'exhale' )
-				);
-			}
+                $actions[] = sprintf(
+                    '<a class="button activate" href="%s" aria-label="%s">%s</a>',
+                    esc_url( $this->activateUrl() ),
+                    esc_attr( sprintf( __( 'Activate %s', 'exhale' ), $this->label() ) ),
+                    esc_html__( 'Activate', 'exhale' )
+                );
+            }
 
-			if ( ! $this->active() && current_user_can( 'customize' ) ) {
+            if ( ! $this->active() && current_user_can( 'customize' ) ) {
 
-				$actions[] = sprintf(
-					'<a class="button button-primary load-customize hide-if-no-customize" href="%s">%s</a>',
-					esc_url( $this->customizeUrl() ),
-					esc_html__( 'Live Preview', 'exhale' )
-				);
-			}
+                $actions[] = sprintf(
+                    '<a class="button button-primary load-customize hide-if-no-customize" href="%s">%s</a>',
+                    esc_url( $this->customizeUrl() ),
+                    esc_html__( 'Live Preview', 'exhale' )
+                );
+            }
 
-		} elseif ( $this->downloadUrl() ) {
+        } elseif ( $this->downloadUrl() ) {
 
-			$actions[] = sprintf(
-				'<a class="button button-primary" href="%s" target="_blank">%s</a>',
-				esc_url( $this->downloadUrl() ),
-				esc_html__( 'Download', 'exhale' )
-			);
-		}
+            $actions[] = sprintf(
+                '<a class="button button-primary" href="%s" target="_blank">%s</a>',
+                esc_url( $this->downloadUrl() ),
+                esc_html__( 'Download', 'exhale' )
+            );
+        }
 
-		return $actions;
-	}
+        return $actions;
+    }
+
 }

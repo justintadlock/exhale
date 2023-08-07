@@ -5,14 +5,14 @@
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2019 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/exhale
  */
 
 wp.customize.controlConstructor['exhale-image-filter'] = wp.customize.Control.extend( {
 
-	ready : function() {
+	ready: function() {
 
 		// Global set via `wp_localize_script()`.
 		let filters = exhaleCustomizeControls.imageFilters;
@@ -48,9 +48,9 @@ wp.customize.controlConstructor['exhale-image-filter'] = wp.customize.Control.ex
 			// Otherwise, display them.
 			amountContainers.forEach( container => {
 				container.style.display =
-					! value || 'none' === value
-					? 'none'
-					: 'block';
+					! value || 'none' === value ?
+					'none' :
+					'block';
 			} );
 
 			// Loop through the amount controls and set their min

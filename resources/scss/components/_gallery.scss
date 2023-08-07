@@ -41,11 +41,11 @@
 
 	@media ( min-width: break( 'mobile' ) ) and ( max-width: break( 'small' ) ) {
 
-		&-item:nth-child( 2n + 1 ) {
+		&-item:nth-child(2n + 1) {
 			clear: both;
 		}
 
-		&-item:nth-child( 2n ) {
+		&-item:nth-child(2n) {
 			margin-left: 0;
 			margin-right: 0;
 		}
@@ -53,22 +53,26 @@
 
 	@media ( min-width: break( 'small' ) ) {
 
-		&-columns-2  .gallery-item:nth-child( 2n  + 1 ),
-		&-columns-3  .gallery-item:nth-child( 3n  + 1 ),
-		&-columns-4  .gallery-item:nth-child( 4n  + 1 ) {
+		&-columns-2  .gallery-item:nth-child(2n  + 1),
+		&-columns-3  .gallery-item:nth-child(3n  + 1),
+		&-columns-4  .gallery-item:nth-child(4n  + 1) {
 			clear : both;
 		}
 
-		&-columns-2  .gallery-item:nth-child( 2n  ),
-		&-columns-3  .gallery-item:nth-child( 3n  ),
-		&-columns-4  .gallery-item:nth-child( 4n  ) {
+		&-columns-2  .gallery-item:nth-child(2n),
+		&-columns-3  .gallery-item:nth-child(3n),
+		&-columns-4  .gallery-item:nth-child(4n) {
 			margin-left : 0;
 			margin-right : 0;
 		}
 
 		// Handle the columns.
-		&-columns-3 .gallery-item  { width : 30%;    }
-		&-columns-4 .gallery-item  { width : 21.25%; }
+		&-columns-3 .gallery-item {
+			width : 30%;
+		}
+		&-columns-4 .gallery-item {
+			width : 21.25%;
+		}
 	}
 
 	img {

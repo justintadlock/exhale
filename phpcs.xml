@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<ruleset>
+	<file>app</file>
+	<rule ref="ThemeHybrid"/>
+</ruleset>
