@@ -38,7 +38,8 @@
 	},
 	"require-dev": {
 		"themehybrid/hybrid-dev-tools": "dev-main",
-		"themehybrid/hybrid-phpcs-rules": "dev-main"
+		"themehybrid/hybrid-phpcs-rules": "dev-main",
+		"humanmade/psalm-plugin-wordpress": "2.1.0"
 	},
 	"repositories": [
 		{
@@ -68,9 +69,12 @@
 	},
 	"scripts": {
 		"analyze": [
-			"@phpcs:analyze"
+			"@phpcs:analyze",
+			"@psalm:analyze"
 		],
-		"phpcs:analyze": "@php ./vendor/bin/phpcs ./app",
-		"phpcs:fix": "@php ./vendor/bin/phpcbf ./app"
+		"phpcs:analyze": "@php ./vendor/bin/phpcs",
+		"phpcs:fix": "@php ./vendor/bin/phpcbf",
+		"psalm:analyze": "@php ./vendor/bin/psalm",
+		"psalm:fix": "@php ./vendor/bin/psalm --alter --issues=all --no-cache --debug"
 	}
 }
