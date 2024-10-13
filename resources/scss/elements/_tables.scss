@@ -38,12 +38,14 @@ td {
 	vertical-align : top;
 
 	&:empty,
- 	&.pad { opacity : 0; }
+	&.pad {
+		opacity : 0;
+	}
 }
 
 th {
-//	font-size:         16px;
-//	text-align:        left;
+	//	font-size:         16px;
+	//	text-align:        left;
 }
 
 td {

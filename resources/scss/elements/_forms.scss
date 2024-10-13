@@ -27,7 +27,7 @@ button {
 	line-height: 1;
 	font-family: var( --font-family-primary );
 	font-size:   1em;
-	color:       currentColor;
+	color:       currentcolor;
 	background:  transparent;
 	border:      1px solid var( --color-border );
 }
@@ -76,6 +76,6 @@ button {
 }
 
 ::placeholder {
-	color: currentColor;
+	color: currentcolor;
 	opacity: 1;
 }

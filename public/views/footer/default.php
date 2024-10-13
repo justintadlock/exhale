@@ -2,15 +2,17 @@
 			'class' => 'app-footer overflow-y-hidden font-secondary text-base'
 		] ) ?>>
 
-			<?php $engine->display( 'sidebar', 'footer', [ 'sidebar' => 'footer' ] ) ?>
+			<?php $view = $__env ?>
+
+			<?php $view->make( 'sidebar/footer', [ 'sidebar' => 'footer' ] )->display() ?>
 
 			<div class="app-footer__meta py-4 px-8 border-0 border-t border-solid">
 
-				<?php $engine->display( 'nav/menu', 'footer', [ 'location' => 'footer' ] ) ?>
+				<?php $view->make( 'nav/menu/footer', [ 'location' => 'footer' ] )->display() ?>
 
 				<?php Exhale\Template\Footer::displayCredit() ?>
 
-				<?php $engine->display( 'nav/menu', 'social', [ 'location' => 'social' ] ) ?>
+				<?php $view->make( 'nav/menu/social', [ 'location' => 'social' ] )->display() ?>
 
 			</div>
 

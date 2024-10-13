@@ -1,13 +1,13 @@
 <?php
 
-// Access the view template engine.
-$engine = Hybrid\App::resolve( 'view/engine' );
+// Access the template view.
+$view = Hybrid\App::resolve( 'theme.view' );
 
 // Load header/* template.
-$engine->display( 'header', Hybrid\Template\hierarchy() );
+$view->make( 'header', [ 'slugs' => $view->slugs() ] )->display();
 
 // Load content/* template.
-$engine->display( 'content', Hybrid\Template\hierarchy() );
+$view->make( 'content', [ 'slugs' => $view->slugs() ] )->display();
 
 // Load footer/* template.
-$engine->display( 'footer', Hybrid\Template\hierarchy() );
+$view->make( 'footer', [ 'slugs' => $view->slugs() ] )->display();

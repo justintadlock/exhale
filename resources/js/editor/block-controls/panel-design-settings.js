@@ -5,7 +5,7 @@
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2019 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/exhale
  */
@@ -17,12 +17,11 @@ const { __ } = wp.i18n;
 const { labels } = exhaleEditor;
 
 export default ( props, fields ) => {
-
 	return (
-		<PanelBody title={ labels.designSettings } initialOpen={ false }>
+		<PanelBody title={labels.designSettings} initialOpen={false}>
 			{
 				fields.map( ( field, i ) => {
-					return field.control( props )
+					return field.control( props );
 				} )
 			}
 		</PanelBody>

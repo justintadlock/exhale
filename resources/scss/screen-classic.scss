@@ -1,3 +1,5 @@
+@use "sass:math" as math;
+
 ////
 /// Classic screen stylesheet.
 ///
@@ -64,9 +66,9 @@
 @import 'elements/inline';
 @import 'elements/links';
 @import 'elements/lists';
-@import 'elements/media.scss';
-@import 'elements/quotes.scss';
-@import 'elements/tables.scss';
+@import 'elements/media';
+@import 'elements/quotes';
+@import 'elements/tables';
 
 // -----------------------------------------------------------------------------
 // Import object styles.
@@ -133,7 +135,7 @@
 @import 'utilities/grid';
 @import 'utilities/helpers';
 @import 'utilities/layout';
-@import 'utilities/list.scss';
+@import 'utilities/list';
 @import 'utilities/media';
 @import 'utilities/sizing';
 @import 'utilities/spacing';

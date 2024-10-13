@@ -22,7 +22,7 @@
 
 	&.alignwide,
 	&.alignfull {
-	//	margin-bottom: 0;
+		//	margin-bottom: 0;
 	}
 
 	@media ( max-width: $width-alignwide + $spacing-2x ) {
@@ -80,7 +80,7 @@
 	// inconsistent. Removing this margin and handling it on the column
 	// corrects the issue.
 	> *:last-child {
-	//	margin-bottom: 0;
+		//	margin-bottom: 0;
 	}
 }
 

@@ -1,11 +1,9 @@
-
 // Sticky header.
-wp.customize( 'header_sticky', value => {
-	value.bind( to => {
-
+wp.customize( 'header_sticky', ( value ) => {
+	value.bind( ( to ) => {
 		let classes = [
 			'sticky',
-			'md:static'
+			'md:static',
 		];
 
 		let header = document.querySelector( '.app-header' );

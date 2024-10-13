@@ -10,40 +10,40 @@
 
 	// Header wrapper.
 	&__header {
-	//	margin-bottom: $spacing-global;
-	//	text-align:    center;
+		//	margin-bottom: $spacing-global;
+		//	text-align:    center;
 
 		+ .entry__summary {
-		//	margin-top: calc( -#{ $spacing-global } + #{ $spacing-fourth } );
+			//	margin-top: calc( -#{ $spacing-global } + #{ $spacing-fourth } );
 		}
 	}
 
 	// Entry title.
 	&__title {
-	//	margin-bottom: $spacing-fourth;
+		//	margin-bottom: $spacing-fourth;
 
 		a {
 			color:           var( --color-headings );
-	//		text-decoration: none;
+			//		text-decoration: none;
 		}
 
 		a:hover,
 		a:focus {
-	//		text-decoration: underline;
+			//		text-decoration: underline;
 		}
 	}
 
 	&__media {
-	//	text-align: center;
+		//	text-align: center;
 	}
 
 	&__image {
-	//	padding: 0;
+		//	padding: 0;
 	}
 
 	&__image.aligncenter {
-	//	display:       inline-block;
-	//	margin-bottom: -0.75rem;
+		//	display:       inline-block;
+		//	margin-bottom: -0.75rem;
 	}
 
 	// Full entry content.
@@ -54,7 +54,7 @@
 
 	// More link.
 	&__more-link {
-	//	font-style: italic;
+		//	font-style: italic;
 	}
 
 	// Meta wrappers.
@@ -65,8 +65,8 @@
 	}
 
 	&__footer {
-	//	margin-top:    $spacing-global;
-	//	margin-bottom: $spacing-global;
+		//	margin-top:    $spacing-global;
+		//	margin-bottom: $spacing-global;
 	}
 
 	//&__topics {
@@ -80,7 +80,7 @@
 .error-404 .entry {
 
 	&__title {
-	//	@include heading-primary;
+		//	@include heading-primary;
 	}
 }
 

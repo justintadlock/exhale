@@ -1,3 +1,5 @@
+<?php $view = $__env ?>
+
 <?php if ( have_posts() ) : ?>
 
 	<div <?php Hybrid\Attr\display( 'loop', 'grid', [
@@ -22,13 +24,13 @@
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php $engine->display( 'entry/grid', $view->slugs() ) ?>
+				<?php $view->make( 'entry/grid', [ 'slugs' => $view->slugs() ] )->display() ?>
 
 			<?php endwhile ?>
 
 		</ul>
 
-		<?php $engine->display( 'nav/pagination', 'posts' ) ?>
+		<?php $view->make( 'nav/pagination/posts' )->display() ?>
 
 	</div>
 

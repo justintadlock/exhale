@@ -8,7 +8,7 @@
 
 .wp-block-separator {
 	color: var( --color-border );
-	border-color: currentColor;
+	border-color: currentcolor;
 
 	&.has-background {
 		background-color: transparent;
@@ -19,14 +19,14 @@
 	}
 
 	&.is-style-dashed {
-		border-top: 4px dashed currentColor;
+		border-top: 4px dashed currentcolor;
 	}
 
 	&.is-style-dots {
-		border-top: 4px dotted currentColor;
+		border-top: 4px dotted currentcolor;
 	}
 
 	&.is-style-double {
-		border-top: 6px double currentColor;
+		border-top: 6px double currentcolor;
 	}
 }

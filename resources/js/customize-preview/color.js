@@ -6,22 +6,20 @@
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2019 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/exhale
  */
 
 let settings = exhaleCustomizePreview.colorSettings;
 
-Object.keys( settings ).forEach( setting => {
-
-	wp.customize( settings[ setting ].modName, value => {
-		value.bind( to => {
+Object.keys( settings ).forEach( ( setting ) => {
+	wp.customize( settings[setting].modName, ( value ) => {
+		value.bind( ( to ) => {
 			document.documentElement.style.setProperty(
-				settings[ setting ].property,
-				to ? to : 'transparent'
+				settings[setting].property,
+				to || 'transparent',
 			);
 		} );
 	} );
-
 } );

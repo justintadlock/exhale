@@ -7,73 +7,60 @@
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2018 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @link      https://themehybrid.com/themes/exhale
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  */
 
 // Import required packages.
-const mix     = require( 'laravel-mix' );
-const rimraf  = require( 'rimraf' );
-const fs      = require( 'fs' );
+const mix = require( 'laravel-mix' );
+
+const {
+	copyItems,
+	removeItems,
+} = require( './bin-dev/copy/fileUtils' );
 
 // Folder name to export the files to.
-let exportPath = 'exhale';
+const exportPath = 'exhale';
 
 // Theme root-level files to include.
-let files = [
-	'style.css',
-	'changelog.md',
-	'functions.php',
-	'index.php',
-	'license.md',
-	'readme.md',
-	'screenshot.png'
+const files = [
+	{ name: 'style.css' },
+	{ name: 'changelog.md' },
+	{ name: 'functions.php' },
+	{ name: 'index.php' },
+	{ name: 'license.md' },
+	{ name: 'readme.md' },
+	{ name: 'screenshot.png' },
 ];
 
 // Folders to include.
-let folders = [
-	'app',
-	'config',
-	'public',
-//	'resources/js',      // Required for WordPress.org theme review.
-//	'resources/scss',    // Required for WordPress.org theme review.
-	'vendor'
+const folders = [
+	{ name: 'app' },
+	{ name: 'config' },
+	{ name: 'public' },
+	// { name: 'resources/js' }, // Required for WordPress.org theme review.
+	// { name: 'resources/scss' }, // Required for WordPress.org theme review.
+	{ name: 'vendor' },
 ];
 
-// Delete the previous export to start clean.
-rimraf.sync( exportPath );
+// Delete unnecessary files and folders.
+const deleteFiles = [
+	'mix-manifest.json',
+	`${exportPath}/vendor/bin`,
+	`${exportPath}/vendor/composer/installers`,
+];
 
-// Loop through the root files and copy them over.
-files.forEach( file => {
-
-	if ( fs.existsSync( file ) ) {
-		mix.copy( file, `${exportPath}/${file}` );
+// Run tasks sequentially.
+async function runTasks() {
+	try {
+		await copyItems( exportPath, files );
+		await copyItems( exportPath, folders );
+		await removeItems( deleteFiles );
 	}
-} );
-
-// Loop through the folders and copy them over.
-folders.forEach( folder => {
-
-	if ( fs.existsSync( folder ) ) {
-		mix.copyDirectory( folder, `${exportPath}/${folder}` );
+ catch ( error ) {
+		console.error( 'An error occurred:', error );
 	}
-} );
+}
 
-// Delete the `vendor/bin` and `vendor/composer/installers` folder, which can
-// get left over, even in production. Mix will also create an additional
-// `mix-manifest.json` file in the root, which we don't need.
-mix.then( () => {
-
-	let files = [
-		'mix-manifest.json',
-		`${exportPath}/vendor/bin`,
-	 	`${exportPath}/vendor/composer/installers`
-	];
-
-	files.forEach( file => {
-		if ( fs.existsSync( file ) ) {
-			rimraf.sync( file );
-		}
-	} );
-} );
+runTasks();

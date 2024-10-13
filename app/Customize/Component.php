@@ -6,7 +6,7 @@
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2019 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/exhale
  */
@@ -327,7 +327,7 @@ class Component implements Bootable {
 
 		$choices  = [ '' => '' ];
 
-		foreach ( \Exhale\Tools\Config::get( 'character-entities' ) as $entity ) {
+		foreach ( \Exhale\Tools\Config::getFromFile( 'character-entities' ) as $entity ) {
 			$choices[ $entity ] = esc_html( $entity );
 		}
 

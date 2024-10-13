@@ -5,7 +5,7 @@
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2019 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/exhale
  */
@@ -17,36 +17,36 @@ import ControlListType     from './control-list-type';
 
 export default [
 	{
-		name:    'listType',
-		type:    'string',
-		default: '',
-		control: ControlListType,
-		blocks:  [
-			'core/list'
-		]
+		name    : 'listType',
+		type    : 'string',
+		default : '',
+		control : ControlListType,
+		blocks  : [
+			'core/list',
+		],
 	},
 	{
-		name:    'borderRadius',
-		type:    'string',
-		default: '',
-		control: ControlBorderRadius,
-		blocks:  [
+		name    : 'borderRadius',
+		type    : 'string',
+		default : '',
+		control : ControlBorderRadius,
+		blocks  : [
 			'core/image',
 			'core/gallery',
 			'core/media-text',
-			'core/paragraph'
-		]
+			'core/paragraph',
+		],
 	},
 	{
-		name:    'boxShadow',
-		type:    'string',
-		default: '',
-		control: ControlBoxShadow,
-		blocks:  [
+		name    : 'boxShadow',
+		type    : 'string',
+		default : '',
+		control : ControlBoxShadow,
+		blocks  : [
 			'core/image',
 			'core/gallery',
 			'core/media-text',
-			'core/paragraph'
-		]
-	}
+			'core/paragraph',
+		],
+	},
 ];

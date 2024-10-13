@@ -2,43 +2,59 @@
 
 // strong, bold, etc.
 b,
-strong { font-weight: 700; }
+strong {
+	font-weight: 700;
+}
 
-	b b,
-	strong strong { font-weight: 400; }
+b b,
+strong strong {
+	font-weight: 400;
+}
 
 // Emphasis, italics, etc.
 i,
 em,
 mark,
 cite,
-dfn { font-style : italic; }
+dfn {
+	font-style : italic;
+}
 
 i i,
-em em { font-style : normal; }
+em em {
+	font-style : normal;
+}
 
 // Abbreviations, acronymns, etc.
 
 abbr[title],
 acronym[title],
-time[title] { cursor: help; }
+time[title] {
+	cursor: help;
+}
 
 abbr,
 acronym {
 	border-bottom : 1px dotted var( --color-border );
 }
 
-acronym { text-transform: uppercase; }
+acronym {
+	text-transform: uppercase;
+}
 
 // Big
 
-big { font-size : 1.125em; }
+big {
+	font-size : 1.125em;
+}
 
 // Small, sup, sub.
 
 small,
 sup,
-sub { font-size : 0.8125em; }
+sub {
+	font-size : 0.8125em;
+}
 
 sup,
 sub {

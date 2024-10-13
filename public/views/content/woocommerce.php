@@ -14,12 +14,14 @@
 
 		<?php else : ?>
 
-			<?php $engine->display( 'partials', 'archive-header' ) ?>
+			<?php $view = $__env ?>
 
-			<?php $engine->display(
+			<?php $view->make( 'partials', 'archive-header' )->display() ?>
+
+			<?php $view->make(
 				sprintf( 'loop/%s', Exhale\Template\Loop::layout()->name() ),
-				$view->slugs()
-			) ?>
+				[ 'slugs' => $view->slugs() ]
+			)->display() ?>
 
 		<?php endif ?>
 

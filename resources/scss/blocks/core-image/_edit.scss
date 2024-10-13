@@ -6,9 +6,191 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-// Image block.  Adds left/right margin because a white block covers the editor
-// when using an unaligned image inside of the columns block with wide alignment.
+// Provide special styling for the placeholder.
+// @todo this particular minimal style of placeholder could be componentized further.
+.wp-block-image.wp-block-image {
+	--border-width: 1px;
 
-.block-core-columns [data-type="core/image"]:not([data-align]) .wp-block-image {
+	// Show Placeholder style on-select.
+	&.is-selected .block-editor-media-placeholder {
+		// Block UI appearance.
+		color: var( --gray-900 );
+		background-color: var( --white );
+		box-shadow: inset 0 0 0 var( --border-width ) var( --gray-900 );
+		border: none;
+
+		// Disable any duotone filter applied in the selected state.
+		filter: none !important;
+
+		// @todo this should eventually be overridden by a custom border-radius set in the inspector.
+		border-radius: $rounded-sm; // $radius-block-ui;
+
+		> svg {
+			opacity: 0;
+		}
+
+		.components-placeholder__illustration {
+			display: none;
+		}
+
+		&::before {
+			opacity: 0;
+		}
+	}
+	.block-bindings-media-placeholder-message {
+		opacity: 0;
+	}
+	&.is-selected .block-bindings-media-placeholder-message {
+		opacity: 1;
+	}
+
+	// Remove the transition while we still have a legacy placeholder style.
+	// Otherwise the content jumps between the 1px placeholder border, and any inherited custom
+	// parent border that may get applied when you deselect.
+	.components-placeholder__label,
+	.components-placeholder__instructions,
+	.components-button {
+		transition: none;
+	}
+}
+
+figure.wp-block-image:not(.wp-block) {
+	margin: 0;
+}
+
+.wp-block-image {
+	position: relative;
+
+	.is-applying img,
+	&.is-transient img {
+		opacity: 0.3;
+	}
+
+	figcaption img {
+		display: inline;
+	}
+
+	// Shown while image is being uploaded.
+	.components-spinner {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+// Shown while image is being uploded but cannot be previewed.
+.wp-block-image__placeholder {
+	aspect-ratio: 4 / 3;
+}
+
+// This is necessary for the editor resize handles to accurately work on a non-floated, non-resized, small image.
+.wp-block-image .components-resizable-box__container {
+	// Using "display: table" because:
+	// - it visually hides empty white space in between elements
+	// - it allows the element to be as wide as its contents (instead of 100% width, as it would be with `display: block`)
 	display: table;
+	img {
+		display: block;
+		width: inherit;
+		height: inherit;
+	}
+}
+
+.block-editor-block-list__block[data-type="core/image"] .block-editor-block-toolbar .block-editor-url-input__button-modal {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: -var( --border-width ) 0;
+
+	@media ( min-width: $content-width ) {
+		margin: -var( --border-width );
+	}
+}
+
+[data-align="wide"] > .wp-block-image,
+[data-align="full"] > .wp-block-image {
+	img {
+		height: auto;
+		width: 100%;
+	}
+}
+
+.wp-block[data-align="left"],
+.wp-block[data-align="center"],
+.wp-block[data-align="right"] {
+	> .wp-block-image {
+		display: table;
+
+		> figcaption {
+			display: table-caption;
+			caption-side: bottom;
+		}
+	}
+}
+
+.wp-block[data-align="left"] > .wp-block-image {
+	margin-right: 1em;
+	margin-left: 0;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.wp-block[data-align="right"] > .wp-block-image {
+	margin-left: 1em;
+	margin-right: 0;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.wp-block[data-align="center"] > .wp-block-image {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.wp-block-image__crop-area {
+	position: relative;
+	max-width: 100%;
+	width: 100%;
+	overflow: hidden;
+
+	.reactEasyCrop_Container {
+		// The linked Image block has `pointer-events: none` applied. Override it
+		// here to enable the crop action.
+		pointer-events: auto;
+
+		// This removes the border from the img within the image cropper so it
+		// can be applied to the cropper itself. This then allows the image to be
+		// cropped within the visual border providing more accurate editing and
+		// smoother UX.
+		.reactEasyCrop_Image {
+			border: none;
+			border-radius: 0; // Prevent's theme.json radius bleeding into cropper.
+		}
+	}
+}
+
+.wp-block-image__crop-icon {
+	padding: 0 8px;
+	min-width: 48px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	svg {
+		fill: currentcolor;
+	}
+}
+
+.wp-block-image__zoom {
+	.components-popover__content {
+		min-width: 260px;
+		overflow: visible !important;
+	}
+}
+
+.wp-block-image__toolbar_content_textarea {
+	// Corresponds to the size of the textarea in the block inspector.
+	width: 250px;
 }

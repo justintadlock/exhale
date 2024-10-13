@@ -6,7 +6,7 @@
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2019 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/exhale
  */
@@ -297,10 +297,10 @@ class Customize extends Customizable {
 				'fallback_refresh'    => false,
 				'render_callback'     => function( $partial, $context ) use ( $type ) {
 
-					return App::resolve( 'view/engine' )->render(
+					return App::resolve( 'theme.view' )->make(
 						sprintf( 'loop/%s', \Exhale\Template\Loop::layout( $type )->name() ),
-						! empty( $context['slugs'] ) ? $context['slugs'] : []
-					);
+						[ 'slugs' => ! empty( $context['slugs'] ) ? $context['slugs'] : [] ]
+					)->render();
 				}
 			] );
 
@@ -313,10 +313,10 @@ class Customize extends Customizable {
 				'fallback_refresh'    => false,
 				'render_callback'     => function( $partial, $context ) use ( $type )  {
 
-					return App::resolve( 'view/engine' )->render(
+					return App::resolve( 'theme.view' )->make(
 						sprintf( 'loop/%s', \Exhale\Template\Loop::layout( $type )->name() ),
-						! empty( $context['slugs'] ) ? $context['slugs'] : []
-					);
+						[ 'slugs' => ! empty( $context['slugs'] ) ? $context['slugs'] : [] ]
+					)->render();
 				}
 			] );
 
@@ -355,9 +355,9 @@ class Customize extends Customizable {
 			}, get_post_types( [ 'public' => true, '_builtin' => false, ], 'names', 'and' ) )
 		);
 
-		$json->add( 'loopLayouts', $this->loop_layouts );
-		$json->add( 'loopQueries', $types              );
-		$json->add( 'imageSizes',  $this->image_sizes  );
+		$json->put( 'loopLayouts', $this->loop_layouts );
+		$json->put( 'loopQueries', $types              );
+		$json->put( 'imageSizes',  $this->image_sizes  );
 	}
 
 	/**
@@ -377,7 +377,7 @@ class Customize extends Customizable {
 			}, get_post_types( [ 'public' => true, '_builtin' => false, ], 'names', 'and' ) )
 		);
 
-		$json->add( 'layouts',     $this->app_layouts );
-		$json->add( 'loopQueries', $types             );
+		$json->put( 'layouts',     $this->app_layouts );
+		$json->put( 'loopQueries', $types             );
 	}
 }

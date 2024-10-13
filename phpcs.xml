@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ruleset>
+	<file>app</file>
+	<!--
+	<file>public/views</file>
+	-->
+
+	<rule ref="ThemeHybrid">
+		<exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.UselessAnnotation"/>
+		<exclude name="Squiz.Functions.MultiLineFunctionDeclaration.ContentAfterBrace"/>
+	</rule>
+
+	<!-- Only check PHP files. -->
+	<arg name="extensions" value="php"/>
+
+	<!-- Show progress, show the error codes for each message (source). -->
+	<arg value="ps"/>
+
+	<!-- Check up to 8 files simultaneously. -->
+	<arg name="parallel" value="8"/>
+</ruleset>

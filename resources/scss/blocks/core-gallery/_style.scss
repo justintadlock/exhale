@@ -6,147 +6,170 @@
 /// @link   https://themehybrid.com/themes/exhale
 ////
 
-// The wrapper element for the entire gallery.
-.wp-block-gallery {
-	display:         flex;
-	flex-wrap:       wrap;
-	list-style-type: none;
-	padding:         0;
-	//margin-bottom:   $spacing-half;
-	//margin-top:      $spacing-half;
-
-	// Offset the bottom margin for gallery items.
-	margin-bottom: -#{ $spacing-half };
-
-	&.is-style-reverse {
-		flex-wrap: wrap-reverse;
-	}
-
-	&.alignfull,
-	&.alignwide {
-		//margin-bottom: $spacing-half;
-	//	margin-top: $spacing-half;
-	}
-
-	&.alignfull {
-		padding: 0 $spacing-half;
-	}
-
-	@media ( max-width: $width-alignwide + $spacing-2x ) {
-
-		&.alignfull,
-		&.alignwide {
-			padding: 0 $spacing-global;
-		}
-	}
+// The following is a temporary override until flex layout supports
+// an align items setting of normal.
+figure.wp-block-gallery.has-nested-images {
+	align-items: normal;
 }
 
-// The wrapper for individual gallery images/figures.
-.blocks-gallery-item {
-	display:         flex;
-	flex-grow:       1;
-	flex-direction:  column;
-	justify-content: center;
-	position:        relative;
-	margin:          0 $spacing-half $spacing-half 0;
-	//margin:          $spacing-half $spacing-half 0 0;
-
-	// Image figure.
-	figure {
-		margin:          0;
-		height:          100%;
-		display:         flex;
-		align-items:     flex-end;
-		justify-content: flex-start;
+// Styles for current version of gallery block.
+.wp-block-gallery.has-nested-images {
+	// Need bogus :not(#individual-image) to override long :not()
+	// specificity chain on default image block on front end.
+	figure.wp-block-image:not(#individual-image) {
+		width: calc(50% - (var(--wp--style--unstable-gallery-gap, #{$spacing-half}) / 2));
+		margin: 0;
 	}
 
-	img {
-		display:   block;
+	figure.wp-block-image {
+		display: flex;
+		flex-grow: 1;
+		justify-content: center;
+		position: relative;
+		flex-direction: column;
 		max-width: 100%;
-		height:    auto;
-		width:     auto;
+		// Prevents theme.json and global styles borders that apply to the outer
+		// wrapper from incorrectly enlarging gallery images to a point they
+		// result in a single column gallery.
+		box-sizing: border-box;
+
+		> div,
+		> a {
+			margin: 0;
+			flex-direction: column;
+			flex-grow: 1;
+		}
+
+		img {
+			display: block;
+			height: auto;
+			// Ensure max-width is not overridden on the img when the parent gallery has
+			// wide or full alignment.
+			max-width: 100% !important;
+			width: auto;
+		}
+
+		figcaption {
+			background:
+				linear-gradient(
+					0deg, rgba( 0, 0, 0, 0.7 ) 0, rgba( 0, 0, 0, 0.3 ) 60%, transparent
+				);
+			bottom: 0;
+			color: var( --white );
+			font-size: $text-2xs;
+			left: 0;
+			margin-bottom: 0;
+			max-height: 60%;
+			overflow: auto;
+			padding: 0 8px 8px;
+			position: absolute;
+			text-align: center;
+			width: 100%;
+			box-sizing: border-box;
+			@include custom-scrollbars-on-hover(transparent, rgba(var( --white ), 0.8));
+
+			img {
+				display: inline;
+			}
+
+			a {
+				color: inherit;
+			}
+		}
+
+		&.has-custom-border img {
+			box-sizing: border-box;
+		}
+
+		&.is-style-rounded,
+		&.has-custom-border {
+			> div,
+			> a {
+				flex: 1 1 auto;
+			}
+			figcaption {
+				flex: initial;
+				background: none;
+				color: inherit;
+				margin: 0;
+				padding: 10px 10px 9px;
+				position: relative;
+			}
+		}
 	}
 
 	figcaption {
-		box-sizing: border-box;
-		position:   absolute;
-		bottom:     0;
-		width:      100%;
-		max-height: 100%;
-		padding:    40px $spacing-half $spacing-fourth;
-	//	font-size:  1rem;
-	//	text-align: center;
-		color:      var( --white );
-		background: linear-gradient(
-			0deg,
-			rgba( 0, 0, 0, 0.7 ) 0,
-			rgba( 0, 0, 0, 0.3 ) 60%,
-			transparent
-		);
-		border-radius: 3px;
-
-		a {
-			color: inherit;
-		}
-
-		a:hover,
-		a:focus {
-			color:      var( --white );
-			background: rgba( 255, 255, 255, 0.2 );
-		}
-	}
-}
-
-// Cropped images.
-.is-cropped .blocks-gallery-item {
-	a,
-	img {
-		flex:       1;
-		width:      100%;
-		height:     100%;
-		object-fit: cover;
-	}
-}
-
-// Fallback to 2 columns.
-.blocks-gallery-item {
-	width: calc( 100% / 2 - #{ $spacing-half } );
-
-	&:nth-of-type( even ) {
-		margin-right: 0;
-	}
-}
-
-// 1 column.
-.columns-1 > .blocks-gallery-item {
-	width:        100%;
-	margin-right: 0;
-}
-
-// 3-8 columns on larger screens.
-@media ( min-width: $content-width ) {
-
-	.wp-block-gallery .blocks-gallery-item {
-		margin-right: $spacing-half;
+		flex-grow: 1;
+		flex-basis: 100%;
+		text-align: center;
 	}
 
-	@for $i from 3 through 8 {
-
-		.columns-#{ $i } > .blocks-gallery-item {
-			width: calc( 100% / #{ $i } - #{ $spacing-half } );
-		//	margin-right: $spacing-half;
+	// Non cropped images.
+	&:not(.is-cropped) {
+		figure.wp-block-image:not(#individual-image) {
+			margin-top: 0;
+			margin-bottom: auto;
 		}
 	}
 
-	// Reset margin for last child on each row.
-	@for $i from 1 through 8 {
-		.columns-#{ $i } > .blocks-gallery-item:nth-of-type( #{ $i }n ) {
-			margin-right: 0;
+	// Cropped Images.
+	&.is-cropped figure.wp-block-image:not(#individual-image) {
+		align-self: inherit;
+		> div:not(.components-drop-zone),
+		> a {
+			display: flex;
+		}
+
+		a,
+		img {
+			width: 100%;
+			flex: 1 0 0%;
+			height: 100%;
+			object-fit: cover;
 		}
 	}
-}
 
-// Always reset margin on last child.
-.blocks-gallery-item:last-child {
-	margin-right: 0;
+	&.columns-1 figure.wp-block-image:not(#individual-image) {
+		width: 100%;
+	}
+
+	// Beyond mobile viewports, we allow up to 8 columns.
+	// @include break-small {
+	@media ( min-width: $content-width ) {
+		@for $i from 3 through 8 {
+			&.columns-#{ $i } figure.wp-block-image:not(#individual-image) {
+				width: calc(#{math.div(100%, $i)} - (var(--wp--style--unstable-gallery-gap, #{$spacing-half}) * #{math.div($i - 1, $i)}));
+			}
+		}
+
+		// If number of columns not explicitly set default to 3 columns if 3 or more images.
+		&.columns-default {
+			figure.wp-block-image:not(#individual-image) {
+				width: calc(33.33% - (var(--wp--style--unstable-gallery-gap, 16px) * #{math.div(2, 3)}));
+			}
+
+			// If only 2 child images use 2 columns.
+			figure.wp-block-image:not(#individual-image):first-child:nth-last-child(2),
+			figure.wp-block-image:not(#individual-image):first-child:nth-last-child(2) ~ figure.wp-block-image:not(#individual-image) {
+				width: calc(50% - (var(--wp--style--unstable-gallery-gap, 16px) * 0.5));
+			}
+
+			// For a single image set to 100%.
+			figure.wp-block-image:not(#individual-image):first-child:nth-last-child(1) {
+				width: 100%;
+			}
+		}
+	}
+
+	// Apply max-width to floated items that have no intrinsic width.
+	&.alignleft,
+	&.alignright {
+		max-width: $content-width * 0.5;
+		width: 100%;
+	}
+
+	// If the gallery is centered, center the content inside as well.
+	&.aligncenter {
+		justify-content: center;
+	}
 }

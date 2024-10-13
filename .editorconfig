@@ -6,3 +6,13 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 indent_style = tab
+
+[composer.json]
+indent_size = 4
+
+[{*.css,*.scss}]
+indent_style = tab
+
+[{*.js,eslint.config.js}]
+indent_style = tab
+

@@ -1,3 +1,8 @@
+<?php
+$data = Hybrid\Tools\collect( $__data );
+$sidebar = $data->get( 'sidebar' );
+?>
+
 <?php if ( $active_sidebars = Exhale\Template\Footer::activeSidebars() ) : ?>
 
 	<aside <?php Hybrid\Attr\display( 'sidebar', $sidebar, [

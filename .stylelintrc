@@ -1,5 +1,5 @@
 {
-	"extends": "stylelint-config-wordpress/scss",
+	"extends": "@wordpress/stylelint-config/scss",
 	"rules": {
 		"string-quotes": null,
 		"block-no-empty": null,
@@ -8,6 +8,8 @@
 		"function-parentheses-space-inside": null,
 		"color-named": null,
 		"declaration-colon-space-before": null,
-		"at-rule-empty-line-before": null
+		"at-rule-empty-line-before": null,
+		"indentation": "tab",
+		"selector-attribute-quotes": null
 	}
 }

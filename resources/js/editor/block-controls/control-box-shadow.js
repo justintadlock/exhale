@@ -5,7 +5,7 @@
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2019 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/exhale
  */
@@ -20,14 +20,13 @@ const { SelectControl } = wp.components;
 const { labels } = exhaleEditor;
 
 export default ( props ) => {
-
 	let options = [
-		{ label: labels.default,          value: ''     },
-		{ label: labels.none,             value: 'none' },
-		{ label: labels.sizes.small,      value: 'sm'   },
-		{ label: labels.sizes.medium,     value: 'md'   },
-		{ label: labels.sizes.large,      value: 'lg'   },
-		{ label: labels.sizes.extraLarge, value: 'xl'   }
+		{ label: labels.default, value: '' },
+		{ label: labels.none, value: 'none' },
+		{ label: labels.sizes.small, value: 'sm' },
+		{ label: labels.sizes.medium, value: 'md' },
+		{ label: labels.sizes.large, value: 'lg' },
+		{ label: labels.sizes.extraLarge, value: 'xl' },
 	];
 
 	// Get the box-shadow attribute.
@@ -35,20 +34,20 @@ export default ( props ) => {
 
 	return (
 		<SelectControl
-			key="boxShadow"
-			label={ labels.shadow }
-			value={ boxShadow }
-			options={ options }
-			onChange={ ( selected ) => {
+  key="boxShadow"
+  label={labels.shadow}
+  value={boxShadow}
+  options={options}
+  onChange={( selected ) => {
 				props.setAttributes( {
-					boxShadow: selected,
-					className: updateClass(
+					boxShadow : selected,
+					className : updateClass(
 						props.attributes.className,
-						selected ? 'shadow-' + selected : '',
-						options.filter( opt => opt.value ).map( opt => 'shadow-' + opt.value )
-					)
+						selected ? `shadow-${selected}` : '',
+						options.filter( opt => opt.value ).map( opt => `shadow-${opt.value}` ),
+					),
 				} );
-			} }
+			}}
 		/>
 	);
 };

@@ -6,7 +6,7 @@
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2019 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/exhale
  */
@@ -21,7 +21,7 @@ let widths = [
 	'max-w-5xl',
 	'max-w-6xl',
 	'max-w-7xl',
-	'max-w-full'
+	'max-w-full',
 ];
 
 let columns = [
@@ -30,7 +30,7 @@ let columns = [
 	'grid-col-3',
 	'grid-col-4',
 	'grid-col-5',
-	'grid-col-6'
+	'grid-col-6',
 ];
 
 let mdColumns = [
@@ -39,19 +39,17 @@ let mdColumns = [
 	'md\:grid-col-3',
 	'md\:grid-col-4',
 	'md\:grid-col-5',
-	'md\:grid-col-6'
+	'md\:grid-col-6',
 ];
 
 Object.values( loopQueries ).forEach( ( type ) => {
+	let loopClass = `.loop--${type.replace( /_/g, '-' )}`;
 
-	let loopClass = '.loop--' + type.replace( /_/g, '-' );
-
-	wp.customize( `loop_${type}_width`, value => {
-		value.bind( to => {
-
+	wp.customize( `loop_${type}_width`, ( value ) => {
+		value.bind( ( to ) => {
 			let container = document.querySelector( `${loopClass} .grid--posts` );
 
-			if ( ! container ) {
+			if ( !container ) {
 				return;
 			}
 
@@ -60,17 +58,16 @@ Object.values( loopQueries ).forEach( ( type ) => {
 
 			// Add new layout class.
 			if ( to ) {
-				container.classList.add( 'max-w-' + to );
+				container.classList.add( `max-w-${to}` );
 			}
 		} );
 	} );
 
-	wp.customize( `loop_${type}_columns`, value => {
-		value.bind( to => {
-
+	wp.customize( `loop_${type}_columns`, ( value ) => {
+		value.bind( ( to ) => {
 			let container = document.querySelector( `${loopClass} .grid--posts` );
 
-			if ( ! container ) {
+			if ( !container ) {
 				return;
 			}
 
@@ -78,16 +75,15 @@ Object.values( loopQueries ).forEach( ( type ) => {
 			container.classList.remove( ...mdColumns );
 
 			// Add new layout class.
-			container.classList.add( 'md\:grid-col-' + to );
+			container.classList.add( `md\:grid-col-${to}` );
 		} );
 	} );
 
-	wp.customize( `loop_${type}_image_size`, value => {
-		value.bind( to => {
-
+	wp.customize( `loop_${type}_image_size`, ( value ) => {
+		value.bind( ( to ) => {
 			let container = document.querySelector( `${loopClass} .grid--posts` );
 
-			if ( ! container ) {
+			if ( !container ) {
 				return;
 			}
 
@@ -98,8 +94,6 @@ Object.values( loopQueries ).forEach( ( type ) => {
 			} else {
 				container.classList.add( 'grid-col-2' );
 			}
-
 		} );
 	} );
-
 } );

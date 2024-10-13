@@ -17,12 +17,12 @@
 	}
 
 	&.has-background {
-	//	margin-bottom: $spacing-global;
+		//	margin-bottom: $spacing-global;
 		margin-top:    $spacing-global;
 		padding:       $spacing-global;
 	}
 
-                           > *,
+	> *,
 	&__inner-container > * {
 		margin-left:  $spacing-global;
 		margin-right: $spacing-global;

@@ -1,12 +1,14 @@
-<?php if ( is_active_sidebar( $data->sidebar ) ) : ?>
+<?php $data = Hybrid\Tools\collect( $__data ) ?>
 
-	<aside <?php Hybrid\Attr\display( 'sidebar', $data->sidebar ) ?>>
+<?php if ( is_active_sidebar( $data->get( 'sidebar' ) ) ) : ?>
+
+	<aside <?php Hybrid\Attr\display( 'sidebar', $data->get( 'sidebar' ) ) ?>>
 
 		<h3 class="sidebar__title screen-reader-text">
-			<?php Hybrid\Sidebar\display_name( $data->sidebar ) ?>
+			<?php Hybrid\Theme\Sidebar\display_name( $data->get( 'sidebar' ) ) ?>
 		</h3>
 
-		<?php dynamic_sidebar( $data->sidebar ) ?>
+		<?php dynamic_sidebar( $data->get( 'sidebar' ) ) ?>
 
 	</aside>
 

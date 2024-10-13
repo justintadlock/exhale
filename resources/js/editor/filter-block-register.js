@@ -6,16 +6,16 @@
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2019 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/exhale
  */
 
 // Imports the design setting fields.
+import assign from 'lodash.assign';
 import fields from './block-controls/fields';
 
 // Imports the assign function from lodash.
-import assign from 'lodash.assign';
 
 const { addFilter } = wp.hooks;
 
@@ -29,18 +29,15 @@ const { addFilter } = wp.hooks;
  * @return object
  */
 addFilter( 'blocks.registerBlockType', 'exhale/block/register', ( settings, name ) => {
-
-	fields.forEach( field => {
-
+	fields.forEach( ( field ) => {
 		// If a given field is registered for the current block, add the
 		// attributes for the field.
 		if ( field.blocks.includes( name ) ) {
-
 			settings.attributes = assign( settings.attributes, {
-				[ field.name ] : {
-					type:    field.type,
-					default: field.default
-				}
+				[field.name]: {
+					type    : field.type,
+					default : field.default,
+				},
 			} );
 		}
 	} );

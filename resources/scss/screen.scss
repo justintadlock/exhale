@@ -1,3 +1,5 @@
+@use "sass:math" as math;
+
 ////
 /// Primary screen stylesheet.
 ///
@@ -70,9 +72,9 @@
 @import 'elements/inline';
 @import 'elements/links';
 @import 'elements/lists';
-@import 'elements/media.scss';
-@import 'elements/quotes.scss';
-@import 'elements/tables.scss';
+@import 'elements/media';
+@import 'elements/quotes';
+@import 'elements/tables';
 
 // -----------------------------------------------------------------------------
 // Import object styles.
@@ -143,6 +145,7 @@
 @import 'blocks/core-rss/style';
 @import 'blocks/core-search/style';
 @import 'blocks/core-separator/style';
+@import 'blocks/core-spacer/style';
 @import 'blocks/core-table/style';
 @import 'blocks/core-verse/style';
 
@@ -163,7 +166,7 @@
 @import 'utilities/grid';
 @import 'utilities/helpers';
 @import 'utilities/layout';
-@import 'utilities/list.scss';
+@import 'utilities/list';
 @import 'utilities/media';
 @import 'utilities/sizing';
 @import 'utilities/spacing';

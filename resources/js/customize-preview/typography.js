@@ -6,12 +6,13 @@
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2019 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/exhale
  */
 
 let WebFont     = require( 'webfontloader' );
+
 let settings    = exhaleCustomizePreview.typographySettings;
 let families    = exhaleCustomizePreview.fontFamilies;
 let styles      = exhaleCustomizePreview.fontStyles;
@@ -19,30 +20,27 @@ let caps        = exhaleCustomizePreview.fontVariantCaps;
 let transforms  = exhaleCustomizePreview.textTransforms;
 let loadedFonts = [];
 
-Object.keys( settings ).forEach( key => {
-
-	let setting = settings[ key ];
+Object.keys( settings ).forEach( ( key ) => {
+	let setting = settings[key];
 
 	// If the Google Font is already loaded, add it to the loaded fonts array.
-	if ( families[ setting.mods.family ].googleName ) {
+	if ( families[setting.mods.family].googleName ) {
 		loadedFonts.push( setting.mods.family );
 	}
 
-	wp.customize( setting.modNames.family, value => {
-
-		value.bind( to => {
-
-			let family = families[ to ];
+	wp.customize( setting.modNames.family, ( value ) => {
+		value.bind( ( to ) => {
+			let family = families[to];
 
 			// If this is a Google font, let's use the Web Font
 			// Loader to load it up.
 			if ( -1 === loadedFonts.indexOf( family.name ) && family.googleName ) {
 				WebFont.load( {
-					google : {
-						families : [
-							family.googleName + ':' + family.styles.join( ',' )
-						]
-					}
+					google: {
+						families: [
+							`${family.googleName}:${family.styles.join( ',' )}`,
+						],
+					},
 				} );
 
 				// Add to loaded fonts array.
@@ -51,52 +49,46 @@ Object.keys( settings ).forEach( key => {
 
 			// Update the custom CSS property.
 			document.documentElement.style.setProperty(
-				'--font-family-' + setting.name,
-				family.stack
+				`--font-family-${setting.name}`,
+				family.stack,
 			);
 		} );
 	} );
 
-	wp.customize( setting.modNames.style, value => {
-
-		value.bind( to => {
-
-			let style = styles[ to ];
+	wp.customize( setting.modNames.style, ( value ) => {
+		value.bind( ( to ) => {
+			let style = styles[to];
 
 			document.documentElement.style.setProperty(
-				'--font-weight-' + setting.name,
-				style.weight
+				`--font-weight-${setting.name}`,
+				style.weight,
 			);
 
 			document.documentElement.style.setProperty(
-				'--font-style-' + setting.name,
-				style.style
+				`--font-style-${setting.name}`,
+				style.style,
 			);
 		} );
 	} );
 
-	wp.customize( setting.modNames.transform, value => {
-
-		value.bind( to => {
-
-			let transform = transforms[ to ];
+	wp.customize( setting.modNames.transform, ( value ) => {
+		value.bind( ( to ) => {
+			let transform = transforms[to];
 
 			document.documentElement.style.setProperty(
-				'--text-transform-' + setting.name,
-				transform.transform
+				`--text-transform-${setting.name}`,
+				transform.transform,
 			);
 		} );
 	} );
 
-	wp.customize( setting.modNames.caps, value => {
-
-		value.bind( to => {
-
-			let cap = caps[ to ];
+	wp.customize( setting.modNames.caps, ( value ) => {
+		value.bind( ( to ) => {
+			let cap = caps[to];
 
 			document.documentElement.style.setProperty(
-				'--font-variant-caps-' + setting.name,
-				cap.cap
+				`--font-variant-caps-${setting.name}`,
+				cap.cap,
 			);
 		} );
 	} );

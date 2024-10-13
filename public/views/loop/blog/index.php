@@ -1,3 +1,5 @@
+<?php $view = $__env ?>
+
 <?php if ( have_posts() ) : ?>
 
 	<div <?php Hybrid\Attr\display( 'loop', 'blog', [
@@ -12,11 +14,11 @@
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php $engine->display( 'entry/blog', $view->slugs() ) ?>
+			<?php $view->make( 'entry/blog', [ 'slugs' => $view->slugs() ] )->display() ?>
 
 		<?php endwhile ?>
 
-		<?php $engine->display( 'nav/pagination', 'posts' ) ?>
+		<?php $view->make( 'nav/pagination/posts' )->display() ?>
 
 	</div>
 

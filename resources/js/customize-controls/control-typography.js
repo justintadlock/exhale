@@ -5,15 +5,14 @@
  *
  * @package   Exhale
  * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright 2019 Justin Tadlock
+ * @copyright 2023 Justin Tadlock
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://themehybrid.com/themes/exhale
  */
 
 wp.customize.controlConstructor['exhale-typography'] = wp.customize.Control.extend( {
 
-	ready : function() {
-
+	ready() {
 		// Globals set via `wp_localize_script()`.
 		let families = exhaleCustomizeControls.fontFamilies;
 		let styles   = exhaleCustomizeControls.fontStyles;
@@ -23,24 +22,23 @@ wp.customize.controlConstructor['exhale-typography'] = wp.customize.Control.exte
 		let styleSetting  = control.settings.style;
 
 		// Bail if there is no family or style setting for this control.
-		if ( ! familySetting || ! styleSetting ) {
+		if ( !familySetting || !styleSetting ) {
 			return;
 		}
 
 		// When a new font family is chosen, we need to get the family
 		// object and update the font style list with the allowed styles
 		// for the family.
-		familySetting.bind( value => {
-
-			let family = families[ value ];
+		familySetting.bind( ( value ) => {
+			let family = families[value];
 
 			let select = document.querySelector(
-				control.selector + ' [data-customize-setting-link=' + styleSetting.id + ']'
+				`${control.selector} [data-customize-setting-link=${styleSetting.id}]`,
 			);
 
 			// Remove all options from the select. We're going to
 			// rebuild it below.
-			for ( let i = select.options.length; i >= 0 ; i-- ) {
+			for ( let i = select.options.length; 0 <= i; i-- ) {
 				select.remove( i );
 			}
 
@@ -50,7 +48,7 @@ wp.customize.controlConstructor['exhale-typography'] = wp.customize.Control.exte
 
 			let selectedOption = family.styles[0];
 
-			if ( family.styles.indexOf( styleSetting.get() ) !== -1 ) {
+			if ( -1 !== family.styles.indexOf( styleSetting.get() ) ) {
 				selectedOption = styleSetting.get();
 			}
 
@@ -58,19 +56,17 @@ wp.customize.controlConstructor['exhale-typography'] = wp.customize.Control.exte
 
 			// Loop through the family's supported styles and add
 			// them to the dropdown.
-			family.styles.forEach( styleName => {
-
+			family.styles.forEach( ( styleName ) => {
 				let opt       = document.createElement( 'option' );
 				opt.value     = styleName;
-				opt.innerHTML = styles[ styleName ].label;
+				opt.innerHTML = styles[styleName].label;
 
 				if ( styleName === selectedOption ) {
 					opt.setAttribute( 'selected', 'selected' );
 				}
 
 				select.appendChild( opt );
-
 			} );
 		} );
-	}
+	},
 } );

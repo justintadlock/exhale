@@ -7,7 +7,7 @@
 ////
 
 $table-bg-colors : (
-	// subtle-light-gray: var( --gray-100 ), // default
+	/* subtle-light-gray: var( --gray-100 ), // default*/
 	subtle-pale-green: var( --green-100 ),
 	subtle-pale-blue:  var( --blue-100 ),
 	subtle-pale-pink:  var( --pink-100 )
@@ -24,7 +24,7 @@ $table-bg-colors : (
 	}
 }
 
-.is-style-stripes tbody tr:nth-child( even ) {
+.is-style-stripes tbody tr:nth-child(even) {
 	//background-color: var( --gray-100 );
 	background-color: transparent;
 }
@@ -40,6 +40,6 @@ $table-bg-colors : (
 	}
 }
 
-.is-style-stripes tbody tr:nth-child( even ) {
+.is-style-stripes tbody tr:nth-child(even) {
 	//background: transparent;
 }

@@ -16,19 +16,19 @@
 
 	// List of meta.
 	&__items {
-	//	list-style: none;
-	//	padding:    0;
-	//	font-size:  1rem;
+		//	list-style: none;
+		//	padding:    0;
+		//	font-size:  1rem;
 	}
 
 	// Individual meta items.
 	&__item {
-	//	padding:       0.5em;
+		//	padding:       0.5em;
 		border-color: var( --color-border );
 
-	//	@media ( min-width: break( mobile ) ) {
-	//		display: flex;
-	//	}
+		//	@media ( min-width: break( mobile ) ) {
+		//		display: flex;
+		//	}
 	}
 
 	&__item:last-of-type {
@@ -40,8 +40,8 @@
 
 	// Output of the data.
 	&__data {
-	//	flex:       1;
-	//	text-align: right;
+		//	flex:       1;
+		//	text-align: right;
 		opacity:    0.75;
 	}
 }

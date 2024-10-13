@@ -12,7 +12,7 @@
 }
 
 .wp-block-button {
-//	margin-bottom: $spacing-global;
+	//	margin-bottom: $spacing-global;
 	margin-top: $spacing-global;
 
 	// See `components/_button.scss`.
@@ -34,7 +34,7 @@
 }
 
 .is-style-outline .wp-block-button__link {
-	border: 1px solid currentColor;
+	border: 1px solid currentcolor;
 }
 
 .is-style-outline .wp-block-button__link:not(.has-background) {
